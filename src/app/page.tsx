@@ -1,4 +1,5 @@
 import Image from "next/image";
+import boxesIcon from "../../public/images/boxes-icon.png";
 import { EditionCard } from "@/components/EditionCard";
 import { FeatureCard } from "@/components/FeatureCard";
 import { Footer } from "@/components/Footer";
@@ -14,7 +15,7 @@ export default function Home() {
           <div className="container hero-inner">
             <div className="hero-copy">
               <div className="product-title">
-                <Image src="/images/boxes-icon.png" alt="" width={84} height={84} priority />
+                <Image src={boxesIcon} alt="" width={84} height={84} priority />
                 <p>Ghostyak Boxes</p>
               </div>
               <h1>필요한 파일이 한눈에 보이는 바탕화면</h1>
