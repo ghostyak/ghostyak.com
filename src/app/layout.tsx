@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { boxes } from "@/data/products";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const title = "Ghostyak Boxes — 바탕화면을 더 단정하게";
@@ -22,10 +23,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="ko">
       <body>{children}</body>
+      <Analytics />
     </html>
   );
 }
