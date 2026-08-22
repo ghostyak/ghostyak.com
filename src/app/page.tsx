@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { EditionCard } from "@/components/EditionCard";
 import { FeatureCard } from "@/components/FeatureCard";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -18,9 +19,9 @@ export default function Home() {
               </div>
               <h1>필요한 파일이 한눈에 보이는 바탕화면</h1>
               <p className="intro">흩어진 파일과 바로가기를 나만의 박스에 모아보세요.</p>
-              <div className="hero-actions" id="download">
-                <a className="primary-button" href={boxes.downloadUrl}>
-                  Windows용 다운로드
+              <div className="hero-actions">
+                <a className="primary-button" href="#download">
+                  Free와 Pro 비교하기
                 </a>
               </div>
               <p className="hero-meta">
@@ -40,6 +41,37 @@ export default function Home() {
                 priority
               />
             </figure>
+          </div>
+        </section>
+
+        <section className="editions" id="download" aria-labelledby="editions-title">
+          <div className="container editions-inner">
+            <div className="editions-heading">
+              <p className="section-label">다운로드</p>
+              <h2 id="editions-title">내게 맞는 Boxes로 시작하세요.</h2>
+              <p>
+                핵심 기능을 계속 무료로 사용하거나, 30일 동안 박스 수 제한 없는
+                Pro 환경을 경험할 수 있습니다.
+              </p>
+            </div>
+            <div className="edition-grid">
+              {boxes.editions.map((edition) => (
+                <EditionCard
+                  key={edition.id}
+                  {...edition}
+                  featured={edition.id === "trial"}
+                />
+              ))}
+            </div>
+            <div className="download-details" aria-label="다운로드 정보">
+              <span>버전 {boxes.version}</span>
+              <span>{boxes.platform}</span>
+              <span>{boxes.fileSize}</span>
+              <span>{boxes.requirement}</span>
+            </div>
+            <p className="trial-note">
+              Pro 평가가 끝나면 Free로 전환되며, 기존 박스와 파일은 그대로 유지됩니다.
+            </p>
           </div>
         </section>
 
