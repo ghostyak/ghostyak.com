@@ -18,18 +18,16 @@ const title = 'Ghostyak Boxes — 바탕화면을 더 단정하게';
 						<img src="/images/boxes-icon.png" alt="" width="84" height="84" />
 						<p>Ghostyak Boxes</p>
 					</div>
-					<h1>바탕화면을 정리하는 가장 편안한 방법</h1>
+					<h1>필요한 파일이 한눈에 보이는 바탕화면</h1>
 					<p class="intro">흩어진 파일과 바로가기를 나만의 박스에 모아보세요.</p>
 					<div class="hero-actions" id="download">
 						<a class="primary-button" href={boxes.downloadUrl}>Windows용 다운로드</a>
 					</div>
 					<p class="hero-meta">버전 {boxes.version} · {boxes.platform} · {boxes.fileSize}</p>
-					<p class="hero-requirement">{boxes.requirement}</p>
 					<p class="preview-notice"><strong>초기 개발 버전</strong> — 중요한 바탕화면 구성에서는 별도의 Windows 사용자 환경에서 먼저 시험해 주세요.</p>
 				</div>
 				<figure>
 					<img src="/images/boxes-hero-concept-v3.png" alt="넓은 바탕화면 오른쪽에 사진과 앱을 두 개의 박스로 정리한 Boxes 콘셉트 화면" width="1672" height="941" />
-					<figcaption>임시 콘셉트 이미지이며 실제 화면으로 교체될 예정입니다.</figcaption>
 				</figure>
 			</div>
 		</section>
@@ -37,7 +35,7 @@ const title = 'Ghostyak Boxes — 바탕화면을 더 단정하게';
 		<section class="features" id="features" aria-labelledby="features-title">
 			<div class="container">
 				<p class="section-label">주요 기능</p>
-				<h2 id="features-title">바탕화면에 질서를 더하는<br />간단한 방법</h2>
+				<h2 id="features-title">파일은 한곳에 모으고,<br />필요한 순간 바로 찾으세요.</h2>
 				<div class="feature-grid">
 					<FeatureCard number="01" title="박스 단위로 정리" description="파일, 폴더와 바로가기를 목적에 맞는 여러 박스로 나누어 한눈에 찾을 수 있습니다." />
 					<FeatureCard number="02" title="내 방식대로 배치" description="박스를 이동하거나 크기를 조절하고, 접기와 잠금으로 필요한 공간만 남길 수 있습니다." />
@@ -66,12 +64,10 @@ const title = 'Ghostyak Boxes — 바탕화면을 더 단정하게';
 	.text-link { color: #e8f4ff; font-size: 0.94rem; font-weight: 700; text-decoration: none; }
 	.text-link span { margin-left: 5px; }
 	.hero-meta { margin: 14px 0 0; color: #708096; font-size: 0.82rem; }
-	.hero-requirement { margin: 5px 0 0; color: #7b899b; font-size: 0.76rem; }
 	.preview-notice { max-width: 720px; margin: 12px 0 0; color: #65758a; font-size: 0.78rem; line-height: 1.55; }
 	.preview-notice strong { color: #a15812; }
 	figure { width: 100%; max-width: 1180px; min-width: 0; margin: 42px 0 0; }
 	figure img { display: block; width: 100%; max-width: 100%; height: auto; aspect-ratio: 1672 / 941; border: 1px solid rgb(59 100 145 / 18%); border-radius: 22px; object-fit: contain; box-shadow: 0 34px 90px rgb(35 75 112 / 24%); }
-	figcaption { margin-top: 10px; color: #8390a0; font-size: 0.76rem; text-align: right; }
 	.features { padding-block: 112px 124px; }
 	.features .section-label { margin-top: 0; color: #0878ad; }
 	h2 { margin: 0; font-size: clamp(2rem, 4vw, 3.35rem); line-height: 1.16; letter-spacing: -0.045em; }
