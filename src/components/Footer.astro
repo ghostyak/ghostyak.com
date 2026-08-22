@@ -1,0 +1,14 @@
+<footer>
+	<div class="container footer-inner">
+		<p>© {new Date().getFullYear()} GhostYak</p>
+		<a href="https://github.com/ghostyak/boxes">GitHub에서 Boxes 보기</a>
+	</div>
+</footer>
+
+<style>
+	footer { background: #071b32; color: #afbdd2; }
+	.footer-inner { display: flex; min-height: 112px; align-items: center; justify-content: space-between; gap: 24px; }
+	p { margin: 0; }
+	a { color: #dcecff; text-underline-offset: 4px; }
+	@media (max-width: 560px) { .footer-inner { align-items: flex-start; flex-direction: column; justify-content: center; } }
+</style>
