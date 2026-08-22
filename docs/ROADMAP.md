@@ -2,12 +2,12 @@
 
 ghostyak.com은 GhostYak의 소프트웨어를 소개하고 배포하는 공식 웹사이트다. 초기에는 첫 번째 제품인 **Boxes**를 방문자가 쉽게 이해하고 다운로드할 수 있도록 하는 데 집중한다.
 
-Stardock.com의 제품 중심 정보 구조를 참고하되 디자인을 그대로 복제하지 않는다. Astro의 정적 사이트 기능과 `.astro` 컴포넌트를 우선 사용하며, 필요한 기능만 점진적으로 추가한다.
+Stardock.com의 제품 중심 정보 구조를 참고하되 디자인을 그대로 복제하지 않는다. Next.js App Router와 Server Component를 우선 사용하며, 필요한 기능만 점진적으로 추가한다.
 
 ## 기본 원칙
 
 - [ ] Boxes의 가치와 다운로드 경로를 가장 먼저 보여준다.
-- [ ] Astro 기본 기능을 우선 사용하고 불필요한 UI 프레임워크는 추가하지 않는다.
+- [ ] Next.js 기본 기능을 우선 사용하고 불필요한 UI 라이브러리는 추가하지 않는다.
 - [ ] 모바일과 데스크톱을 모두 지원한다.
 - [ ] 제품과 콘텐츠가 늘어나도 확장할 수 있는 구조를 유지한다.
 - [ ] 로그인, 결제, 검색, CMS 등은 실제로 필요해질 때 도입한다.
@@ -69,9 +69,9 @@ Stardock.com의 제품 중심 정보 구조를 참고하되 디자인을 그대�
 
 목표: 제품 정보를 한곳에서 관리하고 새로운 제품을 쉽게 추가할 수 있게 한다.
 
-- [ ] `src/data/products.ts`에 제품 데이터 모델을 만든다.
+- [x] `src/data/products.ts`에 제품 데이터 모델을 만든다.
 - [ ] 이름, 설명, 버전, 출시일, 운영체제, 파일 크기, 다운로드 URL을 데이터로 관리한다.
-- [ ] `Header`, `Footer`, `Hero`, `FeatureCard`, `DownloadButton`을 재사용 가능한 컴포넌트로 정리한다.
+- [x] `Header`, `Footer`, `FeatureCard`를 재사용 가능한 컴포넌트로 정리한다.
 - [ ] 페이지에 직접 작성된 제품 정보를 공통 데이터로 교체한다.
 - [ ] 다운로드 URL 변경 시 한 파일만 수정하면 되도록 확인한다.
 
@@ -85,7 +85,7 @@ Stardock.com의 제품 중심 정보 구조를 참고하되 디자인을 그대�
 - [ ] 버그 제보와 문의 방법을 안내한다.
 - [ ] 코드 서명 및 파일 무결성 정보를 검토한다.
 - [ ] GitHub Releases 등 외부 배포 저장소 사용 여부를 결정한다.
-- [ ] 문서가 늘어나면 Astro Content Collections 도입을 검토한다.
+- [ ] 문서가 늘어나면 MDX 또는 별도 콘텐츠 관리 방식 도입을 검토한다.
 
 ## 5단계: 제품군 확장
 
@@ -114,20 +114,16 @@ Stardock.com의 제품 중심 정보 구조를 참고하되 디자인을 그대�
 
 ```text
 src/
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
 ├── components/
-│   ├── DownloadButton.astro
-│   ├── FeatureCard.astro
-│   ├── Footer.astro
-│   ├── Header.astro
-│   └── Hero.astro
+│   ├── FeatureCard.tsx
+│   ├── Footer.tsx
+│   └── Header.tsx
 ├── data/
 │   └── products.ts
-├── layouts/
-│   └── BaseLayout.astro
-└── pages/
-    ├── index.astro
-    └── products/
-        └── boxes.astro
 ```
 
 이 구조는 목표 형태이며 1단계에서 필요하지 않은 파일은 미리 만들지 않는다.

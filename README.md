@@ -1,6 +1,6 @@
 # ghostyak.com
 
-Astro로 만든 ghostyak.com 웹사이트 프로젝트입니다.
+Next.js로 만든 ghostyak.com 웹사이트 프로젝트입니다.
 
 ## 개발
 
@@ -13,4 +13,5 @@ npm run dev
 
 - `npm run dev`: 개발 서버 실행
 - `npm run build`: 프로덕션 빌드 생성
-- `npm run preview`: 프로덕션 빌드 미리보기
+- `npm run start`: 프로덕션 서버 실행
+- `npm run lint`: 코드 검사
