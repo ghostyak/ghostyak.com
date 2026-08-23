@@ -28,11 +28,11 @@ export function Header({
   productsHref = `/${locale}/products/boxes`,
 }: HeaderProps) {
   return (
-    <header className="sticky top-0 z-50 border-b border-primary-content/10 bg-primary text-primary-content shadow-sm">
+    <header className="sticky top-0 z-50 border-b border-neutral-content/10 bg-neutral text-neutral-content shadow-md">
       <div className="navbar mx-auto min-h-16 w-full max-w-[1180px] px-3 sm:px-5">
         <div className="navbar-start w-auto flex-1">
           <Link
-            className="btn btn-ghost min-h-11 gap-2 px-2 text-base font-bold normal-case hover:bg-primary-content/10"
+            className="btn btn-ghost min-h-11 gap-2 px-2 text-base font-bold normal-case text-neutral-content hover:bg-neutral-content/10"
             href={homeHref}
             aria-label={labels.homeLabel}
           >
@@ -42,7 +42,7 @@ export function Header({
         </div>
         <nav className="navbar-end w-auto shrink-0 gap-0 sm:gap-1" aria-label={labels.navLabel}>
           <details className="dropdown dropdown-end">
-            <summary className="btn btn-ghost min-h-11 list-none px-2 text-sm sm:px-4">
+            <summary className="btn btn-ghost min-h-11 list-none px-2 text-sm text-neutral-content hover:bg-neutral-content/10 sm:px-4">
               {labels.products}
               <span className="text-xs" aria-hidden="true">▾</span>
             </summary>
@@ -52,14 +52,14 @@ export function Header({
               </li>
             </ul>
           </details>
-          <Link className="btn btn-ghost hidden min-h-11 md:inline-flex" href={featuresHref}>
+          <Link className="btn btn-ghost hidden min-h-11 text-neutral-content hover:bg-neutral-content/10 md:inline-flex" href={featuresHref}>
             {labels.features}
           </Link>
-          <Link className="btn btn-ghost hidden min-h-11 sm:inline-flex" href={downloadHref}>
+          <Link className="btn btn-ghost hidden min-h-11 text-neutral-content hover:bg-neutral-content/10 sm:inline-flex" href={downloadHref}>
             {labels.download}
           </Link>
           <details className="dropdown dropdown-end">
-            <summary className="btn btn-ghost min-h-11 list-none px-2 text-sm sm:px-4">
+            <summary className="btn btn-ghost min-h-11 list-none px-2 text-sm text-neutral-content hover:bg-neutral-content/10 sm:px-4">
               {labels.languageLabel}
               <span className="text-xs" aria-hidden="true">▾</span>
             </summary>

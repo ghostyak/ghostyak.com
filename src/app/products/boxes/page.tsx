@@ -62,7 +62,7 @@ export function BoxesOverview({ locale = "en" }: { locale?: Locale }) {
         <div className="mx-auto w-full max-w-[1180px] px-4 sm:px-5">
           <p className="mb-4 text-xs font-bold uppercase tracking-[0.14em] text-primary">{pageDictionary.features.label}</p>
           <h2 className="max-w-4xl text-3xl font-bold tracking-tight sm:text-5xl" id="product-features-title">{pageDictionary.features.heading}</h2>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:mt-12 lg:grid-cols-4">
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:mt-12 lg:grid-cols-3">
             {pageDictionary.features.items.map((feature, index) => (
               <FeatureCard
                 key={feature.title}

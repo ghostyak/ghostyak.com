@@ -34,7 +34,7 @@ DaisyUI의 의미 기반 색상 이름을 우선 사용한다.
 - `primary`: 가장 중요한 다운로드 또는 구매 행동
 - `secondary`: 같은 수준의 두 번째 선택지
 - `accent`: 제한적인 강조 요소
-- `neutral`: 헤더, 푸터와 중립적인 강조 영역
+- `neutral`: 헤더와 푸터의 짙은 브랜드 배경. `neutral-content`와 함께 사용해 본문 및 주요 행동의 `primary` 색상과 경쟁하지 않게 한다.
 - `base-100`, `base-200`, `base-300`: 화면과 카드의 배경 계층
 - `info`, `success`, `warning`, `error`: 의미가 분명한 상태 안내
 
