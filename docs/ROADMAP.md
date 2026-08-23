@@ -42,6 +42,7 @@ Stardock.com의 제품 중심 정보 구조를 참고하되 디자인을 그대�
 - [x] 문서 제목과 설명 등 기본 SEO 메타데이터를 설정한다.
 - [x] Open Graph 등 기본 공유 메타데이터를 설정한다.
 - [x] sitemap과 robots.txt를 제공한다.
+- [x] 한국어와 영어 소개 페이지 및 언어별 SEO 메타데이터를 제공한다.
 - [x] favicon에 임시 Boxes 아이콘을 적용한다.
 - [x] 다운로드 링크가 실제 GitHub 릴리스 자산을 가리키는지 확인한다.
 - [x] `npm run build`가 성공하는지 확인한다.
