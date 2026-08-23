@@ -104,7 +104,7 @@ h2 { margin: 0; font-size: clamp(2rem, 4vw, 3.35rem); line-height: 1.16; letter-
 }
 
 @media (max-width: 640px) {
-  nav a:first-child { display: none; }
+  .site-header nav > a:first-child { display: none; }
   .header-inner { min-height: 62px; }
 }
 
