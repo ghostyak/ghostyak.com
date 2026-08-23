@@ -44,6 +44,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       languages: {
         ko: "/ko",
         en: "/en",
+        ja: "/ja",
+        zh: "/zh",
         "x-default": "/ko",
       },
     },
@@ -61,8 +63,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       type: "website",
       url: `/${lang}`,
-      locale: lang === "ko" ? "ko_KR" : "en_US",
-      alternateLocale: [lang === "ko" ? "en_US" : "ko_KR"],
+      locale: { ko: "ko_KR", en: "en_US", ja: "ja_JP", zh: "zh_CN" }[lang],
+      alternateLocale: ["ko_KR", "en_US", "ja_JP", "zh_CN"].filter(
+        (locale) => locale !== { ko: "ko_KR", en: "en_US", ja: "ja_JP", zh: "zh_CN" }[lang],
+      ),
       siteName: "Ghostyak",
       title: metadata.title,
       description: metadata.description,

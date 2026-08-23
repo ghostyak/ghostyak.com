@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import ghostyakIcon from "../../public/ghostyak.png";
+import type { Locale } from "@/i18n";
 
 type HeaderProps = {
-  locale: "ko" | "en";
-  oppositeLocale: "ko" | "en";
+  locale: Locale;
   labels: {
     homeLabel: string;
     navLabel: string;
@@ -14,7 +14,14 @@ type HeaderProps = {
   };
 };
 
-export function Header({ locale, oppositeLocale, labels }: HeaderProps) {
+const languageNames: Record<Locale, string> = {
+  ko: "한국어",
+  en: "English",
+  ja: "日本語",
+  zh: "中文",
+};
+
+export function Header({ locale, labels }: HeaderProps) {
   return (
     <header className="site-header">
       <div className="container header-inner">
@@ -25,9 +32,21 @@ export function Header({ locale, oppositeLocale, labels }: HeaderProps) {
         <nav aria-label={labels.navLabel}>
           <a href="#features">{labels.features}</a>
           <a href="#download">{labels.download}</a>
-          <Link href={`/${oppositeLocale}`} hrefLang={oppositeLocale}>
-            {labels.languageLabel}
-          </Link>
+          <details className="language-menu">
+            <summary>{labels.languageLabel}</summary>
+            <div className="language-options">
+              {(Object.keys(languageNames) as Locale[]).map((language) => (
+                <Link
+                  key={language}
+                  href={`/${language}`}
+                  hrefLang={language}
+                  aria-current={language === locale ? "page" : undefined}
+                >
+                  {languageNames[language]}
+                </Link>
+              ))}
+            </div>
+          </details>
         </nav>
       </div>
     </header>

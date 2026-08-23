@@ -1,4 +1,4 @@
-export const locales = ["ko", "en"] as const;
+export const locales = ["ko", "en", "ja", "zh"] as const;
 
 export type Locale = (typeof locales)[number];
 
@@ -31,7 +31,7 @@ const dictionaries = {
       navLabel: "주요 메뉴",
       features: "주요 기능",
       download: "다운로드",
-      languageLabel: "English",
+      languageLabel: "언어",
     },
     hero: {
       heading: "필요한 파일이 한눈에 보이는 바탕화면",
@@ -139,7 +139,7 @@ const dictionaries = {
       navLabel: "Main navigation",
       features: "Features",
       download: "Download",
-      languageLabel: "한국어",
+      languageLabel: "Language",
     },
     hero: {
       heading: "A desktop where every file is easy to find",
@@ -224,6 +224,80 @@ const dictionaries = {
       threads: "GhostYak Threads",
       github: "GhostYak GitHub",
     },
+  },
+  ja: {
+    metadata: {
+      title: "Ghostyak Boxes | Windowsデスクトップ整理ソフト",
+      description: "Windowsデスクトップのファイル、フォルダー、ショートカットをボックスごとにすっきり整理。Ghostyak Boxes Freeまたは30日間のPro体験版をダウンロードできます。",
+      keywords: ["Ghostyak Boxes", "Windows デスクトップ整理", "デスクトップ整理", "ファイル整理ソフト", "デスクトップアイコン整理", "Windows 11", "Windows 10"],
+      imageAlt: "Ghostyak Boxesでファイルとアプリをボックスごとに整理したWindowsデスクトップ",
+    },
+    header: { homeLabel: "ghostyak.com ホーム", navLabel: "メインメニュー", features: "主な機能", download: "ダウンロード", languageLabel: "言語" },
+    hero: {
+      heading: "必要なファイルがひと目で見つかるデスクトップ",
+      intro: "散らばったファイルやショートカットを、自分だけのボックスにまとめましょう。",
+      action: "FreeとProを比較",
+      previewTitle: "初期開発版",
+      previewText: "大切なデスクトップ環境で使う前に、別のWindowsユーザー環境でお試しください。",
+    },
+    download: {
+      label: "ダウンロード", versionLabel: "バージョン", fileSize: "約3.3 MB", requirement: "Microsoft Edge WebView2 Runtimeが必要",
+      heading: "あなたに合うBoxesを選んで始めましょう。",
+      intro: "基本機能をずっと無料で使うか、ボックス数が無制限のProを30日間体験できます。",
+      detailsLabel: "ダウンロード情報",
+      trialNote: "Pro体験期間が終了するとFreeに切り替わり、既存のボックスとファイルはそのまま保持されます。",
+      editions: [
+        { id: "free", label: "ずっと無料", name: "Free", description: "基本的な整理機能を期限なく使いたい方に最適です。", highlights: ["利用期限なし", "ボックスは最大3個", "各ボックスのアイコン数は無制限", "設定のバックアップ・復元・エクスポート"], downloadLabel: "Freeをダウンロード" },
+        { id: "trial", label: "30日間体験", name: "Pro体験版", description: "無制限のボックスとPro機能を十分に試してから選べます。", highlights: ["インストール後30日間利用可能", "ボックス数は無制限", "現在提供中のPro機能を搭載", "インターネット接続・ログイン不要"], downloadLabel: "Pro体験版をダウンロード" },
+      ],
+    },
+    features: {
+      label: "主な機能", heading: "ファイルをひとまとめにして、必要なときにすぐ見つける。",
+      items: [
+        { title: "ボックスで整理", description: "ファイル、フォルダー、ショートカットを目的別のボックスに分け、ひと目で見つけられます。" },
+        { title: "自分らしく配置", description: "ボックスを移動・サイズ変更し、折りたたみやロックで必要なスペースだけを残せます。" },
+        { title: "画面構成ごとに復元", description: "モニター構成に合わせてボックスの位置とサイズを記憶し、使い慣れた作業環境を保ちます。" },
+        { title: "フォトビューアー", description: "ボックスやフォルダー内の写真をスライドショーで表示し、切り替え間隔や順序を設定できます。" },
+      ],
+    },
+    footer: { socials: "GhostYak ソーシャルメディア", blog: "GhostYak ブログ", instagram: "GhostYak Instagram", threads: "GhostYak Threads", github: "GhostYak GitHub" },
+  },
+  zh: {
+    metadata: {
+      title: "Ghostyak Boxes | Windows 桌面整理工具",
+      description: "将 Windows 桌面上的文件、文件夹和快捷方式整齐归入不同收纳框。下载 Ghostyak Boxes Free，或免费试用 Pro 版 30 天。",
+      keywords: ["Ghostyak Boxes", "Windows 桌面整理", "桌面整理", "文件整理工具", "桌面图标整理", "Windows 11", "Windows 10"],
+      imageAlt: "使用 Ghostyak Boxes 将文件和应用按收纳框分类的 Windows 桌面",
+    },
+    header: { homeLabel: "ghostyak.com 首页", navLabel: "主菜单", features: "主要功能", download: "下载", languageLabel: "语言" },
+    hero: {
+      heading: "需要的文件，一眼就能找到",
+      intro: "把散落的文件和快捷方式收进专属收纳框。",
+      action: "比较 Free 与 Pro",
+      previewTitle: "早期开发版本",
+      previewText: "用于重要桌面环境前，请先在单独的 Windows 用户环境中测试。",
+    },
+    download: {
+      label: "下载", versionLabel: "版本", fileSize: "约 3.3 MB", requirement: "需要 Microsoft Edge WebView2 Runtime",
+      heading: "选择适合你的 Boxes 版本。",
+      intro: "永久免费使用核心功能，或体验 30 天不限收纳框数量的 Pro 版本。",
+      detailsLabel: "下载信息",
+      trialNote: "Pro 试用期结束后将切换为 Free，现有收纳框和文件都会保留。",
+      editions: [
+        { id: "free", label: "永久免费", name: "Free", description: "适合希望长期免费使用核心整理功能的用户。", highlights: ["无使用期限", "最多 3 个收纳框", "每个收纳框的图标数量不限", "支持设置备份、恢复与导出"], downloadLabel: "下载 Free" },
+        { id: "trial", label: "试用 30 天", name: "Pro 试用版", description: "充分体验不限数量的收纳框与 Pro 功能后再做选择。", highlights: ["安装后可使用 30 天", "收纳框数量不限", "包含当前提供的 Pro 功能", "无需联网或登录账户"], downloadLabel: "下载 Pro 试用版" },
+      ],
+    },
+    features: {
+      label: "主要功能", heading: "文件集中整理，需要时立即找到。",
+      items: [
+        { title: "按收纳框整理", description: "按用途将文件、文件夹和快捷方式放入不同收纳框，一眼即可找到。" },
+        { title: "按你的方式布局", description: "移动或调整收纳框大小，并通过折叠和锁定只保留所需空间。" },
+        { title: "适配不同屏幕布局", description: "根据显示器配置记住收纳框的位置和大小，始终保持熟悉的工作环境。" },
+        { title: "照片查看器", description: "以幻灯片方式浏览收纳框或文件夹中的照片，并自定义切换间隔和顺序。" },
+      ],
+    },
+    footer: { socials: "GhostYak 社交媒体", blog: "GhostYak 博客", instagram: "GhostYak Instagram", threads: "GhostYak Threads", github: "GhostYak GitHub" },
   },
 } as const;
 

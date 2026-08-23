@@ -20,6 +20,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .brand img { object-fit: contain; }
 nav { gap: 26px; }
 nav a { font-size: 0.93rem; font-weight: 650; text-decoration: none; }
+.language-menu { position: relative; }
+.language-menu summary { cursor: pointer; font-size: 0.93rem; font-weight: 650; list-style: none; }
+.language-menu summary::-webkit-details-marker { display: none; }
+.language-menu summary::after { margin-left: 6px; content: "▾"; font-size: 0.7rem; }
+.language-options { position: absolute; top: calc(100% + 16px); right: 0; display: grid; min-width: 132px; overflow: hidden; border: 1px solid rgb(0 0 0 / 12%); border-radius: 10px; background: white; color: #16304f; box-shadow: 0 14px 36px rgb(6 31 58 / 20%); }
+.language-options a { padding: 11px 16px; white-space: nowrap; }
+.language-options a:hover { background: #edf5fc; }
+.language-options a[aria-current="page"] { background: #e2f2ff; color: #0b65a5; }
 
 .hero { position: relative; overflow: hidden; background: linear-gradient(180deg, #dce9f3 0%, #edf4f9 58%, #fff 100%); color: #14243a; }
 .hero::after { position: absolute; top: -260px; left: 50%; width: 900px; height: 520px; border-radius: 50%; background: #fff; content: ""; filter: blur(100px); opacity: 0.75; transform: translateX(-50%); }

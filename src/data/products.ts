@@ -21,7 +21,7 @@ export const boxes = {
       ],
       downloadLabel: "Free 다운로드",
       downloadUrl:
-        "https://github.com/ghostyak/boxes/releases/download/v0.3.24/GhostyakBoxes-0.3.24-free-setup.exe",
+        "https://github.com/ghostyak/boxes/releases/download/v0.3.23/GhostyakBoxes-0.3.23-free-setup.exe",
     },
     {
       id: "trial",
@@ -37,7 +37,7 @@ export const boxes = {
       ],
       downloadLabel: "Pro 평가판 다운로드",
       downloadUrl:
-        "https://github.com/ghostyak/boxes/releases/download/v0.3.24/GhostyakBoxes-0.3.24-trial-setup.exe",
+        "https://github.com/ghostyak/boxes/releases/download/v0.3.23/GhostyakBoxes-0.3.23-trial-setup.exe",
     },
   ],
 } as const;

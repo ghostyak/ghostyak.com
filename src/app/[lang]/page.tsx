@@ -13,13 +13,10 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
   if (!isLocale(lang)) notFound();
 
   const dictionary = getDictionary(lang);
-  const oppositeLocale = lang === "ko" ? "en" : "ko";
-
   return (
     <>
       <Header
         locale={lang}
-        oppositeLocale={oppositeLocale}
         labels={dictionary.header}
       />
       <main>
