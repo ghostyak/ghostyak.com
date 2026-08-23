@@ -1,6 +1,6 @@
 export const boxes = {
   name: "Ghostyak Boxes",
-  version: "0.3.22",
+  version: "0.3.24",
   platform: "Windows 10/11",
   fileSize: "약 3.3MB",
   requirement: "Microsoft Edge WebView2 Runtime 필요",
@@ -11,7 +11,8 @@ export const boxes = {
       id: "free",
       label: "계속 무료",
       name: "Free",
-      description: "핵심 정리 기능을 부담 없이 오래 사용하고 싶은 분께 알맞습니다.",
+      description:
+        "핵심 정리 기능을 부담 없이 오래 사용하고 싶은 분께 알맞습니다.",
       highlights: [
         "기간 제한 없이 사용",
         "박스 최대 3개",
@@ -20,13 +21,14 @@ export const boxes = {
       ],
       downloadLabel: "Free 다운로드",
       downloadUrl:
-        "https://github.com/ghostyak/boxes/releases/download/v0.3.22/GhostyakBoxes-0.3.22-free-setup.exe",
+        "https://github.com/ghostyak/boxes/releases/download/v0.3.24/GhostyakBoxes-0.3.24-free-setup.exe",
     },
     {
       id: "trial",
       label: "30일 체험",
       name: "Pro 평가판",
-      description: "더 많은 박스와 Pro 기능을 충분히 경험한 뒤 선택할 수 있습니다.",
+      description:
+        "더 많은 박스와 Pro 기능을 충분히 경험한 뒤 선택할 수 있습니다.",
       highlights: [
         "설치 후 30일 동안 사용",
         "박스 수 제한 없음",
@@ -35,7 +37,7 @@ export const boxes = {
       ],
       downloadLabel: "Pro 평가판 다운로드",
       downloadUrl:
-        "https://github.com/ghostyak/boxes/releases/download/v0.3.22/GhostyakBoxes-0.3.22-trial-setup.exe",
+        "https://github.com/ghostyak/boxes/releases/download/v0.3.24/GhostyakBoxes-0.3.24-trial-setup.exe",
     },
   ],
 } as const;
