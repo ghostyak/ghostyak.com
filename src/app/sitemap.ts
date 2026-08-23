@@ -12,11 +12,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ]),
   );
 
-  return locales.map((locale) => ({
+  const localizedHomePages: MetadataRoute.Sitemap = locales.map((locale) => ({
     url: `${siteUrl}/${locale}`,
     changeFrequency: "monthly",
     priority: 1,
     images: [productImage],
     alternates: { languages },
   }));
+
+  const productPages: MetadataRoute.Sitemap = [
+    {
+      url: `${siteUrl}/products/boxes`,
+      changeFrequency: "monthly",
+      priority: 0.9,
+      images: [productImage],
+    },
+    {
+      url: `${siteUrl}/products/boxes/community`,
+      changeFrequency: "monthly",
+      priority: 0.8,
+      images: [productImage],
+    },
+    {
+      url: `${siteUrl}/products/boxes/pro`,
+      changeFrequency: "monthly",
+      priority: 0.8,
+      images: [productImage],
+    },
+  ];
+
+  return [...localizedHomePages, ...productPages];
 }

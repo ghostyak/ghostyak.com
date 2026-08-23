@@ -41,7 +41,7 @@ export function getSoftwareApplicationJsonLd({
     "@id": `${siteUrl}/#ghostyak-boxes`,
     name: boxes.name,
     description,
-    url: `${siteUrl}/${locale}`,
+    url: `${siteUrl}/products/boxes`,
     image: `${siteUrl}/images/boxes-hero-concept-v3.png`,
     screenshot: `${siteUrl}/images/boxes-hero-concept-v3.png`,
     downloadUrl: boxes.editions[0].downloadUrl,
@@ -56,7 +56,7 @@ export function getSoftwareApplicationJsonLd({
       price: "0",
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",
-      url: boxes.editions[0].downloadUrl,
+      url: `${siteUrl}${boxes.editions[0].productUrl}`,
     },
     publisher: {
       "@type": "Organization",

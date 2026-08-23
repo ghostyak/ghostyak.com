@@ -8,7 +8,7 @@ const dictionaries = {
     metadata: {
       title: "Ghostyak Boxes | Windows 바탕화면 정리 프로그램",
       description:
-        "Windows 바탕화면의 파일, 폴더와 바로가기를 박스별로 깔끔하게 정리하세요. Ghostyak Boxes Free와 30일 Pro 평가판을 다운로드할 수 있습니다.",
+        "Windows 바탕화면의 파일, 폴더와 바로가기를 박스별로 깔끔하게 정리하세요. Ghostyak Boxes Community와 30일 Pro 평가판을 다운로드할 수 있습니다.",
       keywords: [
         "Ghostyak Boxes",
         "Windows 바탕화면 정리",
@@ -31,7 +31,7 @@ const dictionaries = {
     hero: {
       heading: "필요한 파일이 한눈에 보이는 바탕화면",
       intro: "흩어진 파일과 바로가기를 나만의 박스에 모아보세요.",
-      action: "Free와 Pro 비교하기",
+      action: "Community와 Pro 비교하기",
       previewTitle: "초기 개발 버전",
       previewText:
         "중요한 바탕화면 구성에서는 별도의 Windows 사용자 환경에서 먼저 시험해 주세요.",
@@ -46,12 +46,12 @@ const dictionaries = {
         "핵심 기능을 계속 무료로 사용하거나, 30일 동안 박스 수 제한 없는 Pro 환경을 경험할 수 있습니다.",
       detailsLabel: "다운로드 정보",
       trialNote:
-        "Pro 평가가 끝나면 Free로 전환되며, 기존 박스와 파일은 그대로 유지됩니다.",
+        "Pro 평가가 끝나면 Community로 전환되며, 기존 박스와 파일은 그대로 유지됩니다.",
       editions: [
         {
-          id: "free",
+          id: "community",
           label: "계속 무료",
-          name: "Free",
+          name: "Community",
           description:
             "핵심 정리 기능을 부담 없이 오래 사용하고 싶은 분께 알맞습니다.",
           highlights: [
@@ -60,10 +60,10 @@ const dictionaries = {
             "박스마다 아이콘 수 제한 없음",
             "설정 백업·복원과 내보내기 제공",
           ],
-          downloadLabel: "Free 다운로드",
+          downloadLabel: "Community 다운로드",
         },
         {
-          id: "trial",
+          id: "pro",
           label: "30일 체험",
           name: "Pro 평가판",
           description:
@@ -74,7 +74,7 @@ const dictionaries = {
             "현재 제공되는 Pro 기능 포함",
             "인터넷 연결과 계정 로그인 없이 체험",
           ],
-          downloadLabel: "Pro 평가판 다운로드",
+          downloadLabel: "Try Free 다운로드 (Pro 버전)",
         },
       ],
     },
@@ -116,7 +116,7 @@ const dictionaries = {
     metadata: {
       title: "Ghostyak Boxes | Windows Desktop Organizer",
       description:
-        "Organize files, folders, and shortcuts on your Windows desktop into tidy boxes. Download Ghostyak Boxes Free or try Pro free for 30 days.",
+        "Organize files, folders, and shortcuts on your Windows desktop into tidy boxes. Download Ghostyak Boxes Community or try Pro free for 30 days.",
       keywords: [
         "Ghostyak Boxes",
         "Windows desktop organizer",
@@ -139,7 +139,7 @@ const dictionaries = {
     hero: {
       heading: "A desktop where every file is easy to find",
       intro: "Gather scattered files and shortcuts into boxes of your own.",
-      action: "Compare Free and Pro",
+      action: "Compare Community and Pro",
       previewTitle: "Early development release",
       previewText:
         "Test it in a separate Windows user environment before using it with an important desktop setup.",
@@ -154,12 +154,12 @@ const dictionaries = {
         "Keep using the essential features for free, or try unlimited boxes and Pro features for 30 days.",
       detailsLabel: "Download information",
       trialNote:
-        "After the Pro trial ends, Boxes switches to Free while keeping your existing boxes and files.",
+        "After the Pro trial ends, Boxes switches to Community while keeping your existing boxes and files.",
       editions: [
         {
-          id: "free",
+          id: "community",
           label: "Free forever",
-          name: "Free",
+          name: "Community",
           description:
             "For anyone who wants the essential organization tools without a time limit.",
           highlights: [
@@ -168,10 +168,10 @@ const dictionaries = {
             "Unlimited icons in each box",
             "Settings backup, restore, and export",
           ],
-          downloadLabel: "Download Free",
+          downloadLabel: "Download Community",
         },
         {
-          id: "trial",
+          id: "pro",
           label: "30-day trial",
           name: "Pro trial",
           description:
@@ -182,7 +182,7 @@ const dictionaries = {
             "Includes currently available Pro features",
             "No internet connection or account required",
           ],
-          downloadLabel: "Download Pro trial",
+          downloadLabel: "Try Pro free",
         },
       ],
     },
@@ -223,7 +223,7 @@ const dictionaries = {
   ja: {
     metadata: {
       title: "Ghostyak Boxes | Windowsデスクトップ整理ソフト",
-      description: "Windowsデスクトップのファイル、フォルダー、ショートカットをボックスごとにすっきり整理。Ghostyak Boxes Freeまたは30日間のPro体験版をダウンロードできます。",
+      description: "Windowsデスクトップのファイル、フォルダー、ショートカットをボックスごとにすっきり整理。Ghostyak Boxes Communityまたは30日間のPro体験版をダウンロードできます。",
       keywords: ["Ghostyak Boxes", "Windows デスクトップ整理", "デスクトップ整理", "ファイル整理ソフト", "デスクトップアイコン整理", "Windows 11", "Windows 10"],
       imageAlt: "Ghostyak Boxesでファイルとアプリをボックスごとに整理したWindowsデスクトップ",
     },
@@ -231,7 +231,7 @@ const dictionaries = {
     hero: {
       heading: "必要なファイルがひと目で見つかるデスクトップ",
       intro: "散らばったファイルやショートカットを、自分だけのボックスにまとめましょう。",
-      action: "FreeとProを比較",
+      action: "CommunityとProを比較",
       previewTitle: "初期開発版",
       previewText: "大切なデスクトップ環境で使う前に、別のWindowsユーザー環境でお試しください。",
     },
@@ -240,10 +240,10 @@ const dictionaries = {
       heading: "あなたに合うBoxesを選んで始めましょう。",
       intro: "基本機能をずっと無料で使うか、ボックス数が無制限のProを30日間体験できます。",
       detailsLabel: "ダウンロード情報",
-      trialNote: "Pro体験期間が終了するとFreeに切り替わり、既存のボックスとファイルはそのまま保持されます。",
+      trialNote: "Pro体験期間が終了するとCommunityに切り替わり、既存のボックスとファイルはそのまま保持されます。",
       editions: [
-        { id: "free", label: "ずっと無料", name: "Free", description: "基本的な整理機能を期限なく使いたい方に最適です。", highlights: ["利用期限なし", "ボックスは最大3個", "各ボックスのアイコン数は無制限", "設定のバックアップ・復元・エクスポート"], downloadLabel: "Freeをダウンロード" },
-        { id: "trial", label: "30日間体験", name: "Pro体験版", description: "無制限のボックスとPro機能を十分に試してから選べます。", highlights: ["インストール後30日間利用可能", "ボックス数は無制限", "現在提供中のPro機能を搭載", "インターネット接続・ログイン不要"], downloadLabel: "Pro体験版をダウンロード" },
+        { id: "community", label: "ずっと無料", name: "Community", description: "基本的な整理機能を期限なく使いたい方に最適です。", highlights: ["利用期限なし", "ボックスは最大3個", "各ボックスのアイコン数は無制限", "設定のバックアップ・復元・エクスポート"], downloadLabel: "Communityをダウンロード" },
+        { id: "pro", label: "30日間体験", name: "Pro体験版", description: "無制限のボックスとPro機能を十分に試してから選べます。", highlights: ["インストール後30日間利用可能", "ボックス数は無制限", "現在提供中のPro機能を搭載", "インターネット接続・ログイン不要"], downloadLabel: "Pro体験版をダウンロード" },
       ],
     },
     features: {
@@ -260,7 +260,7 @@ const dictionaries = {
   zh: {
     metadata: {
       title: "Ghostyak Boxes | Windows 桌面整理工具",
-      description: "将 Windows 桌面上的文件、文件夹和快捷方式整齐归入不同收纳框。下载 Ghostyak Boxes Free，或免费试用 Pro 版 30 天。",
+      description: "将 Windows 桌面上的文件、文件夹和快捷方式整齐归入不同收纳框。下载 Ghostyak Boxes Community，或免费试用 Pro 版 30 天。",
       keywords: ["Ghostyak Boxes", "Windows 桌面整理", "桌面整理", "文件整理工具", "桌面图标整理", "Windows 11", "Windows 10"],
       imageAlt: "使用 Ghostyak Boxes 将文件和应用按收纳框分类的 Windows 桌面",
     },
@@ -268,7 +268,7 @@ const dictionaries = {
     hero: {
       heading: "需要的文件，一眼就能找到",
       intro: "把散落的文件和快捷方式收进专属收纳框。",
-      action: "比较 Free 与 Pro",
+      action: "比较 Community 与 Pro",
       previewTitle: "早期开发版本",
       previewText: "用于重要桌面环境前，请先在单独的 Windows 用户环境中测试。",
     },
@@ -277,10 +277,10 @@ const dictionaries = {
       heading: "选择适合你的 Boxes 版本。",
       intro: "永久免费使用核心功能，或体验 30 天不限收纳框数量的 Pro 版本。",
       detailsLabel: "下载信息",
-      trialNote: "Pro 试用期结束后将切换为 Free，现有收纳框和文件都会保留。",
+      trialNote: "Pro 试用期结束后将切换为 Community，现有收纳框和文件都会保留。",
       editions: [
-        { id: "free", label: "永久免费", name: "Free", description: "适合希望长期免费使用核心整理功能的用户。", highlights: ["无使用期限", "最多 3 个收纳框", "每个收纳框的图标数量不限", "支持设置备份、恢复与导出"], downloadLabel: "下载 Free" },
-        { id: "trial", label: "试用 30 天", name: "Pro 试用版", description: "充分体验不限数量的收纳框与 Pro 功能后再做选择。", highlights: ["安装后可使用 30 天", "收纳框数量不限", "包含当前提供的 Pro 功能", "无需联网或登录账户"], downloadLabel: "下载 Pro 试用版" },
+        { id: "community", label: "永久免费", name: "Community", description: "适合希望长期免费使用核心整理功能的用户。", highlights: ["无使用期限", "最多 3 个收纳框", "每个收纳框的图标数量不限", "支持设置备份、恢复与导出"], downloadLabel: "下载 Community" },
+        { id: "pro", label: "试用 30 天", name: "Pro 试用版", description: "充分体验不限数量的收纳框与 Pro 功能后再做选择。", highlights: ["安装后可使用 30 天", "收纳框数量不限", "包含当前提供的 Pro 功能", "无需联网或登录账户"], downloadLabel: "下载 Pro 试用版" },
       ],
     },
     features: {
@@ -297,7 +297,7 @@ const dictionaries = {
   es: {
     metadata: {
       title: "Ghostyak Boxes | Organizador de escritorio para Windows",
-      description: "Organiza los archivos, carpetas y accesos directos del escritorio de Windows en cajas ordenadas. Descarga Ghostyak Boxes Free o prueba Pro gratis durante 30 días.",
+      description: "Organiza los archivos, carpetas y accesos directos del escritorio de Windows en cajas ordenadas. Descarga Ghostyak Boxes Community o prueba Pro gratis durante 30 días.",
       keywords: ["Ghostyak Boxes", "organizador de escritorio para Windows", "organización del escritorio", "organizador de archivos", "organizador de iconos del escritorio", "Windows 11", "Windows 10"],
       imageAlt: "Un escritorio de Windows con archivos y aplicaciones organizados en Ghostyak Boxes",
     },
@@ -305,7 +305,7 @@ const dictionaries = {
     hero: {
       heading: "Un escritorio donde encuentras cada archivo de un vistazo",
       intro: "Reúne los archivos y accesos directos dispersos en tus propias cajas.",
-      action: "Comparar Free y Pro",
+      action: "Comparar Community y Pro",
       previewTitle: "Versión inicial en desarrollo",
       previewText: "Pruébala primero en otra cuenta de usuario de Windows antes de usarla en un escritorio importante.",
     },
@@ -314,10 +314,10 @@ const dictionaries = {
       heading: "Empieza con la edición de Boxes que mejor se adapte a ti.",
       intro: "Usa gratis las funciones esenciales sin límite de tiempo o prueba durante 30 días Pro con cajas ilimitadas.",
       detailsLabel: "Información de descarga",
-      trialNote: "Al terminar la prueba de Pro, Boxes cambia a Free y conserva tus cajas y archivos.",
+      trialNote: "Al terminar la prueba de Pro, Boxes cambia a Community y conserva tus cajas y archivos.",
       editions: [
-        { id: "free", label: "Gratis para siempre", name: "Free", description: "Para quienes quieren las funciones esenciales de organización sin límite de tiempo.", highlights: ["Sin límite de tiempo", "Hasta 3 cajas", "Iconos ilimitados en cada caja", "Copia de seguridad, restauración y exportación de ajustes"], downloadLabel: "Descargar Free" },
-        { id: "trial", label: "Prueba de 30 días", name: "Prueba Pro", description: "Explora las cajas ilimitadas y las funciones Pro antes de decidir.", highlights: ["Uso durante 30 días desde la instalación", "Cajas ilimitadas", "Incluye las funciones Pro disponibles actualmente", "No requiere conexión a Internet ni una cuenta"], downloadLabel: "Descargar la prueba Pro" },
+        { id: "community", label: "Gratis para siempre", name: "Community", description: "Para quienes quieren las funciones esenciales de organización sin límite de tiempo.", highlights: ["Sin límite de tiempo", "Hasta 3 cajas", "Iconos ilimitados en cada caja", "Copia de seguridad, restauración y exportación de ajustes"], downloadLabel: "Descargar Community" },
+        { id: "pro", label: "Prueba de 30 días", name: "Prueba Pro", description: "Explora las cajas ilimitadas y las funciones Pro antes de decidir.", highlights: ["Uso durante 30 días desde la instalación", "Cajas ilimitadas", "Incluye las funciones Pro disponibles actualmente", "No requiere conexión a Internet ni una cuenta"], downloadLabel: "Descargar la prueba Pro" },
       ],
     },
     features: {
@@ -334,7 +334,7 @@ const dictionaries = {
   de: {
     metadata: {
       title: "Ghostyak Boxes | Desktop-Organizer für Windows",
-      description: "Ordne Dateien, Ordner und Verknüpfungen auf deinem Windows-Desktop in übersichtlichen Boxen. Lade Ghostyak Boxes Free herunter oder teste Pro 30 Tage kostenlos.",
+      description: "Ordne Dateien, Ordner und Verknüpfungen auf deinem Windows-Desktop in übersichtlichen Boxen. Lade Ghostyak Boxes Community herunter oder teste Pro 30 Tage kostenlos.",
       keywords: ["Ghostyak Boxes", "Desktop-Organizer für Windows", "Desktop organisieren", "Datei-Organizer", "Desktop-Symbole organisieren", "Windows 11", "Windows 10"],
       imageAlt: "Ein Windows-Desktop mit Dateien und Apps, die in Ghostyak Boxes organisiert sind",
     },
@@ -342,7 +342,7 @@ const dictionaries = {
     hero: {
       heading: "Ein Desktop, auf dem jede Datei sofort zu finden ist",
       intro: "Sammle verstreute Dateien und Verknüpfungen in deinen eigenen Boxen.",
-      action: "Free und Pro vergleichen",
+      action: "Community und Pro vergleichen",
       previewTitle: "Frühe Entwicklungsversion",
       previewText: "Teste die App zunächst in einem separaten Windows-Benutzerkonto, bevor du sie für eine wichtige Desktop-Konfiguration verwendest.",
     },
@@ -351,10 +351,10 @@ const dictionaries = {
       heading: "Starte mit der Boxes-Edition, die zu dir passt.",
       intro: "Nutze die wichtigsten Funktionen dauerhaft kostenlos oder teste Pro mit unbegrenzten Boxen 30 Tage lang.",
       detailsLabel: "Download-Informationen",
-      trialNote: "Nach Ablauf der Pro-Testversion wechselt Boxes zu Free; vorhandene Boxen und Dateien bleiben erhalten.",
+      trialNote: "Nach Ablauf der Pro-Testversion wechselt Boxes zu Community; vorhandene Boxen und Dateien bleiben erhalten.",
       editions: [
-        { id: "free", label: "Dauerhaft kostenlos", name: "Free", description: "Für alle, die die wichtigsten Organisationsfunktionen ohne Zeitlimit nutzen möchten.", highlights: ["Kein Zeitlimit", "Bis zu 3 Boxen", "Unbegrenzte Symbole pro Box", "Einstellungen sichern, wiederherstellen und exportieren"], downloadLabel: "Free herunterladen" },
-        { id: "trial", label: "30 Tage testen", name: "Pro-Testversion", description: "Teste unbegrenzte Boxen und die Pro-Funktionen, bevor du dich entscheidest.", highlights: ["30 Tage ab Installation nutzbar", "Unbegrenzte Boxen", "Enthält die derzeit verfügbaren Pro-Funktionen", "Keine Internetverbindung und kein Konto erforderlich"], downloadLabel: "Pro-Testversion herunterladen" },
+        { id: "community", label: "Dauerhaft kostenlos", name: "Community", description: "Für alle, die die wichtigsten Organisationsfunktionen ohne Zeitlimit nutzen möchten.", highlights: ["Kein Zeitlimit", "Bis zu 3 Boxen", "Unbegrenzte Symbole pro Box", "Einstellungen sichern, wiederherstellen und exportieren"], downloadLabel: "Community herunterladen" },
+        { id: "pro", label: "30 Tage testen", name: "Pro-Testversion", description: "Teste unbegrenzte Boxen und die Pro-Funktionen, bevor du dich entscheidest.", highlights: ["30 Tage ab Installation nutzbar", "Unbegrenzte Boxen", "Enthält die derzeit verfügbaren Pro-Funktionen", "Keine Internetverbindung und kein Konto erforderlich"], downloadLabel: "Pro-Testversion herunterladen" },
       ],
     },
     features: {
@@ -371,7 +371,7 @@ const dictionaries = {
   fr: {
     metadata: {
       title: "Ghostyak Boxes | Organiseur de bureau pour Windows",
-      description: "Organisez les fichiers, dossiers et raccourcis du bureau Windows dans des boîtes bien rangées. Téléchargez Ghostyak Boxes Free ou essayez Pro gratuitement pendant 30 jours.",
+      description: "Organisez les fichiers, dossiers et raccourcis du bureau Windows dans des boîtes bien rangées. Téléchargez Ghostyak Boxes Community ou essayez Pro gratuitement pendant 30 jours.",
       keywords: ["Ghostyak Boxes", "organiseur de bureau Windows", "organisation du bureau", "organiseur de fichiers", "organisation des icônes du bureau", "Windows 11", "Windows 10"],
       imageAlt: "Un bureau Windows dont les fichiers et applications sont organisés dans Ghostyak Boxes",
     },
@@ -379,7 +379,7 @@ const dictionaries = {
     hero: {
       heading: "Un bureau où chaque fichier se trouve en un coup d’œil",
       intro: "Rassemblez vos fichiers et raccourcis dispersés dans vos propres boîtes.",
-      action: "Comparer Free et Pro",
+      action: "Comparer Community et Pro",
       previewTitle: "Version préliminaire",
       previewText: "Testez-la d’abord dans un autre compte utilisateur Windows avant de l’utiliser sur un bureau important.",
     },
@@ -388,10 +388,10 @@ const dictionaries = {
       heading: "Commencez avec l’édition de Boxes qui vous convient.",
       intro: "Utilisez gratuitement les fonctions essentielles sans limite de temps ou essayez Pro et ses boîtes illimitées pendant 30 jours.",
       detailsLabel: "Informations de téléchargement",
-      trialNote: "À la fin de l’essai Pro, Boxes passe à Free tout en conservant vos boîtes et fichiers.",
+      trialNote: "À la fin de l’essai Pro, Boxes passe à Community tout en conservant vos boîtes et fichiers.",
       editions: [
-        { id: "free", label: "Gratuit sans limite", name: "Free", description: "Pour celles et ceux qui souhaitent les outils d’organisation essentiels sans limite de temps.", highlights: ["Aucune limite de temps", "Jusqu’à 3 boîtes", "Nombre d’icônes illimité dans chaque boîte", "Sauvegarde, restauration et exportation des paramètres"], downloadLabel: "Télécharger Free" },
-        { id: "trial", label: "Essai de 30 jours", name: "Essai Pro", description: "Découvrez les boîtes illimitées et les fonctionnalités Pro avant de choisir.", highlights: ["Utilisable pendant 30 jours après l’installation", "Boîtes illimitées", "Inclut les fonctionnalités Pro actuellement disponibles", "Aucune connexion Internet ni aucun compte requis"], downloadLabel: "Télécharger l’essai Pro" },
+        { id: "community", label: "Gratuit sans limite", name: "Community", description: "Pour celles et ceux qui souhaitent les outils d’organisation essentiels sans limite de temps.", highlights: ["Aucune limite de temps", "Jusqu’à 3 boîtes", "Nombre d’icônes illimité dans chaque boîte", "Sauvegarde, restauration et exportation des paramètres"], downloadLabel: "Télécharger Community" },
+        { id: "pro", label: "Essai de 30 jours", name: "Essai Pro", description: "Découvrez les boîtes illimitées et les fonctionnalités Pro avant de choisir.", highlights: ["Utilisable pendant 30 jours après l’installation", "Boîtes illimitées", "Inclut les fonctionnalités Pro actuellement disponibles", "Aucune connexion Internet ni aucun compte requis"], downloadLabel: "Télécharger l’essai Pro" },
       ],
     },
     features: {
@@ -408,7 +408,7 @@ const dictionaries = {
   pt: {
     metadata: {
       title: "Ghostyak Boxes | Organizador de área de trabalho para Windows",
-      description: "Organize arquivos, pastas e atalhos da área de trabalho do Windows em caixas. Baixe o Ghostyak Boxes Free ou experimente o Pro grátis por 30 dias.",
+      description: "Organize arquivos, pastas e atalhos da área de trabalho do Windows em caixas. Baixe o Ghostyak Boxes Community ou experimente o Pro grátis por 30 dias.",
       keywords: ["Ghostyak Boxes", "organizador de área de trabalho para Windows", "organização da área de trabalho", "organizador de arquivos", "organizador de ícones da área de trabalho", "Windows 11", "Windows 10"],
       imageAlt: "Uma área de trabalho do Windows com arquivos e aplicativos organizados no Ghostyak Boxes",
     },
@@ -416,7 +416,7 @@ const dictionaries = {
     hero: {
       heading: "Uma área de trabalho onde cada arquivo é fácil de encontrar",
       intro: "Reúna arquivos e atalhos espalhados em suas próprias caixas.",
-      action: "Comparar Free e Pro",
+      action: "Comparar Community e Pro",
       previewTitle: "Versão inicial de desenvolvimento",
       previewText: "Teste primeiro em outra conta de usuário do Windows antes de usar em uma área de trabalho importante.",
     },
@@ -425,10 +425,10 @@ const dictionaries = {
       heading: "Comece com a edição do Boxes ideal para você.",
       intro: "Use os recursos essenciais gratuitamente, sem limite de tempo, ou experimente o Pro com caixas ilimitadas por 30 dias.",
       detailsLabel: "Informações do download",
-      trialNote: "Quando o período de avaliação do Pro terminar, o Boxes mudará para o Free e manterá suas caixas e seus arquivos.",
+      trialNote: "Quando o período de avaliação do Pro terminar, o Boxes mudará para o Community e manterá suas caixas e seus arquivos.",
       editions: [
-        { id: "free", label: "Grátis para sempre", name: "Free", description: "Para quem quer os recursos essenciais de organização sem limite de tempo.", highlights: ["Sem limite de tempo", "Até 3 caixas", "Ícones ilimitados em cada caixa", "Backup, restauração e exportação das configurações"], downloadLabel: "Baixar o Free" },
-        { id: "trial", label: "Avaliação de 30 dias", name: "Avaliação Pro", description: "Experimente caixas ilimitadas e os recursos Pro antes de decidir.", highlights: ["Use por 30 dias após a instalação", "Caixas ilimitadas", "Inclui os recursos Pro disponíveis atualmente", "Não requer conexão com a Internet nem uma conta"], downloadLabel: "Baixar a avaliação Pro" },
+        { id: "community", label: "Grátis para sempre", name: "Community", description: "Para quem quer os recursos essenciais de organização sem limite de tempo.", highlights: ["Sem limite de tempo", "Até 3 caixas", "Ícones ilimitados em cada caixa", "Backup, restauração e exportação das configurações"], downloadLabel: "Baixar o Community" },
+        { id: "pro", label: "Avaliação de 30 dias", name: "Avaliação Pro", description: "Experimente caixas ilimitadas e os recursos Pro antes de decidir.", highlights: ["Use por 30 dias após a instalação", "Caixas ilimitadas", "Inclui os recursos Pro disponíveis atualmente", "Não requer conexão com a Internet nem uma conta"], downloadLabel: "Baixar a avaliação Pro" },
       ],
     },
     features: {
@@ -445,7 +445,7 @@ const dictionaries = {
   it: {
     metadata: {
       title: "Ghostyak Boxes | Organizer del desktop per Windows",
-      description: "Organizza file, cartelle e collegamenti del desktop di Windows in riquadri ordinati. Scarica Ghostyak Boxes Free o prova Pro gratuitamente per 30 giorni.",
+      description: "Organizza file, cartelle e collegamenti del desktop di Windows in riquadri ordinati. Scarica Ghostyak Boxes Community o prova Pro gratuitamente per 30 giorni.",
       keywords: ["Ghostyak Boxes", "organizer del desktop per Windows", "organizzazione del desktop", "organizer di file", "organizzazione delle icone del desktop", "Windows 11", "Windows 10"],
       imageAlt: "Un desktop Windows con file e app organizzati in Ghostyak Boxes",
     },
@@ -453,7 +453,7 @@ const dictionaries = {
     hero: {
       heading: "Un desktop dove ogni file è subito a portata di mano",
       intro: "Raccogli file e collegamenti sparsi nei tuoi riquadri personali.",
-      action: "Confronta Free e Pro",
+      action: "Confronta Community e Pro",
       previewTitle: "Versione iniziale in sviluppo",
       previewText: "Provala in un altro account utente Windows prima di usarla su un desktop importante.",
     },
@@ -462,10 +462,10 @@ const dictionaries = {
       heading: "Inizia con l’edizione di Boxes più adatta a te.",
       intro: "Usa gratuitamente le funzionalità essenziali senza limiti di tempo oppure prova Pro con riquadri illimitati per 30 giorni.",
       detailsLabel: "Informazioni sul download",
-      trialNote: "Al termine della prova Pro, Boxes passa a Free mantenendo i riquadri e i file esistenti.",
+      trialNote: "Al termine della prova Pro, Boxes passa a Community mantenendo i riquadri e i file esistenti.",
       editions: [
-        { id: "free", label: "Gratis per sempre", name: "Free", description: "Per chi desidera gli strumenti essenziali di organizzazione senza limiti di tempo.", highlights: ["Nessun limite di tempo", "Fino a 3 riquadri", "Icone illimitate in ogni riquadro", "Backup, ripristino ed esportazione delle impostazioni"], downloadLabel: "Scarica Free" },
-        { id: "trial", label: "Prova di 30 giorni", name: "Prova Pro", description: "Scopri i riquadri illimitati e le funzionalità Pro prima di decidere.", highlights: ["Utilizzabile per 30 giorni dall’installazione", "Riquadri illimitati", "Include le funzionalità Pro attualmente disponibili", "Non richiede connessione Internet né un account"], downloadLabel: "Scarica la prova Pro" },
+        { id: "community", label: "Gratis per sempre", name: "Community", description: "Per chi desidera gli strumenti essenziali di organizzazione senza limiti di tempo.", highlights: ["Nessun limite di tempo", "Fino a 3 riquadri", "Icone illimitate in ogni riquadro", "Backup, ripristino ed esportazione delle impostazioni"], downloadLabel: "Scarica Community" },
+        { id: "pro", label: "Prova di 30 giorni", name: "Prova Pro", description: "Scopri i riquadri illimitati e le funzionalità Pro prima di decidere.", highlights: ["Utilizzabile per 30 giorni dall’installazione", "Riquadri illimitati", "Include le funzionalità Pro attualmente disponibili", "Non richiede connessione Internet né un account"], downloadLabel: "Scarica la prova Pro" },
       ],
     },
     features: {

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type EditionCardProps = {
   label: string;
   name: string;
@@ -29,10 +31,10 @@ export function EditionCard({
           <li key={highlight}>{highlight}</li>
         ))}
       </ul>
-      <a className="edition-button" href={downloadUrl}>
+      <Link className="edition-button" href={downloadUrl}>
         {downloadLabel}
         <span aria-hidden="true">↓</span>
-      </a>
+      </Link>
     </article>
   );
 }

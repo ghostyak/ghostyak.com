@@ -5,6 +5,9 @@ import { htmlLanguages, localeNames, locales, type Locale } from "@/locales";
 
 type HeaderProps = {
   locale: Locale;
+  homeHref?: string;
+  featuresHref?: string;
+  downloadHref?: string;
   labels: {
     homeLabel: string;
     navLabel: string;
@@ -14,17 +17,23 @@ type HeaderProps = {
   };
 };
 
-export function Header({ locale, labels }: HeaderProps) {
+export function Header({
+  locale,
+  labels,
+  homeHref = `/${locale}`,
+  featuresHref = "#features",
+  downloadHref = "#download",
+}: HeaderProps) {
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <Link className="brand" href={`/${locale}`} aria-label={labels.homeLabel}>
+        <Link className="brand" href={homeHref} aria-label={labels.homeLabel}>
           <Image src={ghostyakIcon} alt="" width={38} height={38} />
           <span>ghostyak.com</span>
         </Link>
         <nav aria-label={labels.navLabel}>
-          <a href="#features">{labels.features}</a>
-          <a href="#download">{labels.download}</a>
+          <Link href={featuresHref}>{labels.features}</Link>
+          <Link href={downloadHref}>{labels.download}</Link>
           <details className="language-menu">
             <summary>{labels.languageLabel}</summary>
             <div className="language-options">

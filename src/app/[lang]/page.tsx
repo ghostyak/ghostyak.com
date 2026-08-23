@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { EditionCard } from "@/components/EditionCard";
 import { FeatureCard } from "@/components/FeatureCard";
@@ -42,9 +43,12 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
               <h1>{dictionary.hero.heading}</h1>
               <p className="intro">{dictionary.hero.intro}</p>
               <div className="hero-actions">
-                <a className="primary-button" href="#download">
-                  {dictionary.hero.action}
-                </a>
+                <Link className="primary-button" href={boxes.editions[0].downloadPageUrl}>
+                  {dictionary.download.editions[0].downloadLabel}
+                </Link>
+                <Link className="secondary-button" href={boxes.editions[1].downloadPageUrl}>
+                  {dictionary.download.editions[1].downloadLabel}
+                </Link>
               </div>
               <p className="hero-meta">
                 {dictionary.download.versionLabel} {boxes.version} · {boxes.platform} ·{" "}
@@ -104,8 +108,8 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                 <EditionCard
                   key={edition.id}
                   {...edition}
-                  downloadUrl={boxes.editions[index].downloadUrl}
-                  featured={edition.id === "trial"}
+                  downloadUrl={boxes.editions[index].downloadPageUrl}
+                  featured={edition.id === "pro"}
                 />
               ))}
             </div>
