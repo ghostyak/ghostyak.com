@@ -24,6 +24,7 @@ const dictionaries = {
     header: {
       homeLabel: "ghostyak.com 홈",
       navLabel: "주요 메뉴",
+      products: "제품",
       features: "주요 기능",
       download: "다운로드",
       languageLabel: "언어",
@@ -132,6 +133,7 @@ const dictionaries = {
     header: {
       homeLabel: "ghostyak.com home",
       navLabel: "Main navigation",
+      products: "Product",
       features: "Features",
       download: "Download",
       languageLabel: "Language",
@@ -227,7 +229,7 @@ const dictionaries = {
       keywords: ["Ghostyak Boxes", "Windows デスクトップ整理", "デスクトップ整理", "ファイル整理ソフト", "デスクトップアイコン整理", "Windows 11", "Windows 10"],
       imageAlt: "Ghostyak Boxesでファイルとアプリをボックスごとに整理したWindowsデスクトップ",
     },
-    header: { homeLabel: "ghostyak.com ホーム", navLabel: "メインメニュー", features: "主な機能", download: "ダウンロード", languageLabel: "言語" },
+    header: { homeLabel: "ghostyak.com ホーム", navLabel: "メインメニュー", products: "製品", features: "主な機能", download: "ダウンロード", languageLabel: "言語" },
     hero: {
       heading: "必要なファイルがひと目で見つかるデスクトップ",
       intro: "散らばったファイルやショートカットを、自分だけのボックスにまとめましょう。",
@@ -264,7 +266,7 @@ const dictionaries = {
       keywords: ["Ghostyak Boxes", "Windows 桌面整理", "桌面整理", "文件整理工具", "桌面图标整理", "Windows 11", "Windows 10"],
       imageAlt: "使用 Ghostyak Boxes 将文件和应用按收纳框分类的 Windows 桌面",
     },
-    header: { homeLabel: "ghostyak.com 首页", navLabel: "主菜单", features: "主要功能", download: "下载", languageLabel: "语言" },
+    header: { homeLabel: "ghostyak.com 首页", navLabel: "主菜单", products: "产品", features: "主要功能", download: "下载", languageLabel: "语言" },
     hero: {
       heading: "需要的文件，一眼就能找到",
       intro: "把散落的文件和快捷方式收进专属收纳框。",
@@ -301,7 +303,7 @@ const dictionaries = {
       keywords: ["Ghostyak Boxes", "organizador de escritorio para Windows", "organización del escritorio", "organizador de archivos", "organizador de iconos del escritorio", "Windows 11", "Windows 10"],
       imageAlt: "Un escritorio de Windows con archivos y aplicaciones organizados en Ghostyak Boxes",
     },
-    header: { homeLabel: "Inicio de ghostyak.com", navLabel: "Navegación principal", features: "Funciones", download: "Descargar", languageLabel: "Idioma" },
+    header: { homeLabel: "Inicio de ghostyak.com", navLabel: "Navegación principal", products: "Productos", features: "Funciones", download: "Descargar", languageLabel: "Idioma" },
     hero: {
       heading: "Un escritorio donde encuentras cada archivo de un vistazo",
       intro: "Reúne los archivos y accesos directos dispersos en tus propias cajas.",
@@ -338,7 +340,7 @@ const dictionaries = {
       keywords: ["Ghostyak Boxes", "Desktop-Organizer für Windows", "Desktop organisieren", "Datei-Organizer", "Desktop-Symbole organisieren", "Windows 11", "Windows 10"],
       imageAlt: "Ein Windows-Desktop mit Dateien und Apps, die in Ghostyak Boxes organisiert sind",
     },
-    header: { homeLabel: "Startseite von ghostyak.com", navLabel: "Hauptnavigation", features: "Funktionen", download: "Download", languageLabel: "Sprache" },
+    header: { homeLabel: "Startseite von ghostyak.com", navLabel: "Hauptnavigation", products: "Produkte", features: "Funktionen", download: "Download", languageLabel: "Sprache" },
     hero: {
       heading: "Ein Desktop, auf dem jede Datei sofort zu finden ist",
       intro: "Sammle verstreute Dateien und Verknüpfungen in deinen eigenen Boxen.",
@@ -375,7 +377,7 @@ const dictionaries = {
       keywords: ["Ghostyak Boxes", "organiseur de bureau Windows", "organisation du bureau", "organiseur de fichiers", "organisation des icônes du bureau", "Windows 11", "Windows 10"],
       imageAlt: "Un bureau Windows dont les fichiers et applications sont organisés dans Ghostyak Boxes",
     },
-    header: { homeLabel: "Accueil de ghostyak.com", navLabel: "Navigation principale", features: "Fonctionnalités", download: "Télécharger", languageLabel: "Langue" },
+    header: { homeLabel: "Accueil de ghostyak.com", navLabel: "Navigation principale", products: "Produits", features: "Fonctionnalités", download: "Télécharger", languageLabel: "Langue" },
     hero: {
       heading: "Un bureau où chaque fichier se trouve en un coup d’œil",
       intro: "Rassemblez vos fichiers et raccourcis dispersés dans vos propres boîtes.",
@@ -412,7 +414,7 @@ const dictionaries = {
       keywords: ["Ghostyak Boxes", "organizador de área de trabalho para Windows", "organização da área de trabalho", "organizador de arquivos", "organizador de ícones da área de trabalho", "Windows 11", "Windows 10"],
       imageAlt: "Uma área de trabalho do Windows com arquivos e aplicativos organizados no Ghostyak Boxes",
     },
-    header: { homeLabel: "Início do ghostyak.com", navLabel: "Navegação principal", features: "Recursos", download: "Baixar", languageLabel: "Idioma" },
+    header: { homeLabel: "Início do ghostyak.com", navLabel: "Navegação principal", products: "Produtos", features: "Recursos", download: "Baixar", languageLabel: "Idioma" },
     hero: {
       heading: "Uma área de trabalho onde cada arquivo é fácil de encontrar",
       intro: "Reúna arquivos e atalhos espalhados em suas próprias caixas.",
@@ -449,7 +451,7 @@ const dictionaries = {
       keywords: ["Ghostyak Boxes", "organizer del desktop per Windows", "organizzazione del desktop", "organizer di file", "organizzazione delle icone del desktop", "Windows 11", "Windows 10"],
       imageAlt: "Un desktop Windows con file e app organizzati in Ghostyak Boxes",
     },
-    header: { homeLabel: "Home di ghostyak.com", navLabel: "Navigazione principale", features: "Funzionalità", download: "Scarica", languageLabel: "Lingua" },
+    header: { homeLabel: "Home di ghostyak.com", navLabel: "Navigazione principale", products: "Prodotti", features: "Funzionalità", download: "Scarica", languageLabel: "Lingua" },
     hero: {
       heading: "Un desktop dove ogni file è subito a portata di mano",
       intro: "Raccogli file e collegamenti sparsi nei tuoi riquadri personali.",

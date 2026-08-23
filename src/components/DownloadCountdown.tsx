@@ -7,9 +7,10 @@ const DOWNLOAD_DELAY_SECONDS = 10;
 
 type DownloadCountdownProps = {
   downloadUrl: string;
+  proUrl?: string;
 };
 
-export function DownloadCountdown({ downloadUrl }: DownloadCountdownProps) {
+export function DownloadCountdown({ downloadUrl, proUrl = "/products/boxes/pro" }: DownloadCountdownProps) {
   const [seconds, setSeconds] = useState(DOWNLOAD_DELAY_SECONDS);
 
   useEffect(() => {
@@ -28,12 +29,12 @@ export function DownloadCountdown({ downloadUrl }: DownloadCountdownProps) {
   }, [downloadUrl]);
 
   return (
-    <div className="download-countdown" aria-live="polite">
-      <h1>Boxes is downloading in {seconds} seconds...</h1>
-      <p>
-        <a href={downloadUrl}>Click this link</a> if this download did not start
+    <div aria-live="polite">
+      <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Boxes is downloading in {seconds} seconds...</h1>
+      <p className="mt-5 max-w-2xl leading-7 text-base-content/70">
+        <a className="link link-primary font-semibold" href={downloadUrl}>Click this link</a> if this download did not start
         automatically. Ready to unlock your trial? Get{" "}
-        <Link href="/products/boxes/pro">Boxes</Link> today.
+        <Link className="link link-primary font-semibold" href={proUrl}>Boxes</Link> today.
       </p>
     </div>
   );

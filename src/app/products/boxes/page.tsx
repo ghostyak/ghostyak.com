@@ -5,6 +5,7 @@ import { EditionCard } from "@/components/EditionCard";
 import { FeatureCard } from "@/components/FeatureCard";
 import { boxes } from "@/data/products";
 import { getDictionary } from "@/i18n";
+import type { Locale } from "@/locales";
 
 const dictionary = getDictionary("en");
 
@@ -18,34 +19,36 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BoxesPage() {
+export function BoxesOverview({ locale = "en" }: { locale?: Locale }) {
+  const pageDictionary = getDictionary(locale);
+  const boxesUrl = locale === "en" ? "/products/boxes" : `/${locale}/products/boxes`;
   return (
     <main>
-      <section className="hero product-hero">
-        <div className="container hero-inner">
-          <div className="hero-copy">
-            <p className="section-label">Windows desktop organizer</p>
-            <h1>Everything on your desktop, right where it belongs.</h1>
-            <p className="intro">
-              Organize files, folders, and shortcuts into flexible boxes that
-              keep your workspace calm and easy to navigate.
+      <section className="overflow-hidden bg-gradient-to-b from-primary/10 via-base-200 to-base-100">
+        <div className="mx-auto flex min-h-[calc(100vh-4rem)] w-full max-w-[1180px] flex-col items-center px-4 py-12 sm:px-5 sm:py-16">
+          <div className="flex max-w-3xl flex-col items-center text-center">
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.14em] text-primary">Ghostyak Boxes</p>
+            <h1 className="text-3xl font-bold tracking-tight sm:text-5xl">{pageDictionary.hero.heading}</h1>
+            <p className="mt-4 max-w-2xl text-lg leading-8 text-base-content/70">
+              {pageDictionary.hero.intro}
             </p>
-            <div className="hero-actions">
-              <Link className="primary-button" href={boxes.editions[0].downloadPageUrl}>
-                Download Community
+            <div className="mt-7 flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row">
+              <Link className="btn btn-primary min-h-12 px-7" href={`${boxesUrl}/community/download`}>
+                {pageDictionary.download.editions[0].downloadLabel}
               </Link>
-              <Link className="secondary-button" href={boxes.editions[1].downloadPageUrl}>
-                Try Pro free
+              <Link className="btn btn-outline btn-primary min-h-12 px-7" href={`${boxesUrl}/pro/download`}>
+                {pageDictionary.download.editions[1].downloadLabel}
               </Link>
             </div>
-            <p className="hero-meta">
+            <p className="mt-4 text-xs text-base-content/55">
               Version {boxes.version} · {boxes.platform} · Approx. 3.3 MB
             </p>
           </div>
-          <figure>
+          <figure className="mt-10 w-full">
             <Image
+              className="h-auto w-full rounded-box border border-base-300 object-contain shadow-2xl"
               src="/images/boxes-hero-concept-v3.png"
-              alt={dictionary.metadata.imageAlt}
+              alt={pageDictionary.metadata.imageAlt}
               width={1672}
               height={941}
               sizes="(max-width: 1220px) calc(100vw - 40px), 1180px"
@@ -55,12 +58,12 @@ export default function BoxesPage() {
         </div>
       </section>
 
-      <section className="features" id="features" aria-labelledby="product-features-title">
-        <div className="container">
-          <p className="section-label">Features</p>
-          <h2 id="product-features-title">Work with a desktop that stays organized.</h2>
-          <div className="feature-grid">
-            {dictionary.features.items.map((feature, index) => (
+      <section className="bg-base-200 py-20 lg:py-28" id="features" aria-labelledby="product-features-title">
+        <div className="mx-auto w-full max-w-[1180px] px-4 sm:px-5">
+          <p className="mb-4 text-xs font-bold uppercase tracking-[0.14em] text-primary">{pageDictionary.features.label}</p>
+          <h2 className="max-w-4xl text-3xl font-bold tracking-tight sm:text-5xl" id="product-features-title">{pageDictionary.features.heading}</h2>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:mt-12 lg:grid-cols-4">
+            {pageDictionary.features.items.map((feature, index) => (
               <FeatureCard
                 key={feature.title}
                 number={String(index + 1).padStart(2, "0")}
@@ -71,35 +74,41 @@ export default function BoxesPage() {
         </div>
       </section>
 
-      <section className="editions" id="download" aria-labelledby="product-editions-title">
-        <div className="container editions-inner">
-          <div className="editions-heading">
-            <p className="section-label">Download</p>
-            <h2 id="product-editions-title">Choose the Boxes edition that fits you.</h2>
-            <p>Use Community for free, or unlock every box and Pro feature for 30 days.</p>
+      <section className="scroll-mt-16 bg-base-100 py-20 lg:py-28" id="download" aria-labelledby="product-editions-title">
+        <div className="mx-auto grid w-full max-w-[1180px] gap-10 px-4 sm:px-5 lg:grid-cols-[minmax(0,0.8fr)_minmax(35rem,1.2fr)] lg:gap-x-16">
+          <div>
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.14em] text-primary">{pageDictionary.download.label}</p>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl" id="product-editions-title">{pageDictionary.download.heading}</h2>
+            <p className="mt-5 max-w-xl text-lg leading-8 text-base-content/70">{pageDictionary.download.intro}</p>
           </div>
-          <div className="edition-grid">
-            {dictionary.download.editions.map((edition, index) => (
+          <div className="grid gap-5 sm:grid-cols-2">
+            {pageDictionary.download.editions.map((edition, index) => (
               <EditionCard
                 key={edition.id}
                 {...edition}
-                downloadUrl={boxes.editions[index].downloadPageUrl}
+                downloadUrl={`${boxesUrl}/${boxes.editions[index].id}/download`}
                 featured={edition.id === "pro"}
               />
             ))}
           </div>
-          <div className="download-details" aria-label="Download information">
-            <span>Version {boxes.version}</span>
-            <span>{boxes.platform}</span>
-            <span>Approx. 3.3 MB</span>
-            <span>Requires Microsoft Edge WebView2 Runtime</span>
+          <div className="flex flex-wrap gap-2 text-xs lg:col-start-2" aria-label="Download information">
+            <span className="badge badge-outline">Version {boxes.version}</span>
+            <span className="badge badge-outline">{boxes.platform}</span>
+            <span className="badge badge-outline">Approx. 3.3 MB</span>
+            <span className="badge badge-outline h-auto min-h-6 whitespace-normal py-1">Requires Microsoft Edge WebView2 Runtime</span>
           </div>
-          <p className="trial-note">
-            When the Pro trial ends, Boxes switches to Community while keeping your
-            existing boxes and files.
-          </p>
+          <div className="alert alert-info alert-soft text-sm leading-6 lg:col-start-2">
+            <span aria-hidden="true">ⓘ</span>
+            <p>
+            {pageDictionary.download.trialNote}
+            </p>
+          </div>
         </div>
       </section>
     </main>
   );
+}
+
+export default function BoxesPage() {
+  return <BoxesOverview />;
 }

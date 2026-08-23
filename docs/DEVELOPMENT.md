@@ -12,6 +12,8 @@ npm install
 npm run dev
 ```
 
+Tailwind CSS와 DaisyUI는 npm 개발 의존성으로 설치되며 `npm install` 시 함께 준비된다. GhostYak 테마는 `src/app/globals.css`, PostCSS 연결은 `postcss.config.mjs`에서 관리한다.
+
 ## 주요 명령어
 
 ```sh
@@ -32,11 +34,11 @@ npm run lint     # ESLint 검사
 - 신규·개편 UI는 DaisyUI 컴포넌트와 의미 기반 테마 클래스를 우선 사용한다.
 - 레이아웃, 간격과 반응형 동작은 Tailwind CSS 유틸리티를 우선 사용한다.
 - 사용자 정의 CSS는 DaisyUI와 Tailwind CSS로 요구사항을 표현할 수 없을 때만 추가한다.
-- UI 작업 전 [DESIGN.md](./DESIGN.md)를 확인하고 기존 전역 CSS는 컴포넌트 단위로 점진적으로 이전한다.
+- UI 작업 전 [DESIGN.md](./DESIGN.md)를 확인하고 독자적인 레거시 컴포넌트 CSS를 다시 추가하지 않는다.
 - 모바일 화면을 먼저 고려하고 넓은 화면으로 확장한다.
 - 링크와 버튼은 키보드로 사용할 수 있어야 한다.
 - 제품 버전과 다운로드 URL을 여러 파일에 중복해서 작성하지 않는다.
-- 제품·에디션·다운로드 경로는 `/products/boxes/...` 계층을 사용한다.
+- 제품·에디션·다운로드 경로는 `/{lang}/products/boxes/...` 계층을 사용하고, 기존 영문 `/products/boxes/...` 경로도 유지한다.
 - 다운로드 카운트다운을 수정할 때 자동 다운로드와 직접 링크가 같은 설치 파일 URL을 사용하는지 확인한다.
 - 지원 언어와 경로는 `src/locales.ts`, 언어별 문구는 `src/i18n.ts`에서 관리한다.
 - 생성물인 `.next/`, `out/`, `node_modules/`는 커밋하지 않는다.

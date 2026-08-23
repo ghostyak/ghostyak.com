@@ -18,9 +18,11 @@ Stardock.com의 제품 중심 정보 구조를 참고하되 디자인을 그대�
 
 - [x] 프로젝트 디자인 규칙을 `docs/DESIGN.md`에 작성한다.
 - [x] `AGENTS.md`에 DaisyUI 우선 사용과 디자인 문서 확인 규칙을 추가한다.
-- [ ] Tailwind CSS와 DaisyUI를 설치하고 Next.js 빌드에 연결한다.
-- [ ] GhostYak 브랜드용 DaisyUI 라이트 테마를 정의한다.
-- [ ] 헤더, 버튼, 카드와 푸터부터 DaisyUI로 점진적으로 이전한다.
+- [x] Tailwind CSS와 DaisyUI를 설치하고 Next.js 빌드에 연결한다.
+- [x] GhostYak 브랜드용 DaisyUI 라이트 테마를 정의한다.
+- [x] 헤더, 푸터, 카드와 모든 공개 페이지를 DaisyUI로 이전한다.
+- [x] 헤더에 Product 드롭다운과 Boxes 제품 링크를 제공한다.
+- [x] Product > Boxes 이동과 이후 다운로드 흐름에서 현재 언어를 유지한다.
 - [ ] 모바일·데스크톱·다국어·키보드 사용 환경에서 시각 및 접근성 검증을 진행한다.
 
 ## P0: Boxes 에디션과 다운로드 경로 개편

@@ -23,14 +23,15 @@ export const metadata: Metadata = {
 
 export default function BoxesLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" data-theme="ghostyak">
+      <body className="bg-base-100 text-base-content antialiased">
         <Header
           locale="en"
           labels={dictionary.header}
           homeHref="/"
           featuresHref="/products/boxes#features"
           downloadHref="/products/boxes#download"
+          productsHref="/products/boxes"
         />
         {children}
         <Footer labels={dictionary.footer} />

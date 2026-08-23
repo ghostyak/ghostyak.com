@@ -88,8 +88,8 @@ export default async function LocaleLayout({ children, params }: Props) {
   if (!isLocale(lang)) notFound();
 
   return (
-    <html lang={htmlLanguages[lang]}>
-      <body>
+    <html lang={htmlLanguages[lang]} data-theme="ghostyak">
+      <body className="bg-base-100 text-base-content antialiased">
         {children}
         <Analytics />
       </body>

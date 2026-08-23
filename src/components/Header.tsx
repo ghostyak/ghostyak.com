@@ -8,9 +8,11 @@ type HeaderProps = {
   homeHref?: string;
   featuresHref?: string;
   downloadHref?: string;
+  productsHref?: string;
   labels: {
     homeLabel: string;
     navLabel: string;
+    products: string;
     features: string;
     download: string;
     languageLabel: string;
@@ -23,31 +25,58 @@ export function Header({
   homeHref = `/${locale}`,
   featuresHref = "#features",
   downloadHref = "#download",
+  productsHref = `/${locale}/products/boxes`,
 }: HeaderProps) {
   return (
-    <header className="site-header">
-      <div className="container header-inner">
-        <Link className="brand" href={homeHref} aria-label={labels.homeLabel}>
-          <Image src={ghostyakIcon} alt="" width={38} height={38} />
-          <span>ghostyak.com</span>
-        </Link>
-        <nav aria-label={labels.navLabel}>
-          <Link href={featuresHref}>{labels.features}</Link>
-          <Link href={downloadHref}>{labels.download}</Link>
-          <details className="language-menu">
-            <summary>{labels.languageLabel}</summary>
-            <div className="language-options">
+    <header className="sticky top-0 z-50 border-b border-primary-content/10 bg-primary text-primary-content shadow-sm">
+      <div className="navbar mx-auto min-h-16 w-full max-w-[1180px] px-3 sm:px-5">
+        <div className="navbar-start w-auto flex-1">
+          <Link
+            className="btn btn-ghost min-h-11 gap-2 px-2 text-base font-bold normal-case hover:bg-primary-content/10"
+            href={homeHref}
+            aria-label={labels.homeLabel}
+          >
+            <Image className="size-9 object-contain" src={ghostyakIcon} alt="" width={38} height={38} />
+            <span className="hidden sm:inline">ghostyak.com</span>
+          </Link>
+        </div>
+        <nav className="navbar-end w-auto shrink-0 gap-0 sm:gap-1" aria-label={labels.navLabel}>
+          <details className="dropdown dropdown-end">
+            <summary className="btn btn-ghost min-h-11 list-none px-2 text-sm sm:px-4">
+              {labels.products}
+              <span className="text-xs" aria-hidden="true">▾</span>
+            </summary>
+            <ul className="menu dropdown-content z-[60] mt-3 w-48 rounded-box border border-base-300 bg-base-100 p-2 text-base-content shadow-2xl">
+              <li>
+                <Link href={productsHref}>Boxes</Link>
+              </li>
+            </ul>
+          </details>
+          <Link className="btn btn-ghost hidden min-h-11 md:inline-flex" href={featuresHref}>
+            {labels.features}
+          </Link>
+          <Link className="btn btn-ghost hidden min-h-11 sm:inline-flex" href={downloadHref}>
+            {labels.download}
+          </Link>
+          <details className="dropdown dropdown-end">
+            <summary className="btn btn-ghost min-h-11 list-none px-2 text-sm sm:px-4">
+              {labels.languageLabel}
+              <span className="text-xs" aria-hidden="true">▾</span>
+            </summary>
+            <ul className="menu dropdown-content z-[60] mt-3 max-h-[70vh] w-52 overflow-y-auto rounded-box border border-base-300 bg-base-100 p-2 text-base-content shadow-2xl">
               {locales.map((language) => (
-                <Link
-                  key={language}
-                  href={`/${language}`}
-                  hrefLang={htmlLanguages[language]}
-                  aria-current={language === locale ? "page" : undefined}
-                >
-                  {localeNames[language]}
-                </Link>
+                <li key={language}>
+                  <Link
+                    className={language === locale ? "menu-active" : undefined}
+                    href={`/${language}`}
+                    hrefLang={htmlLanguages[language]}
+                    aria-current={language === locale ? "page" : undefined}
+                  >
+                    {localeNames[language]}
+                  </Link>
+                </li>
               ))}
-            </div>
+            </ul>
           </details>
         </nav>
       </div>

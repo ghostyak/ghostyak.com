@@ -2,6 +2,8 @@
 
 Next.js로 만든 ghostyak.com 웹사이트 프로젝트입니다.
 
+UI는 Tailwind CSS 4와 DaisyUI 5, GhostYak 사용자 테마로 구성합니다.
+
 Boxes 소개 페이지는 한국어, 영어, 일본어, 중국어, 스페인어, 독일어,
 프랑스어, 포르투갈어(브라질), 이탈리아어를 지원합니다.
 

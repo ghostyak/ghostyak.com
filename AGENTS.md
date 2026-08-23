@@ -19,7 +19,7 @@ Keep `docs/ARCHITECTURE.md`, `docs/DEVELOPMENT.md`, `docs/DESIGN.md`, and `docs/
 
 Use Tailwind CSS with DaisyUI as the primary UI system for new and reworked interfaces. Read `docs/DESIGN.md` before making UI changes.
 
-Prefer DaisyUI component and semantic theme classes, use Tailwind CSS utilities for layout and responsive behavior, and add custom CSS only when these cannot express the requirement. Treat the current global CSS as a legacy implementation and migrate it incrementally by component instead of mixing competing component styles. DaisyUI styling does not justify a Client Component; preserve Server Components unless interaction or browser APIs require otherwise.
+Prefer DaisyUI component and semantic theme classes, use Tailwind CSS utilities for layout and responsive behavior, and add custom CSS only when these cannot express the requirement. Do not reintroduce bespoke component classes for patterns DaisyUI already provides. Keep the GhostYak theme and minimal global base rules in `src/app/globals.css`. DaisyUI styling does not justify a Client Component; preserve Server Components unless interaction or browser APIs require otherwise.
 
 <!-- BEGIN:nextjs-agent-rules -->
 
