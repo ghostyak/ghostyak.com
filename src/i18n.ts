@@ -110,7 +110,11 @@ const dictionaries = {
       ],
     },
     footer: {
-      github: "GitHub에서 Boxes 보기",
+      socials: "GhostYak 소셜 미디어",
+      blog: "GhostYak 블로그",
+      instagram: "GhostYak 인스타그램",
+      threads: "GhostYak 스레드",
+      github: "GhostYak 깃허브",
     },
   },
   en: {
@@ -214,7 +218,11 @@ const dictionaries = {
       ],
     },
     footer: {
-      github: "View Boxes on GitHub",
+      socials: "GhostYak social media",
+      blog: "GhostYak blog",
+      instagram: "GhostYak Instagram",
+      threads: "GhostYak Threads",
+      github: "GhostYak GitHub",
     },
   },
 } as const;

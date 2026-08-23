@@ -114,7 +114,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
           </div>
         </section>
       </main>
-      <Footer githubLabel={dictionary.footer.github} />
+      <Footer labels={dictionary.footer} />
     </>
   );
 }
