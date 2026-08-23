@@ -30,6 +30,8 @@ docs/            설계, 개발, 로드맵 문서
 
 현재 홈페이지와 Boxes 제품 페이지는 `[lang]` 동적 세그먼트 아래에서 현재 언어를 유지한다. 기존 영문 제품 주소 `/products/boxes/...`도 호환 경로로 유지한다. 공통 헤더의 다국어 Product 드롭다운은 현재 언어가 포함된 Boxes 제품 경로로 이동한다. 한국어, 영어, 일본어, 중국어, 스페인어, 독일어, 프랑스어, 포르투갈어(브라질), 이탈리아어 경로를 정적으로 생성하며 `/` 요청은 브라우저의 `Accept-Language`에 따라 지원 언어 주소로 리디렉션한다. `src/locales.ts`는 지원 언어, 표시 이름, 경로와 지역별 HTML·Open Graph 로케일을 공통 관리하고 `src/i18n.ts`는 언어별 화면 문구와 메타데이터를 관리한다. `src/data/products.ts`는 Community와 Pro의 제품 경로, 다운로드 페이지 경로 및 GitHub Releases 설치 파일 URL을 한곳에서 관리한다. `src/seo.ts`는 검색엔진 소유권 인증과 `SoftwareApplication` JSON-LD를 관리한다. 언어별 레이아웃은 canonical과 hreflang을 포함한 검색·소셜 메타데이터를 제공하고, `src/app/sitemap.ts`와 `src/app/robots.ts`는 대표 이미지와 제품 경로를 포함한 `/sitemap.xml`과 `/robots.txt`를 생성한다. API와 데이터베이스 계층은 결제 및 라이선스 작업을 시작할 때 추가한다.
 
+메인 화면은 Ghostyak 브랜드와 전체 제품을 소개하는 허브로 사용하고, Boxes의 기능·에디션·다운로드 정보는 제품 화면에 집중한다. 브랜드용 메타데이터와 Boxes의 SoftwareApplication 구조화 데이터도 각 경로에서 분리해 제공한다.
+
 ## 설계 원칙
 
 - 마케팅 페이지는 가능한 한 정적으로 렌더링한다.

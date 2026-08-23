@@ -1,136 +1,75 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { EditionCard } from "@/components/EditionCard";
-import { FeatureCard } from "@/components/FeatureCard";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { boxes } from "@/data/products";
+import { getHomeCopy } from "@/home-i18n";
 import { getDictionary, isLocale } from "@/i18n";
-import { getSoftwareApplicationJsonLd } from "@/seo";
 
 export default async function Home({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
-
   if (!isLocale(lang)) notFound();
-
   const dictionary = getDictionary(lang);
-  const softwareApplicationJsonLd = getSoftwareApplicationJsonLd({
-    locale: lang,
-    description: dictionary.metadata.description,
-    featureNames: dictionary.features.items.map((feature) => feature.title),
-  });
+  const copy = getHomeCopy(lang);
+  const boxesUrl = `/${lang}/products/boxes`;
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(softwareApplicationJsonLd).replace(/</g, "\\u003c"),
-        }}
-      />
-      <Header
-        locale={lang}
-        labels={dictionary.header}
-      />
+      <Header locale={lang} labels={dictionary.header} featuresHref={`${boxesUrl}#features`} downloadHref={`${boxesUrl}#download`} />
       <main>
-        <section className="overflow-hidden bg-gradient-to-b from-primary/10 via-base-200 to-base-100">
-          <div className="mx-auto flex min-h-[calc(100vh-4rem)] w-full max-w-[1180px] flex-col items-center px-4 py-12 sm:px-5 sm:py-16">
-            <div className="flex flex-col items-center text-center">
-              <div>
-                <p className="text-3xl font-bold tracking-tight text-primary sm:text-5xl">Ghostyak Boxes</p>
-              </div>
-              <h1 className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl">{dictionary.hero.heading}</h1>
-              <p className="mt-4 max-w-2xl text-lg leading-8 text-base-content/70">{dictionary.hero.intro}</p>
-              <div className="mt-7 flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row">
-                <Link className="btn btn-primary min-h-12 px-7" href={boxes.editions[0].downloadPageUrl}>
-                  {dictionary.download.editions[0].downloadLabel}
-                </Link>
-                <Link className="btn btn-outline btn-primary min-h-12 px-7" href={boxes.editions[1].downloadPageUrl}>
-                  {dictionary.download.editions[1].downloadLabel}
-                </Link>
-              </div>
-              <p className="mt-4 text-xs text-base-content/55">
-                {dictionary.download.versionLabel} {boxes.version} · {boxes.platform} ·{" "}
-                {dictionary.download.fileSize}
-              </p>
-              <p className="alert alert-warning alert-soft mt-4 max-w-3xl py-3 text-left text-sm leading-6">
-                <span aria-hidden="true">⚠</span>
-                <span><strong>{dictionary.hero.previewTitle}</strong> —{" "}
-                {dictionary.hero.previewText}
-                </span>
-              </p>
+        <section className="hero min-h-[34rem] overflow-hidden bg-gradient-to-br from-primary/15 via-base-100 to-secondary/10">
+          <div className="hero-content w-full max-w-[1180px] flex-col gap-10 px-4 py-20 sm:px-5 lg:flex-row lg:justify-between lg:py-28">
+            <div className="max-w-3xl">
+              <p className="badge badge-primary badge-soft mb-5 font-bold">{copy.hero.eyebrow}</p>
+              <h1 className="text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl">{copy.hero.heading}</h1>
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-base-content/70 sm:text-xl">{copy.hero.intro}</p>
+              <Link className="btn btn-primary mt-8 min-h-12 px-7" href="#products">{copy.hero.action}<span aria-hidden="true">↓</span></Link>
             </div>
-            <figure className="mt-10 w-full">
-              <Image
-                className="h-auto w-full rounded-box border border-base-300 object-contain shadow-2xl"
-                src="/images/boxes-hero-concept-v3.png"
-                alt={dictionary.metadata.imageAlt}
-                width={1672}
-                height={941}
-                sizes="(max-width: 1220px) calc(100vw - 40px), 1180px"
-                priority
-              />
-            </figure>
+            <Image className="w-44 drop-shadow-2xl sm:w-56 lg:w-64" src="/ghostyak.png" alt="" width={300} height={300} priority />
           </div>
         </section>
 
-        <section
-          className="bg-base-200 py-20 lg:py-28"
-          id="features"
-          aria-labelledby="features-title"
-        >
+        <section className="scroll-mt-16 bg-base-200 py-20 lg:py-28" id="products" aria-labelledby="products-title">
           <div className="mx-auto w-full max-w-[1180px] px-4 sm:px-5">
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.14em] text-primary">{dictionary.features.label}</p>
-            <h2 className="max-w-4xl text-3xl font-bold tracking-tight sm:text-5xl" id="features-title">{dictionary.features.heading}</h2>
-            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:mt-12 lg:grid-cols-4">
-              {dictionary.features.items.map((feature, index) => (
-                <FeatureCard
-                  key={feature.title}
-                  number={String(index + 1).padStart(2, "0")}
-                  {...feature}
-                />
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.14em] text-primary">{copy.products.label}</p>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl" id="products-title">{copy.products.heading}</h2>
+            <p className="mt-4 max-w-2xl text-lg leading-8 text-base-content/70">{copy.products.intro}</p>
+            <article className="card mt-10 overflow-hidden border border-base-300 bg-base-100 shadow-xl lg:card-side">
+              <figure className="bg-gradient-to-br from-primary/15 to-base-200 p-8 lg:w-2/5 lg:p-12">
+                <Image className="h-auto w-full max-w-md rounded-box shadow-2xl" src="/images/boxes-hero-concept-v3.png" alt={dictionary.metadata.imageAlt} width={836} height={471} />
+              </figure>
+              <div className="card-body justify-center p-7 lg:p-12">
+                <div className="flex flex-wrap items-center gap-2"><span className="badge badge-success badge-soft">Community</span><span className="badge badge-outline">{boxes.platform}</span></div>
+                <h3 className="card-title mt-3 text-3xl sm:text-4xl">Ghostyak Boxes</h3>
+                <p className="mt-3 max-w-2xl text-lg leading-8 text-base-content/70">{copy.products.boxesDescription}</p>
+                <div className="card-actions mt-6 flex-col sm:flex-row">
+                  <Link className="btn btn-primary" href={boxesUrl}>{copy.products.view}<span aria-hidden="true">→</span></Link>
+                  <Link className="btn btn-outline btn-primary" href={`${boxesUrl}#download`}>{copy.products.download}</Link>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section className="bg-base-100 py-20 lg:py-28" aria-labelledby="principles-title">
+          <div className="mx-auto w-full max-w-[1180px] px-4 sm:px-5">
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.14em] text-primary">{copy.principles.label}</p>
+            <h2 className="max-w-3xl text-3xl font-bold tracking-tight sm:text-5xl" id="principles-title">{copy.principles.heading}</h2>
+            <div className="mt-10 grid gap-5 md:grid-cols-3">
+              {copy.principles.items.map((item, index) => (
+                <article className="card border border-base-300 bg-base-100 shadow-sm" key={item.title}>
+                  <div className="card-body"><span className="text-sm font-bold text-primary">0{index + 1}</span><h3 className="card-title text-xl">{item.title}</h3><p className="leading-7 text-base-content/70">{item.description}</p></div>
+                </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section
-          className="scroll-mt-16 bg-base-100 py-20 lg:py-28"
-          id="download"
-          aria-labelledby="editions-title"
-        >
-          <div className="mx-auto grid w-full max-w-[1180px] gap-10 px-4 sm:px-5 lg:grid-cols-[minmax(0,0.8fr)_minmax(35rem,1.2fr)] lg:gap-x-16">
-            <div>
-              <p className="mb-4 text-xs font-bold uppercase tracking-[0.14em] text-primary">{dictionary.download.label}</p>
-              <h2 className="text-3xl font-bold tracking-tight sm:text-5xl" id="editions-title">{dictionary.download.heading}</h2>
-              <p className="mt-5 max-w-xl text-lg leading-8 text-base-content/70">{dictionary.download.intro}</p>
-            </div>
-            <div className="grid gap-5 sm:grid-cols-2">
-              {dictionary.download.editions.map((edition, index) => (
-                <EditionCard
-                  key={edition.id}
-                  {...edition}
-                  downloadUrl={boxes.editions[index].downloadPageUrl}
-                  featured={edition.id === "pro"}
-                />
-              ))}
-            </div>
-            <div
-              className="flex flex-wrap gap-2 text-xs lg:col-start-2"
-              aria-label={dictionary.download.detailsLabel}
-            >
-              <span className="badge badge-outline">
-                {dictionary.download.versionLabel} {boxes.version}
-              </span>
-              <span className="badge badge-outline">{boxes.platform}</span>
-              <span className="badge badge-outline">{dictionary.download.fileSize}</span>
-              <span className="badge badge-outline h-auto min-h-6 whitespace-normal py-1">{dictionary.download.requirement}</span>
-            </div>
-            <div className="alert alert-info alert-soft text-sm leading-6 lg:col-start-2">
-              <span aria-hidden="true">ⓘ</span>
-              <p>{dictionary.download.trialNote}</p>
-            </div>
+        <section className="bg-neutral px-4 py-16 text-neutral-content sm:px-5 lg:py-20">
+          <div className="mx-auto flex w-full max-w-[1180px] flex-col items-start justify-between gap-7 md:flex-row md:items-center">
+            <div><h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{copy.cta.heading}</h2><p className="mt-3 text-lg text-neutral-content/70">{copy.cta.intro}</p></div>
+            <Link className="btn btn-primary min-h-12 shrink-0 px-7" href={boxesUrl}>{copy.cta.action}<span aria-hidden="true">→</span></Link>
           </div>
         </section>
       </main>

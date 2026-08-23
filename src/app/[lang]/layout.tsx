@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import { Analytics } from "@vercel/analytics/next";
-import { getDictionary } from "@/i18n";
+import { getHomeCopy } from "@/home-i18n";
 import {
   htmlLanguages,
   isLocale,
@@ -27,23 +27,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!isLocale(lang)) notFound();
 
-  const { metadata } = getDictionary(lang);
+  const { metadata } = getHomeCopy(lang);
   const image = {
-    url: "/images/boxes-hero-concept-v3.png",
-    width: 1672,
-    height: 941,
-    alt: metadata.imageAlt,
+    url: "/ghostyak.png",
+    width: 300,
+    height: 300,
+    alt: "Ghostyak",
   };
 
   return {
     metadataBase: new URL(siteUrl),
     title: metadata.title,
     description: metadata.description,
-    applicationName: "Ghostyak Boxes",
-    keywords: [...metadata.keywords],
+    applicationName: "Ghostyak",
     creator: "Ghostyak",
     publisher: "Ghostyak",
-    category: "software",
+    category: "technology",
     verification: getSearchEngineVerification(),
     formatDetection: { email: false, address: false, telephone: false },
     alternates: {
