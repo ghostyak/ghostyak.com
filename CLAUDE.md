@@ -13,7 +13,13 @@ npm run build
 
 Full documentation: https://nextjs.org/docs/app
 
-Keep `docs/ARCHITECTURE.md`, `docs/DEVELOPMENT.md`, and `docs/ROADMAP.md` aligned with public behavior and infrastructure changes.
+Keep `docs/ARCHITECTURE.md`, `docs/DEVELOPMENT.md`, `docs/DESIGN.md`, and `docs/ROADMAP.md` aligned with public behavior and infrastructure changes.
+
+## Design system
+
+Use Tailwind CSS with DaisyUI as the primary UI system for new and reworked interfaces. Read `docs/DESIGN.md` before making UI changes.
+
+Prefer DaisyUI component and semantic theme classes, use Tailwind CSS utilities for layout and responsive behavior, and add custom CSS only when these cannot express the requirement. Treat the current global CSS as a legacy implementation and migrate it incrementally by component instead of mixing competing component styles. DaisyUI styling does not justify a Client Component; preserve Server Components unless interaction or browser APIs require otherwise.
 
 <!-- BEGIN:nextjs-agent-rules -->
 

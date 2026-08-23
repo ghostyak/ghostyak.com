@@ -29,6 +29,10 @@ npm run lint     # ESLint 검사
 - Next.js App Router와 Server Component를 우선한다.
 - 브라우저 API나 상태가 필요할 때만 `"use client"`를 추가한다.
 - 새로운 의존성은 기존 기능으로 해결하기 어려울 때만 추가한다.
+- 신규·개편 UI는 DaisyUI 컴포넌트와 의미 기반 테마 클래스를 우선 사용한다.
+- 레이아웃, 간격과 반응형 동작은 Tailwind CSS 유틸리티를 우선 사용한다.
+- 사용자 정의 CSS는 DaisyUI와 Tailwind CSS로 요구사항을 표현할 수 없을 때만 추가한다.
+- UI 작업 전 [DESIGN.md](./DESIGN.md)를 확인하고 기존 전역 CSS는 컴포넌트 단위로 점진적으로 이전한다.
 - 모바일 화면을 먼저 고려하고 넓은 화면으로 확장한다.
 - 링크와 버튼은 키보드로 사용할 수 있어야 한다.
 - 제품 버전과 다운로드 URL을 여러 파일에 중복해서 작성하지 않는다.
@@ -47,5 +51,6 @@ npm run lint     # ESLint 검사
 
 - 작업 순서와 완료 여부: [ROADMAP.md](./ROADMAP.md)
 - 구조와 기술 결정: [ARCHITECTURE.md](./ARCHITECTURE.md)
+- UI와 디자인 시스템: [DESIGN.md](./DESIGN.md)
 - 검색엔진 인증과 sitemap 제출: [SEO.md](./SEO.md)
 - 구조가 변경되면 코드와 관련 문서를 함께 수정한다.

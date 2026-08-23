@@ -10,10 +10,13 @@ ghostyak.com은 Vercel에 배포하는 Next.js 애플리케이션이다. 현재�
 - React 19
 - TypeScript strict 설정
 - React Server Components와 CSS
+- 목표 UI 스택: Tailwind CSS와 DaisyUI
 - npm 패키지 관리
 - Vercel 배포
 
 페이지와 컴포넌트는 기본적으로 Server Component로 만들고 브라우저 상태나 상호작용이 필요한 부분만 Client Component로 분리한다.
+
+신규 및 개편 UI는 DaisyUI를 기본 컴포넌트 시스템으로 사용하고 Tailwind CSS로 레이아웃과 반응형 동작을 구성한다. 현재 전역 CSS 기반 화면은 레거시 구현으로 유지하며 공통 컴포넌트부터 점진적으로 이전한다. Tailwind CSS와 DaisyUI의 설치 및 GhostYak 테마 구성은 별도 로드맵 작업으로 진행한다. 세부 규칙은 [DESIGN.md](./DESIGN.md)를 따른다.
 
 ## 디렉터리 역할
 
@@ -58,5 +61,5 @@ docs/            설계, 개발, 로드맵 문서
 - `/products/boxes/pro/download`: Pro 평가판 10초 다운로드 안내
 - `/products`: 제품이 둘 이상일 때 추가할 제품 목록
 
-자세한 구현 순서는 [ROADMAP.md](./ROADMAP.md), 검색엔진 등록 절차는
-[SEO.md](./SEO.md)를 따른다.
+자세한 구현 순서는 [ROADMAP.md](./ROADMAP.md), 디자인 규칙은
+[DESIGN.md](./DESIGN.md), 검색엔진 등록 절차는 [SEO.md](./SEO.md)를 따른다.
