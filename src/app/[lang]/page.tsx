@@ -59,6 +59,26 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         </section>
 
         <section
+          className="features"
+          id="features"
+          aria-labelledby="features-title"
+        >
+          <div className="container">
+            <p className="section-label">{dictionary.features.label}</p>
+            <h2 id="features-title">{dictionary.features.heading}</h2>
+            <div className="feature-grid">
+              {dictionary.features.items.map((feature, index) => (
+                <FeatureCard
+                  key={feature.title}
+                  number={String(index + 1).padStart(2, "0")}
+                  {...feature}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section
           className="editions"
           id="download"
           aria-labelledby="editions-title"
@@ -91,26 +111,6 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
               <span>{dictionary.download.requirement}</span>
             </div>
             <p className="trial-note">{dictionary.download.trialNote}</p>
-          </div>
-        </section>
-
-        <section
-          className="features"
-          id="features"
-          aria-labelledby="features-title"
-        >
-          <div className="container">
-            <p className="section-label">{dictionary.features.label}</p>
-            <h2 id="features-title">{dictionary.features.heading}</h2>
-            <div className="feature-grid">
-              {dictionary.features.items.map((feature, index) => (
-                <FeatureCard
-                  key={feature.title}
-                  number={String(index + 1).padStart(2, "0")}
-                  {...feature}
-                />
-              ))}
-            </div>
           </div>
         </section>
       </main>
