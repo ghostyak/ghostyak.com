@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -25,12 +24,13 @@ export const metadata: Metadata = {
 export default function BoxesLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" data-theme="ghostyak">
-      <Script
-        async
-        crossOrigin="anonymous"
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3416645619145039"
-        strategy="beforeInteractive"
-      />
+      <head>
+        <script
+          async
+          crossOrigin="anonymous"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3416645619145039"
+        />
+      </head>
       <body className="bg-base-100 text-base-content antialiased">
         <Header
           locale="en"

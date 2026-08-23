@@ -45,7 +45,7 @@ docs/            설계, 개발, 로드맵 문서
 - 10초 카운트다운과 브라우저 다운로드 시작만 `DownloadCountdown` Client Component가 담당한다.
 - 다운로드 안내 페이지는 검색 색인에서 제외하고 직접 다운로드 URL은 제품 데이터에서 전달한다.
 - Community와 Pro 다운로드 안내 페이지는 카운트다운 아래에 Google Ads 반응형 배너를 연결할 공통 광고 슬롯을 제공한다.
-- Google AdSense 로더는 두 루트 레이아웃에서 `next/script`의 `beforeInteractive` 전략으로 문서 `<head>`에 삽입한다.
+- Google AdSense 비동기 로더는 두 루트 레이아웃의 명시적인 `<head>`에 삽입한다.
 - 결제 웹훅과 라이선스 API는 App Router Route Handler로 구현한다.
 
 ## 목표 페이지
