@@ -44,6 +44,7 @@ docs/            설계, 개발, 로드맵 문서
 - 클라이언트 JavaScript는 사용자 경험에 필요한 경우에만 추가한다.
 - 10초 카운트다운과 브라우저 다운로드 시작만 `DownloadCountdown` Client Component가 담당한다.
 - 다운로드 안내 페이지는 검색 색인에서 제외하고 직접 다운로드 URL은 제품 데이터에서 전달한다.
+- Community와 Pro 다운로드 안내 페이지는 카운트다운 아래에 Google Ads 반응형 배너를 연결할 공통 광고 슬롯을 제공한다.
 - 결제 웹훅과 라이선스 API는 App Router Route Handler로 구현한다.
 
 ## 목표 페이지

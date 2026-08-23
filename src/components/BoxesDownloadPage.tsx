@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { DownloadCountdown } from "@/components/DownloadCountdown";
 
 type BoxesDownloadPageProps = {
@@ -50,6 +51,9 @@ export function BoxesDownloadPage({
               <small className="text-base-content/60">{editionName}</small>
             </div>
           </div>
+        </div>
+        <div className="md:col-span-2">
+          <AdPlaceholder slot="boxes-download-banner" />
         </div>
       </section>
     </main>
