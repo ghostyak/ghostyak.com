@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ghostyakIcon from "../../public/ghostyak.png";
-import type { Locale } from "@/i18n";
+import { htmlLanguages, localeNames, locales, type Locale } from "@/locales";
 
 type HeaderProps = {
   locale: Locale;
@@ -12,13 +12,6 @@ type HeaderProps = {
     download: string;
     languageLabel: string;
   };
-};
-
-const languageNames: Record<Locale, string> = {
-  ko: "한국어",
-  en: "English",
-  ja: "日本語",
-  zh: "中文",
 };
 
 export function Header({ locale, labels }: HeaderProps) {
@@ -35,14 +28,14 @@ export function Header({ locale, labels }: HeaderProps) {
           <details className="language-menu">
             <summary>{labels.languageLabel}</summary>
             <div className="language-options">
-              {(Object.keys(languageNames) as Locale[]).map((language) => (
+              {locales.map((language) => (
                 <Link
                   key={language}
                   href={`/${language}`}
-                  hrefLang={language}
+                  hrefLang={htmlLanguages[language]}
                   aria-current={language === locale ? "page" : undefined}
                 >
-                  {languageNames[language]}
+                  {localeNames[language]}
                 </Link>
               ))}
             </div>

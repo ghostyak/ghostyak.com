@@ -32,6 +32,7 @@ npm run lint     # ESLint 검사
 - 모바일 화면을 먼저 고려하고 넓은 화면으로 확장한다.
 - 링크와 버튼은 키보드로 사용할 수 있어야 한다.
 - 제품 버전과 다운로드 URL을 여러 파일에 중복해서 작성하지 않는다.
+- 지원 언어와 경로는 `src/locales.ts`, 언어별 문구는 `src/i18n.ts`에서 관리한다.
 - 생성물인 `.next/`, `out/`, `node_modules/`는 커밋하지 않는다.
 
 ## 정적 파일
@@ -44,4 +45,5 @@ npm run lint     # ESLint 검사
 
 - 작업 순서와 완료 여부: [ROADMAP.md](./ROADMAP.md)
 - 구조와 기술 결정: [ARCHITECTURE.md](./ARCHITECTURE.md)
+- 검색엔진 인증과 sitemap 제출: [SEO.md](./SEO.md)
 - 구조가 변경되면 코드와 관련 문서를 함께 수정한다.

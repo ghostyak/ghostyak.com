@@ -1,12 +1,7 @@
-export const locales = ["ko", "en", "ja", "zh"] as const;
+import type { Locale } from "@/locales";
 
-export type Locale = (typeof locales)[number];
-
-export const defaultLocale: Locale = "ko";
-
-export function isLocale(value: string): value is Locale {
-  return locales.some((locale) => locale === value);
-}
+export { defaultLocale, isLocale, locales } from "@/locales";
+export type { Locale } from "@/locales";
 
 const dictionaries = {
   ko: {
@@ -298,6 +293,191 @@ const dictionaries = {
       ],
     },
     footer: { socials: "GhostYak 社交媒体", blog: "GhostYak 博客", instagram: "GhostYak Instagram", threads: "GhostYak Threads", github: "GhostYak GitHub" },
+  },
+  es: {
+    metadata: {
+      title: "Ghostyak Boxes | Organizador de escritorio para Windows",
+      description: "Organiza los archivos, carpetas y accesos directos del escritorio de Windows en cajas ordenadas. Descarga Ghostyak Boxes Free o prueba Pro gratis durante 30 días.",
+      keywords: ["Ghostyak Boxes", "organizador de escritorio para Windows", "organización del escritorio", "organizador de archivos", "organizador de iconos del escritorio", "Windows 11", "Windows 10"],
+      imageAlt: "Un escritorio de Windows con archivos y aplicaciones organizados en Ghostyak Boxes",
+    },
+    header: { homeLabel: "Inicio de ghostyak.com", navLabel: "Navegación principal", features: "Funciones", download: "Descargar", languageLabel: "Idioma" },
+    hero: {
+      heading: "Un escritorio donde encuentras cada archivo de un vistazo",
+      intro: "Reúne los archivos y accesos directos dispersos en tus propias cajas.",
+      action: "Comparar Free y Pro",
+      previewTitle: "Versión inicial en desarrollo",
+      previewText: "Pruébala primero en otra cuenta de usuario de Windows antes de usarla en un escritorio importante.",
+    },
+    download: {
+      label: "Descargar", versionLabel: "Versión", fileSize: "Aprox. 3,3 MB", requirement: "Requiere Microsoft Edge WebView2 Runtime",
+      heading: "Empieza con la edición de Boxes que mejor se adapte a ti.",
+      intro: "Usa gratis las funciones esenciales sin límite de tiempo o prueba durante 30 días Pro con cajas ilimitadas.",
+      detailsLabel: "Información de descarga",
+      trialNote: "Al terminar la prueba de Pro, Boxes cambia a Free y conserva tus cajas y archivos.",
+      editions: [
+        { id: "free", label: "Gratis para siempre", name: "Free", description: "Para quienes quieren las funciones esenciales de organización sin límite de tiempo.", highlights: ["Sin límite de tiempo", "Hasta 3 cajas", "Iconos ilimitados en cada caja", "Copia de seguridad, restauración y exportación de ajustes"], downloadLabel: "Descargar Free" },
+        { id: "trial", label: "Prueba de 30 días", name: "Prueba Pro", description: "Explora las cajas ilimitadas y las funciones Pro antes de decidir.", highlights: ["Uso durante 30 días desde la instalación", "Cajas ilimitadas", "Incluye las funciones Pro disponibles actualmente", "No requiere conexión a Internet ni una cuenta"], downloadLabel: "Descargar la prueba Pro" },
+      ],
+    },
+    features: {
+      label: "Funciones", heading: "Mantén tus archivos juntos y encuéntralos cuando los necesites.",
+      items: [
+        { title: "Organiza con cajas", description: "Agrupa archivos, carpetas y accesos directos en cajas según su propósito para encontrarlos de un vistazo." },
+        { title: "Organiza a tu manera", description: "Mueve y cambia el tamaño de las cajas; después, pliégalas o bloquéalas para conservar solo el espacio que necesitas." },
+        { title: "Restaura cada configuración de pantalla", description: "Boxes recuerda la posición y el tamaño de las cajas para cada configuración de monitores y mantiene un espacio de trabajo familiar." },
+        { title: "Visor de fotos", description: "Muestra como presentación las fotos de una caja o carpeta y personaliza el intervalo y el orden." },
+      ],
+    },
+    footer: { socials: "Redes sociales de GhostYak", blog: "Blog de GhostYak", instagram: "Instagram de GhostYak", threads: "Threads de GhostYak", github: "GitHub de GhostYak" },
+  },
+  de: {
+    metadata: {
+      title: "Ghostyak Boxes | Desktop-Organizer für Windows",
+      description: "Ordne Dateien, Ordner und Verknüpfungen auf deinem Windows-Desktop in übersichtlichen Boxen. Lade Ghostyak Boxes Free herunter oder teste Pro 30 Tage kostenlos.",
+      keywords: ["Ghostyak Boxes", "Desktop-Organizer für Windows", "Desktop organisieren", "Datei-Organizer", "Desktop-Symbole organisieren", "Windows 11", "Windows 10"],
+      imageAlt: "Ein Windows-Desktop mit Dateien und Apps, die in Ghostyak Boxes organisiert sind",
+    },
+    header: { homeLabel: "Startseite von ghostyak.com", navLabel: "Hauptnavigation", features: "Funktionen", download: "Download", languageLabel: "Sprache" },
+    hero: {
+      heading: "Ein Desktop, auf dem jede Datei sofort zu finden ist",
+      intro: "Sammle verstreute Dateien und Verknüpfungen in deinen eigenen Boxen.",
+      action: "Free und Pro vergleichen",
+      previewTitle: "Frühe Entwicklungsversion",
+      previewText: "Teste die App zunächst in einem separaten Windows-Benutzerkonto, bevor du sie für eine wichtige Desktop-Konfiguration verwendest.",
+    },
+    download: {
+      label: "Download", versionLabel: "Version", fileSize: "Ca. 3,3 MB", requirement: "Microsoft Edge WebView2 Runtime erforderlich",
+      heading: "Starte mit der Boxes-Edition, die zu dir passt.",
+      intro: "Nutze die wichtigsten Funktionen dauerhaft kostenlos oder teste Pro mit unbegrenzten Boxen 30 Tage lang.",
+      detailsLabel: "Download-Informationen",
+      trialNote: "Nach Ablauf der Pro-Testversion wechselt Boxes zu Free; vorhandene Boxen und Dateien bleiben erhalten.",
+      editions: [
+        { id: "free", label: "Dauerhaft kostenlos", name: "Free", description: "Für alle, die die wichtigsten Organisationsfunktionen ohne Zeitlimit nutzen möchten.", highlights: ["Kein Zeitlimit", "Bis zu 3 Boxen", "Unbegrenzte Symbole pro Box", "Einstellungen sichern, wiederherstellen und exportieren"], downloadLabel: "Free herunterladen" },
+        { id: "trial", label: "30 Tage testen", name: "Pro-Testversion", description: "Teste unbegrenzte Boxen und die Pro-Funktionen, bevor du dich entscheidest.", highlights: ["30 Tage ab Installation nutzbar", "Unbegrenzte Boxen", "Enthält die derzeit verfügbaren Pro-Funktionen", "Keine Internetverbindung und kein Konto erforderlich"], downloadLabel: "Pro-Testversion herunterladen" },
+      ],
+    },
+    features: {
+      label: "Funktionen", heading: "Dateien zusammenhalten und bei Bedarf sofort finden.",
+      items: [
+        { title: "Mit Boxen organisieren", description: "Gruppiere Dateien, Ordner und Verknüpfungen nach Zweck in Boxen, damit du alles sofort findest." },
+        { title: "Nach deinen Vorstellungen anordnen", description: "Verschiebe und skaliere Boxen und klappe oder sperre sie, sodass nur der benötigte Platz belegt wird." },
+        { title: "Jede Bildschirmkonfiguration wiederherstellen", description: "Boxes merkt sich Positionen und Größen für deine Monitorkonfiguration und bewahrt so deinen vertrauten Arbeitsbereich." },
+        { title: "Fotobetrachter", description: "Zeige Fotos in einer Box oder einem Ordner als Diashow an und passe Intervall und Reihenfolge an." },
+      ],
+    },
+    footer: { socials: "GhostYak in sozialen Medien", blog: "GhostYak-Blog", instagram: "GhostYak auf Instagram", threads: "GhostYak auf Threads", github: "GhostYak auf GitHub" },
+  },
+  fr: {
+    metadata: {
+      title: "Ghostyak Boxes | Organiseur de bureau pour Windows",
+      description: "Organisez les fichiers, dossiers et raccourcis du bureau Windows dans des boîtes bien rangées. Téléchargez Ghostyak Boxes Free ou essayez Pro gratuitement pendant 30 jours.",
+      keywords: ["Ghostyak Boxes", "organiseur de bureau Windows", "organisation du bureau", "organiseur de fichiers", "organisation des icônes du bureau", "Windows 11", "Windows 10"],
+      imageAlt: "Un bureau Windows dont les fichiers et applications sont organisés dans Ghostyak Boxes",
+    },
+    header: { homeLabel: "Accueil de ghostyak.com", navLabel: "Navigation principale", features: "Fonctionnalités", download: "Télécharger", languageLabel: "Langue" },
+    hero: {
+      heading: "Un bureau où chaque fichier se trouve en un coup d’œil",
+      intro: "Rassemblez vos fichiers et raccourcis dispersés dans vos propres boîtes.",
+      action: "Comparer Free et Pro",
+      previewTitle: "Version préliminaire",
+      previewText: "Testez-la d’abord dans un autre compte utilisateur Windows avant de l’utiliser sur un bureau important.",
+    },
+    download: {
+      label: "Télécharger", versionLabel: "Version", fileSize: "Environ 3,3 Mo", requirement: "Microsoft Edge WebView2 Runtime requis",
+      heading: "Commencez avec l’édition de Boxes qui vous convient.",
+      intro: "Utilisez gratuitement les fonctions essentielles sans limite de temps ou essayez Pro et ses boîtes illimitées pendant 30 jours.",
+      detailsLabel: "Informations de téléchargement",
+      trialNote: "À la fin de l’essai Pro, Boxes passe à Free tout en conservant vos boîtes et fichiers.",
+      editions: [
+        { id: "free", label: "Gratuit sans limite", name: "Free", description: "Pour celles et ceux qui souhaitent les outils d’organisation essentiels sans limite de temps.", highlights: ["Aucune limite de temps", "Jusqu’à 3 boîtes", "Nombre d’icônes illimité dans chaque boîte", "Sauvegarde, restauration et exportation des paramètres"], downloadLabel: "Télécharger Free" },
+        { id: "trial", label: "Essai de 30 jours", name: "Essai Pro", description: "Découvrez les boîtes illimitées et les fonctionnalités Pro avant de choisir.", highlights: ["Utilisable pendant 30 jours après l’installation", "Boîtes illimitées", "Inclut les fonctionnalités Pro actuellement disponibles", "Aucune connexion Internet ni aucun compte requis"], downloadLabel: "Télécharger l’essai Pro" },
+      ],
+    },
+    features: {
+      label: "Fonctionnalités", heading: "Gardez vos fichiers ensemble et retrouvez-les quand vous en avez besoin.",
+      items: [
+        { title: "Organisez avec des boîtes", description: "Regroupez fichiers, dossiers et raccourcis par usage dans des boîtes afin de tout retrouver en un coup d’œil." },
+        { title: "Disposez-les à votre façon", description: "Déplacez et redimensionnez les boîtes, puis repliez-les ou verrouillez-les pour ne conserver que l’espace nécessaire." },
+        { title: "Restaurez chaque configuration d’écran", description: "Boxes mémorise les positions et dimensions adaptées à vos écrans afin de préserver un espace de travail familier." },
+        { title: "Visionneuse de photos", description: "Affichez les photos d’une boîte ou d’un dossier sous forme de diaporama et personnalisez l’intervalle et l’ordre." },
+      ],
+    },
+    footer: { socials: "Réseaux sociaux de GhostYak", blog: "Blog de GhostYak", instagram: "GhostYak sur Instagram", threads: "GhostYak sur Threads", github: "GhostYak sur GitHub" },
+  },
+  pt: {
+    metadata: {
+      title: "Ghostyak Boxes | Organizador de área de trabalho para Windows",
+      description: "Organize arquivos, pastas e atalhos da área de trabalho do Windows em caixas. Baixe o Ghostyak Boxes Free ou experimente o Pro grátis por 30 dias.",
+      keywords: ["Ghostyak Boxes", "organizador de área de trabalho para Windows", "organização da área de trabalho", "organizador de arquivos", "organizador de ícones da área de trabalho", "Windows 11", "Windows 10"],
+      imageAlt: "Uma área de trabalho do Windows com arquivos e aplicativos organizados no Ghostyak Boxes",
+    },
+    header: { homeLabel: "Início do ghostyak.com", navLabel: "Navegação principal", features: "Recursos", download: "Baixar", languageLabel: "Idioma" },
+    hero: {
+      heading: "Uma área de trabalho onde cada arquivo é fácil de encontrar",
+      intro: "Reúna arquivos e atalhos espalhados em suas próprias caixas.",
+      action: "Comparar Free e Pro",
+      previewTitle: "Versão inicial de desenvolvimento",
+      previewText: "Teste primeiro em outra conta de usuário do Windows antes de usar em uma área de trabalho importante.",
+    },
+    download: {
+      label: "Baixar", versionLabel: "Versão", fileSize: "Aprox. 3,3 MB", requirement: "Requer o Microsoft Edge WebView2 Runtime",
+      heading: "Comece com a edição do Boxes ideal para você.",
+      intro: "Use os recursos essenciais gratuitamente, sem limite de tempo, ou experimente o Pro com caixas ilimitadas por 30 dias.",
+      detailsLabel: "Informações do download",
+      trialNote: "Quando o período de avaliação do Pro terminar, o Boxes mudará para o Free e manterá suas caixas e seus arquivos.",
+      editions: [
+        { id: "free", label: "Grátis para sempre", name: "Free", description: "Para quem quer os recursos essenciais de organização sem limite de tempo.", highlights: ["Sem limite de tempo", "Até 3 caixas", "Ícones ilimitados em cada caixa", "Backup, restauração e exportação das configurações"], downloadLabel: "Baixar o Free" },
+        { id: "trial", label: "Avaliação de 30 dias", name: "Avaliação Pro", description: "Experimente caixas ilimitadas e os recursos Pro antes de decidir.", highlights: ["Use por 30 dias após a instalação", "Caixas ilimitadas", "Inclui os recursos Pro disponíveis atualmente", "Não requer conexão com a Internet nem uma conta"], downloadLabel: "Baixar a avaliação Pro" },
+      ],
+    },
+    features: {
+      label: "Recursos", heading: "Mantenha seus arquivos juntos e encontre-os quando precisar.",
+      items: [
+        { title: "Organize com caixas", description: "Agrupe arquivos, pastas e atalhos em caixas por finalidade para encontrar tudo rapidamente." },
+        { title: "Organize do seu jeito", description: "Mova e redimensione as caixas e depois recolha ou bloqueie cada uma para manter apenas o espaço necessário." },
+        { title: "Restaure cada configuração de tela", description: "O Boxes memoriza posições e tamanhos para a configuração dos seus monitores e preserva um espaço de trabalho familiar." },
+        { title: "Visualizador de fotos", description: "Veja as fotos de uma caixa ou pasta como apresentação de slides e personalize o intervalo e a ordem." },
+      ],
+    },
+    footer: { socials: "Redes sociais do GhostYak", blog: "Blog do GhostYak", instagram: "GhostYak no Instagram", threads: "GhostYak no Threads", github: "GhostYak no GitHub" },
+  },
+  it: {
+    metadata: {
+      title: "Ghostyak Boxes | Organizer del desktop per Windows",
+      description: "Organizza file, cartelle e collegamenti del desktop di Windows in riquadri ordinati. Scarica Ghostyak Boxes Free o prova Pro gratuitamente per 30 giorni.",
+      keywords: ["Ghostyak Boxes", "organizer del desktop per Windows", "organizzazione del desktop", "organizer di file", "organizzazione delle icone del desktop", "Windows 11", "Windows 10"],
+      imageAlt: "Un desktop Windows con file e app organizzati in Ghostyak Boxes",
+    },
+    header: { homeLabel: "Home di ghostyak.com", navLabel: "Navigazione principale", features: "Funzionalità", download: "Scarica", languageLabel: "Lingua" },
+    hero: {
+      heading: "Un desktop dove ogni file è subito a portata di mano",
+      intro: "Raccogli file e collegamenti sparsi nei tuoi riquadri personali.",
+      action: "Confronta Free e Pro",
+      previewTitle: "Versione iniziale in sviluppo",
+      previewText: "Provala in un altro account utente Windows prima di usarla su un desktop importante.",
+    },
+    download: {
+      label: "Scarica", versionLabel: "Versione", fileSize: "Circa 3,3 MB", requirement: "Richiede Microsoft Edge WebView2 Runtime",
+      heading: "Inizia con l’edizione di Boxes più adatta a te.",
+      intro: "Usa gratuitamente le funzionalità essenziali senza limiti di tempo oppure prova Pro con riquadri illimitati per 30 giorni.",
+      detailsLabel: "Informazioni sul download",
+      trialNote: "Al termine della prova Pro, Boxes passa a Free mantenendo i riquadri e i file esistenti.",
+      editions: [
+        { id: "free", label: "Gratis per sempre", name: "Free", description: "Per chi desidera gli strumenti essenziali di organizzazione senza limiti di tempo.", highlights: ["Nessun limite di tempo", "Fino a 3 riquadri", "Icone illimitate in ogni riquadro", "Backup, ripristino ed esportazione delle impostazioni"], downloadLabel: "Scarica Free" },
+        { id: "trial", label: "Prova di 30 giorni", name: "Prova Pro", description: "Scopri i riquadri illimitati e le funzionalità Pro prima di decidere.", highlights: ["Utilizzabile per 30 giorni dall’installazione", "Riquadri illimitati", "Include le funzionalità Pro attualmente disponibili", "Non richiede connessione Internet né un account"], downloadLabel: "Scarica la prova Pro" },
+      ],
+    },
+    features: {
+      label: "Funzionalità", heading: "Tieni insieme i file e trovali quando ti servono.",
+      items: [
+        { title: "Organizza con i riquadri", description: "Raggruppa file, cartelle e collegamenti in riquadri in base allo scopo, così da trovare tutto a colpo d’occhio." },
+        { title: "Disponi tutto a modo tuo", description: "Sposta e ridimensiona i riquadri, quindi comprimili o bloccali per conservare solo lo spazio necessario." },
+        { title: "Ripristina ogni configurazione dello schermo", description: "Boxes ricorda posizione e dimensioni per la configurazione dei monitor, mantenendo familiare l’area di lavoro." },
+        { title: "Visualizzatore di foto", description: "Guarda le foto di un riquadro o di una cartella come presentazione e personalizza intervallo e ordine." },
+      ],
+    },
+    footer: { socials: "Social media di GhostYak", blog: "Blog di GhostYak", instagram: "GhostYak su Instagram", threads: "GhostYak su Threads", github: "GhostYak su GitHub" },
   },
 } as const;
 

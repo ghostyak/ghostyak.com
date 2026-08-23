@@ -24,7 +24,7 @@ nav a { font-size: 0.93rem; font-weight: 650; text-decoration: none; }
 .language-menu summary { cursor: pointer; font-size: 0.93rem; font-weight: 650; list-style: none; }
 .language-menu summary::-webkit-details-marker { display: none; }
 .language-menu summary::after { margin-left: 6px; content: "▾"; font-size: 0.7rem; }
-.language-options { position: absolute; top: calc(100% + 16px); right: 0; display: grid; min-width: 132px; overflow: hidden; border: 1px solid rgb(0 0 0 / 12%); border-radius: 10px; background: white; color: #16304f; box-shadow: 0 14px 36px rgb(6 31 58 / 20%); }
+.language-options { position: absolute; top: calc(100% + 16px); right: 0; display: grid; min-width: 164px; max-height: min(70vh, 440px); overflow-y: auto; border: 1px solid rgb(0 0 0 / 12%); border-radius: 10px; background: white; color: #16304f; box-shadow: 0 14px 36px rgb(6 31 58 / 20%); }
 .language-options a { padding: 11px 16px; white-space: nowrap; }
 .language-options a:hover { background: #edf5fc; }
 .language-options a[aria-current="page"] { background: #e2f2ff; color: #0b65a5; }

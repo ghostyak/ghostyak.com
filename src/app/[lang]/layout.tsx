@@ -2,10 +2,16 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import { Analytics } from "@vercel/analytics/next";
-import { getDictionary, isLocale, locales } from "@/i18n";
+import { getDictionary } from "@/i18n";
+import {
+  htmlLanguages,
+  isLocale,
+  languageAlternates,
+  locales,
+  openGraphLocales,
+} from "@/locales";
+import { getSearchEngineVerification, siteUrl } from "@/seo";
 import "../globals.css";
-
-const siteUrl = "https://ghostyak.com";
 
 type Props = {
   children: ReactNode;
@@ -38,16 +44,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     creator: "Ghostyak",
     publisher: "Ghostyak",
     category: "software",
+    verification: getSearchEngineVerification(),
     formatDetection: { email: false, address: false, telephone: false },
     alternates: {
       canonical: `/${lang}`,
-      languages: {
-        ko: "/ko",
-        en: "/en",
-        ja: "/ja",
-        zh: "/zh",
-        "x-default": "/ko",
-      },
+      languages: languageAlternates,
     },
     robots: {
       index: true,
@@ -63,10 +64,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       type: "website",
       url: `/${lang}`,
-      locale: { ko: "ko_KR", en: "en_US", ja: "ja_JP", zh: "zh_CN" }[lang],
-      alternateLocale: ["ko_KR", "en_US", "ja_JP", "zh_CN"].filter(
-        (locale) => locale !== { ko: "ko_KR", en: "en_US", ja: "ja_JP", zh: "zh_CN" }[lang],
-      ),
+      locale: openGraphLocales[lang],
+      alternateLocale: locales
+        .filter((locale) => locale !== lang)
+        .map((locale) => openGraphLocales[locale]),
       siteName: "Ghostyak",
       title: metadata.title,
       description: metadata.description,
@@ -87,7 +88,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   if (!isLocale(lang)) notFound();
 
   return (
-    <html lang={lang}>
+    <html lang={htmlLanguages[lang]}>
       <body>
         {children}
         <Analytics />

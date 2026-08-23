@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { boxes } from "@/data/products";
 import { getDictionary, isLocale } from "@/i18n";
+import { getSoftwareApplicationJsonLd } from "@/seo";
 
 export default async function Home({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
@@ -13,8 +14,20 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
   if (!isLocale(lang)) notFound();
 
   const dictionary = getDictionary(lang);
+  const softwareApplicationJsonLd = getSoftwareApplicationJsonLd({
+    locale: lang,
+    description: dictionary.metadata.description,
+    featureNames: dictionary.features.items.map((feature) => feature.title),
+  });
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(softwareApplicationJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <Header
         locale={lang}
         labels={dictionary.header}
