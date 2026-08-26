@@ -14,11 +14,15 @@ import {
 import { getSearchEngineVerification, siteUrl } from "@/seo";
 import "../globals.css";
 
-const googleTagManagerScript = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5RCTJH64');`;
+const googleAnalyticsScript = `<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4STQX7R8EB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4STQX7R8EB');
+</script>`;
 
 type Props = {
   children: ReactNode;
@@ -96,8 +100,8 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={htmlLanguages[lang]} data-theme="ghostyak">
       <head>
-        <Script id="google-tag-manager" strategy="beforeInteractive">
-          {googleTagManagerScript}
+        <Script id="google-analytics" strategy="beforeInteractive">
+          {googleAnalyticsScript}
         </Script>
         <script
           async
@@ -106,15 +110,6 @@ export default async function LocaleLayout({ children, params }: Props) {
         />
       </head>
       <body className="bg-base-100 text-base-content antialiased">
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-5RCTJH64"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-            title="Google Tag Manager"
-          />
-        </noscript>
         {children}
         <Analytics />
       </body>
