@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { getHomeCopy } from "@/home-i18n";
 import {
@@ -12,6 +13,12 @@ import {
 } from "@/locales";
 import { getSearchEngineVerification, siteUrl } from "@/seo";
 import "../globals.css";
+
+const googleTagManagerScript = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5RCTJH64');`;
 
 type Props = {
   children: ReactNode;
@@ -89,6 +96,9 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={htmlLanguages[lang]} data-theme="ghostyak">
       <head>
+        <Script id="google-tag-manager" strategy="beforeInteractive">
+          {googleTagManagerScript}
+        </Script>
         <script
           async
           crossOrigin="anonymous"
@@ -96,6 +106,15 @@ export default async function LocaleLayout({ children, params }: Props) {
         />
       </head>
       <body className="bg-base-100 text-base-content antialiased">
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-5RCTJH64"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+            title="Google Tag Manager"
+          />
+        </noscript>
         {children}
         <Analytics />
       </body>
