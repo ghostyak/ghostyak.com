@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
-import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
+import { TrackingScripts } from "@/components/TrackingScripts";
 import { getHomeCopy } from "@/home-i18n";
 import {
   htmlLanguages,
@@ -13,16 +13,6 @@ import {
 } from "@/locales";
 import { getSearchEngineVerification, siteUrl } from "@/seo";
 import "../globals.css";
-
-const googleAnalyticsScript = `<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4STQX7R8EB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-4STQX7R8EB');
-</script>`;
 
 type Props = {
   children: ReactNode;
@@ -98,16 +88,13 @@ export default async function LocaleLayout({ children, params }: Props) {
   if (!isLocale(lang)) notFound();
 
   return (
-    <html lang={htmlLanguages[lang]} data-theme="ghostyak">
+    <html
+      lang={htmlLanguages[lang]}
+      data-theme="ghostyak"
+      data-scroll-behavior="smooth"
+    >
       <head>
-        <Script id="google-analytics" strategy="beforeInteractive">
-          {googleAnalyticsScript}
-        </Script>
-        <script
-          async
-          crossOrigin="anonymous"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3416645619145039"
-        />
+        <TrackingScripts />
       </head>
       <body className="bg-base-100 text-base-content antialiased">
         {children}

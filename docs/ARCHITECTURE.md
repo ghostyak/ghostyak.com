@@ -46,8 +46,7 @@ docs/            설계, 개발, 로드맵 문서
 - 다운로드 안내 페이지는 검색 색인에서 제외하고 직접 다운로드 URL은 제품 데이터에서 전달한다.
 - Community와 Pro 다운로드 안내 페이지는 카운트다운 아래에 Google Ads 반응형 배너를 연결할 공통 광고 슬롯을 제공한다.
 - Community는 기간과 박스 수 제한 없이 제공한다. Pro는 Community의 모든 기능을 포함하고, 향후 꾸미기와 위젯 기능을 추가할 예정이다.
-- Google AdSense 비동기 로더는 두 루트 레이아웃의 명시적인 `<head>`에 삽입한다.
-- Google Tag Manager 컨테이너 `GTM-5RCTJH64`는 두 루트 레이아웃에서 `beforeInteractive`로 초기화하고, JavaScript가 꺼진 환경을 위한 iframe을 `<body>`의 첫 콘텐츠로 제공한다.
+- Google Analytics 태그 `G-4STQX7R8EB`와 Google AdSense 비동기 로더는 공통 `TrackingScripts` 컴포넌트가 두 루트 레이아웃에 `afterInteractive` 전략으로 삽입한다.
 - 결제 웹훅과 라이선스 API는 App Router Route Handler로 구현한다.
 
 ## 목표 페이지

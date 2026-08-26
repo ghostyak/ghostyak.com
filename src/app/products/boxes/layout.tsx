@@ -1,22 +1,12 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { TrackingScripts } from "@/components/TrackingScripts";
 import { getDictionary } from "@/i18n";
 import { getSearchEngineVerification, siteUrl } from "@/seo";
 import "../../globals.css";
-
-const googleAnalyticsScript = `<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4STQX7R8EB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-4STQX7R8EB');
-</script>`;
 
 const dictionary = getDictionary("en");
 
@@ -34,16 +24,9 @@ export const metadata: Metadata = {
 
 export default function BoxesLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" data-theme="ghostyak">
+    <html lang="en" data-theme="ghostyak" data-scroll-behavior="smooth">
       <head>
-        <Script id="google-analytics" strategy="beforeInteractive">
-          {googleAnalyticsScript}
-        </Script>
-        <script
-          async
-          crossOrigin="anonymous"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3416645619145039"
-        />
+        <TrackingScripts />
       </head>
       <body className="bg-base-100 text-base-content antialiased">
         <Header
