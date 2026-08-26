@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ghostyakIcon from "../../public/ghostyak.png";
+import { HeaderDropdown } from "@/components/HeaderDropdown";
 import { htmlLanguages, localeNames, locales, type Locale } from "@/locales";
 
 type HeaderProps = {
@@ -41,43 +42,37 @@ export function Header({
           </Link>
         </div>
         <nav className="navbar-end w-auto shrink-0 gap-0 sm:gap-1" aria-label={labels.navLabel}>
-          <details className="dropdown dropdown-end">
-            <summary className="btn btn-ghost min-h-11 list-none px-2 text-sm text-neutral-content hover:bg-neutral-content/10 sm:px-4">
-              {labels.products}
-              <span className="text-xs" aria-hidden="true">▾</span>
-            </summary>
-            <ul className="menu dropdown-content z-[60] mt-3 w-48 rounded-box border border-base-300 bg-base-100 p-2 text-base-content shadow-2xl">
-              <li>
-                <Link href={productsHref}>Boxes</Link>
-              </li>
-            </ul>
-          </details>
+          <HeaderDropdown
+            label={labels.products}
+            menuClassName="menu dropdown-content z-[60] mt-3 w-48 rounded-box border border-base-300 bg-base-100 p-2 text-base-content shadow-2xl"
+          >
+            <li>
+              <Link href={productsHref}>Boxes</Link>
+            </li>
+          </HeaderDropdown>
           <Link className="btn btn-ghost hidden min-h-11 text-neutral-content hover:bg-neutral-content/10 md:inline-flex" href={featuresHref}>
             {labels.features}
           </Link>
           <Link className="btn btn-ghost hidden min-h-11 text-neutral-content hover:bg-neutral-content/10 sm:inline-flex" href={downloadHref}>
             {labels.download}
           </Link>
-          <details className="dropdown dropdown-end">
-            <summary className="btn btn-ghost min-h-11 list-none px-2 text-sm text-neutral-content hover:bg-neutral-content/10 sm:px-4">
-              {labels.languageLabel}
-              <span className="text-xs" aria-hidden="true">▾</span>
-            </summary>
-            <ul className="menu dropdown-content z-[60] mt-3 max-h-[70vh] w-52 overflow-y-auto rounded-box border border-base-300 bg-base-100 p-2 text-base-content shadow-2xl">
-              {locales.map((language) => (
-                <li key={language}>
-                  <Link
-                    className={language === locale ? "menu-active" : undefined}
-                    href={`/${language}`}
-                    hrefLang={htmlLanguages[language]}
-                    aria-current={language === locale ? "page" : undefined}
-                  >
-                    {localeNames[language]}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </details>
+          <HeaderDropdown
+            label={labels.languageLabel}
+            menuClassName="menu dropdown-content z-[60] mt-3 max-h-[70vh] w-52 overflow-y-auto rounded-box border border-base-300 bg-base-100 p-2 text-base-content shadow-2xl"
+          >
+            {locales.map((language) => (
+              <li key={language}>
+                <Link
+                  className={language === locale ? "menu-active" : undefined}
+                  href={`/${language}`}
+                  hrefLang={htmlLanguages[language]}
+                  aria-current={language === locale ? "page" : undefined}
+                >
+                  {localeNames[language]}
+                </Link>
+              </li>
+            ))}
+          </HeaderDropdown>
         </nav>
       </div>
     </header>
