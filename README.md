@@ -9,6 +9,8 @@ Boxes 소개 페이지는 한국어, 영어, 일본어, 중국어, 스페인어,
 
 Boxes 제품과 에디션 페이지는 `/products/boxes` 아래에 있으며 Community와
 Pro 다운로드 페이지는 10초 후 GitHub Releases 설치 파일을 내려받습니다.
+Community는 기간과 박스 수 제한 없이 사용할 수 있으며, Pro에는 향후 꾸미기와
+위젯 기능이 추가될 예정입니다.
 
 ## 개발
 

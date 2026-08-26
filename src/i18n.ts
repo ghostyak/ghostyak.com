@@ -43,7 +43,7 @@ const dictionaries = {
       requirement: "Microsoft Edge WebView2 Runtime 필요",
       heading: "Boxes 시작하기",
       intro:
-        "핵심 기능을 계속 무료로 사용하거나, 30일 동안 박스 수 제한 없는 Pro 환경을 경험할 수 있습니다.",
+        "Community에서 박스를 제한 없이 무료로 사용하거나, 향후 꾸미기와 위젯 기능을 제공할 Pro를 30일 동안 체험할 수 있습니다.",
       detailsLabel: "다운로드 정보",
       trialNote:
         "Pro 평가가 끝나면 Community로 전환되며, 기존 박스와 파일은 그대로 유지됩니다.",
@@ -53,10 +53,10 @@ const dictionaries = {
           label: "계속 무료",
           name: "Community",
           description:
-            "핵심 정리 기능을 부담 없이 오래 사용하고 싶은 분께 알맞습니다.",
+            "박스 수 제한 없이 핵심 정리 기능을 부담 없이 오래 사용하고 싶은 분께 알맞습니다.",
           highlights: [
             "기간 제한 없이 사용",
-            "박스 최대 3개",
+            "박스 수 제한 없음",
             "박스마다 아이콘 수 제한 없음",
             "설정 백업·복원과 내보내기 제공",
           ],
@@ -67,11 +67,12 @@ const dictionaries = {
           label: "30일 체험",
           name: "Pro 평가판",
           description:
-            "더 많은 박스와 Pro 기능을 충분히 경험한 뒤 선택할 수 있습니다.",
+            "Pro에는 향후 꾸미기와 위젯 기능이 추가될 예정입니다.",
           highlights: [
             "설치 후 30일 동안 사용",
-            "박스 수 제한 없음",
-            "현재 제공되는 Pro 기능 포함",
+            "Community의 모든 기능 포함",
+            "꾸미기 기능 제공 예정",
+            "위젯 기능 제공 예정",
             "인터넷 연결과 계정 로그인 없이 체험",
           ],
           downloadLabel: "Try Free",
@@ -157,7 +158,7 @@ const dictionaries = {
       requirement: "Requires Microsoft Edge WebView2 Runtime",
       heading: "Start with the Boxes edition that fits you.",
       intro:
-        "Keep using the essential features for free, or try unlimited boxes and Pro features for 30 days.",
+        "Use unlimited boxes free with Community, or try Pro for 30 days. Customization and widget features are planned for Pro.",
       detailsLabel: "Download information",
       trialNote:
         "After the Pro trial ends, Boxes switches to Community while keeping your existing boxes and files.",
@@ -167,10 +168,10 @@ const dictionaries = {
           label: "Free forever",
           name: "Community",
           description:
-            "For anyone who wants the essential organization tools without a time limit.",
+            "For anyone who wants essential organization tools and unlimited boxes without a time limit.",
           highlights: [
             "No time limit",
-            "Up to 3 boxes",
+            "Unlimited boxes",
             "Unlimited icons in each box",
             "Settings backup, restore, and export",
           ],
@@ -181,11 +182,12 @@ const dictionaries = {
           label: "30-day trial",
           name: "Pro trial",
           description:
-            "Explore unlimited boxes and Pro features before deciding.",
+            "Customization and widget features are planned for Pro.",
           highlights: [
             "Use for 30 days after installation",
-            "Unlimited boxes",
-            "Includes currently available Pro features",
+            "Includes all Community features",
+            "Customization features planned",
+            "Widget features planned",
             "No internet connection or account required",
           ],
           downloadLabel: "Try Pro free",
@@ -272,7 +274,7 @@ const dictionaries = {
       requirement: "Microsoft Edge WebView2 Runtimeが必要",
       heading: "あなたに合うBoxesを選んで始めましょう。",
       intro:
-        "基本機能をずっと無料で使うか、ボックス数が無制限のProを30日間体験できます。",
+        "Communityではボックス数の制限なく無料で利用できます。Proは30日間体験でき、今後カスタマイズ機能とウィジェット機能を提供予定です。",
       detailsLabel: "ダウンロード情報",
       trialNote:
         "Pro体験期間が終了するとCommunityに切り替わり、既存のボックスとファイルはそのまま保持されます。",
@@ -281,10 +283,11 @@ const dictionaries = {
           id: "community",
           label: "ずっと無料",
           name: "Community",
-          description: "基本的な整理機能を期限なく使いたい方に最適です。",
+          description:
+            "ボックス数の制限なく、基本的な整理機能を期限なく使いたい方に最適です。",
           highlights: [
             "利用期限なし",
-            "ボックスは最大3個",
+            "ボックス数は無制限",
             "各ボックスのアイコン数は無制限",
             "設定のバックアップ・復元・エクスポート",
           ],
@@ -294,11 +297,13 @@ const dictionaries = {
           id: "pro",
           label: "30日間体験",
           name: "Pro体験版",
-          description: "無制限のボックスとPro機能を十分に試してから選べます。",
+          description:
+            "Proでは今後、カスタマイズ機能とウィジェット機能を提供予定です。",
           highlights: [
             "インストール後30日間利用可能",
-            "ボックス数は無制限",
-            "現在提供中のPro機能を搭載",
+            "Communityの全機能を搭載",
+            "カスタマイズ機能を提供予定",
+            "ウィジェット機能を提供予定",
             "インターネット接続・ログイン不要",
           ],
           downloadLabel: "Pro体験版をダウンロード",
@@ -381,7 +386,8 @@ const dictionaries = {
       fileSize: "约 3.3 MB",
       requirement: "需要 Microsoft Edge WebView2 Runtime",
       heading: "选择适合你的 Boxes 版本。",
-      intro: "永久免费使用核心功能，或体验 30 天不限收纳框数量的 Pro 版本。",
+      intro:
+        "Community 可永久免费创建不限数量的收纳框；Pro 可试用 30 天，并计划在未来提供个性化与小组件功能。",
       detailsLabel: "下载信息",
       trialNote:
         "Pro 试用期结束后将切换为 Community，现有收纳框和文件都会保留。",
@@ -390,10 +396,10 @@ const dictionaries = {
           id: "community",
           label: "永久免费",
           name: "Community",
-          description: "适合希望长期免费使用核心整理功能的用户。",
+          description: "适合希望不限收纳框数量、长期免费使用核心整理功能的用户。",
           highlights: [
             "无使用期限",
-            "最多 3 个收纳框",
+            "收纳框数量不限",
             "每个收纳框的图标数量不限",
             "支持设置备份、恢复与导出",
           ],
@@ -403,11 +409,12 @@ const dictionaries = {
           id: "pro",
           label: "试用 30 天",
           name: "Pro 试用版",
-          description: "充分体验不限数量的收纳框与 Pro 功能后再做选择。",
+          description: "Pro 计划在未来提供个性化与小组件功能。",
           highlights: [
             "安装后可使用 30 天",
-            "收纳框数量不限",
-            "包含当前提供的 Pro 功能",
+            "包含 Community 的全部功能",
+            "计划提供个性化功能",
+            "计划提供小组件功能",
             "无需联网或登录账户",
           ],
           downloadLabel: "下载 Pro 试用版",
@@ -493,7 +500,7 @@ const dictionaries = {
       requirement: "Requiere Microsoft Edge WebView2 Runtime",
       heading: "Empieza con la edición de Boxes que mejor se adapte a ti.",
       intro:
-        "Usa gratis las funciones esenciales sin límite de tiempo o prueba durante 30 días Pro con cajas ilimitadas.",
+        "Usa cajas ilimitadas gratis con Community o prueba Pro durante 30 días. Pro incorporará funciones de personalización y widgets en el futuro.",
       detailsLabel: "Información de descarga",
       trialNote:
         "Al terminar la prueba de Pro, Boxes cambia a Community y conserva tus cajas y archivos.",
@@ -503,10 +510,10 @@ const dictionaries = {
           label: "Gratis para siempre",
           name: "Community",
           description:
-            "Para quienes quieren las funciones esenciales de organización sin límite de tiempo.",
+            "Para quienes quieren las funciones esenciales de organización y cajas ilimitadas sin límite de tiempo.",
           highlights: [
             "Sin límite de tiempo",
-            "Hasta 3 cajas",
+            "Cajas ilimitadas",
             "Iconos ilimitados en cada caja",
             "Copia de seguridad, restauración y exportación de ajustes",
           ],
@@ -517,11 +524,12 @@ const dictionaries = {
           label: "Prueba de 30 días",
           name: "Prueba Pro",
           description:
-            "Explora las cajas ilimitadas y las funciones Pro antes de decidir.",
+            "Pro incorporará funciones de personalización y widgets en el futuro.",
           highlights: [
             "Uso durante 30 días desde la instalación",
-            "Cajas ilimitadas",
-            "Incluye las funciones Pro disponibles actualmente",
+            "Incluye todas las funciones de Community",
+            "Funciones de personalización previstas",
+            "Funciones de widgets previstas",
             "No requiere conexión a Internet ni una cuenta",
           ],
           downloadLabel: "Descargar la prueba Pro",
@@ -609,7 +617,7 @@ const dictionaries = {
       requirement: "Microsoft Edge WebView2 Runtime erforderlich",
       heading: "Starte mit der Boxes-Edition, die zu dir passt.",
       intro:
-        "Nutze die wichtigsten Funktionen dauerhaft kostenlos oder teste Pro mit unbegrenzten Boxen 30 Tage lang.",
+        "Nutze mit Community kostenlos unbegrenzt viele Boxen oder teste Pro 30 Tage lang. Anpassungs- und Widget-Funktionen sind für Pro geplant.",
       detailsLabel: "Download-Informationen",
       trialNote:
         "Nach Ablauf der Pro-Testversion wechselt Boxes zu Community; vorhandene Boxen und Dateien bleiben erhalten.",
@@ -619,10 +627,10 @@ const dictionaries = {
           label: "Dauerhaft kostenlos",
           name: "Community",
           description:
-            "Für alle, die die wichtigsten Organisationsfunktionen ohne Zeitlimit nutzen möchten.",
+            "Für alle, die die wichtigsten Organisationsfunktionen und unbegrenzt viele Boxen ohne Zeitlimit nutzen möchten.",
           highlights: [
             "Kein Zeitlimit",
-            "Bis zu 3 Boxen",
+            "Unbegrenzte Boxen",
             "Unbegrenzte Symbole pro Box",
             "Einstellungen sichern, wiederherstellen und exportieren",
           ],
@@ -633,11 +641,12 @@ const dictionaries = {
           label: "30 Tage testen",
           name: "Pro-Testversion",
           description:
-            "Teste unbegrenzte Boxen und die Pro-Funktionen, bevor du dich entscheidest.",
+            "Anpassungs- und Widget-Funktionen sind künftig für Pro geplant.",
           highlights: [
             "30 Tage ab Installation nutzbar",
-            "Unbegrenzte Boxen",
-            "Enthält die derzeit verfügbaren Pro-Funktionen",
+            "Enthält alle Community-Funktionen",
+            "Anpassungsfunktionen geplant",
+            "Widget-Funktionen geplant",
             "Keine Internetverbindung und kein Konto erforderlich",
           ],
           downloadLabel: "Pro-Testversion herunterladen",
@@ -724,7 +733,7 @@ const dictionaries = {
       requirement: "Microsoft Edge WebView2 Runtime requis",
       heading: "Commencez avec l’édition de Boxes qui vous convient.",
       intro:
-        "Utilisez gratuitement les fonctions essentielles sans limite de temps ou essayez Pro et ses boîtes illimitées pendant 30 jours.",
+        "Créez gratuitement un nombre illimité de boîtes avec Community ou essayez Pro pendant 30 jours. Des fonctions de personnalisation et des widgets sont prévus pour Pro.",
       detailsLabel: "Informations de téléchargement",
       trialNote:
         "À la fin de l’essai Pro, Boxes passe à Community tout en conservant vos boîtes et fichiers.",
@@ -734,10 +743,10 @@ const dictionaries = {
           label: "Gratuit sans limite",
           name: "Community",
           description:
-            "Pour celles et ceux qui souhaitent les outils d’organisation essentiels sans limite de temps.",
+            "Pour celles et ceux qui souhaitent les outils d’organisation essentiels et un nombre illimité de boîtes sans limite de temps.",
           highlights: [
             "Aucune limite de temps",
-            "Jusqu’à 3 boîtes",
+            "Nombre de boîtes illimité",
             "Nombre d’icônes illimité dans chaque boîte",
             "Sauvegarde, restauration et exportation des paramètres",
           ],
@@ -748,11 +757,12 @@ const dictionaries = {
           label: "Essai de 30 jours",
           name: "Essai Pro",
           description:
-            "Découvrez les boîtes illimitées et les fonctionnalités Pro avant de choisir.",
+            "Des fonctions de personnalisation et des widgets sont prévus pour Pro.",
           highlights: [
             "Utilisable pendant 30 jours après l’installation",
-            "Boîtes illimitées",
-            "Inclut les fonctionnalités Pro actuellement disponibles",
+            "Inclut toutes les fonctions de Community",
+            "Fonctions de personnalisation prévues",
+            "Fonctions de widgets prévues",
             "Aucune connexion Internet ni aucun compte requis",
           ],
           downloadLabel: "Télécharger l’essai Pro",
@@ -839,7 +849,7 @@ const dictionaries = {
       requirement: "Requer o Microsoft Edge WebView2 Runtime",
       heading: "Comece com a edição do Boxes ideal para você.",
       intro:
-        "Use os recursos essenciais gratuitamente, sem limite de tempo, ou experimente o Pro com caixas ilimitadas por 30 dias.",
+        "Use caixas ilimitadas gratuitamente com o Community ou experimente o Pro por 30 dias. Recursos de personalização e widgets estão planejados para o Pro.",
       detailsLabel: "Informações do download",
       trialNote:
         "Quando o período de avaliação do Pro terminar, o Boxes mudará para o Community e manterá suas caixas e seus arquivos.",
@@ -849,10 +859,10 @@ const dictionaries = {
           label: "Grátis para sempre",
           name: "Community",
           description:
-            "Para quem quer os recursos essenciais de organização sem limite de tempo.",
+            "Para quem quer os recursos essenciais de organização e caixas ilimitadas sem limite de tempo.",
           highlights: [
             "Sem limite de tempo",
-            "Até 3 caixas",
+            "Caixas ilimitadas",
             "Ícones ilimitados em cada caixa",
             "Backup, restauração e exportação das configurações",
           ],
@@ -863,11 +873,12 @@ const dictionaries = {
           label: "Avaliação de 30 dias",
           name: "Avaliação Pro",
           description:
-            "Experimente caixas ilimitadas e os recursos Pro antes de decidir.",
+            "Recursos de personalização e widgets estão planejados para o Pro.",
           highlights: [
             "Use por 30 dias após a instalação",
-            "Caixas ilimitadas",
-            "Inclui os recursos Pro disponíveis atualmente",
+            "Inclui todos os recursos do Community",
+            "Recursos de personalização planejados",
+            "Recursos de widgets planejados",
             "Não requer conexão com a Internet nem uma conta",
           ],
           downloadLabel: "Baixar a avaliação Pro",
@@ -953,7 +964,7 @@ const dictionaries = {
       requirement: "Richiede Microsoft Edge WebView2 Runtime",
       heading: "Inizia con l’edizione di Boxes più adatta a te.",
       intro:
-        "Usa gratuitamente le funzionalità essenziali senza limiti di tempo oppure prova Pro con riquadri illimitati per 30 giorni.",
+        "Usa gratuitamente riquadri illimitati con Community oppure prova Pro per 30 giorni. Per Pro sono previste funzioni di personalizzazione e widget.",
       detailsLabel: "Informazioni sul download",
       trialNote:
         "Al termine della prova Pro, Boxes passa a Community mantenendo i riquadri e i file esistenti.",
@@ -963,10 +974,10 @@ const dictionaries = {
           label: "Gratis per sempre",
           name: "Community",
           description:
-            "Per chi desidera gli strumenti essenziali di organizzazione senza limiti di tempo.",
+            "Per chi desidera gli strumenti essenziali di organizzazione e riquadri illimitati senza limiti di tempo.",
           highlights: [
             "Nessun limite di tempo",
-            "Fino a 3 riquadri",
+            "Riquadri illimitati",
             "Icone illimitate in ogni riquadro",
             "Backup, ripristino ed esportazione delle impostazioni",
           ],
@@ -977,11 +988,12 @@ const dictionaries = {
           label: "Prova di 30 giorni",
           name: "Prova Pro",
           description:
-            "Scopri i riquadri illimitati e le funzionalità Pro prima di decidere.",
+            "Per Pro sono previste funzioni di personalizzazione e widget.",
           highlights: [
             "Utilizzabile per 30 giorni dall’installazione",
-            "Riquadri illimitati",
-            "Include le funzionalità Pro attualmente disponibili",
+            "Include tutte le funzionalità di Community",
+            "Funzioni di personalizzazione previste",
+            "Funzioni widget previste",
             "Non richiede connessione Internet né un account",
           ],
           downloadLabel: "Scarica la prova Pro",
