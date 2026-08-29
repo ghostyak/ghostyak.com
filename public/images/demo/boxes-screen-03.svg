@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Boxes 데모 화면 3</title>
+  <desc id="desc">실제 제품 스크린샷으로 교체하기 위한 데모 이미지</desc>
+  <defs><linearGradient id="bg" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#ecfccb"/><stop offset=".55" stop-color="#d1fae5"/><stop offset="1" stop-color="#cffafe"/></linearGradient><linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#f0fdf4"/></linearGradient></defs>
+  <rect width="1600" height="900" fill="url(#bg)"/><path d="M0 760C280 590 520 840 820 690s510-60 780-240v450H0z" fill="#34d399" opacity=".13"/>
+  <text x="90" y="100" fill="#14532d" font-family="Arial, sans-serif" font-size="32" font-weight="700">BOXES · DEMO SCREEN 03</text>
+  <g filter="drop-shadow(0 24px 28px rgb(20 83 45 / .18))">
+    <rect x="105" y="190" width="1390" height="535" rx="38" fill="url(#panel)" stroke="#fff" stroke-width="4"/>
+    <rect x="105" y="190" width="1390" height="88" rx="38" fill="#166534"/><rect x="105" y="244" width="1390" height="34" fill="#166534"/>
+    <circle cx="160" cy="234" r="12" fill="#86efac"/><circle cx="198" cy="234" r="12" fill="#4ade80"/><circle cx="236" cy="234" r="12" fill="#22c55e"/>
+    <g transform="translate(160 330)">
+      <rect width="365" height="300" rx="25" fill="#dcfce7"/><text x="32" y="58" fill="#166534" font-family="Arial, sans-serif" font-size="28" font-weight="700">FILES</text>
+      <g fill="#22c55e"><rect x="32" y="95" width="78" height="72" rx="14"/><rect x="130" y="95" width="78" height="72" rx="14"/><rect x="228" y="95" width="78" height="72" rx="14"/></g><g fill="#86efac"><rect x="32" y="205" width="270" height="20" rx="7"/><rect x="32" y="245" width="215" height="20" rx="7"/></g>
+    </g>
+    <g transform="translate(575 330)">
+      <rect width="365" height="300" rx="25" fill="#ccfbf1"/><text x="32" y="58" fill="#115e59" font-family="Arial, sans-serif" font-size="28" font-weight="700">TOOLS</text>
+      <g fill="#14b8a6"><circle cx="72" cy="132" r="36"/><circle cx="170" cy="132" r="36"/><circle cx="268" cy="132" r="36"/></g><g fill="#5eead4"><rect x="32" y="205" width="270" height="20" rx="7"/><rect x="32" y="245" width="235" height="20" rx="7"/></g>
+    </g>
+    <g transform="translate(990 330)">
+      <rect width="445" height="300" rx="25" fill="#ecfccb"/><text x="32" y="58" fill="#3f6212" font-family="Arial, sans-serif" font-size="28" font-weight="700">SHORTCUTS</text>
+      <g fill="#84cc16"><rect x="32" y="95" width="105" height="72" rx="14"/><rect x="157" y="95" width="105" height="72" rx="14"/><rect x="282" y="95" width="105" height="72" rx="14"/></g><g fill="#bef264"><rect x="32" y="205" width="350" height="20" rx="7"/><rect x="32" y="245" width="280" height="20" rx="7"/></g>
+    </g>
+  </g>
+  <text x="1510" y="840" text-anchor="end" fill="#14532d" font-family="Arial, sans-serif" font-size="28" font-weight="700" opacity=".65">REPLACE WITH YOUR IMAGE</text>
+</svg>

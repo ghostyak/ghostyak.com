@@ -1,16 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const DOWNLOAD_DELAY_SECONDS = 10;
+const DOWNLOAD_DELAY_SECONDS = 5;
 
-type DownloadCountdownProps = {
-  downloadUrl: string;
-  proUrl?: string;
-};
-
-export function DownloadCountdown({ downloadUrl, proUrl = "/products/boxes/pro" }: DownloadCountdownProps) {
+export function DownloadCountdown({ downloadUrl }: { downloadUrl: string }) {
   const [seconds, setSeconds] = useState(DOWNLOAD_DELAY_SECONDS);
 
   useEffect(() => {
@@ -30,11 +24,13 @@ export function DownloadCountdown({ downloadUrl, proUrl = "/products/boxes/pro" 
 
   return (
     <div aria-live="polite">
-      <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Boxes is downloading in {seconds} seconds...</h1>
-      <p className="mt-5 max-w-2xl leading-7 text-base-content/70">
-        <a className="link link-primary font-semibold" href={downloadUrl}>Click this link</a> if this download did not start
-        automatically. Ready to unlock your trial? Get{" "}
-        <Link className="link link-primary font-semibold" href={proUrl}>Boxes</Link> today.
+      <h1 className="text-3xl font-black tracking-tight sm:text-4xl">
+        {seconds > 0 ? `${seconds}초 후 다운로드가 시작됩니다.` : "다운로드를 시작하고 있습니다."}
+      </h1>
+      <p className="mt-5 max-w-2xl leading-7 text-base-content/65">
+        자동으로 시작되지 않으면{" "}
+        <a className="link link-primary font-semibold" href={downloadUrl}>설치 파일을 직접 다운로드</a>
+        해 주세요.
       </p>
     </div>
   );

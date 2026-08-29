@@ -1,45 +1,34 @@
 import type { MetadataRoute } from "next";
-import { languageAlternates, locales } from "@/locales";
+import { boxes } from "@/data/products";
+import { getAllPosts } from "@/lib/blog";
 import { siteUrl } from "@/seo";
 
-const productImage = `${siteUrl}/images/boxes-hero-concept-v3.png`;
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const posts = await getAllPosts();
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const languages = Object.fromEntries(
-    Object.entries(languageAlternates).map(([locale, path]) => [
-      locale,
-      `${siteUrl}${path}`,
-    ]),
-  );
-
-  const localizedHomePages: MetadataRoute.Sitemap = locales.map((locale) => ({
-    url: `${siteUrl}/${locale}`,
-    changeFrequency: "monthly",
-    priority: 1,
-    images: [productImage],
-    alternates: { languages },
-  }));
-
-  const productPages: MetadataRoute.Sitemap = [
+  return [
     {
-      url: `${siteUrl}/products/boxes`,
+      url: siteUrl,
+      changeFrequency: "monthly",
+      priority: 1,
+      images: [`${siteUrl}${boxes.screenshots[0].src}`],
+    },
+    {
+      url: `${siteUrl}/product/boxes`,
       changeFrequency: "monthly",
       priority: 0.9,
-      images: [productImage],
+      images: boxes.screenshots.map((screenshot) => `${siteUrl}${screenshot.src}`),
     },
     {
-      url: `${siteUrl}/products/boxes/community`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-      images: [productImage],
+      url: `${siteUrl}/blog`,
+      changeFrequency: "weekly",
+      priority: 0.7,
     },
-    {
-      url: `${siteUrl}/products/boxes/pro`,
-      changeFrequency: "monthly",
-      priority: 0.8,
-      images: [productImage],
-    },
+    ...posts.map((post) => ({
+      url: `${siteUrl}/blog/${post.slug}`,
+      lastModified: new Date(`${post.publishedAt}T00:00:00+09:00`),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
   ];
-
-  return [...localizedHomePages, ...productPages];
 }

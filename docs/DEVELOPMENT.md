@@ -1,58 +1,56 @@
 # 개발 가이드
 
-## 요구사항
+## 요구사항과 실행
 
 - Node.js 22.12 이상
 - npm
-
-## 시작하기
 
 ```sh
 npm install
 npm run dev
 ```
 
-Tailwind CSS와 DaisyUI는 npm 개발 의존성으로 설치되며 `npm install` 시 함께 준비된다. GhostYak 테마는 `src/app/globals.css`, PostCSS 연결은 `postcss.config.mjs`에서 관리한다.
-
-## 주요 명령어
+변경을 완료하기 전에 다음 검사를 모두 실행한다.
 
 ```sh
-npm run dev      # 개발 서버
-npm run build    # 프로덕션 빌드
-npm run start    # 프로덕션 서버
-npm run lint     # ESLint 검사
+npm run lint
+npm run build
 ```
-
-변경을 완료하기 전에 `npm run lint`와 `npm run build`를 실행한다.
 
 ## 작업 규칙
 
-- 한 번에 로드맵의 작은 작업 하나를 구현한다.
-- Next.js App Router와 Server Component를 우선한다.
-- 브라우저 API나 상태가 필요할 때만 `"use client"`를 추가한다.
-- 새로운 의존성은 기존 기능으로 해결하기 어려울 때만 추가한다.
-- 신규·개편 UI는 DaisyUI 컴포넌트와 의미 기반 테마 클래스를 우선 사용한다.
-- 레이아웃, 간격과 반응형 동작은 Tailwind CSS 유틸리티를 우선 사용한다.
-- 사용자 정의 CSS는 DaisyUI와 Tailwind CSS로 요구사항을 표현할 수 없을 때만 추가한다.
-- UI 작업 전 [DESIGN.md](./DESIGN.md)를 확인하고 독자적인 레거시 컴포넌트 CSS를 다시 추가하지 않는다.
-- 모바일 화면을 먼저 고려하고 넓은 화면으로 확장한다.
-- 링크와 버튼은 키보드로 사용할 수 있어야 한다.
-- 제품 버전과 다운로드 URL을 여러 파일에 중복해서 작성하지 않는다.
-- 제품·에디션·다운로드 경로는 `/{lang}/products/boxes/...` 계층을 사용하고, 기존 영문 `/products/boxes/...` 경로도 유지한다.
-- 다운로드 카운트다운을 수정할 때 자동 다운로드와 직접 링크가 같은 설치 파일 URL을 사용하는지 확인한다.
-- 지원 언어와 경로는 `src/locales.ts`, 언어별 문구는 `src/i18n.ts`에서 관리한다.
+- Next.js App Router와 Server Component를 기본으로 사용한다.
+- 브라우저 상태, 이벤트 또는 타이머가 필요한 가장 작은 경계만 Client Component로 만든다.
+- 신규·개편 UI는 DaisyUI 컴포넌트와 의미 기반 테마 클래스를 우선한다.
+- Tailwind CSS 유틸리티로 레이아웃, 간격과 반응형 동작을 구성한다.
+- UI 작업 전 [DESIGN.md](./DESIGN.md)를 확인한다.
+- 320px 너비에서도 가로 스크롤 없이 핵심 메뉴와 행동을 사용할 수 있게 한다.
 - 생성물인 `.next/`, `out/`, `node_modules/`는 커밋하지 않는다.
+
+## 제품 정보와 데모 이미지
+
+Boxes의 버전, 무료 설치 파일 URL, 기능 문구와 회전 이미지 목록은 `src/data/products.ts`에서 수정한다. 실제 이미지가 준비되면 `public/images/demo/`에 파일을 추가하고 `homeSlides`와 `boxes.screenshots`의 `src`만 교체한다.
+
+제품 화면에는 현재 무료 다운로드 버튼 하나만 둔다. 상업용 설치 파일과 배포 정책이 확정되기 전에는 Pro 또는 구매 행동을 추가하지 않는다.
+
+## 블로그 글 작성
+
+블로그 글은 `content/blog/`에 영문 소문자와 하이픈으로 된 파일명으로 추가한다. 파일명이 URL slug가 된다.
+
+```md
+---
+title: "글 제목"
+description: "목록과 검색 메타데이터에 사용할 설명"
+publishedAt: "2026-08-29"
+---
+
+Markdown 본문
+```
+
+필수 frontmatter가 없으면 빌드가 오류를 표시한다. Markdown 안의 임의 HTML은 렌더링하지 않으며, React 컴포넌트를 글에 삽입하지 않는다.
 
 ## 정적 파일
 
 - favicon과 그대로 제공할 이미지는 `public/`에 둔다.
-- 작은 설치 파일은 `public/downloads/`에 둘 수 있다.
-- 큰 설치 파일은 외부 릴리스 저장소에 올리고 HTTPS URL로 연결한다.
-
-## 문서 관리
-
-- 작업 순서와 완료 여부: [ROADMAP.md](./ROADMAP.md)
-- 구조와 기술 결정: [ARCHITECTURE.md](./ARCHITECTURE.md)
-- UI와 디자인 시스템: [DESIGN.md](./DESIGN.md)
-- 검색엔진 인증과 sitemap 제출: [SEO.md](./SEO.md)
-- 구조가 변경되면 코드와 관련 문서를 함께 수정한다.
+- 큰 설치 파일은 GitHub Releases 같은 외부 저장소에 두고 HTTPS URL을 연결한다.
+- 실제 설치 파일로 바꾸기 전 다운로드 URL과 버전 정보를 함께 확인한다.

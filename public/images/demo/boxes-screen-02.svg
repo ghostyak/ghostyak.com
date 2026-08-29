@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Boxes 데모 화면 2</title>
+  <desc id="desc">실제 제품 스크린샷으로 교체하기 위한 데모 이미지</desc>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0f172a"/><stop offset="1" stop-color="#164e63"/></linearGradient><linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1e293b"/><stop offset="1" stop-color="#0f172a"/></linearGradient></defs>
+  <rect width="1600" height="900" fill="url(#bg)"/><circle cx="800" cy="400" r="500" fill="#22d3ee" opacity=".09"/>
+  <text x="90" y="100" fill="#a5f3fc" font-family="Arial, sans-serif" font-size="32" font-weight="700">BOXES · DEMO SCREEN 02</text>
+  <g filter="drop-shadow(0 24px 30px rgb(0 0 0 / .35))">
+    <rect x="100" y="160" width="430" height="610" rx="32" fill="url(#panel)" stroke="#334155" stroke-width="3"/>
+    <text x="150" y="235" fill="#67e8f9" font-family="Arial, sans-serif" font-size="30" font-weight="700">WORK</text>
+    <g fill="#475569"><rect x="150" y="285" width="330" height="65" rx="15"/><rect x="150" y="375" width="330" height="65" rx="15"/><rect x="150" y="465" width="330" height="65" rx="15"/><rect x="150" y="555" width="330" height="65" rx="15"/></g>
+    <rect x="150" y="665" width="190" height="52" rx="16" fill="#0891b2"/>
+  </g>
+  <g filter="drop-shadow(0 24px 30px rgb(0 0 0 / .35))">
+    <rect x="575" y="225" width="925" height="545" rx="32" fill="#f8fafc" opacity=".96"/>
+    <text x="630" y="300" fill="#0f172a" font-family="Arial, sans-serif" font-size="30" font-weight="700">TODAY</text>
+    <g><rect x="630" y="350" width="245" height="165" rx="22" fill="#cffafe"/><rect x="905" y="350" width="245" height="165" rx="22" fill="#bae6fd"/><rect x="1180" y="350" width="265" height="165" rx="22" fill="#a5f3fc"/></g>
+    <g fill="#64748b"><rect x="630" y="570" width="745" height="24" rx="8"/><rect x="630" y="615" width="610" height="24" rx="8"/><rect x="630" y="660" width="690" height="24" rx="8"/></g>
+  </g>
+  <text x="1510" y="840" text-anchor="end" fill="#a5f3fc" font-family="Arial, sans-serif" font-size="28" font-weight="700" opacity=".65">REPLACE WITH YOUR IMAGE</text>
+</svg>
