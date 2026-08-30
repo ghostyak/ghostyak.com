@@ -8,8 +8,8 @@
 `SoftwareApplication` JSON-LD가 서버 렌더링된다.
 
 `/robots.txt`는 모든 공개 페이지의 크롤링을 허용하고 검색 결과용 페이지가 아닌
-`/language/` 처리 경로만 제외한다. 대표 호스트는 `https://ghostyak.com`, sitemap은
-`https://ghostyak.com/sitemap.xml`로 안내한다.
+`/language/` 처리 경로만 제외한다. 대표 호스트는 `https://www.ghostyak.com`, sitemap은
+`https://www.ghostyak.com/sitemap.xml`로 안내한다.
 
 | 대상 | 경로 | 언어·지역 코드 | 우선 확인할 검색 도구 |
 | --- | --- | --- | --- |
@@ -40,13 +40,13 @@ Vercel 환경 변수를 변경한 뒤에는 새 배포가 필요하다. 값이 �
 
 ## 배포 후 등록 절차
 
-1. `https://ghostyak.com/`, `https://ghostyak.com/en` 등의 페이지 소스에서 canonical, `hreflang`, 인증
+1. `https://www.ghostyak.com/`, `https://www.ghostyak.com/en` 등의 페이지 소스에서 canonical, `hreflang`, 인증
    메타 태그와 `application/ld+json`을 확인한다.
 2. [Google Search Console](https://search.google.com/search-console),
    [Bing Webmaster Tools](https://www.bing.com/webmasters),
    [네이버 서치어드바이저](https://searchadvisor.naver.com/),
    [바이두 검색자원 플랫폼](https://ziyuan.baidu.com/)에서 사이트 소유권을 인증한다.
-3. 각 도구에 `https://ghostyak.com/sitemap.xml`을 제출한다. Bing은 Google Search
+3. 각 도구에 `https://www.ghostyak.com/sitemap.xml`을 제출한다. Bing은 Google Search
    Console에서 사이트와 sitemap을 가져오는 방식도 지원한다.
 4. Google Rich Results Test에서 각 언어 페이지의 `SoftwareApplication` 구조화
    데이터를 검사한다.
