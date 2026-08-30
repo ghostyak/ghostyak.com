@@ -44,6 +44,11 @@ ghostyak.com의 공개 UI는 Tailwind CSS와 DaisyUI를 기본 디자인 시스�
 - 마우스가 올라가거나 키보드 포커스가 들어오면 자동 회전을 잠시 멈춘다.
 - `prefers-reduced-motion` 환경에서는 자동 회전과 진입 애니메이션을 사용하지 않는다.
 - 색상만으로 현재 상태를 구분하지 않고 ARIA 상태도 함께 제공한다.
+- 번역문이 길어져도 제목, 버튼과 메뉴가 잘리거나 겹치지 않아야 한다.
+- 고정 너비는 한국어 문장 길이에 맞추지 않고 지원 언어의 긴 문구를 수용해야 한다.
+- 언어 선택 메뉴는 현재 언어를 표시하고 대응하는 현재 콘텐츠로 이동해야 한다.
+
+국제화 화면의 문구와 검수 기준은 [INTERNATIONALIZATION.md](./INTERNATIONALIZATION.md)를 따른다.
 
 ## Server Component 원칙
 

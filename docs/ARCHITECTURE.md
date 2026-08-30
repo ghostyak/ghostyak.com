@@ -2,7 +2,7 @@
 
 ## 개요
 
-ghostyak.com은 Vercel에 배포하는 Next.js 애플리케이션이다. 현재 공개 화면은 한국어를 기본으로 GhostYak 브랜드, Boxes 제품 소개와 무료 설치 파일, Markdown 블로그를 제공한다.
+ghostyak.com은 Vercel에 배포하는 Next.js 애플리케이션이다. 현재 공개 화면은 한국어를 기본으로 GhostYak 브랜드, Boxes 제품 소개와 무료 설치 파일, Markdown 블로그를 제공한다. 국제화는 한국어 콘텐츠를 유일한 원문으로 삼아 단계적으로 추가하며 세부 기준은 [INTERNATIONALIZATION.md](./INTERNATIONALIZATION.md)를 따른다.
 
 ## 기술 구성
 
@@ -38,7 +38,7 @@ docs/                            설계, 개발과 로드맵 문서
 - `/blog`: Markdown 글 목록
 - `/blog/[slug]`: 정적으로 생성하는 Markdown 글 상세 화면
 
-기존 `/products/boxes/...`와 이전 언어 경로는 `next.config.ts`의 영구 리디렉션으로 새 대표 경로에 연결한다. 다국어 화면과 상업용 에디션은 현재 공개 범위에 포함하지 않는다.
+기존 `/products/boxes/...`와 이전 언어 경로는 `next.config.ts`의 영구 리디렉션으로 새 대표 경로에 연결한다. 현재는 한국어만 공개한다. 국제화 구현 후에도 접두사 없는 경로는 한국어 대표 URL로 유지하고 번역 경로만 `/{locale}/...` 접두사를 사용한다.
 
 ## 제품과 콘텐츠 데이터
 
@@ -54,3 +54,4 @@ Boxes의 버전, 설치 파일 URL, 기능과 데모 이미지 경로는 `src/da
 - 설치 파일 URL과 교체 이미지 경로를 페이지에 중복 작성하지 않는다.
 - 다운로드 안내 페이지는 검색 색인에서 제외한다.
 - sitemap은 홈, Boxes, 블로그와 각 Markdown 글을 포함한다.
+- 번역은 확정된 한국어 원문에서만 파생하며 누락된 번역을 한국어 fallback으로 숨기지 않는다.

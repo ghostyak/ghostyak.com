@@ -13,7 +13,9 @@ npm run build
 
 Full documentation: https://nextjs.org/docs/app
 
-Keep `docs/ARCHITECTURE.md`, `docs/DEVELOPMENT.md`, `docs/DESIGN.md`, and `docs/ROADMAP.md` aligned with public behavior and infrastructure changes.
+Keep `docs/ARCHITECTURE.md`, `docs/DEVELOPMENT.md`, `docs/DESIGN.md`, `docs/INTERNATIONALIZATION.md`, and `docs/ROADMAP.md` aligned with public behavior and infrastructure changes.
+
+For internationalization and translated content, read `docs/INTERNATIONALIZATION.md` first. Korean content is the only source of truth; update and approve the Korean source before translating it into any other locale.
 
 ## Design system
 
