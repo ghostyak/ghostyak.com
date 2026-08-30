@@ -36,7 +36,7 @@ export async function HomeContent({ locale }: { locale: PublishedLocale }) {
           </div>
           <article className="card overflow-hidden border border-base-300 bg-base-100 shadow-xl lg:card-side">
             <figure className="relative min-h-72 overflow-hidden bg-neutral lg:w-1/2">
-              <Image className="object-cover" src={boxes.screenshots[0].src} alt={dictionary.boxes.screenshotAlts[0]} fill sizes="(max-width: 1024px) 100vw, 50vw" />
+              <Image className="object-cover" src={boxes.screenshots[0].src} alt={dictionary.boxes.screenshotAlts[0]} fill loading="eager" sizes="(max-width: 1024px) 100vw, 50vw" />
             </figure>
             <div className="card-body justify-center p-7 sm:p-10 lg:w-1/2 lg:p-14">
               <div className="flex flex-wrap gap-2"><span className="badge badge-primary badge-soft">{dictionary.home.products.freeBadge}</span><span className="badge badge-outline">{boxes.platform}</span></div>
@@ -73,7 +73,7 @@ export async function BoxesContent({ locale }: { locale: PublishedLocale }) {
       <section className="overflow-hidden bg-gradient-to-b from-primary/12 via-base-200 to-base-100">
         <div className="mx-auto flex w-full max-w-6xl flex-col items-center px-4 pb-20 pt-14 text-center sm:px-6 sm:pt-20 lg:pb-28">
           <div className="flex items-center justify-center gap-4 sm:gap-5">
-            <Image className="size-16 object-contain drop-shadow-lg sm:size-20" src="/images/boxes-icon.png" alt="" width={96} height={96} loading="eager" />
+            <Image className="size-16 object-contain drop-shadow-lg sm:size-20" src="/images/ghostyak-boxes.svg" alt="" width={96} height={96} loading="eager" />
             <h1 className="text-5xl font-black tracking-tight text-primary sm:text-7xl">{boxes.name}</h1>
           </div>
           <p className="mt-7 text-2xl font-bold tracking-tight sm:text-4xl">{dictionary.boxes.tagline}</p>
@@ -114,7 +114,7 @@ export async function BoxesDownloadContent({ locale }: { locale: PublishedLocale
         </nav>
         <section className="card border border-base-300 bg-base-100 shadow-xl">
           <div className="card-body gap-8 p-6 sm:p-10">
-            <div className="flex items-center gap-4"><Image src="/images/boxes-icon.png" alt="" width={80} height={80} className="size-16 object-contain sm:size-20" loading="eager" /><div><p className="text-sm font-bold text-primary">GHOSTYAK</p><p className="text-3xl font-black">Boxes</p></div></div>
+            <div className="flex items-center gap-4"><Image src="/images/ghostyak-boxes.svg" alt="" width={80} height={80} className="size-16 object-contain sm:size-20" loading="eager" /><div><p className="text-sm font-bold text-primary">GHOSTYAK</p><p className="text-3xl font-black">Boxes</p></div></div>
             <DownloadCountdown downloadUrl={boxes.download.installerUrl} labels={copy} />
             <div className="alert alert-info alert-soft text-sm leading-6"><span aria-hidden="true">ⓘ</span><p>{copy.waitNotice}</p></div>
             <div className="flex flex-wrap gap-2 text-xs" aria-label={copy.fileInfoLabel}>
