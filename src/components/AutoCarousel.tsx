@@ -111,8 +111,8 @@ export function HeroCarousel({ slides }: { slides: readonly HeroSlide[] }) {
             src={slide.src}
             alt={slide.alt}
             fill
+            loading="eager"
             sizes="(max-width: 1024px) 100vw, 65vw"
-            priority={activeIndex === 0}
           />
         </div>
       </article>
@@ -159,8 +159,8 @@ export function ImageCarousel({ slides }: { slides: readonly CarouselImage[] }) 
             src={slide.src}
             alt={slide.alt}
             fill
+            loading="eager"
             sizes="(max-width: 1180px) calc(100vw - 32px), 1120px"
-            priority={activeIndex === 0}
           />
         </div>
       </div>
