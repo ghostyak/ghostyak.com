@@ -11,6 +11,7 @@ ghostyak.com은 Vercel에 배포하는 Next.js 애플리케이션이다. 현재 
 - Tailwind CSS 4와 DaisyUI 5
 - `gray-matter`로 Markdown frontmatter 파싱
 - `unified`, `remark-parse`, `remark-rehype`, `rehype-stringify`로 Markdown을 안전한 HTML로 변환
+- 서버 전용 로케일 사전 로더와 TypeScript 사전 구조 검증
 - Vercel Analytics, Google Analytics와 Google AdSense 공통 로더
 
 페이지와 컴포넌트는 Server Component가 기본이다. 자동 회전에 타이머와 사용자 조작이 필요한 `AutoCarousel`, 다운로드 지연이 필요한 `DownloadCountdown`만 Client Component로 둔다.
@@ -18,17 +19,18 @@ ghostyak.com은 Vercel에 배포하는 Next.js 애플리케이션이다. 현재 
 ## 주요 구조
 
 ```text
-content/blog/                    Markdown 블로그 글
+content/blog/ko/                 한국어 Markdown 블로그 원문
 public/images/demo/              교체 가능한 데모 화면 이미지
 src/app/                         App Router 페이지와 메타데이터
 src/app/product/boxes/           Boxes 소개와 무료 다운로드 경로
 src/components/                  공통 헤더, 푸터와 동작 컴포넌트
-src/data/products.ts             제품, 다운로드, 회전 이미지 데이터
+src/data/products.ts             언어 중립 제품, 다운로드와 이미지 데이터
+src/i18n/                        로케일 레지스트리, 원문 사전과 서버 로더
 src/lib/blog.ts                  Markdown 조회와 변환
 docs/                            설계, 개발과 로드맵 문서
 ```
 
-`src/app/layout.tsx`가 모든 공개 경로에 한국어 문서 언어, 공통 메타데이터, 헤더, 푸터와 추적 스크립트를 제공한다. 헤더와 정적 페이지는 Server Component로 유지한다.
+`src/app/layout.tsx`가 모든 공개 경로에 한국어 문서 언어, 공통 메타데이터, 헤더, 푸터와 추적 스크립트를 제공한다. 현재 모든 표시 문구와 접근성 이름은 `src/i18n/dictionaries/ko.ts`의 한국어 원문 사전에서 읽는다. 사전은 서버에서 불러오고 Client Component에는 필요한 문자열만 props로 전달한다.
 
 ## 공개 경로
 
@@ -42,9 +44,9 @@ docs/                            설계, 개발과 로드맵 문서
 
 ## 제품과 콘텐츠 데이터
 
-Boxes의 버전, 설치 파일 URL, 기능과 데모 이미지 경로는 `src/data/products.ts`에서 관리한다. 현재 다운로드 대상은 GitHub Releases의 무료 설치 파일 하나다. 상업용 에디션은 실제 설치 파일과 정책이 준비될 때 데이터 모델과 UI에 추가한다.
+Boxes의 버전, 설치 파일 URL과 데모 이미지 경로는 `src/data/products.ts`에서 관리한다. 설명, 기능, 파일 크기 표시와 이미지 대체 텍스트는 한국어 원문 사전에서 관리한다. 현재 다운로드 대상은 GitHub Releases의 무료 설치 파일 하나다. 상업용 에디션은 실제 설치 파일과 정책이 준비될 때 데이터 모델과 UI에 추가한다.
 
-블로그 글은 `content/blog/*.md`에 저장한다. 각 글은 `title`, `description`, `publishedAt` frontmatter를 가져야 한다. `src/lib/blog.ts`가 파일명을 slug로 사용하고 최신 날짜순으로 목록을 정렬하며, App Router의 `generateStaticParams`가 상세 페이지를 정적으로 생성한다.
+한국어 블로그 원문은 `content/blog/ko/*.md`에 저장한다. 각 글은 `title`, `description`, `publishedAt`, `translationKey`, `sourceRevision` frontmatter를 가져야 한다. `src/lib/blog.ts`가 로케일별 디렉터리를 읽고 파일명을 slug로 사용해 최신 날짜순으로 정렬하며, App Router의 `generateStaticParams`가 상세 페이지를 정적으로 생성한다.
 
 ## 설계 원칙
 

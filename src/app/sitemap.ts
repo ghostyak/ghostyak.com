@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next";
 import { boxes } from "@/data/products";
+import { sourceLocale } from "@/i18n/locales";
 import { getAllPosts } from "@/lib/blog";
 import { siteUrl } from "@/seo";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const posts = await getAllPosts();
+  const posts = await getAllPosts(sourceLocale);
 
   return [
     {

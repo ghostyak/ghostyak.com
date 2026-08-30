@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { boxes } from "@/data/products";
+import { localeConfig, type PublishedLocale } from "@/i18n/locales";
 
 export const siteUrl = "https://ghostyak.com";
 
@@ -19,13 +20,21 @@ export function getSearchEngineVerification(): Metadata["verification"] {
   };
 }
 
-export function getSoftwareApplicationJsonLd() {
+export function getSoftwareApplicationJsonLd({
+  locale,
+  description,
+  featureNames,
+}: {
+  locale: PublishedLocale;
+  description: string;
+  featureNames: readonly string[];
+}) {
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "@id": `${siteUrl}/#ghostyak-boxes`,
     name: boxes.fullName,
-    description: boxes.description,
+    description,
     url: `${siteUrl}/product/boxes`,
     image: `${siteUrl}${boxes.screenshots[0].src}`,
     screenshot: boxes.screenshots.map((screenshot) => `${siteUrl}${screenshot.src}`),
@@ -33,8 +42,8 @@ export function getSoftwareApplicationJsonLd() {
     softwareVersion: boxes.version,
     operatingSystem: "Windows 10, Windows 11",
     applicationCategory: "UtilitiesApplication",
-    inLanguage: "ko-KR",
-    featureList: boxes.features.map((feature) => feature.title),
+    inLanguage: localeConfig[locale].htmlLanguage,
+    featureList: featureNames,
     isAccessibleForFree: true,
     offers: {
       "@type": "Offer",

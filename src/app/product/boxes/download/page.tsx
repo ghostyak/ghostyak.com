@@ -3,29 +3,37 @@ import Image from "next/image";
 import Link from "next/link";
 import { DownloadCountdown } from "@/components/DownloadCountdown";
 import { boxes } from "@/data/products";
+import { getDictionary } from "@/i18n/get-dictionary";
+import { sourceLocale } from "@/i18n/locales";
+import { formatMessage, localizedPath } from "@/i18n/routing";
 
-export const metadata: Metadata = {
-  title: "Boxes 다운로드",
-  robots: { index: false, follow: true },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const dictionary = await getDictionary(sourceLocale);
+  return { title: dictionary.metadata.boxesDownload.title, robots: { index: false, follow: true } };
+}
 
-export default function BoxesDownloadPage() {
+export default async function BoxesDownloadPage() {
+  const dictionary = await getDictionary(sourceLocale);
+  const copy = dictionary.boxes.download;
   return (
     <main className="bg-base-200 py-12 sm:py-20">
       <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
-        <nav className="breadcrumbs mb-8 text-sm text-base-content/60" aria-label="현재 위치">
-          <ul><li><Link href="/product/boxes">Boxes</Link></li><li aria-current="page">다운로드</li></ul>
+        <nav className="breadcrumbs mb-8 text-sm text-base-content/60" aria-label={copy.breadcrumbLabel}>
+          <ul><li><Link href={localizedPath(sourceLocale, "/product/boxes")}>Boxes</Link></li><li aria-current="page">{copy.breadcrumbCurrent}</li></ul>
         </nav>
         <section className="card border border-base-300 bg-base-100 shadow-xl">
           <div className="card-body gap-8 p-6 sm:p-10">
             <div className="flex items-center gap-4">
-              <Image src="/images/boxes-icon.png" alt="" width={80} height={80} className="size-16 object-contain sm:size-20" priority />
+              <Image src="/images/boxes-icon.png" alt="" width={80} height={80} className="size-16 object-contain sm:size-20" loading="eager" />
               <div><p className="text-sm font-bold text-primary">GHOSTYAK</p><p className="text-3xl font-black">Boxes</p></div>
             </div>
-            <DownloadCountdown downloadUrl={boxes.download.installerUrl} />
-            <div className="alert alert-info alert-soft text-sm leading-6"><span aria-hidden="true">ⓘ</span><p>브라우저에서 설치 파일 다운로드가 시작될 때까지 이 페이지를 열어 두세요.</p></div>
-            <div className="flex flex-wrap gap-2 text-xs" aria-label="설치 파일 정보">
-              <span className="badge badge-outline">버전 {boxes.version}</span><span className="badge badge-outline">{boxes.platform}</span><span className="badge badge-outline">{boxes.fileSize}</span><span className="badge badge-outline h-auto min-h-6 whitespace-normal py-1">{boxes.requirement}</span>
+            <DownloadCountdown downloadUrl={boxes.download.installerUrl} labels={copy} />
+            <div className="alert alert-info alert-soft text-sm leading-6"><span aria-hidden="true">ⓘ</span><p>{copy.waitNotice}</p></div>
+            <div className="flex flex-wrap gap-2 text-xs" aria-label={copy.fileInfoLabel}>
+              <span className="badge badge-outline">{formatMessage(copy.version, { version: boxes.version })}</span>
+              <span className="badge badge-outline">{boxes.platform}</span>
+              <span className="badge badge-outline">{copy.fileSize}</span>
+              <span className="badge badge-outline h-auto min-h-6 whitespace-normal py-1">{copy.requirement}</span>
             </div>
           </div>
         </section>

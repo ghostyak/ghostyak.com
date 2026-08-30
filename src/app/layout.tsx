@@ -4,51 +4,41 @@ import { Analytics } from "@vercel/analytics/next";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { TrackingScripts } from "@/components/TrackingScripts";
+import { getDictionary } from "@/i18n/get-dictionary";
+import { localeConfig, sourceLocale } from "@/i18n/locales";
 import { getSearchEngineVerification, siteUrl } from "@/seo";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: {
-    default: "GhostYak | 일상을 정리하는 Windows 소프트웨어",
-    template: "%s | GhostYak",
-  },
-  description:
-    "GhostYak은 일상의 Windows 작업 공간을 더 단순하고 편리하게 만드는 소프트웨어를 만듭니다.",
-  applicationName: "GhostYak",
-  creator: "GhostYak",
-  publisher: "GhostYak",
-  verification: getSearchEngineVerification(),
-  formatDetection: { email: false, address: false, telephone: false },
-  openGraph: {
-    type: "website",
-    locale: "ko_KR",
-    siteName: "GhostYak",
-    images: [
-      {
-        url: "/ghostyak.png",
-        width: 300,
-        height: 300,
-        alt: "GhostYak",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    images: ["/ghostyak.png"],
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const dictionary = await getDictionary(sourceLocale);
+  return {
+    metadataBase: new URL(siteUrl),
+    title: { default: dictionary.metadata.site.title, template: dictionary.metadata.site.titleTemplate },
+    description: dictionary.metadata.site.description,
+    applicationName: "GhostYak",
+    creator: "GhostYak",
+    publisher: "GhostYak",
+    verification: getSearchEngineVerification(),
+    formatDetection: { email: false, address: false, telephone: false },
+    openGraph: {
+      type: "website",
+      locale: localeConfig[sourceLocale].openGraphLocale,
+      siteName: "GhostYak",
+      images: [{ url: "/ghostyak.png", width: 300, height: 300, alt: "GhostYak" }],
+    },
+    twitter: { card: "summary_large_image", images: ["/ghostyak.png"] },
+  };
+}
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({ children }: { children: ReactNode }) {
+  const dictionary = await getDictionary(sourceLocale);
   return (
-    <html lang="ko-KR" data-theme="ghostyak" data-scroll-behavior="smooth">
-      <head>
-        <TrackingScripts />
-      </head>
+    <html lang={localeConfig[sourceLocale].htmlLanguage} data-theme="ghostyak" data-scroll-behavior="smooth">
+      <head><TrackingScripts /></head>
       <body className="flex min-h-screen min-w-80 flex-col bg-base-100 text-base-content antialiased">
-        <Header />
+        <Header labels={dictionary.header} locale={sourceLocale} />
         <div className="flex-1">{children}</div>
-        <Footer />
+        <Footer labels={dictionary.footer} locale={sourceLocale} />
         <Analytics />
       </body>
     </html>

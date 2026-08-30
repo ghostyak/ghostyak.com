@@ -1,18 +1,9 @@
 import type { NextConfig } from "next";
+import { pendingTranslationLocales } from "./src/i18n/locales";
 
 // These locale prefixes were previously public. Until a locale is translated
 // and published again, preserve inbound links with a temporary redirect to the
 // equivalent Korean canonical route instead of returning a locale-only 404.
-const pendingTranslationLocales = [
-  "en",
-  "ja",
-  "zh",
-  "es",
-  "de",
-  "fr",
-  "pt",
-  "it",
-] as const;
 const pendingTranslationLocalePattern = pendingTranslationLocales.join("|");
 
 const nextConfig: NextConfig = {

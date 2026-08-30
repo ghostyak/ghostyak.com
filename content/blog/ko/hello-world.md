@@ -2,6 +2,8 @@
 title: "Hello, world!"
 description: "새롭게 문을 연 GhostYak 블로그의 첫 번째 글입니다."
 publishedAt: "2026-08-29"
+translationKey: "hello-world"
+sourceRevision: 1
 ---
 
 GhostYak 블로그를 시작합니다.

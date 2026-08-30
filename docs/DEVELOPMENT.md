@@ -36,25 +36,27 @@ Boxes의 버전, 무료 설치 파일 URL, 기능 문구와 회전 이미지 목
 
 ## 블로그 글 작성
 
-블로그 글은 `content/blog/`에 영문 소문자와 하이픈으로 된 파일명으로 추가한다. 파일명이 URL slug가 된다.
+한국어 블로그 원문은 `content/blog/ko/`에 영문 소문자와 하이픈으로 된 파일명으로 추가한다. 파일명이 한국어 대표 URL의 slug가 된다.
 
 ```md
 ---
 title: "글 제목"
 description: "목록과 검색 메타데이터에 사용할 설명"
 publishedAt: "2026-08-29"
+translationKey: "stable-content-id"
+sourceRevision: 1
 ---
 
 Markdown 본문
 ```
 
-필수 frontmatter가 없으면 빌드가 오류를 표시한다. Markdown 안의 임의 HTML은 렌더링하지 않으며, React 컴포넌트를 글에 삽입하지 않는다.
+필수 frontmatter가 없거나 `sourceRevision`이 숫자가 아니면 빌드가 오류를 표시한다. 한국어 글의 의미가 바뀌면 `sourceRevision`을 올린다. Markdown 안의 임의 HTML은 렌더링하지 않으며, React 컴포넌트를 글에 삽입하지 않는다.
 
 ## 국제화 작업
 
 - 한국어 콘텐츠를 먼저 작성하고 화면·접근성·메타데이터 검수를 끝낸 뒤 번역한다.
 - 번역 언어에서 한국어 원문에 없는 기능이나 약속을 추가하지 않는다.
-- 한국어도 하드코딩하지 않고 원문 사전에서 읽는 구조를 목표로 한다.
+- 한국어도 페이지와 컴포넌트에 하드코딩하지 않고 원문 사전에서 읽는다.
 - 지원 로케일은 필수 화면과 메타데이터를 모두 번역한 뒤 공개한다.
 - 누락 번역은 한국어로 자동 대체하지 않고 검사에서 실패시킨다.
 - 블로그 번역은 한국어 글의 `translationKey`와 원문 리비전에 연결한다.
@@ -62,6 +64,8 @@ Markdown 본문
 - 새 번역 로케일을 공개할 때는 `next.config.ts`의 `pendingTranslationLocales`에서 해당 로케일을 제거한다.
 
 라우팅, 사전 구조, 번역 문체, SEO와 완료 조건은 [국제화 및 번역 기준](./INTERNATIONALIZATION.md)을 따른다.
+
+현재 한국어 원문 사전은 `src/i18n/dictionaries/ko.ts`, 로케일 상태는 `src/i18n/locales.ts`에서 관리한다. 표시 문구를 추가할 때는 페이지에 직접 작성하지 않고 한국어 사전에 의미 기반 키를 먼저 추가한다. 언어 중립 값만 `src/data/`에 둔다.
 
 ## 정적 파일
 
