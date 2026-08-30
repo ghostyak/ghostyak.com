@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ghostyakIcon from "../../public/ghostyak.png";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import type { PublishedLocale } from "@/i18n/locales";
 import { localizedPath } from "@/i18n/routing";
@@ -8,9 +9,11 @@ import { localizedPath } from "@/i18n/routing";
 export function Header({
   labels,
   locale,
+  currentPath,
 }: {
   labels: Dictionary["header"];
   locale: PublishedLocale;
+  currentPath: string;
 }) {
   return (
     <header className="sticky top-0 z-50 border-b border-primary-content/15 bg-primary text-primary-content shadow-md">
@@ -22,7 +25,7 @@ export function Header({
             aria-label={labels.homeLabel}
           >
             <Image className="size-9 object-contain" src={ghostyakIcon} alt="" width={38} height={38} loading="eager" />
-            <span className="hidden min-[390px]:inline">GhostYak</span>
+            <span className="hidden sm:inline">GhostYak</span>
           </Link>
         </div>
         <nav className="navbar-end w-auto shrink-0 gap-0 sm:gap-1" aria-label={labels.navigationLabel}>
@@ -32,6 +35,7 @@ export function Header({
           <Link className="btn btn-ghost min-h-11 px-3 text-primary-content hover:bg-primary-content/10 sm:px-4" href={localizedPath(locale, "/blog")}>
             {labels.blog}
           </Link>
+          <LanguageSwitcher currentLocale={locale} currentPath={currentPath} label={labels.language} />
         </nav>
       </div>
     </header>

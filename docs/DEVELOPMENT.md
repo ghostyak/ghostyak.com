@@ -60,12 +60,14 @@ Markdown 본문
 - 지원 로케일은 필수 화면과 메타데이터를 모두 번역한 뒤 공개한다.
 - 누락 번역은 한국어로 자동 대체하지 않고 검사에서 실패시킨다.
 - 블로그 번역은 한국어 글의 `translationKey`와 원문 리비전에 연결한다.
-- 과거에 공개한 언어 경로는 번역이 없다는 이유만으로 404를 반환하지 않고 같은 한국어 콘텐츠로 임시 이동한다.
-- 새 번역 로케일을 공개할 때는 `next.config.ts`의 `pendingTranslationLocales`에서 해당 로케일을 제거한다.
+- 번역 글은 현재 한국어 원문과 같은 파일명 slug와 `sourceRevision`을 사용한다.
+- 새 번역 로케일은 필수 UI와 블로그를 모두 번역한 뒤 `src/i18n/locales.ts`의 공개 목록과 사전 로더에 추가한다.
+- `npm run build`는 공개 사전의 빈 문자열·placeholder와 블로그 번역의 원문 리비전을 검사한다.
+- 브라우저 자동 감지와 언어 쿠키 동작은 `src/proxy.ts`, 언어 선택 이동은 `src/app/language/[locale]/route.ts`에서 관리한다.
 
 라우팅, 사전 구조, 번역 문체, SEO와 완료 조건은 [국제화 및 번역 기준](./INTERNATIONALIZATION.md)을 따른다.
 
-현재 한국어 원문 사전은 `src/i18n/dictionaries/ko.ts`, 로케일 상태는 `src/i18n/locales.ts`에서 관리한다. 표시 문구를 추가할 때는 페이지에 직접 작성하지 않고 한국어 사전에 의미 기반 키를 먼저 추가한다. 언어 중립 값만 `src/data/`에 둔다.
+한국어 원문 사전은 `src/i18n/dictionaries/ko.ts`, 번역 사전은 같은 디렉터리의 로케일별 파일, 로케일 상태는 `src/i18n/locales.ts`에서 관리한다. 표시 문구를 추가할 때는 페이지에 직접 작성하지 않고 한국어 사전에 의미 기반 키를 먼저 추가한 뒤 모든 공개 사전에 번역한다. 언어 중립 값만 `src/data/`에 둔다.
 
 ## 정적 파일
 

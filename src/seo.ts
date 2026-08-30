@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { boxes } from "@/data/products";
 import { localeConfig, type PublishedLocale } from "@/i18n/locales";
+import { localizedPath } from "@/i18n/routing";
 
 export const siteUrl = "https://ghostyak.com";
 
@@ -29,13 +30,14 @@ export function getSoftwareApplicationJsonLd({
   description: string;
   featureNames: readonly string[];
 }) {
+  const productPath = localizedPath(locale, "/product/boxes");
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "@id": `${siteUrl}/#ghostyak-boxes`,
     name: boxes.fullName,
     description,
-    url: `${siteUrl}/product/boxes`,
+    url: `${siteUrl}${productPath}`,
     image: `${siteUrl}${boxes.screenshots[0].src}`,
     screenshot: boxes.screenshots.map((screenshot) => `${siteUrl}${screenshot.src}`),
     downloadUrl: boxes.download.installerUrl,
@@ -50,7 +52,7 @@ export function getSoftwareApplicationJsonLd({
       price: "0",
       priceCurrency: "KRW",
       availability: "https://schema.org/InStock",
-      url: `${siteUrl}/product/boxes`,
+      url: `${siteUrl}${productPath}`,
     },
     publisher: {
       "@type": "Organization",

@@ -93,8 +93,8 @@ export function HeroCarousel({ slides, labels }: { slides: readonly HeroSlide[];
       <article className="mx-auto grid min-h-[36rem] w-full max-w-6xl items-center gap-8 px-4 py-12 motion-safe:animate-[carousel-reveal_600ms_ease-out] sm:px-6 lg:grid-cols-[minmax(20rem,0.78fr)_minmax(34rem,1.22fr)] lg:py-16" key={activeIndex} aria-live="polite">
         <div className="z-10 max-w-xl lg:py-12">
           <p className="mb-4 text-sm font-black tracking-[0.16em] text-primary">{slide.eyebrow}</p>
-          <h2 className="break-keep text-4xl font-black leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">{slide.title}</h2>
-          <p className="mt-6 break-keep text-lg leading-8 text-base-content/70">{slide.description}</p>
+          <h2 className="text-4xl font-black leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">{slide.title}</h2>
+          <p className="mt-6 text-lg leading-8 text-base-content/70">{slide.description}</p>
           <Link className="btn btn-primary mt-8 min-h-12 px-7" href={slide.actionHref}>{slide.actionLabel}<span aria-hidden="true">→</span></Link>
         </div>
         <div className="relative aspect-video overflow-hidden rounded-box border border-base-300 bg-neutral shadow-2xl lg:-mr-24">

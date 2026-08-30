@@ -12,6 +12,7 @@ const ko = {
   header: {
     homeLabel: "GhostYak 홈페이지",
     navigationLabel: "주요 메뉴",
+    language: "언어 선택",
     products: "제품",
     blog: "블로그",
   },

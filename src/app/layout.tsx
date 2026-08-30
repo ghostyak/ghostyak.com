@@ -5,12 +5,14 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { TrackingScripts } from "@/components/TrackingScripts";
 import { getDictionary } from "@/i18n/get-dictionary";
-import { localeConfig, sourceLocale } from "@/i18n/locales";
+import { localeConfig, publishedLocales } from "@/i18n/locales";
+import { getRequestLocale, getRequestPathname } from "@/i18n/request-locale";
 import { getSearchEngineVerification, siteUrl } from "@/seo";
 import "./globals.css";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const dictionary = await getDictionary(sourceLocale);
+  const locale = await getRequestLocale();
+  const dictionary = await getDictionary(locale);
   return {
     metadataBase: new URL(siteUrl),
     title: { default: dictionary.metadata.site.title, template: dictionary.metadata.site.titleTemplate },
@@ -22,7 +24,8 @@ export async function generateMetadata(): Promise<Metadata> {
     formatDetection: { email: false, address: false, telephone: false },
     openGraph: {
       type: "website",
-      locale: localeConfig[sourceLocale].openGraphLocale,
+      locale: localeConfig[locale].openGraphLocale,
+      alternateLocale: publishedLocales.filter((candidate) => candidate !== locale).map((candidate) => localeConfig[candidate].openGraphLocale),
       siteName: "GhostYak",
       images: [{ url: "/ghostyak.png", width: 300, height: 300, alt: "GhostYak" }],
     },
@@ -31,14 +34,15 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
-  const dictionary = await getDictionary(sourceLocale);
+  const [locale, currentPath] = await Promise.all([getRequestLocale(), getRequestPathname()]);
+  const dictionary = await getDictionary(locale);
   return (
-    <html lang={localeConfig[sourceLocale].htmlLanguage} data-theme="ghostyak" data-scroll-behavior="smooth">
+    <html lang={localeConfig[locale].htmlLanguage} data-theme="ghostyak" data-scroll-behavior="smooth">
       <head><TrackingScripts /></head>
       <body className="flex min-h-screen min-w-80 flex-col bg-base-100 text-base-content antialiased">
-        <Header labels={dictionary.header} locale={sourceLocale} />
+        <Header labels={dictionary.header} locale={locale} currentPath={currentPath} />
         <div className="flex-1">{children}</div>
-        <Footer labels={dictionary.footer} locale={sourceLocale} />
+        <Footer labels={dictionary.footer} locale={locale} />
         <Analytics />
       </body>
     </html>

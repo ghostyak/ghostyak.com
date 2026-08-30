@@ -7,7 +7,7 @@ import rehypeStringify from "rehype-stringify";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
-import type { PublishedLocale } from "@/i18n/locales";
+import { publishedLocales, sourceLocale, type PublishedLocale } from "@/i18n/locales";
 
 const blogRoot = path.join(process.cwd(), "content", "blog");
 
@@ -79,5 +79,25 @@ export async function getPost(locale: PublishedLocale, slug: string): Promise<Bl
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code === "ENOENT") return null;
     throw error;
+  }
+}
+
+export async function validatePublishedBlogTranslations() {
+  const sourcePosts = await getAllPosts(sourceLocale);
+
+  for (const locale of publishedLocales) {
+    const translatedPosts = await getAllPosts(locale);
+    const translationsByKey = new Map(translatedPosts.map((post) => [post.translationKey, post]));
+
+    for (const sourcePost of sourcePosts) {
+      const translation = translationsByKey.get(sourcePost.translationKey);
+      if (!translation) throw new Error(`[${locale}] Missing blog translation: ${sourcePost.translationKey}`);
+      if (translation.sourceRevision !== sourcePost.sourceRevision) {
+        throw new Error(`[${locale}] Outdated blog translation: ${sourcePost.translationKey}`);
+      }
+      if (translation.slug !== sourcePost.slug) {
+        throw new Error(`[${locale}] Blog translations must share the source slug: ${sourcePost.slug}`);
+      }
+    }
   }
 }

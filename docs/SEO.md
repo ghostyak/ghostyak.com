@@ -3,13 +3,13 @@
 ## 구현 범위
 
 각 언어 페이지는 독립 URL, 지역 언어 코드, canonical, 상호 `hreflang`, Open Graph
-로케일과 번역된 제목·설명을 제공한다. XML sitemap은 9개 페이지와 모든 언어 대체
-URL, 제품 대표 이미지를 포함한다. 각 페이지에는 Ghostyak Boxes를 설명하는
+로케일과 번역된 제목·설명을 제공한다. XML sitemap은 9개 언어의 공개 페이지와 상호
+언어 대체 URL, 제품 대표 이미지를 포함한다. 각 Boxes 제품 페이지에는 GhostYak Boxes를 설명하는
 `SoftwareApplication` JSON-LD가 서버 렌더링된다.
 
 | 대상 | 경로 | 언어·지역 코드 | 우선 확인할 검색 도구 |
 | --- | --- | --- | --- |
-| 대한민국 | `/ko` | `ko-KR` | 네이버 서치어드바이저, Google Search Console |
+| 대한민국 | `/` | `ko-KR` | 네이버 서치어드바이저, Google Search Console |
 | 영어권 | `/en` | `en` | Google Search Console, Bing Webmaster Tools |
 | 일본 | `/ja` | `ja-JP` | Google Search Console, Bing Webmaster Tools |
 | 중국 | `/zh` | `zh-CN` | 바이두 검색자원 플랫폼, Bing Webmaster Tools |
@@ -36,7 +36,7 @@ Vercel 환경 변수를 변경한 뒤에는 새 배포가 필요하다. 값이 �
 
 ## 배포 후 등록 절차
 
-1. `https://ghostyak.com/ko` 등의 페이지 소스에서 canonical, `hreflang`, 인증
+1. `https://ghostyak.com/`, `https://ghostyak.com/en` 등의 페이지 소스에서 canonical, `hreflang`, 인증
    메타 태그와 `application/ld+json`을 확인한다.
 2. [Google Search Console](https://search.google.com/search-console),
    [Bing Webmaster Tools](https://www.bing.com/webmasters),
