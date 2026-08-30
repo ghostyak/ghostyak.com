@@ -3,14 +3,17 @@ import { boxes } from "@/data/products";
 import { localeConfig, type PublishedLocale } from "@/i18n/locales";
 import { localizedPath } from "@/i18n/routing";
 
-export const siteUrl = "https://ghostyak.com";
+export const siteUrl = "https://www.ghostyak.com";
 
 export function getSearchEngineVerification(): Metadata["verification"] {
   const other: Record<string, string> = {};
 
-  if (process.env.BING_SITE_VERIFICATION) other["msvalidate.01"] = process.env.BING_SITE_VERIFICATION;
-  if (process.env.NAVER_SITE_VERIFICATION) other["naver-site-verification"] = process.env.NAVER_SITE_VERIFICATION;
-  if (process.env.BAIDU_SITE_VERIFICATION) other["baidu-site-verification"] = process.env.BAIDU_SITE_VERIFICATION;
+  if (process.env.BING_SITE_VERIFICATION)
+    other["msvalidate.01"] = process.env.BING_SITE_VERIFICATION;
+  if (process.env.NAVER_SITE_VERIFICATION)
+    other["naver-site-verification"] = process.env.NAVER_SITE_VERIFICATION;
+  if (process.env.BAIDU_SITE_VERIFICATION)
+    other["baidu-site-verification"] = process.env.BAIDU_SITE_VERIFICATION;
 
   const google = process.env.GOOGLE_SITE_VERIFICATION;
   if (!google && Object.keys(other).length === 0) return undefined;
@@ -39,7 +42,9 @@ export function getSoftwareApplicationJsonLd({
     description,
     url: `${siteUrl}${productPath}`,
     image: `${siteUrl}${boxes.screenshots[0].src}`,
-    screenshot: boxes.screenshots.map((screenshot) => `${siteUrl}${screenshot.src}`),
+    screenshot: boxes.screenshots.map(
+      (screenshot) => `${siteUrl}${screenshot.src}`,
+    ),
     downloadUrl: boxes.download.installerUrl,
     softwareVersion: boxes.version,
     operatingSystem: "Windows 10, Windows 11",
