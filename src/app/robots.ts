@@ -1,13 +1,14 @@
 import type { MetadataRoute } from "next";
-
-const siteUrl = "https://ghostyak.com";
+import { siteUrl } from "@/seo";
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: "/language/",
     },
     sitemap: `${siteUrl}/sitemap.xml`,
+    host: siteUrl,
   };
 }

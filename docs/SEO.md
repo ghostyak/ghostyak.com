@@ -7,6 +7,10 @@
 언어 대체 URL, 제품 대표 이미지를 포함한다. 각 Boxes 제품 페이지에는 GhostYak Boxes를 설명하는
 `SoftwareApplication` JSON-LD가 서버 렌더링된다.
 
+`/robots.txt`는 모든 공개 페이지의 크롤링을 허용하고 검색 결과용 페이지가 아닌
+`/language/` 처리 경로만 제외한다. 대표 호스트는 `https://ghostyak.com`, sitemap은
+`https://ghostyak.com/sitemap.xml`로 안내한다.
+
 | 대상 | 경로 | 언어·지역 코드 | 우선 확인할 검색 도구 |
 | --- | --- | --- | --- |
 | 대한민국 | `/` | `ko-KR` | 네이버 서치어드바이저, Google Search Console |
