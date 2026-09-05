@@ -1,6 +1,36 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 
 const zh: Dictionary = {
+  worldClock: {
+  "badge": "新功能 · 世界时钟小组件",
+  "title": "在桌面上，一览世界时间。",
+  "description": "首尔的上午、伦敦的凌晨、纽约的夜晚。通过 Boxes 世界时钟并排查看多个城市的时间和日期，也能在同一桌面整理文件和快捷方式。",
+  "widgetTitle": "世界时钟",
+  "previewCaption": "世界时钟小组件预览 · 所示时间仅为示例。",
+  "cities": [
+    "首尔",
+    "伦敦",
+    "旧金山",
+    "纽约",
+    "温哥华"
+  ],
+  "heading": "不同时区，同一工作空间。",
+  "intro": "联系海外同事或给远方家人打电话前，先在桌面上查看对方的当地时间。",
+  "benefits": [
+    {
+      "title": "多城时间并排查看",
+      "description": "一眼比较经常关注的城市时间。"
+    },
+    {
+      "title": "日期和时差一目了然",
+      "description": "通过各城市的日期和 UTC 偏移量，分辨日期不同的地区。"
+    },
+    {
+      "title": "整理与小组件相结合",
+      "description": "将文件、快捷方式和世界时钟集中在工作空间中。"
+    }
+  ]
+},
   metadata: {
     site: { title: "GhostYak | 整理日常工作的 Windows 软件", titleTemplate: "%s | GhostYak", description: "GhostYak 致力于打造让日常 Windows 工作空间更简单、更便捷的软件。" },
     boxes: { title: "Boxes", openGraphTitle: "GhostYak Boxes | Windows 桌面整理工具" },

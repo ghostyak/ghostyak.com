@@ -30,7 +30,9 @@ npm run build
 
 ## 제품 정보와 데모 이미지
 
-Boxes의 버전, 무료 설치 파일 URL, 기능 문구와 회전 이미지 목록은 `src/data/products.ts`에서 수정한다. 실제 이미지가 준비되면 `public/images/demo/`에 파일을 추가하고 `homeSlides`와 `boxes.screenshots`의 `src`만 교체한다.
+Boxes의 버전, 무료 설치 파일 URL과 제품 이미지 목록은 `src/data/products.ts`에서 수정한다. 기능 문구는 로케일 사전에서 관리한다. 실제 이미지가 준비되면 `public/images/demo/`에 파일을 추가하고 `boxes.screenshots`의 `src`를 교체한다.
+
+홈의 세계시계 소개는 `worldClock` 사전 키와 `WorldClockPreview`에서 관리한다. 예시 시점을 바꿀 때에는 도시별 UTC 오프셋과 낮·밤 표현도 함께 검토한다. 320px·768px·데스크톱에서 도시명, 시간과 다운로드 버튼의 줄바꿈을 확인한다.
 
 제품 화면에는 현재 무료 다운로드 버튼 하나만 둔다. 상업용 설치 파일과 배포 정책이 확정되기 전에는 Pro 또는 구매 행동을 추가하지 않는다.
 

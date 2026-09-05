@@ -9,9 +9,9 @@ export async function generateMetadata(): Promise<Metadata> {
   const dictionary = await getDictionary(sourceLocale);
   return {
     title: dictionary.metadata.boxes.title,
-    description: dictionary.boxes.description,
+    description: dictionary.worldClock.description,
     alternates: getLocalizedAlternates(sourceLocale, "/product/boxes"),
-    openGraph: { ...getOpenGraphLocale(sourceLocale), title: dictionary.metadata.boxes.openGraphTitle, description: dictionary.boxes.description, url: "/product/boxes", images: [boxes.screenshots[0].src] },
+    openGraph: { ...getOpenGraphLocale(sourceLocale), title: dictionary.metadata.boxes.openGraphTitle, description: dictionary.worldClock.description, url: "/product/boxes", images: [boxes.screenshots[0].src] },
   };
 }
 

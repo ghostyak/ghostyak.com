@@ -11,9 +11,9 @@ export async function generateMetadata({ params }: PageProps<"/[locale]/product/
   const url = `/${locale}/product/boxes`;
   return {
     title: dictionary.metadata.boxes.title,
-    description: dictionary.boxes.description,
+    description: dictionary.worldClock.description,
     alternates: getLocalizedAlternates(locale, "/product/boxes"),
-    openGraph: { ...getOpenGraphLocale(locale), title: dictionary.metadata.boxes.openGraphTitle, description: dictionary.boxes.description, url, images: [boxes.screenshots[0].src] },
+    openGraph: { ...getOpenGraphLocale(locale), title: dictionary.metadata.boxes.openGraphTitle, description: dictionary.worldClock.description, url, images: [boxes.screenshots[0].src] },
   };
 }
 

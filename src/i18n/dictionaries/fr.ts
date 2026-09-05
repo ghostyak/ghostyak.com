@@ -1,6 +1,36 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 
 const fr: Dictionary = {
+  worldClock: {
+  "badge": "Nouveau · Widget d’horloge mondiale",
+  "title": "L’heure du monde, sur votre bureau.",
+  "description": "Le matin à Séoul, l’aube à Londres, la nuit à New York. Comparez les heures et les dates de plusieurs villes avec l’horloge mondiale de Boxes. Organisez aussi vos fichiers et raccourcis sur le même bureau.",
+  "widgetTitle": "Horloge mondiale",
+  "previewCaption": "Aperçu du widget d’horloge mondiale · Les heures sont des exemples.",
+  "cities": [
+    "Séoul",
+    "Londres",
+    "San Francisco",
+    "New York",
+    "Vancouver"
+  ],
+  "heading": "Plusieurs fuseaux horaires. Un seul espace de travail.",
+  "intro": "Avant de contacter un collègue à l’étranger ou d’appeler votre famille au loin, consultez leur heure locale sur votre bureau.",
+  "benefits": [
+    {
+      "title": "Des villes côte à côte",
+      "description": "Comparez d’un coup d’œil les heures des villes que vous consultez souvent."
+    },
+    {
+      "title": "Dates et décalages horaires",
+      "description": "Repérez les régions où la date diffère grâce à la date et au décalage UTC de chaque ville."
+    },
+    {
+      "title": "Organisation et widgets réunis",
+      "description": "Rassemblez fichiers, raccourcis et horloge mondiale dans votre espace de travail."
+    }
+  ]
+},
   metadata: {
     site: { title: "GhostYak | Des logiciels Windows pour un quotidien organisé", titleTemplate: "%s | GhostYak", description: "GhostYak crée des logiciels qui simplifient et améliorent votre espace de travail Windows au quotidien." },
     boxes: { title: "Boxes", openGraphTitle: "GhostYak Boxes | Outil d’organisation du bureau Windows" },

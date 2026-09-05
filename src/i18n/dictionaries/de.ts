@@ -1,6 +1,36 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 
 const de: Dictionary = {
+  worldClock: {
+  "badge": "Neu · Weltuhr-Widget",
+  "title": "Die Zeit der Welt, direkt auf deinem Desktop.",
+  "description": "Vormittag in Seoul, früher Morgen in London, Nacht in New York. Vergleiche Uhrzeit und Datum mehrerer Städte mit der Weltuhr von Boxes. Organisiere auch Dateien und Verknüpfungen auf demselben Desktop.",
+  "widgetTitle": "Weltuhr",
+  "previewCaption": "Vorschau des Weltuhr-Widgets · Die Uhrzeiten sind Beispiele.",
+  "cities": [
+    "Seoul",
+    "London",
+    "San Francisco",
+    "New York",
+    "Vancouver"
+  ],
+  "heading": "Verschiedene Zeitzonen. Ein Arbeitsbereich.",
+  "intro": "Bevor du Kollegen im Ausland kontaktierst oder weit entfernte Familie anrufst: Prüfe ihre Ortszeit auf deinem Desktop.",
+  "benefits": [
+    {
+      "title": "Städte nebeneinander",
+      "description": "Vergleiche die Uhrzeiten häufig benötigter Städte auf einen Blick."
+    },
+    {
+      "title": "Datum und Zeitunterschiede",
+      "description": "Erkenne Regionen mit einem anderen Datum anhand des Datums und UTC-Versatzes jeder Stadt."
+    },
+    {
+      "title": "Ordnung und Widgets vereint",
+      "description": "Versammle Dateien, Verknüpfungen und die Weltuhr in deinem Arbeitsbereich."
+    }
+  ]
+},
   metadata: {
     site: { title: "GhostYak | Windows-Software für einen organisierten Alltag", titleTemplate: "%s | GhostYak", description: "GhostYak entwickelt Software, die den täglichen Windows-Arbeitsbereich einfacher und komfortabler macht." },
     boxes: { title: "Boxes", openGraphTitle: "GhostYak Boxes | Desktop-Organisation für Windows" },

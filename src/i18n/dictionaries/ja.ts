@@ -1,6 +1,36 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 
 const ja: Dictionary = {
+  worldClock: {
+  "badge": "新機能 · 世界時計ウィジェット",
+  "title": "デスクトップで、世界の時間をひと目で。",
+  "description": "ソウルの午前、ロンドンの未明、ニューヨークの夜。Boxesの世界時計で、複数の都市の時刻と日付を並べて確認しましょう。ファイルやショートカットも同じデスクトップで整理できます。",
+  "widgetTitle": "世界時計",
+  "previewCaption": "世界時計ウィジェットのプレビュー · 時刻は表示例です。",
+  "cities": [
+    "ソウル",
+    "ロンドン",
+    "サンフランシスコ",
+    "ニューヨーク",
+    "バンクーバー"
+  ],
+  "heading": "異なるタイムゾーンも、同じ作業スペースで。",
+  "intro": "海外の同僚に連絡する前や、遠くにいる家族に電話する前に。デスクトップで相手の時間を確認しましょう。",
+  "benefits": [
+    {
+      "title": "複数の都市を並べて",
+      "description": "よく確認する都市の時刻をひと目で比較できます。"
+    },
+    {
+      "title": "日付と時差も確認",
+      "description": "都市ごとの日付とUTCオフセットで、日付が異なる地域も確認できます。"
+    },
+    {
+      "title": "整理とウィジェットを一緒に",
+      "description": "ファイル、ショートカット、世界時計を作業スペースにまとめましょう。"
+    }
+  ]
+},
   metadata: {
     site: { title: "GhostYak | 日々の作業を整えるWindowsソフトウェア", titleTemplate: "%s | GhostYak", description: "GhostYakは、毎日のWindowsワークスペースをよりシンプルで便利にするソフトウェアを開発しています。" },
     boxes: { title: "Boxes", openGraphTitle: "GhostYak Boxes | Windowsデスクトップ整理ツール" },

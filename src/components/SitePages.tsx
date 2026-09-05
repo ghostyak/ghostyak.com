@@ -1,9 +1,10 @@
+import { WorldClockPreview } from "@/components/WorldClockPreview";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { HeroCarousel, ImageCarousel } from "@/components/AutoCarousel";
+import { ImageCarousel } from "@/components/AutoCarousel";
 import { DownloadCountdown } from "@/components/DownloadCountdown";
-import { boxes, homeSlideMedia } from "@/data/products";
+import { boxes } from "@/data/products";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { localeConfig, type PublishedLocale } from "@/i18n/locales";
 import { formatMessage, localizedPath } from "@/i18n/routing";
@@ -13,18 +14,35 @@ import { getSoftwareApplicationJsonLd } from "@/seo";
 export async function HomeContent({ locale }: { locale: PublishedLocale }) {
   const dictionary = await getDictionary(locale);
   const boxesPath = localizedPath(locale, "/product/boxes");
-  const slides = homeSlideMedia.map((media, index) => ({
-    ...media,
-    ...dictionary.home.hero.slides[index],
-    alt: dictionary.home.hero.slides[index].imageAlt,
-    actionHref: boxesPath,
-  }));
-  const carouselLabels = { ...dictionary.carousel, regionLabel: dictionary.home.hero.regionLabel, controlsLabel: dictionary.home.hero.controlsLabel };
+  const clock = dictionary.worldClock;
 
   return (
     <main>
-      <h1 className="sr-only">{dictionary.home.screenReaderTitle}</h1>
-      <HeroCarousel slides={slides} labels={carouselLabels} />
+      <section className="overflow-hidden bg-gradient-to-b from-primary/10 to-base-100" aria-labelledby="home-title">
+        <div className="mx-auto w-full max-w-6xl px-4 pb-14 pt-12 sm:px-6 sm:pt-20 lg:pb-20">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="mb-5 text-sm font-black tracking-[0.18em] text-primary">GHOSTYAK BOXES</p>
+            <span className="badge badge-primary badge-soft mb-5 h-auto min-h-7 px-3 py-1">{clock.badge}</span>
+            <h1 className="text-4xl font-black leading-tight tracking-tight sm:text-6xl" id="home-title">{clock.title}</h1>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-base-content/70">{clock.description}</p>
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              <Link className="btn btn-primary h-auto min-h-12 px-7 py-3" href={localizedPath(locale, boxes.download.pagePath)}>{dictionary.boxes.downloadAction}<span aria-hidden="true">↓</span></Link>
+              <Link className="btn btn-outline h-auto min-h-12 px-7 py-3" href={boxesPath}>{dictionary.home.products.viewAction}<span aria-hidden="true">→</span></Link>
+            </div>
+            <p className="mt-4 text-sm text-base-content/60">{boxes.platform} · {dictionary.home.products.freeBadge}</p>
+          </div>
+          <div className="mx-auto mt-10 max-w-5xl sm:mt-14"><WorldClockPreview copy={clock} locale={locale} /></div>
+        </div>
+      </section>
+      <section className="bg-base-100 py-14 sm:py-20" aria-labelledby="clock-benefits-title">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <h2 id="clock-benefits-title" className="text-3xl font-black tracking-tight sm:text-4xl">{clock.heading}</h2>
+          <p className="mt-4 max-w-2xl leading-8 text-base-content/65">{clock.intro}</p>
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
+            {clock.benefits.map((benefit, index) => <article key={benefit.title} className="card border border-base-300 bg-base-200"><div className="card-body p-7"><span className="text-sm font-bold text-primary" aria-hidden="true">0{index + 1}</span><h3 className="card-title mt-2">{benefit.title}</h3><p className="leading-7 text-base-content/65">{benefit.description}</p></div></article>)}
+          </div>
+        </div>
+      </section>
       <section className="bg-base-200 py-20 lg:py-28" aria-labelledby="product-title">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
           <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
@@ -65,7 +83,7 @@ export async function BoxesContent({ locale }: { locale: PublishedLocale }) {
   const dictionary = await getDictionary(locale);
   const screenshots = boxes.screenshots.map((screenshot, index) => ({ ...screenshot, alt: dictionary.boxes.screenshotAlts[index] }));
   const carouselLabels = { ...dictionary.carousel, ...dictionary.boxes.carousel };
-  const jsonLd = getSoftwareApplicationJsonLd({ locale, description: dictionary.boxes.description, featureNames: dictionary.boxes.features.items.map((feature) => feature.title) });
+  const jsonLd = getSoftwareApplicationJsonLd({ locale, description: dictionary.worldClock.description, featureNames: [dictionary.worldClock.widgetTitle, ...dictionary.boxes.features.items.map((feature) => feature.title)] });
 
   return (
     <main>
@@ -83,6 +101,14 @@ export async function BoxesContent({ locale }: { locale: PublishedLocale }) {
             <svg className="size-5 fill-none stroke-current [stroke-linecap:round] [stroke-linejoin:round] [stroke-width:2]" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 20h14" /></svg>
           </Link>
           <div className="mt-12 w-full lg:mt-16"><ImageCarousel slides={screenshots} labels={carouselLabels} /></div>
+        </div>
+      </section>
+      <section className="bg-base-100 py-16" aria-labelledby="world-clock-title">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <span className="badge badge-primary badge-soft h-auto py-1">{dictionary.worldClock.badge}</span>
+          <h2 id="world-clock-title" className="mt-5 text-3xl font-black tracking-tight sm:text-4xl">{dictionary.worldClock.heading}</h2>
+          <p className="mb-8 mt-4 max-w-2xl leading-8 text-base-content/65">{dictionary.worldClock.intro}</p>
+          <WorldClockPreview copy={dictionary.worldClock} locale={locale} />
         </div>
       </section>
       <section className="bg-base-200 py-20 lg:py-28" aria-labelledby="features-title">
