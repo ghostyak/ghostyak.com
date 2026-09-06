@@ -4,7 +4,7 @@ import { useEffect, useRef, useState, type FocusEvent } from "react";
 import { localeConfig, publishedLocales, type PublishedLocale } from "@/i18n/locales";
 import { unlocalizedPath } from "@/i18n/routing";
 
-export function LanguageSwitcher({ currentLocale, currentPath, label }: { currentLocale: PublishedLocale; currentPath: string; label: string }) {
+export function LanguageSwitcher({ currentLocale, currentPath, label, light = false }: { currentLocale: PublishedLocale; currentPath: string; label: string; light?: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
@@ -43,7 +43,7 @@ export function LanguageSwitcher({ currentLocale, currentPath, label }: { curren
         aria-expanded={isOpen}
         aria-haspopup="menu"
         aria-label={label}
-        className="btn btn-ghost min-h-11 px-3 text-primary-content hover:bg-primary-content/10"
+        className={`btn btn-ghost min-h-11 px-3 ${light ? "text-base-content" : "text-primary-content hover:bg-primary-content/10"}`}
         onClick={() => setIsOpen((current) => !current)}
         ref={triggerRef}
         type="button"

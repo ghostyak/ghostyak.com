@@ -8,6 +8,8 @@ import { getDictionary } from "@/i18n/get-dictionary";
 import { localeConfig, publishedLocales } from "@/i18n/locales";
 import { getRequestLocale, getRequestPathname } from "@/i18n/request-locale";
 import { getSearchEngineVerification, siteUrl } from "@/seo";
+import { isRenewalPreview } from "@/lib/renewal-preview";
+import { unlocalizedPath } from "@/i18n/routing";
 import "./globals.css";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -36,14 +38,16 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function RootLayout({ children }: { children: ReactNode }) {
   const [locale, currentPath] = await Promise.all([getRequestLocale(), getRequestPathname()]);
   const dictionary = await getDictionary(locale);
+  const preview = isRenewalPreview(currentPath);
+  const landing = ["/", "/product/boxes"].includes(unlocalizedPath(currentPath));
   return (
     <html lang={localeConfig[locale].htmlLanguage} data-theme="ghostyak" data-scroll-behavior="smooth">
-      <head><TrackingScripts /></head>
+      <head>{!preview && <TrackingScripts />}</head>
       <body className="flex min-h-screen min-w-0 flex-col bg-base-100 text-base-content antialiased">
-        <Header labels={dictionary.header} locale={locale} currentPath={currentPath} />
+        {!preview && !landing && <Header labels={dictionary.header} locale={locale} currentPath={currentPath} />}
         <div className="flex-1">{children}</div>
-        <Footer labels={dictionary.footer} locale={locale} />
-        <Analytics />
+        {!preview && !landing && <Footer labels={dictionary.footer} locale={locale} />}
+        {!preview && <Analytics />}
       </body>
     </html>
   );

@@ -1,4 +1,6 @@
+import landing from "@/i18n/landing/ko";
 const ko = {
+  landing,
   worldClock: {
     badge: "새 기능 · 세계시계 위젯",
     title: "내 바탕화면에서, 세계의 시간을 한눈에.",

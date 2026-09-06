@@ -11,7 +11,7 @@ export const homeSlideMedia = [
 export const boxes = {
   name: "Boxes",
   fullName: "Ghostyak Boxes",
-  version: "0.3.24",
+  version: "0.3.38",
   platform: "Windows 10/11",
   download: {
     pagePath: "/product/boxes/download",
@@ -19,7 +19,6 @@ export const boxes = {
       "https://github.com/ghostyak/boxes/releases/latest/download/GhostyakBoxes-setup.exe",
   },
   screenshots: [
-    { src: "/images/demo/boxes-screen-01.png" },
-    { src: "/images/demo/boxes-screen-02.png" },
+    { src: "/images/renewal/boxes-desktop.webp" },
   ] satisfies readonly CarouselImage[],
 } as const;

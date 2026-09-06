@@ -1,15 +1,11 @@
-import { getDictionary } from "@/i18n/get-dictionary";
-import type { Metadata } from "next";
 import { HomeContent } from "@/components/SitePages";
+import { getLandingMetadata } from "@/i18n/landing-metadata";
 import { sourceLocale } from "@/i18n/locales";
-import { getLocalizedAlternates, getOpenGraphLocale } from "@/i18n/metadata";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const locale = sourceLocale;
-  const dictionary = await getDictionary(locale);
-  return { title: `Boxes | ${dictionary.worldClock.title}`, description: dictionary.worldClock.description, alternates: getLocalizedAlternates(locale, "/"), openGraph: { ...getOpenGraphLocale(locale), title: `Boxes | ${dictionary.worldClock.title}`, description: dictionary.worldClock.description, url: "/" } };
+export async function generateMetadata() {
+  return getLandingMetadata(sourceLocale, "/");
 }
 
-export default function HomePage() {
+export default function Page() {
   return <HomeContent locale={sourceLocale} />;
 }

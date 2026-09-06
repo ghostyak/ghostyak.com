@@ -1,4 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
+import { isRenewalPreview } from "./lib/renewal-preview";
 import {
   isPublishedLocale,
   localeCookieName,
@@ -36,6 +37,12 @@ function localeFromAcceptLanguage(value: string | null): PublishedLocale {
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  if (isRenewalPreview(pathname)) {
+    const requestHeaders = new Headers(request.headers);
+    requestHeaders.set(localeHeaderName, sourceLocale);
+    requestHeaders.set(pathnameHeaderName, pathname);
+    return NextResponse.next({ request: { headers: requestHeaders } });
+  }
   const pathLocale = localeFromPath(pathname);
 
   if (pathLocale === sourceLocale) {

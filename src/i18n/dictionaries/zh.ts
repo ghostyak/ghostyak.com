@@ -1,6 +1,8 @@
+import landing from "@/i18n/landing/zh";
 import type { Dictionary } from "@/i18n/get-dictionary";
 
 const zh: Dictionary = {
+  landing,
   worldClock: {
   "badge": "新功能 · 世界时钟小组件",
   "title": "在桌面上，一览世界时间。",

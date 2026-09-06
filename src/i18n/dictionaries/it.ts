@@ -1,6 +1,8 @@
+import landing from "@/i18n/landing/it";
 import type { Dictionary } from "@/i18n/get-dictionary";
 
 const it: Dictionary = {
+  landing,
   worldClock: {
   "badge": "Novità · Widget orologio mondiale",
   "title": "L’ora del mondo, sul tuo desktop.",
