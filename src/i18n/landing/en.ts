@@ -6,7 +6,6 @@ const landing: Dictionary["landing"] = {
     "title": "GhostYak Boxes | Free Windows desktop organizer",
     "description": "Organize files, folders and app shortcuts in boxes without moving the originals. A Windows desktop organizer with free basic features for personal, company and work use."
   },
-  "review": "Korean design preview",
   "brand": "GhostYak Boxes",
   "skip": "Skip to content",
   "navigation": "Main navigation",

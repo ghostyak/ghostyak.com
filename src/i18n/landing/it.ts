@@ -6,7 +6,6 @@ const landing: Dictionary["landing"] = {
     "title": "GhostYak Boxes | Organizza gratis il desktop di Windows",
     "description": "Organizza file, cartelle e collegamenti alle app in riquadri senza spostare gli originali. Funzioni di base gratuite per uso personale, aziendale e professionale su Windows."
   },
-  "review": "Korean design preview",
   "brand": "GhostYak Boxes",
   "skip": "Vai al contenuto",
   "navigation": "Navigazione principale",

@@ -47,11 +47,7 @@ docs/                            설계, 개발과 로드맵 문서
 
 `RenewalLanding`은 홈과 제품 소개에서 재사용하는 Server Component다. `getLandingMetadata`는 승인된 원문 기반 제목·설명과 실제 스크린샷을 검색·공유 메타데이터로 제공한다. `getSoftwareApplicationJsonLd`에는 같은 무료 기능 목록과 최신 확인 버전 v0.3.38을 사용한다. 루트 레이아웃은 두 랜딩의 자체 헤더·푸터를 사용하고 공개 방문 분석은 유지한다. 블로그는 기존 공통 셸을 사용한다.
 
-## 개발 전용 리뉴얼 시안
-
-`/preview/boxes`는 한국어 리뉴얼 원문과 화면을 검토하는 development 전용 경로다. `src/lib/renewal-preview.ts`의 환경·경로 검사로 제한하며, 프로덕션 페이지에서는 `notFound()`를 반환한다. 개발 환경의 proxy는 이 경로를 한국어로 고정하고 루트 레이아웃은 시안 전용 헤더·푸터 사용을 위해 공개 셸과 추적 스크립트를 생략한다. sitemap에는 등록하지 않으며 `noindex, nofollow` 메타데이터를 제공한다.
-
-공개 승인된 한국어 원문은 `src/i18n/landing/ko.ts`, Server Component는 `src/components/renewal/RenewalLanding.tsx`에 둔다. 클립보드 동작만 `CopySiteLink` Client Component로 분리한다. 2026-09-07 사용자가 한국어 시안을 승인했다. `src/i18n/landing/{locale}.ts`를 각 공개 사전의 `landing` 키로 가져오며 빌드 중 모든 언어의 키를 검증한다. 개발 시안도 같은 한국어 원문을 읽는다. 상세 범위는 [RENEWAL_KO.md](./RENEWAL_KO.md)를 따른다.
+공개 승인된 한국어 원문은 `src/i18n/landing/ko.ts`, Server Component는 `src/components/renewal/RenewalLanding.tsx`에 둔다. 클립보드 동작만 `CopySiteLink` Client Component로 분리한다. 2026-09-07 사용자가 한국어 원문을 승인했다. `src/i18n/landing/{locale}.ts`를 각 공개 사전의 `landing` 키로 가져오며 빌드 중 모든 언어의 키를 검증한다. 상세 범위는 [RENEWAL_KO.md](./RENEWAL_KO.md)를 따른다.
 
 공개 랜딩의 제품 스크린샷·외부 링크와 세계시계 예시 데이터는 `src/data/landing.ts`에서 관리한다. 설치 파일은 공개 화면과 같은 `boxes.download.installerUrl`을 사용하며 모든 다운로드 버튼에서 직접 연결한다. 모바일 메뉴·구역 이동·FAQ·원본 이미지 보기는 서버 HTML과 네이티브 브라우저 동작으로 제공한다.
 

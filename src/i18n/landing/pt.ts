@@ -6,7 +6,6 @@ const landing: Dictionary["landing"] = {
     "title": "GhostYak Boxes | Organizador gratuito para a área de trabalho do Windows",
     "description": "Organize arquivos, pastas e atalhos de aplicativos em caixas sem mover os originais. Recursos básicos gratuitos para uso pessoal, empresarial e profissional no Windows."
   },
-  "review": "Korean design preview",
   "brand": "GhostYak Boxes",
   "skip": "Pular para o conteúdo",
   "navigation": "Navegação principal",

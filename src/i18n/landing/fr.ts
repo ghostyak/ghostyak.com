@@ -6,7 +6,6 @@ const landing: Dictionary["landing"] = {
     "title": "GhostYak Boxes | Organisez gratuitement votre bureau Windows",
     "description": "Regroupez fichiers, dossiers et raccourcis d’applications dans des boîtes sans déplacer les originaux. Les fonctions de base sont gratuites pour un usage personnel, en entreprise et professionnel sous Windows."
   },
-  "review": "Korean design preview",
   "brand": "GhostYak Boxes",
   "skip": "Aller au contenu",
   "navigation": "Navigation principale",

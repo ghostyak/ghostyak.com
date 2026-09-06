@@ -76,10 +76,9 @@ function WorkflowDiagram({ copy }: { copy: Copy }) {
   </figure>;
 }
 
-export function RenewalLanding({ copy, locale, currentPath, languageLabel, preview = false }: { copy: Copy; locale: PublishedLocale; currentPath: string; languageLabel: string; preview?: boolean }) {
+export function RenewalLanding({ copy, locale, currentPath, languageLabel }: { copy: Copy; locale: PublishedLocale; currentPath: string; languageLabel: string }) {
   return <div className={`bg-base-100 [overflow-wrap:anywhere] ${locale === "ko" ? "break-keep" : ""}`}>
     <a href="#main-content" className="btn btn-primary sr-only fixed left-4 top-4 z-[100] focus:not-sr-only">{copy.skip}</a>
-    {preview && <div className="border-b border-primary/10 bg-primary/5 px-4 py-2 text-center text-xs font-medium text-primary">{copy.review}</div>}
     <header className="sticky top-0 z-50 border-b border-base-300/70 bg-base-100/95 backdrop-blur-md">
       <div className="navbar mx-auto min-h-18 max-w-7xl flex-wrap justify-between gap-x-3 gap-y-0 px-4 py-2 sm:px-8 lg:min-h-20">
         <a href="#main-content" className="flex min-h-11 shrink-0 items-center gap-2 font-bold tracking-tight sm:text-lg">
@@ -89,7 +88,7 @@ export function RenewalLanding({ copy, locale, currentPath, languageLabel, previ
         <nav className="order-last mt-2 grid w-full grid-cols-4 border-t border-base-300/70 pt-1 lg:order-none lg:mt-0 lg:flex lg:w-auto lg:border-0 lg:pt-0" aria-label={copy.navigation}>
           {copy.nav.map(link => <a className="btn btn-ghost h-auto min-h-11 whitespace-normal px-1 py-2 text-xs font-medium sm:px-4 sm:text-sm" href={link.href} key={link.href}>{link.label}</a>)}
         </nav>
-        <div className="flex items-center gap-2"><div className="hidden sm:block"><DownloadLink copy={copy} compact /></div>{!preview && <LanguageSwitcher currentLocale={locale} currentPath={currentPath} label={languageLabel} light />}</div>
+        <div className="flex items-center gap-2"><div className="hidden sm:block"><DownloadLink copy={copy} compact /></div><LanguageSwitcher currentLocale={locale} currentPath={currentPath} label={languageLabel} light /></div>
       </div>
     </header>
 

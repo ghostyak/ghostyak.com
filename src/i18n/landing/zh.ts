@@ -6,7 +6,6 @@ const landing: Dictionary["landing"] = {
     "title": "GhostYak Boxes | 免费 Windows 桌面整理工具",
     "description": "无需移动原文件，即可将文件、文件夹和应用快捷方式整理到盒子中。适用于个人、公司和工作用途的 Windows 桌面整理工具，基本功能免费。"
   },
-  "review": "Korean design preview",
   "brand": "GhostYak Boxes",
   "skip": "跳转到正文",
   "navigation": "主导航",

@@ -6,7 +6,6 @@ const landing: Dictionary["landing"] = {
     "title": "GhostYak Boxes | 無料のWindowsデスクトップ整理ツール",
     "description": "元のファイルを移動せずに、ファイル・フォルダー・アプリのショートカットをボックスで整理。個人・会社・業務用のいずれも基本機能が無料のWindowsデスクトップ整理ツールです。"
   },
-  "review": "Korean design preview",
   "brand": "GhostYak Boxes",
   "skip": "本文へスキップ",
   "navigation": "メインメニュー",

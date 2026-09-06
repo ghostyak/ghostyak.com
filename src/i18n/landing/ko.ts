@@ -4,7 +4,6 @@ const renewal = {
     title: "GhostYak Boxes | 무료 Windows 바탕화면 정리",
     description: "원본 파일을 옮기지 않고 파일·폴더·앱 바로가기를 박스로 정리하세요. 개인·회사·업무용 모두 기본 기능이 무료인 Windows 바탕화면 정리 도구입니다.",
   },
-  review: "한국어 리뉴얼 시안",
   brand: "GhostYak Boxes",
   skip: "본문으로 바로가기",
   navigation: "주요 메뉴",
