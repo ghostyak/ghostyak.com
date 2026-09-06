@@ -37,13 +37,14 @@ docs/                            설계, 개발과 로드맵 문서
 ## 공개 경로
 
 - `/`: 바탕화면 정리 중심 히어로와 실제 제품 스크린샷, 정리 방식, 위젯, 무료 정책, FAQ, 설치 안내
-- `/product/boxes`: 홈페이지와 같은 승인된 제품 랜딩; 기존 제품 URL과 언어별 canonical 유지
+- `/`: GhostYak 브랜드 홈으로 제품과 블로그 진입점만 간결하게 제공
+- `/product/boxes`: 승인된 Boxes 전용 제품 랜딩; 기존 제품 URL과 언어별 canonical 유지
 - `/product/boxes/download`: 같은 언어의 홈페이지 `#download` 설치 안내로 307 이동. 파일 다운로드는 사용자가 직접 버튼을 눌러 시작한다.
 - `/blog`: Markdown 글 목록
 - `/blog/[slug]`: Markdown 글 상세 화면
 - `/{locale}/...`: 영어, 일본어, 중국어, 스페인어, 독일어, 프랑스어, 포르투갈어와 이탈리아어의 대응 화면
 
-`src/proxy.ts`는 URL 로케일을 우선하고, 접두사가 없는 최초 방문에서는 사용자 선택 쿠키와 브라우저 `Accept-Language` 순으로 언어를 결정한다. 접두사 없는 경로는 한국어 대표 URL이고 번역 경로는 `/{locale}/...`를 사용한다. `/ko/...`는 접두사를 제거한 한국어 대표 경로로 영구 이동하며 기존 `/products/boxes/...`는 `next.config.ts`에서 현재 제품 경로로 정규화한다.
+`src/proxy.ts`는 URL 로케일을 우선하고, 접두사가 없는 최초 방문에서는 사용자 선택 쿠키와 브라우저 `Accept-Language` 순으로 언어를 결정한다. 접두사 없는 경로는 한국어 대표 URL이고 번역 경로는 `/{locale}/...`를 사용한다. `/ko/...`는 접두사를 제거한 한국어 대표 경로로 영구 이동하며 기존 `/products/boxes/...`는 `next.config.ts`에서 현재 제품 경로로 정규화한다. 홈과 Boxes 제품 페이지는 서로 다른 제목·설명·본문을 제공하며 각각 자기 자신을 canonical로 사용한다.
 
 `RenewalLanding`은 홈과 제품 소개에서 재사용하는 Server Component다. `getLandingMetadata`는 승인된 원문 기반 제목·설명과 실제 스크린샷을 검색·공유 메타데이터로 제공한다. `getSoftwareApplicationJsonLd`에는 같은 무료 기능 목록과 최신 확인 버전 v0.3.38을 사용한다. 루트 레이아웃은 두 랜딩의 자체 헤더·푸터를 사용하고 공개 방문 분석은 유지한다. 블로그는 기존 공통 셸을 사용한다.
 

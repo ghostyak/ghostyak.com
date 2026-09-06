@@ -37,7 +37,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function RootLayout({ children }: { children: ReactNode }) {
   const [locale, currentPath] = await Promise.all([getRequestLocale(), getRequestPathname()]);
   const dictionary = await getDictionary(locale);
-  const landing = ["/", "/product/boxes"].includes(unlocalizedPath(currentPath));
+  const landing = unlocalizedPath(currentPath) === "/product/boxes";
   return (
     <html lang={localeConfig[locale].htmlLanguage} data-theme="ghostyak" data-scroll-behavior="smooth">
       <head><TrackingScripts /></head>

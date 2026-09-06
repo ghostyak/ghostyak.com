@@ -28,4 +28,4 @@ Boxes 支持 Windows 10/11，可免费下载。欢迎前往产品页面查看世
 
 [了解 Boxes](/zh/product/boxes)
 
-[免费下载 Boxes](/zh/product/boxes/download)
+[免费下载 Boxes](/zh/product/boxes#download)

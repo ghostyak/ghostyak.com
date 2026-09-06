@@ -28,4 +28,4 @@ Boxes is available for Windows 10/11 and is free to download. Visit the product 
 
 [Explore Boxes](/en/product/boxes)
 
-[Download Boxes for free](/en/product/boxes/download)
+[Download Boxes for free](/en/product/boxes#download)

@@ -28,4 +28,4 @@ Boxes est disponible pour Windows 10/11 et se télécharge gratuitement. Consult
 
 [Découvrir Boxes](/fr/product/boxes)
 
-[Télécharger Boxes gratuitement](/fr/product/boxes/download)
+[Télécharger Boxes gratuitement](/fr/product/boxes#download)

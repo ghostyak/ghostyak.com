@@ -28,4 +28,4 @@ BoxesはWindows 10/11で利用でき、無料でダウンロードできます�
 
 [Boxesの製品紹介を見る](/ja/product/boxes)
 
-[Boxesを無料でダウンロード](/ja/product/boxes/download)
+[Boxesを無料でダウンロード](/ja/product/boxes#download)
