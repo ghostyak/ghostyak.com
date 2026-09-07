@@ -22,3 +22,8 @@ export const boxes = {
     { src: "/images/renewal/boxes-desktop.webp" },
   ] satisfies readonly CarouselImage[],
 } as const;
+
+export const clock = {
+  name: "Ghostyak Clock",
+  url: "https://clock.ghostyak.com/",
+} as const;

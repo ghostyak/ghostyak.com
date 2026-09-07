@@ -51,7 +51,7 @@ const pt: Dictionary = {
         { eyebrow: "DESKTOP, ORGANIZED", title: "Encontre os arquivos de que precisa mais rápido.", description: "Separe trabalho, projetos e ferramentas frequentes do seu jeito e abra tudo quando precisar.", actionLabel: "Conhecer o produto", imageAlt: "Tela de demonstração 2 do Boxes" },
       ],
     },
-    products: { eyebrow: "GHOSTYAK SOFTWARE", heading: "Produtos disponíveis agora", intro: "Nosso foco é resolver os pequenos incômodos do dia a dia, não adicionar complexidade.", freeBadge: "Grátis", viewAction: "Conhecer o produto" },
+    products: { eyebrow: "GHOSTYAK SOFTWARE", heading: "Produtos disponíveis agora", intro: "Nosso foco é resolver os pequenos incômodos do dia a dia, não adicionar complexidade.", freeBadge: "Grátis", viewAction: "Conhecer o produto", webBadge: "Web", clockDescription: "Um conjunto gratuito de ferramentas de tempo online com hora atual, alarmes, temporizadores, Pomodoro, cronômetro e relógios mundiais.", clockAction: "Abrir site", clockPreviewLabel: "Prévia do Ghostyak Clock" },
     blog: { eyebrow: "BLOG", heading: "Registros do que estamos criando", intro: "Confira novidades de produtos e histórias de desenvolvimento no blog da GhostYak.", viewAction: "Ver o blog" },
   },
   boxes: {

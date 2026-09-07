@@ -51,7 +51,7 @@ const zh: Dictionary = {
         { eyebrow: "DESKTOP, ORGANIZED", title: "更快找到所需文件。", description: "按自己的方式整理工作、项目和常用工具，需要时即可快速打开。", actionLabel: "查看产品", imageAlt: "Boxes 演示画面 2" },
       ],
     },
-    products: { eyebrow: "GHOSTYAK SOFTWARE", heading: "现已推出的产品", intro: "我们不追求复杂功能，而是专注解决每天遇到的小麻烦。", freeBadge: "免费", viewAction: "查看产品" },
+    products: { eyebrow: "GHOSTYAK SOFTWARE", heading: "现已推出的产品", intro: "我们不追求复杂功能，而是专注解决每天遇到的小麻烦。", freeBadge: "免费", viewAction: "查看产品", webBadge: "网页", clockDescription: "一款免费的在线时间工具，集当前时间、闹钟、计时器、番茄钟、秒表和世界时钟于一处。", clockAction: "打开网站", clockPreviewLabel: "Ghostyak Clock 预览" },
     blog: { eyebrow: "BLOG", heading: "记录我们正在打造的产品", intro: "在 GhostYak 博客了解产品动态和开发故事。", viewAction: "查看博客" },
   },
   boxes: {

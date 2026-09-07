@@ -51,7 +51,7 @@ const en: Dictionary = {
         { eyebrow: "DESKTOP, ORGANIZED", title: "Find the files you need faster.", description: "Group work, projects, and frequently used tools your way, then open them right when you need them.", actionLabel: "Explore the product", imageAlt: "Boxes demo screen 2" },
       ],
     },
-    products: { eyebrow: "GHOSTYAK SOFTWARE", heading: "Products available now", intro: "We focus on solving the small frustrations you face every day, not adding complexity.", freeBadge: "Free", viewAction: "Explore the product" },
+    products: { eyebrow: "GHOSTYAK SOFTWARE", heading: "Products available now", intro: "We focus on solving the small frustrations you face every day, not adding complexity.", freeBadge: "Free", viewAction: "Explore the product", webBadge: "Web", clockDescription: "A free online time toolkit with the current time, alarms, timers, Pomodoro, a stopwatch, and world clocks in one place.", clockAction: "Open website", clockPreviewLabel: "Ghostyak Clock preview" },
     blog: { eyebrow: "BLOG", heading: "Notes on what we are building", intro: "Read GhostYak product news and development stories.", viewAction: "View the blog" },
   },
   boxes: {

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
-import { boxes } from "@/data/products";
+import { boxes, clock } from "@/data/products";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { localeConfig, type PublishedLocale } from "@/i18n/locales";
 import { localizedPath } from "@/i18n/routing";
@@ -23,15 +23,25 @@ export async function HomeContent({ locale }: { locale: PublishedLocale }) {
 
   return (
     <main>
-      <section className="bg-base-200 py-16 sm:py-20 lg:py-28" aria-labelledby="product-title">
+      <section className="scroll-mt-20 bg-base-200 py-16 sm:py-20 lg:py-28" id="products" aria-labelledby="product-title">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
           <p className="mb-3 text-sm font-bold text-primary">{dictionary.home.products.eyebrow}</p>
           <h2 className="text-3xl font-black tracking-tight sm:text-5xl" id="product-title">{dictionary.home.products.heading}</h2>
           <p className="mt-4 max-w-2xl leading-7 text-base-content/65">{dictionary.home.products.intro}</p>
-          <article className="card mt-10 overflow-hidden border border-base-300 bg-base-100 shadow-xl lg:card-side">
-            <figure className="relative min-h-72 overflow-hidden bg-neutral lg:w-1/2"><Image className="object-cover" src={boxes.screenshots[0].src} alt={dictionary.boxes.screenshotAlts[0]} fill sizes="(max-width: 1024px) 100vw, 50vw" /></figure>
-            <div className="card-body justify-center p-7 sm:p-10 lg:w-1/2 lg:p-14"><div className="flex flex-wrap gap-2"><span className="badge badge-primary badge-soft">{dictionary.home.products.freeBadge}</span><span className="badge badge-outline">{boxes.platform}</span></div><h3 className="card-title mt-3 text-4xl font-black">{boxes.name}</h3><p className="mt-3 max-w-xl text-lg leading-8 text-base-content/70">{dictionary.boxes.description}</p><div className="card-actions mt-6"><Link className="btn btn-primary min-h-12 px-7" href={boxesPath}>{dictionary.home.products.viewAction}<span aria-hidden="true">→</span></Link></div></div>
-          </article>
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            <article className="card overflow-hidden border border-base-300 bg-base-100 shadow-xl">
+              <figure className="relative min-h-64 overflow-hidden bg-neutral"><Image className="object-cover" src={boxes.screenshots[0].src} alt={dictionary.boxes.screenshotAlts[0]} fill sizes="(max-width: 1024px) 100vw, 50vw" /></figure>
+              <div className="card-body p-7 sm:p-10"><div className="flex flex-wrap gap-2"><span className="badge badge-primary badge-soft">{dictionary.home.products.freeBadge}</span><span className="badge badge-outline">{boxes.platform}</span></div><h3 className="card-title mt-3 text-4xl font-black">{boxes.name}</h3><p className="mt-3 max-w-xl flex-1 text-lg leading-8 text-base-content/70">{dictionary.boxes.description}</p><div className="card-actions mt-6"><Link className="btn btn-primary min-h-12 px-7" href={boxesPath}>{dictionary.home.products.viewAction}<span aria-hidden="true">→</span></Link></div></div>
+            </article>
+            <article className="card overflow-hidden border border-base-300 bg-base-100 shadow-xl">
+              <figure className="flex min-h-64 flex-col items-center justify-center gap-3 bg-neutral px-6 py-10 text-center text-neutral-content" aria-label={dictionary.home.products.clockPreviewLabel}>
+                <span className="text-xs font-bold uppercase tracking-[0.3em] text-neutral-content/55">Ghostyak Clock</span>
+                <time className="text-6xl font-medium tabular-nums tracking-tight sm:text-7xl" dateTime="10:09:42">10:09:42</time>
+                <span className="text-sm text-neutral-content/60">2026. 09. 08.</span>
+              </figure>
+              <div className="card-body p-7 sm:p-10"><div className="flex flex-wrap gap-2"><span className="badge badge-primary badge-soft">{dictionary.home.products.freeBadge}</span><span className="badge badge-outline">{dictionary.home.products.webBadge}</span></div><h3 className="card-title mt-3 text-4xl font-black">{clock.name}</h3><p className="mt-3 max-w-xl flex-1 text-lg leading-8 text-base-content/70">{dictionary.home.products.clockDescription}</p><div className="card-actions mt-6"><a className="btn btn-primary min-h-12 px-7" href={clock.url} rel="noreferrer" target="_blank">{dictionary.home.products.clockAction}<span aria-hidden="true">↗</span></a></div></div>
+            </article>
+          </div>
         </div>
       </section>
       <section className="bg-base-100 py-20 lg:py-24" aria-labelledby="blog-title"><div className="mx-auto grid w-full max-w-6xl gap-8 px-4 sm:px-6 md:grid-cols-[1fr_auto] md:items-end"><div><p className="mb-3 text-sm font-bold text-primary">{dictionary.home.blog.eyebrow}</p><h2 className="text-3xl font-black tracking-tight sm:text-4xl" id="blog-title">{dictionary.home.blog.heading}</h2><p className="mt-4 max-w-2xl text-lg leading-8 text-base-content/65">{dictionary.home.blog.intro}</p></div><Link className="btn btn-outline btn-primary" href={blogPath}>{dictionary.home.blog.viewAction}</Link></div></section>

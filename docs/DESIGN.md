@@ -29,6 +29,7 @@ ghostyak.com의 공개 UI는 Tailwind CSS와 DaisyUI를 기본 디자인 시스�
 | 용도 | 기본 구성 |
 | --- | --- |
 | 헤더 | `navbar` |
+| 제품 선택 | `dropdown` · `menu`, 클릭으로 열리는 `details`/`summary` |
 | 주요 행동 | `btn btn-primary` |
 | 보조 행동 | `btn-outline` 또는 텍스트 링크 |
 | 제품·글 목록 | `card` |
@@ -54,7 +55,7 @@ ghostyak.com의 공개 UI는 Tailwind CSS와 DaisyUI를 기본 디자인 시스�
 
 ## 승인된 바탕화면 정리 중심 랜딩
 
-2026-09-07 승인된 [RENEWAL_KO.md](./RENEWAL_KO.md)의 내용을 제품 소개와 8개 번역 언어에 적용한다. 화면에는 언어 선택 메뉴가 있다. 제품 소개의 모바일 헤더는 브랜드와 언어 선택, 두 번째 행의 네 가지 메뉴로 구성하며 다운로드는 본문 첫 화면에서 제공한다. 홈은 GhostYak 공통 헤더·푸터와 함께 `GHOSTYAK SOFTWARE` 제품 및 `BLOG` 진입점만 간결하게 제공한다.
+2026-09-07 승인된 [RENEWAL_KO.md](./RENEWAL_KO.md)의 내용을 제품 소개와 8개 번역 언어에 적용한다. 화면에는 언어 선택 메뉴가 있다. 제품 소개의 모바일 헤더는 브랜드와 언어 선택, 두 번째 행의 네 가지 메뉴로 구성하며 다운로드는 본문 첫 화면에서 제공한다. 홈은 GhostYak 공통 헤더·푸터와 함께 `GHOSTYAK SOFTWARE` 아래 Boxes와 Ghostyak Clock 제품 카드 및 `BLOG` 진입점을 간결하게 제공한다.
 
 - 핵심 설명과 등록된 실제 제품 스크린샷을 데스크톱에서 나란히 배치한다. 원본 이미지를 크게 보는 링크를 제공한다.
 - 원본 위치 유지, 개인·회사·업무용 기본 기능 무료를 첫 화면에서 설명한다.
@@ -69,4 +70,4 @@ ghostyak.com의 공개 UI는 Tailwind CSS와 DaisyUI를 기본 디자인 시스�
 
 ## Server Component 원칙
 
-DaisyUI 사용만으로 Client Component를 만들지 않는다. 공개 랜딩의 클라이언트 경계는 언어 선택을 담당하는 `LanguageSwitcher`와 링크 복사의 `CopySiteLink`다. FAQ와 실행 도움말은 네이티브 `details`/`summary`다.
+DaisyUI 사용만으로 Client Component를 만들지 않는다. 공개 랜딩의 클라이언트 경계는 언어 선택을 담당하는 `LanguageSwitcher`, 링크 복사의 `CopySiteLink`, 공통 헤더 제품 메뉴의 `ProductsDropdown`이다. 제품 메뉴는 Boxes와 Ghostyak Clock 링크를 제공하며 바깥 클릭, 포커스 이탈, Escape와 링크 선택 시 닫힌다. FAQ와 실행 도움말은 네이티브 `details`/`summary`다.

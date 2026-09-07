@@ -39,7 +39,9 @@ npm run build
 
 ## 제품 정보와 데모 이미지
 
-Boxes의 버전, 무료 설치 파일 URL과 제품 이미지 목록은 `src/data/products.ts`에서 수정한다. 기능 문구는 로케일 사전에서 관리한다. 공개 랜딩의 실제 스크린샷은 `public/images/renewal/boxes-desktop.webp`다. 기존 데모 파일은 랜딩에서 사용하지 않는다.
+공통 헤더의 제품 메뉴는 `ProductsDropdown`으로 열고 닫는다. Boxes는 현재 언어의 제품 페이지, Ghostyak Clock은 새 탭의 외부 웹앱으로 연결한다. 클릭·Enter·Space로 열기, Tab으로 링크 이동, Escape·바깥 클릭·포커스 이탈로 닫기를 확인한다.
+
+Boxes의 버전, 무료 설치 파일 URL과 제품 이미지 목록, Ghostyak Clock의 외부 URL은 `src/data/products.ts`에서 수정한다. 기능 문구는 로케일 사전에서 관리한다. 홈은 두 제품을 카드로 보여주며 Clock 카드는 브라우저에서 새 탭으로 웹앱을 연다. 공개 랜딩의 실제 스크린샷은 `public/images/renewal/boxes-desktop.webp`다. 기존 데모 파일은 랜딩에서 사용하지 않는다.
 
 랜딩의 위젯 문구는 `landing.widgets`, 예시 시점·도시 시간대·외부 링크는 `src/data/landing.ts`에서 관리한다. 세계시계는 고정 예시이며 현재 로케일의 날짜 형식을 사용한다.
 

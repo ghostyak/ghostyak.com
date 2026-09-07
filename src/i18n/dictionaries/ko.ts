@@ -73,6 +73,10 @@ const ko = {
       intro: "복잡한 기능보다 매일 마주치는 작은 불편을 해결하는 데 집중합니다.",
       freeBadge: "무료",
       viewAction: "제품 둘러보기",
+      webBadge: "웹",
+      clockDescription: "현재 시각, 알람, 타이머, 뽀모도로, 스톱워치와 세계시계를 한곳에서 사용하는 무료 온라인 시간 도구입니다.",
+      clockAction: "웹사이트 열기",
+      clockPreviewLabel: "Ghostyak Clock 화면 미리보기",
     },
     blog: {
       eyebrow: "BLOG",

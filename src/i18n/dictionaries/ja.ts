@@ -51,7 +51,7 @@ const ja: Dictionary = {
         { eyebrow: "DESKTOP, ORGANIZED", title: "必要なファイルをもっとすばやく。", description: "仕事、プロジェクト、よく使うツールを自分の方法で分け、必要なときにすぐ開けます。", actionLabel: "製品を見る", imageAlt: "Boxesデモ画面2" },
       ],
     },
-    products: { eyebrow: "GHOSTYAK SOFTWARE", heading: "現在ご利用いただける製品", intro: "複雑な機能を増やすのではなく、毎日の小さな不便を解決することに集中しています。", freeBadge: "無料", viewAction: "製品を見る" },
+    products: { eyebrow: "GHOSTYAK SOFTWARE", heading: "現在ご利用いただける製品", intro: "複雑な機能を増やすのではなく、毎日の小さな不便を解決することに集中しています。", freeBadge: "無料", viewAction: "製品を見る", webBadge: "ウェブ", clockDescription: "現在時刻、アラーム、タイマー、ポモドーロ、ストップウォッチ、世界時計をひとつにまとめた無料のオンライン時間ツールです。", clockAction: "ウェブサイトを開く", clockPreviewLabel: "Ghostyak Clockのプレビュー" },
     blog: { eyebrow: "BLOG", heading: "開発しているものの記録", intro: "製品ニュースや開発の話をGhostYakブログでお届けします。", viewAction: "ブログを見る" },
   },
   boxes: {
