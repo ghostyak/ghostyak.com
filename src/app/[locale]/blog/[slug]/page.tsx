@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { BlogPostContent } from "@/components/SitePages";
 import { sourceLocale } from "@/i18n/locales";
 import { getLocalizedAlternates, getOpenGraphLocale } from "@/i18n/metadata";
-import { requireTranslatedLocale } from "@/i18n/route-locale";
+import { requirePrefixedLocale } from "@/i18n/route-locale";
 import { getAllPosts, getPost } from "@/lib/blog";
 
 export async function generateStaticParams() {
@@ -11,7 +11,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps<"/[locale]/blog/[slug]">): Promise<Metadata> {
   const { locale: localeValue, slug } = await params;
-  const locale = requireTranslatedLocale(localeValue);
+  const locale = requirePrefixedLocale(localeValue);
   const post = await getPost(locale, slug);
   if (!post) return {};
   return {
@@ -24,5 +24,5 @@ export async function generateMetadata({ params }: PageProps<"/[locale]/blog/[sl
 
 export default async function LocalizedBlogPostPage({ params }: PageProps<"/[locale]/blog/[slug]">) {
   const { locale, slug } = await params;
-  return <BlogPostContent locale={requireTranslatedLocale(locale)} slug={slug} />;
+  return <BlogPostContent locale={requirePrefixedLocale(locale)} slug={slug} />;
 }

@@ -9,7 +9,12 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/:lang(en|ja|zh|es|de|fr|pt|it)/products/boxes/:path*",
+        source: "/en/products/boxes/:path*",
+        destination: "/product/boxes",
+        permanent: true,
+      },
+      {
+        source: "/:lang(ko|ja|zh|es|de|fr|pt|it)/products/boxes/:path*",
         destination: "/:lang/product/boxes",
         permanent: true,
       },

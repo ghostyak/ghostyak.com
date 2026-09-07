@@ -1,10 +1,10 @@
 import { NextResponse, type NextRequest } from "next/server";
 import {
   isPublishedLocale,
+  defaultLocale,
   localeCookieName,
   localeHeaderName,
   pathnameHeaderName,
-  sourceLocale,
   type PublishedLocale,
 } from "./i18n/locales";
 
@@ -14,7 +14,7 @@ function localeFromPath(pathname: string): PublishedLocale | null {
 }
 
 function localeFromAcceptLanguage(value: string | null): PublishedLocale {
-  if (!value) return sourceLocale;
+  if (!value) return defaultLocale;
 
   const requested = value
     .split(",")
@@ -31,16 +31,16 @@ function localeFromAcceptLanguage(value: string | null): PublishedLocale {
     if (isPublishedLocale(language)) return language;
   }
 
-  return sourceLocale;
+  return defaultLocale;
 }
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const pathLocale = localeFromPath(pathname);
 
-  if (pathLocale === sourceLocale) {
+  if (pathLocale === defaultLocale) {
     const destination = request.nextUrl.clone();
-    destination.pathname = pathname === `/${sourceLocale}` ? "/" : pathname.slice(sourceLocale.length + 1);
+    destination.pathname = pathname === `/${defaultLocale}` ? "/" : pathname.slice(defaultLocale.length + 1);
     return NextResponse.redirect(destination, 308);
   }
 
@@ -56,14 +56,14 @@ export function proxy(request: NextRequest) {
     ? cookieLocale
     : localeFromAcceptLanguage(request.headers.get("accept-language"));
 
-  if (preferredLocale !== sourceLocale) {
+  if (preferredLocale !== defaultLocale) {
     const destination = request.nextUrl.clone();
     destination.pathname = pathname === "/" ? `/${preferredLocale}` : `/${preferredLocale}${pathname}`;
     return NextResponse.redirect(destination);
   }
 
   const requestHeaders = new Headers(request.headers);
-  requestHeaders.set(localeHeaderName, sourceLocale);
+  requestHeaders.set(localeHeaderName, defaultLocale);
   requestHeaders.set(pathnameHeaderName, pathname);
   return NextResponse.next({ request: { headers: requestHeaders } });
 }

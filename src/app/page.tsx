@@ -1,11 +1,11 @@
 import { HomeContent } from "@/components/SitePages";
 import { getHomeMetadata } from "@/i18n/landing-metadata";
-import { sourceLocale } from "@/i18n/locales";
+import { defaultLocale } from "@/i18n/locales";
 
 export async function generateMetadata() {
-  return getHomeMetadata(sourceLocale);
+  return getHomeMetadata(defaultLocale);
 }
 
 export default function Page() {
-  return <HomeContent locale={sourceLocale} />;
+  return <HomeContent locale={defaultLocale} />;
 }

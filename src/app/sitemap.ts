@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { boxes } from "@/data/products";
-import { localeConfig, publishedLocales, type PublishedLocale } from "@/i18n/locales";
+import { defaultLocale, localeConfig, publishedLocales, type PublishedLocale } from "@/i18n/locales";
 import { localizedPath } from "@/i18n/routing";
 import { validatePublishedDictionaries } from "@/i18n/validate";
 import { getAllPosts, validatePublishedBlogTranslations } from "@/lib/blog";
@@ -11,9 +11,12 @@ function absoluteLocalizedUrl(locale: PublishedLocale, path: `/${string}` | "/")
 }
 
 function languageAlternates(path: `/${string}` | "/") {
-  return Object.fromEntries(
+  return {
+    ...Object.fromEntries(
     publishedLocales.map((locale) => [localeConfig[locale].htmlLanguage, absoluteLocalizedUrl(locale, path)]),
-  );
+    ),
+    "x-default": absoluteLocalizedUrl(defaultLocale, path),
+  };
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

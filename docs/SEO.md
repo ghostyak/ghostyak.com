@@ -13,8 +13,8 @@
 
 | 대상 | 경로 | 언어·지역 코드 | 우선 확인할 검색 도구 |
 | --- | --- | --- | --- |
-| 대한민국 | `/` | `ko-KR` | 네이버 서치어드바이저, Google Search Console |
-| 영어권 | `/en` | `en` | Google Search Console, Bing Webmaster Tools |
+| 영어권 | `/` | `en` | Google Search Console, Bing Webmaster Tools |
+| 대한민국 | `/ko` | `ko-KR` | 네이버 서치어드바이저, Google Search Console |
 | 일본 | `/ja` | `ja-JP` | Google Search Console, Bing Webmaster Tools |
 | 중국 | `/zh` | `zh-CN` | 바이두 검색자원 플랫폼, Bing Webmaster Tools |
 | 스페인 | `/es` | `es-ES` | Google Search Console, Bing Webmaster Tools |
@@ -40,7 +40,7 @@ Vercel 환경 변수를 변경한 뒤에는 새 배포가 필요하다. 값이 �
 
 ## 배포 후 등록 절차
 
-1. `https://www.ghostyak.com/`, `https://www.ghostyak.com/en` 등의 페이지 소스에서 canonical, `hreflang`, 인증
+1. `https://www.ghostyak.com/`, `https://www.ghostyak.com/ko` 등의 페이지 소스에서 canonical, `hreflang`, 인증
    메타 태그와 `application/ld+json`을 확인한다.
 2. [Google Search Console](https://search.google.com/search-console),
    [Bing Webmaster Tools](https://www.bing.com/webmasters),

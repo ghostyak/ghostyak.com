@@ -29,6 +29,7 @@ ghostyak.com은 GhostYak 소프트웨어를 소개하고 배포하는 공식 웹
 - [x] 번역 키, placeholder와 블로그 원문 리비전 검사 추가
 - [x] 언어별 canonical, `hreflang`, 메타데이터와 sitemap 구현
 - [x] 320px 모바일과 데스크톱 언어 메뉴·레이아웃 검수
+- [x] 영어를 접두사 없는 기본 URL 언어로 전환하고 한국어를 `/ko` 경로로 이동
 
 세부 기준과 언어 추가 완료 조건은 [INTERNATIONALIZATION.md](./INTERNATIONALIZATION.md)를 따른다.
 

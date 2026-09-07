@@ -2,7 +2,7 @@
 
 ## 개요
 
-ghostyak.com은 Vercel에 배포하는 Next.js 애플리케이션이다. 한국어를 기본으로 8개 번역 언어에서 GhostYak 브랜드, Boxes 제품 소개와 무료 설치 파일, Markdown 블로그를 제공한다. 국제화는 한국어 콘텐츠를 유일한 원문으로 삼으며 세부 기준은 [INTERNATIONALIZATION.md](./INTERNATIONALIZATION.md)를 따른다.
+ghostyak.com은 Vercel에 배포하는 Next.js 애플리케이션이다. 영어를 기본 URL 언어로 하고 8개 접두사 언어에서 GhostYak 브랜드, Boxes 제품 소개와 무료 설치 파일, Markdown 블로그를 제공한다. 국제화는 기본 URL과 별개로 한국어 콘텐츠를 유일한 원문으로 삼으며 세부 기준은 [INTERNATIONALIZATION.md](./INTERNATIONALIZATION.md)를 따른다.
 
 ## 기술 구성
 
@@ -23,7 +23,7 @@ content/blog/{locale}/           한국어 원문과 언어별 Markdown 블로�
 public/images/demo/              교체 가능한 데모 화면 이미지
 src/app/                         App Router 페이지와 메타데이터
 src/app/product/boxes/           Boxes 소개와 무료 다운로드 경로
-src/app/[locale]/                8개 번역 언어의 대응 경로
+src/app/[locale]/                한국어를 포함한 8개 접두사 언어의 대응 경로
 src/components/                  공통 헤더, 푸터와 동작 컴포넌트
 src/data/products.ts             언어 중립 제품, 다운로드와 이미지 데이터
 src/i18n/                        로케일 레지스트리, 원문 사전과 서버 로더
@@ -44,7 +44,7 @@ docs/                            설계, 개발과 로드맵 문서
 - `/blog/[slug]`: Markdown 글 상세 화면
 - `/{locale}/...`: 영어, 일본어, 중국어, 스페인어, 독일어, 프랑스어, 포르투갈어와 이탈리아어의 대응 화면
 
-`src/proxy.ts`는 URL 로케일을 우선하고, 접두사가 없는 최초 방문에서는 사용자 선택 쿠키와 브라우저 `Accept-Language` 순으로 언어를 결정한다. 접두사 없는 경로는 한국어 대표 URL이고 번역 경로는 `/{locale}/...`를 사용한다. `/ko/...`는 접두사를 제거한 한국어 대표 경로로 영구 이동하며 기존 `/products/boxes/...`는 `next.config.ts`에서 현재 제품 경로로 정규화한다. 홈과 Boxes 제품 페이지는 서로 다른 제목·설명·본문을 제공하며 각각 자기 자신을 canonical로 사용한다.
+`src/proxy.ts`는 URL 로케일을 우선하고, 접두사가 없는 최초 방문에서는 사용자 선택 쿠키와 브라우저 `Accept-Language` 순으로 언어를 결정한다. 접두사 없는 경로는 영어 대표 URL이고 다른 언어는 `/{locale}/...`를 사용한다. `/en/...`는 접두사를 제거한 영어 대표 경로로 영구 이동하며 한국어는 `/ko/...`에서 제공한다. 기존 `/products/boxes/...`는 `next.config.ts`에서 현재 제품 경로로 정규화한다. 홈과 Boxes 제품 페이지는 서로 다른 제목·설명·본문을 제공하며 각각 자기 자신을 canonical로 사용한다.
 
 `RenewalLanding`은 홈과 제품 소개에서 재사용하는 Server Component다. `getLandingMetadata`는 승인된 원문 기반 제목·설명과 실제 스크린샷을 검색·공유 메타데이터로 제공한다. `getSoftwareApplicationJsonLd`에는 같은 무료 기능 목록과 최신 확인 버전 v0.3.38을 사용한다. 루트 레이아웃은 두 랜딩의 자체 헤더·푸터를 사용하고 공개 방문 분석은 유지한다. 블로그는 기존 공통 셸을 사용한다.
 

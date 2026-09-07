@@ -1,4 +1,5 @@
 export const sourceLocale = "ko" as const;
+export const defaultLocale = "en" as const;
 export const localeHeaderName = "x-ghostyak-locale";
 export const pathnameHeaderName = "x-ghostyak-pathname";
 export const localeCookieName = "ghostyak_locale";
@@ -20,13 +21,13 @@ export type KnownLocale = keyof typeof localeConfig;
 export const publishedLocales = ["ko", "en", "ja", "zh", "es", "de", "fr", "pt", "it"] as const satisfies readonly KnownLocale[];
 export type PublishedLocale = (typeof publishedLocales)[number];
 
-export const translatedLocales = ["en", "ja", "zh", "es", "de", "fr", "pt", "it"] as const;
-export type TranslatedLocale = (typeof translatedLocales)[number];
+export const prefixedLocales = ["ko", "ja", "zh", "es", "de", "fr", "pt", "it"] as const;
+export type PrefixedLocale = (typeof prefixedLocales)[number];
 
 export function isPublishedLocale(value: string): value is PublishedLocale {
   return (publishedLocales as readonly string[]).includes(value);
 }
 
-export function isTranslatedLocale(value: string): value is TranslatedLocale {
-  return (translatedLocales as readonly string[]).includes(value);
+export function isPrefixedLocale(value: string): value is PrefixedLocale {
+  return (prefixedLocales as readonly string[]).includes(value);
 }

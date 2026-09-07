@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { localeConfig, publishedLocales, sourceLocale, type PublishedLocale } from "@/i18n/locales";
+import { defaultLocale, localeConfig, publishedLocales, type PublishedLocale } from "@/i18n/locales";
 import { localizedPath } from "@/i18n/routing";
 
 export function getLocalizedAlternates(locale: PublishedLocale, path: `/${string}` | "/"): Metadata["alternates"] {
@@ -9,7 +9,7 @@ export function getLocalizedAlternates(locale: PublishedLocale, path: `/${string
       ...Object.fromEntries(
         publishedLocales.map((candidate) => [localeConfig[candidate].htmlLanguage, localizedPath(candidate, path)]),
       ),
-      "x-default": localizedPath(sourceLocale, path),
+      "x-default": localizedPath(defaultLocale, path),
     },
   };
 }

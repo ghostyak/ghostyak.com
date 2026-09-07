@@ -1,11 +1,11 @@
 import "server-only";
 
 import { headers } from "next/headers";
-import { isPublishedLocale, localeHeaderName, pathnameHeaderName, sourceLocale, type PublishedLocale } from "@/i18n/locales";
+import { defaultLocale, isPublishedLocale, localeHeaderName, pathnameHeaderName, type PublishedLocale } from "@/i18n/locales";
 
 export async function getRequestLocale(): Promise<PublishedLocale> {
   const locale = (await headers()).get(localeHeaderName);
-  return locale && isPublishedLocale(locale) ? locale : sourceLocale;
+  return locale && isPublishedLocale(locale) ? locale : defaultLocale;
 }
 
 export async function getRequestPathname() {
