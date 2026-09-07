@@ -79,7 +79,7 @@ function WorkflowDiagram({ copy }: { copy: Copy }) {
 export function RenewalLanding({ copy, locale, currentPath, languageLabel }: { copy: Copy; locale: PublishedLocale; currentPath: string; languageLabel: string }) {
   return <div className={`bg-base-100 [overflow-wrap:anywhere] ${locale === "ko" ? "break-keep" : ""}`}>
     <a href="#main-content" className="btn btn-primary sr-only fixed left-4 top-4 z-[100] focus:not-sr-only">{copy.skip}</a>
-    <header className="sticky top-0 z-50 border-b border-base-300/70 bg-base-100/95 backdrop-blur-md">
+    <header className="sticky top-16 z-40 border-b border-base-300/70 bg-base-100/95 backdrop-blur-md">
       <div className="navbar mx-auto min-h-18 max-w-7xl flex-wrap justify-between gap-x-3 gap-y-0 px-4 py-2 sm:px-8 lg:min-h-20">
         <a href="#main-content" className="flex min-h-11 shrink-0 items-center gap-2 font-bold tracking-tight sm:text-lg">
           <Image src="/images/ghostyak-boxes.svg" width={36} height={36} alt="" className="size-7 sm:size-9" />
@@ -92,7 +92,7 @@ export function RenewalLanding({ copy, locale, currentPath, languageLabel }: { c
       </div>
     </header>
 
-    <main id="main-content" className="scroll-mt-36 lg:scroll-mt-24">
+    <main id="main-content" className="scroll-mt-48 lg:scroll-mt-40">
       <section aria-labelledby="renewal-title" className="bg-linear-to-b from-primary/5 to-base-100">
         <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 pb-8 pt-8 sm:px-8 sm:py-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12 lg:py-20">
           <div>
@@ -115,7 +115,7 @@ export function RenewalLanding({ copy, locale, currentPath, languageLabel }: { c
         </div>
       </section>
 
-      <section id="how-it-works" className="scroll-mt-36 px-4 py-12 sm:px-8 sm:py-20 lg:scroll-mt-24" aria-labelledby="workflow-title">
+      <section id="how-it-works" className="scroll-mt-48 px-4 py-12 sm:px-8 sm:py-20 lg:scroll-mt-40" aria-labelledby="workflow-title">
         <div className="mx-auto max-w-7xl">
           <div className="grid items-center gap-7 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
             <SectionHeading id="workflow-title" eyebrow={copy.workflow.eyebrow} title={copy.workflow.title} description={copy.workflow.description} />
@@ -133,7 +133,7 @@ export function RenewalLanding({ copy, locale, currentPath, languageLabel }: { c
         </div>
       </section>
 
-      <section id="widgets" className="scroll-mt-36 bg-base-200/60 px-4 py-12 sm:px-8 sm:py-20 lg:scroll-mt-24" aria-labelledby="widgets-title">
+      <section id="widgets" className="scroll-mt-48 bg-base-200/60 px-4 py-12 sm:px-8 sm:py-20 lg:scroll-mt-40" aria-labelledby="widgets-title">
         <div className="mx-auto max-w-7xl">
           <SectionHeading id="widgets-title" eyebrow={copy.widgets.eyebrow} title={copy.widgets.title} description={copy.widgets.description} />
           <div className="mt-8 grid gap-5 md:grid-cols-2">
@@ -164,7 +164,7 @@ export function RenewalLanding({ copy, locale, currentPath, languageLabel }: { c
         </div>
       </section>
 
-      <section id="free" className="scroll-mt-36 px-4 py-12 sm:px-8 sm:py-20 lg:scroll-mt-24" aria-labelledby="free-title">
+      <section id="free" className="scroll-mt-48 px-4 py-12 sm:px-8 sm:py-20 lg:scroll-mt-40" aria-labelledby="free-title">
         <div className="mx-auto grid max-w-7xl items-center gap-7 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <SectionHeading id="free-title" eyebrow={copy.free.eyebrow} title={copy.free.title} description={copy.free.description} />
           <div className="card border border-primary/20 bg-primary/5">
@@ -178,7 +178,7 @@ export function RenewalLanding({ copy, locale, currentPath, languageLabel }: { c
         </div>
       </section>
 
-      <section id="faq" className="scroll-mt-36 border-t border-base-300/70 px-4 py-12 sm:px-8 sm:py-20 lg:scroll-mt-24" aria-labelledby="faq-title">
+      <section id="faq" className="scroll-mt-48 border-t border-base-300/70 px-4 py-12 sm:px-8 sm:py-20 lg:scroll-mt-40" aria-labelledby="faq-title">
         <div className="mx-auto grid max-w-7xl items-start gap-7 lg:grid-cols-[0.65fr_1.35fr] lg:gap-16">
           <div><h2 id="faq-title" className="text-3xl font-bold tracking-tight">{copy.faq.title}</h2><a href={links.alternativeTo} className="link link-hover mt-4 inline-flex min-h-11 items-center gap-2 text-sm text-primary" target="_blank" rel="noreferrer">{copy.actions.alternativeTo}<Icon name="arrow" className="size-4" /></a></div>
           <div className="divide-y divide-base-300 border-y border-base-300">
@@ -195,7 +195,7 @@ export function RenewalLanding({ copy, locale, currentPath, languageLabel }: { c
         </div>
       </section>
 
-      <section id="download" className="scroll-mt-36 bg-neutral px-4 py-12 text-neutral-content sm:px-8 sm:py-20 lg:scroll-mt-24" aria-labelledby="download-title">
+      <section id="download" className="scroll-mt-48 bg-neutral px-4 py-12 text-neutral-content sm:px-8 sm:py-20 lg:scroll-mt-40" aria-labelledby="download-title">
         <div className="mx-auto grid max-w-7xl items-start gap-8 lg:grid-cols-2 lg:gap-16">
           <div>
             <h2 id="download-title" className="whitespace-pre-line text-3xl font-bold leading-tight tracking-tight sm:text-4xl">{copy.download.title}</h2>

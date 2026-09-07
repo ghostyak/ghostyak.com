@@ -42,7 +42,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
     <html lang={localeConfig[locale].htmlLanguage} data-theme="ghostyak" data-scroll-behavior="smooth">
       <head><TrackingScripts /></head>
       <body className="flex min-h-screen min-w-0 flex-col bg-base-100 text-base-content antialiased">
-        {!landing && <Header labels={dictionary.header} locale={locale} currentPath={currentPath} />}
+        <Header labels={dictionary.header} locale={locale} currentPath={currentPath} />
         <div className="flex-1">{children}</div>
         {!landing && <Footer labels={dictionary.footer} locale={locale} />}
         <Analytics />

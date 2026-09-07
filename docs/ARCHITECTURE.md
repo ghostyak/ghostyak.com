@@ -46,7 +46,7 @@ docs/                            설계, 개발과 로드맵 문서
 
 `src/proxy.ts`는 URL 로케일을 우선하고, 접두사가 없는 최초 방문에서는 사용자 선택 쿠키와 브라우저 `Accept-Language` 순으로 언어를 결정한다. 접두사 없는 경로는 영어 대표 URL이고 다른 언어는 `/{locale}/...`를 사용한다. `/en/...`는 접두사를 제거한 영어 대표 경로로 영구 이동하며 한국어는 `/ko/...`에서 제공한다. 기존 `/products/boxes/...`는 `next.config.ts`에서 현재 제품 경로로 정규화한다. 홈과 Boxes 제품 페이지는 서로 다른 제목·설명·본문을 제공하며 각각 자기 자신을 canonical로 사용한다.
 
-`RenewalLanding`은 홈과 제품 소개에서 재사용하는 Server Component다. `getLandingMetadata`는 승인된 원문 기반 제목·설명과 실제 스크린샷을 검색·공유 메타데이터로 제공한다. `getSoftwareApplicationJsonLd`에는 같은 무료 기능 목록과 최신 확인 버전 v0.3.38을 사용한다. 루트 레이아웃은 두 랜딩의 자체 헤더·푸터를 사용하고 공개 방문 분석은 유지한다. 블로그는 기존 공통 셸을 사용한다.
+`RenewalLanding`은 제품 소개에 사용하는 Server Component다. `getLandingMetadata`는 승인된 원문 기반 제목·설명과 실제 스크린샷을 검색·공유 메타데이터로 제공한다. `getSoftwareApplicationJsonLd`에는 같은 무료 기능 목록과 최신 확인 버전 v0.3.38을 사용한다. 루트 레이아웃의 파란 공통 헤더는 제품 페이지에서도 유지하며, 제품 섹션 메뉴는 그 아래의 보조 헤더로 제공한다. 제품 랜딩은 자체 푸터를 사용하고 공개 방문 분석은 유지한다.
 
 공개 승인된 한국어 원문은 `src/i18n/landing/ko.ts`, Server Component는 `src/components/renewal/RenewalLanding.tsx`에 둔다. 클립보드 동작만 `CopySiteLink` Client Component로 분리한다. 2026-09-07 사용자가 한국어 원문을 승인했다. `src/i18n/landing/{locale}.ts`를 각 공개 사전의 `landing` 키로 가져오며 빌드 중 모든 언어의 키를 검증한다. 상세 범위는 [RENEWAL_KO.md](./RENEWAL_KO.md)를 따른다.
 
