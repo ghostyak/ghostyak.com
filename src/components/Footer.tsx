@@ -1,3 +1,4 @@
+import { osints } from "@/data/products";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import type { PublishedLocale } from "@/i18n/locales";
 import { localizedPath } from "@/i18n/routing";
@@ -20,6 +21,7 @@ export function Footer({ labels, locale }: { labels: Dictionary["footer"]; local
         <nav className="flex flex-wrap gap-x-5 gap-y-3 text-sm" aria-label={labels.navigationLabel}>
           <a className="link link-hover" href={localizedPath(locale, "/product/boxes")}>Boxes</a>
           <a className="link link-hover" href="https://clock.ghostyak.com/" rel="noreferrer" target="_blank">Clock</a>
+          <a className="link link-hover" href={osints.url} rel="noreferrer" target="_blank">{osints.name}</a>
           <a className="link link-hover" href={localizedPath(locale, "/blog")}>{labels.blog}</a>
           {socialLinks.map((link) => (
             <a className="link link-hover" href={link.href} key={link.label} rel="noreferrer" target="_blank">{link.label}</a>

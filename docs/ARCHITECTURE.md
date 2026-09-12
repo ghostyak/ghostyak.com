@@ -2,7 +2,7 @@
 
 ## 개요
 
-ghostyak.com은 Vercel에 배포하는 Next.js 애플리케이션이다. 영어를 기본 URL 언어로 하고 8개 접두사 언어에서 GhostYak 브랜드, Boxes 제품 소개와 무료 설치 파일, Ghostyak Clock 웹앱 링크, Markdown 블로그를 제공한다. 국제화는 기본 URL과 별개로 한국어 콘텐츠를 유일한 원문으로 삼으며 세부 기준은 [INTERNATIONALIZATION.md](./INTERNATIONALIZATION.md)를 따른다.
+ghostyak.com은 Vercel에 배포하는 Next.js 애플리케이션이다. 영어를 기본 URL 언어로 하고 8개 접두사 언어에서 GhostYak 브랜드, Boxes 제품 소개와 무료 설치 파일, Ghostyak Clock과 OSINTS 웹앱 링크, Markdown 블로그를 제공한다. 국제화는 기본 URL과 별개로 한국어 콘텐츠를 유일한 원문으로 삼으며 세부 기준은 [INTERNATIONALIZATION.md](./INTERNATIONALIZATION.md)를 따른다.
 
 ## 기술 구성
 
@@ -37,7 +37,7 @@ docs/                            설계, 개발과 로드맵 문서
 ## 공개 경로
 
 - `/`: 바탕화면 정리 중심 히어로와 실제 제품 스크린샷, 정리 방식, 위젯, 무료 정책, FAQ, 설치 안내
-- `/`: GhostYak 브랜드 홈으로 Boxes와 Ghostyak Clock 제품 카드, 블로그 진입점을 간결하게 제공
+- `/`: GhostYak 브랜드 홈으로 Boxes, Ghostyak Clock과 OSINTS 제품 카드, 블로그 진입점을 간결하게 제공
 - `/product/boxes`: 승인된 Boxes 전용 제품 랜딩; 기존 제품 URL과 언어별 canonical 유지
 - `/product/boxes/download`: 같은 언어의 홈페이지 `#download` 설치 안내로 307 이동. 파일 다운로드는 사용자가 직접 버튼을 눌러 시작한다.
 - `/blog`: Markdown 글 목록
@@ -56,7 +56,7 @@ docs/                            설계, 개발과 로드맵 문서
 
 랜딩의 설치 문제 해결 도움말은 Server Component 안의 네이티브 `details`/`summary`이며 기본적으로 접혀 있다. 클라이언트 상태나 Runtime 감지 스크립트는 사용하지 않는다.
 
-Boxes의 버전, 설치 파일 URL과 실제 이미지 경로, Ghostyak Clock의 외부 URL은 `src/data/products.ts`에서 관리한다. 설명, 기능, 파일 크기 표시와 이미지 대체 텍스트는 한국어 원문 사전에서 관리한다. 현재 다운로드 대상은 GitHub Releases의 무료 설치 파일 하나다. 상업용 에디션은 실제 설치 파일과 정책이 준비될 때 데이터 모델과 UI에 추가한다.
+Boxes의 버전, 설치 파일 URL과 실제 이미지 경로, Ghostyak Clock과 OSINTS의 외부 URL은 `src/data/products.ts`에서 관리한다. 설명, 기능, 파일 크기 표시와 이미지 대체 텍스트는 한국어 원문 사전에서 관리한다. 현재 다운로드 대상은 GitHub Releases의 무료 설치 파일 하나다. 상업용 에디션은 실제 설치 파일과 정책이 준비될 때 데이터 모델과 UI에 추가한다.
 
 한국어 블로그 원문은 `content/blog/ko/*.md`, 번역은 `content/blog/{locale}/*.md`에 저장한다. 각 글은 `title`, `description`, `publishedAt`, `translationKey`, `sourceRevision` frontmatter를 가져야 한다. `src/lib/blog.ts`가 로케일별 디렉터리를 읽고 파일명을 slug로 사용해 최신 날짜순으로 정렬한다. 빌드 중 모든 공개 언어가 원문과 같은 번역 키, 리비전과 slug를 사용하는지 검사한다.
 

@@ -75,7 +75,8 @@ const ko = {
       viewAction: "제품 둘러보기",
       webBadge: "웹",
       clockDescription: "현재 시각, 알람, 타이머, 뽀모도로, 스톱워치와 세계시계를 한곳에서 사용하는 무료 온라인 시간 도구입니다.",
-      clockAction: "웹사이트 열기",
+      webAction: "웹사이트 열기",
+      osintsDescription: "여러 OSINT 사이트를 한곳에서 이용해 IP 주소와 도메인 등을 검색하고 분석하는 도구입니다.",
       clockPreviewLabel: "Ghostyak Clock 화면 미리보기",
     },
     blog: {

@@ -51,7 +51,7 @@ const es: Dictionary = {
         { eyebrow: "DESKTOP, ORGANIZED", title: "Encuentra antes los archivos que necesitas.", description: "Separa el trabajo, los proyectos y las herramientas frecuentes a tu manera y ábrelos cuando los necesites.", actionLabel: "Explorar el producto", imageAlt: "Pantalla de demostración 2 de Boxes" },
       ],
     },
-    products: { eyebrow: "GHOSTYAK SOFTWARE", heading: "Productos disponibles ahora", intro: "Nos centramos en resolver las pequeñas molestias diarias, no en añadir complejidad.", freeBadge: "Gratis", viewAction: "Explorar el producto", webBadge: "Web", clockDescription: "Un conjunto gratuito de herramientas de tiempo en línea con hora actual, alarmas, temporizadores, Pomodoro, cronómetro y relojes mundiales.", clockAction: "Abrir sitio web", clockPreviewLabel: "Vista previa de Ghostyak Clock" },
+    products: { eyebrow: "GHOSTYAK SOFTWARE", heading: "Productos disponibles ahora", intro: "Nos centramos en resolver las pequeñas molestias diarias, no en añadir complejidad.", freeBadge: "Gratis", viewAction: "Explorar el producto", webBadge: "Web", clockDescription: "Un conjunto gratuito de herramientas de tiempo en línea con hora actual, alarmas, temporizadores, Pomodoro, cronómetro y relojes mundiales.", osintsDescription: "Una herramienta para buscar y analizar direcciones IP, dominios y más con varios sitios OSINT desde un solo lugar.", webAction: "Abrir sitio web", clockPreviewLabel: "Vista previa de Ghostyak Clock" },
     blog: { eyebrow: "BLOG", heading: "Notas sobre lo que estamos creando", intro: "Descubre noticias de productos e historias de desarrollo en el blog de GhostYak.", viewAction: "Ver el blog" },
   },
   boxes: {

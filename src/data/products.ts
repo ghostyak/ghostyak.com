@@ -27,3 +27,8 @@ export const clock = {
   name: "Ghostyak Clock",
   url: "https://clock.ghostyak.com/",
 } as const;
+
+export const osints = {
+  name: "OSINTS",
+  url: "https://osints.ghostyak.com/",
+} as const;

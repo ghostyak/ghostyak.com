@@ -171,6 +171,7 @@ content/blog/
 | --- | --- |
 | GhostYak | 브랜드 표기 그대로 사용 |
 | Boxes | 제품명 표기 그대로 사용 |
+| OSINTS | 제품명 표기 그대로 사용 |
 | Windows 10/11 | Microsoft 제품 표기 유지 |
 | Microsoft Edge WebView2 Runtime | 공식 제품명 유지 |
 | GitHub Releases | 서비스 고유명사 유지 |
@@ -242,6 +243,10 @@ sourceRevision: 1
 - 파일 크기, 버전과 운영체제 표기는 의미는 공유하되 순서와 구분 문자는 언어별 문장 구조에 맞춘다.
 - 통화가 도입되면 가격의 원본 값과 통화 코드는 공유하고 표시만 로케일에 맞게 포맷한다.
 - 시간대가 중요한 콘텐츠는 원본 시간대와 표시 시간대를 명시한다.
+
+## 웹 제품 소개
+
+홈의 OSINTS 소개는 `home.products.osintsDescription`에서 한국어 원문과 8개 번역을 관리한다. Clock과 OSINTS의 웹사이트 열기 버튼은 기존 문구를 공통 `home.products.webAction` 키로 사용한다. 제품명과 외부 URL은 모든 언어에서 동일하다.
 
 ## 세계시계 홍보 콘텐츠
 

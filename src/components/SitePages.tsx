@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
-import { boxes, clock } from "@/data/products";
+import { boxes, clock, osints } from "@/data/products";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { localeConfig, type PublishedLocale } from "@/i18n/locales";
 import { localizedPath } from "@/i18n/routing";
@@ -39,7 +39,18 @@ export async function HomeContent({ locale }: { locale: PublishedLocale }) {
                 <time className="text-6xl font-medium tabular-nums tracking-tight sm:text-7xl" dateTime="10:09:42">10:09:42</time>
                 <span className="text-sm text-neutral-content/60">2026. 09. 08.</span>
               </figure>
-              <div className="card-body p-7 sm:p-10"><div className="flex flex-wrap gap-2"><span className="badge badge-primary badge-soft">{dictionary.home.products.freeBadge}</span><span className="badge badge-outline">{dictionary.home.products.webBadge}</span></div><h3 className="card-title mt-3 text-4xl font-black">{clock.name}</h3><p className="mt-3 max-w-xl flex-1 text-lg leading-8 text-base-content/70">{dictionary.home.products.clockDescription}</p><div className="card-actions mt-6"><a className="btn btn-primary min-h-12 px-7" href={clock.url} rel="noreferrer" target="_blank">{dictionary.home.products.clockAction}<span aria-hidden="true">↗</span></a></div></div>
+              <div className="card-body p-7 sm:p-10"><div className="flex flex-wrap gap-2"><span className="badge badge-primary badge-soft">{dictionary.home.products.freeBadge}</span><span className="badge badge-outline">{dictionary.home.products.webBadge}</span></div><h3 className="card-title mt-3 text-4xl font-black">{clock.name}</h3><p className="mt-3 max-w-xl flex-1 text-lg leading-8 text-base-content/70">{dictionary.home.products.clockDescription}</p><div className="card-actions mt-6"><a className="btn btn-primary min-h-12 px-7" href={clock.url} rel="noreferrer" target="_blank">{dictionary.home.products.webAction}<span aria-hidden="true">↗</span></a></div></div>
+            </article>
+            <article className="card overflow-hidden border border-base-300 bg-base-100 shadow-xl">
+              <div className="flex min-h-64 items-center justify-center bg-neutral px-6 py-10 text-neutral-content" aria-hidden="true">
+                <span className="text-5xl font-black tracking-tight sm:text-7xl">{osints.name}</span>
+              </div>
+              <div className="card-body p-7 sm:p-10">
+                <div className="flex flex-wrap gap-2"><span className="badge badge-outline">{dictionary.home.products.webBadge}</span></div>
+                <h3 className="card-title mt-3 text-4xl font-black">{osints.name}</h3>
+                <p className="mt-3 max-w-xl flex-1 text-lg leading-8 text-base-content/70">{dictionary.home.products.osintsDescription}</p>
+                <div className="card-actions mt-6"><a className="btn btn-primary min-h-12 px-7" href={osints.url} rel="noreferrer" target="_blank">{dictionary.home.products.webAction}<span aria-hidden="true">↗</span></a></div>
+              </div>
             </article>
           </div>
         </div>
