@@ -15,6 +15,7 @@ ghostyak.com의 공개 UI는 Tailwind CSS와 DaisyUI를 기본 디자인 시스�
 
 ## 화면 원칙
 
+- 공통 헤더 로고, 기본 파비콘, Open Graph·Twitter 이미지와 구조화 데이터의 발행자 로고는 `public/favicon.svg`를 사용한다.
 - 밝고 차분한 기본 화면과 파란색 `primary` 행동을 유지한다.
 - 홈과 Boxes 제품 첫 화면은 원본 파일 위치 유지와 무료 바탕화면 정리를 소개하고 실제 스크린샷을 보여준다.
 - 첫 화면과 설치 안내에서 공식 설치 파일로 바로 내려받는다.

@@ -19,6 +19,9 @@ export async function generateMetadata(): Promise<Metadata> {
     title: { default: dictionary.metadata.site.title, template: dictionary.metadata.site.titleTemplate },
     description: dictionary.metadata.site.description,
     applicationName: "GhostYak",
+    icons: {
+      icon: { url: "/favicon.svg", type: "image/svg+xml", sizes: "any" },
+    },
     creator: "GhostYak",
     publisher: "GhostYak",
     verification: getSearchEngineVerification(),
@@ -28,9 +31,9 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: localeConfig[locale].openGraphLocale,
       alternateLocale: publishedLocales.filter((candidate) => candidate !== locale).map((candidate) => localeConfig[candidate].openGraphLocale),
       siteName: "GhostYak",
-      images: [{ url: "/ghostyak.png", width: 300, height: 300, alt: "GhostYak" }],
+      images: [{ url: "/favicon.svg", width: 512, height: 512, alt: "GhostYak" }],
     },
-    twitter: { card: "summary_large_image", images: ["/ghostyak.png"] },
+    twitter: { card: "summary_large_image", images: ["/favicon.svg"] },
   };
 }
 

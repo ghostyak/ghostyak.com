@@ -63,7 +63,7 @@ export function getSoftwareApplicationJsonLd({
       "@type": "Organization",
       name: "GhostYak",
       url: siteUrl,
-      logo: `${siteUrl}/ghostyak.png`,
+      logo: `${siteUrl}/favicon.svg`,
     },
   };
 }

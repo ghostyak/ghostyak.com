@@ -1,5 +1,4 @@
 import Image from "next/image";
-import ghostyakIcon from "../../public/ghostyak.png";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { ProductsDropdown } from "@/components/ProductsDropdown";
 import { boxes, clock } from "@/data/products";
@@ -25,7 +24,7 @@ export function Header({
             href={localizedPath(locale, "/")}
             aria-label={labels.homeLabel}
           >
-            <Image className="size-9 object-contain" src={ghostyakIcon} alt="" width={38} height={38} loading="eager" />
+            <Image className="size-9 object-contain" src="/favicon.svg" alt="" width={38} height={38} loading="eager" />
             <span className="hidden sm:inline">GhostYak</span>
           </a>
         </div>
