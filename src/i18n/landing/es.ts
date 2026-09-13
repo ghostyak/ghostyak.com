@@ -10,7 +10,6 @@ const landing: Dictionary["landing"] = {
   "skip": "Saltar al contenido",
   "actions": {
     "download": "Descargar gratis para Windows",
-    "shortDownload": "Descargar gratis",
     "install": "Guía de instalación",
     "viewScreenshot": "Ampliar captura",
     "webview": "Instalar WebView2 desde Microsoft",

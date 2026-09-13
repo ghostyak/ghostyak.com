@@ -10,12 +10,10 @@ export function Header({
   labels,
   locale,
   currentPath,
-  downloadLabel,
 }: {
   labels: Dictionary["header"];
   locale: PublishedLocale;
   currentPath: string;
-  downloadLabel?: string;
 }) {
   return (
     <header className="sticky top-0 z-50 border-b border-primary-content/15 bg-primary text-primary-content">
@@ -42,7 +40,6 @@ export function Header({
         </nav>
         <div className="navbar-end ml-auto w-auto shrink-0 gap-3">
           <LanguageSwitcher currentLocale={locale} currentPath={currentPath} label={labels.language} />
-          {downloadLabel && <a className="btn hidden min-h-11 border-primary-content bg-primary-content text-primary shadow-none hover:bg-primary-content/90 lg:inline-flex" href={boxes.download.installerUrl}>{downloadLabel}</a>}
         </div>
       </div>
     </header>

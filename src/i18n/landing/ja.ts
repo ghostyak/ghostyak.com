@@ -10,7 +10,6 @@ const landing: Dictionary["landing"] = {
   "skip": "本文へスキップ",
   "actions": {
     "download": "Windows版を無料ダウンロード",
-    "shortDownload": "無料ダウンロード",
     "install": "インストール案内",
     "viewScreenshot": "画面を大きく見る",
     "webview": "MicrosoftからWebView2をインストール",

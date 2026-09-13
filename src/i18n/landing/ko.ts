@@ -8,7 +8,6 @@ const renewal = {
   skip: "본문으로 바로가기",
   actions: {
     download: "Windows용 무료 다운로드",
-    shortDownload: "무료 다운로드",
     install: "설치 안내",
     viewScreenshot: "화면 크게 보기",
     webview: "Microsoft에서 WebView2 설치",
