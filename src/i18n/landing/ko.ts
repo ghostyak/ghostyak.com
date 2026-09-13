@@ -6,13 +6,6 @@ const renewal = {
   },
   brand: "GhostYak Boxes",
   skip: "본문으로 바로가기",
-  navigation: "주요 메뉴",
-  nav: [
-    { label: "정리 방식", href: "#how-it-works" },
-    { label: "위젯", href: "#widgets" },
-    { label: "무료 정책", href: "#free" },
-    { label: "FAQ", href: "#faq" },
-  ],
   actions: {
     download: "Windows용 무료 다운로드",
     shortDownload: "무료 다운로드",
@@ -28,15 +21,10 @@ const renewal = {
     copyField: "PC에서 열 공식 홈페이지 주소",
   },
   hero: {
-    eyebrow: "Fences 대안을 찾는 Windows 사용자에게",
     title: ["파일은 제자리에,", "바탕화면은", "내 방식대로."],
-    description: "파일·폴더·앱 바로가기를 목적별 박스에 모으세요. 원본 파일의 위치는 그대로, 자주 쓰는 항목은 한눈에.",
-    free: "개인·회사·업무용 모두 기본 기능 무료",
     platform: "Windows 10/11 · 64비트",
-    mediaTitle: "내 바탕화면 위의 Boxes",
-    mediaAlt: "Windows 바탕화면 아래쪽에 앱 바로가기를 모은 박스와 오른쪽의 사진 뷰어, 디지털 시계",
+    mediaAlt: "Windows 바탕화면의 사진 뷰어, 시계와 앱 바로가기 박스",
     caption: "앱 바로가기 박스와 사진·시계 사용 화면",
-    mobile: "휴대폰으로 보고 계신가요? Windows PC에서 열어보세요.",
   },
   workflow: {
     eyebrow: "정리의 기준을 바꾸세요",

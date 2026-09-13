@@ -31,7 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly" as const,
       priority: 1,
       alternates: { languages: languageAlternates("/") },
-      images: [`${siteUrl}${boxes.screenshots[0].src}`],
+      images: [`${siteUrl}${boxes.preview.src}`],
     },
     {
       url: absoluteLocalizedUrl(locale, "/product/boxes"),

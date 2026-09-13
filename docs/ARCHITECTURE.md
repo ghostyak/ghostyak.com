@@ -2,7 +2,7 @@
 
 ## 개요
 
-ghostyak.com은 Vercel에 배포하는 Next.js 애플리케이션이다. 영어를 기본 URL 언어로 하고 8개 접두사 언어에서 GhostYak 브랜드, Boxes 제품 소개와 무료 설치 파일, Ghostyak Clock과 OSINTS 웹앱 링크, Markdown 블로그를 제공한다. 국제화는 기본 URL과 별개로 한국어 콘텐츠를 유일한 원문으로 삼으며 세부 기준은 [INTERNATIONALIZATION.md](./INTERNATIONALIZATION.md)를 따른다.
+ghostyak.com은 Vercel에 배포하는 Next.js 애플리케이션이다. 영어를 기본 URL 언어로 하고 8개 접두사 언어에서 GhostYak 브랜드, Boxes 제품 소개와 무료 설치 파일, Clock과 OSINTS 웹앱 링크, Markdown 블로그를 제공한다. 국제화는 기본 URL과 별개로 한국어 콘텐츠를 유일한 원문으로 삼으며 세부 기준은 [INTERNATIONALIZATION.md](./INTERNATIONALIZATION.md)를 따른다.
 
 ## 기술 구성
 
@@ -36,8 +36,7 @@ docs/                            설계, 개발과 로드맵 문서
 
 ## 공개 경로
 
-- `/`: 바탕화면 정리 중심 히어로와 실제 제품 스크린샷, 정리 방식, 위젯, 무료 정책, FAQ, 설치 안내
-- `/`: GhostYak 브랜드 홈으로 Boxes, Ghostyak Clock과 OSINTS 제품 카드, 블로그 진입점을 간결하게 제공
+- `/`: GhostYak 브랜드 홈으로 Boxes, Clock과 OSINTS 제품 카드, 블로그 진입점을 간결하게 제공
 - `/product/boxes`: 승인된 Boxes 전용 제품 랜딩; 기존 제품 URL과 언어별 canonical 유지
 - `/product/boxes/download`: 같은 언어의 홈페이지 `#download` 설치 안내로 307 이동. 파일 다운로드는 사용자가 직접 버튼을 눌러 시작한다.
 - `/blog`: Markdown 글 목록
@@ -46,17 +45,19 @@ docs/                            설계, 개발과 로드맵 문서
 
 `src/proxy.ts`는 URL 로케일을 우선하고, 접두사가 없는 최초 방문에서는 사용자 선택 쿠키와 브라우저 `Accept-Language` 순으로 언어를 결정한다. 접두사 없는 경로는 영어 대표 URL이고 다른 언어는 `/{locale}/...`를 사용한다. `/en/...`는 접두사를 제거한 영어 대표 경로로 영구 이동하며 한국어는 `/ko/...`에서 제공한다. 기존 `/products/boxes/...`는 `next.config.ts`에서 현재 제품 경로로 정규화한다. 홈과 Boxes 제품 페이지는 서로 다른 제목·설명·본문을 제공하며 각각 자기 자신을 canonical로 사용한다.
 
-`RenewalLanding`은 제품 소개에 사용하는 Server Component다. `getLandingMetadata`는 승인된 원문 기반 제목·설명과 실제 스크린샷을 검색·공유 메타데이터로 제공한다. `getSoftwareApplicationJsonLd`에는 같은 무료 기능 목록과 최신 확인 버전 v0.3.38을 사용한다. 루트 레이아웃의 파란 공통 헤더는 제품 페이지에서도 유지하며, 제품 섹션 메뉴는 그 아래의 보조 헤더로 제공한다. 제품 랜딩은 자체 푸터를 사용하고 공개 방문 분석은 유지한다.
+`RenewalLanding`은 제품 소개에 사용하는 Server Component다. `getLandingMetadata`는 승인된 원문 기반 제목·설명과 실제 스크린샷을 검색·공유 메타데이터로 제공한다. `getSoftwareApplicationJsonLd`에는 같은 무료 기능 목록과 최신 확인 버전 v0.3.38을 사용한다. 루트 레이아웃의 파란 공통 헤더 하나만 고정하며, 제품 페이지에서는 데스크톱 헤더에 다운로드 문구도 전달한다. 제품명 `Boxes`를 가장 큰 H1으로 표시하고 기존 소개 문구와 실제 스크린샷을 중앙에 순서대로 배치한다. 스크린샷 아래의 링크 복사 영역과 제품 섹션 목차는 제거했다. 언어 선택은 공통 헤더에서 한 번만 렌더링한다. 제품 랜딩은 자체 푸터를 사용하고 공개 방문 분석은 유지한다.
 
 공개 승인된 한국어 원문은 `src/i18n/landing/ko.ts`, Server Component는 `src/components/renewal/RenewalLanding.tsx`에 둔다. 클립보드 동작만 `CopySiteLink` Client Component로 분리한다. 2026-09-07 사용자가 한국어 원문을 승인했다. `src/i18n/landing/{locale}.ts`를 각 공개 사전의 `landing` 키로 가져오며 빌드 중 모든 언어의 키를 검증한다. 상세 범위는 [RENEWAL_KO.md](./RENEWAL_KO.md)를 따른다.
 
-공개 랜딩의 제품 스크린샷·외부 링크와 세계시계 예시 데이터는 `src/data/landing.ts`에서 관리한다. 설치 파일은 공개 화면과 같은 `boxes.download.installerUrl`을 사용하며 모든 다운로드 버튼에서 직접 연결한다. 모바일 메뉴·구역 이동·FAQ·원본 이미지 보기는 서버 HTML과 네이티브 브라우저 동작으로 제공한다.
+공개 랜딩의 제품 스크린샷·외부 링크와 세계시계 예시 데이터는 `src/data/landing.ts`에서 관리한다. 설치 파일은 공개 화면과 같은 `boxes.download.installerUrl`을 사용하며 모든 다운로드 버튼에서 직접 연결한다. 구역 이동·FAQ·원본 이미지 보기는 서버 HTML과 네이티브 브라우저 동작으로 제공한다. 설치 안내의 PC용 링크 복사는 전달받은 현재 언어의 제품 경로를 사용한다.
 
 ## 제품과 콘텐츠 데이터
 
 랜딩의 설치 문제 해결 도움말은 Server Component 안의 네이티브 `details`/`summary`이며 기본적으로 접혀 있다. 클라이언트 상태나 Runtime 감지 스크립트는 사용하지 않는다.
 
-Boxes의 버전, 설치 파일 URL과 실제 이미지 경로, Ghostyak Clock과 OSINTS의 외부 URL은 `src/data/products.ts`에서 관리한다. 설명, 기능, 파일 크기 표시와 이미지 대체 텍스트는 한국어 원문 사전에서 관리한다. 현재 다운로드 대상은 GitHub Releases의 무료 설치 파일 하나다. 상업용 에디션은 실제 설치 파일과 정책이 준비될 때 데이터 모델과 UI에 추가한다.
+Boxes의 버전, 설치 파일 URL과 실제 이미지 경로, Clock과 OSINTS의 외부 URL은 `src/data/products.ts`에서 관리한다. 설명, 기능, 파일 크기 표시와 이미지 대체 텍스트는 한국어 원문 사전에서 관리한다. 현재 다운로드 대상은 GitHub Releases의 무료 설치 파일 하나다. 상업용 에디션은 실제 설치 파일과 정책이 준비될 때 데이터 모델과 UI에 추가한다.
+
+홈 카드와 제품 첫 화면은 `boxes.preview`의 PNG 경로와 원본 크기를 공유한다. `boxes.screenshots`, 검색·공유 메타데이터와 sitemap도 같은 이미지를 사용한다. `landingMedia.photoDetail`은 사진 위젯의 확대 설명에 사용할 기존 스크린샷을 별도로 유지한다.
 
 한국어 블로그 원문은 `content/blog/ko/*.md`, 번역은 `content/blog/{locale}/*.md`에 저장한다. 각 글은 `title`, `description`, `publishedAt`, `translationKey`, `sourceRevision` frontmatter를 가져야 한다. `src/lib/blog.ts`가 로케일별 디렉터리를 읽고 파일명을 slug로 사용해 최신 날짜순으로 정렬한다. 빌드 중 모든 공개 언어가 원문과 같은 번역 키, 리비전과 slug를 사용하는지 검사한다.
 
@@ -71,4 +72,4 @@ Boxes의 버전, 설치 파일 URL과 실제 이미지 경로, Ghostyak Clock과
 - sitemap은 모든 공개 언어의 홈, Boxes, 블로그와 각 Markdown 글 및 언어 대체 URL을 포함한다.
 - 번역은 확정된 한국어 원문에서만 파생하며 누락된 번역을 한국어 fallback으로 숨기지 않는다.
 
-공개 랜딩과 블로그는 서로 다른 헤더·푸터를 사용한다. 공통 헤더·푸터의 페이지 링크와 랜딩의 블로그 링크는 전체 문서 탐색으로 전환해 루트 레이아웃이 새 경로에 맞는 셸을 다시 선택하도록 한다. 블로그 목록과 글 사이의 내부 링크는 Next.js Link를 유지한다.
+공개 랜딩과 블로그는 공통 헤더를 공유하고 제품 랜딩만 자체 푸터를 사용한다. 홈의 Boxes 제품 카드, 공통 헤더·푸터의 페이지 링크와 랜딩의 블로그 링크는 전체 문서 탐색으로 전환해 루트 레이아웃이 새 경로에 맞는 다운로드 버튼과 푸터를 다시 선택하도록 한다. 블로그 목록과 글 사이의 내부 링크는 Next.js Link를 유지한다.

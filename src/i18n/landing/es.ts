@@ -8,25 +8,6 @@ const landing: Dictionary["landing"] = {
   },
   "brand": "GhostYak Boxes",
   "skip": "Saltar al contenido",
-  "navigation": "Navegación principal",
-  "nav": [
-    {
-      "label": "Cómo funciona",
-      "href": "#how-it-works"
-    },
-    {
-      "label": "Widgets",
-      "href": "#widgets"
-    },
-    {
-      "label": "Funciones gratis",
-      "href": "#free"
-    },
-    {
-      "label": "Preguntas",
-      "href": "#faq"
-    }
-  ],
   "actions": {
     "download": "Descargar gratis para Windows",
     "shortDownload": "Descargar gratis",
@@ -42,19 +23,14 @@ const landing: Dictionary["landing"] = {
     "copyField": "Dirección de la web oficial para abrir en el PC"
   },
   "hero": {
-    "eyebrow": "Para usuarios de Windows que buscan una alternativa a Fences",
     "title": [
       "Tus archivos, donde están.",
       "Tu escritorio,",
       "a tu manera."
     ],
-    "description": "Reúne archivos, carpetas y accesos directos a aplicaciones en cajas según su uso. Los originales siguen en su sitio y lo habitual queda a la vista.",
-    "free": "Funciones básicas gratis para uso personal, empresarial y profesional",
     "platform": "Windows 10/11 · 64 bits",
-    "mediaTitle": "Boxes en tu escritorio",
-    "mediaAlt": "Escritorio de Windows con una caja de accesos directos a aplicaciones abajo y un visor de fotos y un reloj digital a la derecha",
+    "mediaAlt": "Escritorio de Windows con un visor de fotos, un reloj y una caja de accesos directos a aplicaciones",
     "caption": "Cajas de accesos directos, fotos y reloj en uso · Interfaz del producto en coreano",
-    "mobile": "¿Lo estás viendo en el móvil? Ábrelo en un PC con Windows."
   },
   "workflow": {
     "eyebrow": "Organiza según tu trabajo",

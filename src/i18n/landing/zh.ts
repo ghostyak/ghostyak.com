@@ -8,25 +8,6 @@ const landing: Dictionary["landing"] = {
   },
   "brand": "GhostYak Boxes",
   "skip": "跳转到正文",
-  "navigation": "主导航",
-  "nav": [
-    {
-      "label": "整理方式",
-      "href": "#how-it-works"
-    },
-    {
-      "label": "小组件",
-      "href": "#widgets"
-    },
-    {
-      "label": "免费政策",
-      "href": "#free"
-    },
-    {
-      "label": "常见问题",
-      "href": "#faq"
-    }
-  ],
   "actions": {
     "download": "免费下载 Windows 版",
     "shortDownload": "免费下载",
@@ -42,19 +23,14 @@ const landing: Dictionary["landing"] = {
     "copyField": "在电脑上打开的官网地址"
   },
   "hero": {
-    "eyebrow": "为寻找 Fences 替代品的 Windows 用户而设",
     "title": [
       "文件留在原处，",
       "桌面整理，",
       "随你心意。"
     ],
-    "description": "按用途将文件、文件夹和应用快捷方式放入盒子。原文件位置不变，常用内容一目了然。",
-    "free": "个人、公司和工作用途的基本功能均免费",
     "platform": "Windows 10/11 · 64 位",
-    "mediaTitle": "桌面上的 Boxes",
-    "mediaAlt": "Windows 桌面下方的盒子集中显示应用快捷方式，右侧显示照片查看器和数字时钟",
+    "mediaAlt": "Windows 桌面上的照片查看器、时钟和应用快捷方式盒子",
     "caption": "应用快捷方式盒子、照片和时钟的使用画面 · 产品界面为韩语",
-    "mobile": "正在用手机浏览？请在 Windows 电脑上打开。"
   },
   "workflow": {
     "eyebrow": "按照工作方式整理",

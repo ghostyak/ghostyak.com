@@ -8,25 +8,6 @@ const landing: Dictionary["landing"] = {
   },
   "brand": "GhostYak Boxes",
   "skip": "Zum Inhalt springen",
-  "navigation": "Hauptnavigation",
-  "nav": [
-    {
-      "label": "So geht’s",
-      "href": "#how-it-works"
-    },
-    {
-      "label": "Widgets",
-      "href": "#widgets"
-    },
-    {
-      "label": "Kostenlos",
-      "href": "#free"
-    },
-    {
-      "label": "FAQ",
-      "href": "#faq"
-    }
-  ],
   "actions": {
     "download": "Kostenlos für Windows laden",
     "shortDownload": "Kostenlos laden",
@@ -42,19 +23,14 @@ const landing: Dictionary["landing"] = {
     "copyField": "Adresse der offiziellen Website zum Öffnen am PC"
   },
   "hero": {
-    "eyebrow": "Für Windows-Nutzer auf der Suche nach einer Fences-Alternative",
     "title": [
       "Dateien bleiben.",
       "Dein Desktop,",
       "deine Ordnung."
     ],
-    "description": "Sammle Dateien, Ordner und App-Verknüpfungen in Boxen für deine Aufgaben. Die Originale bleiben an ihrem Platz, häufig Benötigtes bleibt im Blick.",
-    "free": "Grundfunktionen kostenlos für private, betriebliche und berufliche Nutzung",
     "platform": "Windows 10/11 · 64 Bit",
-    "mediaTitle": "Boxes auf deinem Desktop",
-    "mediaAlt": "Windows-Desktop mit einer Box für App-Verknüpfungen unten sowie Fotobetrachter und Digitaluhr rechts",
+    "mediaAlt": "Windows-Desktop mit Fotobetrachter, Uhr und einer Box für App-Verknüpfungen",
     "caption": "App-Verknüpfungen, Fotos und Uhr im Einsatz · Produktoberfläche auf Koreanisch",
-    "mobile": "Gerade am Smartphone? Öffne diese Seite auf einem Windows-PC."
   },
   "workflow": {
     "eyebrow": "Ordne nach deinen Aufgaben",

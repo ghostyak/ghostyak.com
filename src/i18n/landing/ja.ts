@@ -8,25 +8,6 @@ const landing: Dictionary["landing"] = {
   },
   "brand": "GhostYak Boxes",
   "skip": "本文へスキップ",
-  "navigation": "メインメニュー",
-  "nav": [
-    {
-      "label": "整理の仕組み",
-      "href": "#how-it-works"
-    },
-    {
-      "label": "ウィジェット",
-      "href": "#widgets"
-    },
-    {
-      "label": "無料の範囲",
-      "href": "#free"
-    },
-    {
-      "label": "FAQ",
-      "href": "#faq"
-    }
-  ],
   "actions": {
     "download": "Windows版を無料ダウンロード",
     "shortDownload": "無料ダウンロード",
@@ -42,19 +23,14 @@ const landing: Dictionary["landing"] = {
     "copyField": "PCで開く公式サイトのアドレス"
   },
   "hero": {
-    "eyebrow": "Fencesの代替を探しているWindowsユーザーへ",
     "title": [
       "ファイルはそのまま、",
       "デスクトップは",
       "自分らしく。"
     ],
-    "description": "ファイル・フォルダー・アプリのショートカットを目的別のボックスにまとめましょう。元のファイルの場所はそのまま、よく使うものをひと目で。",
-    "free": "個人・会社・業務用のいずれも基本機能は無料",
     "platform": "Windows 10/11 · 64ビット",
-    "mediaTitle": "デスクトップで使うBoxes",
-    "mediaAlt": "Windowsデスクトップの下部にアプリのショートカットをまとめたボックス、右側に写真ビューアーとデジタル時計がある画面",
+    "mediaAlt": "Windowsデスクトップ上の写真ビューアー、時計、アプリのショートカットをまとめたボックス",
     "caption": "アプリのショートカット、写真、時計の使用画面 · 製品UIは韓国語",
-    "mobile": "スマートフォンでご覧ですか？ Windows PCで開いてみてください。"
   },
   "workflow": {
     "eyebrow": "作業に合わせた整理へ",

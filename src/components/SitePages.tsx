@@ -13,7 +13,7 @@ async function LandingContent({ locale, path }: { locale: PublishedLocale; path:
   const dictionary = await getDictionary(locale);
   const copy = dictionary.landing;
   const jsonLd = getSoftwareApplicationJsonLd({ locale, description: copy.metadata.description, featureNames: copy.free.currentFeatures });
-  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} /><RenewalLanding copy={copy} locale={locale} currentPath={localizedPath(locale, path)} languageLabel={dictionary.header.language} /></>;
+  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} /><RenewalLanding copy={copy} locale={locale} currentPath={localizedPath(locale, path)} /></>;
 }
 
 export async function HomeContent({ locale }: { locale: PublishedLocale }) {
@@ -30,12 +30,12 @@ export async function HomeContent({ locale }: { locale: PublishedLocale }) {
           <p className="mt-4 max-w-2xl leading-7 text-base-content/65">{dictionary.home.products.intro}</p>
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
             <article className="card overflow-hidden border border-base-300 bg-base-100 shadow-xl">
-              <figure className="relative min-h-64 overflow-hidden bg-neutral"><Image className="object-cover" src={boxes.screenshots[0].src} alt={dictionary.boxes.screenshotAlts[0]} fill sizes="(max-width: 1024px) 100vw, 50vw" /></figure>
-              <div className="card-body p-7 sm:p-10"><div className="flex flex-wrap gap-2"><span className="badge badge-primary badge-soft">{dictionary.home.products.freeBadge}</span><span className="badge badge-outline">{boxes.platform}</span></div><h3 className="card-title mt-3 text-4xl font-black">{boxes.name}</h3><p className="mt-3 max-w-xl flex-1 text-lg leading-8 text-base-content/70">{dictionary.boxes.description}</p><div className="card-actions mt-6"><Link className="btn btn-primary min-h-12 px-7" href={boxesPath}>{dictionary.home.products.viewAction}<span aria-hidden="true">→</span></Link></div></div>
+              <figure className="bg-neutral"><Image {...boxes.preview} className="h-auto w-full" alt={dictionary.boxes.screenshotAlts[0]} sizes="(min-width: 1152px) 540px, (min-width: 1024px) calc((100vw - 72px) / 2), (min-width: 640px) calc(100vw - 48px), calc(100vw - 32px)" /></figure>
+              <div className="card-body p-7 sm:p-10"><div className="flex flex-wrap gap-2"><span className="badge badge-primary badge-soft">{dictionary.home.products.freeBadge}</span><span className="badge badge-outline">{boxes.platform}</span></div><h3 className="card-title mt-3 text-4xl font-black">{boxes.name}</h3><p className="mt-3 max-w-xl flex-1 text-lg leading-8 text-base-content/70">{dictionary.boxes.description}</p><div className="card-actions mt-6"><a className="btn btn-primary min-h-12 px-7" href={boxesPath}>{dictionary.home.products.viewAction}<span aria-hidden="true">→</span></a></div></div>
             </article>
             <article className="card overflow-hidden border border-base-300 bg-base-100 shadow-xl">
               <figure className="flex min-h-64 flex-col items-center justify-center gap-3 bg-neutral px-6 py-10 text-center text-neutral-content" aria-label={dictionary.home.products.clockPreviewLabel}>
-                <span className="text-xs font-bold uppercase tracking-[0.3em] text-neutral-content/55">Ghostyak Clock</span>
+                <span className="text-xs font-bold tracking-[0.3em] text-neutral-content/55">{clock.name}</span>
                 <time className="text-6xl font-medium tabular-nums tracking-tight sm:text-7xl" dateTime="10:09:42">10:09:42</time>
                 <span className="text-sm text-neutral-content/60">2026. 09. 08.</span>
               </figure>

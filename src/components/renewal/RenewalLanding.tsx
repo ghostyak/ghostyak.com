@@ -5,7 +5,6 @@ import { landingLinks as links, landingMedia as media, landingTimes } from "@/da
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { localeConfig, type PublishedLocale } from "@/i18n/locales";
 import { localizedPath } from "@/i18n/routing";
-import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 type Copy = Dictionary["landing"];
 import { CopySiteLink } from "./CopySiteLink";
 
@@ -22,11 +21,11 @@ function Icon({ name, className = "size-5" }: { name: IconName; className?: stri
   return <svg className={`${className} shrink-0 fill-none stroke-current`} viewBox="0 0 24 24" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{paths[name]}</svg>;
 }
 
-function DownloadLink({ copy, compact = false }: { copy: Copy; compact?: boolean }) {
-  return <a className={`btn btn-primary h-auto min-h-12 max-w-full gap-2 whitespace-normal px-4 py-3 text-sm shadow-none ${compact ? "" : "sm:px-6 sm:text-base"}`}
+function DownloadLink({ copy }: { copy: Copy }) {
+  return <a className="btn btn-primary h-auto min-h-12 max-w-full gap-2 whitespace-normal px-4 py-3 text-sm shadow-none sm:px-6 sm:text-base"
     href={boxes.download.installerUrl}>
     <Icon name="download" className="size-4" />
-    {compact ? copy.actions.shortDownload : copy.actions.download}
+    {copy.actions.download}
   </a>;
 }
 
@@ -41,9 +40,8 @@ function SectionHeading({ eyebrow, title, description, id }: { eyebrow: string; 
 function ProductScreenshot({ copy }: { copy: Copy }) {
   return <figure className="min-w-0">
     <div className="overflow-hidden rounded-2xl border border-neutral-content/15 bg-neutral text-neutral-content shadow-xl shadow-primary/10">
-      <p className="px-4 py-3 text-xs font-semibold">{copy.hero.mediaTitle}</p>
       <a href={media.desktop.src} target="_blank" rel="noreferrer" aria-label={copy.actions.viewScreenshot} className="block">
-        <Image {...media.desktop} alt={copy.hero.mediaAlt} preload sizes="(min-width: 1024px) 55vw, 100vw" className="h-auto w-full" />
+        <Image {...media.desktop} alt={copy.hero.mediaAlt} preload sizes="(min-width: 960px) 896px, (min-width: 640px) calc(100vw - 64px), calc(100vw - 32px)" className="h-auto w-full" />
       </a>
     </div>
     <figcaption className="mt-2 flex flex-wrap items-center justify-between gap-x-3 text-xs leading-5 text-base-content/65">
@@ -76,46 +74,29 @@ function WorkflowDiagram({ copy }: { copy: Copy }) {
   </figure>;
 }
 
-export function RenewalLanding({ copy, locale, currentPath, languageLabel }: { copy: Copy; locale: PublishedLocale; currentPath: string; languageLabel: string }) {
+export function RenewalLanding({ copy, locale, currentPath }: { copy: Copy; locale: PublishedLocale; currentPath: string }) {
   return <div className={`bg-base-100 [overflow-wrap:anywhere] ${locale === "ko" ? "break-keep" : ""}`}>
     <a href="#main-content" className="btn btn-primary sr-only fixed left-4 top-4 z-[100] focus:not-sr-only">{copy.skip}</a>
-    <header className="sticky top-16 z-40 border-b border-base-300/70 bg-base-100/95 backdrop-blur-md">
-      <div className="navbar mx-auto min-h-18 max-w-7xl flex-wrap justify-between gap-x-3 gap-y-0 px-4 py-2 sm:px-8 lg:min-h-20">
-        <a href="#main-content" className="flex min-h-11 shrink-0 items-center gap-2 font-bold tracking-tight sm:text-lg">
-          <Image src="/images/ghostyak-boxes.svg" width={36} height={36} alt="" className="size-7 sm:size-9" />
-          <span>{copy.brand}</span>
-        </a>
-        <nav className="order-last mt-2 grid w-full grid-cols-4 border-t border-base-300/70 pt-1 lg:order-none lg:mt-0 lg:flex lg:w-auto lg:border-0 lg:pt-0" aria-label={copy.navigation}>
-          {copy.nav.map(link => <a className="btn btn-ghost h-auto min-h-11 whitespace-normal px-1 py-2 text-xs font-medium sm:px-4 sm:text-sm" href={link.href} key={link.href}>{link.label}</a>)}
-        </nav>
-        <div className="flex items-center gap-2"><div className="hidden sm:block"><DownloadLink copy={copy} compact /></div><LanguageSwitcher currentLocale={locale} currentPath={currentPath} label={languageLabel} light /></div>
-      </div>
-    </header>
-
-    <main id="main-content" className="scroll-mt-48 lg:scroll-mt-40">
+    <main id="main-content" className="scroll-mt-24">
       <section aria-labelledby="renewal-title" className="bg-linear-to-b from-primary/5 to-base-100">
-        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 pb-8 pt-8 sm:px-8 sm:py-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12 lg:py-20">
-          <div>
-            <p className="mb-4 text-sm font-semibold text-primary">{copy.hero.eyebrow}</p>
-            <h1 id="renewal-title" className="text-[2rem] font-bold leading-[1.2] tracking-[-0.045em] min-[380px]:text-[2.6rem] sm:text-6xl lg:text-[3.55rem] xl:text-[4rem]">
-              {copy.hero.title.map((line, index) => <span key={line} className={`block ${index > 0 ? "text-primary" : ""}`}>{line}</span>)}
-            </h1>
-            <p className="mt-5 max-w-md text-base leading-7 text-base-content/75 sm:text-lg sm:leading-8">{copy.hero.description}</p>
-            <div className="mt-6 flex flex-wrap items-center gap-3">
+        <div className="mx-auto max-w-7xl px-4 pb-8 pt-10 sm:px-8 sm:pt-14">
+          <div className="text-center">
+            <div className="flex items-center justify-center gap-4 sm:gap-6">
+              <Image src="/images/ghostyak-boxes.svg" width={80} height={80} alt="" className="size-12 shrink-0 sm:size-20" />
+              <h1 id="renewal-title" className="text-7xl font-bold leading-none tracking-[-0.055em] text-primary sm:text-8xl lg:text-[7rem]">{boxes.name}</h1>
+            </div>
+            <p className="mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-base-content/80 text-balance sm:mt-6 sm:text-2xl">{copy.hero.title.join(" ")}</p>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               <DownloadLink copy={copy} />
               <a className="btn btn-ghost min-h-12 px-3 font-medium" href="#download">{copy.actions.install}<Icon name="arrow" className="size-4" /></a>
             </div>
-            <div className="mt-4 space-y-1 text-xs leading-5 text-base-content/65"><p>{copy.hero.platform}</p><p>{copy.hero.free}</p></div>
-            <div className="mt-5 border-t border-base-300/70 pt-3 text-base-content/70 lg:hidden">
-              <p className="text-xs leading-6">{copy.hero.mobile}</p>
-              <CopySiteLink url={`${links.site.replace(/\/$/, "")}${localizedPath(locale, "/")}`} labels={copy.actions} />
-            </div>
+            <p className="mt-3 text-xs leading-5 text-base-content/65">{copy.hero.platform}</p>
           </div>
-          <ProductScreenshot copy={copy} />
+          <div className="mx-auto mt-8 max-w-4xl sm:mt-10"><ProductScreenshot copy={copy} /></div>
         </div>
       </section>
 
-      <section id="how-it-works" className="scroll-mt-48 px-4 py-12 sm:px-8 sm:py-20 lg:scroll-mt-40" aria-labelledby="workflow-title">
+      <section id="how-it-works" className="scroll-mt-24 px-4 py-12 sm:px-8 sm:py-20" aria-labelledby="workflow-title">
         <div className="mx-auto max-w-7xl">
           <div className="grid items-center gap-7 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
             <SectionHeading id="workflow-title" eyebrow={copy.workflow.eyebrow} title={copy.workflow.title} description={copy.workflow.description} />
@@ -133,7 +114,7 @@ export function RenewalLanding({ copy, locale, currentPath, languageLabel }: { c
         </div>
       </section>
 
-      <section id="widgets" className="scroll-mt-48 bg-base-200/60 px-4 py-12 sm:px-8 sm:py-20 lg:scroll-mt-40" aria-labelledby="widgets-title">
+      <section id="widgets" className="scroll-mt-24 bg-base-200/60 px-4 py-12 sm:px-8 sm:py-20" aria-labelledby="widgets-title">
         <div className="mx-auto max-w-7xl">
           <SectionHeading id="widgets-title" eyebrow={copy.widgets.eyebrow} title={copy.widgets.title} description={copy.widgets.description} />
           <div className="mt-8 grid gap-5 md:grid-cols-2">
@@ -155,7 +136,7 @@ export function RenewalLanding({ copy, locale, currentPath, languageLabel }: { c
               <figure className="!flex h-56 flex-col justify-center px-5 pb-5 lg:h-64">
                 {/* The original screenshot is unchanged. This viewport shows x=1004, y=428, w=196, h=138. */}
                 <div className="relative aspect-[196/138] w-60 max-w-full overflow-hidden rounded-lg lg:w-64">
-                  <Image {...media.desktop} alt={copy.widgets.photoAlt} className="absolute -bottom-[63.05%] right-0 h-auto w-[612.25%] max-w-none" sizes="1568px" />
+                  <Image {...media.photoDetail} alt={copy.widgets.photoAlt} className="absolute -bottom-[63.05%] right-0 h-auto w-[612.25%] max-w-none" sizes="1568px" />
                 </div>
                 <figcaption className="mt-3 text-center text-xs leading-5 text-base-content/60">{copy.widgets.photoCaption}</figcaption>
               </figure>
@@ -164,7 +145,7 @@ export function RenewalLanding({ copy, locale, currentPath, languageLabel }: { c
         </div>
       </section>
 
-      <section id="free" className="scroll-mt-48 px-4 py-12 sm:px-8 sm:py-20 lg:scroll-mt-40" aria-labelledby="free-title">
+      <section id="free" className="scroll-mt-24 px-4 py-12 sm:px-8 sm:py-20" aria-labelledby="free-title">
         <div className="mx-auto grid max-w-7xl items-center gap-7 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <SectionHeading id="free-title" eyebrow={copy.free.eyebrow} title={copy.free.title} description={copy.free.description} />
           <div className="card border border-primary/20 bg-primary/5">
@@ -178,7 +159,7 @@ export function RenewalLanding({ copy, locale, currentPath, languageLabel }: { c
         </div>
       </section>
 
-      <section id="faq" className="scroll-mt-48 border-t border-base-300/70 px-4 py-12 sm:px-8 sm:py-20 lg:scroll-mt-40" aria-labelledby="faq-title">
+      <section id="faq" className="scroll-mt-24 border-t border-base-300/70 px-4 py-12 sm:px-8 sm:py-20" aria-labelledby="faq-title">
         <div className="mx-auto grid max-w-7xl items-start gap-7 lg:grid-cols-[0.65fr_1.35fr] lg:gap-16">
           <div><h2 id="faq-title" className="text-3xl font-bold tracking-tight">{copy.faq.title}</h2><a href={links.alternativeTo} className="link link-hover mt-4 inline-flex min-h-11 items-center gap-2 text-sm text-primary" target="_blank" rel="noreferrer">{copy.actions.alternativeTo}<Icon name="arrow" className="size-4" /></a></div>
           <div className="divide-y divide-base-300 border-y border-base-300">
@@ -195,7 +176,7 @@ export function RenewalLanding({ copy, locale, currentPath, languageLabel }: { c
         </div>
       </section>
 
-      <section id="download" className="scroll-mt-48 bg-neutral px-4 py-12 text-neutral-content sm:px-8 sm:py-20 lg:scroll-mt-40" aria-labelledby="download-title">
+      <section id="download" className="scroll-mt-24 bg-neutral px-4 py-12 text-neutral-content sm:px-8 sm:py-20" aria-labelledby="download-title">
         <div className="mx-auto grid max-w-7xl items-start gap-8 lg:grid-cols-2 lg:gap-16">
           <div>
             <h2 id="download-title" className="whitespace-pre-line text-3xl font-bold leading-tight tracking-tight sm:text-4xl">{copy.download.title}</h2>
@@ -203,7 +184,7 @@ export function RenewalLanding({ copy, locale, currentPath, languageLabel }: { c
             <DownloadLink copy={copy} />
             <p className="mt-4 text-xs text-neutral-content/70">{copy.download.source}</p>
             <a href={links.release} className="link link-hover mt-1 inline-flex min-h-11 items-center gap-2 text-sm" target="_blank" rel="noreferrer">{copy.actions.release}<span aria-hidden="true">↗</span></a>
-            <div className="mt-3 border-t border-neutral-content/15 pt-3"><CopySiteLink url={`${links.site.replace(/\/$/, "")}${localizedPath(locale, "/")}`} labels={copy.actions} /></div>
+            <div className="mt-3 border-t border-neutral-content/15 pt-3"><CopySiteLink url={`${links.site.replace(/\/$/, "")}${currentPath}`} labels={copy.actions} /></div>
           </div>
           <div>
             <ol className="space-y-6">

@@ -39,9 +39,15 @@ npm run build
 
 ## 제품 정보와 데모 이미지
 
-공통 헤더의 제품 메뉴는 `ProductsDropdown`으로 열고 닫는다. Boxes는 현재 언어의 제품 페이지, Ghostyak Clock과 OSINTS는 새 탭의 외부 웹앱으로 연결한다. 클릭·Enter·Space로 열기, Tab으로 링크 이동, Escape·바깥 클릭·포커스 이탈로 닫기를 확인한다.
+홈 Boxes 카드와 `/product/boxes`의 첫 화면은 `boxes.preview`의 `public/images/demo/boxes-screen-01.png`(2560×1380)를 사용한다. 원본 비율로 전체 화면을 표시하며 크게 보기·검색·공유·sitemap 이미지도 같은 경로를 사용한다. 사진 위젯의 확대 설명은 `landingMedia.photoDetail`에서 별도로 관리한다.
 
-Boxes의 버전, 무료 설치 파일 URL과 제품 이미지 목록, Ghostyak Clock과 OSINTS의 외부 URL은 `src/data/products.ts`에서 수정한다. 기능 문구는 로케일 사전에서 관리한다. 홈은 세 제품을 카드로 보여주며 Clock과 OSINTS 카드는 브라우저에서 새 탭으로 웹앱을 연다. OSINTS 링크는 공통 헤더 제품 메뉴와 푸터에도 제공한다. 공개 랜딩의 실제 스크린샷은 `public/images/renewal/boxes-desktop.webp`다. 기존 데모 파일은 랜딩에서 사용하지 않는다.
+Boxes 첫 화면은 중앙의 가장 큰 `Boxes` H1, 기존 소개 문구, 다운로드와 실제 스크린샷으로 구성한다. 제품 보조 헤더를 다시 추가하지 않는다. 언어 선택은 공통 헤더 하나이며, 스크린샷 아래에 링크 복사 영역이나 섹션 목차를 추가하지 않는다. 한국어·영어·긴 번역문에서 제품명 크기, 단일 헤더, `scroll-mt-24` 구역 이동, 이미지 전체 표시를 검수한다. 설치 안내의 PC용 링크 복사는 현재 언어의 `/product/boxes` 경로를 유지해야 한다.
+
+홈의 Boxes 카드에서 제품으로 이동한 뒤에도 공통 헤더의 다운로드와 제품 전용 푸터 하나가 표시되어야 한다. 루트 레이아웃이 경로를 다시 읽어야 하므로 이 링크는 전체 문서 탐색을 유지한다. 제품에서 홈·블로그로 나가면 제품용 헤더 다운로드가 사라지는지도 확인한다.
+
+공통 헤더의 제품 메뉴는 `ProductsDropdown`으로 열고 닫는다. Boxes는 현재 언어의 제품 페이지, Clock과 OSINTS는 새 탭의 외부 웹앱으로 연결한다. 클릭·Enter·Space로 열기, Tab으로 링크 이동, Escape·바깥 클릭·포커스 이탈로 닫기를 확인한다.
+
+Boxes의 버전, 무료 설치 파일 URL과 제품 이미지 목록, Clock과 OSINTS의 외부 URL은 `src/data/products.ts`에서 수정한다. 기능 문구는 로케일 사전에서 관리한다. 홈은 세 제품을 카드로 보여주며 Clock과 OSINTS 카드는 브라우저에서 새 탭으로 웹앱을 연다. OSINTS 링크는 공통 헤더 제품 메뉴와 푸터에도 제공한다. `public/images/renewal/boxes-desktop.webp`는 사진 위젯 확대 설명에 사용한다.
 
 랜딩의 위젯 문구는 `landing.widgets`, 예시 시점·도시 시간대·외부 링크는 `src/data/landing.ts`에서 관리한다. 세계시계는 고정 예시이며 현재 로케일의 날짜 형식을 사용한다.
 

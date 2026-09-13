@@ -8,25 +8,6 @@ const landing: Dictionary["landing"] = {
   },
   "brand": "GhostYak Boxes",
   "skip": "Pular para o conteúdo",
-  "navigation": "Navegação principal",
-  "nav": [
-    {
-      "label": "Como funciona",
-      "href": "#how-it-works"
-    },
-    {
-      "label": "Widgets",
-      "href": "#widgets"
-    },
-    {
-      "label": "Recursos grátis",
-      "href": "#free"
-    },
-    {
-      "label": "Dúvidas",
-      "href": "#faq"
-    }
-  ],
   "actions": {
     "download": "Baixar grátis para Windows",
     "shortDownload": "Baixar grátis",
@@ -42,19 +23,14 @@ const landing: Dictionary["landing"] = {
     "copyField": "Endereço do site oficial para abrir no PC"
   },
   "hero": {
-    "eyebrow": "Para usuários do Windows que buscam uma alternativa ao Fences",
     "title": [
       "Arquivos no lugar.",
       "Sua área de trabalho,",
       "do seu jeito."
     ],
-    "description": "Reúna arquivos, pastas e atalhos de aplicativos em caixas conforme a finalidade. Os originais ficam onde estão, e os itens do dia a dia ficam à vista.",
-    "free": "Recursos básicos grátis para uso pessoal, empresarial e profissional",
     "platform": "Windows 10/11 · 64 bits",
-    "mediaTitle": "Boxes na sua área de trabalho",
-    "mediaAlt": "Área de trabalho do Windows com uma caixa de atalhos de aplicativos embaixo e um visualizador de fotos e relógio digital à direita",
+    "mediaAlt": "Área de trabalho do Windows com um visualizador de fotos, um relógio e uma caixa de atalhos de aplicativos",
     "caption": "Atalhos de aplicativos, fotos e relógio em uso · Interface do produto em coreano",
-    "mobile": "Está no celular? Abra esta página em um PC com Windows."
   },
   "workflow": {
     "eyebrow": "Organize de acordo com seu trabalho",

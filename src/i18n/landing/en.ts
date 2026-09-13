@@ -8,25 +8,6 @@ const landing: Dictionary["landing"] = {
   },
   "brand": "GhostYak Boxes",
   "skip": "Skip to content",
-  "navigation": "Main navigation",
-  "nav": [
-    {
-      "label": "How it works",
-      "href": "#how-it-works"
-    },
-    {
-      "label": "Widgets",
-      "href": "#widgets"
-    },
-    {
-      "label": "Free features",
-      "href": "#free"
-    },
-    {
-      "label": "FAQ",
-      "href": "#faq"
-    }
-  ],
   "actions": {
     "download": "Free download for Windows",
     "shortDownload": "Free download",
@@ -42,19 +23,14 @@ const landing: Dictionary["landing"] = {
     "copyField": "Official website address to open on your PC"
   },
   "hero": {
-    "eyebrow": "For Windows users looking for a Fences alternative",
     "title": [
       "Files stay put.",
       "Your desktop,",
       "your way."
     ],
-    "description": "Gather files, folders and app shortcuts into boxes for each task. Keep originals where they are and everyday items in view.",
-    "free": "Basic features are free for personal, company and work use",
     "platform": "Windows 10/11 · 64-bit",
-    "mediaTitle": "Boxes on your desktop",
-    "mediaAlt": "A Windows desktop with a box of app shortcuts at the bottom, a photo viewer and a digital clock on the right",
+    "mediaAlt": "A Windows desktop with a photo viewer, a clock and a box of app shortcuts",
     "caption": "App shortcuts, photos and a clock in use · Korean product interface",
-    "mobile": "On your phone? Open this on a Windows PC."
   },
   "workflow": {
     "eyebrow": "Organize around your work",

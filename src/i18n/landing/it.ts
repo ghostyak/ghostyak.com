@@ -8,25 +8,6 @@ const landing: Dictionary["landing"] = {
   },
   "brand": "GhostYak Boxes",
   "skip": "Vai al contenuto",
-  "navigation": "Navigazione principale",
-  "nav": [
-    {
-      "label": "Come funziona",
-      "href": "#how-it-works"
-    },
-    {
-      "label": "Widget",
-      "href": "#widgets"
-    },
-    {
-      "label": "Funzioni gratis",
-      "href": "#free"
-    },
-    {
-      "label": "FAQ",
-      "href": "#faq"
-    }
-  ],
   "actions": {
     "download": "Scarica gratis per Windows",
     "shortDownload": "Scarica gratis",
@@ -42,19 +23,14 @@ const landing: Dictionary["landing"] = {
     "copyField": "Indirizzo del sito ufficiale da aprire sul PC"
   },
   "hero": {
-    "eyebrow": "Per chi usa Windows e cerca un’alternativa a Fences",
     "title": [
       "I file restano lì.",
       "Il tuo desktop,",
       "a modo tuo."
     ],
-    "description": "Riunisci file, cartelle e collegamenti alle app in riquadri per ogni attività. Gli originali restano al loro posto e ciò che usi spesso rimane a portata di sguardo.",
-    "free": "Funzioni di base gratis per uso personale, aziendale e professionale",
     "platform": "Windows 10/11 · 64 bit",
-    "mediaTitle": "Boxes sul tuo desktop",
-    "mediaAlt": "Desktop di Windows con un riquadro di collegamenti alle app in basso, un visualizzatore di foto e un orologio digitale a destra",
+    "mediaAlt": "Desktop di Windows con un visualizzatore di foto, un orologio e un riquadro di collegamenti alle app",
     "caption": "Collegamenti alle app, foto e orologio in uso · Interfaccia del prodotto in coreano",
-    "mobile": "Stai usando il telefono? Apri questa pagina su un PC Windows."
   },
   "workflow": {
     "eyebrow": "Organizza in base al tuo lavoro",

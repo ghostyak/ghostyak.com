@@ -8,25 +8,6 @@ const landing: Dictionary["landing"] = {
   },
   "brand": "GhostYak Boxes",
   "skip": "Aller au contenu",
-  "navigation": "Navigation principale",
-  "nav": [
-    {
-      "label": "Principe",
-      "href": "#how-it-works"
-    },
-    {
-      "label": "Widgets",
-      "href": "#widgets"
-    },
-    {
-      "label": "Gratuité",
-      "href": "#free"
-    },
-    {
-      "label": "FAQ",
-      "href": "#faq"
-    }
-  ],
   "actions": {
     "download": "Télécharger gratuitement pour Windows",
     "shortDownload": "Télécharger",
@@ -42,19 +23,14 @@ const landing: Dictionary["landing"] = {
     "copyField": "Adresse du site officiel à ouvrir sur PC"
   },
   "hero": {
-    "eyebrow": "Pour les utilisateurs Windows qui cherchent une alternative à Fences",
     "title": [
       "Vos fichiers restent.",
       "Votre bureau,",
       "à votre façon."
     ],
-    "description": "Regroupez fichiers, dossiers et raccourcis d’applications dans des boîtes selon vos besoins. Les originaux restent à leur place et vos éléments courants restent à portée de vue.",
-    "free": "Fonctions de base gratuites pour un usage personnel, en entreprise et professionnel",
     "platform": "Windows 10/11 · 64 bits",
-    "mediaTitle": "Boxes sur votre bureau",
-    "mediaAlt": "Bureau Windows avec une boîte de raccourcis d’applications en bas, une visionneuse de photos et une horloge numérique à droite",
+    "mediaAlt": "Bureau Windows avec une visionneuse de photos, une horloge et une boîte de raccourcis d’applications",
     "caption": "Raccourcis d’applications, photos et horloge en cours d’utilisation · Interface du produit en coréen",
-    "mobile": "Vous consultez sur téléphone ? Ouvrez cette page sur un PC Windows."
   },
   "workflow": {
     "eyebrow": "Organisez selon votre travail",
