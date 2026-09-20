@@ -220,6 +220,8 @@ sourceRevision: 1
 
 ### 날짜와 공개 정책
 
+2026-09-20 제품 소식 세 편(`csv-search-engine-launch`, `boxes-development-update`, `osints-website-renewal`)은 사용자 요청을 바탕으로 작성한 한국어 원문과 8개 번역을 함께 제공한다. 세 글의 최초 공개일과 `sourceRevision: 1`은 모든 언어에서 같고 내부 제품 링크는 해당 언어 경로로 연결한다. CSV 글의 Timeline Explorer 관련 내용은 제작자가 겪은 경험으로 서술하며, Boxes 안정화는 진행 중인 작업으로 설명한다. OSINTS는 기존 제품 주소 `https://osints.ghostyak.com/`으로 연결한다.
+
 - `publishedAt`은 원문의 최초 공개일을 유지한다.
 - 번역이 나중에 추가되어도 원문을 새 글처럼 보이게 하지 않는다.
 - 내용이 실질적으로 바뀌면 `updatedAt`을 모든 관련 언어에 반영한다.

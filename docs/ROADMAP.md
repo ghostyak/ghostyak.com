@@ -123,3 +123,4 @@ ghostyak.com은 GhostYak 소프트웨어를 소개하고 배포하는 공식 웹
 - [x] CSV Search Engine 상세페이지의 9개 언어 경로·제품 탐색·공유 메타데이터·sitemap 반영
 - [x] CSV Search Engine 상세 스크린샷 카드를 자동 슬라이드로 변경하고 수동 선택·정지/재생·모션 감소 지원
 - [x] 홈·Boxes·CSV Search Engine 히어로를 공통 컴포넌트로 통합하고 제목·설명·배지·버튼·여백 기준 통일
+- [x] CSV Search Engine 출시·Boxes 개발 및 안정화·OSINTS 리뉴얼 블로그 글과 8개 언어 번역 추가
