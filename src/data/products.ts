@@ -39,3 +39,15 @@ export const osints = {
   name: "OSINTS",
   url: "https://osints.ghostyak.com/",
 } as const;
+
+export const csvSearchEngine = {
+  name: "CSV Search Engine",
+  pagePath: "/product/csv-search-engine",
+  url: "https://github.com/ghostyak/csv-search-engine",
+  downloadUrl: "https://github.com/ghostyak/csv-search-engine/releases/latest/download/csv-search-engine-setup.exe",
+  platform: "Windows · x64",
+  screenshots: [
+    { src: "/images/demo/CSV search Engine.png", width: 889, height: 484 },
+    { src: "/images/demo/CSV search Engine 2.png", width: 879, height: 542 },
+  ],
+} as const;

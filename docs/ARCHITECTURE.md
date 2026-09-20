@@ -2,19 +2,19 @@
 
 ## 개요
 
-ghostyak.com은 Vercel에 배포하는 Next.js 애플리케이션이다. 영어를 기본 URL 언어로 하고 8개 접두사 언어에서 GhostYak 브랜드, Boxes 제품 소개와 무료 설치 파일, Clock과 OSINTS 웹앱 링크, Markdown 블로그를 제공한다. 국제화는 기본 URL과 별개로 한국어 콘텐츠를 유일한 원문으로 삼으며 세부 기준은 [INTERNATIONALIZATION.md](./INTERNATIONALIZATION.md)를 따른다.
+ghostyak.com은 Vercel에 배포하는 Next.js 애플리케이션이다. 영어를 기본 URL 언어로 하고 8개 접두사 언어에서 GhostYak 브랜드, Boxes 제품 소개와 무료 설치 파일, Clock과 OSINTS 웹앱 링크, CSV Search Engine의 DFIR 제품 소개와 GitHub 링크, Markdown 블로그를 제공한다. 국제화는 기본 URL과 별개로 한국어 콘텐츠를 유일한 원문으로 삼으며 세부 기준은 [INTERNATIONALIZATION.md](./INTERNATIONALIZATION.md)를 따른다.
 
 ## 기술 구성
 
 - Next.js 16 App Router와 React 19
 - TypeScript strict 설정과 React Server Components
-- Tailwind CSS 4와 DaisyUI 5
+- Tailwind CSS 4와 shadcn/ui (Radix UI, Lucide)
 - `gray-matter`로 Markdown frontmatter 파싱
 - `unified`, `remark-parse`, `remark-rehype`, `rehype-stringify`로 Markdown을 안전한 HTML로 변환
 - 서버 전용 로케일 사전 로더와 TypeScript 사전 구조 검증
 - Vercel Analytics, Google Analytics와 Google AdSense 공통 로더
 
-페이지와 컴포넌트는 Server Component가 기본이다. 공개 랜딩에서는 `LanguageSwitcher`, `CopySiteLink`와 공통 헤더의 `ProductsDropdown`을 사용자 조작을 위해 Client Component로 둔다. 제품 메뉴의 링크와 로케일 경로는 서버의 `Header`에서 전달한다. 이전 자동 회전·다운로드 타이머 컴포넌트는 랜딩에서 사용하지 않는다.
+페이지와 컴포넌트는 Server Component가 기본이다. 공개 랜딩에서는 `LanguageSwitcher`, `CopySiteLink`와 공통 헤더의 `ProductsDropdown`을 사용자 조작을 위해 Client Component로 둔다. 제품 메뉴의 링크와 로케일 경로는 서버의 `Header`에서 전달한다. FAQ와 설치 도움말의 shadcn Accordion도 작은 클라이언트 경계로 둔다. 사용하지 않는 자동 회전·다운로드 타이머·이전 세계시계 컴포넌트는 제거했다.
 
 ## 주요 구조
 
@@ -36,24 +36,24 @@ docs/                            설계, 개발과 로드맵 문서
 
 ## 공개 경로
 
-- `/`: GhostYak 브랜드 홈으로 Boxes, Clock과 OSINTS 제품 카드, 블로그 진입점을 간결하게 제공
+- `/`: GhostYak 브랜드 홈으로 Boxes, Clock, OSINTS와 CSV Search Engine 제품 카드, 블로그 진입점을 간결하게 제공
 - `/product/boxes`: 승인된 Boxes 전용 제품 랜딩; 기존 제품 URL과 언어별 canonical 유지
-- `/product/boxes/download`: 같은 언어의 홈페이지 `#download` 설치 안내로 307 이동. 파일 다운로드는 사용자가 직접 버튼을 눌러 시작한다.
+- `/product/boxes/download`: 같은 언어의 제품 페이지 `/product/boxes#download` 설치 안내로 307 이동. 파일 다운로드는 사용자가 직접 버튼을 눌러 시작한다.
 - `/blog`: Markdown 글 목록
 - `/blog/[slug]`: Markdown 글 상세 화면
-- `/{locale}/...`: 영어, 일본어, 중국어, 스페인어, 독일어, 프랑스어, 포르투갈어와 이탈리아어의 대응 화면
+- `/{locale}/...`: 한국어, 일본어, 중국어, 스페인어, 독일어, 프랑스어, 포르투갈어와 이탈리아어의 대응 화면
 
 `src/proxy.ts`는 URL 로케일을 우선하고, 접두사가 없는 최초 방문에서는 사용자 선택 쿠키와 브라우저 `Accept-Language` 순으로 언어를 결정한다. 접두사 없는 경로는 영어 대표 URL이고 다른 언어는 `/{locale}/...`를 사용한다. `/en/...`는 접두사를 제거한 영어 대표 경로로 영구 이동하며 한국어는 `/ko/...`에서 제공한다. 기존 `/products/boxes/...`는 `next.config.ts`에서 현재 제품 경로로 정규화한다. 홈과 Boxes 제품 페이지는 서로 다른 제목·설명·본문을 제공하며 각각 자기 자신을 canonical로 사용한다.
 
-`RenewalLanding`은 제품 소개에 사용하는 Server Component다. `getLandingMetadata`는 승인된 원문 기반 제목·설명과 실제 스크린샷을 검색·공유 메타데이터로 제공한다. `getSoftwareApplicationJsonLd`에는 같은 무료 기능 목록과 최신 확인 버전 v0.3.38을 사용한다. 루트 레이아웃의 파란 공통 헤더 하나만 고정하며 제품·블로그·언어 선택을 제공한다. 다운로드는 제품 본문에서 제공한다. 제품명 `Boxes`를 가장 큰 H1으로 표시하고 기존 소개 문구와 실제 스크린샷을 중앙에 순서대로 배치한다. 스크린샷 아래의 링크 복사 영역과 제품 섹션 목차는 제거했다. 언어 선택은 공통 헤더에서 한 번만 렌더링한다. 제품 랜딩은 자체 푸터를 사용하고 공개 방문 분석은 유지한다.
+`RenewalLanding`은 제품 소개에 사용하는 Server Component다. `getLandingMetadata`는 승인된 원문 기반 제목·설명과 실제 스크린샷을 검색·공유 메타데이터로 제공한다. `getSoftwareApplicationJsonLd`에는 같은 무료 기능 목록과 최신 확인 버전 v0.3.38을 사용한다. 루트 레이아웃의 밝은 공통 헤더 하나만 고정하며 제품·블로그·언어 선택을 제공한다. 다운로드는 제품 본문에서 제공한다. 제품명 `Boxes`를 가장 큰 H1으로 표시하고 기존 소개 문구와 실제 스크린샷을 중앙에 순서대로 배치한다. 스크린샷 아래의 링크 복사 영역과 제품 섹션 목차는 제거했다. 언어 선택은 공통 헤더에서 한 번만 렌더링한다. 제품 랜딩도 공통 푸터를 사용하고 공개 방문 분석은 유지한다.
 
-공개 승인된 한국어 원문은 `src/i18n/landing/ko.ts`, Server Component는 `src/components/renewal/RenewalLanding.tsx`에 둔다. 클립보드 동작만 `CopySiteLink` Client Component로 분리한다. 2026-09-07 사용자가 한국어 원문을 승인했다. `src/i18n/landing/{locale}.ts`를 각 공개 사전의 `landing` 키로 가져오며 빌드 중 모든 언어의 키를 검증한다. 상세 범위는 [RENEWAL_KO.md](./RENEWAL_KO.md)를 따른다.
+공개 승인된 한국어 원문은 `src/i18n/landing/ko.ts`, Server Component는 `src/components/renewal/RenewalLanding.tsx`에 둔다. 클립보드 동작은 `CopySiteLink`, FAQ·도움말은 shadcn Accordion 클라이언트 경계로 분리한다. 2026-09-07 사용자가 한국어 원문을 승인했다. `src/i18n/landing/{locale}.ts`를 각 공개 사전의 `landing` 키로 가져오며 빌드 중 모든 언어의 키를 검증한다. 상세 범위는 [RENEWAL_KO.md](./RENEWAL_KO.md)를 따른다.
 
-공개 랜딩의 제품 스크린샷·외부 링크와 세계시계 예시 데이터는 `src/data/landing.ts`에서 관리한다. 설치 파일은 공개 화면과 같은 `boxes.download.installerUrl`을 사용하며 모든 다운로드 버튼에서 직접 연결한다. 구역 이동·FAQ·원본 이미지 보기는 서버 HTML과 네이티브 브라우저 동작으로 제공한다. 설치 안내의 PC용 링크 복사는 전달받은 현재 언어의 제품 경로를 사용한다.
+공개 랜딩의 제품 스크린샷·외부 링크와 세계시계 예시 데이터는 `src/data/landing.ts`에서 관리한다. 설치 파일은 공개 화면과 같은 `boxes.download.installerUrl`을 사용하며 모든 다운로드 버튼에서 직접 연결한다. 구역 이동·원본 이미지 보기는 서버 HTML과 네이티브 브라우저 동작으로, FAQ는 shadcn Accordion으로 제공한다. 설치 안내의 PC용 링크 복사는 전달받은 현재 언어의 제품 경로를 사용한다.
 
 ## 제품과 콘텐츠 데이터
 
-랜딩의 설치 문제 해결 도움말은 Server Component 안의 네이티브 `details`/`summary`이며 기본적으로 접혀 있다. 클라이언트 상태나 Runtime 감지 스크립트는 사용하지 않는다.
+랜딩의 설치 문제 해결 도움말은 shadcn Accordion이며 기본적으로 접혀 있다. Runtime 감지 스크립트는 사용하지 않는다.
 
 Boxes의 버전, 설치 파일 URL과 실제 이미지 경로, Clock과 OSINTS의 외부 URL은 `src/data/products.ts`에서 관리한다. 설명, 기능, 파일 크기 표시와 이미지 대체 텍스트는 한국어 원문 사전에서 관리한다. 현재 다운로드 대상은 GitHub Releases의 무료 설치 파일 하나다. 상업용 에디션은 실제 설치 파일과 정책이 준비될 때 데이터 모델과 UI에 추가한다.
 
@@ -63,7 +63,7 @@ Boxes의 버전, 설치 파일 URL과 실제 이미지 경로, Clock과 OSINTS�
 
 ## 설계 원칙
 
-- DaisyUI의 의미 기반 컴포넌트와 테마를 우선한다.
+- shadcn/ui 컴포넌트와 의미 기반 테마 토큰을 우선한다.
 - 레이아웃과 반응형 동작은 Tailwind CSS 유틸리티로 표현한다.
 - 애니메이션은 `prefers-reduced-motion`을 존중한다.
 - 설치 파일 URL과 교체 이미지 경로를 페이지에 중복 작성하지 않는다.
@@ -72,4 +72,20 @@ Boxes의 버전, 설치 파일 URL과 실제 이미지 경로, Clock과 OSINTS�
 - sitemap은 모든 공개 언어의 홈, Boxes, 블로그와 각 Markdown 글 및 언어 대체 URL을 포함한다.
 - 번역은 확정된 한국어 원문에서만 파생하며 누락된 번역을 한국어 fallback으로 숨기지 않는다.
 
-공개 랜딩과 블로그는 공통 헤더를 공유하고 제품 랜딩만 자체 푸터를 사용한다. 홈의 Boxes 제품 카드, 공통 헤더·푸터의 페이지 링크와 랜딩의 블로그 링크는 전체 문서 탐색으로 전환해 루트 레이아웃이 새 경로에 맞는 푸터를 다시 선택하도록 한다. 블로그 목록과 글 사이의 내부 링크는 Next.js Link를 유지한다.
+모든 공개 페이지는 공통 헤더와 푸터를 공유한다. 주요 사이트 탐색과 언어 변경은 전체 문서 탐색을 유지하며 블로그 내부 탐색에는 Next.js Link를 사용한다.
+## shadcn/ui 구성
+
+`components.json`은 New York 스타일, RSC, Tailwind v4와 소스 별칭을 정의한다. `src/components/ui/`의 공식 레지스트리 소스를 프로젝트에서 소유하며 `src/lib/utils.ts`의 `cn`으로 Tailwind 클래스를 병합한다. `globals.css`에는 의미 기반 테마 토큰과 기본 접근성 규칙을 둔다. DaisyUI는 제거했다. 메뉴는 Radix DropdownMenu로 키보드 포커스와 닫힘 처리를 관리한다.
+
+홈은 Boxes·Clock·OSINTS·CSV Search Engine의 동일한 크기 카드와 블로그 진입 영역으로 구성한다. 블로그 목록은 카드, 상세는 좁은 본문 폭을 사용한다. 모든 공개 페이지는 루트 레이아웃의 본문 건너뛰기 링크와 공통 푸터를 공유한다.
+
+홈과 두 제품 페이지는 `PageHero` Server Component로 제목·설명·배지·행동 버튼·보조 문구를 구성한다. 타이포그래피와 상하 여백은 이 컴포넌트에서 관리하며 페이지는 현재 언어의 문구와 링크만 전달한다. `heroActionClassName`은 제품 히어로 버튼의 크기를 공유한다.
+## CSV Search Engine
+
+홈의 `CsvSearchCard`는 디지털포렌식·침해사고대응(DFIR) 제품 CSV Search Engine을 사진 없이 소개하는 Server Component다. 제품명·제품 경로·GitHub 주소·직접 다운로드 URL·스크린샷 경로와 원본 크기는 `src/data/products.ts`의 `csvSearchEngine`에서 관리한다. 문구는 각 사전의 `csvSearch`에 둔다. 소개 버튼, 공통 제품 메뉴와 푸터는 현재 언어의 `/product/csv-search-engine`으로 연결한다.
+
+`CsvSearchProduct`는 실제 스크린샷 두 장과 Windows 설치 파일 다운로드, GitHub 링크를 제공하는 Server Component다. 기본 언어와 8개 언어 접두사 경로를 지원하며 `csv-search-metadata.ts`에서 canonical·언어 대체 URL·공유 이미지를 설정한다. sitemap에도 모든 공개 언어의 제품 경로와 이미지를 포함한다.
+
+스크린샷 영역만 `ScreenshotSlideshow` Client Component로 분리한다. 서버가 이미지와 현재 언어 문구를 전달하며 추가 패키지 없이 React 상태·타이머와 CSS transform으로 자동 전환한다. 비활성 이미지는 접근성 트리와 탭 이동에서 제외하고 모션 감소 설정을 구독한다. 타이머는 정지·호버·언마운트 시 해제하며 숨겨진 탭에서는 이미지를 넘기지 않는다.
+
+`ProductsDropdown`은 명시적 아이콘 키와 그룹 데이터를 받는다. 기존 세 제품 다음에 이름이 있는 `디지털포렌식` 그룹과 CSV Search Engine을 제공한다. 그룹은 shadcn DropdownMenuGroup·Label·Separator를 사용하며 접근성 이름을 연결한다.

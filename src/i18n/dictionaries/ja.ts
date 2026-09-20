@@ -3,6 +3,22 @@ import type { Dictionary } from "@/i18n/get-dictionary";
 
 const ja: Dictionary = {
   landing,
+  csvSearch: {
+    downloadAction: "Windows用をダウンロード",
+    "category": "デジタルフォレンジック",
+    "description": "大容量CSV・Excelの検索を、これひとつで。",
+    "repositoryAction": "GitHubで見る",
+    "screenshots": [
+      {
+        "alt": "CSV・Excelファイルを開くCSV Search Engineの開始画面",
+        "caption": "ファイルを開く · 韓国語UI"
+      },
+      {
+        "alt": "MFTデータ、列ごとの検索欄と行を表示したCSV Search Engineの画面",
+        "caption": "MFTデータの表示 · 韓国語UI"
+      }
+    ]
+  },
   worldClock: {
   "badge": "新機能 · 世界時計ウィジェット",
   "title": "デスクトップで、世界の時間をひと目で。",

@@ -21,7 +21,7 @@ npm run build
 
 - Next.js App Router와 Server Component를 기본으로 사용한다.
 - 브라우저 상태, 이벤트 또는 타이머가 필요한 가장 작은 경계만 Client Component로 만든다.
-- 신규·개편 UI는 DaisyUI 컴포넌트와 의미 기반 테마 클래스를 우선한다.
+- 신규·개편 UI는 shadcn/ui 컴포넌트와 의미 기반 테마 토큰를 우선한다.
 - Tailwind CSS 유틸리티로 레이아웃, 간격과 반응형 동작을 구성한다.
 - UI 작업 전 [DESIGN.md](./DESIGN.md)를 확인한다.
 - 표시 문구나 국제화 경로를 수정하기 전 [INTERNATIONALIZATION.md](./INTERNATIONALIZATION.md)를 확인한다.
@@ -35,7 +35,7 @@ npm run build
 - 클립보드 동작: `src/components/renewal/CopySiteLink.tsx`
 - 범위와 한국어 검토 항목: [RENEWAL_KO.md](./RENEWAL_KO.md)
 
-320px·768px·데스크톱에서 가로 넘침, 제목·버튼 줄바꿈, FAQ 키보드 조작과 다운로드 앵커를 확인한다. 링크 복사는 성공 메시지와 실패 시 직접 복사할 주소 입력란을 제공한다. 2026-09-07 승인된 원문은 공개 사전의 `landing` 키에 연결되어 있다. 수정 시 `src/i18n/landing/ko.ts`를 먼저 확정한 뒤 나머지 8개 언어를 맞춘다. 공개 `/`와 `/product/boxes`는 영어, `/ko`와 `/ko/product/boxes`는 한국어를 제공한다. 기존 다운로드 경로는 같은 언어의 `/#download`로 이동하며, 새 내부 다운로드 링크는 제품 페이지의 `#download`를 직접 사용한다.
+320px·768px·데스크톱에서 가로 넘침, 제목·버튼 줄바꿈, FAQ 키보드 조작과 다운로드 앵커를 확인한다. 링크 복사는 성공 메시지와 실패 시 직접 복사할 주소 입력란을 제공한다. 2026-09-07 승인된 원문은 공개 사전의 `landing` 키에 연결되어 있다. 수정 시 `src/i18n/landing/ko.ts`를 먼저 확정한 뒤 나머지 8개 언어를 맞춘다. 공개 `/`와 `/product/boxes`는 영어, `/ko`와 `/ko/product/boxes`는 한국어를 제공한다. 기존 다운로드 경로는 같은 언어의 `/product/boxes#download`로 이동하며, 새 내부 다운로드 링크는 제품 페이지의 `#download`를 직접 사용한다.
 
 ## 제품 정보와 데모 이미지
 
@@ -43,11 +43,11 @@ npm run build
 
 Boxes 첫 화면은 중앙의 가장 큰 `Boxes` H1, 기존 소개 문구, 다운로드와 실제 스크린샷으로 구성한다. 제품 보조 헤더를 다시 추가하지 않는다. 언어 선택은 공통 헤더 하나이며, 스크린샷 아래에 링크 복사 영역이나 섹션 목차를 추가하지 않는다. 한국어·영어·긴 번역문에서 제품명 크기, 단일 헤더, `scroll-mt-24` 구역 이동, 이미지 전체 표시를 검수한다. 설치 안내의 PC용 링크 복사는 현재 언어의 `/product/boxes` 경로를 유지해야 한다.
 
-홈의 Boxes 카드에서 제품으로 이동한 뒤에도 제품 전용 푸터 하나가 표시되어야 한다. 루트 레이아웃이 경로를 다시 읽어야 하므로 이 링크는 전체 문서 탐색을 유지한다. 공통 헤더에는 다운로드 버튼을 추가하지 않고 제품 본문의 다운로드 링크를 확인한다.
+홈의 Boxes 카드에서 제품으로 이동한 뒤에도 공통 푸터 하나가 표시되어야 한다. 주요 사이트 링크는 전체 문서 탐색을 유지한다. 공통 헤더에는 다운로드 버튼을 추가하지 않고 제품 본문의 다운로드 링크를 확인한다.
 
-공통 헤더의 제품 메뉴는 `ProductsDropdown`으로 열고 닫는다. Boxes는 현재 언어의 제품 페이지, Clock과 OSINTS는 새 탭의 외부 웹앱으로 연결한다. 클릭·Enter·Space로 열기, Tab으로 링크 이동, Escape·바깥 클릭·포커스 이탈로 닫기를 확인한다.
+공통 헤더의 제품 메뉴는 `ProductsDropdown`으로 열고 닫는다. Boxes는 현재 언어의 제품 페이지, Clock과 OSINTS는 새 탭의 외부 웹앱으로 연결한다. 클릭·Enter·Space로 열기, 방향키로 항목 이동, Enter로 선택, Escape·Tab·바깥 클릭으로 닫기와 트리거 포커스 복원을 확인한다.
 
-Boxes의 버전, 무료 설치 파일 URL과 제품 이미지 목록, Clock과 OSINTS의 외부 URL은 `src/data/products.ts`에서 수정한다. 기능 문구는 로케일 사전에서 관리한다. 홈은 세 제품을 카드로 보여주며 Clock과 OSINTS 카드는 브라우저에서 새 탭으로 웹앱을 연다. OSINTS 링크는 공통 헤더 제품 메뉴와 푸터에도 제공한다. `public/images/renewal/boxes-desktop.webp`는 사진 위젯 확대 설명에 사용한다.
+Boxes의 버전, 무료 설치 파일 URL과 제품 이미지 목록, Clock과 OSINTS의 외부 URL은 `src/data/products.ts`에서 수정한다. 기능 문구는 로케일 사전에서 관리한다. 홈은 네 제품을 카드로 보여주며 Clock과 OSINTS 카드는 브라우저에서 새 탭으로 웹앱을 연다. OSINTS 링크는 공통 헤더 제품 메뉴와 푸터에도 제공한다. `public/images/renewal/boxes-desktop.webp`는 사진 위젯 확대 설명에 사용한다.
 
 랜딩의 위젯 문구는 `landing.widgets`, 예시 시점·도시 시간대·외부 링크는 `src/data/landing.ts`에서 관리한다. 세계시계는 고정 예시이며 현재 로케일의 날짜 형식을 사용한다.
 
@@ -102,3 +102,18 @@ Markdown 본문
 ## 배포 검증
 
 이 저장소는 GitHub `main` 변경을 Vercel Production에 자동 배포한다. 커밋 전 lint·build, 공개 9개 언어의 홈·제품·다운로드 이동·메타데이터와 블로그를 검사한다. 배포 후 GitHub deployment 상태와 실제 도메인 응답을 확인한다.
+
+## shadcn/ui 유지보수
+
+홈·Boxes·CSV Search Engine 히어로 수정은 `src/components/PageHero.tsx`를 기준으로 한다. 페이지별 제목 크기·상단 여백을 따로 덮어쓰지 않는다. 320px·768px·데스크톱에서 세 페이지의 제목 크기·설명 줄 높이·배지 간격·버튼 높이를 함께 확인한다.
+
+`components.json`과 `src/components/ui/`를 디자인 시스템의 기준으로 사용한다. 필요 시 `npx shadcn@latest add <component>`로 공식 컴포넌트를 추가하고 변경 내용을 검토한다. 서버 링크는 `buttonVariants`, 조건부 클래스는 `cn`으로 구성한다. 버튼의 번역문이 길면 `h-auto min-h-11 whitespace-normal`을 적용한다. 메뉴와 Accordion 이외의 페이지 전체를 클라이언트 컴포넌트로 바꾸지 않는다.
+
+공통 헤더는 64px/80px 높이이며 모든 주요 구역은 `scroll-mt-24`로 이동 여백을 확보한다. 모바일 메뉴, FAQ·설치 도움말 키보드 조작, 직접 다운로드 URL, 언어 전환, 복사 성공·실패 상태, 본문 건너뛰기 링크와 모션 감소 설정을 검수한다. DaisyUI 의존성과 미사용 자동 회전·다운로드 타이머·이전 세계시계 컴포넌트는 제거했다.
+## CSV Search Engine 관리
+
+제품 데이터는 `csvSearchEngine`, 홈 UI는 `CsvSearchCard`, 상세 UI는 `CsvSearchProduct`, 문구는 9개 사전의 `csvSearch`에서 관리한다. 사진은 상세페이지에만 표시한다. 원본 이미지는 `public/images/demo/CSV search Engine.png`(889×484)와 `CSV search Engine 2.png`(879×542)다. 공백이 포함된 이미지 URL과 Next Image 응답을 확인하고, 메뉴의 디지털포렌식 그룹·키보드 이동·현재 언어의 상세페이지 연결·GitHub 링크·320px 줄바꿈을 검수한다. `downloadUrl`은 사용자가 지정한 GitHub Releases의 `csv-search-engine-setup.exe` 직접 다운로드 주소다. 상세페이지의 9개 언어 경로·언어 전환·canonical·sitemap과 다운로드 주소를 확인한다. 기능 설명의 근거는 [공개 README](https://github.com/ghostyak/csv-search-engine#readme)이며, 로컬 개발 버전에만 있는 기능을 공개 설명에 넣지 않는다.
+
+홈 제품 카드 크기를 변경할 때 네 카드의 2열 너비·행 높이, 240px 미리보기, 하단 행동 버튼 정렬을 함께 검수한다. 모바일에서는 본문 길이에 따라 높이가 늘어날 수 있으며 이미지는 자르지 않는다.
+
+CSV 상세페이지의 `ScreenshotSlideshow`는 5초 자동 전환·마지막 사진 이후 처음으로 복귀·수동 선택·정지와 재생·좌우 방향키를 검수한다. 호버 중에는 자동 전환을 멈추며 모션 감소 설정에서는 수동 선택만 제공한다. 비활성 이미지 링크가 탭 이동에 포함되지 않는지, 320px에서 조작 버튼이 넘치지 않는지 확인한다.

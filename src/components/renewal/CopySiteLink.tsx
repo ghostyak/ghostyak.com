@@ -1,6 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { Copy } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 export function CopySiteLink({ url, labels }: {
   url: string;
@@ -19,14 +22,14 @@ export function CopySiteLink({ url, labels }: {
 
   return (
     <div>
-      <button type="button" className="btn btn-ghost min-h-11 text-inherit" onClick={copyLink}>
-        {labels.copy}<span aria-hidden="true">↗</span>
-      </button>
+      <Button type="button" variant="ghost" className="h-auto min-h-11 max-w-full whitespace-normal text-inherit" onClick={copyLink}>
+        <Copy className="size-4" aria-hidden="true" />{labels.copy}
+      </Button>
       <p className="text-sm" role="status">
         {status === "copied" ? labels.copied : status === "failed" ? labels.copyFailed : ""}
       </p>
       {status === "failed" && (
-        <input className="input mt-2 w-full bg-base-100 text-base-content" aria-label={labels.copyField}
+        <Input className="mt-2 min-h-11 w-full bg-background" aria-label={labels.copyField}
           value={url} readOnly onFocus={(event) => event.currentTarget.select()} />
       )}
     </div>

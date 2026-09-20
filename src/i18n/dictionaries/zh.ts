@@ -3,6 +3,22 @@ import type { Dictionary } from "@/i18n/get-dictionary";
 
 const zh: Dictionary = {
   landing,
+  csvSearch: {
+    downloadAction: "下载Windows版",
+    "category": "数字取证",
+    "description": "大型CSV、Excel文件搜索，一站搞定。",
+    "repositoryAction": "在GitHub上查看",
+    "screenshots": [
+      {
+        "alt": "用于打开CSV和Excel文件的CSV Search Engine起始界面",
+        "caption": "打开文件 · 韩语界面"
+      },
+      {
+        "alt": "CSV Search Engine显示MFT数据、各列搜索框和数据行的界面",
+        "caption": "MFT数据查看 · 韩语界面"
+      }
+    ]
+  },
   worldClock: {
   "badge": "新功能 · 世界时钟小组件",
   "title": "在桌面上，一览世界时间。",

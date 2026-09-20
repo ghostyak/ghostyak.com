@@ -3,6 +3,22 @@ import type { Dictionary } from "@/i18n/get-dictionary";
 
 const pt: Dictionary = {
   landing,
+  csvSearch: {
+    downloadAction: "Baixar para Windows",
+    "category": "Perícia digital",
+    "description": "Pesquise em arquivos CSV e Excel grandes, em um só lugar.",
+    "repositoryAction": "Ver no GitHub",
+    "screenshots": [
+      {
+        "alt": "Tela inicial do CSV Search Engine para abrir arquivos CSV e Excel",
+        "caption": "Abrir arquivo · Interface em coreano"
+      },
+      {
+        "alt": "CSV Search Engine exibindo dados MFT, campos de pesquisa por coluna e linhas",
+        "caption": "Visualização de dados MFT · Interface em coreano"
+      }
+    ]
+  },
   worldClock: {
   "badge": "Novo · Widget de relógio mundial",
   "title": "A hora do mundo, na sua área de trabalho.",

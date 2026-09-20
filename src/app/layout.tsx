@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/next";
@@ -8,7 +9,7 @@ import { getDictionary } from "@/i18n/get-dictionary";
 import { localeConfig, publishedLocales } from "@/i18n/locales";
 import { getRequestLocale, getRequestPathname } from "@/i18n/request-locale";
 import { getSearchEngineVerification, siteUrl } from "@/seo";
-import { unlocalizedPath } from "@/i18n/routing";
+import { buttonVariants } from "@/components/ui/button";
 import "./globals.css";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -40,14 +41,14 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function RootLayout({ children }: { children: ReactNode }) {
   const [locale, currentPath] = await Promise.all([getRequestLocale(), getRequestPathname()]);
   const dictionary = await getDictionary(locale);
-  const landing = unlocalizedPath(currentPath) === "/product/boxes";
   return (
-    <html lang={localeConfig[locale].htmlLanguage} data-theme="ghostyak" data-scroll-behavior="smooth">
+    <html lang={localeConfig[locale].htmlLanguage} data-scroll-behavior="smooth">
       <head><TrackingScripts /></head>
-      <body className="flex min-h-screen min-w-0 flex-col bg-base-100 text-base-content antialiased">
-        <Header labels={dictionary.header} locale={locale} currentPath={currentPath} />
+      <body className="flex min-h-screen min-w-0 flex-col antialiased">
+        <a href="#main-content" className={cn(buttonVariants({ className: "sr-only fixed left-4 top-4 z-[100] focus:not-sr-only focus:min-h-11" }))}>{dictionary.landing.skip}</a>
+        <Header labels={dictionary.header} digitalForensicsLabel={dictionary.csvSearch.category} locale={locale} currentPath={currentPath} />
         <div className="flex-1">{children}</div>
-        {!landing && <Footer labels={dictionary.footer} locale={locale} />}
+        <Footer labels={dictionary.footer} locale={locale} />
         <Analytics />
       </body>
     </html>

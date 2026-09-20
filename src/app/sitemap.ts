@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { boxes } from "@/data/products";
+import { boxes, csvSearchEngine } from "@/data/products";
 import { defaultLocale, localeConfig, publishedLocales, type PublishedLocale } from "@/i18n/locales";
 import { localizedPath } from "@/i18n/routing";
 import { validatePublishedDictionaries } from "@/i18n/validate";
@@ -39,6 +39,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
       alternates: { languages: languageAlternates("/product/boxes") },
       images: boxes.screenshots.map((screenshot) => `${siteUrl}${screenshot.src}`),
+    },
+    {
+      url: absoluteLocalizedUrl(locale, csvSearchEngine.pagePath),
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+      alternates: { languages: languageAlternates(csvSearchEngine.pagePath) },
+      images: csvSearchEngine.screenshots.map((screenshot) => `${siteUrl}${encodeURI(screenshot.src)}`),
     },
     {
       url: absoluteLocalizedUrl(locale, "/blog"),

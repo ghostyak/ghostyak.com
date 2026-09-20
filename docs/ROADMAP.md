@@ -98,3 +98,28 @@ ghostyak.com은 GhostYak 소프트웨어를 소개하고 배포하는 공식 웹
 - CMS
 - 상업용 설치 파일과 Pro 체험판
 - 검수되지 않은 부분 번역 로케일
+
+## 완료: shadcn/ui 디자인 개편 (2026-09-20)
+
+- [x] `design/shadcn-redesign` 브랜치에서 새 디자인 구성
+- [x] DaisyUI 제거, shadcn/ui 공식 컴포넌트와 테마 토큰 도입
+- [x] 밝은 공통 헤더, 접근 가능한 제품·언어 메뉴와 공통 푸터
+- [x] Boxes 대표 카드와 Clock·OSINTS 보조 카드 중심 홈 구성
+- [x] 제품 소개·정리 방식·위젯·무료 정책·FAQ·설치 안내 재구성
+- [x] 블로그 목록과 본문 레이아웃 개편
+- [x] 기존 한국어·8개 번역과 실제 제품 이미지 유지
+- [x] 잘못된 기존 다운로드 이동 목적지를 제품 설치 구역으로 수정
+- [x] 미사용 DaisyUI 컴포넌트 제거, 설계·개발 문서 갱신
+
+## 완료: CSV Search Engine 제품 추가
+
+- [x] 공개 README에 근거한 CSV·Excel 검색·정렬·그룹화 소개
+- [x] DFIR 분야 표시와 제공된 실제 스크린샷 두 장 적용
+- [x] 제품 메뉴의 디지털포렌식 그룹과 GitHub 연결
+- [x] 공통 푸터의 제품 링크와 9개 언어 문구 반영
+
+- [x] 후속 요청: 홈의 Boxes·CSV Search Engine을 Clock·OSINTS와 같은 크기로 축소하고 네 제품을 2×2 카드로 통일
+- [x] 후속 요청: CSV Search Engine 홈 카드의 사진을 상세페이지로 이동하고 Windows 직접 다운로드 제공
+- [x] CSV Search Engine 상세페이지의 9개 언어 경로·제품 탐색·공유 메타데이터·sitemap 반영
+- [x] CSV Search Engine 상세 스크린샷 카드를 자동 슬라이드로 변경하고 수동 선택·정지/재생·모션 감소 지원
+- [x] 홈·Boxes·CSV Search Engine 히어로를 공통 컴포넌트로 통합하고 제목·설명·배지·버튼·여백 기준 통일

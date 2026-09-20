@@ -1,6 +1,16 @@
 import landing from "@/i18n/landing/ko";
 const ko = {
   landing,
+  csvSearch: {
+    downloadAction: "Windows용 다운로드",
+    category: "디지털포렌식",
+    description: "대용량 CSV·Excel 검색을 한 번에.",
+    repositoryAction: "GitHub에서 보기",
+    screenshots: [
+      { alt: "CSV·Excel 파일을 열 수 있는 CSV Search Engine 시작 화면", caption: "파일 열기 · 한국어 UI" },
+      { alt: "CSV Search Engine에서 MFT 데이터를 열고 열별 검색란과 행을 표시한 화면", caption: "MFT 데이터 조회 · 한국어 UI" },
+    ],
+  },
   worldClock: {
     badge: "새 기능 · 세계시계 위젯",
     title: "내 바탕화면에서, 세계의 시간을 한눈에.",
