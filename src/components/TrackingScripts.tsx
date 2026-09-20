@@ -20,12 +20,11 @@ export function TrackingScripts() {
       <Script id="google-analytics" strategy="afterInteractive">
         {googleAnalyticsScript}
       </Script>
-      <Script
+      <script
         id="google-adsense"
         async
         crossOrigin="anonymous"
         src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${googleAdsenseClient}`}
-        strategy="afterInteractive"
       />
     </>
   );

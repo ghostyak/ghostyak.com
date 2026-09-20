@@ -14,6 +14,8 @@ ghostyak.com은 Vercel에 배포하는 Next.js 애플리케이션이다. 영어�
 - 서버 전용 로케일 사전 로더와 TypeScript 사전 구조 검증
 - Vercel Analytics, Google Analytics와 Google AdSense 공통 로더
 
+AdSense는 공통 head에서 일반 `<script async>`로 로드한다. `next/script`가 자동으로 추가하는 `data-nscript` 속성을 AdSense가 지원하지 않기 때문이다. Google Analytics는 기존 `next/script`의 `afterInteractive` 방식을 유지한다.
+
 페이지와 컴포넌트는 Server Component가 기본이다. 공개 랜딩에서는 `LanguageSwitcher`, `CopySiteLink`와 공통 헤더의 `ProductsDropdown`을 사용자 조작을 위해 Client Component로 둔다. 제품 메뉴의 링크와 로케일 경로는 서버의 `Header`에서 전달한다. FAQ와 설치 도움말의 shadcn Accordion도 작은 클라이언트 경계로 둔다. 사용하지 않는 자동 회전·다운로드 타이머·이전 세계시계 컴포넌트는 제거했다.
 
 ## 주요 구조
