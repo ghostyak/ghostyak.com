@@ -21,7 +21,10 @@ export async function generateMetadata(): Promise<Metadata> {
     description: dictionary.metadata.site.description,
     applicationName: "GhostYak",
     icons: {
-      icon: { url: "/favicon.svg", type: "image/svg+xml", sizes: "any" },
+      icon: [
+        { url: "/ghostyak.png", type: "image/png", sizes: "64x64" },
+        { url: "/favicon.svg", type: "image/svg+xml", sizes: "any" },
+      ],
     },
     creator: "GhostYak",
     publisher: "GhostYak",

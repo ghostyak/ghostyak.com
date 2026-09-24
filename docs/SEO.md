@@ -99,3 +99,7 @@ Vercel 환경 변수를 변경한 뒤에는 새 배포가 필요하다. 값이 �
 - 56개 legacy/슬래시/다운로드/언어 설정 조합은 308 한 번으로 200 canonical에 도달했다. 로컬 Host/전달 프로토콜 검사에서 HTTP apex·www와 HTTPS apex는 최종 HTTPS www URL로 이동하고 HTTPS www canonical은 200으로 루프 없이 응답했다.
 - 배포 전 운영 서버의 `/en/product/boxes`에 HEAD 요청을 보냈다. `http://ghostyak.com`은 HTTPS apex → HTTPS www → 무접두사 영어 제품으로 3회, `https://ghostyak.com`은 2회, `http://www.ghostyak.com`은 2회, `https://www.ghostyak.com`은 1회 이동해 마지막에 200이었다. 이는 아직 기존 코드가 서비스 중인 결과다.
 - 이번 코드는 배포하지 않았다. Vercel의 HTTP → HTTPS 및 apex → www 이동은 앱 실행 전 계층에서 발생하므로 앱 내부의 단일 이동 검증과 구분한다. 배포 후 `/en/...`의 역방향 이동이 사라졌는지 다시 확인하고, HTTP apex 요청의 CDN 추가 hop은 Vercel 도메인 설정에서 별도 점검한다.
+
+## 검색 favicon
+
+브라우저용 기본 벡터 아이콘은 `/favicon.svg`다. Google 검색용으로는 투명 배경 64×64 PNG인 `/ghostyak.png`를 metadata의 첫 `rel="icon"`으로 선언하고 같은 이미지를 담은 `/favicon.ico`도 공개한다. Google 검색 favicon 지원 형식에는 SVG가 없지만 PNG와 ICO가 포함된다. 두 raster URL을 안정적으로 유지하고, 배포 후 Google Search Console의 홈페이지 URL 검사로 다시 크롤링을 요청한다. 업데이트 반영에는 수일에서 수주가 걸릴 수 있다.
