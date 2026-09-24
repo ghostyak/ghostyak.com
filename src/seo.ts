@@ -63,7 +63,7 @@ export function getSoftwareApplicationJsonLd({
     publisher: {
       "@type": "Organization",
       name: "GhostYak",
-      url: siteUrl,
+      url: `${siteUrl}${localizedPath(locale, "/")}`,
       logo: `${siteUrl}/favicon.svg`,
     },
   };
@@ -71,7 +71,7 @@ export function getSoftwareApplicationJsonLd({
 
 export function getBlogPostingJsonLd({ locale, post }: { locale: PublishedLocale; post: BlogPostSummary }) {
   const url = `${siteUrl}${localizedPath(locale, `/blog/${post.slug}`)}`;
-  const organization = { "@type": "Organization", name: "GhostYak", url: siteUrl, logo: `${siteUrl}/favicon.svg` };
+  const organization = { "@type": "Organization", name: "GhostYak", url: `${siteUrl}${localizedPath(locale, "/")}`, logo: `${siteUrl}/favicon.svg` };
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",

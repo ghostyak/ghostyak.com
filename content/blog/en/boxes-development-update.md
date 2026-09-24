@@ -18,7 +18,7 @@ That is the principle guiding our ongoing work. This post is a progress update, 
 
 We will share completed changes in future updates. If you encounter a problem or see room for improvement, please tell us what was happening when it occurred.
 
-[Explore Boxes](/product/boxes)
+[Explore Boxes](/en/product/boxes)
 
 [Check the latest release](https://github.com/ghostyak/boxes/releases/latest)
 

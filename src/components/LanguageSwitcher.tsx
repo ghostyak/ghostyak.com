@@ -4,7 +4,7 @@ import { Check, Globe2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { localeConfig, publishedLocales, type PublishedLocale } from "@/i18n/locales";
-import { unlocalizedPath } from "@/i18n/routing";
+import { localizedPath, unlocalizedPath } from "@/i18n/routing";
 
 export function LanguageSwitcher({ currentLocale, currentPath, label }: { currentLocale: PublishedLocale; currentPath: string; label: string }) {
   const contentPath = unlocalizedPath(currentPath);
@@ -16,7 +16,7 @@ export function LanguageSwitcher({ currentLocale, currentPath, label }: { curren
     </DropdownMenuTrigger>
     <DropdownMenuContent align="end" className="w-52 rounded-2xl p-2 shadow-xl shadow-ink/10">
       {publishedLocales.map(locale => <DropdownMenuItem asChild key={locale} className="min-h-11 rounded-lg px-3">
-        <a href={`/language/${locale}?returnTo=${encodeURIComponent(contentPath)}`} hrefLang={localeConfig[locale].htmlLanguage} lang={localeConfig[locale].htmlLanguage} aria-current={locale === currentLocale ? "page" : undefined}>
+        <a href={localizedPath(locale, contentPath as `/${string}`)} hrefLang={localeConfig[locale].htmlLanguage} lang={localeConfig[locale].htmlLanguage} aria-current={locale === currentLocale ? "page" : undefined}>
           <span className="flex-1">{localeConfig[locale].label}</span>{locale === currentLocale && <Check className="size-4 text-brand-foreground" aria-hidden="true" />}
         </a>
       </DropdownMenuItem>)}

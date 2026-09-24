@@ -2,72 +2,61 @@ import { NextResponse, type NextRequest } from "next/server";
 import {
   isPublishedLocale,
   defaultLocale,
-  localeCookieName,
   localeHeaderName,
   pathnameHeaderName,
-  type PublishedLocale,
 } from "./i18n/locales";
-
-function localeFromPath(pathname: string): PublishedLocale | null {
-  const segment = pathname.split("/")[1];
-  return segment && isPublishedLocale(segment) ? segment : null;
-}
-
-function localeFromAcceptLanguage(value: string | null): PublishedLocale {
-  if (!value) return defaultLocale;
-
-  const requested = value
-    .split(",")
-    .map((part) => {
-      const [languageTag, ...parameters] = part.trim().split(";");
-      const quality = parameters.find((parameter) => parameter.trim().startsWith("q="));
-      return { languageTag: languageTag.toLowerCase(), quality: quality ? Number(quality.split("=")[1]) : 1 };
-    })
-    .filter(({ languageTag, quality }) => languageTag !== "*" && Number.isFinite(quality) && quality > 0)
-    .sort((a, b) => b.quality - a.quality);
-
-  for (const { languageTag } of requested) {
-    const language = languageTag.split("-")[0];
-    if (isPublishedLocale(language)) return language;
-  }
-
-  return defaultLocale;
-}
+import { localizedPath, unlocalizedPath } from "./i18n/routing";
 
 export function proxy(request: NextRequest) {
-  const { pathname } = request.nextUrl;
-  const pathLocale = localeFromPath(pathname);
+  const original = new URL(request.url);
+  // A self-hosted Next server may expose its internal hostname in request.url.
+  const host = request.headers.get("host");
+  if (host === "ghostyak.com" || host === "www.ghostyak.com") {
+    original.hostname = host;
+    original.port = "";
+  }
+  const { pathname } = original;
+  const cleanPath = pathname.replace(/\/+$/, "") || "/";
+  const segment = cleanPath.split("/")[1];
+  const pathLocale = isPublishedLocale(segment) ? segment : null;
+  const locale = pathLocale ?? defaultLocale;
+  const contentPath = unlocalizedPath(cleanPath);
+  // Native URL avoids NextURL preserving the incoming trailingSlash flag.
+  const destination = new URL(original);
+  destination.pathname = cleanPath;
 
-  if (pathLocale === defaultLocale) {
-    const destination = request.nextUrl.clone();
-    destination.pathname = pathname === `/${defaultLocale}` ? "/" : pathname.slice(defaultLocale.length + 1);
+  // Historical unprefixed content was English. Never negotiate its language.
+  if (!pathLocale && (cleanPath === "/" || /^\/(product|blog|support)(\/|$)/.test(cleanPath))) {
+    destination.pathname = localizedPath(defaultLocale, cleanPath as `/${string}`);
+  }
+
+  // Resolve old aliases directly, including the former standalone download page.
+  if (/^\/products\/boxes(\/|$)/.test(contentPath)) {
+    destination.pathname = localizedPath(locale, "/product/boxes");
+    if (contentPath === "/products/boxes/download") destination.hash = "download";
+  }
+  if (contentPath === "/product/boxes/download") {
+    destination.pathname = localizedPath(locale, "/product/boxes");
+    destination.hash = "download";
+  }
+
+  // Limit normalization to this site's public hosts; keep previews/local dev usable.
+  if (["ghostyak.com", "www.ghostyak.com"].includes(original.hostname)) {
+    destination.protocol = "https:";
+    destination.hostname = "www.ghostyak.com";
+    destination.port = "";
+  }
+
+  if (destination.href !== original.href) {
     return NextResponse.redirect(destination, 308);
   }
 
-  if (pathLocale) {
-    const requestHeaders = new Headers(request.headers);
-    requestHeaders.set(localeHeaderName, pathLocale);
-    requestHeaders.set(pathnameHeaderName, pathname);
-    return NextResponse.next({ request: { headers: requestHeaders } });
-  }
-
-  const cookieLocale = request.cookies.get(localeCookieName)?.value;
-  const preferredLocale = cookieLocale && isPublishedLocale(cookieLocale)
-    ? cookieLocale
-    : localeFromAcceptLanguage(request.headers.get("accept-language"));
-
-  if (preferredLocale !== defaultLocale) {
-    const destination = request.nextUrl.clone();
-    destination.pathname = pathname === "/" ? `/${preferredLocale}` : `/${preferredLocale}${pathname}`;
-    return NextResponse.redirect(destination);
-  }
-
   const requestHeaders = new Headers(request.headers);
-  requestHeaders.set(localeHeaderName, defaultLocale);
+  requestHeaders.set(localeHeaderName, locale);
   requestHeaders.set(pathnameHeaderName, pathname);
   return NextResponse.next({ request: { headers: requestHeaders } });
 }
 
 export const config = {
-  matcher: ["/((?!api|language|_next/static|_next/image|favicon.ico|icon.png|robots.txt|sitemap.xml|.*\\..*).*)"],
+  matcher: ["/((?!api|language|_next).*)"],
 };

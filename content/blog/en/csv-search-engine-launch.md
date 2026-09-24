@@ -20,7 +20,7 @@ The app is written in **Rust**. Open CSV and Excel files, search individual colu
 
 Visit the product page to see actual screenshots and download the Windows installer.
 
-[Explore CSV Search Engine](/product/csv-search-engine)
+[Explore CSV Search Engine](/en/product/csv-search-engine)
 
 [View the GitHub repository](https://github.com/ghostyak/csv-search-engine)
 

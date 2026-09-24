@@ -99,6 +99,11 @@ export async function validatePublishedBlogTranslations() {
     const translatedPosts = await getAllPosts(locale);
     const translationsByKey = new Map(translatedPosts.map((post) => [post.translationKey, post]));
 
+    const sourceKeys = new Set(sourcePosts.map((post) => post.translationKey));
+    if (translationsByKey.size !== translatedPosts.length || translatedPosts.some((post) => !sourceKeys.has(post.translationKey))) {
+      throw new Error(`[${locale}] Duplicate or source-less blog translation.`);
+    }
+
     for (const sourcePost of sourcePosts) {
       const translation = translationsByKey.get(sourcePost.translationKey);
       if (!translation) throw new Error(`[${locale}] Missing blog translation: ${sourcePost.translationKey}`);

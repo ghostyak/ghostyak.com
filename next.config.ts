@@ -1,25 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  async redirects() {
-    return [
-      {
-        source: "/products/boxes/:path*",
-        destination: "/product/boxes",
-        permanent: true,
-      },
-      {
-        source: "/en/products/boxes/:path*",
-        destination: "/product/boxes",
-        permanent: true,
-      },
-      {
-        source: "/:lang(ko|ja|zh|es|de|fr|pt|it)/products/boxes/:path*",
-        destination: "/:lang/product/boxes",
-        permanent: true,
-      },
-    ];
-  },
+  trailingSlash: false,
+  // Proxy combines slash, locale, host and legacy alias redirects in one hop.
+  skipTrailingSlashRedirect: true,
 };
 
 export default nextConfig;

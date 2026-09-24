@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AppWindow, ArrowRight, Clock3, ChevronRight, Fingerprint, Globe, ScanSearch, type LucideIcon } from "lucide-react";
-import { notFound, redirect } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { buttonVariants } from "@/components/ui/button";
 import { boxes, clock, folderHistory, osints } from "@/data/products";
 import { getDictionary } from "@/i18n/get-dictionary";
@@ -147,7 +147,7 @@ export async function BoxesContent({ locale }: { locale: PublishedLocale }) {
 }
 
 export function BoxesDownloadContent({ locale }: { locale: PublishedLocale }) {
-  return redirect(localizedPath(locale, "/product/boxes") + "#download");
+  return permanentRedirect(localizedPath(locale, "/product/boxes") + "#download");
 }
 
 export async function BlogContent({ locale }: { locale: PublishedLocale }) {

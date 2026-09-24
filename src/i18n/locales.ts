@@ -5,7 +5,7 @@ export const pathnameHeaderName = "x-ghostyak-pathname";
 export const localeCookieName = "ghostyak_locale";
 
 export const localeConfig = {
-  ko: { label: "한국어", htmlLanguage: "ko-KR", openGraphLocale: "ko_KR", published: true },
+  ko: { label: "한국어", htmlLanguage: "ko", openGraphLocale: "ko_KR", published: true },
   en: { label: "English", htmlLanguage: "en", openGraphLocale: "en_US", published: true },
   ja: { label: "日本語", htmlLanguage: "ja-JP", openGraphLocale: "ja_JP", published: true },
   zh: { label: "中文", htmlLanguage: "zh-CN", openGraphLocale: "zh_CN", published: true },
@@ -21,7 +21,7 @@ export type KnownLocale = keyof typeof localeConfig;
 export const publishedLocales = ["ko", "en", "ja", "zh", "es", "de", "fr", "pt", "it"] as const satisfies readonly KnownLocale[];
 export type PublishedLocale = (typeof publishedLocales)[number];
 
-export const prefixedLocales = ["ko", "ja", "zh", "es", "de", "fr", "pt", "it"] as const;
+export const prefixedLocales = publishedLocales;
 export type PrefixedLocale = (typeof prefixedLocales)[number];
 
 export function isPublishedLocale(value: string): value is PublishedLocale {

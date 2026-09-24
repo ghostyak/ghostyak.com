@@ -82,7 +82,7 @@ Markdown 본문
 - 번역 글은 현재 한국어 원문과 같은 파일명 slug와 `sourceRevision`을 사용한다.
 - 새 번역 로케일은 필수 UI와 블로그를 모두 번역한 뒤 `src/i18n/locales.ts`의 공개 목록과 사전 로더에 추가한다.
 - `npm run build`는 공개 사전의 빈 문자열·placeholder와 블로그 번역의 원문 리비전을 검사한다.
-- 브라우저 자동 감지와 언어 쿠키 동작은 `src/proxy.ts`, 언어 선택 이동은 `src/app/language/[locale]/route.ts`에서 관리한다.
+- `src/proxy.ts`에서 URL 접두사와 legacy 정규화를 처리한다. 언어 메뉴는 `localizedPath`로 같은 콘텐츠의 canonical URL에 직접 연결한다. 브라우저 자동 감지와 쿠키 기반 언어 이동은 사용하지 않는다.
 
 라우팅, 사전 구조, 번역 문체, SEO와 완료 조건은 [국제화 및 번역 기준](./INTERNATIONALIZATION.md)을 따른다.
 
@@ -125,3 +125,9 @@ CSV 상세페이지는 공통 `ProductLanding`을 쓰므로 Folder History 페�
 ## Folder History 관리
 
 제품 설명의 근거는 Folder History 저장소(`ghostyak/folder-history`)의 README와 `docs/`다. 앱 동작이 바뀌면 한국어 `folderHistory` 원문을 먼저 고쳐 승인받은 뒤 8개 번역에 반영한다. 설치 파일 이름이나 저장소가 바뀌면 `src/data/products.ts`의 `folderHistory.downloadUrl`·`url`만 수정한다. 스크린샷은 `public/images/folder-history/`에 두며 교체 시 `folderHistory.screenshots`의 원본 크기와 각 사전의 대체 텍스트·캡션을 함께 갱신한다.
+
+## SEO URL 회귀 검증
+
+`npm run lint`와 `npm run build` 후 별도 터미널에서 `npm run start -- --port 3100`을 실행하고 `npm run test:seo`로 검증한다. 다른 서버는 `npm run test:seo -- https://www.ghostyak.com`으로 지정한다. Node 내장 fetch/assert만 사용하며 새 테스트 프레임워크는 필요 없다.
+
+검증은 sitemap 전체 페이지의 200·self canonical·상호 hreflang·HTML lang·indexability·OpenGraph·JSON-LD·본문/공통 내부 링크, 무접두사 URL과 별칭의 단일 308, 끝 슬래시, 추적 query, 상충하는 언어 쿠키/헤더, 404, robots를 검사한다. 로컬에서는 Host 헤더로 공개 호스트 정규화도 검사한다. CDN의 HTTP/HTTPS와 apex/www 리디렉션은 앱에 도달하기 전에 실행될 수 있으므로 배포 후 실제 4개 origin 변형도 확인한다. 언어 메뉴는 같은 콘텐츠로 전체 문서 탐색하며 스타일과 컴포넌트 경계는 유지한다.

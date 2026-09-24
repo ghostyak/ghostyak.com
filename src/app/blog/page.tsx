@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: dictionary.metadata.blog.title,
     description: dictionary.metadata.blog.description,
     alternates: getLocalizedAlternates(defaultLocale, "/blog"),
-    openGraph: { ...getOpenGraphLocale(defaultLocale), title: dictionary.metadata.blog.title, description: dictionary.metadata.blog.description, url: "/blog" },
+    openGraph: { ...getOpenGraphLocale(defaultLocale), title: dictionary.metadata.blog.title, description: dictionary.metadata.blog.description, url: "/en/blog" },
   };
 }
 

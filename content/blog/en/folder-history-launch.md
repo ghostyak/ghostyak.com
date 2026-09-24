@@ -52,6 +52,6 @@ Folder History is free and runs on Windows 11 x64. The installer installs for th
 
 Visit the product page to see real screenshots and frequently asked questions, and to download the installer.
 
-[Explore Folder History](/product/folder-history)
+[Explore Folder History](/en/product/folder-history)
 
 [View the GitHub repository](https://github.com/ghostyak/folder-history)

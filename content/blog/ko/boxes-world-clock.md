@@ -26,6 +26,6 @@ sourceRevision: 1
 
 Boxes는 Windows 10/11에서 사용할 수 있으며 무료로 다운로드할 수 있습니다. 제품 페이지에서 세계시계 미리보기와 주요 기능을 확인해 보세요.
 
-[Boxes 제품 둘러보기](/product/boxes)
+[Boxes 제품 둘러보기](/ko/product/boxes)
 
-[Boxes 무료 다운로드](/product/boxes#download)
+[Boxes 무료 다운로드](/ko/product/boxes#download)

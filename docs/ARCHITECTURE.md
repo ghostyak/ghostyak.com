@@ -2,7 +2,7 @@
 
 ## 개요
 
-ghostyak.com은 Vercel에 배포하는 Next.js 애플리케이션이다. 영어를 기본 URL 언어로 하고 8개 접두사 언어에서 GhostYak 브랜드, Boxes 제품 소개와 무료 설치 파일, Clock과 OSINTS 웹앱 링크, CSV Search Engine의 DFIR 제품 소개와 GitHub 링크, Folder History 제품 소개와 무료 설치 파일, Markdown 블로그를 제공한다. 국제화는 기본 URL과 별개로 한국어 콘텐츠를 유일한 원문으로 삼으며 세부 기준은 [INTERNATIONALIZATION.md](./INTERNATIONALIZATION.md)를 따른다.
+ghostyak.com은 Vercel에 배포하는 Next.js 애플리케이션이다. 영어를 기본 진입 언어로 하고 9개 로케일 접두사 경로에서 GhostYak 브랜드, Boxes 제품 소개와 무료 설치 파일, Clock과 OSINTS 웹앱 링크, CSV Search Engine의 DFIR 제품 소개와 GitHub 링크, Folder History 제품 소개와 무료 설치 파일, Markdown 블로그를 제공한다. 국제화는 기본 URL과 별개로 한국어 콘텐츠를 유일한 원문으로 삼으며 세부 기준은 [INTERNATIONALIZATION.md](./INTERNATIONALIZATION.md)를 따른다.
 
 ## 기술 구성
 
@@ -24,12 +24,12 @@ AdSense는 공통 head에서 일반 `<script async>`로 로드한다. `next/scri
 content/blog/{locale}/           한국어 원문과 언어별 Markdown 블로그
 public/images/demo/              교체 가능한 데모 화면 이미지
 src/app/                         App Router 페이지와 메타데이터
-src/app/product/boxes/           Boxes 소개와 무료 다운로드 경로
-src/app/[locale]/                한국어를 포함한 8개 접두사 언어의 대응 경로
+src/app/product/boxes/           기존 Boxes URL (Proxy에서 영어 canonical로 이동)
+src/app/[locale]/                영어와 한국어를 포함한 9개 언어의 canonical 경로
 src/components/                  공통 헤더, 푸터와 동작 컴포넌트
 src/data/products.ts             언어 중립 제품, 다운로드와 이미지 데이터
 src/i18n/                        로케일 레지스트리, 원문 사전과 서버 로더
-src/proxy.ts                     브라우저 언어 감지와 로케일 요청 처리
+src/proxy.ts                     URL 정규화와 로케일 요청 처리
 src/lib/blog.ts                  Markdown 조회와 변환
 docs/                            설계, 개발과 로드맵 문서
 ```
@@ -38,14 +38,15 @@ docs/                            설계, 개발과 로드맵 문서
 
 ## 공개 경로
 
-- `/`: GhostYak 브랜드 홈으로 Boxes, Clock, OSINTS, CSV Search Engine과 Folder History 제품 카드, 블로그 진입점을 간결하게 제공
-- `/product/boxes`: 승인된 Boxes 전용 제품 랜딩; 기존 제품 URL과 언어별 canonical 유지
-- `/product/boxes/download`: 같은 언어의 제품 페이지 `/product/boxes#download` 설치 안내로 307 이동. 파일 다운로드는 사용자가 직접 버튼을 눌러 시작한다.
-- `/blog`: Markdown 글 목록
-- `/blog/[slug]`: Markdown 글 상세 화면
-- `/{locale}/...`: 한국어, 일본어, 중국어, 스페인어, 독일어, 프랑스어, 포르투갈어와 이탈리아어의 대응 화면
+- `/{locale}`: GhostYak 브랜드 홈과 제품 카드, 블로그 진입점
+- `/{locale}/product/boxes`: Boxes 제품 랜딩
+- `/{locale}/product/csv-search-engine`, `/{locale}/product/folder-history`: 제품 랜딩
+- `/{locale}/support`: 후원 랜딩
+- `/{locale}/blog`, `/{locale}/blog/[slug]`: Markdown 목록과 글
+- `/{locale}/product/boxes/download`: 같은 언어 제품의 `#download`로 308 이동
+- `/`, `/product/...`, `/blog/...`, `/support`: 영어 `/en/...`로 308 이동하는 legacy 경로
 
-`src/proxy.ts`는 URL 로케일을 우선하고, 접두사가 없는 최초 방문에서는 사용자 선택 쿠키와 브라우저 `Accept-Language` 순으로 언어를 결정한다. 접두사 없는 경로는 영어 대표 URL이고 다른 언어는 `/{locale}/...`를 사용한다. `/en/...`는 접두사를 제거한 영어 대표 경로로 영구 이동하며 한국어는 `/ko/...`에서 제공한다. 기존 `/products/boxes/...`는 `next.config.ts`에서 현재 제품 경로로 정규화한다. 홈과 Boxes 제품 페이지는 서로 다른 제목·설명·본문을 제공하며 각각 자기 자신을 canonical로 사용한다.
+`src/proxy.ts`는 영어를 포함한 URL 로케일만 사용한다. 쿠키·브라우저 언어·IP 기반 이동이나 rewrite는 없다. `/products/boxes/...` 별칭, 다운로드 경로, 끝 슬래시와 공개 호스트 정규화를 한 번의 308로 처리한다. `next.config.ts`는 기본 끝 슬래시 이동을 비활성화하여 Proxy와 중복 이동하지 않게 한다. `/en`과 `/ko`를 포함한 9개 언어는 같은 동적 `[locale]` 경로를 사용하며, 기존 무접두사 페이지 모듈은 Proxy 뒤에 유지한다. sitemap·canonical·hreflang·OpenGraph·내부 링크는 `localizedPath`를 공유하고 x-default는 같은 콘텐츠의 영어 URL이다.
 
 `RenewalLanding`은 제품 소개에 사용하는 Server Component다. `getLandingMetadata`는 승인된 원문 기반 제목·설명과 실제 스크린샷을 검색·공유 메타데이터로 제공한다. `getSoftwareApplicationJsonLd`에는 같은 무료 기능 목록과 최신 확인 버전 v0.3.38을 사용한다. 루트 레이아웃의 밝은 공통 헤더 하나만 고정하며 제품·블로그·언어 선택을 제공한다. 다운로드는 제품 본문에서 제공한다. 제품명 `Boxes`를 가장 큰 H1으로 표시하고 기존 소개 문구와 실제 스크린샷을 중앙에 순서대로 배치한다. 스크린샷 아래의 링크 복사 영역과 제품 섹션 목차는 제거했다. 언어 선택은 공통 헤더에서 한 번만 렌더링한다. 제품 랜딩도 공통 푸터를 사용하고 공개 방문 분석은 유지한다.
 
@@ -86,7 +87,7 @@ Boxes의 버전, 설치 파일 URL과 실제 이미지 경로, Clock과 OSINTS�
 
 홈의 `CsvSearchCard`는 디지털포렌식·침해사고대응(DFIR) 제품 CSV Search Engine을 사진 없이 소개하는 Server Component다. 제품명·제품 경로·GitHub 주소·직접 다운로드 URL·스크린샷 경로와 원본 크기는 `src/data/products.ts`의 `csvSearchEngine`에서 관리한다. 문구는 각 사전의 `csvSearch`에 둔다. 소개 버튼, 공통 제품 메뉴와 푸터는 현재 언어의 `/product/csv-search-engine`으로 연결한다.
 
-`CsvSearchProduct`는 실제 스크린샷 두 장과 Windows 설치 파일 다운로드, GitHub 링크를 제공하는 Server Component다. 기본 언어와 8개 언어 접두사 경로를 지원하며 `csv-search-metadata.ts`에서 canonical·언어 대체 URL·공유 이미지를 설정한다. sitemap에도 모든 공개 언어의 제품 경로와 이미지를 포함한다.
+`CsvSearchProduct`는 실제 스크린샷 두 장과 Windows 설치 파일 다운로드, GitHub 링크를 제공하는 Server Component다. 9개 언어 접두사 경로를 지원하며 `csv-search-metadata.ts`에서 canonical·언어 대체 URL·공유 이미지를 설정한다. sitemap에도 모든 공개 언어의 제품 경로와 이미지를 포함한다.
 
 CSV Search Engine 상세페이지 `CsvSearchProduct`는 Server Component이며 공통 `ProductLanding`에 제품 데이터와 사전 `csvSearch` 문구를 전달한다. FAQ Accordion만 클라이언트 경계다. 자동 슬라이드 `ScreenshotSlideshow`는 삭제했다. 공유 메타데이터 제목은 `csvSearch.metadataTitle`, 설명은 `csvSearch.description`이다.
 
@@ -94,6 +95,6 @@ CSV Search Engine 상세페이지 `CsvSearchProduct`는 Server Component이며 �
 
 ## Folder History
 
-`FolderHistoryProduct`는 Folder History 상세페이지를 그리는 Server Component이며 공통 `ProductLanding`(히어로·사용 방법·주요 기능·남색 안내·FAQ·다운로드)을 사용한다. FAQ Accordion만 클라이언트 경계로 둔다. 제품명·제품 경로·플랫폼·GitHub 저장소·직접 다운로드 URL(`releases/latest/download/Folder.History_x64-setup.exe`)·스크린샷 경로와 원본 크기는 `src/data/products.ts`의 `folderHistory`에서 관리한다. 문구는 각 사전의 `folderHistory`에 두며 무료 배지는 `home.products.freeBadge`, 저장소 링크 문구는 `csvSearch.repositoryAction`을 재사용한다. 기본 언어 `/product/folder-history`와 8개 접두사 경로를 제공하고, 메타데이터는 `src/i18n/folder-history-metadata.ts`, sitemap 항목은 `src/app/sitemap.ts`에 둔다. 홈 카드, 공통 제품 메뉴와 푸터는 현재 언어의 상세페이지로 연결한다.
+`FolderHistoryProduct`는 Folder History 상세페이지를 그리는 Server Component이며 공통 `ProductLanding`(히어로·사용 방법·주요 기능·남색 안내·FAQ·다운로드)을 사용한다. FAQ Accordion만 클라이언트 경계로 둔다. 제품명·제품 경로·플랫폼·GitHub 저장소·직접 다운로드 URL(`releases/latest/download/Folder.History_x64-setup.exe`)·스크린샷 경로와 원본 크기는 `src/data/products.ts`의 `folderHistory`에서 관리한다. 문구는 각 사전의 `folderHistory`에 두며 무료 배지는 `home.products.freeBadge`, 저장소 링크 문구는 `csvSearch.repositoryAction`을 재사용한다. `/en/product/folder-history`를 포함한 9개 접두사 경로를 제공하고, 메타데이터는 `src/i18n/folder-history-metadata.ts`, sitemap 항목은 `src/app/sitemap.ts`에 둔다. 홈 카드, 공통 제품 메뉴와 푸터는 현재 언어의 상세페이지로 연결한다.
 
-`SupportContent`는 후원 랜딩(`/support`와 8개 접두사 경로)을 그리는 Server Component다. 클라이언트 경계가 없다. 문구는 사전의 `supportPage`, 메타데이터는 `src/i18n/support-metadata.ts`, sitemap 항목은 `src/app/sitemap.ts`에 둔다. 섹션 제목과 텍스트 링크 스타일은 `ProductLanding`의 `SectionHeading`·`textLink`를 재사용한다. Instagram·Threads·GitHub 주소는 `src/data/social.ts`에서 푸터와 공유한다.
+`SupportContent`는 후원 랜딩(`/{locale}/support`의 9개 접두사 경로)을 그리는 Server Component다. 클라이언트 경계가 없다. 문구는 사전의 `supportPage`, 메타데이터는 `src/i18n/support-metadata.ts`, sitemap 항목은 `src/app/sitemap.ts`에 둔다. 섹션 제목과 텍스트 링크 스타일은 `ProductLanding`의 `SectionHeading`·`textLink`를 재사용한다. Instagram·Threads·GitHub 주소는 `src/data/social.ts`에서 푸터와 공유한다.
