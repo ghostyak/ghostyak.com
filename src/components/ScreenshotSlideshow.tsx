@@ -73,7 +73,7 @@ export function ScreenshotSlideshow({ slides, labels, viewAction, controlsLabel 
     <div className="mt-5 flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
       <div className="text-sm leading-6" aria-live={playing ? "off" : "polite"} aria-atomic="true">
         <p className="text-muted-foreground">{slides[active].caption}</p>
-        <a className="inline-flex min-h-11 items-center gap-2 font-medium text-primary underline-offset-4 hover:underline" href={slides[active].src} target="_blank" rel="noreferrer">
+        <a className="inline-flex min-h-11 items-center gap-2 font-medium text-primary underline decoration-brand decoration-2 underline-offset-4 hover:decoration-current" href={slides[active].src} target="_blank" rel="noreferrer">
           {viewAction}<ArrowUpRight className="size-4" aria-hidden="true" />
         </a>
       </div>
@@ -89,7 +89,7 @@ export function ScreenshotSlideshow({ slides, labels, viewAction, controlsLabel 
         >
           <span className={cn("h-2 rounded-full transition-all motion-reduce:transition-none", active === index ? "w-6 bg-primary" : "w-2 bg-muted-foreground/40")} />
         </Button>)}
-        {!reducedMotion && <Button data-playback variant="outline" className="min-h-11" onClick={() => setPaused((current) => !current)} aria-label={playing ? labels.pauseLabel : labels.playLabel}>
+        {!reducedMotion && <Button data-playback variant="outline" className="min-h-11 rounded-full" onClick={() => setPaused((current) => !current)} aria-label={playing ? labels.pauseLabel : labels.playLabel}>
           {playing ? <Pause aria-hidden="true" /> : <Play aria-hidden="true" />}
           {playing ? labels.pause : labels.play}
         </Button>}

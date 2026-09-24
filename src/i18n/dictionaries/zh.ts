@@ -67,11 +67,11 @@ const zh: Dictionary = {
         { eyebrow: "DESKTOP, ORGANIZED", title: "更快找到所需文件。", description: "按自己的方式整理工作、项目和常用工具，需要时即可快速打开。", actionLabel: "查看产品", imageAlt: "Boxes 演示画面 2" },
       ],
     },
-    products: { eyebrow: "GHOSTYAK SOFTWARE", heading: "现已推出的产品", intro: "我们不追求复杂功能，而是专注解决每天遇到的小麻烦。", freeBadge: "免费", viewAction: "查看产品", webBadge: "网页", clockDescription: "一款免费的在线时间工具，集当前时间、闹钟、计时器、番茄钟、秒表和世界时钟于一处。", osintsDescription: "在一处使用多个 OSINT 网站，搜索和分析 IP 地址、域名等信息的工具。", webAction: "打开网站", clockPreviewLabel: "Clock 预览" },
-    blog: { eyebrow: "BLOG", heading: "记录我们正在打造的产品", intro: "在 GhostYak 博客了解产品动态和开发故事。", viewAction: "查看博客" },
+    products: { eyebrow: "GHOSTYAK SOFTWARE", heading: "我们打造每天都会用到的小工具", intro: "从桌面整理、时间管理到 OSINT 与取证调查。与其堆砌功能，我们更专注于把一个常见的不便真正解决好。", freeBadge: "免费", viewAction: "查看产品", webBadge: "网页", clockDescription: "无需安装，在浏览器中即可使用当前时间、世界时钟、闹钟、计时器、番茄钟和秒表的时间工具。", osintsDescription: "无需在多个 OSINT 网站之间来回切换，在一处即可搜索和分析 IP 地址、域名等信息。", webAction: "打开网站", clockPreviewLabel: "Clock 预览" },
+    blog: { eyebrow: "BLOG", heading: "记录我们的制作过程", intro: "分享新产品与新功能的消息，以及开发中遇到的问题和解决过程。", viewAction: "查看博客" },
   },
   boxes: {
-    description: "一款桌面工具，可将 Windows 桌面上的文件、文件夹和快捷方式归入灵活的盒子中。",
+    description: "文件留在原来的文件夹中，在桌面上按任务归入盒子。基础功能在公司使用也免费。",
     tagline: "一目了然地整理杂乱桌面。", downloadAction: "免费下载", screenshotAlts: ["Boxes 演示画面 1", "Boxes 演示画面 2"],
     carousel: { regionLabel: "Boxes 画面预览", controlsLabel: "选择产品画面" },
     features: {

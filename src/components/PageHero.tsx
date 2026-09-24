@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-export const heroActionClassName = "h-auto min-h-12 max-w-full whitespace-normal px-6 py-3 text-sm";
+export const heroActionClassName = "h-auto min-h-12 max-w-full whitespace-normal rounded-full px-6 py-3 text-sm";
 
 export function PageHero({ id, eyebrow, title, description, actions, note }: {
   id?: string;

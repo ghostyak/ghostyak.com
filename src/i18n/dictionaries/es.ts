@@ -67,11 +67,11 @@ const es: Dictionary = {
         { eyebrow: "DESKTOP, ORGANIZED", title: "Encuentra antes los archivos que necesitas.", description: "Separa el trabajo, los proyectos y las herramientas frecuentes a tu manera y ábrelos cuando los necesites.", actionLabel: "Explorar el producto", imageAlt: "Pantalla de demostración 2 de Boxes" },
       ],
     },
-    products: { eyebrow: "GHOSTYAK SOFTWARE", heading: "Productos disponibles ahora", intro: "Nos centramos en resolver las pequeñas molestias diarias, no en añadir complejidad.", freeBadge: "Gratis", viewAction: "Explorar el producto", webBadge: "Web", clockDescription: "Un conjunto gratuito de herramientas de tiempo en línea con hora actual, alarmas, temporizadores, Pomodoro, cronómetro y relojes mundiales.", osintsDescription: "Una herramienta para buscar y analizar direcciones IP, dominios y más con varios sitios OSINT desde un solo lugar.", webAction: "Abrir sitio web", clockPreviewLabel: "Vista previa de Clock" },
-    blog: { eyebrow: "BLOG", heading: "Notas sobre lo que estamos creando", intro: "Descubre noticias de productos e historias de desarrollo en el blog de GhostYak.", viewAction: "Ver el blog" },
+    products: { eyebrow: "GHOSTYAK SOFTWARE", heading: "Creamos pequeñas herramientas para el día a día", intro: "Desde organizar el escritorio y gestionar el tiempo hasta investigaciones OSINT y forenses. En lugar de acumular funciones, nos centramos en resolver bien una molestia que aparece a menudo.", freeBadge: "Gratis", viewAction: "Explorar el producto", webBadge: "Web", clockDescription: "Una herramienta de tiempo con hora actual, reloj mundial, alarmas, temporizador, Pomodoro y cronómetro, lista para usar en el navegador sin instalar nada.", osintsDescription: "Busca y analiza direcciones IP, dominios y más en un solo lugar, sin ir de un sitio OSINT a otro.", webAction: "Abrir sitio web", clockPreviewLabel: "Vista previa de Clock" },
+    blog: { eyebrow: "BLOG", heading: "Contamos cómo lo hacemos", intro: "Novedades sobre productos y funciones, y los problemas que encontramos al desarrollarlos y cómo los resolvimos.", viewAction: "Ver el blog" },
   },
   boxes: {
-    description: "Una herramienta de escritorio que organiza archivos, carpetas y accesos directos del escritorio de Windows en cajas flexibles.",
+    description: "Deja tus archivos en sus carpetas originales y agrúpalos en cajas por tarea en el escritorio. Las funciones básicas son gratuitas, también en la empresa.",
     tagline: "Ordena un escritorio disperso de un vistazo.", downloadAction: "Descarga gratuita", screenshotAlts: ["Pantalla de demostración 1 de Boxes", "Pantalla de demostración 2 de Boxes"],
     carousel: { regionLabel: "Vista previa de Boxes", controlsLabel: "Elegir una pantalla del producto" },
     features: {

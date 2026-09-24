@@ -67,11 +67,11 @@ const pt: Dictionary = {
         { eyebrow: "DESKTOP, ORGANIZED", title: "Encontre os arquivos de que precisa mais rápido.", description: "Separe trabalho, projetos e ferramentas frequentes do seu jeito e abra tudo quando precisar.", actionLabel: "Conhecer o produto", imageAlt: "Tela de demonstração 2 do Boxes" },
       ],
     },
-    products: { eyebrow: "GHOSTYAK SOFTWARE", heading: "Produtos disponíveis agora", intro: "Nosso foco é resolver os pequenos incômodos do dia a dia, não adicionar complexidade.", freeBadge: "Grátis", viewAction: "Conhecer o produto", webBadge: "Web", clockDescription: "Um conjunto gratuito de ferramentas de tempo online com hora atual, alarmes, temporizadores, Pomodoro, cronômetro e relógios mundiais.", osintsDescription: "Uma ferramenta para pesquisar e analisar endereços IP, domínios e muito mais usando vários sites OSINT em um só lugar.", webAction: "Abrir site", clockPreviewLabel: "Prévia do Clock" },
-    blog: { eyebrow: "BLOG", heading: "Registros do que estamos criando", intro: "Confira novidades de produtos e histórias de desenvolvimento no blog da GhostYak.", viewAction: "Ver o blog" },
+    products: { eyebrow: "GHOSTYAK SOFTWARE", heading: "Criamos pequenas ferramentas para o dia a dia", intro: "Da organização da área de trabalho e gestão do tempo a investigações OSINT e forenses. Em vez de acumular recursos, focamos em resolver bem um incômodo que aparece com frequência.", freeBadge: "Grátis", viewAction: "Conhecer o produto", webBadge: "Web", clockDescription: "Uma ferramenta de tempo com hora atual, relógio mundial, alarmes, timer, Pomodoro e cronômetro, direto no navegador, sem instalar nada.", osintsDescription: "Pesquise e analise endereços IP, domínios e mais em um só lugar, sem alternar entre sites de OSINT.", webAction: "Abrir site", clockPreviewLabel: "Prévia do Clock" },
+    blog: { eyebrow: "BLOG", heading: "Registramos como criamos", intro: "Novidades de produtos e recursos, além dos problemas que encontramos no desenvolvimento e de como os resolvemos.", viewAction: "Ver o blog" },
   },
   boxes: {
-    description: "Uma ferramenta que organiza arquivos, pastas e atalhos da área de trabalho do Windows em caixas flexíveis.",
+    description: "Mantenha seus arquivos nas pastas originais e reúna-os em caixas por tarefa na área de trabalho. Os recursos básicos são gratuitos, inclusive na empresa.",
     tagline: "Organize uma área de trabalho espalhada de relance.", downloadAction: "Download gratuito", screenshotAlts: ["Tela de demonstração 1 do Boxes", "Tela de demonstração 2 do Boxes"],
     carousel: { regionLabel: "Prévia do Boxes", controlsLabel: "Escolher uma tela do produto" },
     features: {

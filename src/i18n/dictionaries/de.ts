@@ -67,11 +67,11 @@ const de: Dictionary = {
         { eyebrow: "DESKTOP, ORGANIZED", title: "Finde benötigte Dateien schneller.", description: "Ordne Arbeit, Projekte und häufig verwendete Werkzeuge auf deine Weise und öffne sie genau dann, wenn du sie brauchst.", actionLabel: "Produkt ansehen", imageAlt: "Boxes-Demoansicht 2" },
       ],
     },
-    products: { eyebrow: "GHOSTYAK SOFTWARE", heading: "Jetzt verfügbare Produkte", intro: "Wir konzentrieren uns darauf, kleine tägliche Probleme zu lösen, statt zusätzliche Komplexität zu schaffen.", freeBadge: "Kostenlos", viewAction: "Produkt ansehen", webBadge: "Web", clockDescription: "Ein kostenloses Online-Zeittool mit aktueller Uhrzeit, Weckern, Timern, Pomodoro, Stoppuhr und Weltuhren an einem Ort.", osintsDescription: "Ein Tool, um IP-Adressen, Domains und mehr über mehrere OSINT-Websites an einem Ort zu suchen und zu analysieren.", webAction: "Website öffnen", clockPreviewLabel: "Vorschau von Clock" },
-    blog: { eyebrow: "BLOG", heading: "Notizen zu unserer Arbeit", intro: "Produktneuigkeiten und Entwicklungsgeschichten findest du im GhostYak-Blog.", viewAction: "Zum Blog" },
+    products: { eyebrow: "GHOSTYAK SOFTWARE", heading: "Wir bauen kleine Werkzeuge für jeden Tag", intro: "Vom Aufräumen des Desktops über Zeitmanagement bis zu OSINT- und Forensik-Untersuchungen. Statt immer mehr Funktionen hinzuzufügen, lösen wir lieber ein häufiges Ärgernis richtig.", freeBadge: "Kostenlos", viewAction: "Produkt ansehen", webBadge: "Web", clockDescription: "Ein Zeitwerkzeug mit aktueller Uhrzeit, Weltuhr, Wecker, Timer, Pomodoro und Stoppuhr, direkt im Browser und ohne Installation.", osintsDescription: "Durchsuche und analysiere IP-Adressen, Domains und mehr an einem Ort, ohne zwischen OSINT-Seiten zu wechseln.", webAction: "Website öffnen", clockPreviewLabel: "Vorschau von Clock" },
+    blog: { eyebrow: "BLOG", heading: "Wir halten fest, wie wir bauen", intro: "Neuigkeiten zu Produkten und Funktionen sowie Probleme aus der Entwicklung und wie wir sie gelöst haben.", viewAction: "Zum Blog" },
   },
   boxes: {
-    description: "Ein Desktop-Werkzeug, das Dateien, Ordner und Verknüpfungen auf dem Windows-Desktop in flexiblen Boxen organisiert.",
+    description: "Lass deine Dateien in ihren ursprünglichen Ordnern und sammle sie auf dem Desktop in Boxen pro Aufgabe. Die Grundfunktionen sind kostenlos, auch im Unternehmen.",
     tagline: "Ordne einen unübersichtlichen Desktop auf einen Blick.", downloadAction: "Kostenlos herunterladen", screenshotAlts: ["Boxes-Demoansicht 1", "Boxes-Demoansicht 2"],
     carousel: { regionLabel: "Boxes-Vorschau", controlsLabel: "Produktansicht auswählen" },
     features: {

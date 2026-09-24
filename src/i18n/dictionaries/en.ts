@@ -67,11 +67,11 @@ const en: Dictionary = {
         { eyebrow: "DESKTOP, ORGANIZED", title: "Find the files you need faster.", description: "Group work, projects, and frequently used tools your way, then open them right when you need them.", actionLabel: "Explore the product", imageAlt: "Boxes demo screen 2" },
       ],
     },
-    products: { eyebrow: "GHOSTYAK SOFTWARE", heading: "Products available now", intro: "We focus on solving the small frustrations you face every day, not adding complexity.", freeBadge: "Free", viewAction: "Explore the product", webBadge: "Web", clockDescription: "A free online time toolkit with the current time, alarms, timers, Pomodoro, a stopwatch, and world clocks in one place.", osintsDescription: "A tool for searching and analyzing IP addresses, domains, and more using multiple OSINT sites in one place.", webAction: "Open website", clockPreviewLabel: "Clock preview" },
-    blog: { eyebrow: "BLOG", heading: "Notes on what we are building", intro: "Read GhostYak product news and development stories.", viewAction: "View the blog" },
+    products: { eyebrow: "GHOSTYAK SOFTWARE", heading: "Small tools you reach for every day", intro: "From desktop organization and time management to OSINT and forensic investigations. Rather than piling on features, we focus on properly solving one frustration you run into often.", freeBadge: "Free", viewAction: "Explore the product", webBadge: "Web", clockDescription: "A time tool with the current time, world clock, alarms, timers, Pomodoro, and a stopwatch, ready in your browser with nothing to install.", osintsDescription: "Search and analyze IP addresses, domains, and more in one place, without jumping between OSINT sites.", webAction: "Open website", clockPreviewLabel: "Clock preview" },
+    blog: { eyebrow: "BLOG", heading: "A record of how we build", intro: "News about new products and features, plus the problems we ran into while building and how we solved them.", viewAction: "View the blog" },
   },
   boxes: {
-    description: "A desktop tool that organizes files, folders, and shortcuts on your Windows desktop into flexible boxes.",
+    description: "Keep files in their original folders and gather them into task-based boxes on your desktop. Core features are free, including at work.",
     tagline: "Organize a scattered desktop at a glance.", downloadAction: "Free download", screenshotAlts: ["Boxes demo screen 1", "Boxes demo screen 2"],
     carousel: { regionLabel: "Boxes preview", controlsLabel: "Choose a product screen" },
     features: {

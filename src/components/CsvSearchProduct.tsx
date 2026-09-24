@@ -14,9 +14,9 @@ export async function CsvSearchProduct({ locale }: { locale: PublishedLocale }) 
   return <main id="main-content" className="mx-auto max-w-7xl px-4 pb-16 [overflow-wrap:anywhere] sm:px-8 sm:pb-24">
     <PageHero
       eyebrow={<>
-        <Badge variant="secondary" className="min-h-7 gap-2 px-3"><TableProperties className="size-3" aria-hidden="true" />{copy.category}</Badge>
-        <Badge variant="outline" className="min-h-7 px-3">DFIR</Badge>
-        <Badge variant="outline" className="min-h-7 px-3">{csvSearchEngine.platform}</Badge>
+        <Badge className="min-h-7 gap-2 rounded-full bg-ink px-3 text-white"><TableProperties className="size-3" aria-hidden="true" />{copy.category}</Badge>
+        <Badge variant="outline" className="min-h-7 rounded-full bg-card px-3">DFIR</Badge>
+        <Badge variant="outline" className="min-h-7 rounded-full bg-card px-3">{csvSearchEngine.platform}</Badge>
       </>}
       title={csvSearchEngine.name}
       description={copy.description}

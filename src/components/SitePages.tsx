@@ -1,82 +1,113 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Clock3, ScanSearch, PanelsTopLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, Clock3, ScanSearch, ChevronRight } from "lucide-react";
 import { notFound, redirect } from "next/navigation";
-import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { boxes, clock, osints } from "@/data/products";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { localeConfig, type PublishedLocale } from "@/i18n/locales";
 import { localizedPath } from "@/i18n/routing";
-import { getAllPosts, getPost } from "@/lib/blog";
+import { getAllPosts, getPost, type BlogPostSummary } from "@/lib/blog";
 import { getSoftwareApplicationJsonLd } from "@/seo";
 import { RenewalLanding } from "@/components/renewal/RenewalLanding";
 import { CsvSearchCard } from "@/components/CsvSearchCard";
 import { PageHero } from "@/components/PageHero";
+import { ProductCard } from "@/components/ProductCard";
+
+const eyebrowClassName = "inline-flex items-center justify-center gap-2.5 text-xs font-semibold tracking-[0.18em] text-brand-foreground";
+
+// Decorative gold glow and grid behind ink hero bands.
+function InkBackdrop() {
+  return <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div className="absolute inset-0 bg-[linear-gradient(to_right,rgb(255_255_255/0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgb(255_255_255/0.04)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_75%)]" />
+    <div className="absolute left-1/2 top-0 h-80 w-[min(56rem,100%)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/15 blur-3xl" />
+  </div>;
+}
+
+function formatPublishedAt(locale: PublishedLocale, value: string) {
+  return new Intl.DateTimeFormat(localeConfig[locale].htmlLanguage, { dateStyle: "long", timeZone: "Asia/Seoul" }).format(new Date(`${value}T00:00:00+09:00`));
+}
+
+function PostCard({ post, locale, readMore, featured = false, headingLevel: Heading = "h2" }: { post: BlogPostSummary; locale: PublishedLocale; readMore: string; featured?: boolean; headingLevel?: "h2" | "h3" }) {
+  const href = localizedPath(locale, `/blog/${post.slug}`);
+  return <article className={cn("group relative flex h-full flex-col rounded-3xl border p-7 transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-ink/10 motion-reduce:hover:translate-y-0 sm:p-9", featured ? "surface-ink overflow-hidden border-transparent md:col-span-2 md:p-12" : "bg-card")}>
+    {featured && <InkBackdrop />}
+    <time className="relative text-xs font-medium text-muted-foreground" dateTime={post.publishedAt}>{formatPublishedAt(locale, post.publishedAt)}</time>
+    <Heading className={cn("relative mt-4 font-semibold leading-snug tracking-[-0.03em] text-balance", featured ? "max-w-3xl text-3xl sm:text-4xl" : "text-xl sm:text-2xl")}>
+      {/* The stretched link makes the whole card clickable while keeping one accessible link. */}
+      <Link className="after:absolute after:inset-0 after:rounded-3xl focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-offset-4 focus-visible:after:outline-ring" href={href}>{post.title}</Link>
+    </Heading>
+    <p className={cn("relative mb-7 mt-3 leading-7 text-muted-foreground", featured ? "max-w-2xl text-base" : "text-sm")}>{post.description}</p>
+    <span className="relative mt-auto inline-flex min-h-11 items-center gap-2 text-sm font-medium" aria-hidden="true">{readMore}<ArrowRight className="size-4 transition-transform group-hover:translate-x-1 motion-reduce:transition-none" /></span>
+  </article>;
+}
 
 export async function HomeContent({ locale }: { locale: PublishedLocale }) {
-  const dictionary = await getDictionary(locale);
+  const [dictionary, posts] = await Promise.all([getDictionary(locale), getAllPosts(locale)]);
   const copy = dictionary.home;
   return <main id="main-content">
-    <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-8 sm:pb-24" id="products" aria-labelledby="product-title">
-      <PageHero
-        id="product-title"
-        eyebrow={<p className="inline-flex items-center justify-center gap-2.5 text-xs font-semibold tracking-[0.18em] text-primary"><span className="size-2 shrink-0 rounded-full bg-primary" aria-hidden="true" />{copy.products.eyebrow}</p>}
-        title={copy.products.heading}
-        description={copy.products.intro}
-      />
+    <section id="products" aria-labelledby="product-title">
+      <div className="surface-ink relative overflow-hidden px-4 pb-24 sm:px-8 sm:pb-32">
+        <InkBackdrop />
+        <div className="relative">
+          <PageHero
+            id="product-title"
+            eyebrow={<p className={eyebrowClassName}><span className="size-2 shrink-0 rounded-full bg-brand" aria-hidden="true" />{copy.products.eyebrow}</p>}
+            title={copy.products.heading}
+            description={copy.products.intro}
+          />
+        </div>
+      </div>
 
-      <div className="grid gap-6 md:auto-rows-fr md:grid-cols-2">
-        <Card className="gap-0 overflow-hidden rounded-2xl py-0 shadow-none">
-          <article className="flex h-full flex-col">
-            <figure className="h-60 shrink-0 bg-[#e9edf5] p-4 sm:p-6">
-              <a href={localizedPath(locale, "/product/boxes")} className="block h-full" aria-label={copy.products.viewAction + ": Boxes"}>
+      <div className="relative mx-auto -mt-24 max-w-7xl px-4 pb-16 sm:-mt-32 sm:px-8 sm:pb-24">
+        <div className="grid gap-6 md:auto-rows-fr md:grid-cols-2">
+          <ProductCard
+            name={boxes.name}
+            badges={[{ label: copy.products.freeBadge, tone: "free" }, { label: boxes.platform }]}
+            description={dictionary.boxes.description}
+            action={{ label: copy.products.viewAction, href: localizedPath(locale, "/product/boxes") }}
+            preview={<figure className="relative h-full bg-ink p-4 sm:p-6">
+              <div className="absolute inset-x-10 bottom-0 h-24 rounded-full bg-brand/20 blur-3xl" aria-hidden="true" />
+              <a href={localizedPath(locale, "/product/boxes")} className="relative block h-full" aria-label={copy.products.viewAction + ": Boxes"}>
                 <Image {...boxes.preview} preload className="h-full w-full object-contain" alt={dictionary.boxes.screenshotAlts[0]} sizes="(min-width: 1280px) 540px, (min-width: 768px) calc((100vw - 138px) / 2), calc(100vw - 82px)" />
               </a>
-            </figure>
-            <CardContent className="flex flex-1 flex-col items-start p-6 sm:p-8">
-              <div className="flex w-full flex-wrap items-center justify-between gap-3"><h2 className="text-3xl font-semibold tracking-tight">{boxes.name}</h2><div className="flex flex-wrap gap-2"><Badge variant="secondary">{copy.products.freeBadge}</Badge><Badge variant="outline">{boxes.platform}</Badge></div></div>
-              <p className="mb-6 mt-4 text-sm leading-7 text-muted-foreground">{dictionary.boxes.description}</p>
-              <a className={cn(buttonVariants({ variant: "outline", className: "mt-auto h-auto min-h-11 max-w-full whitespace-normal py-3" }))} href={localizedPath(locale, "/product/boxes")}>{copy.products.viewAction}<ArrowRight aria-hidden="true" /></a>
-            </CardContent>
-          </article>
-        </Card>
-        <Card className="gap-0 overflow-hidden rounded-2xl py-0 shadow-none">
-          <article className="flex h-full flex-col">
-            <figure className="relative flex h-60 shrink-0 flex-col items-center justify-center overflow-hidden bg-[#18202c] px-4 py-12 text-white" aria-label={copy.products.clockPreviewLabel}>
-              <div className="absolute size-80 rounded-full border border-white/5" aria-hidden="true" /><div className="absolute size-60 rounded-full border border-white/10" aria-hidden="true" />
-              <Clock3 className="mb-4 size-5 text-blue-300" aria-hidden="true" /><time className="relative text-5xl font-light tabular-nums tracking-[-0.05em] sm:text-6xl" dateTime="10:09:42">10<span className="text-blue-300">:</span>09<span className="text-blue-300">:</span>42</time><span className="relative mt-4 font-mono text-[11px] tracking-[0.15em] text-slate-400">2026. 09. 08.</span>
-            </figure>
-            <CardContent className="flex flex-1 flex-col items-start p-6 sm:p-8">
-              <div className="flex w-full flex-wrap items-center justify-between gap-3"><h2 className="text-3xl font-semibold tracking-tight">{clock.name}</h2><div className="flex gap-2"><Badge variant="secondary">{copy.products.freeBadge}</Badge><Badge variant="outline">{copy.products.webBadge}</Badge></div></div>
-              <p className="mb-6 mt-4 text-sm leading-7 text-muted-foreground">{copy.products.clockDescription}</p>
-              <a className={cn(buttonVariants({ variant: "outline", className: "mt-auto h-auto min-h-11 max-w-full whitespace-normal py-3" }))} href={clock.url} rel="noreferrer" target="_blank">{copy.products.webAction}<ArrowUpRight aria-hidden="true" /></a>
-            </CardContent>
-          </article>
-        </Card>
-        <Card className="gap-0 overflow-hidden rounded-2xl py-0 shadow-none">
-          <article className="flex h-full flex-col">
-            <div className="relative flex h-60 shrink-0 items-center justify-center overflow-hidden bg-[#e9eef1] px-4 py-12" aria-hidden="true">
-              <div className="absolute h-px w-full bg-slate-300/50" /><div className="absolute h-full w-px bg-slate-300/50" /><div className="absolute size-48 rounded-full border border-slate-300/80" /><div className="absolute size-72 rounded-full border border-slate-300/50" />
-              <div className="relative flex items-center gap-3 rounded-xl border border-white bg-white/80 px-7 py-5 shadow-lg shadow-slate-400/10 backdrop-blur-sm"><ScanSearch className="size-7 text-primary" /><span className="text-3xl font-semibold tracking-tight">{osints.name}</span></div>
-            </div>
-            <CardContent className="flex flex-1 flex-col items-start p-6 sm:p-8">
-              <div className="flex w-full flex-wrap items-center justify-between gap-3"><h2 className="text-3xl font-semibold tracking-tight">{osints.name}</h2><Badge variant="outline">{copy.products.webBadge}</Badge></div>
-              <p className="mb-6 mt-4 text-sm leading-7 text-muted-foreground">{copy.products.osintsDescription}</p>
-              <a className={cn(buttonVariants({ variant: "outline", className: "mt-auto h-auto min-h-11 max-w-full whitespace-normal py-3" }))} href={osints.url} rel="noreferrer" target="_blank">{copy.products.webAction}<ArrowUpRight aria-hidden="true" /></a>
-            </CardContent>
-          </article>
-        </Card>
-        <CsvSearchCard copy={dictionary.csvSearch} locale={locale} viewAction={copy.products.viewAction} />
+            </figure>}
+          />
+          <ProductCard
+            name={clock.name}
+            badges={[{ label: copy.products.freeBadge, tone: "free" }, { label: copy.products.webBadge }]}
+            description={copy.products.clockDescription}
+            action={{ label: copy.products.webAction, href: clock.url, external: true }}
+            preview={<figure className="surface-ink relative flex h-full flex-col items-center justify-center overflow-hidden px-4 py-12" aria-label={copy.products.clockPreviewLabel}>
+              <div className="absolute size-80 rounded-full border border-white/5" aria-hidden="true" /><div className="absolute size-60 rounded-full border border-brand/15" aria-hidden="true" />
+              <Clock3 className="relative mb-4 size-5 text-brand" aria-hidden="true" /><time className="relative text-5xl font-light tabular-nums tracking-[-0.05em] sm:text-6xl" dateTime="10:09:42">10<span className="text-brand">:</span>09<span className="text-brand">:</span>42</time><span className="relative mt-4 font-mono text-[11px] tracking-[0.15em] text-muted-foreground">2026. 09. 08.</span>
+            </figure>}
+          />
+          <ProductCard
+            name={osints.name}
+            badges={[{ label: copy.products.webBadge }]}
+            description={copy.products.osintsDescription}
+            action={{ label: copy.products.webAction, href: osints.url, external: true }}
+            preview={<div className="relative flex h-full items-center justify-center overflow-hidden bg-muted px-4 py-12" aria-hidden="true">
+              <div className="absolute h-px w-full bg-ink/10" /><div className="absolute h-full w-px bg-ink/10" /><div className="absolute size-48 rounded-full border border-ink/15" /><div className="absolute size-72 rounded-full border border-ink/10" /><div className="absolute size-3 translate-x-16 -translate-y-10 rounded-full bg-brand shadow-[0_0_0_6px_rgb(255_208_54/0.25)]" />
+              <div className="relative flex items-center gap-3 rounded-2xl bg-card px-7 py-5 shadow-lg shadow-ink/10"><ScanSearch className="size-7 text-brand-foreground" /><span className="text-3xl font-semibold tracking-tight">{osints.name}</span></div>
+            </div>}
+          />
+          <CsvSearchCard copy={dictionary.csvSearch} locale={locale} viewAction={copy.products.viewAction} />
+        </div>
       </div>
     </section>
 
-    <section className="border-t bg-muted/40 px-4 py-14 sm:px-8 sm:py-20" aria-labelledby="blog-title">
-      <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[1fr_auto] md:items-center">
-        <div><p className="mb-4 text-xs font-semibold tracking-[0.18em] text-primary">{copy.blog.eyebrow}</p><h2 className="text-3xl font-semibold tracking-tight sm:text-4xl" id="blog-title">{copy.blog.heading}</h2><p className="mt-4 max-w-2xl leading-7 text-muted-foreground">{copy.blog.intro}</p></div>
-        <Link className={cn(buttonVariants({ variant: "outline", size: "lg", className: "h-auto min-h-12 w-fit max-w-full whitespace-normal py-3" }))} href={localizedPath(locale, "/blog")}>{copy.blog.viewAction}<ArrowRight aria-hidden="true" /></Link>
+    <section className="border-t bg-muted/50 px-4 py-16 sm:px-8 sm:py-24" aria-labelledby="blog-title">
+      <div className="mx-auto max-w-7xl">
+        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div><p className={cn(eyebrowClassName, "mb-4")}>{copy.blog.eyebrow}</p><h2 className="text-3xl font-semibold tracking-[-0.035em] sm:text-4xl" id="blog-title">{copy.blog.heading}</h2><p className="mt-4 max-w-2xl leading-7 text-muted-foreground">{copy.blog.intro}</p></div>
+          <Link className={cn(buttonVariants({ variant: "outline", size: "lg", className: "h-auto min-h-12 w-fit max-w-full shrink-0 whitespace-normal rounded-full px-6 py-3" }))} href={localizedPath(locale, "/blog")}>{copy.blog.viewAction}<ArrowRight aria-hidden="true" /></Link>
+        </div>
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {posts.slice(0, 3).map(post => <PostCard key={post.slug} post={post} locale={locale} readMore={dictionary.blog.readMore} headingLevel="h3" />)}
+        </div>
       </div>
     </section>
   </main>;
@@ -92,21 +123,12 @@ export function BoxesDownloadContent({ locale }: { locale: PublishedLocale }) {
   return redirect(localizedPath(locale, "/product/boxes") + "#download");
 }
 
-function formatPublishedAt(locale: PublishedLocale, value: string) {
-  return new Intl.DateTimeFormat(localeConfig[locale].htmlLanguage, { dateStyle: "long", timeZone: "Asia/Seoul" }).format(new Date(`${value}T00:00:00+09:00`));
-}
-
 export async function BlogContent({ locale }: { locale: PublishedLocale }) {
   const [posts, dictionary] = await Promise.all([getAllPosts(locale), getDictionary(locale)]);
   return <main id="main-content" className="mx-auto max-w-7xl px-4 py-14 sm:px-8 sm:py-24">
-    <header className="max-w-3xl"><p className="mb-5 text-xs font-semibold tracking-[0.18em] text-primary">{dictionary.blog.eyebrow}</p><h1 className="text-5xl font-semibold tracking-[-0.045em] sm:text-7xl">{dictionary.blog.heading}</h1><p className="mt-6 text-lg leading-8 text-muted-foreground">{dictionary.blog.intro}</p></header>
+    <header className="max-w-3xl"><p className={cn(eyebrowClassName, "mb-5")}>{dictionary.blog.eyebrow}</p><h1 className="text-5xl font-semibold tracking-[-0.045em] sm:text-7xl">{dictionary.blog.heading}</h1><p className="mt-6 text-lg leading-8 text-muted-foreground">{dictionary.blog.intro}</p></header>
     <div className="mt-14 grid gap-6 md:grid-cols-2">
-      {posts.map((post, index) => <Card key={post.slug} className="gap-0 overflow-hidden py-0 shadow-none">
-        <article className="flex h-full flex-col">
-          <div className="flex h-40 items-center justify-between bg-muted/70 px-7 sm:h-48 sm:px-9" aria-hidden="true"><PanelsTopLeft className="size-12 stroke-1 text-primary" /><span className="text-7xl font-light tracking-tighter text-foreground/10">{String(index + 1).padStart(2, "0")}</span></div>
-          <CardContent className="flex flex-1 flex-col items-start p-7 sm:p-9"><time className="text-xs text-muted-foreground" dateTime={post.publishedAt}>{formatPublishedAt(locale, post.publishedAt)}</time><h2 className="mt-4 text-2xl font-semibold leading-snug tracking-tight"><Link className="hover:text-primary" href={localizedPath(locale, `/blog/${post.slug}`)}>{post.title}</Link></h2><p className="mb-6 mt-3 text-sm leading-7 text-muted-foreground">{post.description}</p><Link className={cn(buttonVariants({ variant: "link", className: "mt-auto min-h-11 h-auto max-w-full whitespace-normal px-0 text-foreground" }))} href={localizedPath(locale, `/blog/${post.slug}`)}>{dictionary.blog.readMore}<ArrowRight aria-hidden="true" /></Link></CardContent>
-        </article>
-      </Card>)}
+      {posts.map((post, index) => <PostCard key={post.slug} post={post} locale={locale} readMore={dictionary.blog.readMore} featured={index === 0} />)}
     </div>
   </main>;
 }
@@ -114,11 +136,19 @@ export async function BlogContent({ locale }: { locale: PublishedLocale }) {
 export async function BlogPostContent({ locale, slug }: { locale: PublishedLocale; slug: string }) {
   const [post, dictionary] = await Promise.all([getPost(locale, slug), getDictionary(locale)]);
   if (!post) notFound();
-  return <main id="main-content" className="px-4 py-10 sm:px-8 sm:py-16">
-    <article className="mx-auto max-w-3xl">
-      <nav className="mb-10 text-sm text-muted-foreground" aria-label={dictionary.blog.breadcrumbLabel}><ol className="flex flex-wrap items-center gap-2"><li><Link className="inline-flex min-h-11 items-center hover:text-primary" href={localizedPath(locale, "/blog")}>{dictionary.blog.breadcrumbHome}</Link></li><li aria-hidden="true"><ChevronRight className="size-3.5" /></li><li className="min-w-0" aria-current="page">{post.title}</li></ol></nav>
-      <header className="border-b pb-10"><p className="text-xs font-semibold tracking-[0.18em] text-primary">{dictionary.blog.eyebrow}</p><h1 className="mt-5 text-4xl font-semibold leading-[1.2] tracking-[-0.04em] text-balance sm:text-5xl">{post.title}</h1><p className="mt-6 text-lg leading-8 text-muted-foreground">{post.description}</p><time className="mt-6 block text-sm text-muted-foreground" dateTime={post.publishedAt}>{formatPublishedAt(locale, post.publishedAt)}</time></header>
-      <div className="mt-10 text-base leading-8 text-foreground/85 sm:text-lg [&_a]:text-primary [&_a]:underline [&_a]:underline-offset-4 [&_h2]:mb-4 [&_h2]:mt-12 [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:tracking-tight [&_h3]:mt-8 [&_h3]:font-semibold [&_img]:h-auto [&_img]:max-w-full [&_img]:rounded-xl [&_li]:ml-6 [&_li]:pl-1 [&_ol]:list-decimal [&_p]:my-5 [&_pre]:overflow-x-auto [&_pre]:rounded-lg [&_pre]:bg-muted [&_pre]:p-4 [&_strong]:font-semibold [&_strong]:text-foreground [&_ul]:my-6 [&_ul]:list-disc [&_ul]:space-y-2" dangerouslySetInnerHTML={{ __html: post.html }} />
-    </article>
-  </main>;
+  return <main id="main-content"><article>
+    <header className="surface-ink relative overflow-hidden px-4 pb-14 pt-6 sm:px-8 sm:pb-20 sm:pt-10">
+      <InkBackdrop />
+      <div className="relative mx-auto max-w-3xl">
+        <nav className="mb-10 text-sm text-muted-foreground" aria-label={dictionary.blog.breadcrumbLabel}><ol className="flex flex-wrap items-center gap-2"><li><Link className="inline-flex min-h-11 items-center hover:text-foreground" href={localizedPath(locale, "/blog")}>{dictionary.blog.breadcrumbHome}</Link></li><li aria-hidden="true"><ChevronRight className="size-3.5" /></li><li className="min-w-0" aria-current="page">{post.title}</li></ol></nav>
+        <p className={eyebrowClassName}>{dictionary.blog.eyebrow}</p>
+        <h1 className="mt-5 text-4xl font-semibold leading-[1.2] tracking-[-0.04em] text-balance sm:text-5xl">{post.title}</h1>
+        <p className="mt-6 text-lg leading-8 text-muted-foreground">{post.description}</p>
+        <time className="mt-6 block text-sm text-muted-foreground" dateTime={post.publishedAt}>{formatPublishedAt(locale, post.publishedAt)}</time>
+      </div>
+    </header>
+    <div className="px-4 py-12 sm:px-8 sm:py-16">
+      <div className="mx-auto max-w-3xl text-base leading-8 text-foreground/85 sm:text-lg [&_a]:font-medium [&_a]:text-foreground [&_a]:underline [&_a]:decoration-brand [&_a]:decoration-2 [&_a]:underline-offset-4 [&_a:hover]:decoration-ink [&_blockquote]:my-8 [&_blockquote]:border-l-4 [&_blockquote]:border-brand [&_blockquote]:pl-5 [&_blockquote]:text-muted-foreground [&_code]:rounded [&_code]:bg-muted [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:text-[0.9em] [&_h2]:mb-4 [&_h2]:mt-14 [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:tracking-tight [&_h2]:text-foreground [&_h3]:mt-8 [&_h3]:font-semibold [&_h3]:text-foreground [&_hr]:my-12 [&_img]:h-auto [&_img]:max-w-full [&_img]:rounded-2xl [&_img]:border [&_li]:ml-6 [&_li]:pl-1 [&_ol]:list-decimal [&_p]:my-5 [&_pre]:overflow-x-auto [&_pre]:rounded-xl [&_pre]:bg-muted [&_pre]:p-4 [&_pre_code]:bg-transparent [&_pre_code]:p-0 [&_strong]:font-semibold [&_strong]:text-foreground [&_ul]:my-6 [&_ul]:list-disc [&_ul]:space-y-2" dangerouslySetInnerHTML={{ __html: post.html }} />
+    </div>
+  </article></main>;
 }

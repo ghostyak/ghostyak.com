@@ -12,10 +12,10 @@ export function Header({ labels, digitalForensicsLabel, locale, currentPath }: {
   const productPath = localizedPath(locale, "/product/boxes");
   const csvSearchPath = localizedPath(locale, csvSearchEngine.pagePath);
   const blogPath = localizedPath(locale, "/blog");
-  return <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur-xl">
+  return <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-xl supports-[backdrop-filter]:bg-background/75">
     <div className="mx-auto flex min-h-16 max-w-7xl items-center gap-2 px-4 sm:min-h-20 sm:gap-8 sm:px-8">
       <a className="flex min-h-11 shrink-0 items-center gap-2.5 font-semibold tracking-tight sm:text-xl" href={localizedPath(locale, "/")} aria-label={labels.homeLabel}>
-        <Image className="size-8 object-contain" src="/favicon.svg" alt="" width={32} height={32} loading="eager" /><span className="hidden min-[400px]:inline">GhostYak<span className="text-primary">.</span></span>
+        <Image className="size-8 rounded-lg object-contain shadow-sm shadow-ink/20" src="/favicon.svg" alt="" width={32} height={32} loading="eager" /><span className="hidden min-[400px]:inline">GhostYak<span className="text-brand-foreground">.</span></span>
       </a>
       <nav className="ml-auto flex min-w-0 items-center gap-0.5 sm:gap-2" aria-label={labels.navigationLabel}>
         <ProductsDropdown label={labels.products} groups={[
@@ -28,7 +28,7 @@ export function Header({ labels, digitalForensicsLabel, locale, currentPath }: {
             { name: csvSearchEngine.name, href: csvSearchPath, icon: "csvSearch", current: currentPath === csvSearchPath },
           ] },
         ]} />
-        <a className={cn(buttonVariants({ variant: "ghost", className: "min-h-11 px-2.5 sm:px-4" }))} href={blogPath} aria-current={currentPath.startsWith(blogPath) ? "page" : undefined}>{labels.blog}</a>
+        <a className={cn(buttonVariants({ variant: "ghost", className: "min-h-11 rounded-full px-2.5 aria-[current=page]:bg-accent sm:px-4" }))} href={blogPath} aria-current={currentPath.startsWith(blogPath) ? "page" : undefined}>{labels.blog}</a>
       </nav>
       <div className="border-l pl-1 sm:pl-5"><LanguageSwitcher currentLocale={locale} currentPath={currentPath} label={labels.language} /></div>
     </div>

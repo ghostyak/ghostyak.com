@@ -67,11 +67,11 @@ const fr: Dictionary = {
         { eyebrow: "DESKTOP, ORGANIZED", title: "Trouvez plus vite les fichiers dont vous avez besoin.", description: "Classez le travail, les projets et les outils fréquents à votre façon, puis ouvrez-les dès que nécessaire.", actionLabel: "Découvrir le produit", imageAlt: "Écran de démonstration 2 de Boxes" },
       ],
     },
-    products: { eyebrow: "GHOSTYAK SOFTWARE", heading: "Produits disponibles maintenant", intro: "Nous nous concentrons sur les petits désagréments du quotidien plutôt que d’ajouter de la complexité.", freeBadge: "Gratuit", viewAction: "Découvrir le produit", webBadge: "Web", clockDescription: "Une boîte à outils gratuite en ligne réunissant heure actuelle, alarmes, minuteurs, Pomodoro, chronomètre et horloges mondiales.", osintsDescription: "Un outil pour rechercher et analyser des adresses IP, des domaines et plus encore via plusieurs sites OSINT réunis au même endroit.", webAction: "Ouvrir le site", clockPreviewLabel: "Aperçu de Clock" },
-    blog: { eyebrow: "BLOG", heading: "Les coulisses de nos créations", intro: "Retrouvez les actualités produits et les récits de développement sur le blog GhostYak.", viewAction: "Voir le blog" },
+    products: { eyebrow: "GHOSTYAK SOFTWARE", heading: "Nous créons de petits outils pour tous les jours", intro: "De l’organisation du bureau à la gestion du temps, jusqu’aux enquêtes OSINT et forensiques. Plutôt que d’accumuler les fonctionnalités, nous nous attachons à bien résoudre un désagrément fréquent.", freeBadge: "Gratuit", viewAction: "Découvrir le produit", webBadge: "Web", clockDescription: "Un outil pour l’heure actuelle, l’horloge mondiale, les alarmes, le minuteur, le Pomodoro et le chronomètre, directement dans le navigateur, sans installation.", osintsDescription: "Recherchez et analysez adresses IP, domaines et plus encore au même endroit, sans passer d’un site OSINT à l’autre.", webAction: "Ouvrir le site", clockPreviewLabel: "Aperçu de Clock" },
+    blog: { eyebrow: "BLOG", heading: "Nous racontons comment nous créons", intro: "Les nouveautés produits et fonctionnalités, ainsi que les problèmes rencontrés en développement et la façon dont nous les avons résolus.", viewAction: "Voir le blog" },
   },
   boxes: {
-    description: "Un outil de bureau qui organise les fichiers, dossiers et raccourcis du bureau Windows dans des boîtes flexibles.",
+    description: "Laissez vos fichiers dans leurs dossiers d’origine et regroupez-les sur le bureau dans des boîtes par tâche. Les fonctions de base sont gratuites, y compris en entreprise.",
     tagline: "Organisez un bureau dispersé d’un coup d’œil.", downloadAction: "Téléchargement gratuit", screenshotAlts: ["Écran de démonstration 1 de Boxes", "Écran de démonstration 2 de Boxes"],
     carousel: { regionLabel: "Aperçu de Boxes", controlsLabel: "Choisir un écran du produit" },
     features: {

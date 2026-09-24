@@ -67,11 +67,11 @@ const ja: Dictionary = {
         { eyebrow: "DESKTOP, ORGANIZED", title: "必要なファイルをもっとすばやく。", description: "仕事、プロジェクト、よく使うツールを自分の方法で分け、必要なときにすぐ開けます。", actionLabel: "製品を見る", imageAlt: "Boxesデモ画面2" },
       ],
     },
-    products: { eyebrow: "GHOSTYAK SOFTWARE", heading: "現在ご利用いただける製品", intro: "複雑な機能を増やすのではなく、毎日の小さな不便を解決することに集中しています。", freeBadge: "無料", viewAction: "製品を見る", webBadge: "ウェブ", clockDescription: "現在時刻、アラーム、タイマー、ポモドーロ、ストップウォッチ、世界時計をひとつにまとめた無料のオンライン時間ツールです。", osintsDescription: "複数のOSINTサイトをひとつの場所で利用して、IPアドレスやドメインなどを検索・分析するツールです。", webAction: "ウェブサイトを開く", clockPreviewLabel: "Clockのプレビュー" },
-    blog: { eyebrow: "BLOG", heading: "開発しているものの記録", intro: "製品ニュースや開発の話をGhostYakブログでお届けします。", viewAction: "ブログを見る" },
+    products: { eyebrow: "GHOSTYAK SOFTWARE", heading: "毎日手に取る、小さな道具をつくっています", intro: "デスクトップ整理や時間管理から、OSINT・フォレンジック調査まで。機能を増やすより、よく出会う不便をひとつ、きちんと解決することに集中しています。", freeBadge: "無料", viewAction: "製品を見る", webBadge: "ウェブ", clockDescription: "現在時刻、世界時計、アラーム、タイマー、ポモドーロ、ストップウォッチを、インストール不要でブラウザからすぐに使える時間ツールです。", osintsDescription: "複数のOSINTサイトを行き来せずに、IPアドレスやドメインなどをひとつの場所で検索・分析しましょう。", webAction: "ウェブサイトを開く", clockPreviewLabel: "Clockのプレビュー" },
+    blog: { eyebrow: "BLOG", heading: "つくる過程を記録しています", intro: "新しい製品や機能のお知らせ、開発中にぶつかった問題とその解決までをお伝えします。", viewAction: "ブログを見る" },
   },
   boxes: {
-    description: "Windowsデスクトップ上のファイル、フォルダー、ショートカットを柔軟なボックスにまとめて整理するデスクトップツールです。",
+    description: "ファイルは元のフォルダーに置いたまま、デスクトップでは作業ごとのボックスにまとめましょう。基本機能は会社でも無料です。",
     tagline: "散らかったデスクトップをひと目で整理。", downloadAction: "無料ダウンロード", screenshotAlts: ["Boxesデモ画面1", "Boxesデモ画面2"],
     carousel: { regionLabel: "Boxes画面プレビュー", controlsLabel: "製品画面を選択" },
     features: {
