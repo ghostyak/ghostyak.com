@@ -142,9 +142,10 @@ export async function HomeContent({ locale }: { locale: PublishedLocale }) {
 }
 
 export async function BoxesContent({ locale }: { locale: PublishedLocale }) {
-  const { landing: copy, share } = await getDictionary(locale);
+  const dictionary = await getDictionary(locale);
+  const { landing: copy, share, header } = dictionary;
   const jsonLd = getSoftwareApplicationJsonLd({ locale, description: copy.metadata.description, featureNames: copy.free.currentFeatures });
-  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} /><RenewalLanding copy={copy} locale={locale} currentPath={localizedPath(locale, "/product/boxes")} shareLabels={share} /></>;
+  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} /><RenewalLanding copy={copy} locale={locale} currentPath={localizedPath(locale, "/product/boxes")} supportUrl={localizedPath(locale, "/support")} supportAction={header.support} shareLabels={share} /></>;
 }
 
 export function BoxesDownloadContent({ locale }: { locale: PublishedLocale }) {

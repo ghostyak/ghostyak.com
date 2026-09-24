@@ -82,7 +82,7 @@ Boxes의 버전, 설치 파일 URL과 실제 이미지 경로, Clock과 OSINTS�
 
 홈은 Boxes·Clock·OSINTS·CSV Search Engine·Folder History의 동일한 크기 카드와 블로그 진입 영역으로 구성한다. 블로그 목록은 카드, 상세는 좁은 본문 폭을 사용한다. 모든 공개 페이지는 루트 레이아웃의 본문 건너뛰기 링크와 공통 푸터를 공유한다.
 
-홈과 두 제품 페이지는 `PageHero` Server Component로 제목·설명·배지·행동 버튼·보조 문구를 구성한다. 타이포그래피와 상하 여백은 이 컴포넌트에서 관리하며 페이지는 현재 언어의 문구와 링크만 전달한다. `heroActionClassName`은 제품 히어로 버튼의 크기를 공유한다.
+홈과 제품 상세 페이지는 `PageHero` Server Component로 제목·설명·배지·행동 버튼·보조 문구를 구성한다. 타이포그래피와 상하 여백은 이 컴포넌트에서 관리하며 페이지는 현재 언어의 문구와 링크만 전달한다. 제품 상세 페이지의 주요 행동은 다운로드, 설치·사용 안내, 현재 언어의 후원 랜딩 링크 순이다. 버튼 크기는 `heroActionClassName`으로 공유한다.
 ## CSV Search Engine
 
 홈의 `CsvSearchCard`는 디지털포렌식·침해사고대응(DFIR) 제품 CSV Search Engine을 사진 없이 소개하는 Server Component다. 제품명·제품 경로·GitHub 주소·직접 다운로드 URL·스크린샷 경로와 원본 크기는 `src/data/products.ts`의 `csvSearchEngine`에서 관리한다. 문구는 각 사전의 `csvSearch`에 둔다. 소개 버튼, 공통 제품 메뉴와 푸터는 현재 언어의 `/product/csv-search-engine`으로 연결한다.

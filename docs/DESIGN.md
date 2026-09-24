@@ -59,11 +59,11 @@
 
 CSV Search Engine 상세페이지는 2026-09-24부터 Folder History와 같은 공통 `ProductLanding` 구성을 쓴다. 히어로 배지는 `디지털포렌식`(남색)·`DFIR`·`Windows · x64`·`비상업적 용도 무료`(금색)이고, 첫 화면에 MFT 데이터 스크린샷을, 주요 기능 아래에 파일 열기 스크린샷을 한 장 둔다. 이어서 남색 오프라인 분석 안내, FAQ, 다운로드 구역(Windows 직접 다운로드와 GitHub 링크)을 둔다. 사용자 요청으로 자동 스크린샷 슬라이드와 `ScreenshotSlideshow` 컴포넌트를 삭제했다.
 
-홈 제품 카드는 768px 이상에서 동일한 너비·높이의 2×2 그리드로, 모바일에서는 한 열로 표시한다. 미리보기는 모두 240px 높이이며 Boxes는 전체 이미지를 `object-contain`으로 표시하고 CSV Search Engine은 아이콘을 표시한다. 제목·설명·행동 버튼의 크기와 본문 여백은 Clock·OSINTS에 맞춘다. 제품 상세 페이지에는 이 크기 변경을 적용하지 않는다.
+홈 제품 카드는 768px 이상에서 동일한 너비·높이의 2×2 그리드로, 모바일에서는 한 열로 표시한다. 미리보기는 모두 240px 높이이며 Boxes는 전체 이미지를 `object-contain`으로 표시하고 CSV Search Engine은 아이콘을 표시한다. 제목·설명·행동 버튼의 크기와 본문 여백은 Clock·OSINTS에 맞춘다. 제품 상세 페이지 첫 화면에는 다운로드·설치/사용 안내·후원하기 버튼을 같은 행에 두며, 후원 버튼은 해당 언어의 후원 랜딩으로 연결한다.
 
 ## Folder History 랜딩
 
-Folder History와 CSV Search Engine 상세페이지는 공통 `ProductLanding`(`src/components/ProductLanding.tsx`)을 쓴다. 첫 스크린샷이 히어로이고 나머지는 주요 기능 아래에 둔다(두 장이면 2열, 한 장이면 가운데 최대 768px). Folder History 상세페이지(`/{locale}/product/folder-history`)는 Boxes 랜딩과 같은 시각 언어를 쓴다. 순서는 제품명 히어로(`무료`·`Windows 11 · x64` 배지, 직접 다운로드·사용 방법 버튼), 남색 프레임의 최근 방문 목록 스크린샷, 사용 방법 3단계 카드, 주요 기능 6개 카드와 제외 규칙·설정 스크린샷 두 장, 남색 로컬 저장 안내, FAQ Accordion, 남색 다운로드 구역(다운로드 버튼과 GitHub 저장소 링크)이다. 스크린샷은 원본 비율을 유지하고 클릭하면 원본 이미지를 연다. 캡션에는 한국어 UI임을 표시한다. 홈 카드는 대표 스크린샷을 `object-contain`으로 표시하고, 제품 메뉴에서는 Clock·OSINTS 다음, 디지털포렌식 그룹 앞에 둔다.
+Folder History와 CSV Search Engine 상세페이지는 공통 `ProductLanding`(`src/components/ProductLanding.tsx`)을 쓴다. 첫 스크린샷이 히어로이고 나머지는 주요 기능 아래에 둔다(두 장이면 2열, 한 장이면 가운데 최대 768px). Folder History 상세페이지(`/{locale}/product/folder-history`)는 Boxes 랜딩과 같은 시각 언어를 쓴다. 순서는 제품명 히어로(`무료`·`Windows 11 · x64` 배지, 직접 다운로드·사용 방법·후원하기 버튼), 남색 프레임의 최근 방문 목록 스크린샷, 사용 방법 3단계 카드, 주요 기능 6개 카드와 제외 규칙·설정 스크린샷 두 장, 남색 로컬 저장 안내, FAQ Accordion, 남색 다운로드 구역(다운로드 버튼과 GitHub 저장소 링크)이다. 스크린샷은 원본 비율을 유지하고 클릭하면 원본 이미지를 연다. 캡션에는 한국어 UI임을 표시한다. 홈 카드는 대표 스크린샷을 `object-contain`으로 표시하고, 제품 메뉴에서는 Clock·OSINTS 다음, 디지털포렌식 그룹 앞에 둔다.
 
 ## 후원 랜딩
 

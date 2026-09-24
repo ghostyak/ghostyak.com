@@ -30,6 +30,8 @@ export async function CsvSearchProduct({ locale }: { locale: PublishedLocale }) 
     downloadUrl={csvSearchEngine.downloadUrl}
     repository={{ url: csvSearchEngine.url, label: copy.repositoryAction }}
     viewScreenshot={dictionary.landing.actions.viewScreenshot}
+    supportUrl={localizedPath(locale, "/support")}
+    supportAction={dictionary.header.support}
     shareUrl={`${siteUrl}${localizedPath(locale, csvSearchEngine.pagePath)}`}
     shareLabels={dictionary.share}
   />;
