@@ -9,6 +9,7 @@ import { supportPagePath } from "@/data/support";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import type { PublishedLocale } from "@/i18n/locales";
 import { localizedPath } from "@/i18n/routing";
+import { ScrollAwareHeader } from "@/components/ScrollAwareHeader";
 
 export function Header({ labels, categoryLabels, locale, currentPath }: { labels: Dictionary["header"]; categoryLabels: { windows: string; web: string; forensics: string }; locale: PublishedLocale; currentPath: string }) {
   const productPath = localizedPath(locale, "/product/boxes");
@@ -16,7 +17,7 @@ export function Header({ labels, categoryLabels, locale, currentPath }: { labels
   const folderHistoryPath = localizedPath(locale, folderHistory.pagePath);
   const blogPath = localizedPath(locale, "/blog");
   const supportPath = localizedPath(locale, supportPagePath);
-  return <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-xl supports-[backdrop-filter]:bg-background/75">
+  return <ScrollAwareHeader><header className="border-b border-border/70 bg-background/85 backdrop-blur-xl supports-[backdrop-filter]:bg-background/75">
     <div className="mx-auto flex min-h-16 max-w-7xl items-center gap-2 px-4 sm:min-h-20 sm:gap-8 sm:px-8">
       <a className="flex min-h-11 shrink-0 items-center gap-2.5 font-semibold tracking-tight sm:text-xl" href={localizedPath(locale, "/")} aria-label={labels.homeLabel}>
         <Image className="size-8 rounded-lg object-contain shadow-sm shadow-ink/20" src="/favicon.svg" alt="" width={32} height={32} loading="eager" /><span className="hidden min-[400px]:inline">GhostYak<span className="text-brand-foreground">.</span></span>
@@ -41,5 +42,5 @@ export function Header({ labels, categoryLabels, locale, currentPath }: { labels
       </nav>
       <div className="border-l pl-1 sm:pl-5"><LanguageSwitcher currentLocale={locale} currentPath={currentPath} label={labels.language} /></div>
     </div>
-  </header>;
+  </header></ScrollAwareHeader>;
 }
