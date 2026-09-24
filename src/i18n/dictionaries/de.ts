@@ -251,6 +251,23 @@ const de: Dictionary = {
     blog: { title: "Blog", description: "Produktneuigkeiten und Entwicklungsgeschichten von GhostYak." },
   },
   header: { homeLabel: "GhostYak-Startseite", navigationLabel: "Hauptmenü", language: "Sprache wählen", products: "Produkte", blog: "Blog", support: "Unterstützen" },
+  supportPage: {
+    metadataTitle: "GhostYak unterstützen",
+    title: "Unterstütze GhostYak",
+    description: "Die meisten Windows-Tools und Web-Apps von GhostYak sind kostenlos. Deine Unterstützung fließt in die Weiterentwicklung und Verbesserung dieser Produkte.",
+    methodsAction: "Möglichkeiten ansehen",
+    productsAction: "Produkte ansehen",
+    methods: { eyebrow: "So kannst du unterstützen", title: "Unterstütze auf dem Weg, der dir passt", description: "Beide Möglichkeiten laufen über eine externe Unterstützungsseite, die sich in einem neuen Tab öffnet.", action: "Auf {name} unterstützen", items: { buyMeACoffee: "Ein internationaler Unterstützungsdienst, über den du in wenigen Schritten per Karte beitragen kannst. Von überall auf der Welt einfach nutzbar.", ctee: "Eine koreanische Plattform zur Unterstützung von Kreativen, die koreanische Zahlungsmethoden akzeptiert." } },
+    uses: { eyebrow: "Wofür die Unterstützung verwendet wird", title: "Deine Unterstützung hält die Produkte am Laufen", items: [{ title: "Neue Funktionen und Produkte", description: "Schafft Zeit für Funktionen auf Basis von Nutzerfeedback und für neue Tools." }, { title: "Wartung", description: "Hält die Produkte, die du nutzt, durch Anpassungen an Windows-Updates und Fehlerbehebungen stabil." }, { title: "Betrieb der Webdienste", description: "Deckt die Betriebskosten für Web-Apps wie Clock und OSINTS sowie für diese Website." }] },
+    other: {
+      eyebrow: "Weitere Möglichkeiten",
+      title: "Du kannst auch ohne Spende helfen",
+      share: { title: "Weiterempfehlen", description: "Empfiehl ein GhostYak-Produkt, das dir geholfen hat, an Menschen, die es brauchen." },
+      feedback: { title: "Feedback senden", description: "Melde Probleme oder teile Verbesserungsideen auf GitHub.", action: "GitHub öffnen" },
+      follow: { title: "Neuigkeiten teilen", description: "Folge GhostYak auf Instagram und Threads und teile unsere Neuigkeiten." },
+    },
+    thanks: { title: "Danke", description: "Danke, dass du GhostYak nutzt und unterstützt. Wir revanchieren uns mit besseren Tools." },
+  },
   footer: { description: "Software, die den täglichen Windows-Arbeitsbereich einfacher macht.", navigationLabel: "Fußzeilenmenü", blog: "Blog" },
   carousel: { slideLabel: "Ansicht {index} anzeigen", pauseLabel: "Automatischen Wechsel anhalten", playLabel: "Automatischen Wechsel fortsetzen", pause: "Pause", play: "Abspielen" },
   home: {

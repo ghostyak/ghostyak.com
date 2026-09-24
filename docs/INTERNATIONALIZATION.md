@@ -353,6 +353,8 @@ Folder History 저장소의 README와 설계 문서를 근거로 작성한 한�
 
 2026-09-24 사용자가 헤더 메뉴 이름 `후원하기`를 한국어로 직접 지정했다. 사전의 `header.support`에 두고 8개 언어로 번역했다(영어 `Support`, 일본어 `支援する`, 중국어 `赞助` 등). 후원 수단 이름 `Buy Me a Coffee`는 서비스 이름이므로 번역하지 않는다. 크티는 서비스가 쓰는 한글 이름 `크티`를 한국어 화면에, 도메인 표기 `ctee`를 다른 8개 언어 화면에 표시한다(`src/data/support.ts`의 `names`). 토스아이디처럼 한국어 이름이 필요한 수단을 추가할 때는 한국어 원문을 먼저 정한 뒤 번역한다.
 
+2026-09-24 사용자 요청으로 후원 랜딩(`/support`)을 추가하면서 한국어 원문 `supportPage`를 작성하고 같은 날 8개 번역을 반영했다. **한국어 원문은 사용자 검수 대기 중이다.** 원문을 고치면 8개 번역도 같은 의미로 다시 맞춘다. 원문은 확인된 사실만 다룬다: 대부분의 제품이 무료라는 점, 두 후원 수단이 외부 페이지·새 탭에서 진행된다는 점, 후원 사용처(새 기능·유지 보수·웹 서비스 운영). 후원자 보상이나 금액 약속은 넣지 않았다. 후원 버튼은 `{name}` placeholder로 수단 이름을 받는다. Buy Me a Coffee는 카드 결제 가능한 해외 서비스, 크티는 국내 결제 수단을 받는 한국 플랫폼으로 설명한다. 페이지 `<title>`은 `header.support`를 재사용하고 공유 제목은 `supportPage.metadataTitle`을 쓴다. 번역 문체는 기존 사전을 따른다(독일어 du, 프랑스어 vous, 스페인어·이탈리아어 tu, 포르투갈어 você).
+
 ## Folder History 출시 블로그 글
 
 2026-09-24 한국어 원문 `folder-history-launch`(`sourceRevision: 1`)을 사용자가 승인했고 같은 날 8개 번역을 공개했다. 내용은 Folder History 저장소 문서와 승인된 제품 페이지 문구에 근거하며, Windows 기본 기능과의 비교처럼 확인하지 않은 주장은 넣지 않는다. 트레이·탐색기 등 용어는 제품 페이지 번역과 맞추고(예: 독일어 Infobereich, 프랑스어 zone de notification), 대표 이미지의 `imageAlt`는 사전의 `folderHistory.screenshots[0].alt` 번역을 사용한다. 제목과 설명에는 각 언어의 검색 표현(예: 영어 "reopen recently visited folders", 일본어 「最近開いたフォルダー」)을 넣는다.

@@ -118,6 +118,10 @@ Markdown 본문
 
 CSV 상세페이지는 공통 `ProductLanding`을 쓰므로 Folder History 페이지와 함께 검수한다. 제품 설명의 근거는 공개 저장소 README(`ghostyak/csv-search-engine`)와 개발 저장소의 사용자 가이드·`docs/OFFLINE_FREE.md`다. 사용 조건(비상업적 용도 무료, 상업적 사용 금지)이 바뀌면 배지·FAQ·다운로드 설명을 한국어 원문부터 고쳐 승인받는다. 스크린샷 순서는 `CsvSearchProduct`의 `screenshotOrder`에서 정한다.
 
+## 후원 수단 관리
+
+후원 수단은 `src/data/support.ts`의 `supportLinks` 한 곳에서 관리한다. 새 수단을 추가할 때는 목록에 항목(id·이름·URL·공식 로고 경로와 원본 크기)을 넣고, 서비스가 공개한 공식 로고 SVG를 `public/images/support/`에 원본 그대로 저장한 뒤(색·비율 변경 금지), 같은 id로 9개 사전의 `supportPage.methods.items`에 설명을 추가한다(한국어 원문 먼저). 사전 키가 빠지면 TypeScript와 빌드 검증이 실패한다. 후원 랜딩과 푸터에 자동으로 표시된다.
+
 ## Folder History 관리
 
 제품 설명의 근거는 Folder History 저장소(`ghostyak/folder-history`)의 README와 `docs/`다. 앱 동작이 바뀌면 한국어 `folderHistory` 원문을 먼저 고쳐 승인받은 뒤 8개 번역에 반영한다. 설치 파일 이름이나 저장소가 바뀌면 `src/data/products.ts`의 `folderHistory.downloadUrl`·`url`만 수정한다. 스크린샷은 `public/images/folder-history/`에 두며 교체 시 `folderHistory.screenshots`의 원본 크기와 각 사전의 대체 텍스트·캡션을 함께 갱신한다.

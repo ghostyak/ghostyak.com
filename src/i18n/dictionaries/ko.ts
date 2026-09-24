@@ -143,6 +143,43 @@ const ko = {
     blog: "블로그",
     support: "후원하기",
   },
+  supportPage: {
+    metadataTitle: "GhostYak 후원하기",
+    title: "GhostYak을 응원해 주세요",
+    description: "GhostYak의 Windows 도구와 웹앱은 대부분 무료로 제공합니다. 보내 주신 후원은 제품을 계속 만들고 다듬는 데 쓰입니다.",
+    methodsAction: "후원 방법 보기",
+    productsAction: "제품 둘러보기",
+    methods: {
+      eyebrow: "후원 방법",
+      title: "편한 방법으로 후원해 주세요",
+      description: "두 방법 모두 외부 후원 페이지에서 진행되며 새 탭으로 열립니다.",
+      action: "{name}에서 후원하기",
+      items: {
+        buyMeACoffee: "카드로 간편하게 후원할 수 있는 해외 후원 서비스입니다. 해외에서도 편하게 이용할 수 있습니다.",
+        ctee: "국내 결제 수단으로 후원할 수 있는 한국 창작자 후원 플랫폼입니다.",
+      },
+    },
+    uses: {
+      eyebrow: "후원이 쓰이는 곳",
+      title: "후원은 제품을 이어가는 데 쓰입니다",
+      items: [
+        { title: "새 기능과 새 제품", description: "사용자 의견을 반영한 기능과 새로운 도구를 만드는 시간을 확보합니다." },
+        { title: "유지 보수", description: "Windows 업데이트 대응과 버그 수정으로 지금 쓰는 제품을 안정적으로 유지합니다." },
+        { title: "웹 서비스 운영", description: "Clock·OSINTS 같은 웹앱과 이 웹사이트를 운영하는 데 드는 비용을 충당합니다." },
+      ],
+    },
+    other: {
+      eyebrow: "다른 방법으로 돕기",
+      title: "후원이 아니어도 도울 수 있어요",
+      share: { title: "주변에 알리기", description: "쓸 만했던 GhostYak 제품을 필요한 사람에게 소개해 주세요." },
+      feedback: { title: "의견 보내기", description: "GitHub에서 문제를 제보하거나 개선 아이디어를 남겨 주세요.", action: "GitHub 열기" },
+      follow: { title: "소식 공유하기", description: "Instagram과 Threads에서 GhostYak을 팔로우하고 소식을 공유해 주세요." },
+    },
+    thanks: {
+      title: "고맙습니다",
+      description: "GhostYak을 사용하고 응원해 주셔서 감사합니다. 앞으로 더 나은 도구로 보답하겠습니다.",
+    },
+  },
   footer: {
     description: "일상의 Windows 작업 공간을 더 단순하게 만드는 소프트웨어.",
     navigationLabel: "푸터 메뉴",

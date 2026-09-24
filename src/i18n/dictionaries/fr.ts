@@ -251,6 +251,23 @@ const fr: Dictionary = {
     blog: { title: "Blog", description: "Les actualités produits et les récits de développement de GhostYak." },
   },
   header: { homeLabel: "Accueil de GhostYak", navigationLabel: "Menu principal", language: "Choisir la langue", products: "Produits", blog: "Blog", support: "Soutenir" },
+  supportPage: {
+    metadataTitle: "Soutenir GhostYak",
+    title: "Soutenez GhostYak",
+    description: "La plupart des outils Windows et des applications web de GhostYak sont gratuits. Votre soutien sert à continuer de les développer et de les améliorer.",
+    methodsAction: "Voir comment soutenir",
+    productsAction: "Découvrir les produits",
+    methods: { eyebrow: "Comment soutenir", title: "Soutenez de la manière qui vous convient", description: "Les deux options passent par une page de soutien externe qui s’ouvre dans un nouvel onglet.", action: "Soutenir sur {name}", items: { buyMeACoffee: "Service de soutien international qui permet de contribuer par carte en quelques étapes. Facile à utiliser partout dans le monde.", ctee: "Plateforme coréenne de soutien aux créateurs qui accepte les moyens de paiement coréens." } },
+    uses: { eyebrow: "À quoi sert le soutien", title: "Votre soutien fait vivre les produits", items: [{ title: "Nouvelles fonctionnalités et nouveaux produits", description: "Libère du temps pour créer des fonctionnalités issues des retours des utilisateurs et de nouveaux outils." }, { title: "Maintenance", description: "Garde stables les produits que vous utilisez grâce à la compatibilité avec les mises à jour de Windows et aux corrections de bugs." }, { title: "Services web", description: "Couvre les frais de fonctionnement des applications web comme Clock et OSINTS, ainsi que de ce site." }] },
+    other: {
+      eyebrow: "Autres façons d’aider",
+      title: "Vous pouvez aider sans faire de don",
+      share: { title: "En parler autour de vous", description: "Recommandez un produit GhostYak qui vous a été utile à ceux qui en ont besoin." },
+      feedback: { title: "Donner votre avis", description: "Signalez des problèmes ou partagez des idées d’amélioration sur GitHub.", action: "Ouvrir GitHub" },
+      follow: { title: "Partager les nouvelles", description: "Suivez GhostYak sur Instagram et Threads et partagez ses actualités." },
+    },
+    thanks: { title: "Merci", description: "Merci d’utiliser et de soutenir GhostYak. Nous vous le rendrons avec de meilleurs outils." },
+  },
   footer: { description: "Des logiciels qui simplifient votre espace de travail Windows au quotidien.", navigationLabel: "Menu de pied de page", blog: "Blog" },
   carousel: { slideLabel: "Afficher l’écran {index}", pauseLabel: "Suspendre la rotation automatique", playLabel: "Reprendre la rotation automatique", pause: "Pause", play: "Lecture" },
   home: {

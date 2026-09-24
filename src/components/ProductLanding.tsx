@@ -7,7 +7,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { PageHero, heroActionClassName } from "@/components/PageHero";
 import { cn } from "@/lib/utils";
 
-const textLink = "inline-flex min-h-11 items-center gap-2 text-sm font-medium text-primary underline decoration-brand decoration-2 underline-offset-4 hover:decoration-current";
+export const textLink = "inline-flex min-h-11 items-center gap-2 text-sm font-medium text-primary underline decoration-brand decoration-2 underline-offset-4 hover:decoration-current";
 
 type Screenshot = { src: string; width: number; height: number; alt: string; caption: string };
 type Item = { title: string; description: string };
@@ -22,7 +22,7 @@ export type ProductLandingCopy = {
   download: { title: string; description: string };
 };
 
-function SectionHeading({ id, eyebrow, title, description }: { id: string; eyebrow: string; title: string; description?: string }) {
+export function SectionHeading({ id, eyebrow, title, description }: { id: string; eyebrow: string; title: string; description?: string }) {
   return <div><p className="mb-4 text-xs font-semibold tracking-wide text-brand-foreground">{eyebrow}</p><h2 id={id} className="whitespace-pre-line text-3xl font-semibold leading-[1.25] tracking-[-0.035em] text-balance sm:text-4xl">{title}</h2>{description && <p className="mt-5 max-w-xl text-base leading-8 text-muted-foreground">{description}</p>}</div>;
 }
 

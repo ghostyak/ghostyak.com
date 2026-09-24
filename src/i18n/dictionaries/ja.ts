@@ -251,6 +251,23 @@ const ja: Dictionary = {
     blog: { title: "ブログ", description: "GhostYakの製品ニュースと開発ストーリーをお届けします。" },
   },
   header: { homeLabel: "GhostYakホーム", navigationLabel: "メインメニュー", language: "言語を選択", products: "製品", blog: "ブログ", support: "支援する" },
+  supportPage: {
+    metadataTitle: "GhostYakを支援する",
+    title: "GhostYakを応援してください",
+    description: "GhostYakのWindowsツールとWebアプリの多くは無料で提供しています。いただいた支援は、製品を作り続け、磨き上げるために使われます。",
+    methodsAction: "支援方法を見る",
+    productsAction: "製品を見る",
+    methods: { eyebrow: "支援方法", title: "ご都合のよい方法で支援してください", description: "どちらも外部の支援ページで手続きし、新しいタブで開きます。", action: "{name}で支援する", items: { buyMeACoffee: "カードで手軽に支援できる海外の支援サービスです。海外からも利用しやすいサービスです。", ctee: "韓国の決済手段で支援できる、韓国のクリエイター支援プラットフォームです。" } },
+    uses: { eyebrow: "支援の使い道", title: "支援は製品を続けるために使われます", items: [{ title: "新機能と新製品", description: "ユーザーの意見を反映した機能や、新しいツールを作る時間を確保します。" }, { title: "メンテナンス", description: "Windowsアップデートへの対応やバグ修正で、お使いの製品を安定して保ちます。" }, { title: "Webサービスの運営", description: "ClockやOSINTSなどのWebアプリと、このWebサイトの運営費用に充てます。" }] },
+    other: {
+      eyebrow: "ほかの応援方法",
+      title: "支援以外にもできることがあります",
+      share: { title: "周りに紹介する", description: "役に立ったGhostYakの製品を、必要としている人に紹介してください。" },
+      feedback: { title: "意見を送る", description: "GitHubで問題を報告したり、改善のアイデアを残したりしてください。", action: "GitHubを開く" },
+      follow: { title: "最新情報をシェアする", description: "InstagramとThreadsでGhostYakをフォローし、最新情報をシェアしてください。" },
+    },
+    thanks: { title: "ありがとうございます", description: "GhostYakを使い、応援してくださりありがとうございます。より良いツールでお応えします。" },
+  },
   footer: { description: "毎日のWindowsワークスペースをもっとシンプルにするソフトウェア。", navigationLabel: "フッターメニュー", blog: "ブログ" },
   carousel: { slideLabel: "{index}番目の画面を表示", pauseLabel: "自動切り替えを一時停止", playLabel: "自動切り替えを再開", pause: "停止", play: "再生" },
   home: {

@@ -251,6 +251,23 @@ const zh: Dictionary = {
     blog: { title: "博客", description: "分享 GhostYak 产品动态与开发故事。" },
   },
   header: { homeLabel: "GhostYak 首页", navigationLabel: "主菜单", language: "选择语言", products: "产品", blog: "博客", support: "赞助" },
+  supportPage: {
+    metadataTitle: "赞助 GhostYak",
+    title: "请支持 GhostYak",
+    description: "GhostYak 的 Windows 工具和网页应用大多免费提供。您的赞助将用于持续开发和完善这些产品。",
+    methodsAction: "查看赞助方式",
+    productsAction: "浏览产品",
+    methods: { eyebrow: "赞助方式", title: "选择方便的方式赞助", description: "两种方式都在外部赞助页面完成，并在新标签页中打开。", action: "通过 {name} 赞助", items: { buyMeACoffee: "可以用银行卡轻松赞助的海外赞助服务，在世界各地都能方便使用。", ctee: "可使用韩国支付方式赞助的韩国创作者赞助平台。" } },
+    uses: { eyebrow: "赞助的用途", title: "赞助让产品得以持续", items: [{ title: "新功能与新产品", description: "确保有时间开发反映用户意见的功能和新工具。" }, { title: "维护", description: "通过适配 Windows 更新和修复错误，让您正在使用的产品保持稳定。" }, { title: "网页服务运营", description: "用于支付 Clock、OSINTS 等网页应用以及本网站的运营费用。" }] },
+    other: {
+      eyebrow: "其他支持方式",
+      title: "不赞助也能帮忙",
+      share: { title: "推荐给身边的人", description: "把觉得好用的 GhostYak 产品推荐给需要的人。" },
+      feedback: { title: "发送反馈", description: "在 GitHub 上报告问题或留下改进建议。", action: "打开 GitHub" },
+      follow: { title: "分享动态", description: "在 Instagram 和 Threads 上关注 GhostYak 并分享动态。" },
+    },
+    thanks: { title: "谢谢", description: "感谢您使用并支持 GhostYak。我们会用更好的工具回报您。" },
+  },
   footer: { description: "让日常 Windows 工作空间更简单的软件。", navigationLabel: "页脚菜单", blog: "博客" },
   carousel: { slideLabel: "查看第 {index} 个画面", pauseLabel: "暂停自动轮播", playLabel: "继续自动轮播", pause: "暂停", play: "播放" },
   home: {

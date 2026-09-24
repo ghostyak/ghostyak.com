@@ -251,6 +251,23 @@ const en: Dictionary = {
     blog: { title: "Blog", description: "Product news and development stories from GhostYak." },
   },
   header: { homeLabel: "GhostYak home", navigationLabel: "Main navigation", language: "Choose language", products: "Products", blog: "Blog", support: "Support" },
+  supportPage: {
+    metadataTitle: "Support GhostYak",
+    title: "Support GhostYak",
+    description: "Most of GhostYak's Windows tools and web apps are free. Your support goes toward continuing to build and refine them.",
+    methodsAction: "See ways to support",
+    productsAction: "Browse products",
+    methods: { eyebrow: "Ways to support", title: "Support in the way that suits you", description: "Both options open an external support page in a new tab.", action: "Support on {name}", items: { buyMeACoffee: "An international support service where you can give by card in a few steps. Easy to use from anywhere in the world.", ctee: "A Korean creator support platform that accepts Korean payment methods." } },
+    uses: { eyebrow: "Where support goes", title: "Your support keeps the products going", items: [{ title: "New features and products", description: "Frees up time to build features shaped by user feedback and to create new tools." }, { title: "Maintenance", description: "Keeps the products you use stable with Windows update compatibility and bug fixes." }, { title: "Running web services", description: "Covers the cost of running web apps such as Clock and OSINTS, and this website." }] },
+    other: {
+      eyebrow: "Other ways to help",
+      title: "You can help without donating",
+      share: { title: "Tell others", description: "Recommend a GhostYak product you found useful to someone who needs it." },
+      feedback: { title: "Send feedback", description: "Report issues or share ideas for improvements on GitHub.", action: "Open GitHub" },
+      follow: { title: "Share the news", description: "Follow GhostYak on Instagram and Threads and share our updates." },
+    },
+    thanks: { title: "Thank you", description: "Thank you for using and supporting GhostYak. We'll repay you with better tools." },
+  },
   footer: { description: "Software that makes your everyday Windows workspace simpler.", navigationLabel: "Footer navigation", blog: "Blog" },
   carousel: { slideLabel: "View slide {index}", pauseLabel: "Pause automatic rotation", playLabel: "Resume automatic rotation", pause: "Pause", play: "Play" },
   home: {

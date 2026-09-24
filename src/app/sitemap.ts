@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { boxes, csvSearchEngine, folderHistory } from "@/data/products";
+import { supportPagePath } from "@/data/support";
 import { defaultLocale, localeConfig, publishedLocales, type PublishedLocale } from "@/i18n/locales";
 import { localizedPath } from "@/i18n/routing";
 import { validatePublishedDictionaries } from "@/i18n/validate";
@@ -53,6 +54,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
       alternates: { languages: languageAlternates(folderHistory.pagePath) },
       images: folderHistory.screenshots.map((screenshot) => `${siteUrl}${screenshot.src}`),
+    },
+    {
+      url: absoluteLocalizedUrl(locale, supportPagePath),
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+      alternates: { languages: languageAlternates(supportPagePath) },
     },
     {
       url: absoluteLocalizedUrl(locale, "/blog"),
