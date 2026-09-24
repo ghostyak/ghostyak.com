@@ -46,7 +46,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       <head><TrackingScripts /></head>
       <body className="flex min-h-screen min-w-0 flex-col antialiased">
         <a href="#main-content" className={cn(buttonVariants({ className: "sr-only fixed left-4 top-4 z-[100] focus:not-sr-only focus:min-h-11" }))}>{dictionary.landing.skip}</a>
-        <Header labels={dictionary.header} digitalForensicsLabel={dictionary.csvSearch.category} locale={locale} currentPath={currentPath} />
+        <Header labels={dictionary.header} categoryLabels={{ windows: dictionary.productCategories.windowsProductivity, web: dictionary.productCategories.webApps, forensics: dictionary.csvSearch.category }} locale={locale} currentPath={currentPath} />
         <div className="flex-1">{children}</div>
         <Footer labels={dictionary.footer} locale={locale} />
         <Analytics />

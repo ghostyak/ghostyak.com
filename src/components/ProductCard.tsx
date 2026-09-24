@@ -28,7 +28,7 @@ export function ProductCard({ id, name, badges, description, preview, action }: 
       <div className="h-60 shrink-0 overflow-hidden">{preview}</div>
       <CardContent className="flex flex-1 flex-col items-start border-t p-6 sm:p-8">
         <div className="flex w-full flex-wrap items-center justify-between gap-3">
-          <h2 className="text-2xl font-semibold tracking-[-0.03em] sm:text-3xl">{name}</h2>
+          <h3 className="text-2xl font-semibold tracking-[-0.03em] sm:text-3xl">{name}</h3>
           <div className="flex flex-wrap gap-2">{badges.map(badge => <Badge key={badge.label} variant="outline" className={cn("min-h-6 px-2.5", badgeTone[badge.tone ?? "plain"])}>{badge.label}</Badge>)}</div>
         </div>
         <p className="mb-7 mt-4 text-sm leading-7 text-muted-foreground">{description}</p>

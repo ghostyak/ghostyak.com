@@ -1,15 +1,16 @@
 import { cn } from "@/lib/utils";
+import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Clock3, ScanSearch, ChevronRight } from "lucide-react";
+import { AppWindow, ArrowRight, Clock3, ChevronRight, Fingerprint, Globe, ScanSearch, type LucideIcon } from "lucide-react";
 import { notFound, redirect } from "next/navigation";
 import { buttonVariants } from "@/components/ui/button";
-import { boxes, clock, osints } from "@/data/products";
+import { boxes, clock, folderHistory, osints } from "@/data/products";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { localeConfig, type PublishedLocale } from "@/i18n/locales";
 import { localizedPath } from "@/i18n/routing";
 import { getAllPosts, getPost, type BlogPostSummary } from "@/lib/blog";
-import { getSoftwareApplicationJsonLd } from "@/seo";
+import { getBlogPostingJsonLd, getSoftwareApplicationJsonLd } from "@/seo";
 import { RenewalLanding } from "@/components/renewal/RenewalLanding";
 import { CsvSearchCard } from "@/components/CsvSearchCard";
 import { PageHero } from "@/components/PageHero";
@@ -23,6 +24,14 @@ function InkBackdrop() {
     <div className="absolute inset-0 bg-[linear-gradient(to_right,rgb(255_255_255/0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgb(255_255_255/0.04)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_75%)]" />
     <div className="absolute left-1/2 top-0 h-80 w-[min(56rem,100%)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/15 blur-3xl" />
   </div>;
+}
+
+// One home category: a pill heading that stays readable over the ink hero, then two-column cards.
+function ProductCategory({ id, label, icon: Icon, children }: { id: string; label: string; icon: LucideIcon; children: ReactNode }) {
+  return <section aria-labelledby={`category-${id}`}>
+    <h2 id={`category-${id}`} className="mb-5 inline-flex min-h-10 items-center gap-2.5 rounded-full border bg-card px-4 text-sm font-semibold shadow-sm shadow-ink/5"><span className="flex size-6 items-center justify-center rounded-full bg-ink text-brand"><Icon className="size-3.5" aria-hidden="true" /></span>{label}</h2>
+    <div className="grid gap-6 md:auto-rows-fr md:grid-cols-2">{children}</div>
+  </section>;
 }
 
 function formatPublishedAt(locale: PublishedLocale, value: string) {
@@ -61,40 +70,58 @@ export async function HomeContent({ locale }: { locale: PublishedLocale }) {
       </div>
 
       <div className="relative mx-auto -mt-24 max-w-7xl px-4 pb-16 sm:-mt-32 sm:px-8 sm:pb-24">
-        <div className="grid gap-6 md:auto-rows-fr md:grid-cols-2">
-          <ProductCard
-            name={boxes.name}
-            badges={[{ label: copy.products.freeBadge, tone: "free" }, { label: boxes.platform }]}
-            description={dictionary.boxes.description}
-            action={{ label: copy.products.viewAction, href: localizedPath(locale, "/product/boxes") }}
-            preview={<figure className="relative h-full bg-ink p-4 sm:p-6">
-              <div className="absolute inset-x-10 bottom-0 h-24 rounded-full bg-brand/20 blur-3xl" aria-hidden="true" />
-              <a href={localizedPath(locale, "/product/boxes")} className="relative block h-full" aria-label={copy.products.viewAction + ": Boxes"}>
-                <Image {...boxes.preview} preload className="h-full w-full object-contain" alt={dictionary.boxes.screenshotAlts[0]} sizes="(min-width: 1280px) 540px, (min-width: 768px) calc((100vw - 138px) / 2), calc(100vw - 82px)" />
-              </a>
-            </figure>}
-          />
-          <ProductCard
-            name={clock.name}
-            badges={[{ label: copy.products.freeBadge, tone: "free" }, { label: copy.products.webBadge }]}
-            description={copy.products.clockDescription}
-            action={{ label: copy.products.webAction, href: clock.url, external: true }}
-            preview={<figure className="surface-ink relative flex h-full flex-col items-center justify-center overflow-hidden px-4 py-12" aria-label={copy.products.clockPreviewLabel}>
-              <div className="absolute size-80 rounded-full border border-white/5" aria-hidden="true" /><div className="absolute size-60 rounded-full border border-brand/15" aria-hidden="true" />
-              <Clock3 className="relative mb-4 size-5 text-brand" aria-hidden="true" /><time className="relative text-5xl font-light tabular-nums tracking-[-0.05em] sm:text-6xl" dateTime="10:09:42">10<span className="text-brand">:</span>09<span className="text-brand">:</span>42</time><span className="relative mt-4 font-mono text-[11px] tracking-[0.15em] text-muted-foreground">2026. 09. 08.</span>
-            </figure>}
-          />
-          <ProductCard
-            name={osints.name}
-            badges={[{ label: copy.products.webBadge }]}
-            description={copy.products.osintsDescription}
-            action={{ label: copy.products.webAction, href: osints.url, external: true }}
-            preview={<div className="relative flex h-full items-center justify-center overflow-hidden bg-muted px-4 py-12" aria-hidden="true">
-              <div className="absolute h-px w-full bg-ink/10" /><div className="absolute h-full w-px bg-ink/10" /><div className="absolute size-48 rounded-full border border-ink/15" /><div className="absolute size-72 rounded-full border border-ink/10" /><div className="absolute size-3 translate-x-16 -translate-y-10 rounded-full bg-brand shadow-[0_0_0_6px_rgb(255_208_54/0.25)]" />
-              <div className="relative flex items-center gap-3 rounded-2xl bg-card px-7 py-5 shadow-lg shadow-ink/10"><ScanSearch className="size-7 text-brand-foreground" /><span className="text-3xl font-semibold tracking-tight">{osints.name}</span></div>
-            </div>}
-          />
-          <CsvSearchCard copy={dictionary.csvSearch} locale={locale} viewAction={copy.products.viewAction} />
+        <div className="space-y-12 sm:space-y-16">
+          <ProductCategory id="windows-productivity" label={dictionary.productCategories.windowsProductivity} icon={AppWindow}>
+              <ProductCard
+                name={boxes.name}
+                badges={[{ label: copy.products.freeBadge, tone: "free" }, { label: boxes.platform }]}
+                description={dictionary.boxes.description}
+                action={{ label: copy.products.viewAction, href: localizedPath(locale, "/product/boxes") }}
+                preview={<figure className="relative h-full bg-ink p-4 sm:p-6">
+                  <div className="absolute inset-x-10 bottom-0 h-24 rounded-full bg-brand/20 blur-3xl" aria-hidden="true" />
+                  <a href={localizedPath(locale, "/product/boxes")} className="relative block h-full" aria-label={copy.products.viewAction + ": Boxes"}>
+                    <Image {...boxes.preview} preload className="h-full w-full object-contain" alt={dictionary.boxes.screenshotAlts[0]} sizes="(min-width: 1280px) 540px, (min-width: 768px) calc((100vw - 138px) / 2), calc(100vw - 82px)" />
+                  </a>
+                </figure>}
+              />
+              <ProductCard
+                name={folderHistory.name}
+                badges={[{ label: copy.products.freeBadge, tone: "free" }, { label: folderHistory.platform }]}
+                description={dictionary.folderHistory.cardDescription}
+                action={{ label: copy.products.viewAction, href: localizedPath(locale, folderHistory.pagePath) }}
+                preview={<figure className="relative h-full bg-ink p-4 sm:p-6">
+                  <div className="absolute inset-x-10 bottom-0 h-24 rounded-full bg-brand/20 blur-3xl" aria-hidden="true" />
+                  <a href={localizedPath(locale, folderHistory.pagePath)} className="relative block h-full" aria-label={copy.products.viewAction + ": " + folderHistory.name}>
+                    <Image {...folderHistory.screenshots[0]} className="h-full w-full object-contain" alt={dictionary.folderHistory.screenshots[0].alt} sizes="(min-width: 1280px) 540px, (min-width: 768px) calc((100vw - 138px) / 2), calc(100vw - 82px)" />
+                  </a>
+                </figure>}
+              />
+          </ProductCategory>
+          <ProductCategory id="web-apps" label={dictionary.productCategories.webApps} icon={Globe}>
+              <ProductCard
+                name={clock.name}
+                badges={[{ label: copy.products.freeBadge, tone: "free" }, { label: copy.products.webBadge }]}
+                description={copy.products.clockDescription}
+                action={{ label: copy.products.webAction, href: clock.url, external: true }}
+                preview={<figure className="surface-ink relative flex h-full flex-col items-center justify-center overflow-hidden px-4 py-12" aria-label={copy.products.clockPreviewLabel}>
+                  <div className="absolute size-80 rounded-full border border-white/5" aria-hidden="true" /><div className="absolute size-60 rounded-full border border-brand/15" aria-hidden="true" />
+                  <Clock3 className="relative mb-4 size-5 text-brand" aria-hidden="true" /><time className="relative text-5xl font-light tabular-nums tracking-[-0.05em] sm:text-6xl" dateTime="10:09:42">10<span className="text-brand">:</span>09<span className="text-brand">:</span>42</time><span className="relative mt-4 font-mono text-[11px] tracking-[0.15em] text-muted-foreground">2026. 09. 08.</span>
+                </figure>}
+              />
+              <ProductCard
+                name={osints.name}
+                badges={[{ label: copy.products.webBadge }]}
+                description={copy.products.osintsDescription}
+                action={{ label: copy.products.webAction, href: osints.url, external: true }}
+                preview={<div className="relative flex h-full items-center justify-center overflow-hidden bg-muted px-4 py-12" aria-hidden="true">
+                  <div className="absolute h-px w-full bg-ink/10" /><div className="absolute h-full w-px bg-ink/10" /><div className="absolute size-48 rounded-full border border-ink/15" /><div className="absolute size-72 rounded-full border border-ink/10" /><div className="absolute size-3 translate-x-16 -translate-y-10 rounded-full bg-brand shadow-[0_0_0_6px_rgb(255_208_54/0.25)]" />
+                  <div className="relative flex items-center gap-3 rounded-2xl bg-card px-7 py-5 shadow-lg shadow-ink/10"><ScanSearch className="size-7 text-brand-foreground" /><span className="text-3xl font-semibold tracking-tight">{osints.name}</span></div>
+                </div>}
+              />
+          </ProductCategory>
+          <ProductCategory id="digital-forensics" label={dictionary.csvSearch.category} icon={Fingerprint}>
+              <CsvSearchCard copy={dictionary.csvSearch} locale={locale} viewAction={copy.products.viewAction} />
+          </ProductCategory>
         </div>
       </div>
     </section>
@@ -136,7 +163,8 @@ export async function BlogContent({ locale }: { locale: PublishedLocale }) {
 export async function BlogPostContent({ locale, slug }: { locale: PublishedLocale; slug: string }) {
   const [post, dictionary] = await Promise.all([getPost(locale, slug), getDictionary(locale)]);
   if (!post) notFound();
-  return <main id="main-content"><article>
+  const jsonLd = getBlogPostingJsonLd({ locale, post });
+  return <main id="main-content"><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} /><article>
     <header className="surface-ink relative overflow-hidden px-4 pb-14 pt-6 sm:px-8 sm:pb-20 sm:pt-10">
       <InkBackdrop />
       <div className="relative mx-auto max-w-3xl">

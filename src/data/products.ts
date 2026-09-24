@@ -40,6 +40,19 @@ export const osints = {
   url: "https://osints.ghostyak.com/",
 } as const;
 
+export const folderHistory = {
+  name: "Folder History",
+  pagePath: "/product/folder-history",
+  platform: "Windows 11 · x64",
+  url: "https://github.com/ghostyak/folder-history",
+  downloadUrl: "https://github.com/ghostyak/folder-history/releases/latest/download/Folder.History_x64-setup.exe",
+  screenshots: [
+    { src: "/images/folder-history/folder-history-main.png", width: 1082, height: 604 },
+    { src: "/images/folder-history/folder-history-ignore-rule.png", width: 1082, height: 604 },
+    { src: "/images/folder-history/folder-history-setting.png", width: 1082, height: 604 },
+  ],
+} as const;
+
 export const csvSearchEngine = {
   name: "CSV Search Engine",
   pagePath: "/product/csv-search-engine",

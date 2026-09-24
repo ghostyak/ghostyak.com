@@ -17,7 +17,202 @@ const es: Dictionary = {
         "alt": "CSV Search Engine mostrando datos MFT, campos de búsqueda por columna y filas",
         "caption": "Vista de datos MFT · Interfaz en coreano"
       }
-    ]
+    ],
+    "metadataTitle": "CSV Search Engine | Herramienta DFIR para buscar en archivos CSV y Excel grandes",
+    "licenseBadge": "Gratis para uso no comercial",
+    "howToAction": "Cómo funciona",
+    "workflow": {
+      "eyebrow": "Cómo funciona",
+      "title": "Abre un archivo y\nbusca justo debajo de los encabezados.",
+      "description": "Filtra archivos CSV o Excel grandes exportados por herramientas forenses con condiciones por columna y quédate solo con las filas que necesitas.",
+      "steps": [
+        {
+          "title": "Abre un archivo",
+          "description": "Elige un archivo CSV, XLS o XLSX con Archivo → Abrir (Ctrl+O) o arrástralo a la ventana."
+        },
+        {
+          "title": "Busca por columna",
+          "description": "Escribe una condición en el campo de búsqueda bajo el encabezado de una columna y pulsa Enter. Si escribes en varias columnas, solo se muestran las filas que cumplen todas las condiciones."
+        },
+        {
+          "title": "Ordena y consulta los detalles",
+          "description": "Haz clic en un encabezado para ordenar, selecciona una fila y abre Detalles de fila para ver el valor de todas las columnas."
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "Funciones principales",
+      "title": "Busca, filtra y agrupa.",
+      "items": [
+        {
+          "title": "Búsqueda y filtros por columna",
+          "description": "Encuentra filas con condiciones como contiene, excluye, coincidencia exacta, empieza o termina por, vacío y con valor."
+        },
+        {
+          "title": "Rangos de números y fechas",
+          "description": "Compara números y fechas con mayor que, al menos, menor que, como máximo y entre. Ejemplo: 2026-09-01 .. 2026-09-20"
+        },
+        {
+          "title": "Orden y agrupación",
+          "description": "Haz clic en un encabezado para ordenar y arrastra columnas a Grupos de campos para agrupar valores iguales hasta en ocho niveles."
+        },
+        {
+          "title": "Navegación por la tabla",
+          "description": "El desplazamiento continuo, la ocultación de columnas, el ajuste de su ancho y los detalles de fila facilitan explorar tablas anchas."
+        },
+        {
+          "title": "Compatibilidad con CSV y Excel",
+          "description": "Abre archivos CSV, XLS y XLSX y cambia entre pestañas de hojas. No hace falta tener Excel instalado."
+        },
+        {
+          "title": "Idiomas y codificaciones",
+          "description": "Interfaz en coreano, inglés, japonés y chino, con detección automática de codificaciones CSV como UTF-8, CP949 y Shift_JIS."
+        }
+      ]
+    },
+    "privacy": {
+      "eyebrow": "Análisis sin conexión",
+      "title": "Tus originales, intactos. El análisis, en tu PC.",
+      "description": "No modifica ni sube tus archivos originales. Funciona sin conexión a internet ni cuenta, y no hace solicitudes de red automáticas ni recopila datos de uso."
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "items": [
+        {
+          "question": "¿Es gratis?",
+          "answer": "Para uso no comercial, todas las funciones son gratuitas sin límites de tiempo ni de uso. Está prohibido usarlo en trabajos comerciales, como las operaciones internas de una empresa o el análisis forense de pago. También puedes consultar las condiciones de uso en la app, en Ayuda → Acerca de."
+        },
+        {
+          "question": "¿Qué archivos puede abrir?",
+          "answer": "Abre archivos CSV, XLS y XLSX. Los archivos XLS se admiten hasta 32 MiB, y no se admiten el formato de Excel, los gráficos, la ejecución de macros ni el recálculo de fórmulas."
+        },
+        {
+          "question": "Los caracteres de mi CSV se ven ilegibles.",
+          "answer": "De forma predeterminada, la codificación se detecta automáticamente. Si ves caracteres ilegibles, elige la codificación adecuada en Ajustes → Codificación CSV y vuelve a abrir el archivo."
+        },
+        {
+          "question": "¿Puedo editar o exportar datos?",
+          "answer": "Es una herramienta de consulta y búsqueda. Todavía no permite editar datos ni exportar resultados de búsqueda."
+        },
+        {
+          "question": "¿Cuánto tardan los archivos grandes?",
+          "answer": "Al abrir un archivo por primera vez o buscar en una columna nueva, puede tardar mientras crea el índice de búsqueda, y necesitas espacio libre en disco para la caché. El tiempo de proceso depende del contenido del archivo y de tu PC, y el rendimiento con CSV de 10 GiB o más aún no se ha verificado por completo."
+        },
+        {
+          "question": "¿Qué necesito para usarlo?",
+          "answer": "Es para Windows de 64 bits. Ejecuta el instalador y abre CSV Search Engine desde el menú Inicio."
+        }
+      ]
+    },
+    "download": {
+      "title": "Descárgalo y\nabre tu primer archivo.",
+      "description": "Windows de 64 bits · Gratis para uso no comercial"
+    }
+  },
+  productCategories: { windowsProductivity: "Productividad en Windows", webApps: "Aplicaciones web" },
+  "folderHistory": {
+    "metadataTitle": "Folder History | App de Windows para volver a abrir carpetas visitadas recientemente",
+    "cardDescription": "Una app de Windows que registra las carpetas que visitas en el Explorador de archivos para volver a abrirlas desde la bandeja.",
+    "description": "Registra las carpetas que visitas en el Explorador de archivos y vuelve a abrirlas directamente desde la bandeja.",
+    "downloadAction": "Descarga gratuita para Windows",
+    "howToAction": "Cómo funciona",
+    "screenshots": [
+      {
+        "alt": "Lista de visitas recientes de Folder History con nombres de carpeta, rutas y la hora de la última visita, de la más reciente a la más antigua",
+        "caption": "Lista de visitas recientes · Interfaz en coreano"
+      },
+      {
+        "alt": "Editor de reglas de exclusión de Folder History con node_modules y .next",
+        "caption": "Edición de reglas de exclusión"
+      },
+      {
+        "alt": "Ajustes de Folder History para el tema, el inicio al iniciar sesión en Windows y la conservación del historial",
+        "caption": "Ajustes · Tema, inicio automático y conservación del historial"
+      }
+    ],
+    "workflow": {
+      "eyebrow": "Cómo funciona",
+      "title": "Deja de buscar carpetas.\nÁbrelas desde tus visitas recientes.",
+      "description": "Cuando no recuerdes dónde trabajabas hace unos días, haz doble clic en el icono de la bandeja y verás las carpetas visitadas recientemente, en orden.",
+      "steps": [
+        {
+          "title": "Añade una carpeta vigilada",
+          "description": "Elige la carpeta que quieres registrar. Esa carpeta y sus subcarpetas forman el ámbito de registro."
+        },
+        {
+          "title": "Usa el Explorador como siempre",
+          "description": "Al abrir una carpeta en el Explorador de archivos de Windows, se registra automáticamente la hora de la última visita."
+        },
+        {
+          "title": "Vuelve a abrirla desde la bandeja",
+          "description": "Haz doble clic en el icono de la bandeja y luego en una carpeta de la lista, o pulsa Enter, para abrirla de nuevo en el Explorador."
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "Funciones principales",
+      "title": "Solo las carpetas que necesitas, a tu manera.",
+      "items": [
+        {
+          "title": "Búsqueda y orden",
+          "description": "Busca por nombre de carpeta o ruta (Ctrl+F) y ordena por carpeta, ruta o última visita."
+        },
+        {
+          "title": "Fijar arriba",
+          "description": "Fija las carpetas que abres a menudo para mantenerlas al principio de la lista."
+        },
+        {
+          "title": "Reglas de exclusión",
+          "description": "Escribe, una por línea, los nombres de carpetas que no quieres registrar, como node_modules o .git. Puedes usar * y ?."
+        },
+        {
+          "title": "Papelera y restauración",
+          "description": "Los registros eliminados se guardan en la papelera y puedes restaurarlos con su hora de visita original."
+        },
+        {
+          "title": "Conservación del historial",
+          "description": "Conserva el historial sin límite o límpialo automáticamente después de 1, 3, 6 o 12 meses."
+        },
+        {
+          "title": "Copiar ruta",
+          "description": "Copia la ruta completa de una carpeta con el botón de copiar de la fila o con Ctrl+C."
+        }
+      ]
+    },
+    "privacy": {
+      "eyebrow": "Guardado en tu PC",
+      "title": "Tu historial se queda en tu PC.",
+      "description": "El historial de visitas y los ajustes se guardan en los datos locales de la aplicación en tu PC, sin necesidad de servidor ni cuenta. Borrar registros no afecta a tus carpetas y archivos reales."
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "items": [
+        {
+          "question": "¿Qué visitas a carpetas se registran?",
+          "answer": "Se registra cuando abres una carpeta dentro de una carpeta vigilada con el Explorador de archivos de Windows, o cuando vuelves a esa carpeta desde otra ventana o pestaña. La navegación en otros gestores de archivos o en diálogos para abrir archivos, y los cambios en archivos, no se registran como visitas."
+        },
+        {
+          "question": "¿Es gratis?",
+          "answer": "Sí, puedes usarlo gratis."
+        },
+        {
+          "question": "¿Se detiene el registro al cerrar la ventana?",
+          "answer": "No. La X de la ventana solo la oculta y el registro continúa. Para salir por completo, haz clic derecho en el icono de la bandeja y elige Salir."
+        },
+        {
+          "question": "¿Puede iniciarse automáticamente con Windows?",
+          "answer": "Activa ‘Iniciar al iniciar sesión en Windows’ en los ajustes. Está desactivado de forma predeterminada."
+        },
+        {
+          "question": "¿Qué necesito para usarlo?",
+          "answer": "Funciona en Windows 11 x64. El instalador se instala en la cuenta del usuario actual, así que no necesita permisos de administrador, e instala WebView2 Runtime durante la instalación si falta."
+        }
+      ]
+    },
+    "download": {
+      "title": "Descárgalo y\nañade tu primera carpeta vigilada.",
+      "description": "Windows 11 x64 · Se instala sin permisos de administrador"
+    }
   },
   worldClock: {
   "badge": "Nuevo · Widget de reloj mundial",
@@ -55,7 +250,7 @@ const es: Dictionary = {
     boxesDownload: { title: "Descargar Boxes" },
     blog: { title: "Blog", description: "Noticias de productos e historias de desarrollo de GhostYak." },
   },
-  header: { homeLabel: "Inicio de GhostYak", navigationLabel: "Menú principal", language: "Elegir idioma", products: "Productos", blog: "Blog" },
+  header: { homeLabel: "Inicio de GhostYak", navigationLabel: "Menú principal", language: "Elegir idioma", products: "Productos", blog: "Blog", support: "Apoyar" },
   footer: { description: "Software que simplifica tu espacio de trabajo diario en Windows.", navigationLabel: "Menú del pie de página", blog: "Blog" },
   carousel: { slideLabel: "Ver pantalla {index}", pauseLabel: "Pausar rotación automática", playLabel: "Reanudar rotación automática", pause: "Pausar", play: "Reproducir" },
   home: {

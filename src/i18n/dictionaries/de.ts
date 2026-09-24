@@ -17,7 +17,202 @@ const de: Dictionary = {
         "alt": "CSV Search Engine mit MFT-Daten, Suchfeldern für einzelne Spalten und Datenzeilen",
         "caption": "MFT-Datenansicht · Koreanische Oberfläche"
       }
-    ]
+    ],
+    "metadataTitle": "CSV Search Engine | DFIR-Werkzeug zum Durchsuchen großer CSV- und Excel-Dateien",
+    "licenseBadge": "Kostenlos für nicht kommerzielle Nutzung",
+    "howToAction": "So funktioniert’s",
+    "workflow": {
+      "eyebrow": "So funktioniert’s",
+      "title": "Datei öffnen und\ndirekt unter den Spaltenköpfen suchen.",
+      "description": "Filtere große CSV- oder Excel-Dateien aus Forensik-Werkzeugen mit Bedingungen pro Spalte auf genau die Zeilen, die du brauchst.",
+      "steps": [
+        {
+          "title": "Datei öffnen",
+          "description": "Wähle über Datei → Öffnen (Strg+O) eine CSV-, XLS- oder XLSX-Datei aus oder ziehe sie ins Fenster."
+        },
+        {
+          "title": "Pro Spalte suchen",
+          "description": "Gib im Suchfeld unter einem Spaltenkopf eine Bedingung ein und drücke Enter. Bei Eingaben in mehreren Spalten werden nur Zeilen angezeigt, die alle Bedingungen erfüllen."
+        },
+        {
+          "title": "Sortieren und Details ansehen",
+          "description": "Klicke auf einen Spaltenkopf zum Sortieren, wähle eine Zeile aus und öffne die Zeilendetails, um die Werte aller Spalten zu sehen."
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "Wichtige Funktionen",
+      "title": "Finden, eingrenzen, gruppieren.",
+      "items": [
+        {
+          "title": "Suche und Filter pro Spalte",
+          "description": "Finde Zeilen mit Bedingungen wie enthält, schließt aus, exakt gleich, beginnt oder endet mit, leer und nicht leer."
+        },
+        {
+          "title": "Zahlen- und Datumsbereiche",
+          "description": "Vergleiche Zahlen und Daten mit größer als, mindestens, kleiner als, höchstens und zwischen. Beispiel: 2026-09-01 .. 2026-09-20"
+        },
+        {
+          "title": "Sortieren und Gruppieren",
+          "description": "Sortiere per Klick auf den Spaltenkopf und ziehe Spalten in die Feldgruppen, um gleiche Werte in bis zu acht Ebenen zu gruppieren."
+        },
+        {
+          "title": "Tabellennavigation",
+          "description": "Durchgehendes Scrollen, ausblendbare Spalten, anpassbare Spaltenbreiten und Zeilendetails machen breite Tabellen übersichtlich."
+        },
+        {
+          "title": "CSV- und Excel-Unterstützung",
+          "description": "Öffne CSV-, XLS- und XLSX-Dateien und wechsle zwischen Tabellenblättern. Excel muss nicht installiert sein."
+        },
+        {
+          "title": "Sprachen und Kodierungen",
+          "description": "Oberfläche auf Koreanisch, Englisch, Japanisch und Chinesisch mit automatischer Erkennung von CSV-Kodierungen wie UTF-8, CP949 und Shift_JIS."
+        }
+      ]
+    },
+    "privacy": {
+      "eyebrow": "Offline-Analyse",
+      "title": "Originale bleiben unverändert, die Analyse bleibt auf deinem PC.",
+      "description": "Die App verändert deine Originaldateien nicht und lädt sie nirgends hoch. Sie läuft ohne Internetverbindung und ohne Konto und sendet weder automatische Netzwerkanfragen noch Nutzungsdaten."
+    },
+    "faq": {
+      "title": "Häufige Fragen",
+      "items": [
+        {
+          "question": "Ist die Nutzung kostenlos?",
+          "answer": "Für nicht kommerzielle Zwecke sind alle Funktionen ohne zeitliche oder zahlenmäßige Begrenzung kostenlos. Die Nutzung für kommerzielle Arbeit, etwa für interne Aufgaben eines Unternehmens oder bezahlte forensische Analysen, ist untersagt. Die Nutzungsbedingungen findest du auch in der App unter Hilfe → Programminfo."
+        },
+        {
+          "question": "Welche Dateien kann ich öffnen?",
+          "answer": "CSV-, XLS- und XLSX-Dateien. XLS-Dateien werden bis 32 MiB unterstützt. Excel-Formatierung, Diagramme, Makroausführung und Neuberechnung von Formeln werden nicht unterstützt."
+        },
+        {
+          "question": "Die Zeichen in meiner CSV-Datei werden falsch angezeigt.",
+          "answer": "Standardmäßig wird die Kodierung automatisch erkannt. Werden Zeichen falsch angezeigt, wähle unter Einstellungen → CSV-Kodierung die passende Kodierung und öffne die Datei erneut."
+        },
+        {
+          "question": "Kann ich Daten bearbeiten oder exportieren?",
+          "answer": "Es ist ein Werkzeug zum Ansehen und Durchsuchen. Das Bearbeiten von Daten und der Export von Suchergebnissen werden noch nicht unterstützt."
+        },
+        {
+          "question": "Wie lange dauern große Dateien?",
+          "answer": "Beim ersten Öffnen einer Datei oder bei der Suche in einer neuen Spalte kann das Erstellen des Suchindex dauern, und du brauchst freien Speicherplatz für den Cache. Die Verarbeitungszeit hängt vom Dateiinhalt und deinem PC ab. Die Leistung bei CSV-Dateien ab 10 GiB ist noch nicht vollständig geprüft."
+        },
+        {
+          "question": "Was brauche ich dafür?",
+          "answer": "Die App ist für 64-Bit-Windows. Führe das Installationsprogramm aus und starte CSV Search Engine über das Startmenü."
+        }
+      ]
+    },
+    "download": {
+      "title": "Herunterladen und\nerste Datei öffnen.",
+      "description": "64-Bit-Windows · Kostenlos für nicht kommerzielle Nutzung"
+    }
+  },
+  productCategories: { windowsProductivity: "Windows-Produktivität", webApps: "Web-Apps" },
+  "folderHistory": {
+    "metadataTitle": "Folder History | Windows-App zum erneuten Öffnen zuletzt besuchter Ordner",
+    "cardDescription": "Eine Windows-App, die im Explorer besuchte Ordner aufzeichnet, damit du sie direkt aus dem Infobereich wieder öffnen kannst.",
+    "description": "Zeichne die Ordner auf, die du im Explorer besuchst, und öffne sie direkt aus dem Infobereich wieder.",
+    "downloadAction": "Kostenlos für Windows herunterladen",
+    "howToAction": "So funktioniert’s",
+    "screenshots": [
+      {
+        "alt": "Liste der zuletzt besuchten Ordner in Folder History mit Ordnernamen, Pfaden und dem Zeitpunkt des letzten Besuchs, neueste zuerst",
+        "caption": "Zuletzt besucht · Koreanische Oberfläche"
+      },
+      {
+        "alt": "Editor für Ausschlussregeln in Folder History mit den Einträgen node_modules und .next",
+        "caption": "Ausschlussregeln bearbeiten"
+      },
+      {
+        "alt": "Einstellungen von Folder History für Design, Start bei der Windows-Anmeldung und Aufbewahrung des Verlaufs",
+        "caption": "Einstellungen · Design, Autostart, Aufbewahrung"
+      }
+    ],
+    "workflow": {
+      "eyebrow": "So funktioniert’s",
+      "title": "Nie wieder Ordner suchen.\nÖffne sie aus deinen letzten Besuchen.",
+      "description": "Wenn du nicht mehr weißt, wo du vor ein paar Tagen gearbeitet hast, doppelklicke auf das Symbol im Infobereich. Die zuletzt besuchten Ordner erscheinen der Reihe nach.",
+      "steps": [
+        {
+          "title": "Überwachten Ordner hinzufügen",
+          "description": "Wähle einen Ordner aus, der aufgezeichnet werden soll. Dieser Ordner und seine Unterordner bilden den Aufzeichnungsbereich."
+        },
+        {
+          "title": "Explorer wie gewohnt nutzen",
+          "description": "Wenn du einen Ordner im Windows-Explorer öffnest, wird der Zeitpunkt des letzten Besuchs automatisch aufgezeichnet."
+        },
+        {
+          "title": "Aus dem Infobereich wieder öffnen",
+          "description": "Doppelklicke auf das Symbol im Infobereich und dann auf einen Ordner in der Liste oder drücke Enter, um ihn im Explorer wieder zu öffnen."
+        }
+      ]
+    },
+    "features": {
+      "eyebrow": "Wichtige Funktionen",
+      "title": "Nur die Ordner, die du brauchst – so, wie du willst.",
+      "items": [
+        {
+          "title": "Suchen und sortieren",
+          "description": "Suche nach Ordnername oder Pfad (Strg+F) und sortiere nach Ordner, Pfad oder letztem Besuch."
+        },
+        {
+          "title": "Oben anheften",
+          "description": "Hefte häufig geöffnete Ordner an, damit sie oben in der Liste bleiben."
+        },
+        {
+          "title": "Ausschlussregeln",
+          "description": "Trage Ordnernamen, die nicht aufgezeichnet werden sollen, wie node_modules oder .git, jeweils in eine eigene Zeile ein. * und ? sind erlaubt."
+        },
+        {
+          "title": "Papierkorb und Wiederherstellen",
+          "description": "Gelöschte Einträge landen im Papierkorb und lassen sich mit dem ursprünglichen Besuchszeitpunkt wiederherstellen."
+        },
+        {
+          "title": "Aufbewahrung des Verlaufs",
+          "description": "Bewahre den Verlauf unbegrenzt auf oder lass ihn nach 1, 3, 6 oder 12 Monaten automatisch bereinigen."
+        },
+        {
+          "title": "Pfad kopieren",
+          "description": "Kopiere den vollständigen Pfad eines Ordners mit der Kopieren-Schaltfläche der Zeile oder mit Strg+C."
+        }
+      ]
+    },
+    "privacy": {
+      "eyebrow": "Auf deinem PC gespeichert",
+      "title": "Dein Verlauf bleibt auf deinem PC.",
+      "description": "Besuchsverlauf und Einstellungen werden in den lokalen App-Daten deines PCs gespeichert. Server oder Konto sind nicht nötig. Wenn du Einträge löschst, bleiben deine echten Ordner und Dateien unverändert."
+    },
+    "faq": {
+      "title": "Häufige Fragen",
+      "items": [
+        {
+          "question": "Welche Ordnerbesuche werden aufgezeichnet?",
+          "answer": "Aufgezeichnet wird, wenn du innerhalb eines überwachten Ordners einen Ordner im Windows-Explorer öffnest oder aus einem anderen Fenster oder Tab zu diesem Ordner zurückkehrst. Navigation in anderen Dateimanagern oder in Dialogen zum Öffnen von Dateien sowie Dateiänderungen gelten nicht als Besuche."
+        },
+        {
+          "question": "Ist es kostenlos?",
+          "answer": "Ja, du kannst es kostenlos nutzen."
+        },
+        {
+          "question": "Stoppt die Aufzeichnung, wenn ich das Fenster schließe?",
+          "answer": "Nein. Das X des Fensters blendet es nur aus, die Aufzeichnung läuft weiter. Um die App ganz zu beenden, klicke mit der rechten Maustaste auf das Symbol im Infobereich und wähle Beenden."
+        },
+        {
+          "question": "Kann die App beim Start von Windows automatisch starten?",
+          "answer": "Aktiviere in den Einstellungen ‚Bei Windows-Anmeldung starten‘. Standardmäßig ist die Option ausgeschaltet."
+        },
+        {
+          "question": "Was brauche ich dafür?",
+          "answer": "Die App läuft unter Windows 11 x64. Das Installationsprogramm installiert für das aktuelle Benutzerkonto, daher sind keine Administratorrechte nötig. Fehlt die WebView2 Runtime, wird sie während der Installation mitinstalliert."
+        }
+      ]
+    },
+    "download": {
+      "title": "Herunterladen und\nersten überwachten Ordner hinzufügen.",
+      "description": "Windows 11 x64 · Installation ohne Administratorrechte"
+    }
   },
   worldClock: {
   "badge": "Neu · Weltuhr-Widget",
@@ -55,7 +250,7 @@ const de: Dictionary = {
     boxesDownload: { title: "Boxes herunterladen" },
     blog: { title: "Blog", description: "Produktneuigkeiten und Entwicklungsgeschichten von GhostYak." },
   },
-  header: { homeLabel: "GhostYak-Startseite", navigationLabel: "Hauptmenü", language: "Sprache wählen", products: "Produkte", blog: "Blog" },
+  header: { homeLabel: "GhostYak-Startseite", navigationLabel: "Hauptmenü", language: "Sprache wählen", products: "Produkte", blog: "Blog", support: "Unterstützen" },
   footer: { description: "Software, die den täglichen Windows-Arbeitsbereich einfacher macht.", navigationLabel: "Fußzeilenmenü", blog: "Blog" },
   carousel: { slideLabel: "Ansicht {index} anzeigen", pauseLabel: "Automatischen Wechsel anhalten", playLabel: "Automatischen Wechsel fortsetzen", pause: "Pause", play: "Abspielen" },
   home: {

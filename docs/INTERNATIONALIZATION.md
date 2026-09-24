@@ -339,4 +339,20 @@ sourceRevision: 1
 
 상세페이지는 기본 언어의 `/product/csv-search-engine`과 `/ko/product/csv-search-engine` 등 8개 접두사 경로에서 제공한다. 홈 카드·제품 메뉴·푸터는 현재 언어의 상세페이지로 연결하며 언어 전환 시 같은 제품 경로를 유지한다. 사용자 요청에 따라 한국어 다운로드 버튼을 `Windows용 다운로드`로 정하고 `csvSearch.downloadAction`을 모든 공개 언어에 번역했다. 사진과 캡션은 상세페이지에서만 표시하며 제품 소개 문구는 기존 원문을 재사용한다.
 
-스크린샷 자동 슬라이드의 조작 문구는 기존 9개 사전의 `carousel`과 `boxes.carousel.controlsLabel`(제품 화면 선택)을 재사용한다. 이미지 대체 텍스트와 캡션은 `csvSearch.screenshots`, 원본 보기 링크는 `landing.actions.viewScreenshot`을 사용한다.
+2026-09-24 CSV Search Engine 상세페이지를 공통 랜딩 구성으로 다시 만들면서 추가한 한국어 원문(`csvSearch.metadataTitle`·`licenseBadge`·`howToAction`·`workflow`·`features`·`privacy`·`faq`·`download`)을 사용자가 승인했고 같은 날 8개 번역을 반영했다. 사용 조건은 개발 저장소의 `OFFLINE_FREE.md`에 따라 ‘비상업적 용도 무료, 기업 내부 업무·유료 포렌식 분석 등 상업적 사용 금지’로 모든 언어에 같게 표시한다. 한국어 FAQ ‘CSV의 한글이 깨져 보여요.’는 다른 언어에서 ‘문자가 깨져 보임’으로 일반화했다. 단위 표기는 언어 관례를 따른다(프랑스어 `Mio`·`Gio`, 독일어 `Strg`). 자동 슬라이드 삭제로 `carousel` 사전 키는 현재 화면에서 쓰이지 않는다.
+
+## Folder History 제품 소개
+
+Folder History 저장소의 README와 설계 문서를 근거로 작성한 한국어 `folderHistory` 원문을 2026-09-24 사용자가 승인했고, 같은 날 8개 번역을 반영했다. 무료 표시는 사용자 결정에 따른다. 기록 범위는 Windows 탐색기 이동으로 한정해 설명하며 다른 파일 관리자·파일 열기 대화상자·파일 변경은 기록하지 않는다고 모든 언어에 명시한다. 제품명 `Folder History`, `node_modules`·`.git` 같은 폴더 이름, 단축키와 URL은 번역하지 않는다. 단축키 표기는 언어 관례를 따른다(독일어 `Strg`). 스크린샷은 한국어 UI이며 각 언어의 캡션에 이를 명시한다.
+
+## 제품 분류
+
+2026-09-24 사용자가 제품 분류 이름을 한국어로 직접 지정했다: `윈도우즈 생산성`, `웹앱`, `디지털포렌식`. 앞의 두 이름은 각 사전의 `productCategories`에 두고 8개 언어로 번역했다. `디지털포렌식`은 기존 `csvSearch.category`를 재사용한다. 한국어 표기 `윈도우즈`는 사용자 지정 표기이므로 다른 화면의 `Windows` 표기와 맞추지 않는다. 번역에서는 제품 플랫폼 이름 `Windows`를 번역하지 않는다.
+
+## 후원 메뉴
+
+2026-09-24 사용자가 헤더 메뉴 이름 `후원하기`를 한국어로 직접 지정했다. 사전의 `header.support`에 두고 8개 언어로 번역했다(영어 `Support`, 일본어 `支援する`, 중국어 `赞助` 등). 후원 수단 이름 `Buy Me a Coffee`는 서비스 이름이므로 번역하지 않는다. 크티는 서비스가 쓰는 한글 이름 `크티`를 한국어 화면에, 도메인 표기 `ctee`를 다른 8개 언어 화면에 표시한다(`src/data/support.ts`의 `names`). 토스아이디처럼 한국어 이름이 필요한 수단을 추가할 때는 한국어 원문을 먼저 정한 뒤 번역한다.
+
+## Folder History 출시 블로그 글
+
+2026-09-24 한국어 원문 `folder-history-launch`(`sourceRevision: 1`)을 사용자가 승인했고 같은 날 8개 번역을 공개했다. 내용은 Folder History 저장소 문서와 승인된 제품 페이지 문구에 근거하며, Windows 기본 기능과의 비교처럼 확인하지 않은 주장은 넣지 않는다. 트레이·탐색기 등 용어는 제품 페이지 번역과 맞추고(예: 독일어 Infobereich, 프랑스어 zone de notification), 대표 이미지의 `imageAlt`는 사전의 `folderHistory.screenshots[0].alt` 번역을 사용한다. 제목과 설명에는 각 언어의 검색 표현(예: 영어 "reopen recently visited folders", 일본어 「最近開いたフォルダー」)을 넣는다.

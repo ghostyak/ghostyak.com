@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { boxes } from "@/data/products";
 import { localeConfig, type PublishedLocale } from "@/i18n/locales";
 import { localizedPath } from "@/i18n/routing";
+import type { BlogPostSummary } from "@/lib/blog";
 
 export const siteUrl = "https://www.ghostyak.com";
 
@@ -65,5 +66,23 @@ export function getSoftwareApplicationJsonLd({
       url: siteUrl,
       logo: `${siteUrl}/favicon.svg`,
     },
+  };
+}
+
+export function getBlogPostingJsonLd({ locale, post }: { locale: PublishedLocale; post: BlogPostSummary }) {
+  const url = `${siteUrl}${localizedPath(locale, `/blog/${post.slug}`)}`;
+  const organization = { "@type": "Organization", name: "GhostYak", url: siteUrl, logo: `${siteUrl}/favicon.svg` };
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description,
+    datePublished: `${post.publishedAt}T00:00:00+09:00`,
+    inLanguage: localeConfig[locale].htmlLanguage,
+    url,
+    mainEntityOfPage: url,
+    ...(post.image ? { image: `${siteUrl}${post.image}` } : {}),
+    author: organization,
+    publisher: organization,
   };
 }

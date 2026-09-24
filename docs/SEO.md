@@ -55,3 +55,11 @@ Vercel 환경 변수를 변경한 뒤에는 새 배포가 필요하다. 값이 �
 소유권 인증과 sitemap 제출은 검색엔진이 페이지를 발견하도록 돕지만 색인이나 검색
 순위를 보장하지는 않는다. 중국 대상 노출은 바이두 크롤러가 실제 배포 서버와 정적
 자산에 안정적으로 접근할 수 있는지도 함께 점검한다.
+
+## 블로그 글
+
+블로그 글의 메타데이터는 `src/i18n/blog-metadata.ts`에서 만든다. 제목·설명·canonical·`hreflang`·Open Graph 게시일을 제공하고, frontmatter에 선택 항목 `image`(public 경로)와 `imageAlt`를 지정하면 Open Graph·트위터 카드 이미지(`summary_large_image`)로 사용한다. 이미지가 없으면 트위터 카드는 `summary`다. `image`를 지정하면 `imageAlt`도 필수이며 빌드 중 검사한다.
+
+모든 블로그 글 본문에는 `BlogPosting` JSON-LD가 서버 렌더링된다(`src/seo.ts`의 `getBlogPostingJsonLd`). 제목, 설명, 게시일, 언어, 절대 URL, 대표 이미지와 작성자·게시자 GhostYak을 포함한다. 배포 후 Rich Results Test로 각 언어의 글을 검사한다.
+
+검색 유입을 위한 글은 제목과 설명(검색 결과 요약문)에 핵심 검색 표현을 넣고, H2 소제목은 실제 검색 문장에 가까운 질문형으로 쓰며, 본문 끝에서 해당 언어의 제품 페이지로 내부 링크를 연결한다.

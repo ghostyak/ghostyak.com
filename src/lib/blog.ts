@@ -18,6 +18,9 @@ export type BlogPostSummary = {
   publishedAt: string;
   translationKey: string;
   sourceRevision: number;
+  // Optional share and structured-data image, a path under public/.
+  image?: string;
+  imageAlt?: string;
 };
 
 export type BlogPost = BlogPostSummary & { html: string };
@@ -37,6 +40,9 @@ function readFrontmatter(slug: string, source: string): BlogPostSummary & { cont
   ) {
     throw new Error(`${slug}.md must define title, description, publishedAt, translationKey, and a numeric sourceRevision.`);
   }
+  if ((data.image !== undefined && typeof data.image !== "string") || (data.imageAlt !== undefined && typeof data.imageAlt !== "string") || (data.image && !data.imageAlt)) {
+    throw new Error(`${slug}.md image must be a string path with a string imageAlt.`);
+  }
   return {
     slug,
     title: data.title,
@@ -44,6 +50,8 @@ function readFrontmatter(slug: string, source: string): BlogPostSummary & { cont
     publishedAt: data.publishedAt,
     translationKey: data.translationKey,
     sourceRevision: data.sourceRevision,
+    image: data.image,
+    imageAlt: data.imageAlt,
     content,
   };
 }
@@ -63,6 +71,8 @@ export async function getAllPosts(locale: PublishedLocale): Promise<BlogPostSumm
         publishedAt: post.publishedAt,
         translationKey: post.translationKey,
         sourceRevision: post.sourceRevision,
+        image: post.image,
+        imageAlt: post.imageAlt,
       };
     }),
   );

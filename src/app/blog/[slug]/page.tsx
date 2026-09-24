@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import { getBlogPostMetadata } from "@/i18n/blog-metadata";
 import { BlogPostContent } from "@/components/SitePages";
 import { defaultLocale, sourceLocale } from "@/i18n/locales";
-import { getLocalizedAlternates, getOpenGraphLocale } from "@/i18n/metadata";
 import { getAllPosts, getPost } from "@/lib/blog";
 
 export async function generateStaticParams() {
@@ -11,13 +11,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps<"/blog/[slug]">): Promise<Metadata> {
   const { slug } = await params;
   const post = await getPost(defaultLocale, slug);
-  if (!post) return {};
-  return {
-    title: post.title,
-    description: post.description,
-    alternates: getLocalizedAlternates(defaultLocale, `/blog/${post.slug}`),
-    openGraph: { ...getOpenGraphLocale(defaultLocale), type: "article", title: post.title, description: post.description, url: `/blog/${post.slug}`, publishedTime: post.publishedAt },
-  };
+  return post ? getBlogPostMetadata(defaultLocale, post) : {};
 }
 
 export default async function BlogPostPage({ params }: PageProps<"/blog/[slug]">) {

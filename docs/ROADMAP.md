@@ -121,7 +121,7 @@ ghostyak.com은 GhostYak 소프트웨어를 소개하고 배포하는 공식 웹
 - [x] 후속 요청: 홈의 Boxes·CSV Search Engine을 Clock·OSINTS와 같은 크기로 축소하고 네 제품을 2×2 카드로 통일
 - [x] 후속 요청: CSV Search Engine 홈 카드의 사진을 상세페이지로 이동하고 Windows 직접 다운로드 제공
 - [x] CSV Search Engine 상세페이지의 9개 언어 경로·제품 탐색·공유 메타데이터·sitemap 반영
-- [x] CSV Search Engine 상세 스크린샷 카드를 자동 슬라이드로 변경하고 수동 선택·정지/재생·모션 감소 지원
+- [x] CSV Search Engine 상세 스크린샷 카드를 자동 슬라이드로 변경하고 수동 선택·정지/재생·모션 감소 지원 (2026-09-24 공통 랜딩 전환으로 삭제)
 - [x] 홈·Boxes·CSV Search Engine 히어로를 공통 컴포넌트로 통합하고 제목·설명·배지·버튼·여백 기준 통일
 - [x] CSV Search Engine 출시·Boxes 개발 및 안정화·OSINTS 리뉴얼 블로그 글과 8개 언어 번역 추가
 
@@ -136,3 +136,39 @@ ghostyak.com은 GhostYak 소프트웨어를 소개하고 배포하는 공식 웹
 - [x] 남색 공통 푸터
 - [x] 섹션 순서와 링크 동작은 변경 없음
 - [x] 홈 히어로·제품 카드·블로그 영역 설명글을 새로 쓴 한국어 원문 사용자 승인(2026-09-24) 후 8개 언어 번역 반영. CSV Search Engine 소개는 사용자 지정 문구라 유지
+
+## 완료: Folder History 제품 추가 (2026-09-24)
+
+- [x] Folder History 저장소 README·설계 문서에 근거한 한국어 원문 작성과 사용자 승인
+- [x] `/product/folder-history` 랜딩: 사용 방법·주요 기능·로컬 저장·FAQ·다운로드와 실제 스크린샷 세 장
+- [x] 공식 설치 파일 직접 다운로드와 GitHub 저장소 링크 연결
+- [x] 홈 다섯 번째 카드(2열 유지), 공통 제품 메뉴·푸터·sitemap·언어별 메타데이터 반영
+- [x] 8개 언어 번역
+
+## 완료: 제품 분류별 메뉴와 홈 진열 (2026-09-24)
+
+- [x] 제품 메뉴를 윈도우즈 생산성(Boxes·Folder History)·웹앱(Clock·OSINTS)·디지털포렌식(CSV Search Engine) 그룹으로 분리
+- [x] 홈 제품 카드를 같은 분류별 제목과 2열 카드로 진열하고 푸터 링크 순서를 맞춤
+- [x] 분류 이름 한국어 사용자 지정 원문과 8개 언어 번역
+
+## 완료: 후원 메뉴 (2026-09-24)
+
+- [x] 푸터에 Buy Me a Coffee 링크 추가
+- [x] 헤더 메뉴를 제품·블로그·후원하기·언어 순서로 정리하고 후원하기를 드롭다운으로 추가
+- [x] 후원 수단을 `supportLinks` 한 목록에서 관리해 헤더와 푸터에 함께 표시
+- [x] 후원 메뉴에 크티(`https://ctee.kr/place/ghostyak/donation`) 추가. 계좌번호가 노출되는 LinkTo는 사용자 요청으로 제외
+- [ ] 토스아이디 후원 링크 추가
+
+## 완료: Folder History 출시 블로그 글 (2026-09-24)
+
+- [x] 검색 유입을 고려한 한국어 원문 작성과 사용자 승인, 8개 언어 번역
+- [x] 블로그 frontmatter 대표 이미지(`image`·`imageAlt`)와 Open Graph·트위터 카드 이미지 지원
+- [x] 모든 블로그 글에 `BlogPosting` 구조화 데이터 추가, 블로그 메타데이터 코드 통합
+- [ ] 배포 후 Search Console·네이버 서치어드바이저 sitemap 재제출과 Rich Results Test 확인
+
+## 완료: CSV Search Engine 랜딩 재제작 (2026-09-24)
+
+- [x] Folder History 페이지를 공통 `ProductLanding`으로 분리하고 CSV Search Engine에 같은 구성 적용
+- [x] 공개 README·사용자 가이드 근거의 한국어 원문 작성과 사용자 승인, 8개 언어 번역
+- [x] 비상업적 용도 무료·상업적 사용 금지 조건을 배지·FAQ·다운로드 설명에 표시
+- [x] 자동 스크린샷 슬라이드(`ScreenshotSlideshow`) 삭제

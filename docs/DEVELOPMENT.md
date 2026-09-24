@@ -45,7 +45,7 @@ Boxes 첫 화면은 중앙의 가장 큰 `Boxes` H1, 기존 소개 문구, 다�
 
 홈의 Boxes 카드에서 제품으로 이동한 뒤에도 공통 푸터 하나가 표시되어야 한다. 주요 사이트 링크는 전체 문서 탐색을 유지한다. 공통 헤더에는 다운로드 버튼을 추가하지 않고 제품 본문의 다운로드 링크를 확인한다.
 
-공통 헤더의 제품 메뉴는 `ProductsDropdown`으로 열고 닫는다. Boxes는 현재 언어의 제품 페이지, Clock과 OSINTS는 새 탭의 외부 웹앱으로 연결한다. 클릭·Enter·Space로 열기, 방향키로 항목 이동, Enter로 선택, Escape·Tab·바깥 클릭으로 닫기와 트리거 포커스 복원을 확인한다.
+공통 헤더의 제품 메뉴는 `NavDropdown`으로 열고 닫는다. Boxes는 현재 언어의 제품 페이지, Clock과 OSINTS는 새 탭의 외부 웹앱으로 연결한다. 클릭·Enter·Space로 열기, 방향키로 항목 이동, Enter로 선택, Escape·Tab·바깥 클릭으로 닫기와 트리거 포커스 복원을 확인한다.
 
 Boxes의 버전, 무료 설치 파일 URL과 제품 이미지 목록, Clock과 OSINTS의 외부 URL은 `src/data/products.ts`에서 수정한다. 기능 문구는 로케일 사전에서 관리한다. 홈은 네 제품을 카드로 보여주며 Clock과 OSINTS 카드는 브라우저에서 새 탭으로 웹앱을 연다. OSINTS 링크는 공통 헤더 제품 메뉴와 푸터에도 제공한다. `public/images/renewal/boxes-desktop.webp`는 사진 위젯 확대 설명에 사용한다.
 
@@ -105,7 +105,7 @@ Markdown 본문
 
 ## shadcn/ui 유지보수
 
-홈·Boxes·CSV Search Engine 히어로 수정은 `src/components/PageHero.tsx`를 기준으로 한다. 페이지별 제목 크기·상단 여백을 따로 덮어쓰지 않는다. 320px·768px·데스크톱에서 세 페이지의 제목 크기·설명 줄 높이·배지 간격·버튼 높이를 함께 확인한다.
+홈·Boxes·CSV Search Engine·Folder History 히어로 수정은 `src/components/PageHero.tsx`를 기준으로 한다. 페이지별 제목 크기·상단 여백을 따로 덮어쓰지 않는다. 320px·768px·데스크톱에서 세 페이지의 제목 크기·설명 줄 높이·배지 간격·버튼 높이를 함께 확인한다.
 
 `components.json`과 `src/components/ui/`를 디자인 시스템의 기준으로 사용한다. 필요 시 `npx shadcn@latest add <component>`로 공식 컴포넌트를 추가하고 변경 내용을 검토한다. 서버 링크는 `buttonVariants`, 조건부 클래스는 `cn`으로 구성한다. 버튼의 번역문이 길면 `h-auto min-h-11 whitespace-normal`을 적용한다. 메뉴와 Accordion 이외의 페이지 전체를 클라이언트 컴포넌트로 바꾸지 않는다.
 
@@ -116,4 +116,8 @@ Markdown 본문
 
 홈 제품 카드 크기를 변경할 때 네 카드의 2열 너비·행 높이, 240px 미리보기, 하단 행동 버튼 정렬을 함께 검수한다. 모바일에서는 본문 길이에 따라 높이가 늘어날 수 있으며 이미지는 자르지 않는다.
 
-CSV 상세페이지의 `ScreenshotSlideshow`는 5초 자동 전환·마지막 사진 이후 처음으로 복귀·수동 선택·정지와 재생·좌우 방향키를 검수한다. 호버 중에는 자동 전환을 멈추며 모션 감소 설정에서는 수동 선택만 제공한다. 비활성 이미지 링크가 탭 이동에 포함되지 않는지, 320px에서 조작 버튼이 넘치지 않는지 확인한다.
+CSV 상세페이지는 공통 `ProductLanding`을 쓰므로 Folder History 페이지와 함께 검수한다. 제품 설명의 근거는 공개 저장소 README(`ghostyak/csv-search-engine`)와 개발 저장소의 사용자 가이드·`docs/OFFLINE_FREE.md`다. 사용 조건(비상업적 용도 무료, 상업적 사용 금지)이 바뀌면 배지·FAQ·다운로드 설명을 한국어 원문부터 고쳐 승인받는다. 스크린샷 순서는 `CsvSearchProduct`의 `screenshotOrder`에서 정한다.
+
+## Folder History 관리
+
+제품 설명의 근거는 Folder History 저장소(`ghostyak/folder-history`)의 README와 `docs/`다. 앱 동작이 바뀌면 한국어 `folderHistory` 원문을 먼저 고쳐 승인받은 뒤 8개 번역에 반영한다. 설치 파일 이름이나 저장소가 바뀌면 `src/data/products.ts`의 `folderHistory.downloadUrl`·`url`만 수정한다. 스크린샷은 `public/images/folder-history/`에 두며 교체 시 `folderHistory.screenshots`의 원본 크기와 각 사전의 대체 텍스트·캡션을 함께 갱신한다.

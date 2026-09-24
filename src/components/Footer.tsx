@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-import { osints, csvSearchEngine } from "@/data/products";
+import { osints, csvSearchEngine, folderHistory } from "@/data/products";
+import { supportLinkName, supportLinks } from "@/data/support";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import type { PublishedLocale } from "@/i18n/locales";
 import { localizedPath } from "@/i18n/routing";
@@ -23,6 +24,7 @@ export function Footer({ labels, locale }: { labels: Dictionary["footer"]; local
         </div>
         <nav className="flex flex-wrap content-start gap-x-7 text-sm" aria-label={labels.navigationLabel}>
           <a className={footerLink} href={localizedPath(locale, "/product/boxes")}>Boxes</a>
+          <a className={footerLink} href={localizedPath(locale, folderHistory.pagePath)}>{folderHistory.name}</a>
           <a className={footerLink} href="https://clock.ghostyak.com/" rel="noreferrer" target="_blank">Clock</a>
           <a className={footerLink} href={osints.url} rel="noreferrer" target="_blank">{osints.name}</a>
           <a className={footerLink} href={localizedPath(locale, csvSearchEngine.pagePath)}>{csvSearchEngine.name}</a>
@@ -31,7 +33,7 @@ export function Footer({ labels, locale }: { labels: Dictionary["footer"]; local
       </div>
       <div className="mt-12 flex flex-wrap items-center justify-between gap-x-8 border-t pt-4 text-xs text-muted-foreground">
         <p>© {new Date().getFullYear()} GhostYak</p>
-        <div className="flex flex-wrap gap-x-5">{socialLinks.map(link => <a className={footerLink} href={link.href} key={link.label} rel="noreferrer" target="_blank">{link.label}<ArrowUpRight className="size-3" aria-hidden="true" /></a>)}</div>
+        <div className="flex flex-wrap gap-x-5">{[...socialLinks, ...supportLinks.map(link => ({ href: link.url, label: supportLinkName(link, locale) }))].map(link => <a className={footerLink} href={link.href} key={link.label} rel="noreferrer" target="_blank">{link.label}<ArrowUpRight className="size-3" aria-hidden="true" /></a>)}</div>
       </div>
     </div>
   </footer>;

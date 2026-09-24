@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import { getBlogPostMetadata } from "@/i18n/blog-metadata";
 import { BlogPostContent } from "@/components/SitePages";
 import { sourceLocale } from "@/i18n/locales";
-import { getLocalizedAlternates, getOpenGraphLocale } from "@/i18n/metadata";
 import { requirePrefixedLocale } from "@/i18n/route-locale";
 import { getAllPosts, getPost } from "@/lib/blog";
 
@@ -13,13 +13,7 @@ export async function generateMetadata({ params }: PageProps<"/[locale]/blog/[sl
   const { locale: localeValue, slug } = await params;
   const locale = requirePrefixedLocale(localeValue);
   const post = await getPost(locale, slug);
-  if (!post) return {};
-  return {
-    title: post.title,
-    description: post.description,
-    alternates: getLocalizedAlternates(locale, `/blog/${post.slug}`),
-    openGraph: { ...getOpenGraphLocale(locale), type: "article", title: post.title, description: post.description, url: `/${locale}/blog/${post.slug}`, publishedTime: post.publishedAt },
-  };
+  return post ? getBlogPostMetadata(locale, post) : {};
 }
 
 export default async function LocalizedBlogPostPage({ params }: PageProps<"/[locale]/blog/[slug]">) {

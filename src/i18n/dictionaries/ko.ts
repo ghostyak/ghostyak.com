@@ -10,6 +10,105 @@ const ko = {
       { alt: "CSV·Excel 파일을 열 수 있는 CSV Search Engine 시작 화면", caption: "파일 열기 · 한국어 UI" },
       { alt: "CSV Search Engine에서 MFT 데이터를 열고 열별 검색란과 행을 표시한 화면", caption: "MFT 데이터 조회 · 한국어 UI" },
     ],
+    metadataTitle: "CSV Search Engine | 대용량 CSV·Excel 검색 DFIR 도구",
+    licenseBadge: "비상업적 용도 무료",
+    howToAction: "사용 방법",
+    workflow: {
+      eyebrow: "사용 방법",
+      title: "파일을 열고,\n열 제목 아래에서 바로 검색하세요.",
+      description: "포렌식 도구가 내보낸 대용량 CSV나 Excel 파일에서 열별 조건으로 필요한 행만 추려 보세요.",
+      steps: [
+        { title: "파일 열기", description: "파일 → 열기(Ctrl+O)로 CSV·XLS·XLSX 파일을 선택하거나 창에 끌어 놓으세요." },
+        { title: "열별로 검색", description: "열 제목 아래 검색란에 조건을 입력하고 Enter를 누르세요. 여러 열에 입력하면 모든 조건에 맞는 행만 보여 줍니다." },
+        { title: "정렬하고 자세히 보기", description: "열 제목을 클릭해 정렬하고, 행을 선택한 뒤 행 상세에서 모든 열의 값을 확인하세요." },
+      ],
+    },
+    features: {
+      eyebrow: "주요 기능",
+      title: "찾고, 좁히고, 묶어 보세요.",
+      items: [
+        { title: "열별 검색·필터", description: "포함, 제외, 정확히 일치, 시작·끝, 빈값·값 있음 조건으로 원하는 행을 찾습니다." },
+        { title: "숫자·날짜 범위", description: "초과·이상·미만·이하·사이 조건으로 숫자와 날짜를 비교합니다. 예: 2026-09-01 .. 2026-09-20" },
+        { title: "정렬과 그룹화", description: "열 제목을 클릭해 정렬하고, 열을 필드 그룹으로 끌어 놓아 같은 값끼리 최대 8단계로 묶어 봅니다." },
+        { title: "표 탐색", description: "연속 스크롤, 열 숨기기, 열 너비 조절, 행 상세 보기로 넓은 표도 편하게 살펴봅니다." },
+        { title: "CSV·Excel 지원", description: "CSV와 XLS·XLSX 파일을 열고 시트 탭으로 전환합니다. Excel을 설치하지 않아도 됩니다." },
+        { title: "다국어·인코딩", description: "한국어·영어·일본어·중국어 UI를 제공하고 UTF-8, CP949, Shift_JIS 등 여러 CSV 인코딩을 자동으로 감지합니다." },
+      ],
+    },
+    privacy: {
+      eyebrow: "오프라인 분석",
+      title: "원본은 그대로, 분석은 내 PC에서.",
+      description: "원본 파일을 수정하거나 외부로 업로드하지 않습니다. 인터넷 연결이나 계정 없이 실행되며 자동 네트워크 요청이나 사용량 수집도 하지 않습니다.",
+    },
+    faq: {
+      title: "자주 묻는 질문",
+      items: [
+        { question: "무료로 쓸 수 있나요?", answer: "비상업적 용도에 한해 모든 기능을 기간·횟수 제한 없이 무료로 사용할 수 있습니다. 기업의 내부 업무, 유료 포렌식 분석 등 상업적 업무에서의 사용은 금지됩니다. 사용 조건은 앱의 도움말 → 프로그램 정보에서도 확인할 수 있습니다." },
+        { question: "어떤 파일을 열 수 있나요?", answer: "CSV, XLS, XLSX 파일을 열 수 있습니다. XLS 파일은 최대 32 MiB까지 지원하며, Excel 서식·차트·매크로 실행과 수식 재계산은 지원하지 않습니다." },
+        { question: "CSV의 한글이 깨져 보여요.", answer: "기본값은 인코딩 자동 감지입니다. 글자가 깨져 보이면 설정 → CSV 인코딩에서 알맞은 인코딩을 선택한 뒤 다시 여세요." },
+        { question: "데이터를 편집하거나 내보낼 수 있나요?", answer: "조회·검색용 도구입니다. 데이터 편집과 검색 결과 내보내기는 아직 지원하지 않습니다." },
+        { question: "큰 파일은 얼마나 걸리나요?", answer: "파일을 처음 열거나 새로운 열을 검색할 때 검색용 인덱스를 만드느라 준비 시간이 걸릴 수 있고, 캐시를 저장할 디스크 여유 공간이 필요합니다. 처리 시간은 파일 내용과 PC 성능에 따라 달라지며, 10 GiB 이상 CSV의 성능은 아직 전체 검증하지 않았습니다." },
+        { question: "어떤 환경이 필요하나요?", answer: "Windows 64비트용입니다. 설치 파일을 실행한 뒤 시작 메뉴에서 CSV Search Engine을 실행하세요." },
+      ],
+    },
+    download: {
+      title: "다운로드하고,\n첫 파일을 열어 보세요.",
+      description: "Windows 64비트 · 비상업적 용도 무료",
+    },
+  },
+  productCategories: { windowsProductivity: "윈도우즈 생산성", webApps: "웹앱" },
+  folderHistory: {
+    metadataTitle: "Folder History | 최근 방문한 폴더를 다시 여는 Windows 앱",
+    cardDescription: "탐색기로 방문한 폴더를 기록해 두었다가 트레이에서 바로 다시 여는 Windows 앱입니다.",
+    description: "탐색기로 방문한 폴더를 기록해 두었다가, 트레이에서 바로 다시 여세요.",
+    downloadAction: "Windows용 무료 다운로드",
+    howToAction: "사용 방법",
+    screenshots: [
+      { alt: "Folder History의 최근 방문 목록. 폴더 이름, 경로와 마지막 방문 시각이 최근 순으로 표시된다", caption: "최근 방문 목록 · 한국어 UI" },
+      { alt: "node_modules와 .next를 입력한 Folder History 제외 규칙 편집 창", caption: "제외 규칙 편집" },
+      { alt: "화면 테마, Windows 로그인 시 실행, 이력 보관 기간을 설정하는 Folder History 설정 창", caption: "설정 · 화면 테마, 자동 실행, 이력 보관" },
+    ],
+    workflow: {
+      eyebrow: "사용 방법",
+      title: "폴더를 찾아 헤매지 마세요.\n최근 방문에서 바로 여세요.",
+      description: "며칠 전 작업한 폴더가 어디였는지 기억나지 않을 때, 트레이 아이콘을 더블클릭하면 최근 방문한 폴더가 순서대로 나타납니다.",
+      steps: [
+        { title: "감시 폴더 추가", description: "기록할 폴더를 선택하세요. 선택한 폴더와 그 하위 폴더가 기록 범위입니다." },
+        { title: "평소처럼 탐색기 사용", description: "Windows 탐색기로 폴더를 열면 마지막 방문 시각이 자동으로 기록됩니다." },
+        { title: "트레이에서 다시 열기", description: "트레이 아이콘을 더블클릭하고 목록의 폴더를 더블클릭하거나 Enter를 누르면 탐색기로 다시 열립니다." },
+      ],
+    },
+    features: {
+      eyebrow: "주요 기능",
+      title: "필요한 폴더만, 원하는 방식으로.",
+      items: [
+        { title: "검색과 정렬", description: "폴더 이름이나 경로로 검색하고(Ctrl+F), 폴더·경로·마지막 방문 순으로 정렬합니다." },
+        { title: "상단 고정", description: "자주 여는 폴더는 핀으로 목록 맨 위에 고정하세요." },
+        { title: "제외 규칙", description: "node_modules, .git처럼 기록하지 않을 폴더 이름을 한 줄에 하나씩 적으세요. *와 ?를 쓸 수 있습니다." },
+        { title: "휴지통과 복원", description: "지운 기록은 휴지통에 보관되며 원래 방문 시각으로 복원할 수 있습니다." },
+        { title: "이력 보관 기간", description: "이력을 계속 보관하거나 1·3·6·12개월이 지나면 자동으로 정리합니다." },
+        { title: "경로 복사", description: "행의 복사 버튼이나 Ctrl+C로 폴더의 전체 경로를 복사합니다." },
+      ],
+    },
+    privacy: {
+      eyebrow: "내 PC에 저장",
+      title: "기록은 내 PC에만 남습니다.",
+      description: "방문 기록과 설정은 내 PC의 로컬 앱 데이터에 저장되며 서버나 계정이 필요 없습니다. 기록을 지워도 실제 폴더와 파일은 그대로입니다.",
+    },
+    faq: {
+      title: "자주 묻는 질문",
+      items: [
+        { question: "어떤 폴더 이동을 기록하나요?", answer: "감시 폴더 안에서 Windows 탐색기로 폴더를 열거나, 다른 창이나 탭에서 그 폴더로 돌아온 경우를 기록합니다. 다른 파일 관리자나 파일 열기 대화상자에서의 이동, 파일 변경은 방문으로 기록하지 않습니다." },
+        { question: "무료인가요?", answer: "네, 무료로 사용할 수 있습니다." },
+        { question: "창을 닫으면 기록이 멈추나요?", answer: "아니요. 창의 X는 창만 숨기고 기록은 계속됩니다. 완전히 종료하려면 트레이 아이콘을 오른쪽 클릭하고 종료를 선택하세요." },
+        { question: "Windows를 켤 때 자동으로 실행할 수 있나요?", answer: "설정에서 ‘Windows 로그인 시 실행’을 켜세요. 기본값은 꺼져 있습니다." },
+        { question: "어떤 환경이 필요하나요?", answer: "Windows 11 x64에서 사용할 수 있습니다. 설치 프로그램은 현재 사용자 계정에 설치되므로 관리자 권한이 필요 없고, WebView2 Runtime이 없으면 설치 중에 함께 설치합니다." },
+      ],
+    },
+    download: {
+      title: "다운로드하고,\n첫 감시 폴더를 추가하세요.",
+      description: "Windows 11 x64 · 관리자 권한 없이 설치",
+    },
   },
   worldClock: {
     badge: "새 기능 · 세계시계 위젯",
@@ -42,6 +141,7 @@ const ko = {
     language: "언어 선택",
     products: "제품",
     blog: "블로그",
+    support: "후원하기",
   },
   footer: {
     description: "일상의 Windows 작업 공간을 더 단순하게 만드는 소프트웨어.",

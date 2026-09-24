@@ -2,7 +2,7 @@
 
 ## 개요
 
-ghostyak.com은 Vercel에 배포하는 Next.js 애플리케이션이다. 영어를 기본 URL 언어로 하고 8개 접두사 언어에서 GhostYak 브랜드, Boxes 제품 소개와 무료 설치 파일, Clock과 OSINTS 웹앱 링크, CSV Search Engine의 DFIR 제품 소개와 GitHub 링크, Markdown 블로그를 제공한다. 국제화는 기본 URL과 별개로 한국어 콘텐츠를 유일한 원문으로 삼으며 세부 기준은 [INTERNATIONALIZATION.md](./INTERNATIONALIZATION.md)를 따른다.
+ghostyak.com은 Vercel에 배포하는 Next.js 애플리케이션이다. 영어를 기본 URL 언어로 하고 8개 접두사 언어에서 GhostYak 브랜드, Boxes 제품 소개와 무료 설치 파일, Clock과 OSINTS 웹앱 링크, CSV Search Engine의 DFIR 제품 소개와 GitHub 링크, Folder History 제품 소개와 무료 설치 파일, Markdown 블로그를 제공한다. 국제화는 기본 URL과 별개로 한국어 콘텐츠를 유일한 원문으로 삼으며 세부 기준은 [INTERNATIONALIZATION.md](./INTERNATIONALIZATION.md)를 따른다.
 
 ## 기술 구성
 
@@ -16,7 +16,7 @@ ghostyak.com은 Vercel에 배포하는 Next.js 애플리케이션이다. 영어�
 
 AdSense는 공통 head에서 일반 `<script async>`로 로드한다. `next/script`가 자동으로 추가하는 `data-nscript` 속성을 AdSense가 지원하지 않기 때문이다. Google Analytics는 기존 `next/script`의 `afterInteractive` 방식을 유지한다.
 
-페이지와 컴포넌트는 Server Component가 기본이다. 공개 랜딩에서는 `LanguageSwitcher`, `CopySiteLink`와 공통 헤더의 `ProductsDropdown`을 사용자 조작을 위해 Client Component로 둔다. 제품 메뉴의 링크와 로케일 경로는 서버의 `Header`에서 전달한다. FAQ와 설치 도움말의 shadcn Accordion도 작은 클라이언트 경계로 둔다. 사용하지 않는 자동 회전·다운로드 타이머·이전 세계시계 컴포넌트는 제거했다.
+페이지와 컴포넌트는 Server Component가 기본이다. 공개 랜딩에서는 `LanguageSwitcher`, `CopySiteLink`와 공통 헤더의 `NavDropdown`을 사용자 조작을 위해 Client Component로 둔다. 제품 메뉴의 링크와 로케일 경로는 서버의 `Header`에서 전달한다. FAQ와 설치 도움말의 shadcn Accordion도 작은 클라이언트 경계로 둔다. 사용하지 않는 자동 회전·다운로드 타이머·이전 세계시계 컴포넌트는 제거했다.
 
 ## 주요 구조
 
@@ -38,7 +38,7 @@ docs/                            설계, 개발과 로드맵 문서
 
 ## 공개 경로
 
-- `/`: GhostYak 브랜드 홈으로 Boxes, Clock, OSINTS와 CSV Search Engine 제품 카드, 블로그 진입점을 간결하게 제공
+- `/`: GhostYak 브랜드 홈으로 Boxes, Clock, OSINTS, CSV Search Engine과 Folder History 제품 카드, 블로그 진입점을 간결하게 제공
 - `/product/boxes`: 승인된 Boxes 전용 제품 랜딩; 기존 제품 URL과 언어별 canonical 유지
 - `/product/boxes/download`: 같은 언어의 제품 페이지 `/product/boxes#download` 설치 안내로 307 이동. 파일 다운로드는 사용자가 직접 버튼을 눌러 시작한다.
 - `/blog`: Markdown 글 목록
@@ -79,7 +79,7 @@ Boxes의 버전, 설치 파일 URL과 실제 이미지 경로, Clock과 OSINTS�
 
 `components.json`은 New York 스타일, RSC, Tailwind v4와 소스 별칭을 정의한다. `src/components/ui/`의 공식 레지스트리 소스를 프로젝트에서 소유하며 `src/lib/utils.ts`의 `cn`으로 Tailwind 클래스를 병합한다. `globals.css`에는 의미 기반 테마 토큰과 기본 접근성 규칙을 둔다. DaisyUI는 제거했다. 메뉴는 Radix DropdownMenu로 키보드 포커스와 닫힘 처리를 관리한다.
 
-홈은 Boxes·Clock·OSINTS·CSV Search Engine의 동일한 크기 카드와 블로그 진입 영역으로 구성한다. 블로그 목록은 카드, 상세는 좁은 본문 폭을 사용한다. 모든 공개 페이지는 루트 레이아웃의 본문 건너뛰기 링크와 공통 푸터를 공유한다.
+홈은 Boxes·Clock·OSINTS·CSV Search Engine·Folder History의 동일한 크기 카드와 블로그 진입 영역으로 구성한다. 블로그 목록은 카드, 상세는 좁은 본문 폭을 사용한다. 모든 공개 페이지는 루트 레이아웃의 본문 건너뛰기 링크와 공통 푸터를 공유한다.
 
 홈과 두 제품 페이지는 `PageHero` Server Component로 제목·설명·배지·행동 버튼·보조 문구를 구성한다. 타이포그래피와 상하 여백은 이 컴포넌트에서 관리하며 페이지는 현재 언어의 문구와 링크만 전달한다. `heroActionClassName`은 제품 히어로 버튼의 크기를 공유한다.
 ## CSV Search Engine
@@ -88,6 +88,10 @@ Boxes의 버전, 설치 파일 URL과 실제 이미지 경로, Clock과 OSINTS�
 
 `CsvSearchProduct`는 실제 스크린샷 두 장과 Windows 설치 파일 다운로드, GitHub 링크를 제공하는 Server Component다. 기본 언어와 8개 언어 접두사 경로를 지원하며 `csv-search-metadata.ts`에서 canonical·언어 대체 URL·공유 이미지를 설정한다. sitemap에도 모든 공개 언어의 제품 경로와 이미지를 포함한다.
 
-스크린샷 영역만 `ScreenshotSlideshow` Client Component로 분리한다. 서버가 이미지와 현재 언어 문구를 전달하며 추가 패키지 없이 React 상태·타이머와 CSS transform으로 자동 전환한다. 비활성 이미지는 접근성 트리와 탭 이동에서 제외하고 모션 감소 설정을 구독한다. 타이머는 정지·호버·언마운트 시 해제하며 숨겨진 탭에서는 이미지를 넘기지 않는다.
+CSV Search Engine 상세페이지 `CsvSearchProduct`는 Server Component이며 공통 `ProductLanding`에 제품 데이터와 사전 `csvSearch` 문구를 전달한다. FAQ Accordion만 클라이언트 경계다. 자동 슬라이드 `ScreenshotSlideshow`는 삭제했다. 공유 메타데이터 제목은 `csvSearch.metadataTitle`, 설명은 `csvSearch.description`이다.
 
-`ProductsDropdown`은 명시적 아이콘 키와 그룹 데이터를 받는다. 기존 세 제품 다음에 이름이 있는 `디지털포렌식` 그룹과 CSV Search Engine을 제공한다. 그룹은 shadcn DropdownMenuGroup·Label·Separator를 사용하며 접근성 이름을 연결한다.
+`NavDropdown`은 명시적 아이콘 키와 그룹 데이터를 받는다. `윈도우즈 생산성`(Boxes·Folder History), `웹앱`(Clock·OSINTS), `디지털포렌식`(CSV Search Engine) 세 그룹을 제공한다. 분류 이름은 루트 레이아웃이 사전의 `productCategories.windowsProductivity`·`productCategories.webApps`와 `csvSearch.category`에서 읽어 `Header`에 전달한다. 홈의 `ProductCategory`도 같은 분류와 순서를 쓰며 푸터 링크도 이 순서를 따른다. 헤더 메뉴 순서는 제품, 블로그, 후원하기, 언어다. 후원하기도 `NavDropdown`이며 항목은 `src/data/support.ts`의 `supportLinks`에서 읽는다. 푸터 외부 링크도 같은 목록을 사용하므로 토스아이디 같은 새 후원 수단은 이 목록에 추가한다. 후원 메뉴 이름은 사전의 `header.support`다. 그룹은 shadcn DropdownMenuGroup·Label·Separator를 사용하며 접근성 이름을 연결한다.
+
+## Folder History
+
+`FolderHistoryProduct`는 Folder History 상세페이지를 그리는 Server Component이며 공통 `ProductLanding`(히어로·사용 방법·주요 기능·남색 안내·FAQ·다운로드)을 사용한다. FAQ Accordion만 클라이언트 경계로 둔다. 제품명·제품 경로·플랫폼·GitHub 저장소·직접 다운로드 URL(`releases/latest/download/Folder.History_x64-setup.exe`)·스크린샷 경로와 원본 크기는 `src/data/products.ts`의 `folderHistory`에서 관리한다. 문구는 각 사전의 `folderHistory`에 두며 무료 배지는 `home.products.freeBadge`, 저장소 링크 문구는 `csvSearch.repositoryAction`을 재사용한다. 기본 언어 `/product/folder-history`와 8개 접두사 경로를 제공하고, 메타데이터는 `src/i18n/folder-history-metadata.ts`, sitemap 항목은 `src/app/sitemap.ts`에 둔다. 홈 카드, 공통 제품 메뉴와 푸터는 현재 언어의 상세페이지로 연결한다.
