@@ -3,6 +3,18 @@ import type { Dictionary } from "@/i18n/get-dictionary";
 
 const zh: Dictionary = {
   landing,
+  share: {
+    heading: "觉得有用？分享给更多人吧",
+    copyLink: "复制链接",
+    copied: "链接已复制",
+    copyFailed: "无法自动复制，请手动复制下方地址。",
+    copyField: "要分享的页面地址",
+    x: "分享到 X",
+    facebook: "分享到 Facebook",
+    linkedin: "分享到 LinkedIn",
+    instagram: "分享到 Instagram",
+    threads: "分享到 Threads",
+  },
   csvSearch: {
     downloadAction: "下载Windows版",
     "category": "数字取证",

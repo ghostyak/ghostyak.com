@@ -3,6 +3,18 @@ import type { Dictionary } from "@/i18n/get-dictionary";
 
 const es: Dictionary = {
   landing,
+  share: {
+    heading: "Si te resulta útil, compártelo",
+    copyLink: "Copiar enlace",
+    copied: "Enlace copiado",
+    copyFailed: "No se pudo copiar automáticamente. Copia la dirección de abajo.",
+    copyField: "Dirección de la página que quieres compartir",
+    x: "Compartir en X",
+    facebook: "Compartir en Facebook",
+    linkedin: "Compartir en LinkedIn",
+    instagram: "Compartir en Instagram",
+    threads: "Compartir en Threads",
+  },
   csvSearch: {
     downloadAction: "Descargar para Windows",
     "category": "Informática forense",

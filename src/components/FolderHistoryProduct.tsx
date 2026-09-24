@@ -4,6 +4,8 @@ import { ProductLanding } from "@/components/ProductLanding";
 import { folderHistory } from "@/data/products";
 import { getDictionary } from "@/i18n/get-dictionary";
 import type { PublishedLocale } from "@/i18n/locales";
+import { localizedPath } from "@/i18n/routing";
+import { siteUrl } from "@/seo";
 
 export async function FolderHistoryProduct({ locale }: { locale: PublishedLocale }) {
   const dictionary = await getDictionary(locale);
@@ -23,5 +25,7 @@ export async function FolderHistoryProduct({ locale }: { locale: PublishedLocale
     downloadUrl={folderHistory.downloadUrl}
     repository={{ url: folderHistory.url, label: dictionary.csvSearch.repositoryAction }}
     viewScreenshot={dictionary.landing.actions.viewScreenshot}
+    shareUrl={`${siteUrl}${localizedPath(locale, folderHistory.pagePath)}`}
+    shareLabels={dictionary.share}
   />;
 }

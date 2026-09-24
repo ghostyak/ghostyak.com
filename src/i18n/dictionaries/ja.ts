@@ -3,6 +3,18 @@ import type { Dictionary } from "@/i18n/get-dictionary";
 
 const ja: Dictionary = {
   landing,
+  share: {
+    heading: "役に立ったら、ぜひ共有してください",
+    copyLink: "リンクをコピー",
+    copied: "リンクをコピーしました",
+    copyFailed: "自動でコピーできませんでした。下のアドレスをコピーしてください。",
+    copyField: "共有するページのアドレス",
+    x: "Xで共有",
+    facebook: "Facebookで共有",
+    linkedin: "LinkedInで共有",
+    instagram: "Instagramで共有",
+    threads: "Threadsで共有",
+  },
   csvSearch: {
     downloadAction: "Windows用をダウンロード",
     "category": "デジタルフォレンジック",

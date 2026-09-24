@@ -3,6 +3,18 @@ import type { Dictionary } from "@/i18n/get-dictionary";
 
 const en: Dictionary = {
   landing,
+  share: {
+    heading: "If you find it useful, please share it",
+    copyLink: "Copy link",
+    copied: "Link copied",
+    copyFailed: "Could not copy automatically. Copy the address below.",
+    copyField: "Page address to share",
+    x: "Share on X",
+    facebook: "Share on Facebook",
+    linkedin: "Share on LinkedIn",
+    instagram: "Share on Instagram",
+    threads: "Share on Threads",
+  },
   csvSearch: {
     downloadAction: "Download for Windows",
     "category": "Digital forensics",

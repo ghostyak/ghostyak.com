@@ -6,6 +6,7 @@
 
 - shadcn 공식 New York 컴포넌트 소스는 `src/components/ui/`에서 관리한다.
 - `components.json`은 RSC, TypeScript, Tailwind v4와 Lucide 아이콘을 지정한다.
+- SNS 브랜드 아이콘은 트리 셰이킹 가능한 `@icons-pack/react-simple-icons` React 컴포넌트를 단색·동일 크기로 쓴다. 최신 Simple Icons가 브랜드 가이드라인에 따라 제외한 LinkedIn 마크는 공유 UI에서 같은 색·크기의 기존 SVG를 유지한다.
 - `src/lib/utils.ts`의 `cn`으로 조건부 클래스와 Tailwind 우선순위를 병합한다.
 - 공통 패턴은 Button, Badge, Card, DropdownMenu, Accordion, Input을 우선 사용한다.
 - 배치와 반응형 처리는 Tailwind 유틸리티로 작성한다. 글로벌 CSS는 테마, 기본 접근성, 모션 감소 규칙만 관리한다.
@@ -71,3 +72,7 @@ Folder History와 CSV Search Engine 상세페이지는 공통 `ProductLanding`(`
 ## 다국어 URL과 언어 메뉴
 
 영어도 `/en/...`을 사용하는 9개 로케일 접두사 정책을 따른다. 언어 메뉴는 현재 콘텐츠의 다른 언어 canonical URL로 직접 이동하며 중간 `/language/...` 처리 경로를 거치지 않는다. 전체 문서 탐색, 메뉴 외형과 접근성 동작은 유지한다. 상세 URL 정책은 [SEO.md](./SEO.md)를 따른다.
+
+## 페이지 공유
+
+Boxes·CSV Search Engine·Folder History는 다운로드 구역에 공유 영역을 둔다. 블로그 글은 본문 끝에서 공유할 수 있다. X·Facebook·LinkedIn·Threads 아이콘은 44px 원형 키보드 접근 대상이며 Threads 작성 화면은 새 탭에서 연다. Instagram은 기기 공유 메뉴를 호출하고 미지원 시 canonical URL을 복사한다. 링크 복사 성공·실패 상태를 화면 낭독기에 전달한다. SNS SDK나 추적 위젯을 추가하지 않는다.

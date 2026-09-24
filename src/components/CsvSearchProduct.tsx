@@ -4,6 +4,8 @@ import { ProductLanding } from "@/components/ProductLanding";
 import { csvSearchEngine } from "@/data/products";
 import { getDictionary } from "@/i18n/get-dictionary";
 import type { PublishedLocale } from "@/i18n/locales";
+import { localizedPath } from "@/i18n/routing";
+import { siteUrl } from "@/seo";
 
 // The MFT screenshot leads; the file-open screen follows the features.
 const screenshotOrder = [1, 0];
@@ -28,5 +30,7 @@ export async function CsvSearchProduct({ locale }: { locale: PublishedLocale }) 
     downloadUrl={csvSearchEngine.downloadUrl}
     repository={{ url: csvSearchEngine.url, label: copy.repositoryAction }}
     viewScreenshot={dictionary.landing.actions.viewScreenshot}
+    shareUrl={`${siteUrl}${localizedPath(locale, csvSearchEngine.pagePath)}`}
+    shareLabels={dictionary.share}
   />;
 }

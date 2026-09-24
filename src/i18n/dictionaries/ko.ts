@@ -1,6 +1,18 @@
 import landing from "@/i18n/landing/ko";
 const ko = {
   landing,
+  share: {
+    heading: "마음에 드셨다면 공유해 주세요",
+    copyLink: "링크 복사",
+    copied: "링크를 복사했습니다",
+    copyFailed: "자동으로 복사하지 못했습니다. 주소를 직접 복사해 주세요.",
+    copyField: "공유할 페이지 주소",
+    x: "X에 공유",
+    facebook: "Facebook에 공유",
+    linkedin: "LinkedIn에 공유",
+    instagram: "Instagram에 공유",
+    threads: "Threads에 공유",
+  },
   csvSearch: {
     downloadAction: "Windows용 다운로드",
     category: "디지털포렌식",

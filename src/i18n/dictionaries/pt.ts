@@ -3,6 +3,18 @@ import type { Dictionary } from "@/i18n/get-dictionary";
 
 const pt: Dictionary = {
   landing,
+  share: {
+    heading: "Se esta página foi útil para você, compartilhe",
+    copyLink: "Copiar link",
+    copied: "Link copiado",
+    copyFailed: "Não foi possível copiar automaticamente. Copie o endereço abaixo.",
+    copyField: "Endereço da página para compartilhar",
+    x: "Compartilhar no X",
+    facebook: "Compartilhar no Facebook",
+    linkedin: "Compartilhar no LinkedIn",
+    instagram: "Compartilhar no Instagram",
+    threads: "Compartilhar no Threads",
+  },
   csvSearch: {
     downloadAction: "Baixar para Windows",
     "category": "Perícia digital",

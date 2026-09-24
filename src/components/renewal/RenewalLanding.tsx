@@ -9,7 +9,7 @@ import { boxes } from "@/data/products";
 import { landingLinks as links, landingMedia as media, landingTimes } from "@/data/landing";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { localeConfig, type PublishedLocale } from "@/i18n/locales";
-import { CopySiteLink } from "./CopySiteLink";
+import { ShareLinks, type ShareLabels } from "@/components/ShareLinks";
 import { PageHero, heroActionClassName } from "@/components/PageHero";
 
 type Copy = Dictionary["landing"];
@@ -34,7 +34,7 @@ function WorkflowDiagram({ copy }: { copy: Copy }) {
   </figure>;
 }
 
-export function RenewalLanding({ copy, locale, currentPath }: { copy: Copy; locale: PublishedLocale; currentPath: string }) {
+export function RenewalLanding({ copy, locale, currentPath, shareLabels }: { copy: Copy; locale: PublishedLocale; currentPath: string; shareLabels: ShareLabels }) {
   return <main id="main-content" className="scroll-mt-24 [overflow-wrap:anywhere]">
     <section className="px-4 pb-12 sm:px-8 sm:pb-20" aria-labelledby="renewal-title">
       <div className="mx-auto max-w-7xl">
@@ -98,7 +98,7 @@ export function RenewalLanding({ copy, locale, currentPath }: { copy: Copy; loca
 
     <section id="download" className="surface-ink relative scroll-mt-24 overflow-hidden px-4 py-16 sm:px-8 sm:py-24" aria-labelledby="download-title">
       <div className="mx-auto grid max-w-7xl items-start gap-12 lg:grid-cols-2 lg:gap-20">
-        <div><span className="mb-6 flex size-14 items-center justify-center rounded-2xl bg-brand/10 ring-1 ring-brand/30"><Image src="/images/ghostyak-boxes.svg" alt="" width={32} height={32} /></span><h2 id="download-title" className="whitespace-pre-line text-3xl font-semibold leading-tight tracking-[-0.035em] sm:text-4xl">{copy.download.title}</h2><p className="mb-7 mt-5 text-sm leading-7 text-muted-foreground">{copy.download.description}</p><DownloadLink copy={copy} /><p className="mt-4 text-xs leading-6 text-muted-foreground">{copy.download.source}</p><a href={links.release} className={textLink + " mt-1"} target="_blank" rel="noreferrer">{copy.actions.release}<ArrowUpRight className="size-3.5" aria-hidden="true" /></a><div className="mt-4 border-t pt-4"><CopySiteLink url={`${links.site.replace(/\/$/, "")}${currentPath}`} labels={copy.actions} /></div></div>
+        <div><span className="mb-6 flex size-14 items-center justify-center rounded-2xl bg-brand/10 ring-1 ring-brand/30"><Image src="/images/ghostyak-boxes.svg" alt="" width={32} height={32} /></span><h2 id="download-title" className="whitespace-pre-line text-3xl font-semibold leading-tight tracking-[-0.035em] sm:text-4xl">{copy.download.title}</h2><p className="mb-7 mt-5 text-sm leading-7 text-muted-foreground">{copy.download.description}</p><DownloadLink copy={copy} /><p className="mt-4 text-xs leading-6 text-muted-foreground">{copy.download.source}</p><a href={links.release} className={textLink + " mt-1"} target="_blank" rel="noreferrer">{copy.actions.release}<ArrowUpRight className="size-3.5" aria-hidden="true" /></a><div className="mt-5"><ShareLinks pageUrl={`${links.site.replace(/\/$/, "")}${currentPath}`} pageTitle={copy.brand} labels={shareLabels} /></div></div>
         <div><ol className="space-y-7">{copy.download.steps.map((step, index) => <li className="flex gap-4" key={step.title}><span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-brand font-mono text-xs font-semibold text-ink" aria-hidden="true">0{index + 1}</span><div><h3 className="pt-1 font-semibold">{step.title}</h3><p className="mt-2 text-sm leading-7 text-muted-foreground">{step.description}</p></div></li>)}</ol>
           <Accordion type="single" collapsible className="mt-8 rounded-2xl border bg-card px-5"><AccordionItem value="install-help"><AccordionTrigger className="min-h-14 leading-6">{copy.download.help.title}</AccordionTrigger><AccordionContent className="space-y-3 leading-7 text-muted-foreground"><p>{copy.download.help.launch}</p><p>{copy.download.help.runtime}</p><a href={links.webview} className={textLink} target="_blank" rel="noreferrer">{copy.actions.webview}<ArrowUpRight className="size-4 shrink-0" aria-hidden="true" /></a><p>{copy.download.help.feedback}</p><a href={links.feedback} className={textLink} target="_blank" rel="noreferrer">{copy.actions.feedback}<ArrowUpRight className="size-4" aria-hidden="true" /></a></AccordionContent></AccordionItem></Accordion>
         </div>

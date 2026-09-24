@@ -10,9 +10,10 @@ import { getDictionary } from "@/i18n/get-dictionary";
 import { localeConfig, type PublishedLocale } from "@/i18n/locales";
 import { localizedPath } from "@/i18n/routing";
 import { getAllPosts, getPost, type BlogPostSummary } from "@/lib/blog";
-import { getBlogPostingJsonLd, getSoftwareApplicationJsonLd } from "@/seo";
+import { getBlogPostingJsonLd, getSoftwareApplicationJsonLd, siteUrl } from "@/seo";
 import { RenewalLanding } from "@/components/renewal/RenewalLanding";
 import { CsvSearchCard } from "@/components/CsvSearchCard";
+import { ShareLinks } from "@/components/ShareLinks";
 import { PageHero } from "@/components/PageHero";
 import { ProductCard } from "@/components/ProductCard";
 
@@ -141,9 +142,9 @@ export async function HomeContent({ locale }: { locale: PublishedLocale }) {
 }
 
 export async function BoxesContent({ locale }: { locale: PublishedLocale }) {
-  const { landing: copy } = await getDictionary(locale);
+  const { landing: copy, share } = await getDictionary(locale);
   const jsonLd = getSoftwareApplicationJsonLd({ locale, description: copy.metadata.description, featureNames: copy.free.currentFeatures });
-  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} /><RenewalLanding copy={copy} locale={locale} currentPath={localizedPath(locale, "/product/boxes")} /></>;
+  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} /><RenewalLanding copy={copy} locale={locale} currentPath={localizedPath(locale, "/product/boxes")} shareLabels={share} /></>;
 }
 
 export function BoxesDownloadContent({ locale }: { locale: PublishedLocale }) {
@@ -177,6 +178,7 @@ export async function BlogPostContent({ locale, slug }: { locale: PublishedLocal
     </header>
     <div className="px-4 py-12 sm:px-8 sm:py-16">
       <div className="mx-auto max-w-3xl text-base leading-8 text-foreground/85 sm:text-lg [&_a]:font-medium [&_a]:text-foreground [&_a]:underline [&_a]:decoration-brand [&_a]:decoration-2 [&_a]:underline-offset-4 [&_a:hover]:decoration-ink [&_blockquote]:my-8 [&_blockquote]:border-l-4 [&_blockquote]:border-brand [&_blockquote]:pl-5 [&_blockquote]:text-muted-foreground [&_code]:rounded [&_code]:bg-muted [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:text-[0.9em] [&_h2]:mb-4 [&_h2]:mt-14 [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:tracking-tight [&_h2]:text-foreground [&_h3]:mt-8 [&_h3]:font-semibold [&_h3]:text-foreground [&_hr]:my-12 [&_img]:h-auto [&_img]:max-w-full [&_img]:rounded-2xl [&_img]:border [&_li]:ml-6 [&_li]:pl-1 [&_ol]:list-decimal [&_p]:my-5 [&_pre]:overflow-x-auto [&_pre]:rounded-xl [&_pre]:bg-muted [&_pre]:p-4 [&_pre_code]:bg-transparent [&_pre_code]:p-0 [&_strong]:font-semibold [&_strong]:text-foreground [&_ul]:my-6 [&_ul]:list-disc [&_ul]:space-y-2" dangerouslySetInnerHTML={{ __html: post.html }} />
+      <div className="mt-14 border-t pt-8"><ShareLinks pageUrl={`${siteUrl}${localizedPath(locale, `/blog/${post.slug}`)}`} pageTitle={post.title} labels={dictionary.share} /></div>
     </div>
   </article></main>;
 }
