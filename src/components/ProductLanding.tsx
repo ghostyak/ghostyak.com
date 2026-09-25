@@ -57,7 +57,7 @@ export function ProductLanding({ id, name, badges, copy, screenshots, featureIco
 }) {
   const [main, ...secondary] = screenshots;
   const downloadLink = <a className={cn(buttonVariants({ size: "lg", className: heroActionClassName }))} href={downloadUrl}><Download className="size-4" aria-hidden="true" />{copy.downloadAction}</a>;
-  const alternateDownloadLink = alternateDownload && <a className={cn(buttonVariants({ variant: "outline", size: "lg", className: heroActionClassName }), "border-brand/50 bg-brand/10 hover:bg-brand/20 hover:text-foreground")} href={alternateDownload.url}><Download className="size-4" aria-hidden="true" />{alternateDownload.label}</a>;
+  const alternateDownloadLink = alternateDownload && <a className={cn(buttonVariants({ variant: "downloadAlternate", size: "lg", className: heroActionClassName }))} href={alternateDownload.url}><Download className="size-4" aria-hidden="true" />{alternateDownload.label}</a>;
 
   return <main id="main-content" className="[overflow-wrap:anywhere]">
     <section className="px-4 pb-12 sm:px-8 sm:pb-20" aria-labelledby={`${id}-title`}>

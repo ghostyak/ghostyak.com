@@ -64,7 +64,7 @@ CSV Search Engine 상세페이지는 2026-09-24부터 Folder History와 같은 �
 
 ## Folder History 랜딩
 
-Folder History와 CSV Search Engine 상세페이지는 공통 `ProductLanding`(`src/components/ProductLanding.tsx`)을 쓴다. 첫 스크린샷이 히어로이고 나머지는 주요 기능 아래에 둔다(두 장이면 2열, 한 장이면 가운데 최대 768px). Folder History 상세페이지(`/{locale}/product/folder-history`)는 Boxes 랜딩과 같은 시각 언어를 쓴다. 순서는 제품명 히어로(`무료`·`Windows 11 · x64 / ARM64` 배지, x64 기본 버튼·ARM64 보조 버튼·사용 방법·후원하기), 남색 프레임의 최근 방문 목록 스크린샷, 사용 방법 3단계 카드, 주요 기능 6개 카드와 제외 규칙·설정 스크린샷 두 장, 남색 로컬 저장 안내, FAQ Accordion, 남색 다운로드 구역(x64·ARM64 버튼과 GitHub 저장소 링크)이다. 다운로드 구역의 두 설치 버튼은 세로로 배치하고, ARM64 버튼은 금색 계열의 옅은 테두리와 배경으로 구분한다. 스크린샷은 원본 비율을 유지하고 클릭하면 원본 이미지를 연다. 캡션에는 한국어 UI임을 표시한다. 홈 카드는 대표 스크린샷을 `object-contain`으로 표시하고, 제품 메뉴에서는 Clock·OSINTS 다음, 디지털포렌식 그룹 앞에 둔다.
+Folder History와 CSV Search Engine 상세페이지는 공통 `ProductLanding`(`src/components/ProductLanding.tsx`)을 쓴다. 첫 스크린샷이 히어로이고 나머지는 주요 기능 아래에 둔다(두 장이면 2열, 한 장이면 가운데 최대 768px). Folder History 상세페이지(`/{locale}/product/folder-history`)는 Boxes 랜딩과 같은 시각 언어를 쓴다. 순서는 제품명 히어로(`무료`·`Windows 11 · x64 / ARM64` 배지, x64 기본 버튼·ARM64 보조 버튼·사용 방법·후원하기), 남색 프레임의 최근 방문 목록 스크린샷, 사용 방법 3단계 카드, 주요 기능 6개 카드와 제외 규칙·설정 스크린샷 두 장, 남색 로컬 저장 안내, FAQ Accordion, 남색 다운로드 구역(x64·ARM64 버튼과 GitHub 저장소 링크)이다. 다운로드 구역의 두 설치 버튼은 세로로 배치하고, ARM64 버튼은 `downloadAlternate` 변형의 금색 계열 옅은 테두리와 배경으로 구분한다. 이 변형은 브라우저의 어두운 색상 설정에서도 같은 색을 유지한다. 스크린샷은 원본 비율을 유지하고 클릭하면 원본 이미지를 연다. 캡션에는 한국어 UI임을 표시한다. 홈 카드는 대표 스크린샷을 `object-contain`으로 표시하고, 제품 메뉴에서는 Clock·OSINTS 다음, 디지털포렌식 그룹 앞에 둔다.
 
 ## 후원 랜딩
 
