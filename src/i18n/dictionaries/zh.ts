@@ -126,8 +126,8 @@ const zh: Dictionary = {
     "metadataTitle": "Folder History | 快速重新打开最近访问文件夹的 Windows 应用",
     "cardDescription": "记录你在文件资源管理器中访问过的文件夹，并可从托盘直接重新打开的 Windows 应用。",
     "description": "记录你在文件资源管理器中访问过的文件夹，随时从托盘直接重新打开。",
-    "downloadAction": "下载 x64 版",
-    "arm64DownloadAction": "下载 ARM64 版",
+    "downloadAction": "下载 Windows x64 版",
+    "arm64DownloadAction": "下载 Windows ARM64 版",
     "howToAction": "使用方法",
     "screenshots": [
       {

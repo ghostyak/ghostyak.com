@@ -126,8 +126,8 @@ const fr: Dictionary = {
     "metadataTitle": "Folder History | L’app Windows pour rouvrir les dossiers récemment visités",
     "cardDescription": "Une app Windows qui enregistre les dossiers visités dans l’Explorateur de fichiers pour les rouvrir directement depuis la zone de notification.",
     "description": "Enregistrez les dossiers visités dans l’Explorateur de fichiers et rouvrez-les directement depuis la zone de notification.",
-    "downloadAction": "Télécharger x64",
-    "arm64DownloadAction": "Télécharger ARM64",
+    "downloadAction": "Télécharger pour Windows x64",
+    "arm64DownloadAction": "Télécharger pour Windows ARM64",
     "howToAction": "Mode d’emploi",
     "screenshots": [
       {

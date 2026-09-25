@@ -73,8 +73,8 @@ const ko = {
     metadataTitle: "Folder History | 최근 방문한 폴더를 다시 여는 Windows 앱",
     cardDescription: "탐색기로 방문한 폴더를 기록해 두었다가 트레이에서 바로 다시 여는 Windows 앱입니다.",
     description: "탐색기로 방문한 폴더를 기록해 두었다가, 트레이에서 바로 다시 여세요.",
-    downloadAction: "x64 다운로드",
-    arm64DownloadAction: "ARM64 다운로드",
+    downloadAction: "Windows x64 다운로드",
+    arm64DownloadAction: "Windows ARM64 다운로드",
     howToAction: "사용 방법",
     screenshots: [
       { alt: "Folder History의 최근 방문 목록. 폴더 이름, 경로와 마지막 방문 시각이 최근 순으로 표시된다", caption: "최근 방문 목록 · 한국어 UI" },
