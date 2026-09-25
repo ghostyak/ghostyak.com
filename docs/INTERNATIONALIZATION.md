@@ -359,6 +359,8 @@ Folder History 저장소의 README와 설계 문서를 근거로 작성한 한�
 
 2026-09-24 한국어 원문 `folder-history-launch`(`sourceRevision: 1`)을 사용자가 승인했고 같은 날 8개 번역을 공개했다. 내용은 Folder History 저장소 문서와 승인된 제품 페이지 문구에 근거하며, Windows 기본 기능과의 비교처럼 확인하지 않은 주장은 넣지 않는다. 트레이·탐색기 등 용어는 제품 페이지 번역과 맞추고(예: 독일어 Infobereich, 프랑스어 zone de notification), 대표 이미지의 `imageAlt`는 사전의 `folderHistory.screenshots[0].alt` 번역을 사용한다. 제목과 설명에는 각 언어의 검색 표현(예: 영어 "reopen recently visited folders", 일본어 「最近開いたフォルダー」)을 넣는다.
 
+2026-09-26 `folder-history-016-update`(`sourceRevision: 1`)는 Folder History 저장소의 `v0.1.5..v0.1.6` 최종 변경 사항을 근거로 작성한 한국어 원문과 8개 번역이다. 방문 횟수의 집계 범위와 기존 기록의 초기값, 기간 검색 문법, 세 단계 정렬, 감시 폴더 필터, 고정 행 표시와 Space 단축키를 모든 언어에서 같은 의미로 설명한다. 릴리스 중간에 추가됐다가 제거된 고정 묶음 제목 행은 공개 기능으로 소개하지 않는다. 검색 토큰·버전·slug·제품 링크와 GitHub 릴리스 주소는 언어 중립 값으로 유지한다.
+
 ## 2026-09-24 URL 정규화
 
 한국어 HTML lang과 hreflang은 `ko`, 영어는 `en`을 사용한다. 다른 언어의 기존 지역 코드는 유지한다. 영어 블로그 3편과 한국어 `boxes-world-clock`의 제품 링크만 새 canonical 경로로 고쳤으며 번역 문구·원문 리비전은 변경하지 않았다. 모든 공개 블로그는 원문과 번역의 키·slug·리비전이 일치해야 하며 원문 없는 번역과 중복 키도 빌드에서 차단한다. 따라서 존재하지 않는 번역 URL을 alternate로 공개하지 않는다. 상세 정책과 검증 방법은 [SEO.md](./SEO.md)를 따른다.
