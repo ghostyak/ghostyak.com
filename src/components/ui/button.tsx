@@ -13,8 +13,8 @@ const buttonVariants = cva(
           "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:bg-destructive/60 dark:focus-visible:ring-destructive/40",
         outline:
           "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
-        downloadAlternate:
-          "border border-brand/50 bg-brand/10 text-foreground shadow-xs hover:bg-brand/20 hover:text-foreground",
+        architectureDownload:
+          "border border-brand/40 bg-ink text-white hover:bg-ink/90 hover:text-white",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         support:

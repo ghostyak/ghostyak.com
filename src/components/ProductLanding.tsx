@@ -12,6 +12,7 @@ export const textLink = "inline-flex min-h-11 items-center gap-2 text-sm font-me
 
 type Screenshot = { src: string; width: number; height: number; alt: string; caption: string };
 type Item = { title: string; description: string };
+type DownloadArchitecture = "x64" | "ARM64";
 export type ProductLandingCopy = {
   description: string;
   downloadAction: string;
@@ -33,9 +34,22 @@ function Frame({ screenshot, sizes, preload = false }: { screenshot: Screenshot;
   </div>;
 }
 
+function DownloadLabel({ label, architecture }: { label: string; architecture?: DownloadArchitecture }) {
+  const position = architecture ? label.indexOf(architecture) : -1;
+  if (!architecture || position < 0) return label;
+
+  const before = label.slice(0, position).trim();
+  const after = label.slice(position + architecture.length).trim();
+  return <span className="inline-flex flex-wrap items-center justify-center gap-1.5" aria-hidden="true">
+    {before && <span>{before}</span>}
+    <strong className="rounded-md bg-brand px-1.5 py-0.5 text-xs font-bold leading-none text-ink">{architecture}</strong>
+    {after && <span>{after}</span>}
+  </span>;
+}
+
 // Shared product landing: hero, framed main screenshot, three steps, feature cards with
 // secondary screenshots, an ink highlight, FAQ and a download band.
-export function ProductLanding({ id, name, badges, copy, screenshots, featureIcons, highlightIcon: HighlightIcon, productIcon: ProductIcon, downloadUrl, alternateDownload, repository, viewScreenshot, supportUrl, supportAction, shareUrl, shareLabels }: {
+export function ProductLanding({ id, name, badges, copy, screenshots, featureIcons, highlightIcon: HighlightIcon, productIcon: ProductIcon, downloadUrl, downloadArchitecture, alternateDownload, repository, viewScreenshot, supportUrl, supportAction, shareUrl, shareLabels }: {
   id: string;
   name: string;
   badges: ReactNode;
@@ -47,7 +61,8 @@ export function ProductLanding({ id, name, badges, copy, screenshots, featureIco
   highlightIcon: LucideIcon;
   productIcon: LucideIcon;
   downloadUrl: string;
-  alternateDownload?: { url: string; label: string };
+  downloadArchitecture?: DownloadArchitecture;
+  alternateDownload?: { url: string; label: string; architecture?: DownloadArchitecture };
   repository: { url: string; label: string };
   viewScreenshot: string;
   supportUrl: string;
@@ -56,8 +71,8 @@ export function ProductLanding({ id, name, badges, copy, screenshots, featureIco
   shareLabels: ShareLabels;
 }) {
   const [main, ...secondary] = screenshots;
-  const downloadLink = <a className={cn(buttonVariants({ size: "lg", className: heroActionClassName }))} href={downloadUrl}><Download className="size-4" aria-hidden="true" />{copy.downloadAction}</a>;
-  const alternateDownloadLink = alternateDownload && <a className={cn(buttonVariants({ variant: "downloadAlternate", size: "lg", className: heroActionClassName }))} href={alternateDownload.url}><Download className="size-4" aria-hidden="true" />{alternateDownload.label}</a>;
+  const downloadLink = <a className={cn(buttonVariants({ variant: downloadArchitecture ? "architectureDownload" : "default", size: "lg", className: heroActionClassName }))} href={downloadUrl} aria-label={copy.downloadAction}><Download className="size-4" aria-hidden="true" /><DownloadLabel label={copy.downloadAction} architecture={downloadArchitecture} /></a>;
+  const alternateDownloadLink = alternateDownload && <a className={cn(buttonVariants({ variant: "architectureDownload", size: "lg", className: heroActionClassName }))} href={alternateDownload.url} aria-label={alternateDownload.label}><Download className="size-4" aria-hidden="true" /><DownloadLabel label={alternateDownload.label} architecture={alternateDownload.architecture} /></a>;
 
   return <main id="main-content" className="[overflow-wrap:anywhere]">
     <section className="px-4 pb-12 sm:px-8 sm:pb-20" aria-labelledby={`${id}-title`}>
