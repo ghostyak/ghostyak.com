@@ -38,7 +38,7 @@ export function Header({ labels, categoryLabels, locale, currentPath }: { labels
         ]} />
         <a className={cn(buttonVariants({ variant: "ghost", className: "min-h-11 rounded-full px-2.5 aria-[current=page]:bg-accent sm:px-4" }))} href={blogPath} aria-current={currentPath.startsWith(blogPath) ? "page" : undefined}>{labels.blog}</a>
         {/* Below 640px only the icon shows; the label stays as the accessible name. */}
-        <a className={cn(buttonVariants({ variant: "ghost", className: "min-h-11 gap-1.5 rounded-full px-2.5 aria-[current=page]:bg-accent sm:px-4" }))} href={supportPath} aria-current={currentPath === supportPath ? "page" : undefined}><HandHeart className="size-4 text-brand-foreground" aria-hidden="true" /><span className="sr-only sm:not-sr-only">{labels.support}</span></a>
+        <a className={cn(buttonVariants({ variant: "support", className: "min-h-11 gap-1.5 rounded-full px-2.5 aria-[current=page]:bg-brand/25 sm:px-4" }))} href={supportPath} aria-current={currentPath === supportPath ? "page" : undefined}><HandHeart className="size-4 text-brand-foreground" aria-hidden="true" /><span className="sr-only sm:not-sr-only">{labels.support}</span></a>
       </nav>
       <div className="border-l pl-1 sm:pl-5"><LanguageSwitcher currentLocale={locale} currentPath={currentPath} label={labels.language} /></div>
     </div>

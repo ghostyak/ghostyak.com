@@ -43,7 +43,7 @@ export function RenewalLanding({ copy, locale, currentPath, supportUrl, supportA
           eyebrow={<Badge variant="outline" className="min-h-7 gap-2 rounded-full bg-card px-3"><span className="flex size-5 items-center justify-center rounded-full bg-ink"><Image src="/images/ghostyak-boxes.svg" width={12} height={12} alt="" /></span>{copy.hero.platform}</Badge>}
           title={boxes.name}
           description={copy.hero.title.join(" ")}
-          actions={<><DownloadLink copy={copy} /><a className={cn(buttonVariants({ variant: "outline", size: "lg", className: heroActionClassName }))} href="#download">{copy.actions.install}<ArrowRight aria-hidden="true" /></a><a className={cn(buttonVariants({ variant: "outline", size: "lg", className: heroActionClassName }))} href={supportUrl}><HandHeart className="size-4" aria-hidden="true" />{supportAction}</a></>}
+          actions={<><DownloadLink copy={copy} /><a className={cn(buttonVariants({ variant: "outline", size: "lg", className: heroActionClassName }))} href="#download">{copy.actions.install}<ArrowRight aria-hidden="true" /></a><a className={cn(buttonVariants({ variant: "support", size: "lg", className: heroActionClassName }))} href={supportUrl}><HandHeart className="size-4" aria-hidden="true" />{supportAction}</a></>}
         />
         <figure className="relative mx-auto max-w-6xl">
           <div className="absolute inset-x-[10%] -bottom-6 top-1/3 rounded-full bg-brand/25 blur-3xl" aria-hidden="true" />

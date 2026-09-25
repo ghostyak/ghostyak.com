@@ -65,7 +65,7 @@ export function ProductLanding({ id, name, badges, copy, screenshots, featureIco
           eyebrow={badges}
           title={name}
           description={copy.description}
-          actions={<>{downloadLink}<a className={cn(buttonVariants({ variant: "outline", size: "lg", className: heroActionClassName }))} href="#how-it-works">{copy.howToAction}<ArrowRight aria-hidden="true" /></a><a className={cn(buttonVariants({ variant: "outline", size: "lg", className: heroActionClassName }))} href={supportUrl}><HandHeart className="size-4" aria-hidden="true" />{supportAction}</a></>}
+          actions={<>{downloadLink}<a className={cn(buttonVariants({ variant: "outline", size: "lg", className: heroActionClassName }))} href="#how-it-works">{copy.howToAction}<ArrowRight aria-hidden="true" /></a><a className={cn(buttonVariants({ variant: "support", size: "lg", className: heroActionClassName }))} href={supportUrl}><HandHeart className="size-4" aria-hidden="true" />{supportAction}</a></>}
         />
         <figure className="relative mx-auto max-w-5xl">
           <div className="absolute inset-x-[10%] -bottom-6 top-1/3 rounded-full bg-brand/25 blur-3xl" aria-hidden="true" />
