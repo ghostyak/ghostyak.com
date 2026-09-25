@@ -126,7 +126,8 @@ const ja: Dictionary = {
     "metadataTitle": "Folder History | 最近開いたフォルダーをすぐに開き直せるWindowsアプリ",
     "cardDescription": "エクスプローラーで開いたフォルダーを記録し、トレイからすぐに開き直せるWindowsアプリです。",
     "description": "エクスプローラーで開いたフォルダーを記録しておき、トレイからすぐに開き直しましょう。",
-    "downloadAction": "Windows版を無料ダウンロード",
+    "downloadAction": "Windows x64版を無料ダウンロード",
+    "arm64DownloadAction": "Windows ARM64版を無料ダウンロード",
     "howToAction": "使い方",
     "screenshots": [
       {
@@ -217,13 +218,13 @@ const ja: Dictionary = {
         },
         {
           "question": "必要な環境は？",
-          "answer": "Windows 11 x64で使えます。インストーラーは現在のユーザーアカウントにインストールされるため管理者権限は不要で、WebView2 Runtimeがない場合はインストール中に一緒にインストールします。"
+          "answer": "Windows 11 x64またはARM64で使えます。インストーラーは現在のユーザーアカウントにインストールされるため管理者権限は不要で、WebView2 Runtimeがない場合はインストール中に一緒にインストールします。"
         }
       ]
     },
     "download": {
       "title": "ダウンロードして、\n最初の監視フォルダーを追加しましょう。",
-      "description": "Windows 11 x64 · 管理者権限なしでインストール"
+      "description": "Windows 11 x64 / ARM64 · 管理者権限なしでインストール"
     }
   },
   worldClock: {

@@ -126,7 +126,8 @@ const pt: Dictionary = {
     "metadataTitle": "Folder History | App para Windows que reabre pastas visitadas recentemente",
     "cardDescription": "Um app para Windows que registra as pastas que você visita no Explorador de Arquivos para reabri-las direto da bandeja.",
     "description": "Registre as pastas que você visita no Explorador de Arquivos e reabra-as direto da bandeja.",
-    "downloadAction": "Download gratuito para Windows",
+    "downloadAction": "Download gratuito para Windows x64",
+    "arm64DownloadAction": "Download gratuito para Windows ARM64",
     "howToAction": "Como funciona",
     "screenshots": [
       {
@@ -217,13 +218,13 @@ const pt: Dictionary = {
         },
         {
           "question": "Do que preciso para usar?",
-          "answer": "Funciona no Windows 11 x64. O instalador instala para a conta do usuário atual, então não exige permissão de administrador, e instala o WebView2 Runtime durante a instalação se ele estiver ausente."
+          "answer": "Funciona no Windows 11 x64 ou ARM64. O instalador instala para a conta do usuário atual, então não exige permissão de administrador, e instala o WebView2 Runtime durante a instalação se ele estiver ausente."
         }
       ]
     },
     "download": {
       "title": "Baixe e\nadicione sua primeira pasta monitorada.",
-      "description": "Windows 11 x64 · Instala sem permissão de administrador"
+      "description": "Windows 11 x64 / ARM64 · Instala sem permissão de administrador"
     }
   },
   worldClock: {

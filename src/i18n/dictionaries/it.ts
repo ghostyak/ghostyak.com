@@ -126,7 +126,8 @@ const it: Dictionary = {
     "metadataTitle": "Folder History | L’app per Windows che riapre le cartelle visitate di recente",
     "cardDescription": "Un’app per Windows che registra le cartelle visitate in Esplora file per riaprirle direttamente dall’area di notifica.",
     "description": "Registra le cartelle che visiti in Esplora file e riaprile direttamente dall’area di notifica.",
-    "downloadAction": "Download gratuito per Windows",
+    "downloadAction": "Download gratuito per Windows x64",
+    "arm64DownloadAction": "Download gratuito per Windows ARM64",
     "howToAction": "Come funziona",
     "screenshots": [
       {
@@ -217,13 +218,13 @@ const it: Dictionary = {
         },
         {
           "question": "Di cosa ho bisogno?",
-          "answer": "Funziona su Windows 11 x64. Il programma di installazione installa per l’account utente corrente, quindi non servono diritti di amministratore, e installa WebView2 Runtime durante l’installazione se manca."
+          "answer": "Funziona su Windows 11 x64 o ARM64. Il programma di installazione installa per l’account utente corrente, quindi non servono diritti di amministratore, e installa WebView2 Runtime durante l’installazione se manca."
         }
       ]
     },
     "download": {
       "title": "Scaricalo e\naggiungi la tua prima cartella monitorata.",
-      "description": "Windows 11 x64 · Si installa senza diritti di amministratore"
+      "description": "Windows 11 x64 / ARM64 · Si installa senza diritti di amministratore"
     }
   },
   worldClock: {

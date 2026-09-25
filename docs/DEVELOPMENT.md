@@ -124,7 +124,7 @@ CSV 상세페이지는 공통 `ProductLanding`을 쓰므로 Folder History 페�
 
 ## Folder History 관리
 
-제품 설명의 근거는 Folder History 저장소(`ghostyak/folder-history`)의 README와 `docs/`다. 앱 동작이 바뀌면 한국어 `folderHistory` 원문을 먼저 고쳐 승인받은 뒤 8개 번역에 반영한다. 설치 파일 이름이나 저장소가 바뀌면 `src/data/products.ts`의 `folderHistory.downloadUrl`·`url`만 수정한다. 스크린샷은 `public/images/folder-history/`에 두며 교체 시 `folderHistory.screenshots`의 원본 크기와 각 사전의 대체 텍스트·캡션을 함께 갱신한다.
+제품 설명의 근거는 Folder History 저장소(`ghostyak/folder-history`)의 README와 `docs/`다. 앱 동작이 바뀌면 한국어 `folderHistory` 원문을 먼저 고쳐 승인받은 뒤 8개 번역에 반영한다. x64·ARM64 설치 파일 이름이나 저장소가 바뀌면 `src/data/products.ts`의 `folderHistory.downloadUrl`·`arm64DownloadUrl`·`url`을 수정한다. 스크린샷은 `public/images/folder-history/`에 두며 교체 시 `folderHistory.screenshots`의 원본 크기와 각 사전의 대체 텍스트·캡션을 함께 갱신한다.
 
 ## SEO URL 회귀 검증
 

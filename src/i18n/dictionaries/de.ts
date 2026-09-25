@@ -126,7 +126,8 @@ const de: Dictionary = {
     "metadataTitle": "Folder History | Windows-App zum erneuten Öffnen zuletzt besuchter Ordner",
     "cardDescription": "Eine Windows-App, die im Explorer besuchte Ordner aufzeichnet, damit du sie direkt aus dem Infobereich wieder öffnen kannst.",
     "description": "Zeichne die Ordner auf, die du im Explorer besuchst, und öffne sie direkt aus dem Infobereich wieder.",
-    "downloadAction": "Kostenlos für Windows herunterladen",
+    "downloadAction": "Kostenlos für Windows x64 herunterladen",
+    "arm64DownloadAction": "Kostenlos für Windows ARM64 herunterladen",
     "howToAction": "So funktioniert’s",
     "screenshots": [
       {
@@ -217,13 +218,13 @@ const de: Dictionary = {
         },
         {
           "question": "Was brauche ich dafür?",
-          "answer": "Die App läuft unter Windows 11 x64. Das Installationsprogramm installiert für das aktuelle Benutzerkonto, daher sind keine Administratorrechte nötig. Fehlt die WebView2 Runtime, wird sie während der Installation mitinstalliert."
+          "answer": "Die App läuft unter Windows 11 x64 oder ARM64. Das Installationsprogramm installiert für das aktuelle Benutzerkonto, daher sind keine Administratorrechte nötig. Fehlt die WebView2 Runtime, wird sie während der Installation mitinstalliert."
         }
       ]
     },
     "download": {
       "title": "Herunterladen und\nersten überwachten Ordner hinzufügen.",
-      "description": "Windows 11 x64 · Installation ohne Administratorrechte"
+      "description": "Windows 11 x64 / ARM64 · Installation ohne Administratorrechte"
     }
   },
   worldClock: {

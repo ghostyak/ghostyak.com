@@ -126,7 +126,8 @@ const fr: Dictionary = {
     "metadataTitle": "Folder History | L’app Windows pour rouvrir les dossiers récemment visités",
     "cardDescription": "Une app Windows qui enregistre les dossiers visités dans l’Explorateur de fichiers pour les rouvrir directement depuis la zone de notification.",
     "description": "Enregistrez les dossiers visités dans l’Explorateur de fichiers et rouvrez-les directement depuis la zone de notification.",
-    "downloadAction": "Télécharger gratuitement pour Windows",
+    "downloadAction": "Télécharger gratuitement pour Windows x64",
+    "arm64DownloadAction": "Télécharger gratuitement pour Windows ARM64",
     "howToAction": "Mode d’emploi",
     "screenshots": [
       {
@@ -217,13 +218,13 @@ const fr: Dictionary = {
         },
         {
           "question": "De quoi ai-je besoin ?",
-          "answer": "Folder History fonctionne sous Windows 11 x64. Le programme d’installation s’installe pour le compte utilisateur actuel, sans droits d’administrateur, et installe WebView2 Runtime pendant l’installation s’il est absent."
+          "answer": "Folder History fonctionne sous Windows 11 x64 ou ARM64. Le programme d’installation s’installe pour le compte utilisateur actuel, sans droits d’administrateur, et installe WebView2 Runtime pendant l’installation s’il est absent."
         }
       ]
     },
     "download": {
       "title": "Téléchargez-le et\najoutez votre premier dossier surveillé.",
-      "description": "Windows 11 x64 · Installation sans droits d’administrateur"
+      "description": "Windows 11 x64 / ARM64 · Installation sans droits d’administrateur"
     }
   },
   worldClock: {

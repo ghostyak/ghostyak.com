@@ -126,7 +126,8 @@ const en: Dictionary = {
     "metadataTitle": "Folder History | A Windows app for reopening recently visited folders",
     "cardDescription": "A Windows app that records the folders you visit in File Explorer so you can reopen them right from the tray.",
     "description": "Record the folders you visit in File Explorer, then reopen them right from the tray.",
-    "downloadAction": "Free download for Windows",
+    "downloadAction": "Free download for Windows x64",
+    "arm64DownloadAction": "Free download for Windows ARM64",
     "howToAction": "How it works",
     "screenshots": [
       {
@@ -217,13 +218,13 @@ const en: Dictionary = {
         },
         {
           "question": "What do I need to run it?",
-          "answer": "It runs on Windows 11 x64. The installer installs for the current user account, so no administrator rights are needed, and it installs the WebView2 Runtime during setup if it is missing."
+          "answer": "It runs on Windows 11 x64 or ARM64. The installer installs for the current user account, so no administrator rights are needed, and it installs the WebView2 Runtime during setup if it is missing."
         }
       ]
     },
     "download": {
       "title": "Download it and\nadd your first watched folder.",
-      "description": "Windows 11 x64 · Installs without administrator rights"
+      "description": "Windows 11 x64 / ARM64 · Installs without administrator rights"
     }
   },
   worldClock: {

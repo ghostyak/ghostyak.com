@@ -43,9 +43,10 @@ export const osints = {
 export const folderHistory = {
   name: "Folder History",
   pagePath: "/product/folder-history",
-  platform: "Windows 11 · x64",
+  platform: "Windows 11 · x64 / ARM64",
   url: "https://github.com/ghostyak/folder-history",
   downloadUrl: "https://github.com/ghostyak/folder-history/releases/latest/download/Folder.History_x64-setup.exe",
+  arm64DownloadUrl: "https://github.com/ghostyak/folder-history/releases/latest/download/Folder.History_arm64-setup.exe",
   screenshots: [
     { src: "/images/folder-history/folder-history-main.png", width: 1082, height: 604 },
     { src: "/images/folder-history/folder-history-ignore-rule.png", width: 1082, height: 604 },

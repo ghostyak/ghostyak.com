@@ -35,7 +35,7 @@ function Frame({ screenshot, sizes, preload = false }: { screenshot: Screenshot;
 
 // Shared product landing: hero, framed main screenshot, three steps, feature cards with
 // secondary screenshots, an ink highlight, FAQ and a download band.
-export function ProductLanding({ id, name, badges, copy, screenshots, featureIcons, highlightIcon: HighlightIcon, productIcon: ProductIcon, downloadUrl, repository, viewScreenshot, supportUrl, supportAction, shareUrl, shareLabels }: {
+export function ProductLanding({ id, name, badges, copy, screenshots, featureIcons, highlightIcon: HighlightIcon, productIcon: ProductIcon, downloadUrl, alternateDownload, repository, viewScreenshot, supportUrl, supportAction, shareUrl, shareLabels }: {
   id: string;
   name: string;
   badges: ReactNode;
@@ -47,6 +47,7 @@ export function ProductLanding({ id, name, badges, copy, screenshots, featureIco
   highlightIcon: LucideIcon;
   productIcon: LucideIcon;
   downloadUrl: string;
+  alternateDownload?: { url: string; label: string };
   repository: { url: string; label: string };
   viewScreenshot: string;
   supportUrl: string;
@@ -56,6 +57,7 @@ export function ProductLanding({ id, name, badges, copy, screenshots, featureIco
 }) {
   const [main, ...secondary] = screenshots;
   const downloadLink = <a className={cn(buttonVariants({ size: "lg", className: heroActionClassName }))} href={downloadUrl}><Download className="size-4" aria-hidden="true" />{copy.downloadAction}</a>;
+  const alternateDownloadLink = alternateDownload && <a className={cn(buttonVariants({ variant: "outline", size: "lg", className: heroActionClassName }), "border-brand/50 bg-brand/10 hover:bg-brand/20 hover:text-foreground")} href={alternateDownload.url}><Download className="size-4" aria-hidden="true" />{alternateDownload.label}</a>;
 
   return <main id="main-content" className="[overflow-wrap:anywhere]">
     <section className="px-4 pb-12 sm:px-8 sm:pb-20" aria-labelledby={`${id}-title`}>
@@ -65,7 +67,7 @@ export function ProductLanding({ id, name, badges, copy, screenshots, featureIco
           eyebrow={badges}
           title={name}
           description={copy.description}
-          actions={<>{downloadLink}<a className={cn(buttonVariants({ variant: "outline", size: "lg", className: heroActionClassName }))} href="#how-it-works">{copy.howToAction}<ArrowRight aria-hidden="true" /></a><a className={cn(buttonVariants({ variant: "support", size: "lg", className: heroActionClassName }))} href={supportUrl}><HandHeart className="size-4" aria-hidden="true" />{supportAction}</a></>}
+          actions={<>{downloadLink}{alternateDownloadLink}<a className={cn(buttonVariants({ variant: "outline", size: "lg", className: heroActionClassName }))} href="#how-it-works">{copy.howToAction}<ArrowRight aria-hidden="true" /></a><a className={cn(buttonVariants({ variant: "support", size: "lg", className: heroActionClassName }))} href={supportUrl}><HandHeart className="size-4" aria-hidden="true" />{supportAction}</a></>}
         />
         <figure className="relative mx-auto max-w-5xl">
           <div className="absolute inset-x-[10%] -bottom-6 top-1/3 rounded-full bg-brand/25 blur-3xl" aria-hidden="true" />
@@ -119,7 +121,7 @@ export function ProductLanding({ id, name, badges, copy, screenshots, featureIco
     <section id="download" className="surface-ink scroll-mt-24 px-4 py-16 sm:px-8 sm:py-24" aria-labelledby={`${id}-download`}>
       <div className="mx-auto flex max-w-7xl flex-col items-start gap-8 md:flex-row md:items-end md:justify-between">
         <div><span className="mb-6 flex size-14 items-center justify-center rounded-2xl bg-brand/10 text-brand ring-1 ring-brand/30"><ProductIcon className="size-6" aria-hidden="true" /></span><h2 id={`${id}-download`} className="whitespace-pre-line text-3xl font-semibold leading-tight tracking-[-0.035em] sm:text-4xl">{copy.download.title}</h2><p className="mt-5 text-sm leading-7 text-muted-foreground">{copy.download.description}</p></div>
-        <div className="w-full md:w-auto"><div className="flex flex-col items-start gap-2 md:items-end">{downloadLink}<a href={repository.url} className={textLink} target="_blank" rel="noreferrer">{repository.label}<ArrowUpRight className="size-3.5" aria-hidden="true" /></a></div><div className="mt-5 md:min-w-80"><ShareLinks pageUrl={shareUrl} pageTitle={name} labels={shareLabels} /></div></div>
+        <div className="w-full md:w-auto"><div className="flex flex-col items-start gap-2 md:items-end">{downloadLink}{alternateDownloadLink}<a href={repository.url} className={textLink} target="_blank" rel="noreferrer">{repository.label}<ArrowUpRight className="size-3.5" aria-hidden="true" /></a></div><div className="mt-5 md:min-w-80"><ShareLinks pageUrl={shareUrl} pageTitle={name} labels={shareLabels} /></div></div>
       </div>
     </section>
   </main>;

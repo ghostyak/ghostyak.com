@@ -73,7 +73,8 @@ const ko = {
     metadataTitle: "Folder History | 최근 방문한 폴더를 다시 여는 Windows 앱",
     cardDescription: "탐색기로 방문한 폴더를 기록해 두었다가 트레이에서 바로 다시 여는 Windows 앱입니다.",
     description: "탐색기로 방문한 폴더를 기록해 두었다가, 트레이에서 바로 다시 여세요.",
-    downloadAction: "Windows용 무료 다운로드",
+    downloadAction: "Windows x64 무료 다운로드",
+    arm64DownloadAction: "Windows ARM64 무료 다운로드",
     howToAction: "사용 방법",
     screenshots: [
       { alt: "Folder History의 최근 방문 목록. 폴더 이름, 경로와 마지막 방문 시각이 최근 순으로 표시된다", caption: "최근 방문 목록 · 한국어 UI" },
@@ -114,12 +115,12 @@ const ko = {
         { question: "무료인가요?", answer: "네, 무료로 사용할 수 있습니다." },
         { question: "창을 닫으면 기록이 멈추나요?", answer: "아니요. 창의 X는 창만 숨기고 기록은 계속됩니다. 완전히 종료하려면 트레이 아이콘을 오른쪽 클릭하고 종료를 선택하세요." },
         { question: "Windows를 켤 때 자동으로 실행할 수 있나요?", answer: "설정에서 ‘Windows 로그인 시 실행’을 켜세요. 기본값은 꺼져 있습니다." },
-        { question: "어떤 환경이 필요하나요?", answer: "Windows 11 x64에서 사용할 수 있습니다. 설치 프로그램은 현재 사용자 계정에 설치되므로 관리자 권한이 필요 없고, WebView2 Runtime이 없으면 설치 중에 함께 설치합니다." },
+        { question: "어떤 환경이 필요하나요?", answer: "Windows 11 x64 또는 ARM64에서 사용할 수 있습니다. 설치 프로그램은 현재 사용자 계정에 설치되므로 관리자 권한이 필요 없고, WebView2 Runtime이 없으면 설치 중에 함께 설치합니다." },
       ],
     },
     download: {
       title: "다운로드하고,\n첫 감시 폴더를 추가하세요.",
-      description: "Windows 11 x64 · 관리자 권한 없이 설치",
+      description: "Windows 11 x64 / ARM64 · 관리자 권한 없이 설치",
     },
   },
   worldClock: {

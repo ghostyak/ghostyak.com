@@ -126,7 +126,8 @@ const es: Dictionary = {
     "metadataTitle": "Folder History | App de Windows para volver a abrir carpetas visitadas recientemente",
     "cardDescription": "Una app de Windows que registra las carpetas que visitas en el Explorador de archivos para volver a abrirlas desde la bandeja.",
     "description": "Registra las carpetas que visitas en el Explorador de archivos y vuelve a abrirlas directamente desde la bandeja.",
-    "downloadAction": "Descarga gratuita para Windows",
+    "downloadAction": "Descarga gratuita para Windows x64",
+    "arm64DownloadAction": "Descarga gratuita para Windows ARM64",
     "howToAction": "Cómo funciona",
     "screenshots": [
       {
@@ -217,13 +218,13 @@ const es: Dictionary = {
         },
         {
           "question": "¿Qué necesito para usarlo?",
-          "answer": "Funciona en Windows 11 x64. El instalador se instala en la cuenta del usuario actual, así que no necesita permisos de administrador, e instala WebView2 Runtime durante la instalación si falta."
+          "answer": "Funciona en Windows 11 x64 o ARM64. El instalador se instala en la cuenta del usuario actual, así que no necesita permisos de administrador, e instala WebView2 Runtime durante la instalación si falta."
         }
       ]
     },
     "download": {
       "title": "Descárgalo y\nañade tu primera carpeta vigilada.",
-      "description": "Windows 11 x64 · Se instala sin permisos de administrador"
+      "description": "Windows 11 x64 / ARM64 · Se instala sin permisos de administrador"
     }
   },
   worldClock: {

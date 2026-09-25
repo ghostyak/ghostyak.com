@@ -126,7 +126,8 @@ const zh: Dictionary = {
     "metadataTitle": "Folder History | 快速重新打开最近访问文件夹的 Windows 应用",
     "cardDescription": "记录你在文件资源管理器中访问过的文件夹，并可从托盘直接重新打开的 Windows 应用。",
     "description": "记录你在文件资源管理器中访问过的文件夹，随时从托盘直接重新打开。",
-    "downloadAction": "免费下载 Windows 版",
+    "downloadAction": "免费下载 Windows x64 版",
+    "arm64DownloadAction": "免费下载 Windows ARM64 版",
     "howToAction": "使用方法",
     "screenshots": [
       {
@@ -217,13 +218,13 @@ const zh: Dictionary = {
         },
         {
           "question": "需要什么环境？",
-          "answer": "可在 Windows 11 x64 上使用。安装程序会安装到当前用户账户，无需管理员权限；如果缺少 WebView2 Runtime，会在安装过程中一并安装。"
+          "answer": "可在 Windows 11 x64 或 ARM64 上使用。安装程序会安装到当前用户账户，无需管理员权限；如果缺少 WebView2 Runtime，会在安装过程中一并安装。"
         }
       ]
     },
     "download": {
       "title": "下载后，\n添加第一个监视文件夹。",
-      "description": "Windows 11 x64 · 无需管理员权限即可安装"
+      "description": "Windows 11 x64 / ARM64 · 无需管理员权限即可安装"
     }
   },
   worldClock: {

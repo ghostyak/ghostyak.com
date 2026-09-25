@@ -95,7 +95,7 @@ CSV Search Engine 상세페이지 `CsvSearchProduct`는 Server Component이며 �
 
 ## Folder History
 
-`FolderHistoryProduct`는 Folder History 상세페이지를 그리는 Server Component이며 공통 `ProductLanding`(히어로·사용 방법·주요 기능·남색 안내·FAQ·다운로드)을 사용한다. FAQ Accordion만 클라이언트 경계로 둔다. 제품명·제품 경로·플랫폼·GitHub 저장소·직접 다운로드 URL(`releases/latest/download/Folder.History_x64-setup.exe`)·스크린샷 경로와 원본 크기는 `src/data/products.ts`의 `folderHistory`에서 관리한다. 문구는 각 사전의 `folderHistory`에 두며 무료 배지는 `home.products.freeBadge`, 저장소 링크 문구는 `csvSearch.repositoryAction`을 재사용한다. `/en/product/folder-history`를 포함한 9개 접두사 경로를 제공하고, 메타데이터는 `src/i18n/folder-history-metadata.ts`, sitemap 항목은 `src/app/sitemap.ts`에 둔다. 홈 카드, 공통 제품 메뉴와 푸터는 현재 언어의 상세페이지로 연결한다.
+`FolderHistoryProduct`는 Folder History 상세페이지를 그리는 Server Component이며 공통 `ProductLanding`(히어로·사용 방법·주요 기능·남색 안내·FAQ·다운로드)을 사용한다. FAQ Accordion만 클라이언트 경계로 둔다. 제품명·제품 경로·플랫폼·GitHub 저장소·x64 및 ARM64 직접 다운로드 URL(`releases/latest/download/Folder.History_{x64,arm64}-setup.exe`)·스크린샷 경로와 원본 크기는 `src/data/products.ts`의 `folderHistory`에서 관리한다. 문구는 각 사전의 `folderHistory`에 두며 무료 배지는 `home.products.freeBadge`, 저장소 링크 문구는 `csvSearch.repositoryAction`을 재사용한다. `/en/product/folder-history`를 포함한 9개 접두사 경로를 제공하고, 메타데이터는 `src/i18n/folder-history-metadata.ts`, sitemap 항목은 `src/app/sitemap.ts`에 둔다. 홈 카드, 공통 제품 메뉴와 푸터는 현재 언어의 상세페이지로 연결한다.
 
 `SupportContent`는 후원 랜딩(`/{locale}/support`의 9개 접두사 경로)을 그리는 Server Component다. 클라이언트 경계가 없다. 문구는 사전의 `supportPage`, 메타데이터는 `src/i18n/support-metadata.ts`, sitemap 항목은 `src/app/sitemap.ts`에 둔다. 섹션 제목과 텍스트 링크 스타일은 `ProductLanding`의 `SectionHeading`·`textLink`를 재사용한다. Instagram·Threads·GitHub 주소는 `src/data/social.ts`에서 푸터와 공유한다.
 

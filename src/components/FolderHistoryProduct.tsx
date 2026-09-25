@@ -23,6 +23,7 @@ export async function FolderHistoryProduct({ locale }: { locale: PublishedLocale
     highlightIcon={HardDrive}
     productIcon={FolderClock}
     downloadUrl={folderHistory.downloadUrl}
+    alternateDownload={{ url: folderHistory.arm64DownloadUrl, label: copy.arm64DownloadAction }}
     repository={{ url: folderHistory.url, label: dictionary.csvSearch.repositoryAction }}
     viewScreenshot={dictionary.landing.actions.viewScreenshot}
     supportUrl={localizedPath(locale, "/support")}
