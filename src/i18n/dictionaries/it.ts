@@ -126,8 +126,8 @@ const it: Dictionary = {
     "metadataTitle": "Folder History | L’app per Windows che riapre le cartelle visitate di recente",
     "cardDescription": "Un’app per Windows che registra le cartelle visitate in Esplora file per riaprirle direttamente dall’area di notifica.",
     "description": "Registra le cartelle che visiti in Esplora file e riaprile direttamente dall’area di notifica.",
-    "downloadAction": "Download gratuito per Windows x64",
-    "arm64DownloadAction": "Download gratuito per Windows ARM64",
+    "downloadAction": "Scarica x64",
+    "arm64DownloadAction": "Scarica ARM64",
     "howToAction": "Come funziona",
     "screenshots": [
       {

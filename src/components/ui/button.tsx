@@ -14,7 +14,7 @@ const buttonVariants = cva(
         outline:
           "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
         architectureDownload:
-          "border border-brand/40 bg-ink text-white hover:bg-ink/90 hover:text-white",
+          "min-w-44 border border-white/25 bg-ink text-white hover:bg-ink/90 hover:text-white",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         support:

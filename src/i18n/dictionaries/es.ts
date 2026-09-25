@@ -126,8 +126,8 @@ const es: Dictionary = {
     "metadataTitle": "Folder History | App de Windows para volver a abrir carpetas visitadas recientemente",
     "cardDescription": "Una app de Windows que registra las carpetas que visitas en el Explorador de archivos para volver a abrirlas desde la bandeja.",
     "description": "Registra las carpetas que visitas en el Explorador de archivos y vuelve a abrirlas directamente desde la bandeja.",
-    "downloadAction": "Descarga gratuita para Windows x64",
-    "arm64DownloadAction": "Descarga gratuita para Windows ARM64",
+    "downloadAction": "Descargar x64",
+    "arm64DownloadAction": "Descargar ARM64",
     "howToAction": "Cómo funciona",
     "screenshots": [
       {

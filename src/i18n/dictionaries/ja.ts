@@ -126,8 +126,8 @@ const ja: Dictionary = {
     "metadataTitle": "Folder History | 最近開いたフォルダーをすぐに開き直せるWindowsアプリ",
     "cardDescription": "エクスプローラーで開いたフォルダーを記録し、トレイからすぐに開き直せるWindowsアプリです。",
     "description": "エクスプローラーで開いたフォルダーを記録しておき、トレイからすぐに開き直しましょう。",
-    "downloadAction": "Windows x64版を無料ダウンロード",
-    "arm64DownloadAction": "Windows ARM64版を無料ダウンロード",
+    "downloadAction": "x64版をダウンロード",
+    "arm64DownloadAction": "ARM64版をダウンロード",
     "howToAction": "使い方",
     "screenshots": [
       {

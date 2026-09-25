@@ -126,8 +126,8 @@ const de: Dictionary = {
     "metadataTitle": "Folder History | Windows-App zum erneuten Öffnen zuletzt besuchter Ordner",
     "cardDescription": "Eine Windows-App, die im Explorer besuchte Ordner aufzeichnet, damit du sie direkt aus dem Infobereich wieder öffnen kannst.",
     "description": "Zeichne die Ordner auf, die du im Explorer besuchst, und öffne sie direkt aus dem Infobereich wieder.",
-    "downloadAction": "Kostenlos für Windows x64 herunterladen",
-    "arm64DownloadAction": "Kostenlos für Windows ARM64 herunterladen",
+    "downloadAction": "x64 herunterladen",
+    "arm64DownloadAction": "ARM64 herunterladen",
     "howToAction": "So funktioniert’s",
     "screenshots": [
       {

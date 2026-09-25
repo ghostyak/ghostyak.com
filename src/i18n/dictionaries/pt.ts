@@ -126,8 +126,8 @@ const pt: Dictionary = {
     "metadataTitle": "Folder History | App para Windows que reabre pastas visitadas recentemente",
     "cardDescription": "Um app para Windows que registra as pastas que você visita no Explorador de Arquivos para reabri-las direto da bandeja.",
     "description": "Registre as pastas que você visita no Explorador de Arquivos e reabra-as direto da bandeja.",
-    "downloadAction": "Download gratuito para Windows x64",
-    "arm64DownloadAction": "Download gratuito para Windows ARM64",
+    "downloadAction": "Baixar x64",
+    "arm64DownloadAction": "Baixar ARM64",
     "howToAction": "Como funciona",
     "screenshots": [
       {

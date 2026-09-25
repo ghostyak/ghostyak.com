@@ -126,8 +126,8 @@ const en: Dictionary = {
     "metadataTitle": "Folder History | A Windows app for reopening recently visited folders",
     "cardDescription": "A Windows app that records the folders you visit in File Explorer so you can reopen them right from the tray.",
     "description": "Record the folders you visit in File Explorer, then reopen them right from the tray.",
-    "downloadAction": "Free download for Windows x64",
-    "arm64DownloadAction": "Free download for Windows ARM64",
+    "downloadAction": "Download x64",
+    "arm64DownloadAction": "Download ARM64",
     "howToAction": "How it works",
     "screenshots": [
       {

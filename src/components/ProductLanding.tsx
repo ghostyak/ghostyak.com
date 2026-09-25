@@ -42,7 +42,7 @@ function DownloadLabel({ label, architecture }: { label: string; architecture?: 
   const after = label.slice(position + architecture.length).trim();
   return <span className="inline-flex flex-wrap items-center justify-center gap-1.5" aria-hidden="true">
     {before && <span>{before}</span>}
-    <strong className="rounded-md bg-brand px-1.5 py-0.5 text-xs font-bold leading-none text-ink">{architecture}</strong>
+    <strong className="font-semibold text-brand">{architecture}</strong>
     {after && <span>{after}</span>}
   </span>;
 }
@@ -73,6 +73,8 @@ export function ProductLanding({ id, name, badges, copy, screenshots, featureIco
   const [main, ...secondary] = screenshots;
   const downloadLink = <a className={cn(buttonVariants({ variant: downloadArchitecture ? "architectureDownload" : "default", size: "lg", className: heroActionClassName }))} href={downloadUrl} aria-label={copy.downloadAction}><Download className="size-4" aria-hidden="true" /><DownloadLabel label={copy.downloadAction} architecture={downloadArchitecture} /></a>;
   const alternateDownloadLink = alternateDownload && <a className={cn(buttonVariants({ variant: "architectureDownload", size: "lg", className: heroActionClassName }))} href={alternateDownload.url} aria-label={alternateDownload.label}><Download className="size-4" aria-hidden="true" /><DownloadLabel label={alternateDownload.label} architecture={alternateDownload.architecture} /></a>;
+  const howToLink = <a className={cn(buttonVariants({ variant: "outline", size: "lg", className: heroActionClassName }))} href="#how-it-works">{copy.howToAction}<ArrowRight aria-hidden="true" /></a>;
+  const supportLink = <a className={cn(buttonVariants({ variant: "support", size: "lg", className: heroActionClassName }))} href={supportUrl}><HandHeart className="size-4" aria-hidden="true" />{supportAction}</a>;
 
   return <main id="main-content" className="[overflow-wrap:anywhere]">
     <section className="px-4 pb-12 sm:px-8 sm:pb-20" aria-labelledby={`${id}-title`}>
@@ -82,7 +84,7 @@ export function ProductLanding({ id, name, badges, copy, screenshots, featureIco
           eyebrow={badges}
           title={name}
           description={copy.description}
-          actions={<>{downloadLink}{alternateDownloadLink}<a className={cn(buttonVariants({ variant: "outline", size: "lg", className: heroActionClassName }))} href="#how-it-works">{copy.howToAction}<ArrowRight aria-hidden="true" /></a><a className={cn(buttonVariants({ variant: "support", size: "lg", className: heroActionClassName }))} href={supportUrl}><HandHeart className="size-4" aria-hidden="true" />{supportAction}</a></>}
+          actions={alternateDownload ? <div className="flex max-w-full flex-col items-center gap-3"><div className="flex max-w-full flex-wrap justify-center gap-3">{downloadLink}{alternateDownloadLink}</div><div className="flex flex-wrap justify-center gap-3">{howToLink}{supportLink}</div></div> : <>{downloadLink}{howToLink}{supportLink}</>}
         />
         <figure className="relative mx-auto max-w-5xl">
           <div className="absolute inset-x-[10%] -bottom-6 top-1/3 rounded-full bg-brand/25 blur-3xl" aria-hidden="true" />
