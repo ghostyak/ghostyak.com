@@ -25,7 +25,7 @@ export function NavDropdown({ label, groups }: { label: string; groups: NavGroup
             const Icon = icons[item.icon];
             return <DropdownMenuItem asChild key={item.name} className="min-h-12 gap-3 rounded-lg px-3">
               <a href={item.href} target={item.external ? "_blank" : undefined} rel={item.external ? "noreferrer" : undefined} aria-current={item.current ? "page" : undefined}>
-                <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-ink text-brand"><Icon className="size-4" aria-hidden="true" /></span><span className="min-w-0 flex-1">{item.name}</span>{item.external && <ArrowUpRight className="size-3.5" aria-hidden="true" />}
+                <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-ink"><Icon className="size-[18px] text-brand stroke-[2.25]" aria-hidden="true" /></span><span className="min-w-0 flex-1">{item.name}</span>{item.external && <ArrowUpRight className="size-3.5" aria-hidden="true" />}
               </a>
             </DropdownMenuItem>;
           })}
