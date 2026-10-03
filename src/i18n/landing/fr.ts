@@ -9,10 +9,9 @@ const landing: Dictionary["landing"] = {
   "brand": "GhostYak Boxes",
   "skip": "Aller au contenu",
   "actions": {
-    "download": "Télécharger gratuitement pour Windows",
+    "download": "Télécharger gratuitement pour Windows x64",
     "install": "Guide d’installation",
     "viewScreenshot": "Agrandir la capture",
-    "webview": "Installer WebView2 depuis Microsoft",
     "alternativeTo": "Découvrir sur AlternativeTo",
     "release": "Dernière version et nouveautés",
     "feedback": "Signaler un problème ou donner un avis",
@@ -100,7 +99,7 @@ const landing: Dictionary["landing"] = {
       },
       {
         "question": "Comment l’installer ?",
-        "answer": "Exécutez l’installateur sous Windows 10/11 64 bits et suivez les instructions. L’installation demande des droits administrateur. Avec les options par défaut, Boxes démarre automatiquement à la fin.",
+        "answer": "Exécutez l’installateur sous Windows 10/11 64 bits et suivez les instructions. Ni droits administrateur ni WebView2 ne sont nécessaires. Avec les options par défaut, Boxes démarre automatiquement à la fin.",
         "link": "install"
       },
       {
@@ -116,7 +115,7 @@ const landing: Dictionary["landing"] = {
   },
   "download": {
     "title": "Téléchargez et créez\nvotre première boîte.",
-    "description": "Windows 10/11 · 64 bits · Droits administrateur requis pour l’installation",
+    "description": "Windows 10/11 · 64 bits · Installation sans droits administrateur",
     "steps": [
       {
         "title": "Lancez l’installateur",
@@ -134,7 +133,6 @@ const landing: Dictionary["landing"] = {
     "help": {
       "title": "Boxes ne démarre pas après l’installation ?",
       "launch": "Si vous avez décoché l’option de lancement sur l’écran final, ouvrez Ghostyak Boxes depuis le menu Démarrer.",
-      "runtime": "La plupart des PC ne nécessitent aucune préparation supplémentaire. Si Boxes ne démarre pas, Microsoft Edge WebView2 Runtime peut être absent. Téléchargez et installez Evergreen Bootstrapper depuis la page Microsoft ci-dessous, puis relancez Boxes.",
       "feedback": "Si le problème persiste, indiquez vos versions de Windows et de Boxes ainsi que le message d’erreur."
     },
     "source": "Installateur officiel · GitHub Releases"

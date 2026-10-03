@@ -9,10 +9,9 @@ const landing: Dictionary["landing"] = {
   "brand": "GhostYak Boxes",
   "skip": "Zum Inhalt springen",
   "actions": {
-    "download": "Kostenlos für Windows laden",
+    "download": "Kostenlos für Windows x64 laden",
     "install": "Installationshilfe",
     "viewScreenshot": "Bildschirmfoto vergrößern",
-    "webview": "WebView2 von Microsoft installieren",
     "alternativeTo": "Auf AlternativeTo ansehen",
     "release": "Neueste Version und Änderungen",
     "feedback": "Probleme melden und Feedback geben",
@@ -100,7 +99,7 @@ const landing: Dictionary["landing"] = {
       },
       {
         "question": "Wie installiere ich Boxes?",
-        "answer": "Starte das Installationsprogramm unter Windows 10/11 mit 64 Bit und folge den Anweisungen. Für die Installation sind Administratorrechte nötig. Mit den Standardeinstellungen startet Boxes danach automatisch.",
+        "answer": "Starte das Installationsprogramm unter Windows 10/11 mit 64 Bit und folge den Anweisungen. Administratorrechte oder WebView2 sind nicht nötig. Mit den Standardeinstellungen startet Boxes danach automatisch.",
         "link": "install"
       },
       {
@@ -116,7 +115,7 @@ const landing: Dictionary["landing"] = {
   },
   "download": {
     "title": "Herunterladen und\ndie erste Box erstellen.",
-    "description": "Windows 10/11 · 64 Bit · Administratorrechte zur Installation erforderlich",
+    "description": "Windows 10/11 · 64 Bit · Installation ohne Administratorrechte",
     "steps": [
       {
         "title": "Installationsprogramm starten",
@@ -134,7 +133,6 @@ const landing: Dictionary["landing"] = {
     "help": {
       "title": "Startet Boxes nach der Installation nicht?",
       "launch": "Wenn du die Startoption auf dem Abschlussbildschirm abgewählt hast, öffne Ghostyak Boxes über das Startmenü.",
-      "runtime": "Die meisten PCs benötigen keine weitere Vorbereitung. Startet Boxes nicht, fehlt möglicherweise die Microsoft Edge WebView2 Runtime. Lade den Evergreen Bootstrapper über die Microsoft-Seite unten herunter, installiere ihn und starte Boxes erneut.",
       "feedback": "Falls Boxes weiterhin nicht startet, teile uns deine Windows- und Boxes-Version und die Fehlermeldung mit."
     },
     "source": "Offizielles Installationsprogramm · GitHub Releases"

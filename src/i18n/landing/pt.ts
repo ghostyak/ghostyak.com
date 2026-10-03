@@ -9,10 +9,9 @@ const landing: Dictionary["landing"] = {
   "brand": "GhostYak Boxes",
   "skip": "Pular para o conteúdo",
   "actions": {
-    "download": "Baixar grátis para Windows",
+    "download": "Baixar grátis para Windows x64",
     "install": "Guia de instalação",
     "viewScreenshot": "Ampliar captura de tela",
-    "webview": "Instalar WebView2 pela Microsoft",
     "alternativeTo": "Ver no AlternativeTo",
     "release": "Versão mais recente e alterações",
     "feedback": "Relatar problemas e enviar sugestões",
@@ -100,7 +99,7 @@ const landing: Dictionary["landing"] = {
       },
       {
         "question": "Como faço a instalação?",
-        "answer": "Execute o instalador no Windows 10/11 de 64 bits e siga as instruções. A instalação exige permissão de administrador. Com as opções padrão, o Boxes inicia automaticamente ao terminar.",
+        "answer": "Execute o instalador no Windows 10/11 de 64 bits e siga as instruções. Não é preciso permissão de administrador nem WebView2. Com as opções padrão, o Boxes inicia automaticamente ao terminar.",
         "link": "install"
       },
       {
@@ -116,7 +115,7 @@ const landing: Dictionary["landing"] = {
   },
   "download": {
     "title": "Baixe e crie\nsua primeira caixa.",
-    "description": "Windows 10/11 · 64 bits · Permissão de administrador para instalar",
+    "description": "Windows 10/11 · 64 bits · Instala sem permissão de administrador",
     "steps": [
       {
         "title": "Execute o instalador",
@@ -134,7 +133,6 @@ const landing: Dictionary["landing"] = {
     "help": {
       "title": "Não inicia após a instalação?",
       "launch": "Se você desmarcou a opção de execução na tela final da instalação, abra o Ghostyak Boxes pelo menu Iniciar.",
-      "runtime": "A maioria dos PCs não precisa de preparação extra. Se o Boxes não iniciar, o Microsoft Edge WebView2 Runtime pode estar ausente. Baixe e instale o Evergreen Bootstrapper na página da Microsoft abaixo e tente abrir o Boxes novamente.",
       "feedback": "Se ainda não iniciar, informe as versões do Windows e do Boxes e a mensagem de erro."
     },
     "source": "Instalador oficial · GitHub Releases"

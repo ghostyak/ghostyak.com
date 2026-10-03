@@ -278,7 +278,7 @@ const ja: Dictionary = {
       ],
     },
     availabilityNotice: "現在は無料版のみ提供しています。商用エディションは準備が整い次第、別途ご案内します。",
-    download: { breadcrumbLabel: "現在位置", breadcrumbCurrent: "ダウンロード", waitNotice: "ブラウザーでインストーラーのダウンロードが始まるまで、このページを開いたままにしてください。", fileInfoLabel: "インストーラー情報", fileSize: "約3.3 MB", requirement: "Microsoft Edge WebView2 Runtimeが必要", countdown: "{seconds}秒後にダウンロードを開始します。", starting: "ダウンロードを開始しています。", help: "自動ダウンロードが始まりませんか？", directAction: "インストーラーを直接ダウンロード" },
+    download: { breadcrumbLabel: "現在位置", breadcrumbCurrent: "ダウンロード", waitNotice: "ブラウザーでインストーラーのダウンロードが始まるまで、このページを開いたままにしてください。", fileInfoLabel: "インストーラー情報", fileSize: "約3.3 MB", countdown: "{seconds}秒後にダウンロードを開始します。", starting: "ダウンロードを開始しています。", help: "自動ダウンロードが始まりませんか？", directAction: "インストーラーを直接ダウンロード" },
   },
   blog: { eyebrow: "GHOSTYAK BLOG", heading: "ブログ", intro: "製品ニュースや開発の過程で学んだことを記録します。", readMore: "記事を読む", breadcrumbLabel: "現在位置", breadcrumbHome: "ブログ" },
 };

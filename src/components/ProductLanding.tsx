@@ -34,7 +34,7 @@ function Frame({ screenshot, sizes, preload = false }: { screenshot: Screenshot;
   </div>;
 }
 
-function DownloadLabel({ label, architecture }: { label: string; architecture?: DownloadArchitecture }) {
+export function DownloadLabel({ label, architecture }: { label: string; architecture?: DownloadArchitecture }) {
   const position = architecture ? label.indexOf(architecture) : -1;
   if (!architecture || position < 0) return label;
 

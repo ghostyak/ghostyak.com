@@ -9,10 +9,9 @@ const landing: Dictionary["landing"] = {
   "brand": "GhostYak Boxes",
   "skip": "跳转到正文",
   "actions": {
-    "download": "免费下载 Windows 版",
+    "download": "免费下载 Windows x64 版",
     "install": "安装指南",
     "viewScreenshot": "查看大图",
-    "webview": "从 Microsoft 安装 WebView2",
     "alternativeTo": "在 AlternativeTo 上了解",
     "release": "最新版本与更新内容",
     "feedback": "报告问题与反馈",
@@ -100,7 +99,7 @@ const landing: Dictionary["landing"] = {
       },
       {
         "question": "如何安装？",
-        "answer": "在 64 位 Windows 10/11 上运行安装程序并按提示操作。安装需要管理员权限，按默认设置完成后，Boxes 会自动启动。",
+        "answer": "在 64 位 Windows 10/11 上运行安装程序并按提示操作。安装无需管理员权限或 WebView2，按默认设置完成后，Boxes 会自动启动。",
         "link": "install"
       },
       {
@@ -116,7 +115,7 @@ const landing: Dictionary["landing"] = {
   },
   "download": {
     "title": "下载后，\n创建你的第一个盒子。",
-    "description": "Windows 10/11 · 64 位 · 安装需要管理员权限",
+    "description": "Windows 10/11 · 64 位 · 无需管理员权限即可安装",
     "steps": [
       {
         "title": "运行安装程序",
@@ -134,7 +133,6 @@ const landing: Dictionary["landing"] = {
     "help": {
       "title": "安装后无法启动？",
       "launch": "如果在安装完成界面取消了运行选项，请从开始菜单打开 Ghostyak Boxes。",
-      "runtime": "大多数电脑无需额外准备即可使用。如果无法启动，可能缺少 Microsoft Edge WebView2 Runtime。请从下方 Microsoft 页面下载并安装 Evergreen Bootstrapper，然后再次尝试启动 Boxes。",
       "feedback": "如果仍然无法启动，请提供 Windows 和 Boxes 版本以及错误信息。"
     },
     "source": "官方安装程序 · GitHub Releases"

@@ -192,3 +192,9 @@ ghostyak.com은 GhostYak 소프트웨어를 소개하고 배포하는 공식 웹
 ## 완료: Boxes 성능 최적화 블로그 글 (2026-10-03)
 
 - [x] v0.4 성능 최적화와 v0.4.1 출시 예정 소식(`boxes-performance-update`) 한국어 원문과 8개 언어 번역
+
+## 완료: Boxes v0.4.1 다운로드·설치 안내 갱신 (2026-10-03)
+
+- [x] 설치 파일 주소를 `GhostyakBoxes-x64-setup.exe`로 변경(이전 주소 404)
+- [x] 다운로드 버튼에 Folder History와 같은 `x64` 금색 강조 적용(9개 언어 버튼 문구에 x64 추가)
+- [x] 관리자 권한·WebView2 요구 문구와 WebView2 설치 도움말 삭제

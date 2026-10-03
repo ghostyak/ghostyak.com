@@ -278,7 +278,7 @@ const it: Dictionary = {
       ],
     },
     availabilityNotice: "Al momento è disponibile solo la versione gratuita. L’edizione commerciale verrà annunciata separatamente quando sarà pronta.",
-    download: { breadcrumbLabel: "Percorso di navigazione", breadcrumbCurrent: "Download", waitNotice: "Tieni aperta questa pagina finché il browser non avvia il download del programma di installazione.", fileInfoLabel: "Informazioni sul programma di installazione", fileSize: "Circa 3,3 MB", requirement: "Richiede Microsoft Edge WebView2 Runtime", countdown: "Il download inizierà tra {seconds} secondi.", starting: "Avvio del download.", help: "Il download non è iniziato automaticamente?", directAction: "Scarica direttamente il programma di installazione" },
+    download: { breadcrumbLabel: "Percorso di navigazione", breadcrumbCurrent: "Download", waitNotice: "Tieni aperta questa pagina finché il browser non avvia il download del programma di installazione.", fileInfoLabel: "Informazioni sul programma di installazione", fileSize: "Circa 3,3 MB", countdown: "Il download inizierà tra {seconds} secondi.", starting: "Avvio del download.", help: "Il download non è iniziato automaticamente?", directAction: "Scarica direttamente il programma di installazione" },
   },
   blog: { eyebrow: "GHOSTYAK BLOG", heading: "Blog", intro: "Novità sui prodotti e lezioni apprese durante lo sviluppo.", readMore: "Leggi l’articolo", breadcrumbLabel: "Percorso di navigazione", breadcrumbHome: "Blog" },
 };

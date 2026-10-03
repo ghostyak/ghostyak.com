@@ -9,10 +9,9 @@ const landing: Dictionary["landing"] = {
   "brand": "GhostYak Boxes",
   "skip": "本文へスキップ",
   "actions": {
-    "download": "Windows版を無料ダウンロード",
+    "download": "Windows x64版を無料ダウンロード",
     "install": "インストール案内",
     "viewScreenshot": "画面を大きく見る",
-    "webview": "MicrosoftからWebView2をインストール",
     "alternativeTo": "AlternativeToで見る",
     "release": "最新バージョン・変更点",
     "feedback": "問題の報告・フィードバック",
@@ -100,7 +99,7 @@ const landing: Dictionary["landing"] = {
       },
       {
         "question": "インストール方法は？",
-        "answer": "64ビットのWindows 10/11でインストーラーを実行し、案内に従ってください。インストールには管理者権限が必要です。初期設定のまま完了するとBoxesが自動で起動します。",
+        "answer": "64ビットのWindows 10/11でインストーラーを実行し、案内に従ってください。管理者権限やWebView2は必要ありません。初期設定のまま完了するとBoxesが自動で起動します。",
         "link": "install"
       },
       {
@@ -116,7 +115,7 @@ const landing: Dictionary["landing"] = {
   },
   "download": {
     "title": "ダウンロードして、\n最初のボックスを作りましょう。",
-    "description": "Windows 10/11 · 64ビット · インストールには管理者権限が必要",
+    "description": "Windows 10/11 · 64ビット · 管理者権限なしでインストール",
     "steps": [
       {
         "title": "インストーラーを実行",
@@ -134,7 +133,6 @@ const landing: Dictionary["landing"] = {
     "help": {
       "title": "インストール後に起動しませんか？",
       "launch": "インストール完了画面で起動の選択を外した場合は、スタートメニューからGhostyak Boxesを開いてください。",
-      "runtime": "ほとんどのPCでは追加の準備は不要です。起動しない場合、Microsoft Edge WebView2 Runtimeがないことが原因かもしれません。下のMicrosoftページからEvergreen Bootstrapperをダウンロードしてインストールし、もう一度Boxesを起動してみてください。",
       "feedback": "それでも起動しない場合は、WindowsとBoxesのバージョン、エラーメッセージをお知らせください。"
     },
     "source": "公式インストーラー · GitHub Releases"

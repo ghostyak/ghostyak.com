@@ -278,7 +278,7 @@ const zh: Dictionary = {
       ],
     },
     availabilityNotice: "目前仅提供免费版。商业版准备就绪后将另行发布。",
-    download: { breadcrumbLabel: "当前位置", breadcrumbCurrent: "下载", waitNotice: "请保持此页面打开，直到浏览器开始下载安装程序。", fileInfoLabel: "安装程序信息", fileSize: "约 3.3 MB", requirement: "需要 Microsoft Edge WebView2 Runtime", countdown: "下载将在 {seconds} 秒后开始。", starting: "正在开始下载。", help: "没有自动开始下载？", directAction: "直接下载安装程序" },
+    download: { breadcrumbLabel: "当前位置", breadcrumbCurrent: "下载", waitNotice: "请保持此页面打开，直到浏览器开始下载安装程序。", fileInfoLabel: "安装程序信息", fileSize: "约 3.3 MB", countdown: "下载将在 {seconds} 秒后开始。", starting: "正在开始下载。", help: "没有自动开始下载？", directAction: "直接下载安装程序" },
   },
   blog: { eyebrow: "GHOSTYAK BLOG", heading: "博客", intro: "记录产品动态以及我们在开发过程中学到的内容。", readMore: "阅读文章", breadcrumbLabel: "当前位置", breadcrumbHome: "博客" },
 };

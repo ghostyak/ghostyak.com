@@ -9,10 +9,9 @@ const landing: Dictionary["landing"] = {
   "brand": "GhostYak Boxes",
   "skip": "Skip to content",
   "actions": {
-    "download": "Free download for Windows",
+    "download": "Free download for Windows x64",
     "install": "Installation guide",
     "viewScreenshot": "View full screenshot",
-    "webview": "Install WebView2 from Microsoft",
     "alternativeTo": "Explore on AlternativeTo",
     "release": "Latest version and changes",
     "feedback": "Report an issue or send feedback",
@@ -100,7 +99,7 @@ const landing: Dictionary["landing"] = {
       },
       {
         "question": "How do I install it?",
-        "answer": "Run the installer on 64-bit Windows 10/11 and follow the instructions. Installation requires administrator permission. With the default options, Boxes starts automatically when installation finishes.",
+        "answer": "Run the installer on 64-bit Windows 10/11 and follow the instructions. No administrator permission or WebView2 is needed. With the default options, Boxes starts automatically when installation finishes.",
         "link": "install"
       },
       {
@@ -116,7 +115,7 @@ const landing: Dictionary["landing"] = {
   },
   "download": {
     "title": "Download and create\nyour first box.",
-    "description": "Windows 10/11 · 64-bit · Administrator permission required for installation",
+    "description": "Windows 10/11 · 64-bit · Installs without administrator permission",
     "steps": [
       {
         "title": "Run the installer",
@@ -134,7 +133,6 @@ const landing: Dictionary["landing"] = {
     "help": {
       "title": "Not starting after installation?",
       "launch": "If you cleared the launch option on the final installation screen, open Ghostyak Boxes from the Start menu.",
-      "runtime": "Most PCs need no extra preparation. If Boxes does not start, Microsoft Edge WebView2 Runtime may be missing. Download and install the Evergreen Bootstrapper from the Microsoft page below, then try opening Boxes again.",
       "feedback": "If it still does not start, please share your Windows and Boxes versions and the error message."
     },
     "source": "Official installer · GitHub Releases"

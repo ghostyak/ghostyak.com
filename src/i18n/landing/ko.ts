@@ -7,10 +7,9 @@ const renewal = {
   brand: "GhostYak Boxes",
   skip: "본문으로 바로가기",
   actions: {
-    download: "Windows용 무료 다운로드",
+    download: "Windows x64용 무료 다운로드",
     install: "설치 안내",
     viewScreenshot: "화면 크게 보기",
-    webview: "Microsoft에서 WebView2 설치",
     alternativeTo: "AlternativeTo에서 살펴보기",
     release: "최신 버전·변경 사항",
     feedback: "문제 신고·피드백",
@@ -58,14 +57,14 @@ const renewal = {
       { question: "회사에서도 무료인가요?", answer: "네. 현재 제공하는 바탕화면 정리 기능은 개인·회사·업무용 모두 무료입니다. 체험 기간이 끝나 결제해야 하는 방식도 아닙니다." },
       { question: "기존 바탕화면 아이콘과 원본 파일은 어떻게 되나요?", answer: "박스에 끌어 넣으면 해당 항목의 경로가 연결됩니다. 바탕화면에 있던 원본 아이콘과 파일은 그대로 남고, 박스에서 항목을 제거해도 원본은 삭제되지 않습니다. 바탕화면 빈 곳을 더블클릭하면 기존 바탕화면 아이콘 전체를 숨기거나 다시 표시할 수 있습니다." },
       { question: "Fences 대안으로 어떤 작업에 적합한가요?", answer: "여러 폴더에 흩어진 자료와 앱을 작업별 박스에 모으고 싶을 때 적합합니다. 같은 항목을 여러 박스에 연결하고, 박스를 접거나 잠그고, 모니터 구성별 배치를 기억할 수 있습니다. Fences가 함께 설치되어 있으면 더블클릭 충돌을 피하기 위해 Boxes의 더블클릭 기능은 기본적으로 꺼집니다." },
-      { question: "설치는 어떻게 하나요?", answer: "64비트 Windows 10/11에서 설치 파일을 실행하고 안내를 따라주세요. 설치에는 관리자 권한이 필요하며, 기본 설정대로 완료하면 Boxes가 자동으로 실행됩니다.", link: "install" },
+      { question: "설치는 어떻게 하나요?", answer: "64비트 Windows 10/11에서 설치 파일을 실행하고 안내를 따라주세요. 관리자 권한이나 WebView2 없이 설치할 수 있으며, 기본 설정대로 완료하면 Boxes가 자동으로 실행됩니다.", link: "install" },
       { question: "동기화 기능도 지금 사용할 수 있나요?", answer: "동기화는 아직 제공하지 않습니다. 향후 유료 기능으로 제공할 계획이며, 세부 내용과 출시 일정은 추후 공개할 예정입니다." },
       { question: "문제나 의견은 어디에 보내나요?", answer: "GitHub의 문제 신고·피드백 링크를 이용해 주세요. 사용 중인 Windows와 Boxes 버전, 문제가 발생한 상황을 함께 알려주시면 도움이 됩니다.", link: "feedback" },
     ],
   },
   download: {
     title: "다운로드하고,\n첫 번째 박스를 만드세요.",
-    description: "Windows 10/11 · 64비트 · 설치 시 관리자 권한 필요",
+    description: "Windows 10/11 · 64비트 · 관리자 권한 없이 설치",
     steps: [
       { title: "설치 파일 실행", description: "다운로드한 GhostyakBoxes-x64-setup.exe를 실행하고 설치 안내를 따라주세요." },
       { title: "설치 완료 후 자동 실행", description: "완료 화면의 ‘Ghostyak Boxes 실행’을 선택한 상태로 마치면 Boxes가 자동으로 실행됩니다." },
@@ -74,7 +73,6 @@ const renewal = {
     help: {
       title: "설치 후 실행되지 않나요?",
       launch: "설치 완료 화면에서 실행 선택을 해제했다면 시작 메뉴에서 Ghostyak Boxes를 열어주세요.",
-      runtime: "대부분의 PC에서는 별도 준비 없이 사용할 수 있습니다. 실행되지 않는 경우 Microsoft Edge WebView2 Runtime 누락이 원인일 수 있습니다. 아래 Microsoft 페이지에서 Evergreen Bootstrapper를 받아 설치한 뒤 Boxes를 다시 실행해 보세요.",
       feedback: "계속 실행되지 않으면 Windows와 Boxes 버전, 오류 메시지를 함께 알려주세요.",
     },
     source: "공식 설치 파일 · GitHub Releases",

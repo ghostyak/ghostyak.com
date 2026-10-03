@@ -10,12 +10,13 @@ import { landingLinks as links, landingMedia as media } from "@/data/landing";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { ShareLinks, type ShareLabels } from "@/components/ShareLinks";
 import { PageHero, heroActionClassName } from "@/components/PageHero";
+import { DownloadLabel } from "@/components/ProductLanding";
 
 type Copy = Dictionary["landing"];
 const textLink = "inline-flex min-h-11 items-center gap-2 text-sm font-medium text-primary underline decoration-brand decoration-2 underline-offset-4 hover:decoration-current";
 
 function DownloadLink({ copy }: { copy: Copy }) {
-  return <a className={cn(buttonVariants({ size: "lg", className: heroActionClassName }))} href={boxes.download.installerUrl}><Download className="size-4" aria-hidden="true" />{copy.actions.download}</a>;
+  return <a className={cn(buttonVariants({ variant: "architectureDownload", size: "lg", className: heroActionClassName }))} href={boxes.download.installerUrl} aria-label={copy.actions.download}><Download className="size-4" aria-hidden="true" /><DownloadLabel label={copy.actions.download} architecture="x64" /></a>;
 }
 
 function SectionHeading({ eyebrow, title, description, id }: { eyebrow: string; title: string; description?: string; id: string }) {
@@ -80,7 +81,7 @@ export function RenewalLanding({ copy, currentPath, supportUrl, supportAction, s
       <div className="mx-auto grid max-w-7xl items-start gap-12 lg:grid-cols-2 lg:gap-20">
         <div><span className="mb-6 flex size-14 items-center justify-center rounded-2xl bg-brand/10 ring-1 ring-brand/30"><Image src={boxesIcon} alt="" width={32} height={32} unoptimized /></span><h2 id="download-title" className="whitespace-pre-line text-3xl font-semibold leading-tight tracking-[-0.035em] sm:text-4xl">{copy.download.title}</h2><p className="mb-7 mt-5 text-sm leading-7 text-muted-foreground">{copy.download.description}</p><DownloadLink copy={copy} /><p className="mt-4 text-xs leading-6 text-muted-foreground">{copy.download.source}</p><a href={links.release} className={textLink + " mt-1"} target="_blank" rel="noreferrer">{copy.actions.release}<ArrowUpRight className="size-3.5" aria-hidden="true" /></a><div className="mt-5"><ShareLinks pageUrl={`${links.site.replace(/\/$/, "")}${currentPath}`} pageTitle={copy.brand} labels={shareLabels} /></div></div>
         <div><ol className="space-y-7">{copy.download.steps.map((step, index) => <li className="flex gap-4" key={step.title}><span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-brand font-mono text-xs font-semibold text-ink" aria-hidden="true">0{index + 1}</span><div><h3 className="pt-1 font-semibold">{step.title}</h3><p className="mt-2 text-sm leading-7 text-muted-foreground">{step.description}</p></div></li>)}</ol>
-          <Accordion type="single" collapsible className="mt-8 rounded-2xl border bg-card px-5"><AccordionItem value="install-help"><AccordionTrigger className="min-h-14 leading-6">{copy.download.help.title}</AccordionTrigger><AccordionContent className="space-y-3 leading-7 text-muted-foreground"><p>{copy.download.help.launch}</p><p>{copy.download.help.runtime}</p><a href={links.webview} className={textLink} target="_blank" rel="noreferrer">{copy.actions.webview}<ArrowUpRight className="size-4 shrink-0" aria-hidden="true" /></a><p>{copy.download.help.feedback}</p><a href={links.feedback} className={textLink} target="_blank" rel="noreferrer">{copy.actions.feedback}<ArrowUpRight className="size-4" aria-hidden="true" /></a></AccordionContent></AccordionItem></Accordion>
+          <Accordion type="single" collapsible className="mt-8 rounded-2xl border bg-card px-5"><AccordionItem value="install-help"><AccordionTrigger className="min-h-14 leading-6">{copy.download.help.title}</AccordionTrigger><AccordionContent className="space-y-3 leading-7 text-muted-foreground"><p>{copy.download.help.launch}</p><p>{copy.download.help.feedback}</p><a href={links.feedback} className={textLink} target="_blank" rel="noreferrer">{copy.actions.feedback}<ArrowUpRight className="size-4" aria-hidden="true" /></a></AccordionContent></AccordionItem></Accordion>
         </div>
       </div>
     </section>

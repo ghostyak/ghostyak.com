@@ -278,7 +278,7 @@ const fr: Dictionary = {
       ],
     },
     availabilityNotice: "Seule la version gratuite est disponible actuellement. Une édition commerciale sera annoncée séparément lorsqu’elle sera prête.",
-    download: { breadcrumbLabel: "Fil d’Ariane", breadcrumbCurrent: "Téléchargement", waitNotice: "Gardez cette page ouverte jusqu’à ce que votre navigateur commence à télécharger le programme d’installation.", fileInfoLabel: "Informations sur le programme d’installation", fileSize: "Environ 3,3 Mo", requirement: "Nécessite Microsoft Edge WebView2 Runtime", countdown: "Votre téléchargement commencera dans {seconds} secondes.", starting: "Démarrage du téléchargement.", help: "Le téléchargement n’a pas démarré automatiquement ?", directAction: "Télécharger directement le programme d’installation" },
+    download: { breadcrumbLabel: "Fil d’Ariane", breadcrumbCurrent: "Téléchargement", waitNotice: "Gardez cette page ouverte jusqu’à ce que votre navigateur commence à télécharger le programme d’installation.", fileInfoLabel: "Informations sur le programme d’installation", fileSize: "Environ 3,3 Mo", countdown: "Votre téléchargement commencera dans {seconds} secondes.", starting: "Démarrage du téléchargement.", help: "Le téléchargement n’a pas démarré automatiquement ?", directAction: "Télécharger directement le programme d’installation" },
   },
   blog: { eyebrow: "GHOSTYAK BLOG", heading: "Blog", intro: "Les actualités produits et les enseignements tirés de notre processus de développement.", readMore: "Lire l’article", breadcrumbLabel: "Fil d’Ariane", breadcrumbHome: "Blog" },
 };

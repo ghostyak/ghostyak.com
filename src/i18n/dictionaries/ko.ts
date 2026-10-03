@@ -253,7 +253,6 @@ const ko = {
       waitNotice: "브라우저에서 설치 파일 다운로드가 시작될 때까지 이 페이지를 열어 두세요.",
       fileInfoLabel: "설치 파일 정보",
       fileSize: "약 3.3MB",
-      requirement: "Microsoft Edge WebView2 Runtime 필요",
       countdown: "{seconds}초 후 다운로드가 시작됩니다.",
       starting: "다운로드를 시작하고 있습니다.",
       help: "자동 다운로드가 시작되지 않았나요?",

@@ -9,10 +9,9 @@ const landing: Dictionary["landing"] = {
   "brand": "GhostYak Boxes",
   "skip": "Saltar al contenido",
   "actions": {
-    "download": "Descargar gratis para Windows",
+    "download": "Descargar gratis para Windows x64",
     "install": "Guía de instalación",
     "viewScreenshot": "Ampliar captura",
-    "webview": "Instalar WebView2 desde Microsoft",
     "alternativeTo": "Ver en AlternativeTo",
     "release": "Última versión y cambios",
     "feedback": "Informar de problemas y enviar comentarios",
@@ -100,7 +99,7 @@ const landing: Dictionary["landing"] = {
       },
       {
         "question": "¿Cómo se instala?",
-        "answer": "Ejecuta el instalador en Windows 10/11 de 64 bits y sigue las instrucciones. La instalación requiere permisos de administrador. Con las opciones predeterminadas, Boxes se inicia automáticamente al terminar.",
+        "answer": "Ejecuta el instalador en Windows 10/11 de 64 bits y sigue las instrucciones. No se necesitan permisos de administrador ni WebView2. Con las opciones predeterminadas, Boxes se inicia automáticamente al terminar.",
         "link": "install"
       },
       {
@@ -116,7 +115,7 @@ const landing: Dictionary["landing"] = {
   },
   "download": {
     "title": "Descarga y crea\ntu primera caja.",
-    "description": "Windows 10/11 · 64 bits · Permisos de administrador para instalar",
+    "description": "Windows 10/11 · 64 bits · Se instala sin permisos de administrador",
     "steps": [
       {
         "title": "Ejecuta el instalador",
@@ -134,7 +133,6 @@ const landing: Dictionary["landing"] = {
     "help": {
       "title": "¿No se inicia tras instalarlo?",
       "launch": "Si desmarcaste la opción de ejecución en la pantalla final de la instalación, abre Ghostyak Boxes desde el menú Inicio.",
-      "runtime": "La mayoría de los PC no necesitan preparación adicional. Si Boxes no se inicia, puede faltar Microsoft Edge WebView2 Runtime. Descarga e instala Evergreen Bootstrapper desde la página de Microsoft que aparece abajo y vuelve a abrir Boxes.",
       "feedback": "Si sigue sin iniciarse, indica las versiones de Windows y Boxes y el mensaje de error."
     },
     "source": "Instalador oficial · GitHub Releases"
