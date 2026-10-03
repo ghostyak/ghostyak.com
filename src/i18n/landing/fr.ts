@@ -1,6 +1,6 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 
-// Translation of the Korean source approved on 2026-09-07.
+// Translation of the Korean source approved on 2026-09-07, revised 2026-10-03.
 const landing: Dictionary["landing"] = {
   "metadata": {
     "title": "GhostYak Boxes | Organisez gratuitement votre bureau Windows",
@@ -28,8 +28,8 @@ const landing: Dictionary["landing"] = {
       "à votre façon."
     ],
     "platform": "Windows 10/11 · 64 bits",
-    "mediaAlt": "Bureau Windows avec une visionneuse de photos, une horloge et une boîte de raccourcis d’applications",
-    "caption": "Raccourcis d’applications, photos et horloge en cours d’utilisation · Interface du produit en coréen",
+    "mediaAlt": "Bureau Windows avec des boîtes Applications, Photos, Musique et Projets, une boîte Téléchargements en vue liste et deux boîtes repliées",
+    "caption": "Un bureau organisé avec une boîte par tâche",
   },
   "workflow": {
     "eyebrow": "Organisez selon votre travail",
@@ -68,45 +68,27 @@ const landing: Dictionary["landing"] = {
       "Restaurez positions et tailles selon la configuration des écrans"
     ]
   },
-  "widgets": {
-    "eyebrow": "De petites commodités dans un espace organisé",
-    "title": "Des horloges et vos photos préférées.",
-    "description": "Les horloges et la visionneuse de photos actuellement proposées sont également gratuites.",
-    "clockTitle": "Horloge mondiale",
-    "clockDescription": "Consultez l’heure et la date de plusieurs villes sur votre bureau avant de contacter des collègues ou de la famille à l’étranger.",
-    "clockCities": [
-      "Séoul",
-      "Londres"
-    ],
-    "clockCaption": "Exemple d’horloge mondiale · Heures données à titre d’illustration.",
-    "photoTitle": "Visionneuse de photos et diaporama",
-    "photoDescription": "Ajoutez des photos ou un dossier de photos dans une boîte, puis choisissez « Visionneuse de photos → Activer » dans son menu. Profitez de vos photos préférées en diaporama.",
-    "photoAlt": "Capture du produit affichant une photo de montagnes et de champs dans une boîte photo",
-    "photoCaption": "Détail de la visionneuse dans la capture du produit"
-  },
   "free": {
     "eyebrow": "Fonctions gratuites disponibles aujourd’hui",
     "title": "Gratuit chez vous et au travail.",
     "description": "Utilisez Boxes gratuitement à titre personnel, en entreprise ou pour votre travail. Aucun compte ni moyen de paiement à enregistrer.",
-    "currentTitle": "Organisation du bureau et widgets de base",
+    "currentTitle": "Organisation du bureau",
     "price": "Gratuit",
     "currentDescription": "Aucune limite de boîtes, d’éléments ou de durée d’utilisation.",
     "currentFeatures": [
       "Organiser fichiers, dossiers et raccourcis d’applications",
       "Déplacer, redimensionner, replier et verrouiller les boîtes",
       "Restaurer la disposition selon les écrans",
-      "Horloge numérique et horloge mondiale",
-      "Visionneuse de photos et diaporama",
       "Usage personnel, en entreprise et professionnel"
     ],
-    "plannedNote": "Nous prévoyons de proposer de nouveaux widgets et la synchronisation comme fonctions payantes à l’avenir. Le détail des fonctions, les tarifs et les dates seront annoncés ultérieurement."
+    "plannedNote": "Nous prévoyons de proposer la synchronisation comme fonction payante à l’avenir. Le détail des fonctions, les tarifs et les dates seront annoncés ultérieurement."
   },
   "faq": {
     "title": "Avant l’installation",
     "items": [
       {
-        "question": "Les horloges et la visionneuse sont-elles gratuites en entreprise aussi ?",
-        "answer": "Oui. L’organisation du bureau, les horloges numérique et mondiale ainsi que la visionneuse de photos actuellement disponibles sont gratuites pour un usage personnel, en entreprise et professionnel. Il n’y a pas de période d’essai au terme de laquelle il faut payer."
+        "question": "Est-ce gratuit aussi au travail ?",
+        "answer": "Oui. Les fonctions d’organisation du bureau actuellement disponibles sont gratuites pour un usage personnel, en entreprise ou professionnel. Il n’y a pas de période d’essai au terme de laquelle il faut payer."
       },
       {
         "question": "Que deviennent mes icônes de bureau et mes fichiers originaux ?",

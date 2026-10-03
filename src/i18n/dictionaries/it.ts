@@ -227,36 +227,6 @@ const it: Dictionary = {
       "description": "Windows 11 x64 / ARM64 · Si installa senza diritti di amministratore"
     }
   },
-  worldClock: {
-  "badge": "Novità · Widget orologio mondiale",
-  "title": "L’ora del mondo, sul tuo desktop.",
-  "description": "Mattina a Seul, prime ore a Londra, notte a New York. Confronta orari e date di più città con l’orologio mondiale di Boxes. Organizza anche file e collegamenti sullo stesso desktop.",
-  "widgetTitle": "Orologio mondiale",
-  "previewCaption": "Anteprima del widget orologio mondiale · Gli orari sono esempi.",
-  "cities": [
-    "Seul",
-    "Londra",
-    "San Francisco",
-    "New York",
-    "Vancouver"
-  ],
-  "heading": "Fusi orari diversi. Un unico spazio di lavoro.",
-  "intro": "Prima di contattare un collega all’estero o chiamare la famiglia lontana, controlla la loro ora locale sul desktop.",
-  "benefits": [
-    {
-      "title": "Città affiancate",
-      "description": "Confronta a colpo d’occhio gli orari delle città che consulti più spesso."
-    },
-    {
-      "title": "Date e differenze di orario",
-      "description": "Riconosci le regioni con una data diversa grazie alla data e allo scarto UTC di ogni città."
-    },
-    {
-      "title": "Organizzazione e widget insieme",
-      "description": "Riunisci file, collegamenti e orologio mondiale nel tuo spazio di lavoro."
-    }
-  ]
-},
   metadata: {
     site: { title: "GhostYak | Software Windows per organizzare il lavoro quotidiano", titleTemplate: "%s | GhostYak", description: "GhostYak crea software che rende più semplice e pratico il tuo spazio di lavoro quotidiano su Windows." },
     boxes: { title: "Boxes", openGraphTitle: "GhostYak Boxes | Organizzatore del desktop Windows" },
@@ -308,7 +278,7 @@ const it: Dictionary = {
       ],
     },
     availabilityNotice: "Al momento è disponibile solo la versione gratuita. L’edizione commerciale verrà annunciata separatamente quando sarà pronta.",
-    download: { breadcrumbLabel: "Percorso di navigazione", breadcrumbCurrent: "Download", waitNotice: "Tieni aperta questa pagina finché il browser non avvia il download del programma di installazione.", fileInfoLabel: "Informazioni sul programma di installazione", version: "Versione {version}", fileSize: "Circa 3,3 MB", requirement: "Richiede Microsoft Edge WebView2 Runtime", countdown: "Il download inizierà tra {seconds} secondi.", starting: "Avvio del download.", help: "Il download non è iniziato automaticamente?", directAction: "Scarica direttamente il programma di installazione" },
+    download: { breadcrumbLabel: "Percorso di navigazione", breadcrumbCurrent: "Download", waitNotice: "Tieni aperta questa pagina finché il browser non avvia il download del programma di installazione.", fileInfoLabel: "Informazioni sul programma di installazione", fileSize: "Circa 3,3 MB", requirement: "Richiede Microsoft Edge WebView2 Runtime", countdown: "Il download inizierà tra {seconds} secondi.", starting: "Avvio del download.", help: "Il download non è iniziato automaticamente?", directAction: "Scarica direttamente il programma di installazione" },
   },
   blog: { eyebrow: "GHOSTYAK BLOG", heading: "Blog", intro: "Novità sui prodotti e lezioni apprese durante lo sviluppo.", readMore: "Leggi l’articolo", breadcrumbLabel: "Percorso di navigazione", breadcrumbHome: "Blog" },
 };

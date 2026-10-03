@@ -1,6 +1,6 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 
-// Translation of the Korean source approved on 2026-09-07.
+// Translation of the Korean source approved on 2026-09-07, revised 2026-10-03.
 const landing: Dictionary["landing"] = {
   "metadata": {
     "title": "GhostYak Boxes | Organizador gratuito para a área de trabalho do Windows",
@@ -28,8 +28,8 @@ const landing: Dictionary["landing"] = {
       "do seu jeito."
     ],
     "platform": "Windows 10/11 · 64 bits",
-    "mediaAlt": "Área de trabalho do Windows com um visualizador de fotos, um relógio e uma caixa de atalhos de aplicativos",
-    "caption": "Atalhos de aplicativos, fotos e relógio em uso · Interface do produto em coreano",
+    "mediaAlt": "Área de trabalho do Windows com caixas de aplicativos, fotos, música e projetos, uma caixa de Downloads em modo de lista e duas caixas recolhidas",
+    "caption": "Uma área de trabalho organizada com caixas para cada tarefa",
   },
   "workflow": {
     "eyebrow": "Organize de acordo com seu trabalho",
@@ -68,45 +68,27 @@ const landing: Dictionary["landing"] = {
       "Restaure posições e tamanhos para cada configuração de monitores"
     ]
   },
-  "widgets": {
-    "eyebrow": "Pequenas comodidades no espaço organizado",
-    "title": "Relógios e suas fotos favoritas.",
-    "description": "Os relógios e o visualizador de fotos disponíveis atualmente também são gratuitos.",
-    "clockTitle": "Relógio mundial",
-    "clockDescription": "Confira na área de trabalho a hora e a data em várias cidades antes de falar com colegas ou familiares no exterior.",
-    "clockCities": [
-      "Seul",
-      "Londres"
-    ],
-    "clockCaption": "Exemplo de relógio mundial · Os horários são ilustrativos.",
-    "photoTitle": "Visualizador de fotos e apresentação de slides",
-    "photoDescription": "Adicione fotos ou uma pasta de fotos à caixa e escolha “Visualizador de fotos → Habilitar” no menu da caixa. Veja suas fotos favoritas em uma apresentação de slides.",
-    "photoAlt": "Captura do produto mostrando uma foto de montanhas e campos em uma caixa de fotos",
-    "photoCaption": "Detalhe do visualizador de fotos na captura do produto"
-  },
   "free": {
     "eyebrow": "Recursos gratuitos disponíveis hoje",
     "title": "Grátis em casa e no trabalho.",
     "description": "Use grátis para fins pessoais, na empresa ou no trabalho. Não é necessário criar uma conta nem cadastrar dados de pagamento.",
-    "currentTitle": "Organização da área de trabalho e widgets básicos",
+    "currentTitle": "Organização da área de trabalho",
     "price": "Grátis",
     "currentDescription": "Sem limites de caixas, itens ou tempo de uso.",
     "currentFeatures": [
       "Organizar arquivos, pastas e atalhos de aplicativos",
       "Mover, redimensionar, recolher e bloquear caixas",
       "Restaurar a disposição por configuração de monitores",
-      "Relógio digital e relógio mundial",
-      "Visualizador de fotos e apresentação de slides",
       "Uso pessoal, empresarial e profissional"
     ],
-    "plannedNote": "Planejamos oferecer novos widgets e sincronização como recursos pagos no futuro. Detalhes, preços e datas serão anunciados posteriormente."
+    "plannedNote": "Planejamos oferecer a sincronização como recurso pago no futuro. Detalhes, preços e datas serão anunciados posteriormente."
   },
   "faq": {
     "title": "Antes de instalar",
     "items": [
       {
-        "question": "Os relógios e o visualizador de fotos também são grátis na empresa?",
-        "answer": "Sim. A organização da área de trabalho, os relógios digital e mundial e o visualizador de fotos disponíveis atualmente são gratuitos para uso pessoal, empresarial e profissional. Não há período de avaliação que termine exigindo pagamento."
+        "question": "Também é gratuito no trabalho?",
+        "answer": "Sim. Os recursos de organização da área de trabalho disponíveis atualmente são gratuitos para uso pessoal, empresarial e profissional. Não há período de avaliação que termine exigindo pagamento."
       },
       {
         "question": "O que acontece com os ícones da área de trabalho e os arquivos originais?",

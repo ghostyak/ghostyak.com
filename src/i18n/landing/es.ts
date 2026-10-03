@@ -1,6 +1,6 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 
-// Translation of the Korean source approved on 2026-09-07.
+// Translation of the Korean source approved on 2026-09-07, revised 2026-10-03.
 const landing: Dictionary["landing"] = {
   "metadata": {
     "title": "GhostYak Boxes | Organizador de escritorio gratis para Windows",
@@ -28,8 +28,8 @@ const landing: Dictionary["landing"] = {
       "a tu manera."
     ],
     "platform": "Windows 10/11 · 64 bits",
-    "mediaAlt": "Escritorio de Windows con un visor de fotos, un reloj y una caja de accesos directos a aplicaciones",
-    "caption": "Cajas de accesos directos, fotos y reloj en uso · Interfaz del producto en coreano",
+    "mediaAlt": "Escritorio de Windows con cajas de aplicaciones, fotos, música y proyectos, una caja de Descargas en vista de lista y dos cajas contraídas",
+    "caption": "Un escritorio organizado con cajas para cada tarea",
   },
   "workflow": {
     "eyebrow": "Organiza según tu trabajo",
@@ -68,45 +68,27 @@ const landing: Dictionary["landing"] = {
       "Restaura posiciones y tamaños según la configuración de monitores"
     ]
   },
-  "widgets": {
-    "eyebrow": "Pequeñas comodidades en un espacio ordenado",
-    "title": "Relojes y tus fotos favoritas.",
-    "description": "Los relojes y el visor de fotos disponibles actualmente también son gratuitos.",
-    "clockTitle": "Reloj mundial",
-    "clockDescription": "Consulta en tu escritorio la hora y la fecha de distintas ciudades antes de contactar con compañeros o familiares en el extranjero.",
-    "clockCities": [
-      "Seúl",
-      "Londres"
-    ],
-    "clockCaption": "Ejemplo de reloj mundial · Las horas son ilustrativas.",
-    "photoTitle": "Visor de fotos y presentación",
-    "photoDescription": "Añade fotos o una carpeta de fotos a una caja y selecciona «Visor de fotos → Permitir» en el menú de la caja. Disfruta de tus fotos favoritas como presentación.",
-    "photoAlt": "Captura del producto con una foto de montañas y campos dentro de una caja",
-    "photoCaption": "Detalle del visor de fotos de la captura del producto"
-  },
   "free": {
     "eyebrow": "Funciones gratuitas disponibles hoy",
     "title": "Gratis en casa y en el trabajo.",
     "description": "Úsalo gratis a nivel personal, en tu empresa o para trabajar. No necesitas una cuenta ni registrar datos de pago.",
-    "currentTitle": "Organización del escritorio y widgets básicos",
+    "currentTitle": "Organización del escritorio",
     "price": "Gratis",
     "currentDescription": "Sin límites de cajas, elementos ni tiempo de uso.",
     "currentFeatures": [
       "Organizar archivos, carpetas y accesos directos a aplicaciones",
       "Mover, redimensionar, contraer y bloquear cajas",
       "Restaurar la distribución según los monitores",
-      "Reloj digital y reloj mundial",
-      "Visor de fotos y presentación",
       "Uso personal, empresarial y profesional"
     ],
-    "plannedNote": "Tenemos previsto ofrecer nuevos widgets y sincronización como funciones de pago en el futuro. Los detalles, precios y fechas se anunciarán más adelante."
+    "plannedNote": "Tenemos previsto ofrecer la sincronización como función de pago en el futuro. Los detalles, precios y fechas se anunciarán más adelante."
   },
   "faq": {
     "title": "Antes de instalar",
     "items": [
       {
-        "question": "¿Los relojes y el visor de fotos también son gratis en la empresa?",
-        "answer": "Sí. La organización del escritorio, los relojes digital y mundial y el visor de fotos disponibles actualmente son gratuitos para uso personal, empresarial y profesional. No hay un periodo de prueba que termine exigiendo un pago."
+        "question": "¿También es gratis en el trabajo?",
+        "answer": "Sí. Las funciones de organización del escritorio disponibles actualmente son gratuitas para uso personal, en empresas y profesional. No hay un periodo de prueba que termine exigiendo un pago."
       },
       {
         "question": "¿Qué ocurre con mis iconos del escritorio y archivos originales?",

@@ -180,3 +180,11 @@ ghostyak.com은 GhostYak 소프트웨어를 소개하고 배포하는 공식 웹
 - [x] 공개 README·사용자 가이드 근거의 한국어 원문 작성과 사용자 승인, 8개 언어 번역
 - [x] 비상업적 용도 무료·상업적 사용 금지 조건을 배지·FAQ·다운로드 설명에 표시
 - [x] 자동 스크린샷 슬라이드(`ScreenshotSlideshow`) 삭제
+
+## 완료: Boxes v0.4.0 위젯 제거 반영 (2026-10-03)
+
+- [x] 성능 최적화로 위젯(사진 뷰어·시계)을 제거한 v0.4.0에 맞춰 랜딩의 위젯 구역, 무료 기능 목록·FAQ의 위젯 문구 삭제(한국어 원문 수정 후 8개 언어 반영)
+- [x] 새 홍보 이미지 `public/images/boxes/ghostyak-boxes-3840x2160.png`를 홈 카드·제품 첫 화면·sitemap·구조화 데이터에 적용
+- [x] 이미지 폴더 재구성(`public/images/boxes/`, `public/images/csv-search-Engine/`)에 맞춰 경로 갱신, 사용하지 않는 세계시계 사전 키 삭제
+- [x] 번역 위임 확인, 위젯 유료화 계획 없음 확인
+- [x] 블로그 외 공개 화면·구조화 데이터에서 버전 표기 제거(`boxes.version`, `softwareVersion`, 다운로드 사전의 `version` 키)

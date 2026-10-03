@@ -22,7 +22,8 @@ AdSense는 공통 head에서 일반 `<script async>`로 로드한다. `next/scri
 
 ```text
 content/blog/{locale}/           한국어 원문과 언어별 Markdown 블로그
-public/images/demo/              교체 가능한 데모 화면 이미지
+public/images/boxes/             Boxes 홍보 이미지와 아이콘
+public/images/csv-search-Engine/ CSV Search Engine 스크린샷
 src/app/                         App Router 페이지와 메타데이터
 src/app/product/boxes/           기존 Boxes URL (Proxy에서 영어 canonical로 이동)
 src/app/[locale]/                영어와 한국어를 포함한 9개 언어의 canonical 경로
@@ -52,7 +53,7 @@ docs/                            설계, 개발과 로드맵 문서
 
 공개 승인된 한국어 원문은 `src/i18n/landing/ko.ts`, Server Component는 `src/components/renewal/RenewalLanding.tsx`에 둔다. 클립보드 동작은 `CopySiteLink`, FAQ·도움말은 shadcn Accordion 클라이언트 경계로 분리한다. 2026-09-07 사용자가 한국어 원문을 승인했다. `src/i18n/landing/{locale}.ts`를 각 공개 사전의 `landing` 키로 가져오며 빌드 중 모든 언어의 키를 검증한다. 상세 범위는 [RENEWAL_KO.md](./RENEWAL_KO.md)를 따른다.
 
-공개 랜딩의 제품 스크린샷·외부 링크와 세계시계 예시 데이터는 `src/data/landing.ts`에서 관리한다. 설치 파일은 공개 화면과 같은 `boxes.download.installerUrl`을 사용하며 모든 다운로드 버튼에서 직접 연결한다. 구역 이동·원본 이미지 보기는 서버 HTML과 네이티브 브라우저 동작으로, FAQ는 shadcn Accordion으로 제공한다. 설치 안내의 PC용 링크 복사는 전달받은 현재 언어의 제품 경로를 사용한다.
+공개 랜딩의 제품 스크린샷과 외부 링크는 `src/data/landing.ts`에서 관리한다. 설치 파일은 공개 화면과 같은 `boxes.download.installerUrl`을 사용하며 모든 다운로드 버튼에서 직접 연결한다. 구역 이동·원본 이미지 보기는 서버 HTML과 네이티브 브라우저 동작으로, FAQ는 shadcn Accordion으로 제공한다. 설치 안내의 PC용 링크 복사는 전달받은 현재 언어의 제품 경로를 사용한다.
 
 ## 제품과 콘텐츠 데이터
 
@@ -60,7 +61,7 @@ docs/                            설계, 개발과 로드맵 문서
 
 Boxes의 버전, 설치 파일 URL과 실제 이미지 경로, Clock과 OSINTS의 외부 URL은 `src/data/products.ts`에서 관리한다. 설명, 기능, 파일 크기 표시와 이미지 대체 텍스트는 한국어 원문 사전에서 관리한다. 현재 다운로드 대상은 GitHub Releases의 무료 설치 파일 하나다. 상업용 에디션은 실제 설치 파일과 정책이 준비될 때 데이터 모델과 UI에 추가한다.
 
-홈 카드와 제품 첫 화면은 `boxes.preview`의 PNG 경로와 원본 크기를 공유한다. `boxes.screenshots`, 검색·공유 메타데이터와 sitemap도 같은 이미지를 사용한다. `landingMedia.photoDetail`은 사진 위젯의 확대 설명에 사용할 기존 스크린샷을 별도로 유지한다.
+홈 카드와 제품 첫 화면은 `boxes.preview`의 PNG 경로와 원본 크기를 공유한다. `boxes.screenshots`, 검색·공유 메타데이터와 sitemap도 같은 이미지를 사용한다. Boxes 아이콘은 `boxesIcon`(`public/images/boxes/ghostyak-boxes.ico`)을 최적화 없이 표시한다.
 
 한국어 블로그 원문은 `content/blog/ko/*.md`, 번역은 `content/blog/{locale}/*.md`에 저장한다. 각 글은 `title`, `description`, `publishedAt`, `translationKey`, `sourceRevision` frontmatter를 가져야 한다. `src/lib/blog.ts`가 로케일별 디렉터리를 읽고 파일명을 slug로 사용해 최신 날짜순으로 정렬한다. 빌드 중 모든 공개 언어가 원문과 같은 번역 키, 리비전과 slug를 사용하는지 검사한다.
 

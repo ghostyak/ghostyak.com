@@ -47,7 +47,6 @@ export function getSoftwareApplicationJsonLd({
       (screenshot) => `${siteUrl}${screenshot.src}`,
     ),
     downloadUrl: boxes.download.installerUrl,
-    softwareVersion: boxes.version,
     operatingSystem: "Windows 10, Windows 11",
     applicationCategory: "UtilitiesApplication",
     inLanguage: localeConfig[locale].htmlLanguage,

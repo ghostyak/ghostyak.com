@@ -123,21 +123,6 @@ const ko = {
       description: "Windows 11 x64 / ARM64 · 관리자 권한 없이 설치",
     },
   },
-  worldClock: {
-    badge: "새 기능 · 세계시계 위젯",
-    title: "내 바탕화면에서, 세계의 시간을 한눈에.",
-    description: "서울의 오전, 런던의 새벽, 뉴욕의 밤. Boxes 세계시계로 여러 도시의 시간과 날짜를 나란히 확인하세요. 파일과 바로가기 정리도 같은 바탕화면에서 함께하세요.",
-    widgetTitle: "세계시계",
-    previewCaption: "세계시계 위젯 미리보기 · 시간은 예시입니다.",
-    cities: ["서울", "런던", "샌프란시스코", "뉴욕", "밴쿠버"],
-    heading: "다른 시간대도, 같은 작업 공간에서.",
-    intro: "해외 동료에게 연락하기 전, 멀리 있는 가족에게 전화하기 전. 바탕화면에서 상대의 시간을 먼저 확인하세요.",
-    benefits: [
-      { title: "여러 도시를 나란히", description: "자주 확인하는 도시의 시간을 한눈에 비교하세요." },
-      { title: "날짜와 시차까지", description: "도시별 날짜와 UTC 오프셋으로 날짜가 다른 지역도 구분하세요." },
-      { title: "정리와 위젯을 함께", description: "파일, 바로가기와 세계시계를 내 작업 공간에 모아두세요." },
-    ],
-  },
   metadata: {
     site: {
       title: "GhostYak | 일상을 정리하는 Windows 소프트웨어",
@@ -267,7 +252,6 @@ const ko = {
       breadcrumbCurrent: "다운로드",
       waitNotice: "브라우저에서 설치 파일 다운로드가 시작될 때까지 이 페이지를 열어 두세요.",
       fileInfoLabel: "설치 파일 정보",
-      version: "버전 {version}",
       fileSize: "약 3.3MB",
       requirement: "Microsoft Edge WebView2 Runtime 필요",
       countdown: "{seconds}초 후 다운로드가 시작됩니다.",

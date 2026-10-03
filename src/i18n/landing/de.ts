@@ -1,6 +1,6 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 
-// Translation of the Korean source approved on 2026-09-07.
+// Translation of the Korean source approved on 2026-09-07, revised 2026-10-03.
 const landing: Dictionary["landing"] = {
   "metadata": {
     "title": "GhostYak Boxes | Kostenlos den Windows-Desktop ordnen",
@@ -28,8 +28,8 @@ const landing: Dictionary["landing"] = {
       "deine Ordnung."
     ],
     "platform": "Windows 10/11 · 64 Bit",
-    "mediaAlt": "Windows-Desktop mit Fotobetrachter, Uhr und einer Box für App-Verknüpfungen",
-    "caption": "App-Verknüpfungen, Fotos und Uhr im Einsatz · Produktoberfläche auf Koreanisch",
+    "mediaAlt": "Windows-Desktop mit Boxen für Apps, Fotos, Musik und Projekte, einer Downloads-Box in der Listenansicht und zwei eingeklappten Boxen",
+    "caption": "Ein Desktop, geordnet mit Boxen für jede Aufgabe",
   },
   "workflow": {
     "eyebrow": "Ordne nach deinen Aufgaben",
@@ -68,45 +68,27 @@ const landing: Dictionary["landing"] = {
       "Positionen und Größen je Monitorkonfiguration wiederherstellen"
     ]
   },
-  "widgets": {
-    "eyebrow": "Kleine Helfer auf dem aufgeräumten Desktop",
-    "title": "Uhren und Lieblingsfotos dazu.",
-    "description": "Die aktuell angebotenen Uhren und der Fotobetrachter sind ebenfalls kostenlos.",
-    "clockTitle": "Weltzeituhr",
-    "clockDescription": "Prüfe Uhrzeit und Datum verschiedener Städte auf dem Desktop, bevor du Kollegen oder Familie im Ausland kontaktierst.",
-    "clockCities": [
-      "Seoul",
-      "London"
-    ],
-    "clockCaption": "Beispiel einer Weltzeituhr · Die Zeiten dienen zur Veranschaulichung.",
-    "photoTitle": "Fotobetrachter und Diashow",
-    "photoDescription": "Füge Fotos oder einen Fotoordner zu einer Box hinzu und wähle im Boxmenü „Fotobetrachter → Aktivieren“. Genieße deine Lieblingsfotos als Diashow.",
-    "photoAlt": "Produktansicht mit einem Foto von Bergen und Feldern in einer Fotobox",
-    "photoCaption": "Fotobetrachter-Ausschnitt aus dem Produktbild"
-  },
   "free": {
     "eyebrow": "Heute kostenlos verfügbare Funktionen",
     "title": "Zu Hause und im Büro kostenlos.",
     "description": "Nutze Boxes privat, im Unternehmen und beruflich kostenlos. Kein Konto und keine Zahlungsdaten erforderlich.",
-    "currentTitle": "Desktop-Organisation und grundlegende Widgets",
+    "currentTitle": "Desktop-Organisation",
     "price": "Kostenlos",
     "currentDescription": "Keine Begrenzung der Boxen, Elemente oder Nutzungsdauer.",
     "currentFeatures": [
       "Dateien, Ordner und App-Verknüpfungen ordnen",
       "Boxen verschieben, skalieren, einklappen und sperren",
       "Anordnung je Monitorkonfiguration wiederherstellen",
-      "Digitaluhr und Weltzeituhr",
-      "Fotobetrachter und Diashow",
       "Private, betriebliche und berufliche Nutzung"
     ],
-    "plannedNote": "Neue Widgets und Synchronisierung sind künftig als kostenpflichtige Funktionen geplant. Details, Preise und Termine geben wir später bekannt."
+    "plannedNote": "Die Synchronisierung ist künftig als kostenpflichtige Funktion geplant. Details, Preise und Termine geben wir später bekannt."
   },
   "faq": {
     "title": "Fragen vor der Installation",
     "items": [
       {
-        "question": "Sind Uhren und Fotobetrachter auch im Unternehmen kostenlos?",
-        "answer": "Ja. Die aktuell angebotene Desktop-Organisation, Digitaluhr, Weltzeituhr und der Fotobetrachter sind privat, im Unternehmen und beruflich kostenlos. Es gibt keine Testphase, nach der eine Zahlung nötig wird."
+        "question": "Ist Boxes auch im Unternehmen kostenlos?",
+        "answer": "Ja. Die derzeit verfügbaren Funktionen zur Desktop-Organisation sind für private, geschäftliche und berufliche Nutzung kostenlos. Es gibt keine Testphase, nach der eine Zahlung nötig wird."
       },
       {
         "question": "Was passiert mit meinen Desktop-Symbolen und Originaldateien?",

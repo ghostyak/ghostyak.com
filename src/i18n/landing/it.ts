@@ -1,6 +1,6 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 
-// Translation of the Korean source approved on 2026-09-07.
+// Translation of the Korean source approved on 2026-09-07, revised 2026-10-03.
 const landing: Dictionary["landing"] = {
   "metadata": {
     "title": "GhostYak Boxes | Organizza gratis il desktop di Windows",
@@ -28,8 +28,8 @@ const landing: Dictionary["landing"] = {
       "a modo tuo."
     ],
     "platform": "Windows 10/11 · 64 bit",
-    "mediaAlt": "Desktop di Windows con un visualizzatore di foto, un orologio e un riquadro di collegamenti alle app",
-    "caption": "Collegamenti alle app, foto e orologio in uso · Interfaccia del prodotto in coreano",
+    "mediaAlt": "Desktop di Windows con riquadri per app, foto, musica e progetti, un riquadro Download in visualizzazione elenco e due riquadri compressi",
+    "caption": "Un desktop organizzato con un riquadro per ogni attività",
   },
   "workflow": {
     "eyebrow": "Organizza in base al tuo lavoro",
@@ -68,45 +68,27 @@ const landing: Dictionary["landing"] = {
       "Ripristina posizioni e dimensioni per ogni configurazione di monitor"
     ]
   },
-  "widgets": {
-    "eyebrow": "Piccole comodità in uno spazio ordinato",
-    "title": "Orologi e le tue foto preferite.",
-    "description": "Anche gli orologi e il visualizzatore di foto attualmente disponibili sono gratuiti.",
-    "clockTitle": "Orologio mondiale",
-    "clockDescription": "Controlla sul desktop l’ora e la data di diverse città prima di contattare colleghi o familiari all’estero.",
-    "clockCities": [
-      "Seul",
-      "Londra"
-    ],
-    "clockCaption": "Esempio di orologio mondiale · Gli orari sono illustrativi.",
-    "photoTitle": "Visualizzatore di foto e presentazione",
-    "photoDescription": "Aggiungi foto o una cartella di foto a un riquadro, poi scegli “Visualizzatore di foto → Abilitare” nel menu del riquadro. Guarda le tue foto preferite in una presentazione.",
-    "photoAlt": "Schermata del prodotto con una foto di montagne e campi in un riquadro fotografico",
-    "photoCaption": "Dettaglio del visualizzatore di foto nella schermata del prodotto"
-  },
   "free": {
     "eyebrow": "Funzioni gratuite disponibili oggi",
     "title": "Gratis a casa e al lavoro.",
     "description": "Usalo gratis per scopi personali, in azienda e per lavoro. Non occorre un account né registrare dati di pagamento.",
-    "currentTitle": "Organizzazione del desktop e widget di base",
+    "currentTitle": "Organizzazione del desktop",
     "price": "Gratis",
     "currentDescription": "Nessun limite al numero di riquadri, agli elementi o alla durata d’uso.",
     "currentFeatures": [
       "Organizza file, cartelle e collegamenti alle app",
       "Sposta, ridimensiona, comprimi e blocca i riquadri",
       "Ripristina la disposizione per configurazione di monitor",
-      "Orologio digitale e orologio mondiale",
-      "Visualizzatore di foto e presentazione",
       "Uso personale, aziendale e professionale"
     ],
-    "plannedNote": "In futuro prevediamo di offrire nuovi widget e la sincronizzazione come funzioni a pagamento. Dettagli, prezzi e date saranno annunciati in seguito."
+    "plannedNote": "In futuro prevediamo di offrire la sincronizzazione come funzione a pagamento. Dettagli, prezzi e date saranno annunciati in seguito."
   },
   "faq": {
     "title": "Prima di installare",
     "items": [
       {
-        "question": "Gli orologi e il visualizzatore di foto sono gratis anche in azienda?",
-        "answer": "Sì. L’organizzazione del desktop, gli orologi digitale e mondiale e il visualizzatore di foto attualmente disponibili sono gratuiti per uso personale, aziendale e professionale. Non c’è un periodo di prova al termine del quale è necessario pagare."
+        "question": "È gratuito anche al lavoro?",
+        "answer": "Sì. Le funzioni di organizzazione del desktop attualmente disponibili sono gratuite per uso personale, aziendale e lavorativo. Non c’è un periodo di prova al termine del quale è necessario pagare."
       },
       {
         "question": "Cosa succede alle icone del desktop e ai file originali?",

@@ -39,7 +39,7 @@ npm run build
 
 ## 제품 정보와 데모 이미지
 
-홈 Boxes 카드와 `/product/boxes`의 첫 화면은 `boxes.preview`의 `public/images/demo/boxes-screen-01.png`(2560×1380)를 사용한다. 원본 비율로 전체 화면을 표시하며 크게 보기·검색·공유·sitemap 이미지도 같은 경로를 사용한다. 사진 위젯의 확대 설명은 `landingMedia.photoDetail`에서 별도로 관리한다.
+홈 Boxes 카드와 `/product/boxes`의 첫 화면은 `boxes.preview`의 `public/images/boxes/ghostyak-boxes-3840x2160.png`(3840×2160)를 사용한다. 원본 비율로 전체 화면을 표시하며 크게 보기·검색·공유·sitemap 이미지도 같은 경로를 사용한다. 같은 폴더의 `ghostyak-boxes-1920x1080.png`는 같은 화면의 저해상도 원본이다.
 
 Boxes 첫 화면은 중앙의 가장 큰 `Boxes` H1, 기존 소개 문구, 다운로드와 실제 스크린샷으로 구성한다. 제품 보조 헤더를 다시 추가하지 않는다. 언어 선택은 공통 헤더 하나이며, 스크린샷 아래에 링크 복사 영역이나 섹션 목차를 추가하지 않는다. 한국어·영어·긴 번역문에서 제품명 크기, 단일 헤더, `scroll-mt-24` 구역 이동, 이미지 전체 표시를 검수한다. 설치 안내의 PC용 링크 복사는 현재 언어의 `/product/boxes` 경로를 유지해야 한다.
 
@@ -47,9 +47,9 @@ Boxes 첫 화면은 중앙의 가장 큰 `Boxes` H1, 기존 소개 문구, 다�
 
 공통 헤더의 제품 메뉴는 `NavDropdown`으로 열고 닫는다. Boxes는 현재 언어의 제품 페이지, Clock과 OSINTS는 새 탭의 외부 웹앱으로 연결한다. 클릭·Enter·Space로 열기, 방향키로 항목 이동, Enter로 선택, Escape·Tab·바깥 클릭으로 닫기와 트리거 포커스 복원을 확인한다.
 
-Boxes의 버전, 무료 설치 파일 URL과 제품 이미지 목록, Clock과 OSINTS의 외부 URL은 `src/data/products.ts`에서 수정한다. 기능 문구는 로케일 사전에서 관리한다. 홈은 네 제품을 카드로 보여주며 Clock과 OSINTS 카드는 브라우저에서 새 탭으로 웹앱을 연다. OSINTS 링크는 공통 헤더 제품 메뉴와 푸터에도 제공한다. `public/images/renewal/boxes-desktop.webp`는 사진 위젯 확대 설명에 사용한다.
+Boxes의 버전, 무료 설치 파일 URL과 제품 이미지 목록, Clock과 OSINTS의 외부 URL은 `src/data/products.ts`에서 수정한다. 기능 문구는 로케일 사전에서 관리한다. 홈은 네 제품을 카드로 보여주며 Clock과 OSINTS 카드는 브라우저에서 새 탭으로 웹앱을 연다. OSINTS 링크는 공통 헤더 제품 메뉴와 푸터에도 제공한다.
 
-랜딩의 위젯 문구는 `landing.widgets`, 예시 시점·도시 시간대·외부 링크는 `src/data/landing.ts`에서 관리한다. 세계시계는 고정 예시이며 현재 로케일의 날짜 형식을 사용한다.
+Boxes v0.4.0부터 성능 최적화를 위해 사진 뷰어·시계 등 위젯 기능을 모두 제거했고, 유료 위젯 계획도 없다. 랜딩과 무료 기능 목록·FAQ에서 위젯을 소개하지 않는다. 블로그를 제외한 공개 화면·메타데이터·구조화 데이터에는 제품 버전 번호를 표기하지 않는다(블로그 글은 작성 당시 기록으로 고치지 않는다). 랜딩의 외부 링크는 `src/data/landing.ts`에서 관리한다.
 
 제품의 모든 다운로드 버튼은 하나의 공식 설치 파일로 연결한다. 상업용 설치 파일과 배포 정책이 확정되기 전에는 Pro 또는 구매 행동을 추가하지 않는다.
 
@@ -90,7 +90,7 @@ Markdown 본문
 
 ## 정적 파일
 
-설치 안내는 자동 실행을 기본 절차로 설명한다. WebView2 링크는 접힌 도움말 안에만 있어야 하며 키보드로 열고 닫을 수 있어야 한다. 사진 안내는 실제 메뉴 `사진 뷰어 → 시작`과 일치시킨다.
+설치 안내는 자동 실행을 기본 절차로 설명한다. WebView2 링크는 접힌 도움말 안에만 있어야 하며 키보드로 열고 닫을 수 있어야 한다.
 
 랜딩 수정 시 320px·390px·768px·데스크톱에서 메뉴와 가로 넘침을 확인한다. 무료 다운로드 링크가 설치 파일로 직접 연결되는지, 설치 안내 구역 이동 후 제목이 헤더에 가리지 않는지, FAQ 키보드 조작과 PC 링크 복사가 동작하는지 확인한다. 이미지 출처와 제품·설치 정보의 근거는 [RENEWAL_KO.md](./RENEWAL_KO.md)에 기록한다. 화면 검증에서 설치 파일을 실행할 필요는 없다.
 
@@ -112,7 +112,7 @@ Markdown 본문
 공통 헤더는 64px/80px 높이이며 모든 주요 구역은 `scroll-mt-24`로 이동 여백을 확보한다. 모바일 메뉴, FAQ·설치 도움말 키보드 조작, 직접 다운로드 URL, 언어 전환, 복사 성공·실패 상태, 본문 건너뛰기 링크와 모션 감소 설정을 검수한다. DaisyUI 의존성과 미사용 자동 회전·다운로드 타이머·이전 세계시계 컴포넌트는 제거했다.
 ## CSV Search Engine 관리
 
-제품 데이터는 `csvSearchEngine`, 홈 UI는 `CsvSearchCard`, 상세 UI는 `CsvSearchProduct`, 문구는 9개 사전의 `csvSearch`에서 관리한다. 사진은 상세페이지에만 표시한다. 원본 이미지는 `public/images/demo/CSV search Engine.png`(889×484)와 `CSV search Engine 2.png`(879×542)다. 공백이 포함된 이미지 URL과 Next Image 응답을 확인하고, 메뉴의 디지털포렌식 그룹·키보드 이동·현재 언어의 상세페이지 연결·GitHub 링크·320px 줄바꿈을 검수한다. `downloadUrl`은 사용자가 지정한 GitHub Releases의 `csv-search-engine-setup.exe` 직접 다운로드 주소다. 상세페이지의 9개 언어 경로·언어 전환·canonical·sitemap과 다운로드 주소를 확인한다. 기능 설명의 근거는 [공개 README](https://github.com/ghostyak/csv-search-engine#readme)이며, 로컬 개발 버전에만 있는 기능을 공개 설명에 넣지 않는다.
+제품 데이터는 `csvSearchEngine`, 홈 UI는 `CsvSearchCard`, 상세 UI는 `CsvSearchProduct`, 문구는 9개 사전의 `csvSearch`에서 관리한다. 사진은 상세페이지에만 표시한다. 원본 이미지는 `public/images/csv-search-Engine/CSV search Engine.png`(889×484)와 `CSV search Engine 2.png`(879×542)다. 공백이 포함된 이미지 URL과 Next Image 응답을 확인하고, 메뉴의 디지털포렌식 그룹·키보드 이동·현재 언어의 상세페이지 연결·GitHub 링크·320px 줄바꿈을 검수한다. `downloadUrl`은 사용자가 지정한 GitHub Releases의 `csv-search-engine-setup.exe` 직접 다운로드 주소다. 상세페이지의 9개 언어 경로·언어 전환·canonical·sitemap과 다운로드 주소를 확인한다. 기능 설명의 근거는 [공개 README](https://github.com/ghostyak/csv-search-engine#readme)이며, 로컬 개발 버전에만 있는 기능을 공개 설명에 넣지 않는다.
 
 홈 제품 카드 크기를 변경할 때 네 카드의 2열 너비·행 높이, 240px 미리보기, 하단 행동 버튼 정렬을 함께 검수한다. 모바일에서는 본문 길이에 따라 높이가 늘어날 수 있으며 이미지는 자르지 않는다.
 

@@ -1,6 +1,6 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 
-// Translation of the Korean source approved on 2026-09-07.
+// Translation of the Korean source approved on 2026-09-07, revised 2026-10-03.
 const landing: Dictionary["landing"] = {
   "metadata": {
     "title": "GhostYak Boxes | Free Windows desktop organizer",
@@ -28,8 +28,8 @@ const landing: Dictionary["landing"] = {
       "your way."
     ],
     "platform": "Windows 10/11 · 64-bit",
-    "mediaAlt": "A Windows desktop with a photo viewer, a clock and a box of app shortcuts",
-    "caption": "App shortcuts, photos and a clock in use · Korean product interface",
+    "mediaAlt": "Apps, photos, music and project boxes on a Windows desktop, with a Downloads box in list view and two collapsed boxes",
+    "caption": "A desktop organized with boxes for each task",
   },
   "workflow": {
     "eyebrow": "Organize around your work",
@@ -68,45 +68,27 @@ const landing: Dictionary["landing"] = {
       "Restore positions and sizes for each monitor setup"
     ]
   },
-  "widgets": {
-    "eyebrow": "A little convenience in your organized space",
-    "title": "Add clocks and favorite photos.",
-    "description": "The clocks and photo viewer currently available are also free.",
-    "clockTitle": "World clock",
-    "clockDescription": "Check the time and date in different cities on your desktop before contacting colleagues or family abroad.",
-    "clockCities": [
-      "Seoul",
-      "London"
-    ],
-    "clockCaption": "World clock layout example · Times are illustrative.",
-    "photoTitle": "Photo viewer and slideshow",
-    "photoDescription": "Add photos or a photo folder to a box, then choose “Photo viewer → Enable” in the box menu. Enjoy your favorite photos as a slideshow.",
-    "photoAlt": "Product screenshot showing mountains and fields in a photo box",
-    "photoCaption": "Photo viewer detail from the product screenshot"
-  },
   "free": {
     "eyebrow": "Features available for free today",
     "title": "Free at home and at work.",
     "description": "Use it for free personally, at your company or for work. No account or payment details required.",
-    "currentTitle": "Desktop organization and basic widgets",
+    "currentTitle": "Desktop organization",
     "price": "Free",
     "currentDescription": "No limits on boxes, items or length of use.",
     "currentFeatures": [
       "Organize files, folders and app shortcuts",
       "Move, resize, collapse and lock boxes",
       "Restore layouts for each monitor setup",
-      "Digital clock and world clock",
-      "Photo viewer and slideshow",
       "Personal, company and work use"
     ],
-    "plannedNote": "We plan to offer new widgets and sync as paid features in the future. Features, pricing and timing will be announced later."
+    "plannedNote": "We plan to offer sync as a paid feature in the future. Features, pricing and timing will be announced later."
   },
   "faq": {
     "title": "Before you install",
     "items": [
       {
-        "question": "Are the clocks and photo viewer free at work too?",
-        "answer": "Yes. Desktop organization, digital and world clocks, and the photo viewer currently available are free for personal, company and work use. There is no trial period that ends with a required payment."
+        "question": "Is it free at work too?",
+        "answer": "Yes. The desktop organization features currently available are free for personal, company and work use. There is no trial period that ends with a required payment."
       },
       {
         "question": "What happens to my existing desktop icons and original files?",

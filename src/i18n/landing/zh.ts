@@ -1,6 +1,6 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 
-// Translation of the Korean source approved on 2026-09-07.
+// Translation of the Korean source approved on 2026-09-07, revised 2026-10-03.
 const landing: Dictionary["landing"] = {
   "metadata": {
     "title": "GhostYak Boxes | 免费 Windows 桌面整理工具",
@@ -28,8 +28,8 @@ const landing: Dictionary["landing"] = {
       "随你心意。"
     ],
     "platform": "Windows 10/11 · 64 位",
-    "mediaAlt": "Windows 桌面上的照片查看器、时钟和应用快捷方式盒子",
-    "caption": "应用快捷方式盒子、照片和时钟的使用画面 · 产品界面为韩语",
+    "mediaAlt": "Windows 桌面上的应用、照片、音乐和项目盒子，以列表视图打开的下载盒子，以及两个已折叠的盒子",
+    "caption": "按任务用盒子整理的桌面",
   },
   "workflow": {
     "eyebrow": "按照工作方式整理",
@@ -68,45 +68,27 @@ const landing: Dictionary["landing"] = {
       "按显示器配置恢复位置和大小"
     ]
   },
-  "widgets": {
-    "eyebrow": "在整洁的空间里，多一点便利",
-    "title": "时钟和喜欢的照片，都在眼前。",
-    "description": "目前提供的时钟和照片查看器也可免费使用。",
-    "clockTitle": "世界时钟",
-    "clockDescription": "联系海外同事或家人前，在桌面上查看不同城市的时间和日期。",
-    "clockCities": [
-      "首尔",
-      "伦敦"
-    ],
-    "clockCaption": "世界时钟布局示例 · 时间仅作示意。",
-    "photoTitle": "照片查看与幻灯片",
-    "photoDescription": "将照片或照片文件夹放入盒子，然后在盒子菜单中选择“照片查看器 → 启用”，即可用幻灯片欣赏喜欢的照片。",
-    "photoAlt": "照片盒子中显示山脉和草地照片的产品画面",
-    "photoCaption": "产品截图中的照片查看器区域"
-  },
   "free": {
     "eyebrow": "目前免费提供的功能",
     "title": "在家、在公司，都免费。",
     "description": "个人、公司和工作用途均可免费使用，无需注册账号或填写支付信息。",
-    "currentTitle": "桌面整理与基本小组件",
+    "currentTitle": "桌面整理",
     "price": "免费",
     "currentDescription": "盒子数量、项目数量和使用时间均无限制。",
     "currentFeatures": [
       "整理文件、文件夹和应用快捷方式",
       "移动、调整大小、折叠和锁定盒子",
       "按显示器配置恢复布局",
-      "数字时钟与世界时钟",
-      "照片查看与幻灯片",
       "个人、公司和工作用途"
     ],
-    "plannedNote": "未来新增的小组件和同步功能计划作为付费功能提供。具体功能、价格和时间将另行公布。"
+    "plannedNote": "未来计划将同步作为付费功能提供。具体功能、价格和时间将另行公布。"
   },
   "faq": {
     "title": "安装前的常见问题",
     "items": [
       {
-        "question": "在公司使用时钟和照片查看器也免费吗？",
-        "answer": "是的。目前提供的桌面整理、数字时钟、世界时钟和照片查看器，对个人、公司和工作用途均免费，也不存在试用到期后必须付费的限制。"
+        "question": "在公司使用也免费吗？",
+        "answer": "是的。目前提供的桌面整理功能，个人、公司和工作用途均可免费使用，也不存在试用到期后必须付费的限制。"
       },
       {
         "question": "原有桌面图标和原文件会怎样？",

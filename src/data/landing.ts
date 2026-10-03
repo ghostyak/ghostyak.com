@@ -1,15 +1,8 @@
 import { boxes } from "@/data/products";
 
-// Fixed instants for illustrations, never presented as live clocks.
-export const landingTimes = {
-  worldClock: "2026-09-05T02:38:00Z",
-  zones: ["Asia/Seoul", "Europe/London"],
-} as const;
-
-// Shared main preview; the photo detail keeps its original screenshot and crop.
+// Shared main preview.
 export const landingMedia = {
   desktop: boxes.preview,
-  photoDetail: { src: "/images/renewal/boxes-desktop.webp", width: 1200, height: 653 },
 } as const;
 
 export const landingLinks = {

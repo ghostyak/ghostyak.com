@@ -1,14 +1,13 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { ArrowRight, ArrowUpRight, Check, Download, Folder, HandHeart, Link2, Clock3, ImageIcon } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Download, Folder, HandHeart, Link2 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { boxes } from "@/data/products";
-import { landingLinks as links, landingMedia as media, landingTimes } from "@/data/landing";
+import { boxes, boxesIcon } from "@/data/products";
+import { landingLinks as links, landingMedia as media } from "@/data/landing";
 import type { Dictionary } from "@/i18n/get-dictionary";
-import { localeConfig, type PublishedLocale } from "@/i18n/locales";
 import { ShareLinks, type ShareLabels } from "@/components/ShareLinks";
 import { PageHero, heroActionClassName } from "@/components/PageHero";
 
@@ -34,13 +33,13 @@ function WorkflowDiagram({ copy }: { copy: Copy }) {
   </figure>;
 }
 
-export function RenewalLanding({ copy, locale, currentPath, supportUrl, supportAction, shareLabels }: { copy: Copy; locale: PublishedLocale; currentPath: string; supportUrl: string; supportAction: string; shareLabels: ShareLabels }) {
+export function RenewalLanding({ copy, currentPath, supportUrl, supportAction, shareLabels }: { copy: Copy; currentPath: string; supportUrl: string; supportAction: string; shareLabels: ShareLabels }) {
   return <main id="main-content" className="scroll-mt-24 [overflow-wrap:anywhere]">
     <section className="px-4 pb-12 sm:px-8 sm:pb-20" aria-labelledby="renewal-title">
       <div className="mx-auto max-w-7xl">
         <PageHero
           id="renewal-title"
-          eyebrow={<Badge variant="outline" className="min-h-7 gap-2 rounded-full bg-card px-3"><span className="flex size-5 items-center justify-center rounded-full bg-ink"><Image src="/images/ghostyak-boxes.svg" width={12} height={12} alt="" /></span>{copy.hero.platform}</Badge>}
+          eyebrow={<Badge variant="outline" className="min-h-7 gap-2 rounded-full bg-card px-3"><span className="flex size-5 items-center justify-center rounded-full bg-ink"><Image src={boxesIcon} width={12} height={12} alt="" unoptimized /></span>{copy.hero.platform}</Badge>}
           title={boxes.name}
           description={copy.hero.title.join(" ")}
           actions={<><DownloadLink copy={copy} /><a className={cn(buttonVariants({ variant: "outline", size: "lg", className: heroActionClassName }))} href="#download">{copy.actions.install}<ArrowRight aria-hidden="true" /></a><a className={cn(buttonVariants({ variant: "support", size: "lg", className: heroActionClassName }))} href={supportUrl}><HandHeart className="size-4" aria-hidden="true" />{supportAction}</a></>}
@@ -58,25 +57,6 @@ export function RenewalLanding({ copy, locale, currentPath, supportUrl, supportA
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-20"><SectionHeading id="workflow-title" eyebrow={copy.workflow.eyebrow} title={copy.workflow.title} description={copy.workflow.description} /><WorkflowDiagram copy={copy} /></div>
         <ol className="mt-12 grid gap-4 md:grid-cols-3 md:gap-6">{copy.workflow.steps.map((step, index) => <li key={step.title} className="rounded-3xl border bg-card p-6 sm:p-7"><span className="flex size-9 items-center justify-center rounded-full bg-brand font-mono text-xs font-semibold text-ink" aria-hidden="true">0{index + 1}</span><h3 className="mb-3 mt-4 text-base font-semibold">{step.title}</h3><p className="text-sm leading-7 text-muted-foreground">{step.description}</p></li>)}</ol>
         <ul className="mt-6 flex flex-wrap gap-x-8 gap-y-4 rounded-2xl bg-muted p-5 sm:px-7">{copy.workflow.extras.map(item => <li key={item} className="flex items-center gap-2.5 text-xs leading-6 text-muted-foreground sm:text-sm"><Check className="size-4 shrink-0 text-brand-foreground" aria-hidden="true" />{item}</li>)}</ul>
-      </div>
-    </section>
-
-    <section id="widgets" className="scroll-mt-24 border-y bg-muted/50 px-4 py-16 sm:px-8 sm:py-24" aria-labelledby="widgets-title">
-      <div className="mx-auto max-w-7xl">
-        <SectionHeading id="widgets-title" eyebrow={copy.widgets.eyebrow} title={copy.widgets.title} description={copy.widgets.description} />
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
-          <Card className="gap-0 overflow-hidden rounded-3xl py-0 shadow-none"><article className="flex h-full flex-col">
-            <CardContent className="p-6 sm:p-8"><span className="mb-5 flex size-11 items-center justify-center rounded-2xl bg-ink text-brand"><Clock3 className="size-5" aria-hidden="true" /></span><h3 className="text-xl font-semibold">{copy.widgets.clockTitle}</h3><p className="mt-3 text-sm leading-7 text-muted-foreground">{copy.widgets.clockDescription}</p></CardContent>
-            <figure className="mt-auto px-5 pb-6 sm:px-8"><div className="surface-ink grid min-h-44 grid-cols-2 items-center divide-x rounded-2xl py-7">{copy.widgets.clockCities.map((city, index) => <div className="px-2 text-center" key={city}><p className="text-xs text-brand">{city}</p><p className="my-3 text-4xl font-light tabular-nums tracking-tight sm:text-5xl">{new Intl.DateTimeFormat(localeConfig[locale].htmlLanguage, { timeZone: landingTimes.zones[index], hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(new Date(landingTimes.worldClock))}</p><p className="text-[11px] leading-5 text-muted-foreground">{new Intl.DateTimeFormat(localeConfig[locale].htmlLanguage, { timeZone: landingTimes.zones[index], month: "long", day: "numeric", weekday: "long" }).format(new Date(landingTimes.worldClock))}</p></div>)}</div><figcaption className="mt-4 text-center text-xs leading-5 text-muted-foreground">{copy.widgets.clockCaption}</figcaption></figure>
-          </article></Card>
-          <Card className="gap-0 overflow-hidden rounded-3xl py-0 shadow-none"><article className="flex h-full flex-col">
-            <CardContent className="p-6 sm:p-8"><span className="mb-5 flex size-11 items-center justify-center rounded-2xl bg-ink text-brand"><ImageIcon className="size-5" aria-hidden="true" /></span><h3 className="text-xl font-semibold">{copy.widgets.photoTitle}</h3><p className="mt-3 text-sm leading-7 text-muted-foreground">{copy.widgets.photoDescription}</p></CardContent>
-            <figure className="mt-auto px-5 pb-6 sm:px-8"><div className="flex min-h-44 items-center justify-center rounded-2xl bg-muted p-3"><div className="relative aspect-[196/138] w-52 max-w-full overflow-hidden rounded-xl shadow-lg shadow-ink/20">
-              {/* The original screenshot crop is x=1004, y=428, w=196, h=138. */}
-              <Image {...media.photoDetail} alt={copy.widgets.photoAlt} className="absolute -bottom-[63.05%] right-0 h-auto w-[612.25%] max-w-none" sizes="1274px" />
-            </div></div><figcaption className="mt-4 text-center text-xs leading-5 text-muted-foreground">{copy.widgets.photoCaption}</figcaption></figure>
-          </article></Card>
-        </div>
       </div>
     </section>
 
@@ -98,7 +78,7 @@ export function RenewalLanding({ copy, locale, currentPath, supportUrl, supportA
 
     <section id="download" className="surface-ink relative scroll-mt-24 overflow-hidden px-4 py-16 sm:px-8 sm:py-24" aria-labelledby="download-title">
       <div className="mx-auto grid max-w-7xl items-start gap-12 lg:grid-cols-2 lg:gap-20">
-        <div><span className="mb-6 flex size-14 items-center justify-center rounded-2xl bg-brand/10 ring-1 ring-brand/30"><Image src="/images/ghostyak-boxes.svg" alt="" width={32} height={32} /></span><h2 id="download-title" className="whitespace-pre-line text-3xl font-semibold leading-tight tracking-[-0.035em] sm:text-4xl">{copy.download.title}</h2><p className="mb-7 mt-5 text-sm leading-7 text-muted-foreground">{copy.download.description}</p><DownloadLink copy={copy} /><p className="mt-4 text-xs leading-6 text-muted-foreground">{copy.download.source}</p><a href={links.release} className={textLink + " mt-1"} target="_blank" rel="noreferrer">{copy.actions.release}<ArrowUpRight className="size-3.5" aria-hidden="true" /></a><div className="mt-5"><ShareLinks pageUrl={`${links.site.replace(/\/$/, "")}${currentPath}`} pageTitle={copy.brand} labels={shareLabels} /></div></div>
+        <div><span className="mb-6 flex size-14 items-center justify-center rounded-2xl bg-brand/10 ring-1 ring-brand/30"><Image src={boxesIcon} alt="" width={32} height={32} unoptimized /></span><h2 id="download-title" className="whitespace-pre-line text-3xl font-semibold leading-tight tracking-[-0.035em] sm:text-4xl">{copy.download.title}</h2><p className="mb-7 mt-5 text-sm leading-7 text-muted-foreground">{copy.download.description}</p><DownloadLink copy={copy} /><p className="mt-4 text-xs leading-6 text-muted-foreground">{copy.download.source}</p><a href={links.release} className={textLink + " mt-1"} target="_blank" rel="noreferrer">{copy.actions.release}<ArrowUpRight className="size-3.5" aria-hidden="true" /></a><div className="mt-5"><ShareLinks pageUrl={`${links.site.replace(/\/$/, "")}${currentPath}`} pageTitle={copy.brand} labels={shareLabels} /></div></div>
         <div><ol className="space-y-7">{copy.download.steps.map((step, index) => <li className="flex gap-4" key={step.title}><span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-brand font-mono text-xs font-semibold text-ink" aria-hidden="true">0{index + 1}</span><div><h3 className="pt-1 font-semibold">{step.title}</h3><p className="mt-2 text-sm leading-7 text-muted-foreground">{step.description}</p></div></li>)}</ol>
           <Accordion type="single" collapsible className="mt-8 rounded-2xl border bg-card px-5"><AccordionItem value="install-help"><AccordionTrigger className="min-h-14 leading-6">{copy.download.help.title}</AccordionTrigger><AccordionContent className="space-y-3 leading-7 text-muted-foreground"><p>{copy.download.help.launch}</p><p>{copy.download.help.runtime}</p><a href={links.webview} className={textLink} target="_blank" rel="noreferrer">{copy.actions.webview}<ArrowUpRight className="size-4 shrink-0" aria-hidden="true" /></a><p>{copy.download.help.feedback}</p><a href={links.feedback} className={textLink} target="_blank" rel="noreferrer">{copy.actions.feedback}<ArrowUpRight className="size-4" aria-hidden="true" /></a></AccordionContent></AccordionItem></Accordion>
         </div>
