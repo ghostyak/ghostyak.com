@@ -188,3 +188,7 @@ ghostyak.com은 GhostYak 소프트웨어를 소개하고 배포하는 공식 웹
 - [x] 이미지 폴더 재구성(`public/images/boxes/`, `public/images/csv-search-Engine/`)에 맞춰 경로 갱신, 사용하지 않는 세계시계 사전 키 삭제
 - [x] 번역 위임 확인, 위젯 유료화 계획 없음 확인
 - [x] 블로그 외 공개 화면·구조화 데이터에서 버전 표기 제거(`boxes.version`, `softwareVersion`, 다운로드 사전의 `version` 키)
+
+## 완료: Boxes 성능 최적화 블로그 글 (2026-10-03)
+
+- [x] v0.4 성능 최적화와 v0.4.1 출시 예정 소식(`boxes-performance-update`) 한국어 원문과 8개 언어 번역

@@ -362,3 +362,7 @@ Folder History 저장소의 README와 설계 문서를 근거로 작성한 한�
 ## 2026-09-24 URL 정규화
 
 한국어 HTML lang과 hreflang은 `ko`, 영어는 `en`을 사용한다. 다른 언어의 기존 지역 코드는 유지한다. 영어 블로그 3편과 한국어 `boxes-world-clock`의 제품 링크만 새 canonical 경로로 고쳤으며 번역 문구·원문 리비전은 변경하지 않았다. 모든 공개 블로그는 원문과 번역의 키·slug·리비전이 일치해야 하며 원문 없는 번역과 중복 키도 빌드에서 차단한다. 따라서 존재하지 않는 번역 URL을 alternate로 공개하지 않는다. 상세 정책과 검증 방법은 [SEO.md](./SEO.md)를 따른다.
+
+## Boxes 성능 최적화 블로그 글
+
+2026-10-03 `boxes-performance-update`(`sourceRevision: 1`)는 사용자가 작성과 번역을 위임한 한국어 원문과 8개 번역이다. 근거는 Boxes 재작성 저장소의 README·ARCHITECTURE·RELEASE 문서다. 박스를 WebView2 대신 DirectComposition·Direct2D로 직접 그리는 구조, 박스 메뉴·설정 창·트레이의 Windows 기본 UI 전환, v0.4부터의 위젯 제거와 v0.4.1 출시 예정만 설명한다. 한 PC에서 얻은 개발 중 측정값과 미검증 사항(WebView2 없는 PC 실행 등)은 넣지 않는다. 대표 이미지는 `public/images/boxes/ghostyak-boxes-1920x1080.png`이며 `imageAlt`는 각 언어의 `landing.hero.mediaAlt`를 사용한다. 블로그 글은 작성 당시 기록이므로 제품 변경 뒤에도 고치지 않는다.
