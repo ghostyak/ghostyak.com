@@ -120,7 +120,7 @@ const landing: Dictionary["landing"] = {
     "steps": [
       {
         "title": "Esegui il programma di installazione",
-        "description": "Esegui il file GhostyakBoxes-setup.exe scaricato e segui le istruzioni di installazione."
+        "description": "Esegui il file GhostyakBoxes-x64-setup.exe scaricato e segui le istruzioni di installazione."
       },
       {
         "title": "Avvio automatico al termine",

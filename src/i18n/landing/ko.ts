@@ -67,7 +67,7 @@ const renewal = {
     title: "다운로드하고,\n첫 번째 박스를 만드세요.",
     description: "Windows 10/11 · 64비트 · 설치 시 관리자 권한 필요",
     steps: [
-      { title: "설치 파일 실행", description: "다운로드한 GhostyakBoxes-setup.exe를 실행하고 설치 안내를 따라주세요." },
+      { title: "설치 파일 실행", description: "다운로드한 GhostyakBoxes-x64-setup.exe를 실행하고 설치 안내를 따라주세요." },
       { title: "설치 완료 후 자동 실행", description: "완료 화면의 ‘Ghostyak Boxes 실행’을 선택한 상태로 마치면 Boxes가 자동으로 실행됩니다." },
       { title: "첫 번째 박스 만들기", description: "바탕화면 빈 곳을 마우스 오른쪽 버튼으로 드래그해 박스를 만들고, 필요한 파일이나 폴더를 끌어 넣으세요." },
     ],

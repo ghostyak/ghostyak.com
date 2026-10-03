@@ -18,7 +18,7 @@ export const boxes = {
   download: {
     pagePath: "/product/boxes/download",
     installerUrl:
-      "https://github.com/ghostyak/boxes/releases/latest/download/GhostyakBoxes-setup.exe",
+      "https://github.com/ghostyak/boxes/releases/latest/download/GhostyakBoxes-x64-setup.exe",
   },
   screenshots: [
     boxesPreview,
