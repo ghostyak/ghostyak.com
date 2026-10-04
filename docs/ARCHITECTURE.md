@@ -53,7 +53,7 @@ docs/                            설계, 개발과 로드맵 문서
 
 공개 승인된 한국어 원문은 `src/i18n/landing/ko.ts`, Server Component는 `src/components/renewal/RenewalLanding.tsx`에 둔다. 클립보드 동작은 `CopySiteLink`, FAQ·도움말은 shadcn Accordion 클라이언트 경계로 분리한다. 2026-09-07 사용자가 한국어 원문을 승인했다. `src/i18n/landing/{locale}.ts`를 각 공개 사전의 `landing` 키로 가져오며 빌드 중 모든 언어의 키를 검증한다. 상세 범위는 [RENEWAL_KO.md](./RENEWAL_KO.md)를 따른다.
 
-공개 랜딩의 제품 스크린샷과 외부 링크는 `src/data/landing.ts`에서 관리한다. 설치 파일은 공개 화면과 같은 `boxes.download.installerUrl`을 사용하며 모든 다운로드 버튼에서 직접 연결한다. 구역 이동·원본 이미지 보기는 서버 HTML과 네이티브 브라우저 동작으로, FAQ는 shadcn Accordion으로 제공한다. 설치 안내의 PC용 링크 복사는 전달받은 현재 언어의 제품 경로를 사용한다.
+공개 랜딩의 제품 스크린샷과 외부 링크는 `src/data/landing.ts`에서 관리한다. 설치 파일은 `boxes.download.installerUrl`(x64)과 `arm64InstallerUrl`(ARM64)을 사용하며 모든 다운로드 버튼에서 직접 연결한다. 구역 이동·원본 이미지 보기는 서버 HTML과 네이티브 브라우저 동작으로, FAQ는 shadcn Accordion으로 제공한다. 설치 안내의 PC용 링크 복사는 전달받은 현재 언어의 제품 경로를 사용한다.
 
 ## 제품과 콘텐츠 데이터
 
@@ -102,4 +102,4 @@ CSV Search Engine 상세페이지 `CsvSearchProduct`는 Server Component이며 �
 
 ## 공유 UI
 
-`src/components/ShareLinks.tsx`는 제품 상세 페이지 다운로드 구역과 블로그 글 끝에서 X·Facebook·LinkedIn·Threads로 현재 페이지를 공유하는 링크를 제공한다. Instagram은 기기 공유 메뉴를 열고, 미지원 환경에서는 canonical URL을 복사한다. 페이지와 문구는 Server Component가 로케일 사전에서 전달하고 브라우저 공유·클립보드 접근에 필요한 이 컴포넌트만 Client Component로 둔다.
+`src/components/ShareLinks.tsx`는 제품 상세 페이지 첫 화면의 후원하기 옆과 블로그 글 끝에서 X·Facebook·LinkedIn·Threads로 현재 페이지를 공유하는 링크를 제공한다. Instagram은 기기 공유 메뉴를 열고, 미지원 환경에서는 canonical URL을 복사한다. 페이지와 문구는 Server Component가 로케일 사전에서 전달하고 브라우저 공유·클립보드 접근에 필요한 이 컴포넌트만 Client Component로 둔다.

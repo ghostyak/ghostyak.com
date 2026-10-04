@@ -90,9 +90,9 @@ Markdown 본문
 
 ## 정적 파일
 
-설치 안내는 자동 실행을 기본 절차로 설명한다. Boxes v0.4.1부터 설치 파일은 `GhostyakBoxes-x64-setup.exe`이며 WebView2와 관리자 권한 없이 설치되므로 WebView2 안내를 두지 않는다. 다운로드 버튼은 Folder History처럼 `architectureDownload` 버튼과 `DownloadLabel`로 `x64`를 금색으로 강조한다. 접힌 실행 도움말은 키보드로 열고 닫을 수 있어야 한다.
+설치 안내는 자동 실행을 기본 절차로 설명한다. Boxes v0.4.1부터 설치 파일은 `GhostyakBoxes-x64-setup.exe`와 `GhostyakBoxes-arm64-setup.exe`이며 WebView2와 관리자 권한 없이 설치되므로 WebView2 안내를 두지 않는다. 주소는 `src/data/products.ts`의 `boxes.download.installerUrl`·`arm64InstallerUrl`에 둔다. 다운로드 버튼은 Folder History처럼 x64·ARM64 두 개를 `architectureDownload` 버튼과 `DownloadLabel`로 표시하고 `x64`·`ARM64`를 금색으로 강조한다. 첫 화면에서는 두 버튼을 한 줄로 묶고 설치 안내·후원하기를 아래에 두며, 다운로드 구역에서는 세로로 배치한다. 접힌 실행 도움말은 키보드로 열고 닫을 수 있어야 한다.
 
-랜딩 수정 시 320px·390px·768px·데스크톱에서 메뉴와 가로 넘침을 확인한다. 무료 다운로드 링크가 설치 파일로 직접 연결되는지, 설치 안내 구역 이동 후 제목이 헤더에 가리지 않는지, FAQ 키보드 조작과 PC 링크 복사가 동작하는지 확인한다. 이미지 출처와 제품·설치 정보의 근거는 [RENEWAL_KO.md](./RENEWAL_KO.md)에 기록한다. 화면 검증에서 설치 파일을 실행할 필요는 없다.
+랜딩 수정 시 320px·390px·768px·데스크톱에서 메뉴와 가로 넘침을 확인한다. x64·ARM64 다운로드 링크가 각 설치 파일로 직접 연결되는지, 설치 안내 구역 이동 후 제목이 헤더에 가리지 않는지, FAQ 키보드 조작과 PC 링크 복사가 동작하는지 확인한다. 이미지 출처와 제품·설치 정보의 근거는 [RENEWAL_KO.md](./RENEWAL_KO.md)에 기록한다. 화면 검증에서 설치 파일을 실행할 필요는 없다.
 
 - favicon과 그대로 제공할 이미지는 `public/`에 둔다.
 - 기본 파비콘은 `public/favicon.svg`이며 루트 레이아웃의 `icons` 메타데이터로 모든 언어에 적용한다. 중복 아이콘이 자동 등록되지 않도록 `src/app/favicon.ico`와 `src/app/icon.png`는 두지 않는다.

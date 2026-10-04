@@ -9,7 +9,8 @@ const landing: Dictionary["landing"] = {
   "brand": "GhostYak Boxes",
   "skip": "Aller au contenu",
   "actions": {
-    "download": "Télécharger gratuitement pour Windows x64",
+    "download": "Télécharger pour Windows x64",
+    "arm64Download": "Télécharger pour Windows ARM64",
     "install": "Guide d’installation",
     "viewScreenshot": "Agrandir la capture",
     "alternativeTo": "Découvrir sur AlternativeTo",

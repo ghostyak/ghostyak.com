@@ -9,7 +9,8 @@ const landing: Dictionary["landing"] = {
   "brand": "GhostYak Boxes",
   "skip": "本文へスキップ",
   "actions": {
-    "download": "Windows x64版を無料ダウンロード",
+    "download": "Windows x64版をダウンロード",
+    "arm64Download": "Windows ARM64版をダウンロード",
     "install": "インストール案内",
     "viewScreenshot": "画面を大きく見る",
     "alternativeTo": "AlternativeToで見る",

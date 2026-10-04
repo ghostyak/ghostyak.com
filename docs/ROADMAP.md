@@ -214,3 +214,10 @@ ghostyak.com은 GhostYak 소프트웨어를 소개하고 배포하는 공식 웹
 ## 완료: 다운로드 링크 수정·Boxes v0.4.1 배포 블로그 글 (2026-10-04)
 
 - [x] `download-links-fixed`, `boxes-041-release` 한국어 원문과 8개 언어 번역
+
+## 완료: Boxes ARM64 다운로드 버튼 (2026-10-04)
+
+- [x] `GhostyakBoxes-arm64-setup.exe` 다운로드 버튼 추가(첫 화면·다운로드 구역, 9개 언어 문구)
+- [x] 버튼 문구를 Folder History와 같은 `Windows x64 다운로드`·`Windows ARM64 다운로드` 형식으로 통일
+- [x] Boxes·Folder History·CSV Search Engine의 공유 링크를 다운로드 구역에서 첫 화면 후원하기 오른쪽으로 이동(링크 복사 버튼 제외)
+- [x] 세 제품 첫 화면의 설치 안내·사용 방법 버튼을 화살표 대신 왼쪽 정보 아이콘으로 변경

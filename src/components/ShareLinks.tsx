@@ -30,7 +30,10 @@ function SocialIcon({ network }: { network: "x" | "facebook" | "linkedin" | "ins
   return <svg viewBox="0 0 24 24" className="size-5 fill-current" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.47-.9 1.63-1.85 3.37-1.85 3.6 0 4.26 2.37 4.26 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.55V9h3.57v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.23 0Z" /></svg>;
 }
 
-export function ShareLinks({ pageUrl, pageTitle, labels }: { pageUrl: string; pageTitle: string; labels: ShareLabels }) {
+const iconClassName = "inline-flex size-11 items-center justify-center rounded-full border border-current/20 bg-transparent text-current transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring";
+
+// `inline` drops the heading, divider and copy button so the links can sit on a row of hero actions.
+export function ShareLinks({ pageUrl, pageTitle, labels, inline = false }: { pageUrl: string; pageTitle: string; labels: ShareLabels; inline?: boolean }) {
   const [status, setStatus] = useState<"idle" | "copied" | "failed">("idle");
   const encodedUrl = encodeURIComponent(pageUrl);
   const encodedTitle = encodeURIComponent(pageTitle);
@@ -63,19 +66,30 @@ export function ShareLinks({ pageUrl, pageTitle, labels }: { pageUrl: string; pa
     await copyLink();
   }
 
+  const iconHover = inline ? "hover:bg-current/10" : "hover:bg-white/10";
+  const statusText = status === "copied" ? labels.copied : status === "failed" ? labels.copyFailed : "";
+  const buttons = <>
+    {links.map(({ key, label, href }) => <a key={key} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} title={label} className={`${iconClassName} ${iconHover}`}>
+      <SocialIcon network={key} />
+    </a>)}
+    <button type="button" onClick={shareToInstagram} aria-label={labels.instagram} title={labels.instagram} className={`${iconClassName} ${iconHover}`}><SocialIcon network="instagram" /></button>
+    {!inline && <Button type="button" variant="ghost" className="min-h-11 gap-2 text-inherit" onClick={copyLink}>
+      {status === "copied" ? <Check className="size-4" aria-hidden="true" /> : <Copy className="size-4" aria-hidden="true" />}
+      {labels.copyLink}
+    </Button>}
+  </>;
+  const copyField = status === "failed" && <Input className="mt-2 min-h-11 max-w-xl bg-background" aria-label={labels.copyField} value={pageUrl} readOnly onFocus={(event) => event.currentTarget.select()} />;
+
+  if (inline) return <div role="group" aria-label={labels.heading} className="flex max-w-full flex-wrap items-center justify-center gap-2">
+    {buttons}
+    <p role="status" className={statusText ? "basis-full text-sm text-muted-foreground" : "sr-only"}>{statusText}</p>
+    {copyField}
+  </div>;
+
   return <section className="border-t border-current/15 pt-5" aria-label={labels.heading}>
     <p className="mb-3 text-sm font-medium">{labels.heading}</p>
-    <div className="flex flex-wrap items-center gap-2">
-      {links.map(({ key, label, href }) => <a key={key} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} title={label} className="inline-flex size-11 items-center justify-center rounded-full border border-current/20 bg-transparent text-current transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring">
-        <SocialIcon network={key} />
-      </a>)}
-      <button type="button" onClick={shareToInstagram} aria-label={labels.instagram} title={labels.instagram} className="inline-flex size-11 items-center justify-center rounded-full border border-current/20 bg-transparent text-current transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"><SocialIcon network="instagram" /></button>
-      <Button type="button" variant="ghost" className="min-h-11 gap-2 text-inherit" onClick={copyLink}>
-        {status === "copied" ? <Check className="size-4" aria-hidden="true" /> : <Copy className="size-4" aria-hidden="true" />}
-        {labels.copyLink}
-      </Button>
-    </div>
-    <p role="status" className="mt-2 text-sm text-muted-foreground">{status === "copied" ? labels.copied : status === "failed" ? labels.copyFailed : ""}</p>
-    {status === "failed" && <Input className="mt-2 min-h-11 max-w-xl bg-background" aria-label={labels.copyField} value={pageUrl} readOnly onFocus={(event) => event.currentTarget.select()} />}
+    <div className="flex flex-wrap items-center gap-2">{buttons}</div>
+    <p role="status" className="mt-2 text-sm text-muted-foreground">{statusText}</p>
+    {copyField}
   </section>;
 }

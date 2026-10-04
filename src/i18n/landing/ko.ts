@@ -7,7 +7,8 @@ const renewal = {
   brand: "GhostYak Boxes",
   skip: "본문으로 바로가기",
   actions: {
-    download: "Windows x64용 무료 다운로드",
+    download: "Windows x64 다운로드",
+    arm64Download: "Windows ARM64 다운로드",
     install: "설치 안내",
     viewScreenshot: "화면 크게 보기",
     alternativeTo: "AlternativeTo에서 살펴보기",

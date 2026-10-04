@@ -76,4 +76,4 @@ Folder History와 CSV Search Engine 상세페이지는 공통 `ProductLanding`(`
 
 ## 페이지 공유
 
-Boxes·CSV Search Engine·Folder History는 다운로드 구역에 공유 영역을 둔다. 블로그 글은 본문 끝에서 공유할 수 있다. X·Facebook·LinkedIn·Threads 아이콘은 44px 원형 키보드 접근 대상이며 Threads 작성 화면은 새 탭에서 연다. Instagram은 기기 공유 메뉴를 호출하고 미지원 시 canonical URL을 복사한다. 링크 복사 성공·실패 상태를 화면 낭독기에 전달한다. SNS SDK나 추적 위젯을 추가하지 않는다.
+Boxes·CSV Search Engine·Folder History는 2026-10-04 사용자 요청으로 공유 영역을 다운로드 구역에서 첫 화면으로 옮겨, 제목·구분선·링크 복사 버튼 없이(`ShareLinks`의 `inline`) 다운로드 버튼 아랫줄의 후원하기 오른쪽에 둔다. 블로그 글은 본문 끝에서 공유할 수 있다. X·Facebook·LinkedIn·Threads 아이콘은 44px 원형 키보드 접근 대상이며 Threads 작성 화면은 새 탭에서 연다. Instagram은 기기 공유 메뉴를 호출하고 미지원 시 canonical URL을 복사한다. 링크 복사 성공·실패 상태를 화면 낭독기에 전달한다. SNS SDK나 추적 위젯을 추가하지 않는다.

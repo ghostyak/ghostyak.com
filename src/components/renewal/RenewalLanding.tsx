@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { ArrowRight, ArrowUpRight, Check, Download, Folder, HandHeart, Link2 } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Download, Folder, HandHeart, Info, Link2 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -15,8 +15,12 @@ import { DownloadLabel } from "@/components/ProductLanding";
 type Copy = Dictionary["landing"];
 const textLink = "inline-flex min-h-11 items-center gap-2 text-sm font-medium text-primary underline decoration-brand decoration-2 underline-offset-4 hover:decoration-current";
 
-function DownloadLink({ copy }: { copy: Copy }) {
-  return <a className={cn(buttonVariants({ variant: "architectureDownload", size: "lg", className: heroActionClassName }))} href={boxes.download.installerUrl} aria-label={copy.actions.download}><Download className="size-4" aria-hidden="true" /><DownloadLabel label={copy.actions.download} architecture="x64" /></a>;
+function DownloadLinks({ copy }: { copy: Copy }) {
+  const className = cn(buttonVariants({ variant: "architectureDownload", size: "lg", className: heroActionClassName }));
+  return <>
+    <a className={className} href={boxes.download.installerUrl} aria-label={copy.actions.download}><Download className="size-4" aria-hidden="true" /><DownloadLabel label={copy.actions.download} architecture="x64" /></a>
+    <a className={className} href={boxes.download.arm64InstallerUrl} aria-label={copy.actions.arm64Download}><Download className="size-4" aria-hidden="true" /><DownloadLabel label={copy.actions.arm64Download} architecture="ARM64" /></a>
+  </>;
 }
 
 function SectionHeading({ eyebrow, title, description, id }: { eyebrow: string; title: string; description?: string; id: string }) {
@@ -43,7 +47,7 @@ export function RenewalLanding({ copy, currentPath, supportUrl, supportAction, s
           eyebrow={<Badge variant="outline" className="min-h-7 gap-2 rounded-full bg-card px-3"><span className="flex size-5 items-center justify-center rounded-full bg-ink"><Image src={boxesIcon} width={12} height={12} alt="" unoptimized /></span>{copy.hero.platform}</Badge>}
           title={boxes.name}
           description={copy.hero.title.join(" ")}
-          actions={<><DownloadLink copy={copy} /><a className={cn(buttonVariants({ variant: "outline", size: "lg", className: heroActionClassName }))} href="#download">{copy.actions.install}<ArrowRight aria-hidden="true" /></a><a className={cn(buttonVariants({ variant: "support", size: "lg", className: heroActionClassName }))} href={supportUrl}><HandHeart className="size-4" aria-hidden="true" />{supportAction}</a></>}
+          actions={<div className="flex max-w-full flex-col items-center gap-3"><div className="flex max-w-full flex-wrap justify-center gap-3"><DownloadLinks copy={copy} /></div><div className="flex max-w-full flex-wrap items-center justify-center gap-3"><a className={cn(buttonVariants({ variant: "outline", size: "lg", className: heroActionClassName }))} href="#download"><Info className="size-4" aria-hidden="true" />{copy.actions.install}</a><a className={cn(buttonVariants({ variant: "support", size: "lg", className: heroActionClassName }))} href={supportUrl}><HandHeart className="size-4" aria-hidden="true" />{supportAction}</a><ShareLinks pageUrl={`${links.site.replace(/\/$/, "")}${currentPath}`} pageTitle={copy.brand} labels={shareLabels} inline /></div></div>}
         />
         <figure className="relative mx-auto max-w-6xl">
           <div className="absolute inset-x-[10%] -bottom-6 top-1/3 rounded-full bg-brand/25 blur-3xl" aria-hidden="true" />
@@ -79,7 +83,7 @@ export function RenewalLanding({ copy, currentPath, supportUrl, supportAction, s
 
     <section id="download" className="surface-ink relative scroll-mt-24 overflow-hidden px-4 py-16 sm:px-8 sm:py-24" aria-labelledby="download-title">
       <div className="mx-auto grid max-w-7xl items-start gap-12 lg:grid-cols-2 lg:gap-20">
-        <div><span className="mb-6 flex size-14 items-center justify-center rounded-2xl bg-brand/10 ring-1 ring-brand/30"><Image src={boxesIcon} alt="" width={32} height={32} unoptimized /></span><h2 id="download-title" className="whitespace-pre-line text-3xl font-semibold leading-tight tracking-[-0.035em] sm:text-4xl">{copy.download.title}</h2><p className="mb-7 mt-5 text-sm leading-7 text-muted-foreground">{copy.download.description}</p><DownloadLink copy={copy} /><p className="mt-4 text-xs leading-6 text-muted-foreground">{copy.download.source}</p><a href={links.release} className={textLink + " mt-1"} target="_blank" rel="noreferrer">{copy.actions.release}<ArrowUpRight className="size-3.5" aria-hidden="true" /></a><div className="mt-5"><ShareLinks pageUrl={`${links.site.replace(/\/$/, "")}${currentPath}`} pageTitle={copy.brand} labels={shareLabels} /></div></div>
+        <div><span className="mb-6 flex size-14 items-center justify-center rounded-2xl bg-brand/10 ring-1 ring-brand/30"><Image src={boxesIcon} alt="" width={32} height={32} unoptimized /></span><h2 id="download-title" className="whitespace-pre-line text-3xl font-semibold leading-tight tracking-[-0.035em] sm:text-4xl">{copy.download.title}</h2><p className="mb-7 mt-5 text-sm leading-7 text-muted-foreground">{copy.download.description}</p><div className="flex flex-col items-start gap-2"><DownloadLinks copy={copy} /></div><p className="mt-4 text-xs leading-6 text-muted-foreground">{copy.download.source}</p><a href={links.release} className={textLink + " mt-1"} target="_blank" rel="noreferrer">{copy.actions.release}<ArrowUpRight className="size-3.5" aria-hidden="true" /></a></div>
         <div><ol className="space-y-7">{copy.download.steps.map((step, index) => <li className="flex gap-4" key={step.title}><span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-brand font-mono text-xs font-semibold text-ink" aria-hidden="true">0{index + 1}</span><div><h3 className="pt-1 font-semibold">{step.title}</h3><p className="mt-2 text-sm leading-7 text-muted-foreground">{step.description}</p></div></li>)}</ol>
           <Accordion type="single" collapsible className="mt-8 rounded-2xl border bg-card px-5"><AccordionItem value="install-help"><AccordionTrigger className="min-h-14 leading-6">{copy.download.help.title}</AccordionTrigger><AccordionContent className="space-y-3 leading-7 text-muted-foreground"><p>{copy.download.help.launch}</p><p>{copy.download.help.feedback}</p><a href={links.feedback} className={textLink} target="_blank" rel="noreferrer">{copy.actions.feedback}<ArrowUpRight className="size-4" aria-hidden="true" /></a></AccordionContent></AccordionItem></Accordion>
         </div>
