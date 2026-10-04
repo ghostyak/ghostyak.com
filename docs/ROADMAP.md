@@ -198,3 +198,7 @@ ghostyak.com은 GhostYak 소프트웨어를 소개하고 배포하는 공식 웹
 - [x] 설치 파일 주소를 `GhostyakBoxes-x64-setup.exe`로 변경(이전 주소 404)
 - [x] 다운로드 버튼에 Folder History와 같은 `x64` 금색 강조 적용(9개 언어 버튼 문구에 x64 추가)
 - [x] 관리자 권한·WebView2 요구 문구와 WebView2 설치 도움말 삭제
+
+## 완료: Folder History 설치 파일명 변경 (2026-10-04)
+
+- [x] 다운로드 주소를 `folder-history-x64-setup.exe`, `folder-history-arm64-setup.exe`로 변경
