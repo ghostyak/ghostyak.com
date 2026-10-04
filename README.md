@@ -14,13 +14,13 @@ Community는 기간과 박스 수 제한 없이 사용할 수 있습니다.
 ## 개발
 
 ```sh
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 ## 명령어
 
-- `npm run dev`: 개발 서버 실행
-- `npm run build`: 프로덕션 빌드 생성
-- `npm run start`: 프로덕션 서버 실행
-- `npm run lint`: 코드 검사
+- `pnpm dev`: 개발 서버 실행
+- `pnpm build`: 프로덕션 빌드 생성
+- `pnpm start`: 프로덕션 서버 실행
+- `pnpm lint`: 코드 검사

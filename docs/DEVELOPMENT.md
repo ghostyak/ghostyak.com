@@ -3,18 +3,18 @@
 ## 요구사항과 실행
 
 - Node.js 22.12 이상
-- npm
+- pnpm 11 (`corepack enable` 후 `package.json`의 `packageManager` 버전 사용)
 
 ```sh
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 변경을 완료하기 전에 다음 검사를 모두 실행한다.
 
 ```sh
-npm run lint
-npm run build
+pnpm lint
+pnpm build
 ```
 
 ## 작업 규칙
@@ -81,7 +81,7 @@ Markdown 본문
 - 블로그 번역은 한국어 글의 `translationKey`와 원문 리비전에 연결한다.
 - 번역 글은 현재 한국어 원문과 같은 파일명 slug와 `sourceRevision`을 사용한다.
 - 새 번역 로케일은 필수 UI와 블로그를 모두 번역한 뒤 `src/i18n/locales.ts`의 공개 목록과 사전 로더에 추가한다.
-- `npm run build`는 공개 사전의 빈 문자열·placeholder와 블로그 번역의 원문 리비전을 검사한다.
+- `pnpm build`는 공개 사전의 빈 문자열·placeholder와 블로그 번역의 원문 리비전을 검사한다.
 - `src/proxy.ts`에서 URL 접두사와 legacy 정규화를 처리한다. 언어 메뉴는 `localizedPath`로 같은 콘텐츠의 canonical URL에 직접 연결한다. 브라우저 자동 감지와 쿠키 기반 언어 이동은 사용하지 않는다.
 
 라우팅, 사전 구조, 번역 문체, SEO와 완료 조건은 [국제화 및 번역 기준](./INTERNATIONALIZATION.md)을 따른다.
@@ -107,7 +107,7 @@ Markdown 본문
 
 홈·Boxes·CSV Search Engine·Folder History 히어로 수정은 `src/components/PageHero.tsx`를 기준으로 한다. 페이지별 제목 크기·상단 여백을 따로 덮어쓰지 않는다. 320px·768px·데스크톱에서 세 페이지의 제목 크기·설명 줄 높이·배지 간격·버튼 높이를 함께 확인한다.
 
-`components.json`과 `src/components/ui/`를 디자인 시스템의 기준으로 사용한다. 필요 시 `npx shadcn@latest add <component>`로 공식 컴포넌트를 추가하고 변경 내용을 검토한다. 서버 링크는 `buttonVariants`, 조건부 클래스는 `cn`으로 구성한다. 버튼의 번역문이 길면 `h-auto min-h-11 whitespace-normal`을 적용한다. 메뉴와 Accordion 이외의 페이지 전체를 클라이언트 컴포넌트로 바꾸지 않는다.
+`components.json`과 `src/components/ui/`를 디자인 시스템의 기준으로 사용한다. 필요 시 `pnpm dlx shadcn@latest add <component>`로 공식 컴포넌트를 추가하고 변경 내용을 검토한다. 서버 링크는 `buttonVariants`, 조건부 클래스는 `cn`으로 구성한다. 버튼의 번역문이 길면 `h-auto min-h-11 whitespace-normal`을 적용한다. 메뉴와 Accordion 이외의 페이지 전체를 클라이언트 컴포넌트로 바꾸지 않는다.
 
 공통 헤더는 64px/80px 높이이며 모든 주요 구역은 `scroll-mt-24`로 이동 여백을 확보한다. 모바일 메뉴, FAQ·설치 도움말 키보드 조작, 직접 다운로드 URL, 언어 전환, 복사 성공·실패 상태, 본문 건너뛰기 링크와 모션 감소 설정을 검수한다. DaisyUI 의존성과 미사용 자동 회전·다운로드 타이머·이전 세계시계 컴포넌트는 제거했다.
 ## CSV Search Engine 관리
@@ -128,7 +128,7 @@ CSV 상세페이지는 공통 `ProductLanding`을 쓰므로 Folder History 페�
 
 ## SEO URL 회귀 검증
 
-`npm run lint`와 `npm run build` 후 별도 터미널에서 `npm run start -- --port 3100`을 실행하고 `npm run test:seo`로 검증한다. 다른 서버는 `npm run test:seo -- https://www.ghostyak.com`으로 지정한다. Node 내장 fetch/assert만 사용하며 새 테스트 프레임워크는 필요 없다.
+`pnpm lint`와 `pnpm build` 후 별도 터미널에서 `pnpm start --port 3100`을 실행하고 `pnpm test:seo`로 검증한다. 다른 서버는 `pnpm test:seo https://www.ghostyak.com`으로 지정한다. Node 내장 fetch/assert만 사용하며 새 테스트 프레임워크는 필요 없다.
 
 검증은 sitemap 전체 페이지의 200·self canonical·상호 hreflang·HTML lang·indexability·OpenGraph·JSON-LD·본문/공통 내부 링크, 무접두사 URL과 별칭의 단일 308, 끝 슬래시, 추적 query, 상충하는 언어 쿠키/헤더, 404, robots를 검사한다. 로컬에서는 Host 헤더로 공개 호스트 정규화도 검사한다. CDN의 HTTP/HTTPS와 apex/www 리디렉션은 앱에 도달하기 전에 실행될 수 있으므로 배포 후 실제 4개 origin 변형도 확인한다. 언어 메뉴는 같은 콘텐츠로 전체 문서 탐색하며 스타일과 컴포넌트 경계는 유지한다.
 

@@ -5,8 +5,8 @@ Use the Next.js App Router with TypeScript. Keep components as Server Components
 Before committing a completed task, run:
 
 ```sh
-npm run lint
-npm run build
+pnpm lint
+pnpm build
 ```
 
 ## Documentation

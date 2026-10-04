@@ -290,7 +290,7 @@ sourceRevision: 1
 - 블로그 번역이 유효한 한국어 `translationKey`와 원문 리비전을 가리키는지 확인
 - canonical, `hreflang`, `<html lang>`과 sitemap 관계 확인
 - 코드에 새 표시용 하드코딩 문자열이 추가되지 않았는지 검토
-- `npm run lint`와 `npm run build` 통과
+- `pnpm lint`와 `pnpm build` 통과
 
 자동 검사는 언어의 자연스러움을 보장하지 않는다. 번역 언어별 최종 문장 검수와 화면 검수는 별도로 진행한다.
 
@@ -309,7 +309,7 @@ sourceRevision: 1
 - [ ] 모바일·데스크톱 레이아웃 확인
 - [ ] 키보드와 스크린 리더용 이름 확인
 - [ ] 언어 품질 검수 완료
-- [ ] `npm run lint`와 `npm run build` 통과
+- [ ] `pnpm lint`와 `pnpm build` 통과
 
 ## 승인된 랜딩 번역
 

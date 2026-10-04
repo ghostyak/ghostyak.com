@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { request as httpRequest } from "node:http";
 
-// Run against `npm run start -- --port 3100`, or pass a deployed origin as argv[2].
+// Run against `pnpm start --port 3100`, or pass a deployed origin as argv[2].
 const base = new URL(process.argv[2] ?? "http://localhost:3100");
 const origin = "https://www.ghostyak.com";
 const languages = { ko: "ko", en: "en", ja: "ja-JP", zh: "zh-CN", es: "es-ES", de: "de-DE", fr: "fr-FR", pt: "pt-BR", it: "it-IT" };

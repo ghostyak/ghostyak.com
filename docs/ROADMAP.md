@@ -202,3 +202,7 @@ ghostyak.com은 GhostYak 소프트웨어를 소개하고 배포하는 공식 웹
 ## 완료: Folder History 설치 파일명 변경 (2026-10-04)
 
 - [x] 다운로드 주소를 `folder-history-x64-setup.exe`, `folder-history-arm64-setup.exe`로 변경
+
+## 완료: pnpm 전환 (2026-10-04)
+
+- [x] 패키지 매니저를 npm에서 pnpm 11로 전환(`package-lock.json` 삭제, `pnpm-lock.yaml`·`packageManager` 추가)
