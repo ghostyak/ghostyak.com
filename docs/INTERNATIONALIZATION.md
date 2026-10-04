@@ -366,3 +366,7 @@ Folder History 저장소의 README와 설계 문서를 근거로 작성한 한�
 ## Boxes 성능 최적화 블로그 글
 
 2026-10-03 `boxes-performance-update`(`sourceRevision: 1`)는 사용자가 작성과 번역을 위임한 한국어 원문과 8개 번역이다. 근거는 Boxes 재작성 저장소의 README·ARCHITECTURE·RELEASE 문서다. 박스를 WebView2 대신 DirectComposition·Direct2D로 직접 그리는 구조, 박스 메뉴·설정 창·트레이의 Windows 기본 UI 전환, v0.4부터의 위젯 제거와 v0.4.1 출시 예정만 설명한다. 한 PC에서 얻은 개발 중 측정값과 미검증 사항(WebView2 없는 PC 실행 등)은 넣지 않는다. 대표 이미지는 `public/images/boxes/ghostyak-boxes-1920x1080.png`이며 `imageAlt`는 각 언어의 `landing.hero.mediaAlt`를 사용한다. 블로그 글은 작성 당시 기록이므로 제품 변경 뒤에도 고치지 않는다.
+
+## 다운로드 링크 수정·Boxes v0.4.1 배포 블로그 글
+
+2026-10-04 `download-links-fixed`와 `boxes-041-release`(둘 다 `sourceRevision: 1`)는 사용자가 승인한 한국어 원문과 8개 번역이다. `download-links-fixed`는 Boxes·Folder History 설치 파일 이름이 바뀌어 다운로드 버튼이 404를 내던 문제와 그 수정만 짧게 다룬다. `boxes-041-release`의 근거는 Boxes 재작성 저장소의 PRODUCT·RELEASE·DATA_MODEL 문서와 GitHub v0.4.1 릴리스다. WebView2·관리자 권한 없는 사용자 설치, 라이브 박스, 박스별 보기 전환, 업데이트 알림, 서명 없는 설치 파일의 SmartScreen 경고, 이전 버전 박스 자동 가져오기, 위젯 제외를 설명한다. 메뉴·보기 이름은 앱의 9개 언어 문구(`popup.itemMenu.makePortal`, `native.view*`)를, SmartScreen과 Windows 11 "더 많은 옵션 표시"는 각 언어 Windows 표기를 따른다. 대표 이미지와 `imageAlt`는 `boxes-performance-update`와 같다.

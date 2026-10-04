@@ -210,3 +210,7 @@ ghostyak.com은 GhostYak 소프트웨어를 소개하고 배포하는 공식 웹
 ## 완료: CSV Search Engine 다운로드 버튼 x64 강조 (2026-10-04)
 
 - [x] 다운로드 버튼에 Boxes·Folder History와 같은 `x64` 금색 강조 적용(9개 언어 버튼 문구에 x64 추가)
+
+## 완료: 다운로드 링크 수정·Boxes v0.4.1 배포 블로그 글 (2026-10-04)
+
+- [x] `download-links-fixed`, `boxes-041-release` 한국어 원문과 8개 언어 번역
