@@ -58,7 +58,7 @@
 
 홈의 네 번째 제품은 CSV Search Engine이다. `디지털포렌식`과 `DFIR`, Windows x64를 표시하고 사용자 지정 소개 “대용량 CSV·Excel 검색을 한 번에.”를 카드와 상세페이지에서 공유한다. Excel 설치·원본 변경·외부 업로드에 대한 보조 문구는 표시하지 않는다. 홈 카드에는 사진 대신 장식용 표 줄무늬 위에 테이블 아이콘과 CSV 문자를 표시하며 상세페이지로 연결한다. 제품 메뉴는 기존 제품 아래 구분선을 두고 `디지털포렌식` 그룹에 CSV Search Engine을 배치한다.
 
-CSV Search Engine 상세페이지는 2026-09-24부터 Folder History와 같은 공통 `ProductLanding` 구성을 쓴다. 히어로 배지는 `디지털포렌식`(남색)·`DFIR`·`Windows · x64`·`비상업적 용도 무료`(금색)이고, 첫 화면에 MFT 데이터 스크린샷을, 주요 기능 아래에 파일 열기 스크린샷을 한 장 둔다. 이어서 남색 오프라인 분석 안내, FAQ, 다운로드 구역(Windows 직접 다운로드와 GitHub 링크)을 둔다. 사용자 요청으로 자동 스크린샷 슬라이드와 `ScreenshotSlideshow` 컴포넌트를 삭제했다.
+CSV Search Engine 상세페이지는 2026-09-24부터 Folder History와 같은 공통 `ProductLanding` 구성을 쓴다. 히어로 배지는 `디지털포렌식`(남색)·`DFIR`·`Windows · x64`·`비상업적 용도 무료`(금색)이고, 첫 화면에 MFT 데이터 스크린샷을, 주요 기능 아래에 파일 열기 스크린샷을 한 장 둔다. 이어서 남색 오프라인 분석 안내, FAQ, 다운로드 구역(Windows x64 직접 다운로드와 GitHub 링크)을 둔다. 다운로드 버튼은 Folder History·Boxes와 같은 `architectureDownload` 변형으로 `x64`를 금색으로 강조한다. 사용자 요청으로 자동 스크린샷 슬라이드와 `ScreenshotSlideshow` 컴포넌트를 삭제했다.
 
 홈 제품 카드는 768px 이상에서 동일한 너비·높이의 2×2 그리드로, 모바일에서는 한 열로 표시한다. 미리보기는 모두 240px 높이이며 Boxes는 전체 이미지를 `object-contain`으로 표시하고 CSV Search Engine은 아이콘을 표시한다. 제목·설명·행동 버튼의 크기와 본문 여백은 Clock·OSINTS에 맞춘다. 제품 상세 페이지 첫 화면에는 다운로드·설치/사용 안내·후원하기 버튼을 같은 행에 두며, 후원 버튼은 해당 언어의 후원 랜딩으로 연결한다.
 

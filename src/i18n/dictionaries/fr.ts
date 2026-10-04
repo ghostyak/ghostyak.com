@@ -16,7 +16,7 @@ const fr: Dictionary = {
     threads: "Partager sur Threads",
   },
   csvSearch: {
-    downloadAction: "Télécharger pour Windows",
+    downloadAction: "Télécharger pour Windows x64",
     "category": "Investigation numérique",
     "description": "Recherchez dans de volumineux fichiers CSV et Excel, au même endroit.",
     "repositoryAction": "Voir sur GitHub",

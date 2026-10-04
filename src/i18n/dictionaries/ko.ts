@@ -14,7 +14,7 @@ const ko = {
     threads: "Threads에 공유",
   },
   csvSearch: {
-    downloadAction: "Windows용 다운로드",
+    downloadAction: "Windows x64 다운로드",
     category: "디지털포렌식",
     description: "대용량 CSV·Excel 검색을 한 번에.",
     repositoryAction: "GitHub에서 보기",

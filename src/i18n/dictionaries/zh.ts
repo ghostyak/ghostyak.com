@@ -16,7 +16,7 @@ const zh: Dictionary = {
     threads: "分享到 Threads",
   },
   csvSearch: {
-    downloadAction: "下载Windows版",
+    downloadAction: "下载 Windows x64 版",
     "category": "数字取证",
     "description": "大型CSV、Excel文件搜索，一站搞定。",
     "repositoryAction": "在GitHub上查看",

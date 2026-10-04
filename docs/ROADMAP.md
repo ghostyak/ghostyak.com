@@ -206,3 +206,7 @@ ghostyak.com은 GhostYak 소프트웨어를 소개하고 배포하는 공식 웹
 ## 완료: pnpm 전환 (2026-10-04)
 
 - [x] 패키지 매니저를 npm에서 pnpm 11로 전환(`package-lock.json` 삭제, `pnpm-lock.yaml`·`packageManager` 추가)
+
+## 완료: CSV Search Engine 다운로드 버튼 x64 강조 (2026-10-04)
+
+- [x] 다운로드 버튼에 Boxes·Folder History와 같은 `x64` 금색 강조 적용(9개 언어 버튼 문구에 x64 추가)

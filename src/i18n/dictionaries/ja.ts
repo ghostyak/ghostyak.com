@@ -16,7 +16,7 @@ const ja: Dictionary = {
     threads: "Threadsで共有",
   },
   csvSearch: {
-    downloadAction: "Windows用をダウンロード",
+    downloadAction: "Windows x64版をダウンロード",
     "category": "デジタルフォレンジック",
     "description": "大容量CSV・Excelの検索を、これひとつで。",
     "repositoryAction": "GitHubで見る",

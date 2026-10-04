@@ -28,6 +28,7 @@ export async function CsvSearchProduct({ locale }: { locale: PublishedLocale }) 
     highlightIcon={ShieldCheck}
     productIcon={TableProperties}
     downloadUrl={csvSearchEngine.downloadUrl}
+    downloadArchitecture="x64"
     repository={{ url: csvSearchEngine.url, label: copy.repositoryAction }}
     viewScreenshot={dictionary.landing.actions.viewScreenshot}
     supportUrl={localizedPath(locale, "/support")}
