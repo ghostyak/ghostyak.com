@@ -28,10 +28,41 @@ export function SectionHeading({ id, eyebrow, title, description }: { id: string
   return <div><p className="mb-4 text-xs font-semibold tracking-wide text-brand-foreground">{eyebrow}</p><h2 id={id} className="whitespace-pre-line text-3xl font-semibold leading-[1.25] tracking-[-0.035em] text-balance sm:text-4xl">{title}</h2>{description && <p className="mt-5 max-w-xl text-base leading-8 text-muted-foreground">{description}</p>}</div>;
 }
 
-function Frame({ screenshot, sizes, preload = false }: { screenshot: Screenshot; sizes: string; preload?: boolean }) {
+export function Frame({ screenshot, sizes, preload = false }: { screenshot: Omit<Screenshot, "caption">; sizes: string; preload?: boolean }) {
   return <div className="overflow-hidden rounded-2xl bg-ink p-1.5 shadow-xl shadow-ink/15 sm:p-2">
     <Image src={screenshot.src} width={screenshot.width} height={screenshot.height} alt={screenshot.alt} sizes={sizes} preload={preload} className="h-auto w-full rounded-xl" />
   </div>;
+}
+
+// Ink band that states one product promise next to an icon.
+export function ProductHighlight({ id, icon: Icon, eyebrow, title, description }: { id: string; icon: LucideIcon; eyebrow: string; title: string; description: string }) {
+  return <section className="px-4 py-16 sm:px-8 sm:py-24" aria-labelledby={id}>
+    <div className="surface-ink mx-auto flex max-w-7xl flex-col gap-6 rounded-3xl p-8 shadow-2xl shadow-ink/20 sm:flex-row sm:items-center sm:gap-10 sm:p-12">
+      <span className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-brand/10 text-brand ring-1 ring-brand/30"><Icon className="size-6" aria-hidden="true" /></span>
+      <SectionHeading id={id} eyebrow={eyebrow} title={title} description={description} />
+    </div>
+  </section>;
+}
+
+export function ProductFaq({ id, title, items }: { id: string; title: string; items: readonly { question: string; answer: string }[] }) {
+  return <section className="border-t px-4 py-16 sm:px-8 sm:py-24" aria-labelledby={id}>
+    <div className="mx-auto grid max-w-7xl items-start gap-8 lg:grid-cols-[0.65fr_1.35fr] lg:gap-20">
+      <div><p className="mb-4 font-mono text-xs font-semibold text-brand-foreground">FAQ</p><h2 id={id} className="text-3xl font-semibold tracking-tight">{title}</h2></div>
+      <Accordion type="multiple" defaultValue={["faq-0"]} className="border-t">
+        {items.map((item, index) => <AccordionItem value={`faq-${index}`} key={item.question}><AccordionTrigger className="min-h-16 py-6 text-base font-medium leading-7">{item.question}</AccordionTrigger><AccordionContent className="pb-6 text-sm leading-7 text-muted-foreground"><p>{item.answer}</p></AccordionContent></AccordionItem>)}
+      </Accordion>
+    </div>
+  </section>;
+}
+
+// Closing ink band; children are the download buttons and links.
+export function ProductDownload({ id, icon: Icon, title, description, children }: { id: string; icon: LucideIcon; title: string; description: string; children: ReactNode }) {
+  return <section id="download" className="surface-ink scroll-mt-24 px-4 py-16 sm:px-8 sm:py-24" aria-labelledby={id}>
+    <div className="mx-auto flex max-w-7xl flex-col items-start gap-8 md:flex-row md:items-end md:justify-between">
+      <div><span className="mb-6 flex size-14 items-center justify-center rounded-2xl bg-brand/10 text-brand ring-1 ring-brand/30"><Icon className="size-6" aria-hidden="true" /></span><h2 id={id} className="whitespace-pre-line text-3xl font-semibold leading-tight tracking-[-0.035em] sm:text-4xl">{title}</h2><p className="mt-5 text-sm leading-7 text-muted-foreground">{description}</p></div>
+      <div className="w-full md:w-auto"><div className="flex flex-col items-start gap-2 md:items-end">{children}</div></div>
+    </div>
+  </section>;
 }
 
 export function DownloadLabel({ label, architecture }: { label: string; architecture?: DownloadArchitecture }) {
@@ -49,7 +80,7 @@ export function DownloadLabel({ label, architecture }: { label: string; architec
 
 // Shared product landing: hero, framed main screenshot, three steps, feature cards with
 // secondary screenshots, an ink highlight, FAQ and a download band.
-export function ProductLanding({ id, name, badges, copy, screenshots, featureIcons, highlightIcon: HighlightIcon, productIcon: ProductIcon, downloadUrl, downloadArchitecture, alternateDownload, repository, viewScreenshot, supportUrl, supportAction, shareUrl, shareLabels }: {
+export function ProductLanding({ id, name, badges, copy, screenshots, featureIcons, highlightIcon, productIcon, downloadUrl, downloadArchitecture, alternateDownload, repository, viewScreenshot, supportUrl, supportAction, shareUrl, shareLabels }: {
   id: string;
   name: string;
   badges: ReactNode;
@@ -119,27 +150,10 @@ export function ProductLanding({ id, name, badges, copy, screenshots, featureIco
       </div>
     </section>
 
-    <section className="px-4 py-16 sm:px-8 sm:py-24" aria-labelledby={`${id}-highlight`}>
-      <div className="surface-ink mx-auto flex max-w-7xl flex-col gap-6 rounded-3xl p-8 shadow-2xl shadow-ink/20 sm:flex-row sm:items-center sm:gap-10 sm:p-12">
-        <span className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-brand/10 text-brand ring-1 ring-brand/30"><HighlightIcon className="size-6" aria-hidden="true" /></span>
-        <SectionHeading id={`${id}-highlight`} eyebrow={copy.privacy.eyebrow} title={copy.privacy.title} description={copy.privacy.description} />
-      </div>
-    </section>
-
-    <section className="border-t px-4 py-16 sm:px-8 sm:py-24" aria-labelledby={`${id}-faq`}>
-      <div className="mx-auto grid max-w-7xl items-start gap-8 lg:grid-cols-[0.65fr_1.35fr] lg:gap-20">
-        <div><p className="mb-4 font-mono text-xs font-semibold text-brand-foreground">FAQ</p><h2 id={`${id}-faq`} className="text-3xl font-semibold tracking-tight">{copy.faq.title}</h2></div>
-        <Accordion type="multiple" defaultValue={["faq-0"]} className="border-t">
-          {copy.faq.items.map((item, index) => <AccordionItem value={`faq-${index}`} key={item.question}><AccordionTrigger className="min-h-16 py-6 text-base font-medium leading-7">{item.question}</AccordionTrigger><AccordionContent className="pb-6 text-sm leading-7 text-muted-foreground"><p>{item.answer}</p></AccordionContent></AccordionItem>)}
-        </Accordion>
-      </div>
-    </section>
-
-    <section id="download" className="surface-ink scroll-mt-24 px-4 py-16 sm:px-8 sm:py-24" aria-labelledby={`${id}-download`}>
-      <div className="mx-auto flex max-w-7xl flex-col items-start gap-8 md:flex-row md:items-end md:justify-between">
-        <div><span className="mb-6 flex size-14 items-center justify-center rounded-2xl bg-brand/10 text-brand ring-1 ring-brand/30"><ProductIcon className="size-6" aria-hidden="true" /></span><h2 id={`${id}-download`} className="whitespace-pre-line text-3xl font-semibold leading-tight tracking-[-0.035em] sm:text-4xl">{copy.download.title}</h2><p className="mt-5 text-sm leading-7 text-muted-foreground">{copy.download.description}</p></div>
-        <div className="w-full md:w-auto"><div className="flex flex-col items-start gap-2 md:items-end">{downloadLink}{alternateDownloadLink}<a href={repository.url} className={textLink} target="_blank" rel="noreferrer">{repository.label}<ArrowUpRight className="size-3.5" aria-hidden="true" /></a></div></div>
-      </div>
-    </section>
+    <ProductHighlight id={`${id}-highlight`} icon={highlightIcon} eyebrow={copy.privacy.eyebrow} title={copy.privacy.title} description={copy.privacy.description} />
+    <ProductFaq id={`${id}-faq`} title={copy.faq.title} items={copy.faq.items} />
+    <ProductDownload id={`${id}-download`} icon={productIcon} title={copy.download.title} description={copy.download.description}>
+      {downloadLink}{alternateDownloadLink}<a href={repository.url} className={textLink} target="_blank" rel="noreferrer">{repository.label}<ArrowUpRight className="size-3.5" aria-hidden="true" /></a>
+    </ProductDownload>
   </main>;
 }

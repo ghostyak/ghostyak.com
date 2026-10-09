@@ -4,7 +4,7 @@ import { HandHeart } from "lucide-react";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { NavDropdown } from "@/components/NavDropdown";
 import { buttonVariants } from "@/components/ui/button";
-import { boxes, clock, osints, csvSearchEngine, folderHistory } from "@/data/products";
+import { boxes, clock, osints, csvSearchEngine, folderHistory, notes } from "@/data/products";
 import { supportPagePath } from "@/data/support";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import type { PublishedLocale } from "@/i18n/locales";
@@ -13,6 +13,7 @@ import { ScrollAwareHeader } from "@/components/ScrollAwareHeader";
 
 export function Header({ labels, categoryLabels, locale, currentPath }: { labels: Dictionary["header"]; categoryLabels: { windows: string; web: string; forensics: string }; locale: PublishedLocale; currentPath: string }) {
   const productPath = localizedPath(locale, "/product/boxes");
+  const notesPath = localizedPath(locale, notes.pagePath);
   const csvSearchPath = localizedPath(locale, csvSearchEngine.pagePath);
   const folderHistoryPath = localizedPath(locale, folderHistory.pagePath);
   const blogPath = localizedPath(locale, "/blog");
@@ -25,6 +26,7 @@ export function Header({ labels, categoryLabels, locale, currentPath }: { labels
       <nav className="ml-auto flex min-w-0 items-center gap-0.5 sm:gap-2" aria-label={labels.navigationLabel}>
         <NavDropdown label={labels.products} groups={[
           { id: "windows-productivity", label: categoryLabels.windows, items: [
+            { name: notes.name, href: notesPath, icon: "notes", current: currentPath === notesPath },
             { name: boxes.name, href: productPath, icon: "boxes", current: currentPath === productPath },
             { name: folderHistory.name, href: folderHistoryPath, icon: "folderHistory", current: currentPath === folderHistoryPath },
           ] },

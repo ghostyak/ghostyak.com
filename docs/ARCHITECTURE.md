@@ -2,7 +2,7 @@
 
 ## 개요
 
-ghostyak.com은 Vercel에 배포하는 Next.js 애플리케이션이다. 영어를 기본 진입 언어로 하고 9개 로케일 접두사 경로에서 GhostYak 브랜드, Boxes 제품 소개와 무료 설치 파일, Clock과 OSINTS 웹앱 링크, CSV Search Engine의 DFIR 제품 소개와 GitHub 링크, Folder History 제품 소개와 무료 설치 파일, Markdown 블로그를 제공한다. 국제화는 기본 URL과 별개로 한국어 콘텐츠를 유일한 원문으로 삼으며 세부 기준은 [INTERNATIONALIZATION.md](./INTERNATIONALIZATION.md)를 따른다.
+ghostyak.com은 Vercel에 배포하는 Next.js 애플리케이션이다. 영어를 기본 진입 언어로 하고 9개 로케일 접두사 경로에서 GhostYak 브랜드, 주력 제품 Ghostyak Notes의 소개와 베타 설치 파일, Boxes 제품 소개와 무료 설치 파일, Clock과 OSINTS 웹앱 링크, CSV Search Engine의 DFIR 제품 소개와 GitHub 링크, Folder History 제품 소개와 무료 설치 파일, Markdown 블로그를 제공한다. 국제화는 기본 URL과 별개로 한국어 콘텐츠를 유일한 원문으로 삼으며 세부 기준은 [INTERNATIONALIZATION.md](./INTERNATIONALIZATION.md)를 따른다.
 
 ## 기술 구성
 
@@ -22,6 +22,7 @@ AdSense는 공통 head에서 일반 `<script async>`로 로드한다. `next/scri
 
 ```text
 content/blog/{locale}/           한국어 원문과 언어별 Markdown 블로그
+public/images/notes/             Ghostyak Notes 스크린샷
 public/images/boxes/             Boxes 홍보 이미지와 아이콘
 public/images/csv-search-Engine/ CSV Search Engine 스크린샷
 src/app/                         App Router 페이지와 메타데이터
@@ -40,6 +41,7 @@ docs/                            설계, 개발과 로드맵 문서
 ## 공개 경로
 
 - `/{locale}`: GhostYak 브랜드 홈과 제품 카드, 블로그 진입점
+- `/{locale}/product/notes`: Ghostyak Notes 제품 랜딩
 - `/{locale}/product/boxes`: Boxes 제품 랜딩
 - `/{locale}/product/csv-search-engine`, `/{locale}/product/folder-history`: 제품 랜딩
 - `/{locale}/support`: 후원 랜딩
@@ -81,7 +83,7 @@ Boxes의 버전, 설치 파일 URL과 실제 이미지 경로, Clock과 OSINTS�
 
 `components.json`은 New York 스타일, RSC, Tailwind v4와 소스 별칭을 정의한다. `src/components/ui/`의 공식 레지스트리 소스를 프로젝트에서 소유하며 `src/lib/utils.ts`의 `cn`으로 Tailwind 클래스를 병합한다. `globals.css`에는 의미 기반 테마 토큰과 기본 접근성 규칙을 둔다. DaisyUI는 제거했다. 메뉴는 Radix DropdownMenu로 키보드 포커스와 닫힘 처리를 관리한다.
 
-홈은 Boxes·Clock·OSINTS·CSV Search Engine·Folder History의 동일한 크기 카드와 블로그 진입 영역으로 구성한다. 블로그 목록은 카드, 상세는 좁은 본문 폭을 사용한다. 모든 공개 페이지는 루트 레이아웃의 본문 건너뛰기 링크와 공통 푸터를 공유한다.
+홈은 주력 제품 Ghostyak Notes의 전체 폭 카드, Boxes·Clock·OSINTS·CSV Search Engine·Folder History의 동일한 크기 카드와 블로그 진입 영역으로 구성한다. 블로그 목록은 카드, 상세는 좁은 본문 폭을 사용한다. 모든 공개 페이지는 루트 레이아웃의 본문 건너뛰기 링크와 공통 푸터를 공유한다.
 
 홈과 제품 상세 페이지는 `PageHero` Server Component로 제목·설명·배지·행동 버튼·보조 문구를 구성한다. 타이포그래피와 상하 여백은 이 컴포넌트에서 관리하며 페이지는 현재 언어의 문구와 링크만 전달한다. 제품 상세 페이지의 주요 행동은 다운로드, 설치·사용 안내, 현재 언어의 후원 랜딩 링크 순이다. 버튼 크기는 `heroActionClassName`으로 공유한다.
 ## CSV Search Engine
@@ -92,7 +94,13 @@ Boxes의 버전, 설치 파일 URL과 실제 이미지 경로, Clock과 OSINTS�
 
 CSV Search Engine 상세페이지 `CsvSearchProduct`는 Server Component이며 공통 `ProductLanding`에 제품 데이터와 사전 `csvSearch` 문구를 전달한다. FAQ Accordion만 클라이언트 경계다. 자동 슬라이드 `ScreenshotSlideshow`는 삭제했다. 공유 메타데이터 제목은 `csvSearch.metadataTitle`, 설명은 `csvSearch.description`이다.
 
-`NavDropdown`은 명시적 아이콘 키와 그룹 데이터를 받는다. `윈도우즈 생산성`(Boxes·Folder History), `웹앱`(Clock·OSINTS), `디지털포렌식`(CSV Search Engine) 세 그룹을 제공한다. 분류 이름은 루트 레이아웃이 사전의 `productCategories.windowsProductivity`·`productCategories.webApps`와 `csvSearch.category`에서 읽어 `Header`에 전달한다. 홈의 `ProductCategory`도 같은 분류와 순서를 쓰며 푸터 링크도 이 순서를 따른다. 헤더 메뉴 순서는 제품, 블로그, 후원하기, 언어다. 후원하기는 드롭다운이 아니라 후원 랜딩(`/support`, `supportPagePath`)으로 가는 일반 링크다. 후원 수단은 `src/data/support.ts`의 `supportLinks`(id·이름·URL·공식 로고)에서 관리하며 후원 랜딩과 푸터 외부 링크가 같은 목록을 쓴다. 토스아이디 같은 새 수단은 이 목록과 각 사전의 `supportPage.methods.items`에 같은 id로 추가한다. 후원 메뉴 이름은 사전의 `header.support`다. 그룹은 shadcn DropdownMenuGroup·Label·Separator를 사용하며 접근성 이름을 연결한다.
+`NavDropdown`은 명시적 아이콘 키와 그룹 데이터를 받는다. `윈도우즈 생산성`(Ghostyak Notes·Boxes·Folder History), `웹앱`(Clock·OSINTS), `디지털포렌식`(CSV Search Engine) 세 그룹을 제공한다. 분류 이름은 루트 레이아웃이 사전의 `productCategories.windowsProductivity`·`productCategories.webApps`와 `csvSearch.category`에서 읽어 `Header`에 전달한다. 홈의 `ProductCategory`도 같은 분류와 순서를 쓰며 푸터 링크도 이 순서를 따른다. 헤더 메뉴 순서는 제품, 블로그, 후원하기, 언어다. 후원하기는 드롭다운이 아니라 후원 랜딩(`/support`, `supportPagePath`)으로 가는 일반 링크다. 후원 수단은 `src/data/support.ts`의 `supportLinks`(id·이름·URL·공식 로고)에서 관리하며 후원 랜딩과 푸터 외부 링크가 같은 목록을 쓴다. 토스아이디 같은 새 수단은 이 목록과 각 사전의 `supportPage.methods.items`에 같은 id로 추가한다. 후원 메뉴 이름은 사전의 `header.support`다. 그룹은 shadcn DropdownMenuGroup·Label·Separator를 사용하며 접근성 이름을 연결한다.
+
+## Ghostyak Notes
+
+Ghostyak Notes는 주력 제품이다. `NotesProduct`는 상세페이지(`/{locale}/product/notes`의 9개 접두사 경로)를 그리는 Server Component이며, 기능마다 스크린샷을 한 장씩 보여 주기 위해 `ProductLanding` 전체 대신 그 조각(`Frame`·`SectionHeading`·`DownloadLabel`·`ProductHighlight`·`ProductFaq`·`ProductDownload`)을 재사용한다. FAQ Accordion과 `ShareLinks`만 클라이언트 경계다. 제품명·제품 경로·플랫폼·직접 다운로드 URL·스크린샷 여섯 장의 경로와 원본 크기는 `src/data/products.ts`의 `notes`에서 관리하며 스크린샷은 `annotate`·`pen`·`search`·`library`·`pages`·`spread` 키로 찾는다. 문구는 `src/i18n/notes/{locale}.ts`에 두고 각 사전의 `notes` 키로 가져온다(Boxes의 `landing`과 같은 방식). 메타데이터는 `src/i18n/notes-metadata.ts`, sitemap 항목은 `src/app/sitemap.ts`에 둔다.
+
+홈의 `NotesFeatureCard`는 제품 분류 위에 놓이는 전체 폭 카드로 제품 둘러보기와 직접 다운로드 버튼을 함께 제공한다. 홈의 우선 로드 이미지(`preload`)는 이 카드의 스크린샷이다. 공통 제품 메뉴의 `윈도우즈 생산성` 그룹과 푸터 메뉴에서는 Notes를 맨 앞에 둔다.
 
 ## Folder History
 

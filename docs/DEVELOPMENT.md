@@ -105,7 +105,7 @@ Markdown 본문
 
 ## shadcn/ui 유지보수
 
-홈·Boxes·CSV Search Engine·Folder History 히어로 수정은 `src/components/PageHero.tsx`를 기준으로 한다. 페이지별 제목 크기·상단 여백을 따로 덮어쓰지 않는다. 320px·768px·데스크톱에서 세 페이지의 제목 크기·설명 줄 높이·배지 간격·버튼 높이를 함께 확인한다.
+홈·Ghostyak Notes·Boxes·CSV Search Engine·Folder History 히어로 수정은 `src/components/PageHero.tsx`를 기준으로 한다. 페이지별 제목 크기·상단 여백을 따로 덮어쓰지 않는다. 320px·768px·데스크톱에서 세 페이지의 제목 크기·설명 줄 높이·배지 간격·버튼 높이를 함께 확인한다.
 
 `components.json`과 `src/components/ui/`를 디자인 시스템의 기준으로 사용한다. 필요 시 `pnpm dlx shadcn@latest add <component>`로 공식 컴포넌트를 추가하고 변경 내용을 검토한다. 서버 링크는 `buttonVariants`, 조건부 클래스는 `cn`으로 구성한다. 버튼의 번역문이 길면 `h-auto min-h-11 whitespace-normal`을 적용한다. 메뉴와 Accordion 이외의 페이지 전체를 클라이언트 컴포넌트로 바꾸지 않는다.
 
@@ -121,6 +121,14 @@ CSV 상세페이지는 공통 `ProductLanding`을 쓰므로 Folder History 페�
 ## 후원 수단 관리
 
 후원 수단은 `src/data/support.ts`의 `supportLinks` 한 곳에서 관리한다. 새 수단을 추가할 때는 목록에 항목(id·이름·URL·공식 로고 경로와 원본 크기)을 넣고, 서비스가 공개한 공식 로고 SVG를 `public/images/support/`에 원본 그대로 저장한 뒤(색·비율 변경 금지), 같은 id로 9개 사전의 `supportPage.methods.items`에 설명을 추가한다(한국어 원문 먼저). 사전 키가 빠지면 TypeScript와 빌드 검증이 실패한다. 후원 랜딩과 푸터에 자동으로 표시된다.
+
+## Ghostyak Notes 관리
+
+제품 데이터는 `src/data/products.ts`의 `notes`, 상세 UI는 `NotesProduct`, 홈 카드는 `NotesFeatureCard`, 문구는 `src/i18n/notes/{locale}.ts`(각 사전의 `notes` 키)에서 관리한다. 제품 설명의 근거는 Notes 개발 저장소의 `docs/01-product.md`(기능 범위)·`docs/06-ui.md`(화면)·`docs/11-beta.md`(베타 조건)와 `public/images/notes/`의 스크린샷 여섯 장(각 2880×1800)이다. 설계 문서에만 있고 아직 구현되지 않은 기능(OCR, 손글씨 검색, AI 요약, 필기를 포함한 PDF 내보내기 등)은 공개 설명에 넣지 않는다.
+
+`notes.downloadUrl`은 사용자가 지정한 베타 릴리스의 설치 파일 주소를 그대로 쓴다. 주소에 릴리스 태그가 들어 있으므로 새 버전을 배포하면 이 값을 함께 바꾼다. 베타 조건(사용 기간, 기간이 끝난 뒤의 동작)이나 정식 출시로 조건이 바뀌면 배지·히어로 보조 문구·베타 안내·FAQ·다운로드 설명을 한국어 원문부터 고친 뒤 8개 번역에 반영한다. 스크린샷을 교체하면 `notes.screenshots`의 원본 크기와 각 언어의 대체 텍스트·캡션을 함께 갱신한다. 기능 소개 줄의 순서는 `NotesProduct`의 `showcaseOrder`에서 정한다.
+
+검수할 때는 320px·390px·768px·데스크톱에서 기능 소개 줄의 좌우 교차와 세로 쌓임, 긴 번역의 배지·버튼 줄바꿈, `#features`·`#download` 이동, 다운로드 링크, 홈 카드의 두 버튼을 확인한다.
 
 ## Folder History 관리
 

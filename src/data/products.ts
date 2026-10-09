@@ -27,6 +27,23 @@ export const boxes = {
   ] satisfies readonly CarouselImage[],
 } as const;
 
+const notesScreenshot = { width: 2880, height: 1800 } as const;
+
+export const notes = {
+  name: "Ghostyak Notes",
+  pagePath: "/product/notes",
+  platform: "Windows · x64",
+  downloadUrl: "https://github.com/ghostyak/notes/releases/download/v0.1.0-beta/ghostyak-notes_0.1.0-beta_x64-setup.exe",
+  screenshots: {
+    annotate: { src: "/images/notes/02-annotate.png", ...notesScreenshot },
+    pen: { src: "/images/notes/05-pen-settings.png", ...notesScreenshot },
+    search: { src: "/images/notes/03-search.png", ...notesScreenshot },
+    library: { src: "/images/notes/01-library.png", ...notesScreenshot },
+    pages: { src: "/images/notes/04-pages.png", ...notesScreenshot },
+    spread: { src: "/images/notes/06-spread.png", ...notesScreenshot },
+  },
+} as const;
+
 export const clock = {
   name: "Clock",
   url: "https://clock.ghostyak.com/",

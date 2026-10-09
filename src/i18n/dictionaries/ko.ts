@@ -1,6 +1,8 @@
 import landing from "@/i18n/landing/ko";
+import notes from "@/i18n/notes/ko";
 const ko = {
   landing,
+  notes,
   share: {
     heading: "마음에 드셨다면 공유해 주세요",
     copyLink: "링크 복사",

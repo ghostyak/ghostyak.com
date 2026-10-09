@@ -1,12 +1,12 @@
 "use client";
 
 import { Fragment, useId } from "react";
-import { ArrowUpRight, ChevronDown, Clock3, FolderClock, PanelsTopLeft, ScanSearch, TableProperties } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Clock3, FolderClock, NotebookPen, PanelsTopLeft, ScanSearch, TableProperties } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 // Icon keys keep the server-to-client props serializable.
-const icons = { boxes: PanelsTopLeft, clock: Clock3, osints: ScanSearch, folderHistory: FolderClock, csvSearch: TableProperties };
+const icons = { notes: NotebookPen, boxes: PanelsTopLeft, clock: Clock3, osints: ScanSearch, folderHistory: FolderClock, csvSearch: TableProperties };
 export type NavIcon = keyof typeof icons;
 export type NavLink = { name: string; href: string; icon: NavIcon; external?: boolean; current?: boolean };
 type NavGroup = { id: string; label?: string; items: NavLink[] };

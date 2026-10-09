@@ -111,7 +111,7 @@ for (const headers of preferences) {
   await checkRedirect("/", "/en", headers);
   await checkRedirect("/product/boxes?utm_source=test", "/en/product/boxes?utm_source=test", headers);
   for (const locale of ["ko", "en"]) {
-    for (const suffix of ["", "/product/boxes", "/product/csv-search-engine"]) {
+    for (const suffix of ["", "/product/notes", "/product/boxes", "/product/csv-search-engine"]) {
       const path = `/${locale}${suffix}`;
       const response = await request(`${path}?utm_source=test`, headers);
       assert.equal(response.status, 200, `${path}: language preference changed response`);

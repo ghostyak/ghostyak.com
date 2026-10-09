@@ -1,8 +1,10 @@
 import landing from "@/i18n/landing/ja";
+import notes from "@/i18n/notes/ja";
 import type { Dictionary } from "@/i18n/get-dictionary";
 
 const ja: Dictionary = {
   landing,
+  notes,
   share: {
     heading: "役に立ったら、ぜひ共有してください",
     copyLink: "リンクをコピー",

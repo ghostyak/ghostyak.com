@@ -72,6 +72,8 @@ Vercel 환경 변수를 변경한 뒤에는 새 배포가 필요하다. 값이 �
 | --- | --- | --- |
 | `/` | 308 | `/en` 진입점 |
 | `/en`, `/ko` | 200 | 영어·한국어 canonical 홈 |
+| `/product/notes` | 308 | `/en/product/notes` |
+| `/en/product/notes`, `/ko/product/notes` | 200 | 언어별 canonical |
 | `/product/boxes` | 308 | `/en/product/boxes` |
 | `/en/product/boxes`, `/ko/product/boxes` | 200 | 언어별 canonical |
 | `/product/csv-search-engine` | 308 | `/en/product/csv-search-engine` |

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-import { osints, csvSearchEngine, folderHistory } from "@/data/products";
+import { osints, csvSearchEngine, folderHistory, notes } from "@/data/products";
 import { socialLinks } from "@/data/social";
 import { supportLinkName, supportLinks, supportPagePath } from "@/data/support";
 import type { Dictionary } from "@/i18n/get-dictionary";
@@ -18,6 +18,7 @@ export function Footer({ labels, supportLabel, locale }: { labels: Dictionary["f
           <p className="mt-4 max-w-sm text-sm leading-7 text-muted-foreground">{labels.description}</p>
         </div>
         <nav className="flex flex-wrap content-start gap-x-7 text-sm" aria-label={labels.navigationLabel}>
+          <a className={footerLink} href={localizedPath(locale, notes.pagePath)}>{notes.name}</a>
           <a className={footerLink} href={localizedPath(locale, "/product/boxes")}>Boxes</a>
           <a className={footerLink} href={localizedPath(locale, folderHistory.pagePath)}>{folderHistory.name}</a>
           <a className={footerLink} href="https://clock.ghostyak.com/" rel="noreferrer" target="_blank">Clock</a>

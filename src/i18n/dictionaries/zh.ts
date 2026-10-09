@@ -1,8 +1,10 @@
 import landing from "@/i18n/landing/zh";
+import notes from "@/i18n/notes/zh";
 import type { Dictionary } from "@/i18n/get-dictionary";
 
 const zh: Dictionary = {
   landing,
+  notes,
   share: {
     heading: "觉得有用？分享给更多人吧",
     copyLink: "复制链接",

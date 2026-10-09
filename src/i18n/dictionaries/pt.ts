@@ -1,8 +1,10 @@
 import landing from "@/i18n/landing/pt";
+import notes from "@/i18n/notes/pt";
 import type { Dictionary } from "@/i18n/get-dictionary";
 
 const pt: Dictionary = {
   landing,
+  notes,
   share: {
     heading: "Se esta página foi útil para você, compartilhe",
     copyLink: "Copiar link",

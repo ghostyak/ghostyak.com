@@ -13,6 +13,7 @@ import { getAllPosts, getPost, type BlogPostSummary } from "@/lib/blog";
 import { getBlogPostingJsonLd, getSoftwareApplicationJsonLd, siteUrl } from "@/seo";
 import { RenewalLanding } from "@/components/renewal/RenewalLanding";
 import { CsvSearchCard } from "@/components/CsvSearchCard";
+import { NotesFeatureCard } from "@/components/NotesFeatureCard";
 import { ShareLinks } from "@/components/ShareLinks";
 import { PageHero } from "@/components/PageHero";
 import { ProductCard } from "@/components/ProductCard";
@@ -72,6 +73,7 @@ export async function HomeContent({ locale }: { locale: PublishedLocale }) {
 
       <div className="relative mx-auto -mt-24 max-w-7xl px-4 pb-16 sm:-mt-32 sm:px-8 sm:pb-24">
         <div className="space-y-12 sm:space-y-16">
+          <NotesFeatureCard copy={dictionary.notes} locale={locale} viewAction={copy.products.viewAction} />
           <ProductCategory id="windows-productivity" label={dictionary.productCategories.windowsProductivity} icon={AppWindow}>
               <ProductCard
                 name={boxes.name}
@@ -81,7 +83,7 @@ export async function HomeContent({ locale }: { locale: PublishedLocale }) {
                 preview={<figure className="relative h-full bg-ink p-4 sm:p-6">
                   <div className="absolute inset-x-10 bottom-0 h-24 rounded-full bg-brand/20 blur-3xl" aria-hidden="true" />
                   <a href={localizedPath(locale, "/product/boxes")} className="relative block h-full" aria-label={copy.products.viewAction + ": Boxes"}>
-                    <Image {...boxes.preview} preload className="h-full w-full object-contain" alt={dictionary.boxes.screenshotAlts[0]} sizes="(min-width: 1280px) 540px, (min-width: 768px) calc((100vw - 138px) / 2), calc(100vw - 82px)" />
+                    <Image {...boxes.preview} className="h-full w-full object-contain" alt={dictionary.boxes.screenshotAlts[0]} sizes="(min-width: 1280px) 540px, (min-width: 768px) calc((100vw - 138px) / 2), calc(100vw - 82px)" />
                   </a>
                 </figure>}
               />
