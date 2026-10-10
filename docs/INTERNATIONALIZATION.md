@@ -384,3 +384,7 @@ Folder History 저장소의 README와 설계 문서를 근거로 작성한 한�
 ## 다운로드 링크 수정·Boxes v0.4.1 배포 블로그 글
 
 2026-10-04 `download-links-fixed`와 `boxes-041-release`(둘 다 `sourceRevision: 1`)는 사용자가 승인한 한국어 원문과 8개 번역이다. `download-links-fixed`는 Boxes·Folder History 설치 파일 이름이 바뀌어 다운로드 버튼이 404를 내던 문제와 그 수정만 짧게 다룬다. `boxes-041-release`의 근거는 Boxes 재작성 저장소의 PRODUCT·RELEASE·DATA_MODEL 문서와 GitHub v0.4.1 릴리스다. WebView2·관리자 권한 없는 사용자 설치, 라이브 박스, 박스별 보기 전환, 업데이트 알림, 서명 없는 설치 파일의 SmartScreen 경고, 이전 버전 박스 자동 가져오기, 위젯 제외를 설명한다. 메뉴·보기 이름은 앱의 9개 언어 문구(`popup.itemMenu.makePortal`, `native.view*`)를, SmartScreen과 Windows 11 "더 많은 옵션 표시"는 각 언어 Windows 표기를 따른다. 대표 이미지와 `imageAlt`는 `boxes-performance-update`와 같다.
+
+## Ghostyak Notes 출시·v0.1.2-beta 블로그 글
+
+2026-10-10 `notes-launch`와 `notes-012-beta-release`(둘 다 `sourceRevision: 1`)는 사용자가 승인한 한국어 원문과 8개 번역이다. `notes-launch`는 Windows용 PDF 노트 앱의 베타 출시만 짧게 알리며, 블로그 목록에서 릴리스 글보다 앞에 오도록 `publishedAt`을 `2026-10-09`로 둔다. `notes-012-beta-release`의 근거는 Notes 개발 저장소의 `v0.1.2-beta`까지의 커밋 기록이다. 스캔한 쪽의 자동 OCR(찾기·선택·복사, 보고 있는 쪽 먼저, 진행 표시와 중지, PC 안에서 인식), 고른 글을 기본 브라우저의 사전으로 여는 기능(기본값 네이버 사전, 설정에서 추가), 시작 화면·쪽 넘김 깜박임·메뉴 잘림 수정, 코넬 노트·문서 안 링크·어두운 테마·단축키 바꾸기를 설명한다. 1차 출시에서 뺀 손글씨 검색은 넣지 않는다. 메뉴 이름 **사전**은 앱의 영어 표기 `Dictionary`를 따르고, 앱이 아직 지원하지 않는 언어에서는 뜻이 통하는 낱말로 옮겼다. `OCR`과 `NAVER`는 번역하지 않는다.
