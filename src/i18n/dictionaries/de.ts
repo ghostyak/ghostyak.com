@@ -253,7 +253,7 @@ const de: Dictionary = {
     },
     thanks: { title: "Danke", description: "Danke, dass du GhostYak nutzt und unterstützt. Wir revanchieren uns mit besseren Tools." },
   },
-  footer: { description: "Software, die den täglichen Windows-Arbeitsbereich einfacher macht.", navigationLabel: "Fußzeilenmenü", blog: "Blog" },
+  footer: { description: "Software, die den täglichen Windows-Arbeitsbereich einfacher macht.", navigationLabel: "Fußzeilenmenü", blog: "Blog", privacy: "Datenschutzerklärung" },
   carousel: { slideLabel: "Ansicht {index} anzeigen", pauseLabel: "Automatischen Wechsel anhalten", playLabel: "Automatischen Wechsel fortsetzen", pause: "Pause", play: "Abspielen" },
   home: {
     screenReaderTitle: "GhostYak-Software",

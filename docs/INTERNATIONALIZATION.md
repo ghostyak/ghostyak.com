@@ -388,3 +388,9 @@ Folder History 저장소의 README와 설계 문서를 근거로 작성한 한�
 ## Ghostyak Notes 출시·v0.1.2-beta 블로그 글
 
 2026-10-10 `notes-launch`와 `notes-012-beta-release`(둘 다 `sourceRevision: 1`)는 사용자가 승인한 한국어 원문과 8개 번역이다. `notes-launch`는 Windows용 PDF 노트 앱의 베타 출시만 짧게 알리며, 블로그 목록에서 릴리스 글보다 앞에 오도록 `publishedAt`을 `2026-10-09`로 둔다. `notes-012-beta-release`의 근거는 Notes 개발 저장소의 `v0.1.2-beta`까지의 커밋 기록이다. 스캔한 쪽의 자동 OCR(찾기·선택·복사, 보고 있는 쪽 먼저, 진행 표시와 중지, PC 안에서 인식), 고른 글을 기본 브라우저의 사전으로 여는 기능(기본값 네이버 사전, 설정에서 추가), 시작 화면·쪽 넘김 깜박임·메뉴 잘림 수정, 코넬 노트·문서 안 링크·어두운 테마·단축키 바꾸기를 설명한다. 1차 출시에서 뺀 손글씨 검색은 넣지 않는다. 메뉴 이름 **사전**은 앱의 영어 표기 `Dictionary`를 따르고, 앱이 아직 지원하지 않는 언어에서는 뜻이 통하는 낱말로 옮겼다. `OCR`과 `NAVER`는 번역하지 않는다.
+
+## 개인정보처리방침
+
+2026-10-10 사용자 결정으로 개인정보처리방침은 한국어로만 공개한다. 원문은 `content/legal/ko/privacy-policy.md`이며 번역 파일을 두지 않는다. 페이지는 `/ko/privacy` 하나이고 다른 로케일의 `/{locale}/privacy`는 이 주소로 이동한다. canonical은 `/ko/privacy`만 가리키며 `hreflang` 대체 주소를 내지 않고, sitemap에도 한국어 주소 하나만 넣는다. 푸터의 링크 이름만 `footer.privacy` 키로 9개 언어에 번역하고, 링크에는 `hreflang="ko"`를 붙인다. 다른 언어로 공개하기로 하면 한국어 원문을 먼저 확정한 뒤 번역과 로케일별 경로를 추가한다.
+
+방침의 근거는 사이트 코드(Google Analytics·Google AdSense·Vercel Analytics 로더, 회원가입·결제 없음)와 각 앱 저장소의 문서(Notes는 실행 중 네트워크를 쓰지 않고 사전 기능만 선택한 글을 브라우저로 넘김, Boxes는 사용자가 켠 업데이트 확인만 GitHub에 접속)다. 사이트나 앱이 처리하는 정보가 바뀌면 방침을 먼저 고치고 개정 이력에 적는다. 이용약관은 보류했다.

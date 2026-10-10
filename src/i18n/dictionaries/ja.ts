@@ -253,7 +253,7 @@ const ja: Dictionary = {
     },
     thanks: { title: "ありがとうございます", description: "GhostYakを使い、応援してくださりありがとうございます。より良いツールでお応えします。" },
   },
-  footer: { description: "毎日のWindowsワークスペースをもっとシンプルにするソフトウェア。", navigationLabel: "フッターメニュー", blog: "ブログ" },
+  footer: { description: "毎日のWindowsワークスペースをもっとシンプルにするソフトウェア。", navigationLabel: "フッターメニュー", blog: "ブログ", privacy: "プライバシーポリシー" },
   carousel: { slideLabel: "{index}番目の画面を表示", pauseLabel: "自動切り替えを一時停止", playLabel: "自動切り替えを再開", pause: "停止", play: "再生" },
   home: {
     screenReaderTitle: "GhostYakソフトウェア",

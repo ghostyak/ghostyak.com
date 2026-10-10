@@ -184,6 +184,7 @@ const ko = {
     description: "일상의 Windows 작업 공간을 더 단순하게 만드는 소프트웨어.",
     navigationLabel: "푸터 메뉴",
     blog: "블로그",
+    privacy: "개인정보처리방침",
   },
   carousel: {
     slideLabel: "{index}번째 화면 보기",

@@ -253,7 +253,7 @@ const zh: Dictionary = {
     },
     thanks: { title: "谢谢", description: "感谢您使用并支持 GhostYak。我们会用更好的工具回报您。" },
   },
-  footer: { description: "让日常 Windows 工作空间更简单的软件。", navigationLabel: "页脚菜单", blog: "博客" },
+  footer: { description: "让日常 Windows 工作空间更简单的软件。", navigationLabel: "页脚菜单", blog: "博客", privacy: "隐私政策" },
   carousel: { slideLabel: "查看第 {index} 个画面", pauseLabel: "暂停自动轮播", playLabel: "继续自动轮播", pause: "暂停", play: "播放" },
   home: {
     screenReaderTitle: "GhostYak 软件",

@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next";
 import { boxes, csvSearchEngine, folderHistory, notes } from "@/data/products";
 import { supportPagePath } from "@/data/support";
-import { defaultLocale, localeConfig, publishedLocales, type PublishedLocale } from "@/i18n/locales";
+import { defaultLocale, localeConfig, publishedLocales, sourceLocale, type PublishedLocale } from "@/i18n/locales";
 import { localizedPath } from "@/i18n/routing";
 import { validatePublishedDictionaries } from "@/i18n/validate";
 import { getAllPosts, validatePublishedBlogTranslations } from "@/lib/blog";
+import { privacyPolicyPath } from "@/lib/legal";
 import { siteUrl } from "@/seo";
 
 function absoluteLocalizedUrl(locale: PublishedLocale, path: `/${string}` | "/") {
@@ -26,7 +27,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     publishedLocales.map(async (locale) => ({ locale, posts: await getAllPosts(locale) })),
   );
 
-  return publishedLocales.flatMap((locale) => [
+  // The privacy policy is published in Korean only.
+  const privacyPolicy = { url: absoluteLocalizedUrl(sourceLocale, privacyPolicyPath), changeFrequency: "yearly" as const, priority: 0.3 };
+
+  return [...publishedLocales.flatMap((locale) => [
     {
       url: absoluteLocalizedUrl(locale, "/"),
       changeFrequency: "monthly" as const,
@@ -83,5 +87,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.6,
         alternates: { languages: languageAlternates(`/blog/${post.slug}`) },
       })),
-  ]);
+  ]), privacyPolicy];
 }

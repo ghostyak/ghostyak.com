@@ -253,7 +253,7 @@ const en: Dictionary = {
     },
     thanks: { title: "Thank you", description: "Thank you for using and supporting GhostYak. We'll repay you with better tools." },
   },
-  footer: { description: "Software that makes your everyday Windows workspace simpler.", navigationLabel: "Footer navigation", blog: "Blog" },
+  footer: { description: "Software that makes your everyday Windows workspace simpler.", navigationLabel: "Footer navigation", blog: "Blog", privacy: "Privacy Policy" },
   carousel: { slideLabel: "View slide {index}", pauseLabel: "Pause automatic rotation", playLabel: "Resume automatic rotation", pause: "Pause", play: "Play" },
   home: {
     screenReaderTitle: "GhostYak software",

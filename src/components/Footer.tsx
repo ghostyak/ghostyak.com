@@ -1,11 +1,14 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import { ContactEmail } from "@/components/ContactEmail";
+import { copyrightHolder } from "@/data/contact";
 import { osints, csvSearchEngine, folderHistory, notes } from "@/data/products";
 import { socialLinks } from "@/data/social";
 import { supportLinkName, supportLinks, supportPagePath } from "@/data/support";
 import type { Dictionary } from "@/i18n/get-dictionary";
-import type { PublishedLocale } from "@/i18n/locales";
+import { sourceLocale, type PublishedLocale } from "@/i18n/locales";
 import { localizedPath } from "@/i18n/routing";
+import { privacyPolicyPath } from "@/lib/legal";
 
 const footerLink = "inline-flex min-h-11 items-center gap-1 text-muted-foreground transition-colors hover:text-foreground";
 
@@ -29,7 +32,11 @@ export function Footer({ labels, supportLabel, locale }: { labels: Dictionary["f
         </nav>
       </div>
       <div className="mt-12 flex flex-wrap items-center justify-between gap-x-8 border-t pt-4 text-xs text-muted-foreground">
-        <p>© {new Date().getFullYear()} GhostYak</p>
+        <div className="flex min-h-11 flex-wrap items-center gap-x-5">
+          <p>© {new Date().getFullYear()} {copyrightHolder}</p>
+          <ContactEmail className={footerLink} />
+          <a className={footerLink} href={localizedPath(sourceLocale, privacyPolicyPath)} hrefLang={sourceLocale}>{labels.privacy}</a>
+        </div>
         <div className="flex flex-wrap gap-x-5">{[...Object.values(socialLinks), ...supportLinks.map(link => ({ href: link.url, label: supportLinkName(link, locale) }))].map(link => <a className={footerLink} href={link.href} key={link.label} rel="noreferrer" target="_blank">{link.label}<ArrowUpRight className="size-3" aria-hidden="true" /></a>)}</div>
       </div>
     </div>

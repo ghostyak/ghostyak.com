@@ -22,6 +22,7 @@ AdSense는 공통 head에서 일반 `<script async>`로 로드한다. `next/scri
 
 ```text
 content/blog/{locale}/           한국어 원문과 언어별 Markdown 블로그
+content/legal/ko/                한국어로만 공개하는 개인정보처리방침
 public/images/notes/             Ghostyak Notes 스크린샷
 public/images/boxes/             Boxes 홍보 이미지와 아이콘
 public/images/csv-search-Engine/ CSV Search Engine 스크린샷
@@ -33,6 +34,7 @@ src/data/products.ts             언어 중립 제품, 다운로드와 이미지
 src/i18n/                        로케일 레지스트리, 원문 사전과 서버 로더
 src/proxy.ts                     URL 정규화와 로케일 요청 처리
 src/lib/blog.ts                  Markdown 조회와 변환
+src/lib/legal.ts                 개인정보처리방침 Markdown 조회와 변환
 docs/                            설계, 개발과 로드맵 문서
 ```
 
@@ -46,6 +48,7 @@ docs/                            설계, 개발과 로드맵 문서
 - `/{locale}/product/csv-search-engine`, `/{locale}/product/folder-history`: 제품 랜딩
 - `/{locale}/support`: 후원 랜딩
 - `/{locale}/blog`, `/{locale}/blog/[slug]`: Markdown 목록과 글
+- `/ko/privacy`: 개인정보처리방침. 한국어로만 공개하며 다른 로케일의 `/{locale}/privacy`는 `/ko/privacy`로 307 이동한다
 - `/{locale}/product/boxes/download`: 같은 언어 제품의 `#download`로 308 이동
 - `/`, `/product/...`, `/blog/...`, `/support`: 영어 `/en/...`로 308 이동하는 legacy 경로
 

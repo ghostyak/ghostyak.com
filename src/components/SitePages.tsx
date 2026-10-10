@@ -10,15 +10,20 @@ import { getDictionary } from "@/i18n/get-dictionary";
 import { localeConfig, type PublishedLocale } from "@/i18n/locales";
 import { localizedPath } from "@/i18n/routing";
 import { getAllPosts, getPost, type BlogPostSummary } from "@/lib/blog";
+import { getLegalDocument } from "@/lib/legal";
 import { getBlogPostingJsonLd, getSoftwareApplicationJsonLd, siteUrl } from "@/seo";
 import { RenewalLanding } from "@/components/renewal/RenewalLanding";
 import { CsvSearchCard } from "@/components/CsvSearchCard";
 import { NotesFeatureCard } from "@/components/NotesFeatureCard";
 import { ShareLinks } from "@/components/ShareLinks";
+import { ContactEmail } from "@/components/ContactEmail";
 import { PageHero } from "@/components/PageHero";
 import { ProductCard } from "@/components/ProductCard";
 
 const eyebrowClassName = "inline-flex items-center justify-center gap-2.5 text-xs font-semibold tracking-[0.18em] text-brand-foreground";
+
+// Typography for Markdown rendered into blog posts and legal documents.
+const markdownBodyClassName = "text-base leading-8 text-foreground/85 sm:text-lg [&_a]:font-medium [&_a]:text-foreground [&_a]:underline [&_a]:decoration-brand [&_a]:decoration-2 [&_a]:underline-offset-4 [&_a:hover]:decoration-ink [&_blockquote]:my-8 [&_blockquote]:border-l-4 [&_blockquote]:border-brand [&_blockquote]:pl-5 [&_blockquote]:text-muted-foreground [&_code]:rounded [&_code]:bg-muted [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:text-[0.9em] [&_h2]:mb-4 [&_h2]:mt-14 [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:tracking-tight [&_h2]:text-foreground [&_h3]:mt-8 [&_h3]:font-semibold [&_h3]:text-foreground [&_hr]:my-12 [&_img]:h-auto [&_img]:max-w-full [&_img]:rounded-2xl [&_img]:border [&_li]:ml-6 [&_li]:pl-1 [&_ol]:list-decimal [&_p]:my-5 [&_pre]:overflow-x-auto [&_pre]:rounded-xl [&_pre]:bg-muted [&_pre]:p-4 [&_pre_code]:bg-transparent [&_pre_code]:p-0 [&_strong]:font-semibold [&_strong]:text-foreground [&_ul]:my-6 [&_ul]:list-disc [&_ul]:space-y-2";
 
 // Decorative gold glow and grid behind ink hero bands.
 function InkBackdrop() {
@@ -180,8 +185,26 @@ export async function BlogPostContent({ locale, slug }: { locale: PublishedLocal
       </div>
     </header>
     <div className="px-4 py-12 sm:px-8 sm:py-16">
-      <div className="mx-auto max-w-3xl text-base leading-8 text-foreground/85 sm:text-lg [&_a]:font-medium [&_a]:text-foreground [&_a]:underline [&_a]:decoration-brand [&_a]:decoration-2 [&_a]:underline-offset-4 [&_a:hover]:decoration-ink [&_blockquote]:my-8 [&_blockquote]:border-l-4 [&_blockquote]:border-brand [&_blockquote]:pl-5 [&_blockquote]:text-muted-foreground [&_code]:rounded [&_code]:bg-muted [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:text-[0.9em] [&_h2]:mb-4 [&_h2]:mt-14 [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:tracking-tight [&_h2]:text-foreground [&_h3]:mt-8 [&_h3]:font-semibold [&_h3]:text-foreground [&_hr]:my-12 [&_img]:h-auto [&_img]:max-w-full [&_img]:rounded-2xl [&_img]:border [&_li]:ml-6 [&_li]:pl-1 [&_ol]:list-decimal [&_p]:my-5 [&_pre]:overflow-x-auto [&_pre]:rounded-xl [&_pre]:bg-muted [&_pre]:p-4 [&_pre_code]:bg-transparent [&_pre_code]:p-0 [&_strong]:font-semibold [&_strong]:text-foreground [&_ul]:my-6 [&_ul]:list-disc [&_ul]:space-y-2" dangerouslySetInnerHTML={{ __html: post.html }} />
+      <div className={cn("mx-auto max-w-3xl", markdownBodyClassName)} dangerouslySetInnerHTML={{ __html: post.html }} />
       <div className="mt-14 border-t pt-8"><ShareLinks pageUrl={`${siteUrl}${localizedPath(locale, `/blog/${post.slug}`)}`} pageTitle={post.title} labels={dictionary.share} /></div>
+    </div>
+  </article></main>;
+}
+
+export async function PrivacyPolicyContent() {
+  const policy = await getLegalDocument("privacy-policy");
+  return <main id="main-content"><article>
+    <header className="surface-ink relative overflow-hidden px-4 pb-14 pt-14 sm:px-8 sm:pb-20 sm:pt-20">
+      <InkBackdrop />
+      <div className="relative mx-auto max-w-3xl">
+        <h1 className="text-4xl font-semibold leading-[1.2] tracking-[-0.04em] text-balance sm:text-5xl">{policy.title}</h1>
+        <p className="mt-6 text-lg leading-8 text-muted-foreground">{policy.description}</p>
+      </div>
+    </header>
+    <div className="px-4 py-12 sm:px-8 sm:py-16">
+      <div className={cn("mx-auto max-w-3xl", markdownBodyClassName)} dangerouslySetInnerHTML={{ __html: policy.htmlBeforeContact }} />
+      <p className="mx-auto min-h-11 max-w-3xl text-base sm:text-lg"><ContactEmail className="inline-flex min-h-11 items-center gap-1.5 font-medium text-foreground underline decoration-brand decoration-2 underline-offset-4 hover:decoration-ink" /></p>
+      <div className={cn("mx-auto max-w-3xl", markdownBodyClassName)} dangerouslySetInnerHTML={{ __html: policy.htmlAfterContact }} />
     </div>
   </article></main>;
 }

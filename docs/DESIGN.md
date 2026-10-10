@@ -33,7 +33,7 @@
 - Boxes: 제품명 중심 히어로, 직접 다운로드, 큰 실제 스크린샷, 정리 방식, 무료 범위, FAQ와 설치 절차 순서다.
 - 블로그 목록: 최신 글은 두 열을 차지하는 남색 카드, 나머지는 흰 카드다. 카드는 날짜·제목·설명·읽기 표시로 구성하며 제목 링크 하나가 카드 전체를 덮어 클릭 영역을 넓힌다(접근 가능한 링크는 제목 하나).
 - 블로그 본문: 남색 머리말에 경로 표시·제목·설명·날짜를 두고, 아래 좁은 본문 폭에 글을 표시한다. 본문 인용은 금색 왼쪽 선, 링크는 금색 밑줄을 쓴다.
-- 모든 페이지는 동일한 남색 공통 푸터를 사용한다. 위쪽 구분선으로 Boxes 다운로드 구역과 나뉜다. 푸터 메뉴 마지막에 후원 랜딩 링크를 둔다. 하단 외부 링크는 Instagram, Threads, GitHub 다음에 `supportLinks`의 후원 링크(현재 Buy Me a Coffee `https://buymeacoffee.com/ghostyak`, 크티 `https://ctee.kr/place/ghostyak/donation`)를 두며 새 탭으로 연다. 서비스 이름은 번역하지 않는다.
+- 모든 페이지는 동일한 남색 공통 푸터를 사용한다. 위쪽 구분선으로 Boxes 다운로드 구역과 나뉜다. 푸터 메뉴 마지막에 후원 랜딩 링크를 둔다. 하단 외부 링크는 Instagram, Threads, GitHub 다음에 `supportLinks`의 후원 링크(현재 Buy Me a Coffee `https://buymeacoffee.com/ghostyak`, 크티 `https://ctee.kr/place/ghostyak/donation`)를 두며 새 탭으로 연다. 서비스 이름은 번역하지 않는다. 하단 왼쪽에는 저작권 표시 `© {연도} 박영기 Park Young Gi (Ghostyak)`와 문의 이메일 링크를 둔다. 저작권자 이름과 이메일은 `src/data/contact.ts`에서 모든 언어가 공유한다. 이메일은 수집 봇을 피하려고 주소를 뒤집고 문자 코드를 민 값으로만 저장하며, 작은 Client Component `ContactEmail`이 방문자의 첫 포인터·터치·키보드·스크롤 입력 뒤에 복원해 `mailto:` 링크로 표시한다. 서버가 보낸 HTML과 스크립트 파일에는 주소 문자열을 넣지 않는다. 이메일 다음에 개인정보처리방침 링크를 둔다. 개인정보처리방침 페이지는 블로그 글과 같은 남색 머리말(제목·설명)과 좁은 본문 폭, 같은 Markdown 본문 스타일을 쓰고, 보호책임자 이메일은 본문의 `[[contact-email]]` 자리에 `ContactEmail`로 표시한다.
 
 브랜드 로고와 파비콘은 `public/favicon.svg`를 사용한다. Boxes 미리보기는 `boxes.preview`의 원본 비율을 보존하고 자르지 않는다. Boxes v0.4.0에서 시계·사진 뷰어 위젯이 제거되었으므로 Boxes 페이지에 위젯 구역을 두지 않는다.
 
