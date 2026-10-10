@@ -9,8 +9,9 @@ export async function getNotesMetadata(locale: PublishedLocale): Promise<Metadat
   const { notes: copy } = await getDictionary(locale);
   const title = notes.name;
   const description = copy.description;
-  const screenshot = notes.screenshots.annotate;
-  const images = [{ url: screenshot.src, width: screenshot.width, height: screenshot.height, alt: copy.screenshots.annotate.alt }];
+  // The library view is the image shown when the page is shared.
+  const screenshot = notes.screenshots.library;
+  const images = [{ url: screenshot.src, width: screenshot.width, height: screenshot.height, alt: copy.screenshots.library.alt }];
   return {
     title,
     description,

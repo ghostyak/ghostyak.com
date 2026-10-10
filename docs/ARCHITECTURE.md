@@ -113,4 +113,4 @@ Ghostyak Notes는 주력 제품이다. `NotesProduct`는 상세페이지(`/{loca
 
 ## 공유 UI
 
-`src/components/ShareLinks.tsx`는 제품 상세 페이지 첫 화면의 다운로드 버튼 아래와 블로그 글 끝에서 Threads·Facebook·X·LinkedIn으로 현재 페이지를 공유하는 링크를 제공한다. 맨 앞에 두는 Instagram은 기기 공유 메뉴를 열고, 미지원 환경에서는 canonical URL을 복사한다. 페이지와 문구는 Server Component가 로케일 사전에서 전달하고 브라우저 공유·클립보드 접근에 필요한 이 컴포넌트만 Client Component로 둔다.
+`src/components/ShareLinks.tsx`는 제품 상세 페이지 첫 화면의 다운로드 버튼 아래와 블로그 글 끝에서 Threads·Facebook·X·LinkedIn으로 현재 페이지를 공유하는 링크를 제공한다. Instagram은 웹에서 링크를 공유할 주소를 제공하지 않아 공유 버튼을 두지 않는다. 페이지와 문구는 Server Component가 로케일 사전에서 전달하고 클립보드 접근에 필요한 이 컴포넌트만 Client Component로 둔다.

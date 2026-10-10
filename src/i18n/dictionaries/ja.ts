@@ -14,7 +14,6 @@ const ja: Dictionary = {
     x: "Xで共有",
     facebook: "Facebookで共有",
     linkedin: "LinkedInで共有",
-    instagram: "Instagramで共有",
     threads: "Threadsで共有",
   },
   csvSearch: {

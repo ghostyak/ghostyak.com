@@ -14,7 +14,6 @@ const pt: Dictionary = {
     x: "Compartilhar no X",
     facebook: "Compartilhar no Facebook",
     linkedin: "Compartilhar no LinkedIn",
-    instagram: "Compartilhar no Instagram",
     threads: "Compartilhar no Threads",
   },
   csvSearch: {

@@ -14,7 +14,6 @@ const de: Dictionary = {
     x: "Auf X teilen",
     facebook: "Auf Facebook teilen",
     linkedin: "Auf LinkedIn teilen",
-    instagram: "Auf Instagram teilen",
     threads: "Auf Threads teilen",
   },
   csvSearch: {

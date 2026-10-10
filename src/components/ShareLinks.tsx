@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Check, Copy } from "lucide-react";
-import { SiFacebook, SiInstagram, SiThreads, SiX } from "@icons-pack/react-simple-icons";
+import { SiFacebook, SiThreads, SiX } from "@icons-pack/react-simple-icons";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -15,15 +15,13 @@ export type ShareLabels = {
   x: string;
   facebook: string;
   linkedin: string;
-  instagram: string;
   threads: string;
 };
 
-function SocialIcon({ network }: { network: "x" | "facebook" | "linkedin" | "instagram" | "threads" }) {
+function SocialIcon({ network }: { network: "x" | "facebook" | "linkedin" | "threads" }) {
   const iconProps = { size: 20, className: "size-5", "aria-hidden": true as const, title: "" };
   if (network === "x") return <SiX {...iconProps} />;
   if (network === "facebook") return <SiFacebook {...iconProps} />;
-  if (network === "instagram") return <SiInstagram {...iconProps} />;
   if (network === "threads") return <SiThreads {...iconProps} />;
 
   // Simple Icons removed LinkedIn in v14 following its restrictive brand guidelines.
@@ -53,23 +51,9 @@ export function ShareLinks({ pageUrl, pageTitle, labels, inline = false }: { pag
     }
   }
 
-  async function shareToInstagram() {
-    if (typeof navigator.share === "function") {
-      try {
-        await navigator.share({ title: pageTitle, text: pageTitle, url: pageUrl });
-      } catch (error) {
-        if (error instanceof Error && error.name === "AbortError") return;
-        await copyLink();
-      }
-      return;
-    }
-    await copyLink();
-  }
-
   const iconHover = inline ? "hover:bg-current/10" : "hover:bg-white/10";
   const statusText = status === "copied" ? labels.copied : status === "failed" ? labels.copyFailed : "";
   const buttons = <>
-    <button type="button" onClick={shareToInstagram} aria-label={labels.instagram} title={labels.instagram} className={`${iconClassName} ${iconHover}`}><SocialIcon network="instagram" /></button>
     {links.map(({ key, label, href }) => <a key={key} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} title={label} className={`${iconClassName} ${iconHover}`}>
       <SocialIcon network={key} />
     </a>)}

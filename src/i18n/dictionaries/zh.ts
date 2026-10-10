@@ -14,7 +14,6 @@ const zh: Dictionary = {
     x: "分享到 X",
     facebook: "分享到 Facebook",
     linkedin: "分享到 LinkedIn",
-    instagram: "分享到 Instagram",
     threads: "分享到 Threads",
   },
   csvSearch: {

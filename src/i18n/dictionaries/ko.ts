@@ -12,7 +12,6 @@ const ko = {
     x: "X에 공유",
     facebook: "Facebook에 공유",
     linkedin: "LinkedIn에 공유",
-    instagram: "Instagram에 공유",
     threads: "Threads에 공유",
   },
   csvSearch: {
