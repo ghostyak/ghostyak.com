@@ -100,7 +100,7 @@ CSV Search Engine 상세페이지 `CsvSearchProduct`는 Server Component이며 �
 
 Ghostyak Notes는 주력 제품이다. `NotesProduct`는 상세페이지(`/{locale}/product/notes`의 9개 접두사 경로)를 그리는 Server Component이며, 기능마다 스크린샷을 한 장씩 보여 주기 위해 `ProductLanding` 전체 대신 그 조각(`Frame`·`SectionHeading`·`DownloadLabel`·`ProductHighlight`·`ProductFaq`·`ProductDownload`)을 재사용한다. FAQ Accordion과 `ShareLinks`만 클라이언트 경계다. 제품명·제품 경로·플랫폼·직접 다운로드 URL·스크린샷 여섯 장의 경로와 원본 크기는 `src/data/products.ts`의 `notes`에서 관리하며 스크린샷은 `annotate`·`pen`·`search`·`library`·`pages`·`spread` 키로 찾는다. 문구는 `src/i18n/notes/{locale}.ts`에 두고 각 사전의 `notes` 키로 가져온다(Boxes의 `landing`과 같은 방식). 메타데이터는 `src/i18n/notes-metadata.ts`, sitemap 항목은 `src/app/sitemap.ts`에 둔다.
 
-홈의 `NotesFeatureCard`는 제품 분류 위에 놓이는 전체 폭 카드로 제품 둘러보기와 직접 다운로드 버튼을 함께 제공한다. 홈의 우선 로드 이미지(`preload`)는 이 카드의 스크린샷이다. 공통 제품 메뉴의 `윈도우즈 생산성` 그룹과 푸터 메뉴에서는 Notes를 맨 앞에 둔다.
+홈의 `NotesFeatureCard`는 제품 분류 위에 놓이는 전체 폭 카드로 제품 둘러보기 버튼만 제공하며, 다운로드는 상세페이지에서 한다. 홈의 우선 로드 이미지(`preload`)는 이 카드의 스크린샷이다. 공통 제품 메뉴의 `윈도우즈 생산성` 그룹과 푸터 메뉴에서는 Notes를 맨 앞에 둔다.
 
 ## Folder History
 
@@ -110,4 +110,4 @@ Ghostyak Notes는 주력 제품이다. `NotesProduct`는 상세페이지(`/{loca
 
 ## 공유 UI
 
-`src/components/ShareLinks.tsx`는 제품 상세 페이지 첫 화면의 후원하기 옆과 블로그 글 끝에서 X·Facebook·LinkedIn·Threads로 현재 페이지를 공유하는 링크를 제공한다. Instagram은 기기 공유 메뉴를 열고, 미지원 환경에서는 canonical URL을 복사한다. 페이지와 문구는 Server Component가 로케일 사전에서 전달하고 브라우저 공유·클립보드 접근에 필요한 이 컴포넌트만 Client Component로 둔다.
+`src/components/ShareLinks.tsx`는 제품 상세 페이지 첫 화면의 다운로드 버튼 아래와 블로그 글 끝에서 Threads·Facebook·X·LinkedIn으로 현재 페이지를 공유하는 링크를 제공한다. 맨 앞에 두는 Instagram은 기기 공유 메뉴를 열고, 미지원 환경에서는 canonical URL을 복사한다. 페이지와 문구는 Server Component가 로케일 사전에서 전달하고 브라우저 공유·클립보드 접근에 필요한 이 컴포넌트만 Client Component로 둔다.

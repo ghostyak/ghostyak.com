@@ -1,9 +1,8 @@
 import Image from "next/image";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { DownloadLabel } from "@/components/ProductLanding";
 import { notes } from "@/data/products";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import type { PublishedLocale } from "@/i18n/locales";
@@ -30,10 +29,7 @@ export function NotesFeatureCard({ copy, locale, viewAction }: {
           </div>
           <h2 id="featured-notes" className="mt-5 text-3xl font-semibold tracking-[-0.035em] sm:text-4xl">{notes.name}</h2>
           <p className="mt-4 text-base leading-8 text-muted-foreground">{copy.cardDescription}</p>
-          <div className="mt-7 flex max-w-full flex-wrap gap-3">
-            <a className={cn(buttonVariants({ size: "lg", className: actionClassName }))} href={href}>{viewAction}<ArrowRight aria-hidden="true" /></a>
-            <a className={cn(buttonVariants({ variant: "architectureDownload", size: "lg", className: actionClassName }))} href={notes.downloadUrl} aria-label={`${notes.name}: ${copy.downloadAction}`}><Download className="size-4" aria-hidden="true" /><DownloadLabel label={copy.downloadAction} architecture="x64" /></a>
-          </div>
+          <a className={cn(buttonVariants({ size: "lg", className: `mt-7 ${actionClassName}` }))} href={href}>{viewAction}<ArrowRight aria-hidden="true" /></a>
           <p className="mt-4 text-xs leading-6 text-muted-foreground">{copy.trialBadge}</p>
         </div>
         {/* A gold panel keeps the card edge visible where it overlaps the ink hero. */}

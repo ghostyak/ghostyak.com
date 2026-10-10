@@ -1,4 +1,4 @@
-import { ArrowUpRight, Bookmark, Check, Download, Eye, HandHeart, HardDrive, Highlighter, Info, Keyboard, NotebookPen, Save, Type } from "lucide-react";
+import { ArrowUpRight, Bookmark, Check, Download, Eye, HardDrive, Highlighter, Info, Keyboard, NotebookPen, Save, Type } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { PageHero, heroActionClassName } from "@/components/PageHero";
@@ -39,11 +39,7 @@ export async function NotesProduct({ locale }: { locale: PublishedLocale }) {
           description={copy.description}
           actions={<div className="flex max-w-full flex-col items-center gap-3">
             {downloadLink}
-            <div className="flex max-w-full flex-wrap items-center justify-center gap-3">
-              <a className={cn(buttonVariants({ variant: "outline", size: "lg", className: heroActionClassName }))} href="#features"><Info className="size-4" aria-hidden="true" />{copy.featuresAction}</a>
-              <a className={cn(buttonVariants({ variant: "support", size: "lg", className: heroActionClassName }))} href={localizedPath(locale, "/support")}><HandHeart className="size-4" aria-hidden="true" />{dictionary.header.support}</a>
-              <ShareLinks pageUrl={`${siteUrl}${localizedPath(locale, notes.pagePath)}`} pageTitle={notes.name} labels={dictionary.share} inline />
-            </div>
+            <ShareLinks pageUrl={`${siteUrl}${localizedPath(locale, notes.pagePath)}`} pageTitle={notes.name} labels={dictionary.share} inline />
           </div>}
           note={copy.heroNote}
         />

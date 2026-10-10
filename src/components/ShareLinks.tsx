@@ -38,10 +38,10 @@ export function ShareLinks({ pageUrl, pageTitle, labels, inline = false }: { pag
   const encodedUrl = encodeURIComponent(pageUrl);
   const encodedTitle = encodeURIComponent(pageTitle);
   const links = [
-    { key: "x", label: labels.x, href: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}` },
-    { key: "facebook", label: labels.facebook, href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}` },
-    { key: "linkedin", label: labels.linkedin, href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}` },
     { key: "threads", label: labels.threads, href: `https://www.threads.com/intent/post?text=${encodedTitle}&url=${encodedUrl}` },
+    { key: "facebook", label: labels.facebook, href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}` },
+    { key: "x", label: labels.x, href: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}` },
+    { key: "linkedin", label: labels.linkedin, href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}` },
   ] as const;
 
   async function copyLink() {
@@ -69,10 +69,10 @@ export function ShareLinks({ pageUrl, pageTitle, labels, inline = false }: { pag
   const iconHover = inline ? "hover:bg-current/10" : "hover:bg-white/10";
   const statusText = status === "copied" ? labels.copied : status === "failed" ? labels.copyFailed : "";
   const buttons = <>
+    <button type="button" onClick={shareToInstagram} aria-label={labels.instagram} title={labels.instagram} className={`${iconClassName} ${iconHover}`}><SocialIcon network="instagram" /></button>
     {links.map(({ key, label, href }) => <a key={key} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} title={label} className={`${iconClassName} ${iconHover}`}>
       <SocialIcon network={key} />
     </a>)}
-    <button type="button" onClick={shareToInstagram} aria-label={labels.instagram} title={labels.instagram} className={`${iconClassName} ${iconHover}`}><SocialIcon network="instagram" /></button>
     {!inline && <Button type="button" variant="ghost" className="min-h-11 gap-2 text-inherit" onClick={copyLink}>
       {status === "copied" ? <Check className="size-4" aria-hidden="true" /> : <Copy className="size-4" aria-hidden="true" />}
       {labels.copyLink}

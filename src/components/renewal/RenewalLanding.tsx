@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { ArrowRight, ArrowUpRight, Check, Download, Folder, HandHeart, Info, Link2 } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Download, Folder, Link2 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -38,7 +38,7 @@ function WorkflowDiagram({ copy }: { copy: Copy }) {
   </figure>;
 }
 
-export function RenewalLanding({ copy, currentPath, supportUrl, supportAction, shareLabels }: { copy: Copy; currentPath: string; supportUrl: string; supportAction: string; shareLabels: ShareLabels }) {
+export function RenewalLanding({ copy, currentPath, shareLabels }: { copy: Copy; currentPath: string; shareLabels: ShareLabels }) {
   return <main id="main-content" className="scroll-mt-24 [overflow-wrap:anywhere]">
     <section className="px-4 pb-12 sm:px-8 sm:pb-20" aria-labelledby="renewal-title">
       <div className="mx-auto max-w-7xl">
@@ -47,7 +47,7 @@ export function RenewalLanding({ copy, currentPath, supportUrl, supportAction, s
           eyebrow={<Badge variant="outline" className="min-h-7 gap-2 rounded-full bg-card px-3"><span className="flex size-5 items-center justify-center rounded-full bg-ink"><Image src={boxesIcon} width={12} height={12} alt="" unoptimized /></span>{copy.hero.platform}</Badge>}
           title={boxes.name}
           description={copy.hero.title.join(" ")}
-          actions={<div className="flex max-w-full flex-col items-center gap-3"><div className="flex max-w-full flex-wrap justify-center gap-3"><DownloadLinks copy={copy} /></div><div className="flex max-w-full flex-wrap items-center justify-center gap-3"><a className={cn(buttonVariants({ variant: "outline", size: "lg", className: heroActionClassName }))} href="#download"><Info className="size-4" aria-hidden="true" />{copy.actions.install}</a><a className={cn(buttonVariants({ variant: "support", size: "lg", className: heroActionClassName }))} href={supportUrl}><HandHeart className="size-4" aria-hidden="true" />{supportAction}</a><ShareLinks pageUrl={`${links.site.replace(/\/$/, "")}${currentPath}`} pageTitle={copy.brand} labels={shareLabels} inline /></div></div>}
+          actions={<div className="flex max-w-full flex-col items-center gap-3"><div className="flex max-w-full flex-wrap justify-center gap-3"><DownloadLinks copy={copy} /></div><ShareLinks pageUrl={`${links.site.replace(/\/$/, "")}${currentPath}`} pageTitle={copy.brand} labels={shareLabels} inline /></div>}
         />
         <figure className="relative mx-auto max-w-6xl">
           <div className="absolute inset-x-[10%] -bottom-6 top-1/3 rounded-full bg-brand/25 blur-3xl" aria-hidden="true" />

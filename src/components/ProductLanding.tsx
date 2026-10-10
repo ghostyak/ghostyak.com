@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import type { LucideIcon } from "lucide-react";
-import { ArrowUpRight, Download, HandHeart, Info } from "lucide-react";
+import { ArrowUpRight, Download } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { buttonVariants } from "@/components/ui/button";
 import { PageHero, heroActionClassName } from "@/components/PageHero";
@@ -80,7 +80,7 @@ export function DownloadLabel({ label, architecture }: { label: string; architec
 
 // Shared product landing: hero, framed main screenshot, three steps, feature cards with
 // secondary screenshots, an ink highlight, FAQ and a download band.
-export function ProductLanding({ id, name, badges, copy, screenshots, featureIcons, highlightIcon, productIcon, downloadUrl, downloadArchitecture, alternateDownload, repository, viewScreenshot, supportUrl, supportAction, shareUrl, shareLabels }: {
+export function ProductLanding({ id, name, badges, copy, screenshots, featureIcons, highlightIcon, productIcon, downloadUrl, downloadArchitecture, alternateDownload, repository, viewScreenshot, shareUrl, shareLabels }: {
   id: string;
   name: string;
   badges: ReactNode;
@@ -96,17 +96,12 @@ export function ProductLanding({ id, name, badges, copy, screenshots, featureIco
   alternateDownload?: { url: string; label: string; architecture?: DownloadArchitecture };
   repository: { url: string; label: string };
   viewScreenshot: string;
-  supportUrl: string;
-  supportAction: string;
   shareUrl: string;
   shareLabels: ShareLabels;
 }) {
   const [main, ...secondary] = screenshots;
   const downloadLink = <a className={cn(buttonVariants({ variant: downloadArchitecture ? "architectureDownload" : "default", size: "lg", className: heroActionClassName }))} href={downloadUrl} aria-label={copy.downloadAction}><Download className="size-4" aria-hidden="true" /><DownloadLabel label={copy.downloadAction} architecture={downloadArchitecture} /></a>;
   const alternateDownloadLink = alternateDownload && <a className={cn(buttonVariants({ variant: "architectureDownload", size: "lg", className: heroActionClassName }))} href={alternateDownload.url} aria-label={alternateDownload.label}><Download className="size-4" aria-hidden="true" /><DownloadLabel label={alternateDownload.label} architecture={alternateDownload.architecture} /></a>;
-  const howToLink = <a className={cn(buttonVariants({ variant: "outline", size: "lg", className: heroActionClassName }))} href="#how-it-works"><Info className="size-4" aria-hidden="true" />{copy.howToAction}</a>;
-  const supportLink = <a className={cn(buttonVariants({ variant: "support", size: "lg", className: heroActionClassName }))} href={supportUrl}><HandHeart className="size-4" aria-hidden="true" />{supportAction}</a>;
-
   return <main id="main-content" className="[overflow-wrap:anywhere]">
     <section className="px-4 pb-12 sm:px-8 sm:pb-20" aria-labelledby={`${id}-title`}>
       <div className="mx-auto max-w-7xl">
@@ -115,7 +110,7 @@ export function ProductLanding({ id, name, badges, copy, screenshots, featureIco
           eyebrow={badges}
           title={name}
           description={copy.description}
-          actions={<div className="flex max-w-full flex-col items-center gap-3"><div className="flex max-w-full flex-wrap justify-center gap-3">{downloadLink}{alternateDownloadLink}</div><div className="flex max-w-full flex-wrap items-center justify-center gap-3">{howToLink}{supportLink}<ShareLinks pageUrl={shareUrl} pageTitle={name} labels={shareLabels} inline /></div></div>}
+          actions={<div className="flex max-w-full flex-col items-center gap-3"><div className="flex max-w-full flex-wrap justify-center gap-3">{downloadLink}{alternateDownloadLink}</div><ShareLinks pageUrl={shareUrl} pageTitle={name} labels={shareLabels} inline /></div>}
         />
         <figure className="relative mx-auto max-w-5xl">
           <div className="absolute inset-x-[10%] -bottom-6 top-1/3 rounded-full bg-brand/25 blur-3xl" aria-hidden="true" />

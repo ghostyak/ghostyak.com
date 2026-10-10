@@ -27,8 +27,6 @@ export async function FolderHistoryProduct({ locale }: { locale: PublishedLocale
     alternateDownload={{ url: folderHistory.arm64DownloadUrl, label: copy.arm64DownloadAction, architecture: "ARM64" }}
     repository={{ url: folderHistory.url, label: dictionary.csvSearch.repositoryAction }}
     viewScreenshot={dictionary.landing.actions.viewScreenshot}
-    supportUrl={localizedPath(locale, "/support")}
-    supportAction={dictionary.header.support}
     shareUrl={`${siteUrl}${localizedPath(locale, folderHistory.pagePath)}`}
     shareLabels={dictionary.share}
   />;
