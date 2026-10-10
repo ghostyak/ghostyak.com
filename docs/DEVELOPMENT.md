@@ -126,7 +126,7 @@ CSV 상세페이지는 공통 `ProductLanding`을 쓰므로 Folder History 페�
 
 제품 데이터는 `src/data/products.ts`의 `notes`, 상세 UI는 `NotesProduct`, 홈 카드는 `NotesFeatureCard`, 문구는 `src/i18n/notes/{locale}.ts`(각 사전의 `notes` 키)에서 관리한다. 제품 설명의 근거는 Notes 개발 저장소의 `docs/01-product.md`(기능 범위)·`docs/06-ui.md`(화면)·`docs/11-beta.md`(베타 조건)와 `public/images/notes/`의 스크린샷 여섯 장(각 2880×1800)이다. 설계 문서에만 있고 아직 구현되지 않은 기능(OCR, 손글씨 검색, AI 요약, 필기를 포함한 PDF 내보내기 등)은 공개 설명에 넣지 않는다.
 
-`notes.downloadUrl`은 사용자가 지정한 베타 릴리스의 설치 파일 주소를 그대로 쓴다. 주소에 릴리스 태그가 들어 있으므로 새 버전을 배포하면 이 값을 함께 바꾼다. 베타 조건(사용 기간, 기간이 끝난 뒤의 동작)이나 정식 출시로 조건이 바뀌면 배지·히어로 보조 문구·베타 안내·FAQ·다운로드 설명을 한국어 원문부터 고친 뒤 8개 번역에 반영한다. 스크린샷을 교체하면 `notes.screenshots`의 원본 크기와 각 언어의 대체 텍스트·캡션을 함께 갱신한다. 기능 소개 줄의 순서는 `NotesProduct`의 `showcaseOrder`에서 정한다.
+`notes.downloadUrl`은 사용자가 지정한 최신 릴리스의 설치 파일 주소(`releases/latest/download/ghostyak-notes_beta_x64-setup.exe`)를 그대로 쓴다. 주소에 버전이 없으므로 새 버전을 배포해도 값을 바꾸지 않으며, 릴리스마다 같은 이름의 설치 파일을 올려야 한다. 베타 조건(사용 기간, 기간이 끝난 뒤의 동작)이나 정식 출시로 조건이 바뀌면 배지·히어로 보조 문구·베타 안내·FAQ·다운로드 설명을 한국어 원문부터 고친 뒤 8개 번역에 반영한다. 스크린샷을 교체하면 `notes.screenshots`의 원본 크기와 각 언어의 대체 텍스트·캡션을 함께 갱신한다. 기능 소개 줄의 순서는 `NotesProduct`의 `showcaseOrder`에서 정한다.
 
 검수할 때는 320px·390px·768px·데스크톱에서 기능 소개 줄의 좌우 교차와 세로 쌓임, 긴 번역의 배지·버튼 줄바꿈, `#features`·`#download` 이동, 다운로드 링크, 홈 카드의 두 버튼을 확인한다.
 

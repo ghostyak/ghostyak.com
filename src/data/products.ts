@@ -33,7 +33,7 @@ export const notes = {
   name: "Notes",
   pagePath: "/product/notes",
   platform: "Windows · x64",
-  downloadUrl: "https://github.com/ghostyak/notes/releases/download/v0.1.0-beta/ghostyak-notes_0.1.0-beta_x64-setup.exe",
+  downloadUrl: "https://github.com/ghostyak/notes/releases/latest/download/ghostyak-notes_beta_x64-setup.exe",
   screenshots: {
     annotate: { src: "/images/notes/02-annotate.png", ...notesScreenshot },
     pen: { src: "/images/notes/05-pen-settings.png", ...notesScreenshot },
