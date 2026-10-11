@@ -7,6 +7,21 @@ import {
 } from "./i18n/locales";
 import { localizedPath, unlocalizedPath } from "./i18n/routing";
 
+// Picks the visitor's best published language from Accept-Language. Crawlers
+// that send no header, and languages we don't publish, get the default locale.
+function preferredLocale(header: string | null) {
+  const ranked = (header ?? "")
+    .split(",")
+    .map((part) => {
+      const [tag, ...parameters] = part.trim().split(";");
+      const quality = parameters.map((parameter) => parameter.trim()).find((parameter) => parameter.startsWith("q="));
+      return { language: tag.split("-")[0].toLowerCase(), quality: quality ? Number(quality.slice(2)) : 1 };
+    })
+    .filter(({ quality }) => quality > 0)
+    .sort((a, b) => b.quality - a.quality);
+  return ranked.map(({ language }) => language).find(isPublishedLocale) ?? defaultLocale;
+}
+
 export function proxy(request: NextRequest) {
   const original = new URL(request.url);
   // A self-hosted Next server may expose its internal hostname in request.url.
@@ -25,8 +40,15 @@ export function proxy(request: NextRequest) {
   const destination = new URL(original);
   destination.pathname = cleanPath;
 
+  // The bare entry point has no content of its own, so it sends each visitor
+  // to their language. Prefixed URLs are never negotiated.
+  const isEntryPoint = cleanPath === "/";
+  if (isEntryPoint) {
+    destination.pathname = localizedPath(preferredLocale(request.headers.get("accept-language")), "/");
+  }
+
   // Historical unprefixed content was English. Never negotiate its language.
-  if (!pathLocale && (cleanPath === "/" || /^\/(product|blog|support)(\/|$)/.test(cleanPath))) {
+  if (!pathLocale && /^\/(product|blog|support)(\/|$)/.test(cleanPath)) {
     destination.pathname = localizedPath(defaultLocale, cleanPath as `/${string}`);
   }
 
@@ -48,7 +70,12 @@ export function proxy(request: NextRequest) {
   }
 
   if (destination.href !== original.href) {
-    return NextResponse.redirect(destination, 308);
+    if (!isEntryPoint) return NextResponse.redirect(destination, 308);
+    // Temporary and uncached: the destination depends on the visitor's language.
+    const response = NextResponse.redirect(destination, 307);
+    response.headers.set("Vary", "Accept-Language");
+    response.headers.set("Cache-Control", "private, no-store");
+    return response;
   }
 
   const requestHeaders = new Headers(request.headers);

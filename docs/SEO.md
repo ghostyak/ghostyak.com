@@ -70,7 +70,7 @@ Vercel 환경 변수를 변경한 뒤에는 새 배포가 필요하다. 값이 �
 
 | 요청 경로 | 상태 | 목적지/역할 |
 | --- | --- | --- |
-| `/` | 308 | `/en` 진입점 |
+| `/` | 307 | 브라우저 언어에 맞는 `/{locale}`, 없으면 `/en` |
 | `/en`, `/ko` | 200 | 영어·한국어 canonical 홈 |
 | `/product/notes` | 308 | `/en/product/notes` |
 | `/en/product/notes`, `/ko/product/notes` | 200 | 언어별 canonical |
@@ -84,7 +84,7 @@ Vercel 환경 변수를 변경한 뒤에는 새 배포가 필요하다. 값이 �
 | `/{locale}/.../` | 308 | 끝 슬래시 없는 경로 |
 | `/xx/...`, `/docs`, 존재하지 않는 글 | 404 | 미공개 콘텐츠 |
 
-무접두사 URL의 목적지는 기존 기본 언어인 영어다. 사용자 설정·Accept-Language·IP·국가로 바꾸지 않는다. `/en`과 `/ko`는 설정에 관계없이 200이며 한국어 HTML lang/hreflang은 `ko`, 영어는 `en`이다. x-default는 같은 콘텐츠의 200 영어 페이지다. 모든 번역은 빌드에서 대응 원문/slug/리비전을 검증한다. sitemap은 200 canonical만 포함하며 홈 진입점, 다운로드 별칭, language 처리 경로, 404는 포함하지 않는다.
+무접두사 콘텐츠 URL의 목적지는 기존 기본 언어인 영어다. 사용자 설정·Accept-Language·IP·국가로 바꾸지 않는다. 예외는 콘텐츠가 없는 진입점 `/` 하나로, 2026-10-11부터 `Accept-Language`에서 공개 언어를 골라 307로 보낸다(`Vary: Accept-Language`, `Cache-Control: private, no-store`). 헤더를 보내지 않는 Googlebot은 `/en`을 받는다. 쿠키·IP·user agent는 보지 않는다. Google이 피하라고 하는 것은 언어 버전 사이의 자동 이동이며, 접두사 URL은 계속 이동 없이 200이다. `/en`과 `/ko`는 설정에 관계없이 200이며 한국어 HTML lang/hreflang은 `ko`, 영어는 `en`이다. x-default는 같은 콘텐츠의 200 영어 페이지다. 모든 번역은 빌드에서 대응 원문/slug/리비전을 검증한다. sitemap은 200 canonical만 포함하며 홈 진입점, 다운로드 별칭, language 처리 경로, 404는 포함하지 않는다.
 
 리디렉션의 query는 보존하지만 canonical/alternate/OpenGraph에는 포함하지 않는다. Proxy는 legacy·끝 슬래시·공개 호스트와 프로토콜을 함께 정규화한다. localhost와 preview 호스트는 강제 이동하지 않는다. Vercel이 앱보다 먼저 처리하는 HTTPS·도메인 이동은 저장소에서 확인할 수 없으므로 배포 후 HTTP/HTTPS × apex/www 네 가지 요청의 최종 주소와 hop 수를 재검증해야 한다.
 

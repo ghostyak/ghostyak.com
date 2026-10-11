@@ -24,7 +24,11 @@ const urls = new Set(entries.map(({ url }) => url));
 assert.equal(urls.size, entries.length, "Duplicate sitemap URL");
 const pages = new Map();
 
+// Published in Korean only, so these pages declare no language alternates.
+const koreanOnlyPaths = new Set(["/ko/privacy"]);
+
 function expectedLanguages(path) {
+  if (koreanOnlyPaths.has(path)) return {};
   const content = path.replace(/^\/[^/]+/, "");
   return Object.fromEntries([
     ...Object.entries(languages).map(([locale, lang]) => [lang, `${origin}/${locale}${content}`]),
@@ -77,9 +81,10 @@ for (let offset = 0; offset < entries.length; offset += 4) {
 }
 
 let redirects = 0;
+// The bare entry point negotiates the visitor's language, so its redirect is temporary.
 async function checkRedirect(path, expected, headers = {}) {
   const response = await request(path, headers);
-  assert.equal(response.status, 308, `${path}: permanent redirect`);
+  assert.equal(response.status, path === "/" ? 307 : 308, `${path}: redirect status`);
   const destination = new URL(response.headers.get("location"), base);
   assert.equal(destination.pathname + destination.search + destination.hash, expected, `${path}: redirect destination`);
   assert.ok(urls.has(`${origin}${destination.pathname}`), `${path}: destination is not canonical`);
@@ -103,12 +108,16 @@ for (const path of ["/products/boxes", "/products/boxes/old-path", "/product/box
 }
 await checkRedirect("/product/boxes/download/?utm_source=test", "/en/product/boxes?utm_source=test#download");
 
+await checkRedirect("/", "/ja", { "accept-language": "fr-CH;q=0.5, ja-JP;q=0.9, en;q=0.1" });
+await checkRedirect("/", "/en", { "accept-language": "sv-SE,sv;q=0.9" });
+
 const preferences = [
   { "accept-language": "ko-KR,ko;q=0.9", cookie: "ghostyak_locale=ja" },
   { "accept-language": "en-US,en;q=0.9", cookie: "ghostyak_locale=ko", "user-agent": "Googlebot" },
 ];
 for (const headers of preferences) {
-  await checkRedirect("/", "/en", headers);
+  // The entry point follows Accept-Language and ignores cookies and user agents.
+  await checkRedirect("/", headers["accept-language"].startsWith("ko") ? "/ko" : "/en", headers);
   await checkRedirect("/product/boxes?utm_source=test", "/en/product/boxes?utm_source=test", headers);
   for (const locale of ["ko", "en"]) {
     for (const suffix of ["", "/product/notes", "/product/boxes", "/product/csv-search-engine"]) {

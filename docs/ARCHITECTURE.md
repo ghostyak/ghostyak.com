@@ -50,9 +50,10 @@ docs/                            설계, 개발과 로드맵 문서
 - `/{locale}/blog`, `/{locale}/blog/[slug]`: Markdown 목록과 글
 - `/ko/privacy`: 개인정보처리방침. 한국어로만 공개하며 다른 로케일의 `/{locale}/privacy`는 `/ko/privacy`로 307 이동한다
 - `/{locale}/product/boxes/download`: 같은 언어 제품의 `#download`로 308 이동
-- `/`, `/product/...`, `/blog/...`, `/support`: 영어 `/en/...`로 308 이동하는 legacy 경로
+- `/`: 브라우저 언어에 맞는 `/{locale}`로 307 이동하는 진입점(맞는 언어가 없으면 `/en`)
+- `/product/...`, `/blog/...`, `/support`: 영어 `/en/...`로 308 이동하는 legacy 경로
 
-`src/proxy.ts`는 영어를 포함한 URL 로케일만 사용한다. 쿠키·브라우저 언어·IP 기반 이동이나 rewrite는 없다. `/products/boxes/...` 별칭, 다운로드 경로, 끝 슬래시와 공개 호스트 정규화를 한 번의 308로 처리한다. `next.config.ts`는 기본 끝 슬래시 이동을 비활성화하여 Proxy와 중복 이동하지 않게 한다. `/en`과 `/ko`를 포함한 9개 언어는 같은 동적 `[locale]` 경로를 사용하며, 기존 무접두사 페이지 모듈은 Proxy 뒤에 유지한다. sitemap·canonical·hreflang·OpenGraph·내부 링크는 `localizedPath`를 공유하고 x-default는 같은 콘텐츠의 영어 URL이다.
+`src/proxy.ts`는 영어를 포함한 URL 로케일만 사용한다. 진입점 `/`에서만 `Accept-Language`로 목적지 언어를 고르고, 그 밖에는 쿠키·브라우저 언어·IP 기반 이동이나 rewrite가 없다. `/products/boxes/...` 별칭, 다운로드 경로, 끝 슬래시와 공개 호스트 정규화를 한 번의 308로 처리한다. `next.config.ts`는 기본 끝 슬래시 이동을 비활성화하여 Proxy와 중복 이동하지 않게 한다. `/en`과 `/ko`를 포함한 9개 언어는 같은 동적 `[locale]` 경로를 사용하며, 기존 무접두사 페이지 모듈은 Proxy 뒤에 유지한다. sitemap·canonical·hreflang·OpenGraph·내부 링크는 `localizedPath`를 공유하고 x-default는 같은 콘텐츠의 영어 URL이다.
 
 `RenewalLanding`은 제품 소개에 사용하는 Server Component다. `getLandingMetadata`는 승인된 원문 기반 제목·설명과 실제 스크린샷을 검색·공유 메타데이터로 제공한다. `getSoftwareApplicationJsonLd`에는 같은 무료 기능 목록과 최신 확인 버전 v0.3.38을 사용한다. 루트 레이아웃의 밝은 공통 헤더 하나만 고정하며 제품·블로그·언어 선택을 제공한다. 다운로드는 제품 본문에서 제공한다. 제품명 `Boxes`를 가장 큰 H1으로 표시하고 기존 소개 문구와 실제 스크린샷을 중앙에 순서대로 배치한다. 스크린샷 아래의 링크 복사 영역과 제품 섹션 목차는 제거했다. 언어 선택은 공통 헤더에서 한 번만 렌더링한다. 제품 랜딩도 공통 푸터를 사용하고 공개 방문 분석은 유지한다.
 

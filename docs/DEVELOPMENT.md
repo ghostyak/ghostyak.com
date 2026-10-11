@@ -138,7 +138,7 @@ CSV 상세페이지는 공통 `ProductLanding`을 쓰므로 Folder History 페�
 
 `pnpm lint`와 `pnpm build` 후 별도 터미널에서 `pnpm start --port 3100`을 실행하고 `pnpm test:seo`로 검증한다. 다른 서버는 `pnpm test:seo https://www.ghostyak.com`으로 지정한다. Node 내장 fetch/assert만 사용하며 새 테스트 프레임워크는 필요 없다.
 
-검증은 sitemap 전체 페이지의 200·self canonical·상호 hreflang·HTML lang·indexability·OpenGraph·JSON-LD·본문/공통 내부 링크, 무접두사 URL과 별칭의 단일 308, 끝 슬래시, 추적 query, 상충하는 언어 쿠키/헤더, 404, robots를 검사한다. 로컬에서는 Host 헤더로 공개 호스트 정규화도 검사한다. CDN의 HTTP/HTTPS와 apex/www 리디렉션은 앱에 도달하기 전에 실행될 수 있으므로 배포 후 실제 4개 origin 변형도 확인한다. 언어 메뉴는 같은 콘텐츠로 전체 문서 탐색하며 스타일과 컴포넌트 경계는 유지한다.
+검증은 sitemap 전체 페이지의 200·self canonical·상호 hreflang·HTML lang·indexability·OpenGraph·JSON-LD·본문/공통 내부 링크, 진입점 `/`의 언어별 307, 무접두사 URL과 별칭의 단일 308, 끝 슬래시, 추적 query, 상충하는 언어 쿠키/헤더, 404, robots를 검사한다. 로컬에서는 Host 헤더로 공개 호스트 정규화도 검사한다. CDN의 HTTP/HTTPS와 apex/www 리디렉션은 앱에 도달하기 전에 실행될 수 있으므로 배포 후 실제 4개 origin 변형도 확인한다. 언어 메뉴는 같은 콘텐츠로 전체 문서 탐색하며 스타일과 컴포넌트 경계는 유지한다.
 
 ## 페이지 공유
 
