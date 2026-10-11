@@ -90,7 +90,7 @@ const notes: Dictionary["notes"] = {
       { question: "How long can I use the beta?", answer: "You can use every feature without limits for 14 days from the day you first launch the app. The app tells you when the usage period ends the first time you launch it." },
       { question: "What happens after 14 days?", answer: "You can still open and read documents and search within a document, but writing and searching all documents are unavailable. Your documents and handwriting are not deleted, and installing the next version gives you another 14 days." },
       { question: "Where are my documents stored?", answer: "In the ‘Ghostyak Notes’ folder inside your Documents folder. You can open it with ‘문서 폴더 열기’ (Open documents folder) at the bottom left of the library." },
-      { question: "Can it search scanned PDFs?", answer: "It searches the text of PDFs that contain text information. Text recognition (OCR) for PDFs made only of scanned images is not supported yet." },
+      { question: "Can it search scanned PDFs?", answer: "Yes. For scanned PDFs with no text information, the app recognizes the text (OCR) so you can search it. Recognition happens on your own PC, and searching handwriting is not supported yet." },
       { question: "Can I use it without a pen?", answer: "Yes. You can write with a mouse and type into text boxes with a keyboard." },
       { question: "What language is the app in?", answer: "The app interface is currently available in Korean. Other languages are coming soon." },
       { question: "What do I need to run it?", answer: "It is for 64-bit (x64) Windows. If Microsoft Edge WebView2 Runtime is missing, the installer downloads and installs it." },

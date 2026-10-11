@@ -66,7 +66,7 @@ Vercel 환경 변수를 변경한 뒤에는 새 배포가 필요하다. 값이 �
 
 ## canonical URL 정책 (2026-09-24)
 
-대표 origin은 `https://www.ghostyak.com`이며 콘텐츠 URL에는 끝 슬래시와 tracking query를 넣지 않는다. 모든 9개 언어에 접두사를 사용한다. canonical, OpenGraph URL, JSON-LD의 페이지/게시자 URL, sitemap과 내부 링크는 같은 정책을 사용한다. SoftwareApplication의 `@id`는 언어별 페이지 주소가 아닌 기존 제품 식별자로 유지한다. Twitter에는 별도 페이지 URL 필드가 없다. WebSite·WebPage·BreadcrumbList JSON-LD는 현재 구현되어 있지 않다.
+대표 origin은 `https://www.ghostyak.com`이며 콘텐츠 URL에는 끝 슬래시와 tracking query를 넣지 않는다. 모든 9개 언어에 접두사를 사용한다. canonical, OpenGraph URL, JSON-LD의 페이지/게시자 URL, sitemap과 내부 링크는 같은 정책을 사용한다. SoftwareApplication의 `@id`는 언어별 페이지 주소가 아닌 기존 제품 식별자로 유지한다. Ghostyak Notes 페이지도 2026-10-11부터 SoftwareApplication JSON-LD(`getNotesJsonLd`, `@id`는 `/#ghostyak-notes`)를 내보낸다. 베타이고 가격을 정하지 않았으므로 `offers`와 무료 여부는 넣지 않으며 버전도 적지 않는다. Notes 페이지의 `<title>`은 사이트 공통 틀(`Notes | GhostYak`) 대신 승인된 `notes.metadataTitle`을 그대로 쓴다. Twitter에는 별도 페이지 URL 필드가 없다. WebSite·WebPage·BreadcrumbList JSON-LD는 현재 구현되어 있지 않다.
 
 | 요청 경로 | 상태 | 목적지/역할 |
 | --- | --- | --- |

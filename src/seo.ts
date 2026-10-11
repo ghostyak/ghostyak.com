@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { boxes } from "@/data/products";
+import { boxes, notes } from "@/data/products";
 import { localeConfig, type PublishedLocale } from "@/i18n/locales";
 import { localizedPath } from "@/i18n/routing";
 import type { BlogPostSummary } from "@/lib/blog";
@@ -59,6 +59,32 @@ export function getSoftwareApplicationJsonLd({
       availability: "https://schema.org/InStock",
       url: `${siteUrl}${productPath}`,
     },
+    publisher: {
+      "@type": "Organization",
+      name: "GhostYak",
+      url: `${siteUrl}${localizedPath(locale, "/")}`,
+      logo: `${siteUrl}/favicon.svg`,
+    },
+  };
+}
+
+// Notes is a time-limited beta with no announced price, so it declares no offer.
+export function getNotesJsonLd({ locale, description, featureNames }: { locale: PublishedLocale; description: string; featureNames: readonly string[] }) {
+  const screenshots = Object.values(notes.screenshots).map((screenshot) => `${siteUrl}${screenshot.src}`);
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": `${siteUrl}/#ghostyak-notes`,
+    name: notes.fullName,
+    description,
+    url: `${siteUrl}${localizedPath(locale, notes.pagePath)}`,
+    image: `${siteUrl}${notes.screenshots.library.src}`,
+    screenshot: screenshots,
+    downloadUrl: notes.downloadUrl,
+    operatingSystem: "Windows",
+    applicationCategory: "UtilitiesApplication",
+    inLanguage: localeConfig[locale].htmlLanguage,
+    featureList: featureNames,
     publisher: {
       "@type": "Organization",
       name: "GhostYak",

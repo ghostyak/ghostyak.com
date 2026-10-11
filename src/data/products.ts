@@ -31,6 +31,7 @@ const notesScreenshot = { width: 2880, height: 1800 } as const;
 
 export const notes = {
   name: "Notes",
+  fullName: "Ghostyak Notes",
   pagePath: "/product/notes",
   platform: "Windows · x64",
   downloadUrl: "https://github.com/ghostyak/notes/releases/latest/download/ghostyak-notes_beta_x64-setup.exe",

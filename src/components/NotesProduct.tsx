@@ -9,7 +9,7 @@ import { getDictionary } from "@/i18n/get-dictionary";
 import type { PublishedLocale } from "@/i18n/locales";
 import { localizedPath } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
-import { siteUrl } from "@/seo";
+import { getNotesJsonLd, siteUrl } from "@/seo";
 
 // Order of the feature rows; the annotate screenshot is the hero.
 const showcaseOrder = ["pen", "search", "library", "pages", "spread"] as const;
@@ -25,7 +25,10 @@ export async function NotesProduct({ locale }: { locale: PublishedLocale }) {
   const hero = { ...notes.screenshots.annotate, ...copy.screenshots.annotate };
   const downloadLink = <a className={cn(buttonVariants({ variant: "architectureDownload", size: "lg", className: heroActionClassName }))} href={notes.downloadUrl} aria-label={copy.downloadAction}><Download className="size-4" aria-hidden="true" /><DownloadLabel label={copy.downloadAction} architecture="x64" /></a>;
 
+  const jsonLd = getNotesJsonLd({ locale, description: copy.cardDescription, featureNames: [...showcaseOrder.map((key) => copy.showcase.items[key].eyebrow), ...copy.more.items.map((item) => item.title)] });
+
   return <main id="main-content" className="[overflow-wrap:anywhere]">
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
     <section className="px-4 pb-12 sm:px-8 sm:pb-20" aria-labelledby="notes-title">
       <div className="mx-auto max-w-7xl">
         <PageHero

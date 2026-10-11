@@ -7,13 +7,12 @@ import { localizedPath } from "@/i18n/routing";
 
 export async function getNotesMetadata(locale: PublishedLocale): Promise<Metadata> {
   const { notes: copy } = await getDictionary(locale);
-  const title = notes.name;
   const description = copy.description;
   // The library view is the image shown when the page is shared.
   const screenshot = notes.screenshots.library;
   const images = [{ url: screenshot.src, width: screenshot.width, height: screenshot.height, alt: copy.screenshots.library.alt }];
   return {
-    title,
+    title: { absolute: copy.metadataTitle },
     description,
     alternates: getLocalizedAlternates(locale, notes.pagePath),
     openGraph: { ...getOpenGraphLocale(locale), type: "website", title: copy.metadataTitle, description, url: localizedPath(locale, notes.pagePath), images },
