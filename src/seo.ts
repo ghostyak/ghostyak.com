@@ -68,7 +68,7 @@ export function getSoftwareApplicationJsonLd({
   };
 }
 
-// Notes is a time-limited beta with no announced price, so it declares no offer.
+// Pro cannot be bought yet, so Notes declares no offer until purchase opens.
 export function getNotesJsonLd({ locale, description, featureNames }: { locale: PublishedLocale; description: string; featureNames: readonly string[] }) {
   const screenshots = Object.values(notes.screenshots).map((screenshot) => `${siteUrl}${screenshot.src}`);
   return {

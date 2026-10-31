@@ -1,14 +1,15 @@
-// Approved Korean source, 2026-10-09. Written from the Ghostyak Notes product and beta documents.
+// Approved Korean source, 2026-10-09. Written from the Ghostyak Notes product and trial documents.
+// The trial and Pro terms of 2026-10-31 await the owner's review.
 const notes = {
   metadataTitle: "Ghostyak Notes | PDF에 필기하고 바로 찾는 Windows 노트 앱",
   cardDescription: "PDF 위에 펜과 키보드로 쓰고, 읽은 내용은 모든 문서에서 바로 찾는 Windows 노트 앱입니다.",
   description: "PDF 위에 펜과 키보드로 쓰고, 읽은 내용은 모든 문서에서 바로 찾으세요.",
   featuredEyebrow: "새 제품",
-  betaBadge: "베타",
-  trialBadge: "14일 동안 모든 기능 사용",
+  trialBadge: "30일 동안 모든 기능 사용",
   downloadAction: "Windows x64 다운로드",
   featuresAction: "기능 보기",
-  heroNote: "베타 버전입니다. 처음 실행한 날부터 14일 동안 모든 기능을 제한 없이 사용할 수 있습니다.",
+  pricingAction: "체험판과 Pro 비교하기",
+  heroNote: "30일 체험판입니다. 처음 실행한 날부터 30일 동안 모든 기능을 제한 없이 사용할 수 있습니다.",
   screenshots: {
     annotate: { alt: "Ghostyak Notes에서 PDF 교재에 형광 표시를 하고 여백에 손글씨로 필기한 화면", caption: "PDF 위에 필기 · 한국어 UI" },
     pen: { alt: "색 세 칸과 색 팔레트, 굵기 세 단계를 고르는 Ghostyak Notes 펜 설정 창", caption: "펜 설정 · 색과 굵기" },
@@ -71,22 +72,11 @@ const notes = {
     title: "내 문서는 내 PC에 있습니다.",
     description: "문서는 내 PC의 문서 폴더 안 ‘Ghostyak Notes’ 폴더에 파일로 저장됩니다. 계정을 만들거나 인터넷에 연결하지 않아도 쓸 수 있고, 가져온 PDF 원본 파일은 바꾸지 않습니다.",
   },
-  beta: {
-    eyebrow: "베타 안내",
-    title: "14일 동안,\n모든 기능을 제한 없이.",
-    description: "지금 받는 설치 파일은 베타 버전입니다. 사용 기간은 앱을 처음 실행한 날부터 셉니다.",
-    steps: [
-      { title: "14일 동안 모든 기능", description: "처음 실행한 날부터 14일 동안 필기, 전체 검색과 쪽 편집을 포함한 모든 기능을 쓸 수 있습니다." },
-      { title: "기간이 끝나면 읽기 전용", description: "사용 기간이 끝나면 문서를 열어 읽을 수만 있습니다. 필기와 전체 검색은 쓸 수 없습니다." },
-      { title: "다음 버전에서 다시 14일", description: "다음 버전을 설치하면 14일을 더 쓸 수 있습니다." },
-    ],
-    note: "기간이 끝나도 만든 문서와 필기는 지워지지 않습니다.",
-  },
   faq: {
     title: "자주 묻는 질문",
     items: [
-      { question: "베타 버전은 얼마나 쓸 수 있나요?", answer: "앱을 처음 실행한 날부터 14일 동안 모든 기능을 제한 없이 쓸 수 있습니다. 처음 실행할 때 사용 기간이 끝나는 날짜를 알려 줍니다." },
-      { question: "14일이 지나면 어떻게 되나요?", answer: "문서를 열어 읽고 문서 안에서 찾을 수 있지만, 필기와 모든 문서에서 찾기는 쓸 수 없습니다. 만든 문서와 필기는 지워지지 않으며, 다음 버전을 설치하면 14일을 더 쓸 수 있습니다." },
+      { question: "체험판은 얼마나 쓸 수 있나요?", answer: "앱을 처음 실행한 날부터 30일 동안 모든 기능을 제한 없이 쓸 수 있습니다. 처음 실행할 때 사용 기간이 끝나는 날짜를 알려 줍니다." },
+      { question: "30일이 지나면 어떻게 되나요?", answer: "문서를 열어 읽고 문서 안에서 찾을 수 있지만, 필기와 모든 문서에서 찾기는 쓸 수 없습니다. 만든 문서와 필기는 지워지지 않습니다. 계속 쓰려면 Pro가 필요하며, 구매 기능은 곧 제공될 예정입니다." },
       { question: "문서는 어디에 저장되나요?", answer: "내 PC의 문서 폴더 안 ‘Ghostyak Notes’ 폴더에 저장됩니다. 라이브러리 왼쪽 아래의 ‘문서 폴더 열기’로 바로 열 수 있습니다." },
       { question: "스캔한 PDF도 검색되나요?", answer: "네. 글자 정보가 없는 스캔 PDF는 앱이 글자를 인식(OCR)해 찾을 수 있게 합니다. 인식은 내 PC 안에서 이루어지며, 손글씨 검색은 아직 지원하지 않습니다." },
       { question: "펜이 없어도 쓸 수 있나요?", answer: "네. 마우스로 필기하고 키보드로 텍스트 상자에 글을 쓸 수 있습니다." },
@@ -96,7 +86,7 @@ const notes = {
   },
   download: {
     title: "다운로드하고,\n첫 PDF를 가져와 보세요.",
-    description: "Windows x64 · 베타 · 14일 동안 모든 기능 사용",
+    description: "Windows x64 · 체험판 · 30일 동안 모든 기능 사용",
   },
 } as const;
 

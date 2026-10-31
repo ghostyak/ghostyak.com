@@ -1,16 +1,16 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 
-// Translation of the Korean source approved on 2026-10-09.
+// Translation of the Korean source, including the trial and Pro terms of 2026-10-31.
 const notes: Dictionary["notes"] = {
   metadataTitle: "Ghostyak Notes | 在 PDF 上做笔记并快速查找的 Windows 笔记应用",
   cardDescription: "一款 Windows 笔记应用：用笔和键盘在 PDF 上书写，并在所有文档中快速找到读过的内容。",
   description: "用笔和键盘在 PDF 上书写，读过的内容可在所有文档中快速找到。",
   featuredEyebrow: "新产品",
-  betaBadge: "测试版",
-  trialBadge: "14 天内可使用全部功能",
+  trialBadge: "30 天内可使用全部功能",
   downloadAction: "下载 Windows x64 版",
   featuresAction: "查看功能",
-  heroNote: "这是测试版。自首次启动之日起 14 天内，可以不受限制地使用全部功能。",
+  pricingAction: "比较试用版与 Pro",
+  heroNote: "这是 30 天试用版。自首次启动之日起 30 天内，可以不受限制地使用全部功能。",
   screenshots: {
     annotate: { alt: "在 Ghostyak Notes 中为 PDF 教材添加荧光标记并在页边手写笔记的界面", caption: "在 PDF 上书写 · 韩语界面" },
     pen: { alt: "Ghostyak Notes 的笔设置窗口，可选择三个颜色槽、调色板和三档粗细", caption: "笔设置 · 颜色与粗细" },
@@ -73,22 +73,11 @@ const notes: Dictionary["notes"] = {
     title: "你的文档就在你的电脑上。",
     description: "文档以文件形式保存在电脑“文档”文件夹内的“Ghostyak Notes”文件夹中。无需创建账号或连接互联网即可使用，并且不会更改导入的 PDF 原始文件。",
   },
-  beta: {
-    eyebrow: "测试版说明",
-    title: "14 天内，\n全部功能不受限制。",
-    description: "目前提供下载的安装程序是测试版。使用期限从首次启动应用之日起计算。",
-    steps: [
-      { title: "14 天内可用全部功能", description: "自首次启动之日起 14 天内，可以使用包括书写、全库搜索和页面编辑在内的全部功能。" },
-      { title: "到期后为只读", description: "使用期限结束后，只能打开并阅读文档。书写和全库搜索将无法使用。" },
-      { title: "下一个版本再用 14 天", description: "安装下一个版本后，可以再使用 14 天。" },
-    ],
-    note: "即使期限结束，已创建的文档和笔迹也不会被删除。",
-  },
   faq: {
     title: "常见问题",
     items: [
-      { question: "测试版可以使用多久？", answer: "自首次启动应用之日起 14 天内，可以不受限制地使用全部功能。首次启动时会告知使用期限的结束日期。" },
-      { question: "14 天之后会怎样？", answer: "仍然可以打开并阅读文档，也可以在文档内查找，但无法书写，也无法在所有文档中查找。已创建的文档和笔迹不会被删除，安装下一个版本后可以再使用 14 天。" },
+      { question: "试用版可以用多久？", answer: "自首次启动应用之日起 30 天内，可以不受限制地使用全部功能。首次启动时会告知使用期限的结束日期。" },
+      { question: "30 天后会怎样？", answer: "仍可打开和阅读文档，并在文档内搜索，但无法书写，也无法在所有文档中搜索。您创建的文档和笔迹不会被删除。要继续使用这些功能需要 Pro，购买功能即将推出。" },
       { question: "文档保存在哪里？", answer: "保存在电脑“文档”文件夹内的“Ghostyak Notes”文件夹中。可以通过资料库左下角的“문서 폴더 열기”（打开文档文件夹）直接打开。" },
       { question: "扫描的 PDF 也能搜索吗？", answer: "可以。对于没有文字信息的扫描版 PDF，应用会识别其中的文字（OCR），让你能够搜索。识别在你自己的电脑上完成，目前尚不支持搜索手写内容。" },
       { question: "没有手写笔也能用吗？", answer: "可以。你可以用鼠标书写，并用键盘在文本框中输入文字。" },
@@ -98,7 +87,7 @@ const notes: Dictionary["notes"] = {
   },
   download: {
     title: "下载后，\n导入你的第一个 PDF。",
-    description: "Windows x64 · 测试版 · 14 天内可使用全部功能",
+    description: "Windows x64 · 试用版 · 30 天内可使用全部功能",
   },
 };
 

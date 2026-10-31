@@ -1,8 +1,10 @@
 import landing from "@/i18n/landing/ko";
 import notes from "@/i18n/notes/ko";
+import pricing from "@/i18n/pricing/ko";
 const ko = {
   landing,
   notes,
+  pricing,
   share: {
     heading: "마음에 드셨다면 공유해 주세요",
     copyLink: "링크 복사",
@@ -24,7 +26,6 @@ const ko = {
       { alt: "CSV Search Engine에서 MFT 데이터를 열고 열별 검색란과 행을 표시한 화면", caption: "MFT 데이터 조회 · 한국어 UI" },
     ],
     metadataTitle: "CSV Search Engine | 대용량 CSV·Excel 검색 DFIR 도구",
-    licenseBadge: "비상업적 용도 무료",
     howToAction: "사용 방법",
     workflow: {
       eyebrow: "사용 방법",

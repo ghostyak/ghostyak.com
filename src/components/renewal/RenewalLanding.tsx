@@ -44,7 +44,6 @@ export function RenewalLanding({ copy, currentPath, shareLabels }: { copy: Copy;
       <div className="mx-auto max-w-7xl">
         <PageHero
           id="renewal-title"
-          eyebrow={<Badge variant="outline" className="min-h-7 gap-2 rounded-full bg-card px-3"><span className="flex size-5 items-center justify-center rounded-full bg-ink"><Image src={boxesIcon} width={12} height={12} alt="" unoptimized /></span>{copy.hero.platform}</Badge>}
           title={boxes.name}
           description={copy.hero.title.join(" ")}
           actions={<div className="flex max-w-full flex-col items-center gap-3"><div className="flex max-w-full flex-wrap justify-center gap-3"><DownloadLinks copy={copy} /></div><ShareLinks pageUrl={`${links.site.replace(/\/$/, "")}${currentPath}`} pageTitle={copy.brand} labels={shareLabels} inline /></div>}

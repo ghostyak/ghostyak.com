@@ -1,16 +1,16 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 
-// Translation of the Korean source approved on 2026-10-09.
+// Translation of the Korean source, including the trial and Pro terms of 2026-10-31.
 const notes: Dictionary["notes"] = {
   metadataTitle: "Ghostyak Notes | App de notas para Windows para escribir sobre PDF y encontrarlo todo al instante",
   cardDescription: "Una app de notas para Windows para escribir sobre PDF con lápiz y teclado, y encontrar lo que has leído en todos tus documentos.",
   description: "Escribe sobre tus PDF con lápiz y teclado, y encuentra lo que has leído en todos tus documentos.",
   featuredEyebrow: "Nuevo",
-  betaBadge: "Beta",
-  trialBadge: "Todas las funciones durante 14 días",
+  trialBadge: "Todas las funciones durante 30 días",
   downloadAction: "Descargar para Windows x64",
   featuresAction: "Ver funciones",
-  heroNote: "Es una versión beta. Puedes usar todas las funciones sin límites durante 14 días desde el día en que la abres por primera vez.",
+  pricingAction: "Comparar la versión de prueba y Pro",
+  heroNote: "Es una versión de prueba de 30 días. Puedes usar todas las funciones sin límites durante 30 días desde el día en que la abres por primera vez.",
   screenshots: {
     annotate: { alt: "Ghostyak Notes con un libro de texto en PDF, texto resaltado y notas manuscritas en el margen", caption: "Escribir sobre un PDF · Interfaz en coreano" },
     pen: { alt: "Ajustes del lápiz de Ghostyak Notes con tres espacios de color, una paleta de colores y tres niveles de grosor", caption: "Ajustes del lápiz · Color y grosor" },
@@ -73,22 +73,11 @@ const notes: Dictionary["notes"] = {
     title: "Tus documentos están en tu PC.",
     description: "Los documentos se guardan como archivos en la carpeta «Ghostyak Notes», dentro de tu carpeta Documentos. No necesitas una cuenta ni conexión a internet, y los archivos PDF originales que importas no se modifican.",
   },
-  beta: {
-    eyebrow: "Sobre la beta",
-    title: "14 días,\ntodas las funciones, sin límites.",
-    description: "El instalador disponible ahora es una versión beta. El periodo de uso empieza el día en que abres la app por primera vez.",
-    steps: [
-      { title: "Todas las funciones durante 14 días", description: "Durante 14 días desde el primer inicio puedes usar todas las funciones, incluidas la escritura, la búsqueda en la biblioteca y la edición de páginas." },
-      { title: "Después, solo lectura", description: "Cuando termina el periodo de uso, solo puedes abrir y leer documentos. La escritura y la búsqueda en la biblioteca no están disponibles." },
-      { title: "14 días más con la siguiente versión", description: "Instala la siguiente versión para usarla 14 días más." },
-    ],
-    note: "Tus documentos y anotaciones no se eliminan cuando termina el periodo.",
-  },
   faq: {
     title: "Preguntas frecuentes",
     items: [
-      { question: "¿Cuánto tiempo puedo usar la beta?", answer: "Puedes usar todas las funciones sin límites durante 14 días desde el día en que abres la app por primera vez. En el primer inicio, la app te indica la fecha en que termina el periodo de uso." },
-      { question: "¿Qué pasa después de 14 días?", answer: "Puedes seguir abriendo y leyendo documentos y buscar dentro de un documento, pero no puedes escribir ni buscar en todos los documentos. Tus documentos y anotaciones no se eliminan, y al instalar la siguiente versión tienes 14 días más." },
+      { question: "¿Cuánto tiempo puedo usar la versión de prueba?", answer: "Puedes usar todas las funciones sin límites durante 30 días desde el día en que abres la aplicación por primera vez. Al abrirla por primera vez te indica la fecha de finalización." },
+      { question: "¿Qué pasa después de 30 días?", answer: "Puedes seguir abriendo y leyendo documentos y buscar dentro de ellos, pero la escritura y la búsqueda en todos los documentos dejan de estar disponibles. Tus documentos y anotaciones no se borran. Para seguir usándolas necesitas Pro; la compra estará disponible pronto." },
       { question: "¿Dónde se guardan mis documentos?", answer: "En la carpeta «Ghostyak Notes», dentro de tu carpeta Documentos. Puedes abrirla con «문서 폴더 열기» (Abrir carpeta de documentos), abajo a la izquierda en la biblioteca." },
       { question: "¿También busca en PDF escaneados?", answer: "Sí. En los PDF escaneados sin información de texto, la aplicación reconoce el texto (OCR) para que puedas buscarlo. El reconocimiento se hace en tu propio PC, y la búsqueda en escritura a mano aún no es compatible." },
       { question: "¿Puedo usarla sin lápiz?", answer: "Sí. Puedes escribir con el ratón y teclear en cuadros de texto con el teclado." },
@@ -98,7 +87,7 @@ const notes: Dictionary["notes"] = {
   },
   download: {
     title: "Descárgala e\nimporta tu primer PDF.",
-    description: "Windows x64 · Beta · Todas las funciones durante 14 días",
+    description: "Windows x64 · Versión de prueba · Todas las funciones durante 30 días",
   },
 };
 

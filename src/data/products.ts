@@ -33,8 +33,10 @@ export const notes = {
   name: "Notes",
   fullName: "Ghostyak Notes",
   pagePath: "/product/notes",
+  // Decided one-time price, shown in the page's #pricing section. Purchase is not open yet.
+  proPrice: { amount: 29, currency: "USD" },
   platform: "Windows · x64",
-  downloadUrl: "https://github.com/ghostyak/notes/releases/latest/download/ghostyak-notes_beta_x64-setup.exe",
+  downloadUrl: "https://github.com/ghostyak/notes/releases/latest/download/ghostyak-notes-latest-x64-setup.exe",
   screenshots: {
     annotate: { src: "/images/notes/02-annotate.png", ...notesScreenshot },
     pen: { src: "/images/notes/05-pen-settings.png", ...notesScreenshot },

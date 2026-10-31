@@ -1,10 +1,12 @@
 import landing from "@/i18n/landing/ja";
 import notes from "@/i18n/notes/ja";
+import pricing from "@/i18n/pricing/ja";
 import type { Dictionary } from "@/i18n/get-dictionary";
 
 const ja: Dictionary = {
   landing,
   notes,
+  pricing,
   share: {
     heading: "役に立ったら、ぜひ共有してください",
     copyLink: "リンクをコピー",
@@ -32,7 +34,6 @@ const ja: Dictionary = {
       }
     ],
     "metadataTitle": "CSV Search Engine | 大容量CSV・Excelを検索するDFIRツール",
-    "licenseBadge": "非商用利用は無料",
     "howToAction": "使い方",
     "workflow": {
       "eyebrow": "使い方",

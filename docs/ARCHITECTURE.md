@@ -2,7 +2,7 @@
 
 ## 개요
 
-ghostyak.com은 Vercel에 배포하는 Next.js 애플리케이션이다. 영어를 기본 진입 언어로 하고 9개 로케일 접두사 경로에서 GhostYak 브랜드, 주력 제품 Ghostyak Notes의 소개와 베타 설치 파일, Boxes 제품 소개와 무료 설치 파일, Clock과 OSINTS 웹앱 링크, CSV Search Engine의 DFIR 제품 소개와 GitHub 링크, Folder History 제품 소개와 무료 설치 파일, Markdown 블로그를 제공한다. 국제화는 기본 URL과 별개로 한국어 콘텐츠를 유일한 원문으로 삼으며 세부 기준은 [INTERNATIONALIZATION.md](./INTERNATIONALIZATION.md)를 따른다.
+ghostyak.com은 Vercel에 배포하는 Next.js 애플리케이션이다. 영어를 기본 진입 언어로 하고 9개 로케일 접두사 경로에서 GhostYak 브랜드, 주력 제품 Ghostyak Notes의 소개와 30일 체험판 설치 파일, 체험판과 Pro를 비교하는 가격 구역, Boxes 제품 소개와 무료 설치 파일, Clock과 OSINTS 웹앱 링크, CSV Search Engine의 DFIR 제품 소개와 GitHub 링크, Folder History 제품 소개와 무료 설치 파일, Markdown 블로그를 제공한다. 글꼴 Pretendard Variable은 `src/app/pretendard.css`의 `@font-face`와 `public/fonts/pretendard/`의 woff2 dynamic subset으로 직접 제공하며 외부 CDN을 쓰지 않는다. 국제화는 기본 URL과 별개로 한국어 콘텐츠를 유일한 원문으로 삼으며 세부 기준은 [INTERNATIONALIZATION.md](./INTERNATIONALIZATION.md)를 따른다.
 
 ## 기술 구성
 

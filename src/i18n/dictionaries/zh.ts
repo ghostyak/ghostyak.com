@@ -1,10 +1,12 @@
 import landing from "@/i18n/landing/zh";
 import notes from "@/i18n/notes/zh";
+import pricing from "@/i18n/pricing/zh";
 import type { Dictionary } from "@/i18n/get-dictionary";
 
 const zh: Dictionary = {
   landing,
   notes,
+  pricing,
   share: {
     heading: "觉得有用？分享给更多人吧",
     copyLink: "复制链接",
@@ -32,7 +34,6 @@ const zh: Dictionary = {
       }
     ],
     "metadataTitle": "CSV Search Engine | 搜索大型 CSV 和 Excel 的 DFIR 工具",
-    "licenseBadge": "非商业用途免费",
     "howToAction": "使用方法",
     "workflow": {
       "eyebrow": "使用方法",

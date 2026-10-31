@@ -1,16 +1,16 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 
-// Translation of the Korean source approved on 2026-10-09.
+// Translation of the Korean source, including the trial and Pro terms of 2026-10-31.
 const notes: Dictionary["notes"] = {
   metadataTitle: "Ghostyak Notes | Windows-Notiz-App zum Schreiben auf PDFs und schnellen Finden",
   cardDescription: "Eine Notiz-App für Windows: Schreibe mit Stift und Tastatur auf PDFs und finde Gelesenes in all deinen Dokumenten.",
   description: "Schreibe mit Stift und Tastatur auf PDFs und finde Gelesenes sofort in all deinen Dokumenten.",
   featuredEyebrow: "Neu",
-  betaBadge: "Beta",
-  trialBadge: "14 Tage lang alle Funktionen",
+  trialBadge: "30 Tage lang alle Funktionen",
   downloadAction: "Windows x64 herunterladen",
   featuresAction: "Funktionen ansehen",
-  heroNote: "Dies ist eine Beta-Version. Ab dem ersten Start kannst du 14 Tage lang alle Funktionen ohne Einschränkungen nutzen.",
+  pricingAction: "Testversion und Pro vergleichen",
+  heroNote: "Dies ist eine 30-Tage-Testversion. Ab dem ersten Start kannst du 30 Tage lang alle Funktionen ohne Einschränkungen nutzen.",
   screenshots: {
     annotate: { alt: "Ghostyak Notes mit einem PDF-Lehrbuch, markiertem Text und handschriftlichen Notizen am Rand", caption: "Auf einem PDF schreiben · Koreanische Oberfläche" },
     pen: { alt: "Stifteinstellungen von Ghostyak Notes mit drei Farbplätzen, einer Farbpalette und drei Strichstärken", caption: "Stifteinstellungen · Farbe und Stärke" },
@@ -73,22 +73,11 @@ const notes: Dictionary["notes"] = {
     title: "Deine Dokumente liegen auf deinem PC.",
     description: "Dokumente werden als Dateien im Ordner „Ghostyak Notes“ in deinem Ordner „Dokumente“ gespeichert. Du brauchst weder ein Konto noch eine Internetverbindung, und die importierten Original-PDF-Dateien werden nicht verändert.",
   },
-  beta: {
-    eyebrow: "Zur Beta",
-    title: "14 Tage,\nalle Funktionen, ohne Einschränkungen.",
-    description: "Das derzeit verfügbare Installationsprogramm ist eine Beta-Version. Der Nutzungszeitraum beginnt an dem Tag, an dem du die App zum ersten Mal startest.",
-    steps: [
-      { title: "14 Tage lang alle Funktionen", description: "Ab dem ersten Start kannst du 14 Tage lang alle Funktionen nutzen, einschließlich Schreiben, Bibliothekssuche und Seitenbearbeitung." },
-      { title: "Danach nur Lesen", description: "Nach Ablauf des Nutzungszeitraums kannst du Dokumente nur noch öffnen und lesen. Schreiben und die Bibliothekssuche stehen nicht zur Verfügung." },
-      { title: "Weitere 14 Tage mit der nächsten Version", description: "Installiere die nächste Version, um sie weitere 14 Tage zu nutzen." },
-    ],
-    note: "Deine Dokumente und Notizen werden nach Ablauf des Zeitraums nicht gelöscht.",
-  },
   faq: {
     title: "Häufig gestellte Fragen",
     items: [
-      { question: "Wie lange kann ich die Beta nutzen?", answer: "Ab dem Tag, an dem du die App zum ersten Mal startest, kannst du 14 Tage lang alle Funktionen ohne Einschränkungen nutzen. Beim ersten Start zeigt dir die App, wann der Nutzungszeitraum endet." },
-      { question: "Was passiert nach 14 Tagen?", answer: "Du kannst Dokumente weiterhin öffnen, lesen und im Dokument suchen, aber nicht mehr schreiben oder in allen Dokumenten suchen. Deine Dokumente und Notizen werden nicht gelöscht, und mit der nächsten Version kannst du die App weitere 14 Tage nutzen." },
+      { question: "Wie lange kann ich die Testversion nutzen?", answer: "Ab dem ersten Start der App kannst du 30 Tage lang alle Funktionen ohne Einschränkungen nutzen. Beim ersten Start zeigt dir die App das Enddatum an." },
+      { question: "Was passiert nach 30 Tagen?", answer: "Du kannst Dokumente weiterhin öffnen, lesen und in ihnen suchen, aber Schreiben und die Suche in allen Dokumenten sind nicht mehr verfügbar. Deine Dokumente und Notizen werden nicht gelöscht. Für die weitere Nutzung brauchst du Pro; der Kauf ist bald möglich." },
       { question: "Wo werden meine Dokumente gespeichert?", answer: "Im Ordner „Ghostyak Notes“ in deinem Ordner „Dokumente“. Du kannst ihn über „문서 폴더 열기“ (Dokumentordner öffnen) unten links in der Bibliothek öffnen." },
       { question: "Werden auch gescannte PDFs durchsucht?", answer: "Ja. Bei gescannten PDFs ohne Textinformationen erkennt die App den Text (OCR), sodass du ihn durchsuchen kannst. Die Erkennung findet auf deinem eigenen PC statt, und die Suche in Handschrift wird noch nicht unterstützt." },
       { question: "Kann ich die App ohne Stift nutzen?", answer: "Ja. Du kannst mit der Maus schreiben und mit der Tastatur in Textfelder tippen." },
@@ -98,7 +87,7 @@ const notes: Dictionary["notes"] = {
   },
   download: {
     title: "Lade die App herunter und\nimportiere dein erstes PDF.",
-    description: "Windows x64 · Beta · 14 Tage lang alle Funktionen",
+    description: "Windows x64 · Testversion · 30 Tage lang alle Funktionen",
   },
 };
 

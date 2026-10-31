@@ -1,10 +1,12 @@
 import landing from "@/i18n/landing/it";
 import notes from "@/i18n/notes/it";
+import pricing from "@/i18n/pricing/it";
 import type { Dictionary } from "@/i18n/get-dictionary";
 
 const it: Dictionary = {
   landing,
   notes,
+  pricing,
   share: {
     heading: "Se ti è stato utile, condividilo",
     copyLink: "Copia link",
@@ -32,7 +34,6 @@ const it: Dictionary = {
       }
     ],
     "metadataTitle": "CSV Search Engine | Strumento DFIR per cercare in file CSV ed Excel di grandi dimensioni",
-    "licenseBadge": "Gratuito per uso non commerciale",
     "howToAction": "Come funziona",
     "workflow": {
       "eyebrow": "Come funziona",

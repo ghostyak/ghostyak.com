@@ -23,7 +23,7 @@ export function ProductCard({ id, name, badges, description, preview, action }: 
   action: { label: string; href: string; external?: boolean };
 }) {
   const Icon = action.external ? ArrowUpRight : ArrowRight;
-  return <Card className="group gap-0 overflow-hidden rounded-3xl border-border/80 py-0 shadow-lg shadow-ink/5 transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-ink/10 motion-reduce:hover:translate-y-0">
+  return <Card className="card-surface card-surface-hover group gap-0 overflow-hidden py-0 shadow-none">
     <article id={id} className="flex h-full scroll-mt-24 flex-col">
       <div className="h-60 shrink-0 overflow-hidden">{preview}</div>
       <CardContent className="flex flex-1 flex-col items-start border-t p-6 sm:p-8">

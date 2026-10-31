@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { AppWindow, ArrowRight, Clock3, ChevronRight, Fingerprint, Globe, ScanSearch, type LucideIcon } from "lucide-react";
+import { AppWindow, ArrowRight, Clock3, ChevronRight, Globe, ScanSearch, type LucideIcon } from "lucide-react";
 import { notFound, permanentRedirect } from "next/navigation";
 import { buttonVariants } from "@/components/ui/button";
 import { boxes, clock, folderHistory, osints } from "@/data/products";
@@ -47,7 +47,7 @@ function formatPublishedAt(locale: PublishedLocale, value: string) {
 
 function PostCard({ post, locale, readMore, featured = false, headingLevel: Heading = "h2" }: { post: BlogPostSummary; locale: PublishedLocale; readMore: string; featured?: boolean; headingLevel?: "h2" | "h3" }) {
   const href = localizedPath(locale, `/blog/${post.slug}`);
-  return <article className={cn("group relative flex h-full flex-col rounded-3xl border p-7 transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-ink/10 motion-reduce:hover:translate-y-0 sm:p-9", featured ? "surface-ink overflow-hidden border-transparent md:col-span-2 md:p-12" : "bg-card")}>
+  return <article className={cn("card-surface card-surface-hover group relative flex h-full flex-col p-7 sm:p-9", featured && "surface-ink overflow-hidden border-transparent md:col-span-2 md:p-12")}>
     {featured && <InkBackdrop />}
     <time className="relative text-xs font-medium text-muted-foreground" dateTime={post.publishedAt}>{formatPublishedAt(locale, post.publishedAt)}</time>
     <Heading className={cn("relative mt-4 font-semibold leading-snug tracking-[-0.03em] text-balance", featured ? "max-w-3xl text-3xl sm:text-4xl" : "text-xl sm:text-2xl")}>
@@ -104,6 +104,7 @@ export async function HomeContent({ locale }: { locale: PublishedLocale }) {
                   </a>
                 </figure>}
               />
+              <CsvSearchCard copy={dictionary.csvSearch} locale={locale} viewAction={copy.products.viewAction} />
           </ProductCategory>
           <ProductCategory id="web-apps" label={dictionary.productCategories.webApps} icon={Globe}>
               <ProductCard
@@ -126,9 +127,6 @@ export async function HomeContent({ locale }: { locale: PublishedLocale }) {
                   <div className="relative flex items-center gap-3 rounded-2xl bg-card px-7 py-5 shadow-lg shadow-ink/10"><ScanSearch className="size-7 text-brand-foreground" /><span className="text-3xl font-semibold tracking-tight">{osints.name}</span></div>
                 </div>}
               />
-          </ProductCategory>
-          <ProductCategory id="digital-forensics" label={dictionary.csvSearch.category} icon={Fingerprint}>
-              <CsvSearchCard copy={dictionary.csvSearch} locale={locale} viewAction={copy.products.viewAction} />
           </ProductCategory>
         </div>
       </div>

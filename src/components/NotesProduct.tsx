@@ -1,8 +1,8 @@
-import { ArrowUpRight, Bookmark, Check, Download, Eye, HardDrive, Highlighter, Info, Keyboard, NotebookPen, Save, Type } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { ArrowRight, ArrowUpRight, Bookmark, Check, Download, Eye, HardDrive, Highlighter, Keyboard, NotebookPen, Save, Type } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { PageHero, heroActionClassName } from "@/components/PageHero";
 import { DownloadLabel, Frame, ProductDownload, ProductFaq, ProductHighlight, SectionHeading, textLink } from "@/components/ProductLanding";
+import { NotesPricing } from "@/components/NotesPricing";
 import { ShareLinks } from "@/components/ShareLinks";
 import { notes } from "@/data/products";
 import { getDictionary } from "@/i18n/get-dictionary";
@@ -17,7 +17,7 @@ const showcaseOrder = ["pen", "search", "library", "pages", "spread"] as const;
 const moreIcons = [Type, Highlighter, Bookmark, Eye, Save, Keyboard];
 
 // Flagship landing: hero, one screenshot per feature row, extra feature cards,
-// local storage highlight, beta terms, FAQ and a download band.
+// local storage highlight, pricing (trial and Pro), FAQ and a download band.
 export async function NotesProduct({ locale }: { locale: PublishedLocale }) {
   const dictionary = await getDictionary(locale);
   const copy = dictionary.notes;
@@ -27,21 +27,19 @@ export async function NotesProduct({ locale }: { locale: PublishedLocale }) {
 
   const jsonLd = getNotesJsonLd({ locale, description: copy.cardDescription, featureNames: [...showcaseOrder.map((key) => copy.showcase.items[key].eyebrow), ...copy.more.items.map((item) => item.title)] });
 
-  return <main id="main-content" className="[overflow-wrap:anywhere]">
+  return <main id="main-content" className="wrap-anywhere">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
     <section className="px-4 pb-12 sm:px-8 sm:pb-20" aria-labelledby="notes-title">
       <div className="mx-auto max-w-7xl">
         <PageHero
           id="notes-title"
-          eyebrow={<>
-            <Badge className="min-h-7 gap-2 rounded-full bg-ink px-3 text-white"><NotebookPen className="size-3 text-brand" aria-hidden="true" />{copy.betaBadge}</Badge>
-            <Badge variant="outline" className="min-h-7 rounded-full bg-card px-3">{notes.platform}</Badge>
-            <Badge variant="outline" className="min-h-7 rounded-full border-transparent bg-brand px-3 text-ink">{copy.trialBadge}</Badge>
-          </>}
           title={notes.name}
           description={copy.description}
           actions={<div className="flex max-w-full flex-col items-center gap-3">
-            {downloadLink}
+            <div className="flex max-w-full flex-wrap justify-center gap-3">
+              {downloadLink}
+              <a className={cn(buttonVariants({ variant: "outline", size: "lg", className: heroActionClassName }))} href="#pricing">{copy.pricingAction}<ArrowRight aria-hidden="true" /></a>
+            </div>
             <ShareLinks pageUrl={`${siteUrl}${localizedPath(locale, notes.pagePath)}`} pageTitle={notes.name} labels={dictionary.share} inline />
           </div>}
           note={copy.heroNote}
@@ -68,7 +66,7 @@ export async function NotesProduct({ locale }: { locale: PublishedLocale }) {
               <p className="mb-4 text-xs font-semibold tracking-wide text-brand-foreground">{item.eyebrow}</p>
               <h3 className="whitespace-pre-line text-2xl font-semibold leading-[1.3] tracking-[-0.03em] text-balance sm:text-3xl">{item.title}</h3>
               <p className="mt-4 text-base leading-8 text-muted-foreground">{item.description}</p>
-              <ul className="mt-6 space-y-3">{item.points.map(point => <li key={point} className="flex items-start gap-3 text-sm leading-6"><span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-brand text-ink"><Check className="size-3 stroke-[3]" aria-hidden="true" /></span>{point}</li>)}</ul>
+              <ul className="mt-6 space-y-3">{item.points.map(point => <li key={point} className="flex items-start gap-3 text-sm leading-6"><span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-brand text-ink"><Check className="size-3 stroke-3" aria-hidden="true" /></span>{point}</li>)}</ul>
             </div>
             <figure>
               <a className="block rounded-2xl" href={screenshot.src} target="_blank" rel="noreferrer" aria-label={`${viewScreenshot}: ${screenshot.caption}`}>
@@ -86,22 +84,16 @@ export async function NotesProduct({ locale }: { locale: PublishedLocale }) {
         <SectionHeading id="notes-more" eyebrow={copy.more.eyebrow} title={copy.more.title} />
         <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{copy.more.items.map((item, index) => {
           const Icon = moreIcons[index];
-          return <li key={item.title} className="rounded-3xl border bg-card p-6"><span className="mb-5 flex size-11 items-center justify-center rounded-2xl bg-ink text-brand"><Icon className="size-5" aria-hidden="true" /></span><h3 className="font-semibold">{item.title}</h3><p className="mt-2 text-sm leading-7 text-muted-foreground">{item.description}</p></li>;
+          return <li key={item.title} className="card-surface p-6"><span className="mb-5 flex size-11 items-center justify-center rounded-2xl bg-ink text-brand"><Icon className="size-5" aria-hidden="true" /></span><h3 className="font-semibold">{item.title}</h3><p className="mt-2 text-sm leading-7 text-muted-foreground">{item.description}</p></li>;
         })}</ul>
       </div>
     </section>
 
     <ProductHighlight id="notes-highlight" icon={HardDrive} eyebrow={copy.privacy.eyebrow} title={copy.privacy.title} description={copy.privacy.description} />
 
-    <section id="beta" className="scroll-mt-24 border-t px-4 py-16 sm:px-8 sm:py-24" aria-labelledby="notes-beta">
-      <div className="mx-auto max-w-7xl">
-        <SectionHeading id="notes-beta" eyebrow={copy.beta.eyebrow} title={copy.beta.title} description={copy.beta.description} />
-        <ol className="mt-12 grid gap-4 md:grid-cols-3 md:gap-6">{copy.beta.steps.map((step, index) => <li key={step.title} className="rounded-3xl border bg-card p-6 sm:p-7"><span className="flex size-9 items-center justify-center rounded-full bg-brand font-mono text-xs font-semibold text-ink" aria-hidden="true">0{index + 1}</span><h3 className="mb-3 mt-4 text-base font-semibold">{step.title}</h3><p className="text-sm leading-7 text-muted-foreground">{step.description}</p></li>)}</ol>
-        <p className="mt-6 flex items-start gap-2.5 text-sm leading-7 text-muted-foreground"><Info className="mt-1.5 size-4 shrink-0 text-brand-foreground" aria-hidden="true" />{copy.beta.note}</p>
-      </div>
-    </section>
+    <NotesPricing copy={dictionary.pricing} downloadAction={copy.downloadAction} locale={locale} />
 
-    <ProductFaq id="notes-faq" title={copy.faq.title} items={copy.faq.items} />
+    <ProductFaq id="notes-faq" title={copy.faq.title} items={[...copy.faq.items, ...dictionary.pricing.faq.items]} />
     <ProductDownload id="notes-download" icon={NotebookPen} title={copy.download.title} description={copy.download.description}>{downloadLink}</ProductDownload>
   </main>;
 }

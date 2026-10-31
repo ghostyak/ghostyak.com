@@ -1,16 +1,16 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 
-// Translation of the Korean source approved on 2026-10-09.
+// Translation of the Korean source, including the trial and Pro terms of 2026-10-31.
 const notes: Dictionary["notes"] = {
   metadataTitle: "Ghostyak Notes | A Windows note app for writing on PDFs and finding anything fast",
   cardDescription: "A Windows note app for writing on PDFs with pen and keyboard, and finding what you read across all your documents.",
   description: "Write on PDFs with pen and keyboard, and find what you read across all your documents.",
   featuredEyebrow: "New",
-  betaBadge: "Beta",
-  trialBadge: "All features for 14 days",
+  trialBadge: "All features for 30 days",
   downloadAction: "Download for Windows x64",
   featuresAction: "See features",
-  heroNote: "This is a beta version. You can use every feature without limits for 14 days from the day you first launch it.",
+  pricingAction: "Compare Trial and Pro",
+  heroNote: "This is a 30-day trial. You can use every feature without limits for 30 days from the day you first launch it.",
   screenshots: {
     annotate: { alt: "Ghostyak Notes showing a PDF textbook with highlighted text and handwritten notes in the margin", caption: "Writing on a PDF · Korean UI" },
     pen: { alt: "Ghostyak Notes pen settings with three color slots, a color palette, and three thickness levels", caption: "Pen settings · Color and thickness" },
@@ -73,22 +73,11 @@ const notes: Dictionary["notes"] = {
     title: "Your documents stay on your PC.",
     description: "Documents are saved as files in the ‘Ghostyak Notes’ folder inside your Documents folder. You don’t need an account or an internet connection, and the original PDF files you import are never changed.",
   },
-  beta: {
-    eyebrow: "About the beta",
-    title: "14 days,\nevery feature, no limits.",
-    description: "The installer available now is a beta version. The usage period starts on the day you first launch the app.",
-    steps: [
-      { title: "All features for 14 days", description: "For 14 days from first launch, you can use every feature, including writing, library search, and page editing." },
-      { title: "Read-only after that", description: "When the usage period ends, you can only open and read documents. Writing and library search are unavailable." },
-      { title: "14 more days with the next version", description: "Install the next version to use it for another 14 days." },
-    ],
-    note: "Your documents and handwriting are not deleted when the period ends.",
-  },
   faq: {
     title: "Frequently asked questions",
     items: [
-      { question: "How long can I use the beta?", answer: "You can use every feature without limits for 14 days from the day you first launch the app. The app tells you when the usage period ends the first time you launch it." },
-      { question: "What happens after 14 days?", answer: "You can still open and read documents and search within a document, but writing and searching all documents are unavailable. Your documents and handwriting are not deleted, and installing the next version gives you another 14 days." },
+      { question: "How long can I use the trial?", answer: "You can use every feature without limits for 30 days from the day you first launch the app. The app tells you the end date on first launch." },
+      { question: "What happens after 30 days?", answer: "You can still open and read documents and search within them, but writing and searching all documents are no longer available. Your documents and handwriting are not deleted. To keep using those features you need Pro, and purchasing will be available soon." },
       { question: "Where are my documents stored?", answer: "In the ‘Ghostyak Notes’ folder inside your Documents folder. You can open it with ‘문서 폴더 열기’ (Open documents folder) at the bottom left of the library." },
       { question: "Can it search scanned PDFs?", answer: "Yes. For scanned PDFs with no text information, the app recognizes the text (OCR) so you can search it. Recognition happens on your own PC, and searching handwriting is not supported yet." },
       { question: "Can I use it without a pen?", answer: "Yes. You can write with a mouse and type into text boxes with a keyboard." },
@@ -98,7 +87,7 @@ const notes: Dictionary["notes"] = {
   },
   download: {
     title: "Download it and\nimport your first PDF.",
-    description: "Windows x64 · Beta · All features for 14 days",
+    description: "Windows x64 · Trial · All features for 30 days",
   },
 };
 

@@ -1,16 +1,16 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 
-// Translation of the Korean source approved on 2026-10-09.
+// Translation of the Korean source, including the trial and Pro terms of 2026-10-31.
 const notes: Dictionary["notes"] = {
   metadataTitle: "Ghostyak Notes | Application de notes Windows pour écrire sur vos PDF et tout retrouver",
   cardDescription: "Une application de notes pour Windows pour écrire sur vos PDF au stylet et au clavier, et retrouver ce que vous avez lu dans tous vos documents.",
   description: "Écrivez sur vos PDF au stylet et au clavier, et retrouvez ce que vous avez lu dans tous vos documents.",
   featuredEyebrow: "Nouveau",
-  betaBadge: "Bêta",
-  trialBadge: "Toutes les fonctionnalités pendant 14 jours",
+  trialBadge: "Toutes les fonctionnalités pendant 30 jours",
   downloadAction: "Télécharger pour Windows x64",
   featuresAction: "Voir les fonctionnalités",
-  heroNote: "Il s’agit d’une version bêta. Vous pouvez utiliser toutes les fonctionnalités sans restriction pendant 14 jours à compter du premier lancement.",
+  pricingAction: "Comparer la version d’essai et Pro",
+  heroNote: "Il s’agit d’une version d’essai de 30 jours. Vous pouvez utiliser toutes les fonctionnalités sans restriction pendant 30 jours à compter du premier lancement.",
   screenshots: {
     annotate: { alt: "Ghostyak Notes affichant un manuel PDF avec du texte surligné et des notes manuscrites dans la marge", caption: "Écrire sur un PDF · Interface en coréen" },
     pen: { alt: "Réglages du stylo de Ghostyak Notes avec trois emplacements de couleur, une palette et trois épaisseurs", caption: "Réglages du stylo · Couleur et épaisseur" },
@@ -73,22 +73,11 @@ const notes: Dictionary["notes"] = {
     title: "Vos documents restent sur votre PC.",
     description: "Les documents sont enregistrés sous forme de fichiers dans le dossier « Ghostyak Notes » de votre dossier Documents. Vous n’avez besoin ni de compte ni de connexion Internet, et les fichiers PDF d’origine que vous importez ne sont pas modifiés.",
   },
-  beta: {
-    eyebrow: "À propos de la bêta",
-    title: "14 jours,\ntoutes les fonctionnalités, sans restriction.",
-    description: "Le programme d’installation proposé actuellement est une version bêta. La période d’utilisation commence le jour où vous lancez l’application pour la première fois.",
-    steps: [
-      { title: "Toutes les fonctionnalités pendant 14 jours", description: "Pendant 14 jours à compter du premier lancement, vous pouvez utiliser toutes les fonctionnalités, y compris l’écriture, la recherche dans la bibliothèque et la modification des pages." },
-      { title: "Ensuite, lecture seule", description: "Une fois la période d’utilisation terminée, vous pouvez seulement ouvrir et lire les documents. L’écriture et la recherche dans la bibliothèque ne sont plus disponibles." },
-      { title: "14 jours de plus avec la version suivante", description: "Installez la version suivante pour l’utiliser 14 jours de plus." },
-    ],
-    note: "Vos documents et annotations ne sont pas supprimés à la fin de la période.",
-  },
   faq: {
     title: "Questions fréquentes",
     items: [
-      { question: "Combien de temps puis-je utiliser la bêta ?", answer: "Vous pouvez utiliser toutes les fonctionnalités sans restriction pendant 14 jours à compter du jour où vous lancez l’application pour la première fois. Au premier lancement, l’application vous indique la date de fin de la période d’utilisation." },
-      { question: "Que se passe-t-il après 14 jours ?", answer: "Vous pouvez toujours ouvrir et lire les documents et rechercher dans un document, mais vous ne pouvez plus écrire ni rechercher dans tous les documents. Vos documents et annotations ne sont pas supprimés, et l’installation de la version suivante vous donne 14 jours de plus." },
+      { question: "Combien de temps puis-je utiliser la version d’essai ?", answer: "Vous pouvez utiliser toutes les fonctionnalités sans restriction pendant 30 jours à compter du premier lancement de l’application. La date de fin vous est indiquée au premier lancement." },
+      { question: "Que se passe-t-il après 30 jours ?", answer: "Vous pouvez toujours ouvrir et lire vos documents et y effectuer des recherches, mais l’écriture et la recherche dans tous les documents ne sont plus disponibles. Vos documents et annotations ne sont pas supprimés. Pour continuer, Pro est nécessaire ; l’achat sera bientôt disponible." },
       { question: "Où mes documents sont-ils enregistrés ?", answer: "Dans le dossier « Ghostyak Notes » de votre dossier Documents. Vous pouvez l’ouvrir avec « 문서 폴더 열기 » (Ouvrir le dossier des documents), en bas à gauche de la bibliothèque." },
       { question: "La recherche fonctionne-t-elle sur les PDF numérisés ?", answer: "Oui. Pour les PDF numérisés sans informations de texte, l’application reconnaît le texte (OCR) afin que vous puissiez y faire des recherches. La reconnaissance s’effectue sur votre propre PC, et la recherche dans l’écriture manuscrite n’est pas encore prise en charge." },
       { question: "Puis-je l’utiliser sans stylet ?", answer: "Oui. Vous pouvez écrire à la souris et saisir du texte au clavier dans des zones de texte." },
@@ -98,7 +87,7 @@ const notes: Dictionary["notes"] = {
   },
   download: {
     title: "Téléchargez l’application et\nimportez votre premier PDF.",
-    description: "Windows x64 · Bêta · Toutes les fonctionnalités pendant 14 jours",
+    description: "Windows x64 · Version d’essai · Toutes les fonctionnalités pendant 30 jours",
   },
 };
 

@@ -80,10 +80,9 @@ export function DownloadLabel({ label, architecture }: { label: string; architec
 
 // Shared product landing: hero, framed main screenshot, three steps, feature cards with
 // secondary screenshots, an ink highlight, FAQ and a download band.
-export function ProductLanding({ id, name, badges, copy, screenshots, featureIcons, highlightIcon, productIcon, downloadUrl, downloadArchitecture, alternateDownload, repository, viewScreenshot, shareUrl, shareLabels }: {
+export function ProductLanding({ id, name, copy, screenshots, featureIcons, highlightIcon, productIcon, downloadUrl, downloadArchitecture, alternateDownload, repository, viewScreenshot, shareUrl, shareLabels }: {
   id: string;
   name: string;
-  badges: ReactNode;
   copy: ProductLandingCopy;
   // The first screenshot is the hero; the rest appear under the features.
   screenshots: readonly Screenshot[];
@@ -107,7 +106,6 @@ export function ProductLanding({ id, name, badges, copy, screenshots, featureIco
       <div className="mx-auto max-w-7xl">
         <PageHero
           id={`${id}-title`}
-          eyebrow={badges}
           title={name}
           description={copy.description}
           actions={<div className="flex max-w-full flex-col items-center gap-3"><div className="flex max-w-full flex-wrap justify-center gap-3">{downloadLink}{alternateDownloadLink}</div><ShareLinks pageUrl={shareUrl} pageTitle={name} labels={shareLabels} inline /></div>}
@@ -125,7 +123,7 @@ export function ProductLanding({ id, name, badges, copy, screenshots, featureIco
     <section id="how-it-works" className="scroll-mt-24 border-t px-4 py-16 sm:px-8 sm:py-24" aria-labelledby={`${id}-workflow`}>
       <div className="mx-auto max-w-7xl">
         <SectionHeading id={`${id}-workflow`} eyebrow={copy.workflow.eyebrow} title={copy.workflow.title} description={copy.workflow.description} />
-        <ol className="mt-12 grid gap-4 md:grid-cols-3 md:gap-6">{copy.workflow.steps.map((step, index) => <li key={step.title} className="rounded-3xl border bg-card p-6 sm:p-7"><span className="flex size-9 items-center justify-center rounded-full bg-brand font-mono text-xs font-semibold text-ink" aria-hidden="true">0{index + 1}</span><h3 className="mb-3 mt-4 text-base font-semibold">{step.title}</h3><p className="text-sm leading-7 text-muted-foreground">{step.description}</p></li>)}</ol>
+        <ol className="mt-12 grid gap-4 md:grid-cols-3 md:gap-6">{copy.workflow.steps.map((step, index) => <li key={step.title} className="card-surface p-6 sm:p-7"><span className="flex size-9 items-center justify-center rounded-full bg-brand font-mono text-xs font-semibold text-ink" aria-hidden="true">0{index + 1}</span><h3 className="mb-3 mt-4 text-base font-semibold">{step.title}</h3><p className="text-sm leading-7 text-muted-foreground">{step.description}</p></li>)}</ol>
       </div>
     </section>
 
@@ -134,7 +132,7 @@ export function ProductLanding({ id, name, badges, copy, screenshots, featureIco
         <SectionHeading id={`${id}-features`} eyebrow={copy.features.eyebrow} title={copy.features.title} />
         <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{copy.features.items.map((item, index) => {
           const Icon = featureIcons[index];
-          return <li key={item.title} className="rounded-3xl border bg-card p-6"><span className="mb-5 flex size-11 items-center justify-center rounded-2xl bg-ink text-brand"><Icon className="size-5" aria-hidden="true" /></span><h3 className="font-semibold">{item.title}</h3><p className="mt-2 text-sm leading-7 text-muted-foreground">{item.description}</p></li>;
+          return <li key={item.title} className="card-surface p-6"><span className="mb-5 flex size-11 items-center justify-center rounded-2xl bg-ink text-brand"><Icon className="size-5" aria-hidden="true" /></span><h3 className="font-semibold">{item.title}</h3><p className="mt-2 text-sm leading-7 text-muted-foreground">{item.description}</p></li>;
         })}</ul>
         {secondary.length > 0 && <div className={cn("mt-12 grid gap-8", secondary.length > 1 ? "md:grid-cols-2" : "mx-auto max-w-3xl")}>{secondary.map(screenshot => <figure key={screenshot.src}>
           <a className="block rounded-2xl" href={screenshot.src} target="_blank" rel="noreferrer" aria-label={`${viewScreenshot}: ${screenshot.caption}`}>

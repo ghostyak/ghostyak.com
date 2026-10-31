@@ -1,16 +1,16 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 
-// Translation of the Korean source approved on 2026-10-09.
+// Translation of the Korean source, including the trial and Pro terms of 2026-10-31.
 const notes: Dictionary["notes"] = {
   metadataTitle: "Ghostyak Notes | App di appunti per Windows per scrivere sui PDF e trovare tutto subito",
   cardDescription: "Un’app di appunti per Windows per scrivere sui PDF con penna e tastiera e trovare ciò che hai letto in tutti i tuoi documenti.",
   description: "Scrivi sui PDF con penna e tastiera e trova ciò che hai letto in tutti i tuoi documenti.",
   featuredEyebrow: "Novità",
-  betaBadge: "Beta",
-  trialBadge: "Tutte le funzioni per 14 giorni",
+  trialBadge: "Tutte le funzioni per 30 giorni",
   downloadAction: "Scarica per Windows x64",
   featuresAction: "Vedi le funzioni",
-  heroNote: "È una versione beta. Puoi usare tutte le funzioni senza limiti per 14 giorni dal giorno del primo avvio.",
+  pricingAction: "Confronta la versione di prova e Pro",
+  heroNote: "È una versione di prova di 30 giorni. Puoi usare tutte le funzioni senza limiti per 30 giorni dal giorno del primo avvio.",
   screenshots: {
     annotate: { alt: "Ghostyak Notes con un manuale in PDF, testo evidenziato e appunti scritti a mano a margine", caption: "Scrivere su un PDF · Interfaccia in coreano" },
     pen: { alt: "Impostazioni della penna di Ghostyak Notes con tre slot colore, una tavolozza e tre livelli di spessore", caption: "Impostazioni della penna · Colore e spessore" },
@@ -73,22 +73,11 @@ const notes: Dictionary["notes"] = {
     title: "I tuoi documenti restano sul tuo PC.",
     description: "I documenti vengono salvati come file nella cartella «Ghostyak Notes», all’interno della tua cartella Documenti. Non servono un account né una connessione a Internet, e i file PDF originali che importi non vengono modificati.",
   },
-  beta: {
-    eyebrow: "Informazioni sulla beta",
-    title: "14 giorni,\ntutte le funzioni, senza limiti.",
-    description: "Il programma di installazione disponibile ora è una versione beta. Il periodo di utilizzo parte dal giorno in cui avvii l’app per la prima volta.",
-    steps: [
-      { title: "Tutte le funzioni per 14 giorni", description: "Per 14 giorni dal primo avvio puoi usare tutte le funzioni, comprese la scrittura, la ricerca nella libreria e la modifica delle pagine." },
-      { title: "Poi sola lettura", description: "Al termine del periodo di utilizzo puoi solo aprire e leggere i documenti. La scrittura e la ricerca nella libreria non sono disponibili." },
-      { title: "Altri 14 giorni con la versione successiva", description: "Installa la versione successiva per usarla per altri 14 giorni." },
-    ],
-    note: "I tuoi documenti e appunti non vengono eliminati al termine del periodo.",
-  },
   faq: {
     title: "Domande frequenti",
     items: [
-      { question: "Per quanto tempo posso usare la beta?", answer: "Puoi usare tutte le funzioni senza limiti per 14 giorni dal giorno in cui avvii l’app per la prima volta. Al primo avvio l’app ti indica la data in cui termina il periodo di utilizzo." },
-      { question: "Cosa succede dopo 14 giorni?", answer: "Puoi ancora aprire e leggere i documenti e cercare all’interno di un documento, ma non puoi scrivere né cercare in tutti i documenti. I tuoi documenti e appunti non vengono eliminati, e installando la versione successiva hai altri 14 giorni." },
+      { question: "Per quanto tempo posso usare la versione di prova?", answer: "Puoi usare tutte le funzioni senza limiti per 30 giorni dal giorno del primo avvio dell’app. Al primo avvio l’app ti indica la data di scadenza." },
+      { question: "Che cosa succede dopo 30 giorni?", answer: "Puoi ancora aprire e leggere i documenti e cercare al loro interno, ma la scrittura e la ricerca in tutti i documenti non sono più disponibili. I tuoi documenti e gli appunti non vengono eliminati. Per continuare serve Pro; l’acquisto sarà disponibile a breve." },
       { question: "Dove vengono salvati i miei documenti?", answer: "Nella cartella «Ghostyak Notes», all’interno della tua cartella Documenti. Puoi aprirla con «문서 폴더 열기» (Apri la cartella dei documenti), in basso a sinistra nella libreria." },
       { question: "La ricerca funziona anche sui PDF scansionati?", answer: "Sì. Nei PDF scansionati senza informazioni di testo, l’app riconosce il testo (OCR) così puoi cercarlo. Il riconoscimento avviene sul tuo PC, e la ricerca nella scrittura a mano non è ancora supportata." },
       { question: "Posso usarla senza penna?", answer: "Sì. Puoi scrivere con il mouse e digitare nelle caselle di testo con la tastiera." },
@@ -98,7 +87,7 @@ const notes: Dictionary["notes"] = {
   },
   download: {
     title: "Scaricala e\nimporta il tuo primo PDF.",
-    description: "Windows x64 · Beta · Tutte le funzioni per 14 giorni",
+    description: "Windows x64 · Versione di prova · Tutte le funzioni per 30 giorni",
   },
 };
 

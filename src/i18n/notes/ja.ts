@@ -1,16 +1,16 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 
-// Translation of the Korean source approved on 2026-10-09.
+// Translation of the Korean source, including the trial and Pro terms of 2026-10-31.
 const notes: Dictionary["notes"] = {
   metadataTitle: "Ghostyak Notes | PDFに書き込んで、すぐに探せるWindowsノートアプリ",
   cardDescription: "PDFの上にペンとキーボードで書き込み、読んだ内容をすべての文書からすぐに探せるWindowsノートアプリです。",
   description: "PDFの上にペンとキーボードで書き込み、読んだ内容はすべての文書からすぐに探せます。",
   featuredEyebrow: "新製品",
-  betaBadge: "ベータ",
-  trialBadge: "14日間すべての機能を利用可能",
+  trialBadge: "30日間すべての機能を利用可能",
   downloadAction: "Windows x64版をダウンロード",
   featuresAction: "機能を見る",
-  heroNote: "ベータ版です。初めて起動した日から14日間、すべての機能を制限なく使えます。",
+  pricingAction: "体験版とProを比較する",
+  heroNote: "30日間の体験版です。初めて起動した日から30日間、すべての機能を制限なく使えます。",
   screenshots: {
     annotate: { alt: "Ghostyak NotesでPDFの教材に蛍光マーカーを引き、余白に手書きでメモした画面", caption: "PDFに書き込み · 韓国語UI" },
     pen: { alt: "3つの色スロット、カラーパレット、3段階の太さを選ぶGhostyak Notesのペン設定", caption: "ペン設定 · 色と太さ" },
@@ -73,22 +73,11 @@ const notes: Dictionary["notes"] = {
     title: "文書は自分のPCにあります。",
     description: "文書はPCの「ドキュメント」フォルダー内の「Ghostyak Notes」フォルダーにファイルとして保存されます。アカウントの作成やインターネット接続なしで使え、取り込んだPDFの元ファイルは変更しません。",
   },
-  beta: {
-    eyebrow: "ベータ版について",
-    title: "14日間、\nすべての機能を制限なく。",
-    description: "現在ダウンロードできるインストーラーはベータ版です。利用期間はアプリを初めて起動した日から数えます。",
-    steps: [
-      { title: "14日間すべての機能", description: "初めて起動した日から14日間、手書き、全体検索、ページ編集を含むすべての機能を使えます。" },
-      { title: "期間終了後は読み取り専用", description: "利用期間が終わると、文書を開いて読むことだけができます。手書きと全体検索は使えません。" },
-      { title: "次のバージョンでさらに14日", description: "次のバージョンをインストールすると、さらに14日間使えます。" },
-    ],
-    note: "期間が終わっても、作成した文書と書き込みは削除されません。",
-  },
   faq: {
     title: "よくある質問",
     items: [
-      { question: "ベータ版はどのくらい使えますか？", answer: "アプリを初めて起動した日から14日間、すべての機能を制限なく使えます。初回起動時に利用期間の終了日をお知らせします。" },
-      { question: "14日を過ぎるとどうなりますか？", answer: "文書を開いて読むことと文書内の検索はできますが、手書きとすべての文書からの検索は使えません。作成した文書と書き込みは削除されず、次のバージョンをインストールするとさらに14日間使えます。" },
+      { question: "体験版はどのくらい使えますか？", answer: "アプリを初めて起動した日から30日間、すべての機能を制限なく使えます。初回起動時に利用期間の終了日をお知らせします。" },
+      { question: "30日を過ぎるとどうなりますか？", answer: "文書を開いて読み、文書内を検索することはできますが、手書きとすべての文書からの検索は使えません。作成した文書と書き込みは削除されません。使い続けるにはProが必要で、購入機能はまもなく提供予定です。" },
       { question: "文書はどこに保存されますか？", answer: "PCの「ドキュメント」フォルダー内の「Ghostyak Notes」フォルダーに保存されます。ライブラリ左下の「문서 폴더 열기」（文書フォルダーを開く）ですぐに開けます。" },
       { question: "スキャンしたPDFも検索できますか？", answer: "はい。文字情報のないスキャンPDFは、アプリが文字を認識（OCR）して検索できるようにします。認識はお使いのPCの中で行われ、手書き文字の検索にはまだ対応していません。" },
       { question: "ペンがなくても使えますか？", answer: "はい。マウスで手書きし、キーボードでテキストボックスに文字を入力できます。" },
@@ -98,7 +87,7 @@ const notes: Dictionary["notes"] = {
   },
   download: {
     title: "ダウンロードして、\n最初のPDFを取り込みましょう。",
-    description: "Windows x64 · ベータ · 14日間すべての機能を利用可能",
+    description: "Windows x64 · 体験版 · 30日間すべての機能を利用可能",
   },
 };
 
