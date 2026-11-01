@@ -96,6 +96,7 @@ Markdown 본문
 
 - favicon과 그대로 제공할 이미지는 `public/`에 둔다.
 - 기본 파비콘은 `public/favicon.svg`이며 루트 레이아웃의 `icons` 메타데이터로 모든 언어에 적용한다. 중복 아이콘이 자동 등록되지 않도록 `src/app/favicon.ico`와 `src/app/icon.png`는 두지 않는다.
+- Google 검색용 `public/favicon-192.png`와 `public/favicon.ico`는 `favicon.svg`에서 만든 래스터다. `favicon.svg`를 바꾸면 `node scripts/build-favicons.mjs`로 다시 만든다(Next.js에 포함된 sharp를 사용).
 - 큰 설치 파일은 GitHub Releases 같은 외부 저장소에 두고 HTTPS URL을 연결한다.
 - 실제 설치 파일로 바꾸기 전 다운로드 URL과 버전 정보를 함께 확인한다.
 

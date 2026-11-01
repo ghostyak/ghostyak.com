@@ -7,7 +7,8 @@ import { localizedPath } from "@/i18n/routing";
 
 export async function getNotesMetadata(locale: PublishedLocale): Promise<Metadata> {
   const { notes: copy } = await getDictionary(locale);
-  const description = copy.description;
+  // The search snippet names the platform and the trial; the hero keeps the shorter line.
+  const description = copy.metadataDescription;
   // The library view is the image shown when the page is shared.
   const screenshot = notes.screenshots.library;
   const images = [{ url: screenshot.src, width: screenshot.width, height: screenshot.height, alt: copy.screenshots.library.alt }];

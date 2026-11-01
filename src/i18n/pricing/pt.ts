@@ -40,7 +40,7 @@ const pricing: Dictionary["pricing"] = {
   footnote: "*Quando o teste termina, você só pode abrir e ler documentos. Seus documentos e anotações não são apagados e podem ser exportados para PDF com a escrita.",
   compare: {
     eyebrow: "Comparação de recursos",
-    title: "O que muda?",
+    title: "Teste de 30 dias e Pro: o que muda?",
     description: "Por 30 dias, é igual ao Pro. Quando termina, o app fica somente leitura e seus documentos e anotações continuam como estão.",
     feature: "Recurso",
     during: "30 dias",

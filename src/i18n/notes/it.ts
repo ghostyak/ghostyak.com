@@ -2,7 +2,10 @@ import type { Dictionary } from "@/i18n/get-dictionary";
 
 // Translation of the Korean source, including the trial and Pro terms of 2026-10-31.
 const notes: Dictionary["notes"] = {
-  metadataTitle: "Ghostyak Notes | App di appunti per Windows per scrivere sui PDF e trovare tutto subito",
+  metadataTitle: "Ghostyak Notes | App di appunti su PDF per Windows",
+  metadataDescription: "Un’app di appunti per Windows per scrivere sui PDF con penna e tastiera e trovare ciò che hai letto in tutti i tuoi documenti. Prova tutte le funzioni per 30 giorni.",
+  heroTitle: "Ghostyak Notes: scrivi sui PDF\ne trova tutto subito",
+  featuredAction: "Scopri l’app di appunti PDF",
   cardDescription: "Un’app di appunti per Windows per scrivere sui PDF con penna e tastiera e trovare ciò che hai letto in tutti i tuoi documenti.",
   description: "Scrivi sui PDF con penna e tastiera e trova ciò che hai letto in tutti i tuoi documenti.",
   featuredEyebrow: "Novità",
@@ -21,7 +24,7 @@ const notes: Dictionary["notes"] = {
   },
   showcase: {
     eyebrow: "Funzioni principali",
-    title: "Leggi, scrivi e trova,\ntutto in un’unica app.",
+    title: "Leggi, scrivi e cerca nei PDF,\ntutto in un’unica app.",
     description: "Manuali e dispense, relazioni e articoli. Importa un PDF, scrivici sopra direttamente e ritrova in seguito la pagina che ti serve.",
     items: {
       pen: {
@@ -70,7 +73,7 @@ const notes: Dictionary["notes"] = {
   },
   privacy: {
     eyebrow: "Salvato sul tuo PC",
-    title: "I tuoi documenti restano sul tuo PC.",
+    title: "I tuoi PDF e i tuoi appunti restano solo sul tuo PC.",
     description: "I documenti vengono salvati come file nella cartella «Ghostyak Notes», all’interno della tua cartella Documenti. Non servono un account né una connessione a Internet, e i file PDF originali che importi non vengono modificati.",
   },
   faq: {
@@ -80,9 +83,9 @@ const notes: Dictionary["notes"] = {
       { question: "Che cosa succede dopo 30 giorni?", answer: "Puoi ancora aprire e leggere i documenti e cercare al loro interno, ma la scrittura e la ricerca in tutti i documenti non sono più disponibili. I tuoi documenti e gli appunti non vengono eliminati. Per continuare serve Pro; l’acquisto sarà disponibile a breve." },
       { question: "Dove vengono salvati i miei documenti?", answer: "Nella cartella «Ghostyak Notes», all’interno della tua cartella Documenti. Puoi aprirla con «문서 폴더 열기» (Apri la cartella dei documenti), in basso a sinistra nella libreria." },
       { question: "La ricerca funziona anche sui PDF scansionati?", answer: "Sì. Nei PDF scansionati senza informazioni di testo, l’app riconosce il testo (OCR) così puoi cercarlo. Il riconoscimento avviene sul tuo PC, e la ricerca nella scrittura a mano non è ancora supportata." },
-      { question: "Posso usarla senza penna?", answer: "Sì. Puoi scrivere con il mouse e digitare nelle caselle di testo con la tastiera." },
+      { question: "Posso scrivere sui PDF con il mouse, senza una tavoletta con penna?", answer: "Sì. Puoi scrivere con il mouse e digitare nelle caselle di testo con la tastiera." },
       { question: "In che lingua è disponibile l’app?", answer: "Al momento l’interfaccia dell’app è disponibile in coreano. Altre lingue saranno disponibili a breve." },
-      { question: "Cosa serve per usarla?", answer: "È per Windows a 64 bit (x64). Se Microsoft Edge WebView2 Runtime non è presente, il programma di installazione lo scarica e lo installa." },
+      { question: "Su quale Windows funziona?", answer: "È per Windows a 64 bit (x64). Se Microsoft Edge WebView2 Runtime non è presente, il programma di installazione lo scarica e lo installa." },
     ],
   },
   download: {

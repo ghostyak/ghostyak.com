@@ -40,7 +40,7 @@ const pricing: Dictionary["pricing"] = {
   footnote: "*Alla scadenza della versione di prova puoi solo aprire e leggere i documenti. I tuoi documenti e appunti non vengono eliminati e puoi esportarli in PDF con la scrittura.",
   compare: {
     eyebrow: "Confronto delle funzioni",
-    title: "Che cosa cambia?",
+    title: "Prova di 30 giorni e Pro: che cosa cambia?",
     description: "Per 30 giorni è uguale a Pro. Alla scadenza passa alla sola lettura e i tuoi documenti e appunti restano intatti.",
     feature: "Funzione",
     during: "30 giorni",

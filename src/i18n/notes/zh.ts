@@ -3,6 +3,9 @@ import type { Dictionary } from "@/i18n/get-dictionary";
 // Translation of the Korean source, including the trial and Pro terms of 2026-10-31.
 const notes: Dictionary["notes"] = {
   metadataTitle: "Ghostyak Notes | 在 PDF 上做笔记并快速查找的 Windows 笔记应用",
+  metadataDescription: "一款 Windows 笔记应用：用笔和键盘在 PDF 上书写，并在所有文档中快速找到读过的内容。30 天内可试用全部功能。",
+  heroTitle: "在 PDF 上做笔记、快速查找的\n笔记应用 Ghostyak Notes",
+  featuredAction: "了解 PDF 笔记应用",
   cardDescription: "一款 Windows 笔记应用：用笔和键盘在 PDF 上书写，并在所有文档中快速找到读过的内容。",
   description: "用笔和键盘在 PDF 上书写，读过的内容可在所有文档中快速找到。",
   featuredEyebrow: "新产品",
@@ -21,7 +24,7 @@ const notes: Dictionary["notes"] = {
   },
   showcase: {
     eyebrow: "主要功能",
-    title: "阅读、书写、查找，\n一个应用就够了。",
+    title: "阅读、书写、搜索 PDF，\n一个应用就够了。",
     description: "教材和讲义、报告和论文。导入 PDF，直接在上面书写，之后再找到需要的那一页。",
     items: {
       pen: {
@@ -70,7 +73,7 @@ const notes: Dictionary["notes"] = {
   },
   privacy: {
     eyebrow: "保存在你的电脑上",
-    title: "你的文档就在你的电脑上。",
+    title: "PDF 和笔迹只保存在你自己的电脑上。",
     description: "文档以文件形式保存在电脑“文档”文件夹内的“Ghostyak Notes”文件夹中。无需创建账号或连接互联网即可使用，并且不会更改导入的 PDF 原始文件。",
   },
   faq: {
@@ -80,9 +83,9 @@ const notes: Dictionary["notes"] = {
       { question: "30 天后会怎样？", answer: "仍可打开和阅读文档，并在文档内搜索，但无法书写，也无法在所有文档中搜索。您创建的文档和笔迹不会被删除。要继续使用这些功能需要 Pro，购买功能即将推出。" },
       { question: "文档保存在哪里？", answer: "保存在电脑“文档”文件夹内的“Ghostyak Notes”文件夹中。可以通过资料库左下角的“문서 폴더 열기”（打开文档文件夹）直接打开。" },
       { question: "扫描的 PDF 也能搜索吗？", answer: "可以。对于没有文字信息的扫描版 PDF，应用会识别其中的文字（OCR），让你能够搜索。识别在你自己的电脑上完成，目前尚不支持搜索手写内容。" },
-      { question: "没有手写笔也能用吗？", answer: "可以。你可以用鼠标书写，并用键盘在文本框中输入文字。" },
+      { question: "没有手写板，用鼠标也能在 PDF 上书写吗？", answer: "可以。你可以用鼠标书写，并用键盘在文本框中输入文字。" },
       { question: "应用提供哪些语言？", answer: "目前应用界面以韩语提供。其他语言即将支持。" },
-      { question: "需要什么运行环境？", answer: "适用于 64 位（x64）Windows。如果没有 Microsoft Edge WebView2 Runtime，安装程序会下载并安装。" },
+      { question: "可以在哪些 Windows 上使用？", answer: "适用于 64 位（x64）Windows。如果没有 Microsoft Edge WebView2 Runtime，安装程序会下载并安装。" },
     ],
   },
   download: {

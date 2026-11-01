@@ -2,7 +2,10 @@ import type { Dictionary } from "@/i18n/get-dictionary";
 
 // Translation of the Korean source, including the trial and Pro terms of 2026-10-31.
 const notes: Dictionary["notes"] = {
-  metadataTitle: "Ghostyak Notes | Application de notes Windows pour écrire sur vos PDF et tout retrouver",
+  metadataTitle: "Ghostyak Notes | App de notes sur PDF pour Windows",
+  metadataDescription: "Une application de notes pour Windows pour écrire sur vos PDF au stylet et au clavier, et retrouver ce que vous avez lu dans tous vos documents. Essayez toutes les fonctionnalités pendant 30 jours.",
+  heroTitle: "Ghostyak Notes : écrivez sur vos PDF\net retrouvez tout aussitôt",
+  featuredAction: "Découvrir l’application de notes PDF",
   cardDescription: "Une application de notes pour Windows pour écrire sur vos PDF au stylet et au clavier, et retrouver ce que vous avez lu dans tous vos documents.",
   description: "Écrivez sur vos PDF au stylet et au clavier, et retrouvez ce que vous avez lu dans tous vos documents.",
   featuredEyebrow: "Nouveau",
@@ -21,7 +24,7 @@ const notes: Dictionary["notes"] = {
   },
   showcase: {
     eyebrow: "Fonctionnalités principales",
-    title: "Lire, écrire et retrouver,\ndans une seule application.",
+    title: "Lire, annoter et rechercher dans vos PDF,\ndans une seule application.",
     description: "Manuels et supports de cours, rapports et articles. Importez un PDF, écrivez directement dessus et retrouvez plus tard la page dont vous avez besoin.",
     items: {
       pen: {
@@ -70,7 +73,7 @@ const notes: Dictionary["notes"] = {
   },
   privacy: {
     eyebrow: "Stocké sur votre PC",
-    title: "Vos documents restent sur votre PC.",
+    title: "Vos PDF et vos annotations restent uniquement sur votre PC.",
     description: "Les documents sont enregistrés sous forme de fichiers dans le dossier « Ghostyak Notes » de votre dossier Documents. Vous n’avez besoin ni de compte ni de connexion Internet, et les fichiers PDF d’origine que vous importez ne sont pas modifiés.",
   },
   faq: {
@@ -80,9 +83,9 @@ const notes: Dictionary["notes"] = {
       { question: "Que se passe-t-il après 30 jours ?", answer: "Vous pouvez toujours ouvrir et lire vos documents et y effectuer des recherches, mais l’écriture et la recherche dans tous les documents ne sont plus disponibles. Vos documents et annotations ne sont pas supprimés. Pour continuer, Pro est nécessaire ; l’achat sera bientôt disponible." },
       { question: "Où mes documents sont-ils enregistrés ?", answer: "Dans le dossier « Ghostyak Notes » de votre dossier Documents. Vous pouvez l’ouvrir avec « 문서 폴더 열기 » (Ouvrir le dossier des documents), en bas à gauche de la bibliothèque." },
       { question: "La recherche fonctionne-t-elle sur les PDF numérisés ?", answer: "Oui. Pour les PDF numérisés sans informations de texte, l’application reconnaît le texte (OCR) afin que vous puissiez y faire des recherches. La reconnaissance s’effectue sur votre propre PC, et la recherche dans l’écriture manuscrite n’est pas encore prise en charge." },
-      { question: "Puis-je l’utiliser sans stylet ?", answer: "Oui. Vous pouvez écrire à la souris et saisir du texte au clavier dans des zones de texte." },
+      { question: "Puis-je écrire sur mes PDF à la souris, sans tablette à stylet ?", answer: "Oui. Vous pouvez écrire à la souris et saisir du texte au clavier dans des zones de texte." },
       { question: "Dans quelle langue l’application est-elle proposée ?", answer: "L’interface de l’application est actuellement disponible en coréen. D’autres langues seront bientôt prises en charge." },
-      { question: "Quelle configuration faut-il ?", answer: "L’application est destinée à Windows 64 bits (x64). Si Microsoft Edge WebView2 Runtime est absent, le programme d’installation le télécharge et l’installe." },
+      { question: "Sur quel Windows fonctionne-t-elle ?", answer: "L’application est destinée à Windows 64 bits (x64). Si Microsoft Edge WebView2 Runtime est absent, le programme d’installation le télécharge et l’installe." },
     ],
   },
   download: {

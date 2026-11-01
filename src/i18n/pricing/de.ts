@@ -40,7 +40,7 @@ const pricing: Dictionary["pricing"] = {
   footnote: "*Nach Ablauf der Testversion kannst du Dokumente nur noch öffnen und lesen. Deine Dokumente und Notizen werden nicht gelöscht und lassen sich mit Handschrift als PDF exportieren.",
   compare: {
     eyebrow: "Funktionsvergleich",
-    title: "Was ändert sich?",
+    title: "30-Tage-Testversion und Pro: Was ändert sich?",
     description: "30 Tage lang entspricht die Testversion Pro. Danach kannst du nur noch lesen; deine Dokumente und Notizen bleiben erhalten.",
     feature: "Funktion",
     during: "30 Tage",

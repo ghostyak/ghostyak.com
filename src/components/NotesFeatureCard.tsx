@@ -26,14 +26,14 @@ export function NotesFeatureCard({ copy, locale, viewAction }: {
             <Badge variant="outline" className="min-h-6 border-transparent bg-brand px-2.5 text-ink">{copy.featuredEyebrow}</Badge>
             <Badge variant="outline" className="min-h-6 px-2.5">{notes.platform}</Badge>
           </div>
-          <h2 id="featured-notes" className="mt-5 text-3xl font-semibold tracking-[-0.035em] sm:text-4xl">{notes.name}</h2>
+          <h2 id="featured-notes" className="mt-5 text-3xl font-semibold tracking-[-0.035em] sm:text-4xl">{notes.fullName}</h2>
           <p className="mt-4 text-base leading-8 text-muted-foreground">{copy.cardDescription}</p>
-          <a className={cn(buttonVariants({ size: "lg", className: `mt-7 ${actionClassName}` }))} href={href}>{viewAction}<ArrowRight aria-hidden="true" /></a>
+          <a className={cn(buttonVariants({ size: "lg", className: `mt-7 ${actionClassName}` }))} href={href}>{copy.featuredAction}<ArrowRight aria-hidden="true" /></a>
           <p className="mt-4 text-xs leading-6 text-muted-foreground">{copy.trialBadge} · <a className="font-medium text-foreground underline decoration-brand decoration-2 underline-offset-4 hover:decoration-current" href={`${href}#pricing`}>{copy.pricingAction}</a></p>
         </div>
         {/* A gold panel keeps the card edge visible where it overlaps the ink hero. */}
         <figure className="order-first flex items-center bg-linear-to-br from-brand/30 to-brand/5 p-4 sm:p-8 lg:order-none">
-          <a href={href} className="block w-full rounded-xl" aria-label={`${viewAction}: ${notes.name}`}>
+          <a href={href} className="block w-full rounded-xl" aria-label={`${viewAction}: ${notes.fullName}`}>
             <Image {...notes.screenshots.annotate} preload className="h-auto w-full rounded-xl shadow-xl shadow-ink/20 ring-1 ring-ink/10" alt={copy.screenshots.annotate.alt} sizes="(min-width: 1280px) 670px, (min-width: 1024px) calc((100vw - 64px) * 0.6 - 64px), (min-width: 640px) calc(100vw - 128px), calc(100vw - 64px)" />
           </a>
         </figure>

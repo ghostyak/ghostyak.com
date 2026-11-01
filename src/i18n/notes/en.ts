@@ -2,7 +2,10 @@ import type { Dictionary } from "@/i18n/get-dictionary";
 
 // Translation of the Korean source, including the trial and Pro terms of 2026-10-31.
 const notes: Dictionary["notes"] = {
-  metadataTitle: "Ghostyak Notes | A Windows note app for writing on PDFs and finding anything fast",
+  metadataTitle: "Ghostyak Notes | PDF note-taking app for Windows",
+  metadataDescription: "A Windows note app for writing on PDFs with pen and keyboard and finding what you read across all your documents. Try every feature for 30 days.",
+  heroTitle: "Ghostyak Notes: write on PDFs,\nfind anything fast",
+  featuredAction: "Explore the PDF note app",
   cardDescription: "A Windows note app for writing on PDFs with pen and keyboard, and finding what you read across all your documents.",
   description: "Write on PDFs with pen and keyboard, and find what you read across all your documents.",
   featuredEyebrow: "New",
@@ -21,7 +24,7 @@ const notes: Dictionary["notes"] = {
   },
   showcase: {
     eyebrow: "Key features",
-    title: "Read, write, and find,\nall in one app.",
+    title: "Read, write on, and search PDFs,\nall in one app.",
     description: "Textbooks and lecture notes, reports and papers. Import a PDF, write right on it, and find the page you need later.",
     items: {
       pen: {
@@ -70,7 +73,7 @@ const notes: Dictionary["notes"] = {
   },
   privacy: {
     eyebrow: "Stored on your PC",
-    title: "Your documents stay on your PC.",
+    title: "Your PDFs and notes are stored only on your PC.",
     description: "Documents are saved as files in the ‘Ghostyak Notes’ folder inside your Documents folder. You don’t need an account or an internet connection, and the original PDF files you import are never changed.",
   },
   faq: {
@@ -80,9 +83,9 @@ const notes: Dictionary["notes"] = {
       { question: "What happens after 30 days?", answer: "You can still open and read documents and search within them, but writing and searching all documents are no longer available. Your documents and handwriting are not deleted. To keep using those features you need Pro, and purchasing will be available soon." },
       { question: "Where are my documents stored?", answer: "In the ‘Ghostyak Notes’ folder inside your Documents folder. You can open it with ‘문서 폴더 열기’ (Open documents folder) at the bottom left of the library." },
       { question: "Can it search scanned PDFs?", answer: "Yes. For scanned PDFs with no text information, the app recognizes the text (OCR) so you can search it. Recognition happens on your own PC, and searching handwriting is not supported yet." },
-      { question: "Can I use it without a pen?", answer: "Yes. You can write with a mouse and type into text boxes with a keyboard." },
+      { question: "Can I write on PDFs with a mouse, without a pen tablet?", answer: "Yes. You can write with a mouse and type into text boxes with a keyboard." },
       { question: "What language is the app in?", answer: "The app interface is currently available in Korean. Other languages are coming soon." },
-      { question: "What do I need to run it?", answer: "It is for 64-bit (x64) Windows. If Microsoft Edge WebView2 Runtime is missing, the installer downloads and installs it." },
+      { question: "What Windows do I need to run it?", answer: "It is for 64-bit (x64) Windows. If Microsoft Edge WebView2 Runtime is missing, the installer downloads and installs it." },
     ],
   },
   download: {

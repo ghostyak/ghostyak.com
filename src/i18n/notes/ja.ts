@@ -3,6 +3,9 @@ import type { Dictionary } from "@/i18n/get-dictionary";
 // Translation of the Korean source, including the trial and Pro terms of 2026-10-31.
 const notes: Dictionary["notes"] = {
   metadataTitle: "Ghostyak Notes | PDFに書き込んで、すぐに探せるWindowsノートアプリ",
+  metadataDescription: "PDFの上にペンとキーボードで書き込み、読んだ内容をすべての文書からすぐに探せるWindowsノートアプリです。30日間すべての機能を試せます。",
+  heroTitle: "PDFに書き込んで、すぐに探せる\nノートアプリ、Ghostyak Notes",
+  featuredAction: "PDFノートアプリを見る",
   cardDescription: "PDFの上にペンとキーボードで書き込み、読んだ内容をすべての文書からすぐに探せるWindowsノートアプリです。",
   description: "PDFの上にペンとキーボードで書き込み、読んだ内容はすべての文書からすぐに探せます。",
   featuredEyebrow: "新製品",
@@ -21,7 +24,7 @@ const notes: Dictionary["notes"] = {
   },
   showcase: {
     eyebrow: "主な機能",
-    title: "読む、書く、探すを\nひとつのアプリで。",
+    title: "PDFを読む、書く、探すを\nひとつのアプリで。",
     description: "教材や講義資料、報告書や論文。PDFを取り込んでその上に直接書き、あとで必要なページをまた探せます。",
     items: {
       pen: {
@@ -70,7 +73,7 @@ const notes: Dictionary["notes"] = {
   },
   privacy: {
     eyebrow: "PC内に保存",
-    title: "文書は自分のPCにあります。",
+    title: "PDFと書き込みは自分のPCだけに保存されます。",
     description: "文書はPCの「ドキュメント」フォルダー内の「Ghostyak Notes」フォルダーにファイルとして保存されます。アカウントの作成やインターネット接続なしで使え、取り込んだPDFの元ファイルは変更しません。",
   },
   faq: {
@@ -80,9 +83,9 @@ const notes: Dictionary["notes"] = {
       { question: "30日を過ぎるとどうなりますか？", answer: "文書を開いて読み、文書内を検索することはできますが、手書きとすべての文書からの検索は使えません。作成した文書と書き込みは削除されません。使い続けるにはProが必要で、購入機能はまもなく提供予定です。" },
       { question: "文書はどこに保存されますか？", answer: "PCの「ドキュメント」フォルダー内の「Ghostyak Notes」フォルダーに保存されます。ライブラリ左下の「문서 폴더 열기」（文書フォルダーを開く）ですぐに開けます。" },
       { question: "スキャンしたPDFも検索できますか？", answer: "はい。文字情報のないスキャンPDFは、アプリが文字を認識（OCR）して検索できるようにします。認識はお使いのPCの中で行われ、手書き文字の検索にはまだ対応していません。" },
-      { question: "ペンがなくても使えますか？", answer: "はい。マウスで手書きし、キーボードでテキストボックスに文字を入力できます。" },
+      { question: "ペンタブレットがなくても、マウスでPDFに書き込めますか？", answer: "はい。マウスで手書きし、キーボードでテキストボックスに文字を入力できます。" },
       { question: "アプリはどの言語で提供されますか？", answer: "現在、アプリの画面は韓国語で提供されています。ほかの言語にもまもなく対応する予定です。" },
-      { question: "どんな環境が必要ですか？", answer: "64ビット（x64）のWindows用です。Microsoft Edge WebView2 Runtimeがない場合は、インストーラーがダウンロードしてインストールします。" },
+      { question: "どのWindowsで使えますか？", answer: "64ビット（x64）のWindows用です。Microsoft Edge WebView2 Runtimeがない場合は、インストーラーがダウンロードしてインストールします。" },
     ],
   },
   download: {

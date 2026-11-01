@@ -102,6 +102,21 @@ Vercel 환경 변수를 변경한 뒤에는 새 배포가 필요하다. 값이 �
 - 배포 전 운영 서버의 `/en/product/boxes`에 HEAD 요청을 보냈다. `http://ghostyak.com`은 HTTPS apex → HTTPS www → 무접두사 영어 제품으로 3회, `https://ghostyak.com`은 2회, `http://www.ghostyak.com`은 2회, `https://www.ghostyak.com`은 1회 이동해 마지막에 200이었다. 이는 아직 기존 코드가 서비스 중인 결과다.
 - 이번 코드는 배포하지 않았다. Vercel의 HTTP → HTTPS 및 apex → www 이동은 앱 실행 전 계층에서 발생하므로 앱 내부의 단일 이동 검증과 구분한다. 배포 후 `/en/...`의 역방향 이동이 사라졌는지 다시 확인하고, HTTP apex 요청의 CDN 추가 hop은 Vercel 도메인 설정에서 별도 점검한다.
 
+## Notes 페이지 검색 최적화 (2026-11-01)
+
+2026-11-01 점검에서 Notes 제품 페이지의 canonical·hreflang·sitemap·robots·JSON-LD는 정상이었고, Bing과 네이버 색인에는 Notes 제품 페이지가 없었다(구글 결과는 자동 조회가 막혀 확인하지 못함). 외부 링크가 없는 새 페이지라 색인이 늦는 상황으로 보고 다음을 적용했다.
+
+- H1은 제품명만 쓰던 `Notes` 대신 검색 표현과 제품명을 함께 담은 `notes.heroTitle`(한국어 “PDF에 필기하고 바로 찾는 노트 앱, Ghostyak Notes”)을 쓴다. 체험판과 플랫폼은 H1 위의 배지로 옮겼다. `PageHero`의 H1은 줄바꿈(`
+`)을 그대로 표시한다.
+- 검색 결과 요약문은 히어로 문장과 분리한 `notes.metadataDescription`을 쓴다. 플랫폼(Windows)과 30일 체험판을 포함하되 `무료`라고 쓰지 않는다.
+- 라틴 문자 언어(en·de·es·fr·it·pt)의 `notes.metadataTitle`은 검색 결과에서 잘리지 않도록 60자 안쪽으로 줄였다(예: 영어 `Ghostyak Notes | PDF note-taking app for Windows`). 한국어·일본어·중국어 제목은 그대로다.
+- 주요 기능·내 PC 저장 구역의 H2, 가격 비교 H2(`pricing.compare.title`)와 FAQ 질문 두 개에 PDF·필기·Windows·체험판 같은 검색 표현을 넣었다. 답은 바꾸지 않았다.
+- 홈의 Notes 카드는 제목을 `Ghostyak Notes`로, 버튼 앵커 텍스트를 `notes.featuredAction`(한국어 “PDF 필기 노트 앱 둘러보기”)으로 바꿔 제품 페이지로 가는 내부 링크가 설명을 담도록 했다.
+- sitemap의 Notes 제품 페이지에 `lastModified`를 넣는다. 값은 `src/data/products.ts`의 `notes.updatedAt`이며 페이지 내용을 바꿀 때 함께 올린다.
+- `SoftwareApplication`의 `offers`는 여전히 넣지 않는다. 구글 소프트웨어 앱 리치 결과는 `offers.price`와 평점(`aggregateRating` 또는 `review`)을 모두 요구하므로 평점이 없는 지금은 추가해도 표시되지 않는다.
+
+저장소 밖에서 해야 할 일은 다음과 같다. GitHub `ghostyak/notes` 저장소의 About Website와 README에 제품 페이지 링크를 넣는다(현재 ghostyak.com 링크가 없다). Google Search Console에서 `/ko/product/notes`·`/en/product/notes`·`/ko/blog/notes-100-release`의 URL 검사와 색인 요청을, 네이버 서치어드바이저에서 같은 URL의 수집 요청을 한다.
+
 ## 검색 favicon
 
-브라우저용 기본 벡터 아이콘은 `/favicon.svg`다. Google 검색용으로는 투명 배경 64×64 PNG인 `/ghostyak.png`를 metadata의 첫 `rel="icon"`으로 선언하고 같은 이미지를 담은 `/favicon.ico`도 공개한다. Google 검색 favicon 지원 형식에는 SVG가 없지만 PNG와 ICO가 포함된다. 두 raster URL을 안정적으로 유지하고, 배포 후 Google Search Console의 홈페이지 URL 검사로 다시 크롤링을 요청한다. 업데이트 반영에는 수일에서 수주가 걸릴 수 있다.
+브라우저용 기본 벡터 아이콘은 `/favicon.svg`(남색 바탕의 금색 소)다. Google 검색 favicon 지원 형식에는 SVG가 없지만 PNG와 ICO가 포함되므로, 같은 그림을 `scripts/build-favicons.mjs`로 래스터화한 192×192 PNG `/favicon-192.png`를 metadata의 첫 `rel="icon"`으로 선언하고, 16·32·48 PNG를 담은 `/favicon.ico`도 공개한다. 2026-11-01 사용자 요청으로 검정 단색 소 그림을 없애고 검색 결과에도 금색 소가 나오도록 바꿨다. 검색엔진이 예전 주소를 계속 요청해도 404가 나지 않도록 `/ghostyak.png`(같은 192×192 금색 PNG, 스크립트가 함께 생성)와 `/favicon-black.svg`(`favicon.svg`의 사본)는 금색 소로 유지한다. `favicon.svg`를 고치면 `node scripts/build-favicons.mjs`를 다시 실행한다. 두 raster URL을 안정적으로 유지하고, 배포 후 Google Search Console의 홈페이지 URL 검사로 다시 크롤링을 요청한다. 업데이트 반영에는 수일에서 수주가 걸릴 수 있다.

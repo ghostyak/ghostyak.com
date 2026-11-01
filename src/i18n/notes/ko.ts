@@ -1,7 +1,11 @@
 // Approved Korean source, 2026-10-09. Written from the Ghostyak Notes product and trial documents.
 // The trial and Pro terms of 2026-10-31 await the owner's review.
+// The search-oriented hero title, metadata description, section titles and FAQ questions of 2026-11-01 await the owner's review.
 const notes = {
   metadataTitle: "Ghostyak Notes | PDF에 필기하고 바로 찾는 Windows 노트 앱",
+  metadataDescription: "PDF 위에 펜과 키보드로 필기하고, 읽은 내용은 모든 문서에서 바로 찾는 Windows 노트 앱입니다. 30일 동안 모든 기능을 써 볼 수 있습니다.",
+  heroTitle: "PDF에 필기하고 바로 찾는\n노트 앱, Ghostyak Notes",
+  featuredAction: "PDF 필기 노트 앱 둘러보기",
   cardDescription: "PDF 위에 펜과 키보드로 쓰고, 읽은 내용은 모든 문서에서 바로 찾는 Windows 노트 앱입니다.",
   description: "PDF 위에 펜과 키보드로 쓰고, 읽은 내용은 모든 문서에서 바로 찾으세요.",
   featuredEyebrow: "새 제품",
@@ -20,7 +24,7 @@ const notes = {
   },
   showcase: {
     eyebrow: "주요 기능",
-    title: "읽고, 쓰고, 찾는 일을\n한 앱에서.",
+    title: "PDF 읽기, 필기, 검색을\n한 앱에서.",
     description: "교재와 강의 자료, 보고서와 논문. PDF를 가져와 그 위에 바로 쓰고, 나중에 필요한 쪽을 다시 찾으세요.",
     items: {
       pen: {
@@ -69,7 +73,7 @@ const notes = {
   },
   privacy: {
     eyebrow: "내 PC에 저장",
-    title: "내 문서는 내 PC에 있습니다.",
+    title: "PDF와 필기는 내 PC에만 저장됩니다.",
     description: "문서는 내 PC의 문서 폴더 안 ‘Ghostyak Notes’ 폴더에 파일로 저장됩니다. 계정을 만들거나 인터넷에 연결하지 않아도 쓸 수 있고, 가져온 PDF 원본 파일은 바꾸지 않습니다.",
   },
   faq: {
@@ -79,9 +83,9 @@ const notes = {
       { question: "30일이 지나면 어떻게 되나요?", answer: "문서를 열어 읽고 문서 안에서 찾을 수 있지만, 필기와 모든 문서에서 찾기는 쓸 수 없습니다. 만든 문서와 필기는 지워지지 않습니다. 계속 쓰려면 Pro가 필요하며, 구매 기능은 곧 제공될 예정입니다." },
       { question: "문서는 어디에 저장되나요?", answer: "내 PC의 문서 폴더 안 ‘Ghostyak Notes’ 폴더에 저장됩니다. 라이브러리 왼쪽 아래의 ‘문서 폴더 열기’로 바로 열 수 있습니다." },
       { question: "스캔한 PDF도 검색되나요?", answer: "네. 글자 정보가 없는 스캔 PDF는 앱이 글자를 인식(OCR)해 찾을 수 있게 합니다. 인식은 내 PC 안에서 이루어지며, 손글씨 검색은 아직 지원하지 않습니다." },
-      { question: "펜이 없어도 쓸 수 있나요?", answer: "네. 마우스로 필기하고 키보드로 텍스트 상자에 글을 쓸 수 있습니다." },
+      { question: "펜 태블릿 없이 마우스로도 PDF에 필기할 수 있나요?", answer: "네. 마우스로 필기하고 키보드로 텍스트 상자에 글을 쓸 수 있습니다." },
       { question: "앱은 어떤 언어로 제공되나요?", answer: "현재 앱 화면은 한국어로 제공됩니다. 다른 언어도 곧 지원할 예정입니다." },
-      { question: "어떤 환경이 필요하나요?", answer: "Windows 64비트(x64)용입니다. Microsoft Edge WebView2 Runtime이 없으면 설치 프로그램이 내려받아 설치합니다." },
+      { question: "어떤 Windows에서 쓸 수 있나요?", answer: "Windows 64비트(x64)용입니다. Microsoft Edge WebView2 Runtime이 없으면 설치 프로그램이 내려받아 설치합니다." },
     ],
   },
   download: {

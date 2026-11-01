@@ -1,4 +1,5 @@
 import { ArrowRight, ArrowUpRight, Bookmark, Check, Download, Eye, HardDrive, Highlighter, Keyboard, NotebookPen, Save, Type } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { PageHero, heroActionClassName } from "@/components/PageHero";
 import { DownloadLabel, Frame, ProductDownload, ProductFaq, ProductHighlight, SectionHeading, textLink } from "@/components/ProductLanding";
@@ -18,6 +19,8 @@ const moreIcons = [Type, Highlighter, Bookmark, Eye, Save, Keyboard];
 
 // Flagship landing: hero, one screenshot per feature row, extra feature cards,
 // local storage highlight, pricing (trial and Pro), FAQ and a download band.
+// The H1 carries the search phrase and the product name; the badges above it
+// carry the trial and the platform.
 export async function NotesProduct({ locale }: { locale: PublishedLocale }) {
   const dictionary = await getDictionary(locale);
   const copy = dictionary.notes;
@@ -33,14 +36,15 @@ export async function NotesProduct({ locale }: { locale: PublishedLocale }) {
       <div className="mx-auto max-w-7xl">
         <PageHero
           id="notes-title"
-          title={notes.name}
+          eyebrow={<><Badge variant="outline" className="min-h-6 border-transparent bg-brand px-2.5 text-ink">{copy.trialBadge}</Badge><Badge variant="outline" className="min-h-6 px-2.5">{notes.platform}</Badge></>}
+          title={copy.heroTitle}
           description={copy.description}
           actions={<div className="flex max-w-full flex-col items-center gap-3">
             <div className="flex max-w-full flex-wrap justify-center gap-3">
               {downloadLink}
               <a className={cn(buttonVariants({ variant: "outline", size: "lg", className: heroActionClassName }))} href="#pricing">{copy.pricingAction}<ArrowRight aria-hidden="true" /></a>
             </div>
-            <ShareLinks pageUrl={`${siteUrl}${localizedPath(locale, notes.pagePath)}`} pageTitle={notes.name} labels={dictionary.share} inline />
+            <ShareLinks pageUrl={`${siteUrl}${localizedPath(locale, notes.pagePath)}`} pageTitle={notes.fullName} labels={dictionary.share} inline />
           </div>}
           note={copy.heroNote}
         />

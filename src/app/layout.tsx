@@ -22,7 +22,8 @@ export async function generateMetadata(): Promise<Metadata> {
     applicationName: "GhostYak",
     icons: {
       icon: [
-        { url: "/ghostyak.png", type: "image/png", sizes: "64x64" },
+        // Google Search takes PNG or ICO, not SVG; both rasters are built from favicon.svg by scripts/build-favicons.mjs.
+        { url: "/favicon-192.png", type: "image/png", sizes: "192x192" },
         { url: "/favicon.svg", type: "image/svg+xml", sizes: "any" },
       ],
     },

@@ -40,6 +40,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: absoluteLocalizedUrl(locale, notes.pagePath),
+      lastModified: new Date(`${notes.updatedAt}T00:00:00+09:00`),
       changeFrequency: "monthly" as const,
       priority: 0.9,
       alternates: { languages: languageAlternates(notes.pagePath) },

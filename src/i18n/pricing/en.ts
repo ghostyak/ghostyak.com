@@ -40,7 +40,7 @@ const pricing: Dictionary["pricing"] = {
   footnote: "*When the trial ends you can only open and read documents. Your documents and handwriting are not deleted, and you can export them to PDF with handwriting.",
   compare: {
     eyebrow: "Feature comparison",
-    title: "What changes?",
+    title: "30-day trial vs. Pro: what changes?",
     description: "For 30 days the trial matches Pro. When it ends, the app becomes read-only and your documents and handwriting stay as they are.",
     feature: "Feature",
     during: "First 30 days",

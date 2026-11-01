@@ -35,7 +35,7 @@ const pricing: Dictionary["pricing"] = {
   footnote: "*体験版が終わると、文書を開いて読むことだけができます。文書と手書きは削除されず、手書きを含めてPDFに書き出せます。",
   compare: {
     eyebrow: "機能の比較",
-    title: "何が変わりますか？",
+    title: "30日体験版とPro、何が変わりますか？",
     description: "30日間はProと同じです。期間が終わると読み取り専用になり、文書と手書きはそのまま残ります。",
     feature: "機能",
     during: "30日間",

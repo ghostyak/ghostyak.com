@@ -28,7 +28,7 @@ const pricing: Dictionary["pricing"] = {
   footnote: "*试用期结束后，只能打开和阅读文档。文档和笔迹不会被删除，并可连同笔迹导出为 PDF。",
   compare: {
     eyebrow: "功能比较",
-    title: "有什么不同？",
+    title: "30 天试用版与 Pro 有什么不同？",
     description: "前 30 天与 Pro 相同。试用期结束后变为只读，文档和笔迹保持不变。",
     feature: "功能",
     during: "30 天内",

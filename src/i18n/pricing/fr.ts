@@ -40,7 +40,7 @@ const pricing: Dictionary["pricing"] = {
   footnote: "*À la fin de la version d’essai, vous pouvez seulement ouvrir et lire vos documents. Vos documents et annotations ne sont pas supprimés et peuvent être exportés en PDF avec l’écriture manuscrite.",
   compare: {
     eyebrow: "Comparaison des fonctionnalités",
-    title: "Qu’est-ce qui change ?",
+    title: "Essai de 30 jours et Pro : qu’est-ce qui change ?",
     description: "Pendant 30 jours, la version d’essai équivaut à Pro. Ensuite, l’application passe en lecture seule et vos documents et annotations restent intacts.",
     feature: "Fonctionnalité",
     during: "30 jours",

@@ -33,7 +33,7 @@ const pricing = {
   footnote: "*체험판이 끝나면 문서를 열어 읽을 수만 있습니다. 문서와 필기는 지워지지 않으며, 필기를 포함해 PDF로 내보낼 수 있습니다.",
   compare: {
     eyebrow: "기능 비교",
-    title: "무엇이 달라지나요?",
+    title: "30일 체험판과 Pro, 무엇이 다른가요?",
     description: "30일 동안은 Pro와 같습니다. 기간이 끝나면 읽기 전용이 되고, 문서와 필기는 그대로 남습니다.",
     feature: "기능",
     during: "30일 동안",

@@ -243,3 +243,13 @@ ghostyak.com은 GhostYak 소프트웨어를 소개하고 배포하는 공식 웹
 - [x] 버튼 문구를 Folder History와 같은 `Windows x64 다운로드`·`Windows ARM64 다운로드` 형식으로 통일
 - [x] Boxes·Folder History·CSV Search Engine의 공유 링크를 다운로드 구역에서 첫 화면 후원하기 오른쪽으로 이동(링크 복사 버튼 제외)
 - [x] 세 제품 첫 화면의 설치 안내·사용 방법 버튼을 화살표 대신 왼쪽 정보 아이콘으로 변경
+
+## 진행 중: Ghostyak Notes 검색 최적화 (2026-11-01)
+
+- [x] Notes 제품 페이지 점검: canonical·hreflang·sitemap·robots·JSON-LD 정상, Bing·네이버 색인에 제품 페이지 없음 확인
+- [x] H1에 검색 표현과 제품명(`notes.heroTitle`), 검색 결과 요약문 분리(`notes.metadataDescription`), 라틴 문자 언어 제목 60자 안쪽으로 축소
+- [x] 주요 기능·내 PC 저장·가격 비교 H2와 FAQ 질문에 검색 표현 반영, 홈 Notes 카드의 앵커 텍스트 개선, sitemap `lastModified` 추가
+- [x] 한국어 원문 수정과 8개 언어 번역
+- [ ] 한국어 원문 사용자 검수
+- [ ] GitHub `ghostyak/notes` 저장소 About Website·README에 제품 페이지 링크 추가
+- [ ] Search Console·네이버 서치어드바이저에서 `/ko/product/notes`·`/en/product/notes`·`/ko/blog/notes-100-release` 색인(수집) 요청
