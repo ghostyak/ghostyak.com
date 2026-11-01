@@ -37,6 +37,8 @@ export const notes = {
   updatedAt: "2026-11-01",
   // Decided one-time price, shown in the page's #pricing section. Purchase is not open yet.
   proPrice: { amount: 29, currency: "USD" },
+  // Checkout for the Pro plan. Not linked anywhere yet: docs/NOTES_PURCHASE_LAUNCH.md lists what opens purchase.
+  checkoutUrl: "https://checkout.freemius.com/app/43614/plan/76738/",
   platform: "Windows · x64",
   downloadUrl: "https://github.com/ghostyak/notes/releases/latest/download/ghostyak-notes-latest-x64-setup.exe",
   screenshots: {
