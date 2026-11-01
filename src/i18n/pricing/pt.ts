@@ -28,7 +28,7 @@ const pricing: Dictionary["pricing"] = {
       status: "Em breve",
       priceUnit: "USD · Compra única",
       action: "Compra disponível em breve",
-      note: "O recurso de compra está em construção. Enquanto isso, teste todos os recursos com a versão de teste.",
+      note: "O Notes ainda está em teste beta e o recurso de compra está em construção. Enquanto isso, teste todos os recursos com a versão de teste.",
       points: [
         "Escrita e busca na biblioteca sem limite de tempo",
         "Uma chave ativa até 3 dispositivos",
@@ -67,7 +67,7 @@ const pricing: Dictionary["pricing"] = {
     items: [
       {
         question: "Quando poderei comprar o Pro?",
-        answer: "O recurso de compra está em construção e estará disponível em breve. Até lá, você pode testar todos os recursos com a versão de teste.",
+        answer: "O Notes ainda está em teste beta, por isso o recurso de compra está em construção e estará disponível em breve. Até lá, você pode testar todos os recursos com a versão de teste e, depois dos 30 dias, instalar uma nova versão dá mais 30 dias.",
       },
       {
         question: "O Pro é uma assinatura?",
@@ -83,7 +83,7 @@ const pricing: Dictionary["pricing"] = {
       },
       {
         question: "Posso reiniciar a versão de teste?",
-        answer: "A versão de teste é uma vez por dispositivo. Instalar uma nova versão não a prolonga, e voltar a data do dispositivo a encerra imediatamente.",
+        answer: "Durante o teste beta, instalar uma nova versão depois dos 30 dias inicia um novo teste de 30 dias. Voltar a data do dispositivo o encerra imediatamente.",
       },
       {
         question: "Um PC que usava a beta pode usar a versão de teste?",

@@ -20,7 +20,7 @@ const moreIcons = [Type, Highlighter, Bookmark, Eye, Save, Keyboard];
 // Flagship landing: hero, one screenshot per feature row, extra feature cards,
 // local storage highlight, pricing (trial and Pro), FAQ and a download band.
 // The H1 carries the search phrase and the product name; the badges above it
-// carry the trial and the platform.
+// carry the beta status, the trial and the platform.
 export async function NotesProduct({ locale }: { locale: PublishedLocale }) {
   const dictionary = await getDictionary(locale);
   const copy = dictionary.notes;
@@ -36,7 +36,7 @@ export async function NotesProduct({ locale }: { locale: PublishedLocale }) {
       <div className="mx-auto max-w-7xl">
         <PageHero
           id="notes-title"
-          eyebrow={<><Badge variant="outline" className="min-h-6 border-transparent bg-brand px-2.5 text-ink">{copy.trialBadge}</Badge><Badge variant="outline" className="min-h-6 px-2.5">{notes.platform}</Badge></>}
+          eyebrow={<><Badge variant="outline" className="min-h-6 border-transparent bg-brand px-2.5 text-ink">{copy.betaBadge}</Badge><Badge variant="outline" className="min-h-6 px-2.5">{copy.trialBadge}</Badge><Badge variant="outline" className="min-h-6 px-2.5">{notes.platform}</Badge></>}
           title={copy.heroTitle}
           description={copy.description}
           actions={<div className="flex max-w-full flex-col items-center gap-3">

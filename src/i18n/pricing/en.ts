@@ -28,7 +28,7 @@ const pricing: Dictionary["pricing"] = {
       status: "Coming soon",
       priceUnit: "USD · One-time purchase",
       action: "Purchase coming soon",
-      note: "Purchasing is being built. Until then, try every feature with the trial.",
+      note: "Notes is still in beta testing and purchasing is being built. Until then, try every feature with the trial.",
       points: [
         "Writing and library search with no time limit",
         "One key activates up to 3 devices",
@@ -67,7 +67,7 @@ const pricing: Dictionary["pricing"] = {
     items: [
       {
         question: "When can I buy Pro?",
-        answer: "Purchasing is being built and will be available soon. Until then, you can try every feature with the trial.",
+        answer: "Notes is still in beta testing, so purchasing is being built and will be available soon. Until then, you can try every feature with the trial, and after 30 days, installing a new version gives you another 30 days.",
       },
       {
         question: "Is Pro a subscription?",
@@ -83,7 +83,7 @@ const pricing: Dictionary["pricing"] = {
       },
       {
         question: "Can I restart the trial?",
-        answer: "The trial is once per device. Installing a new version doesn't extend it, and setting the device's date back ends the trial immediately.",
+        answer: "During beta testing, installing a new version after 30 days starts another 30-day trial. Setting the device’s date back ends the trial immediately.",
       },
       {
         question: "Can a PC that used the beta get the trial?",

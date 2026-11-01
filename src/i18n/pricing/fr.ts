@@ -28,7 +28,7 @@ const pricing: Dictionary["pricing"] = {
       status: "Bientôt disponible",
       priceUnit: "USD · Achat unique",
       action: "Achat bientôt disponible",
-      note: "La fonction d’achat est en construction. En attendant, essayez toutes les fonctionnalités avec la version d’essai.",
+      note: "Notes est encore en bêta-test et la fonction d’achat est en construction. En attendant, essayez toutes les fonctionnalités avec la version d’essai.",
       points: [
         "Écriture et recherche dans la bibliothèque sans limite de durée",
         "Une clé active jusqu’à 3 appareils",
@@ -67,7 +67,7 @@ const pricing: Dictionary["pricing"] = {
     items: [
       {
         question: "Quand pourrai-je acheter Pro ?",
-        answer: "La fonction d’achat est en construction et sera bientôt disponible. En attendant, vous pouvez essayer toutes les fonctionnalités avec la version d’essai.",
+        answer: "Notes est encore en bêta-test : la fonction d’achat est en construction et sera bientôt disponible. En attendant, vous pouvez essayer toutes les fonctionnalités avec la version d’essai, et après 30 jours, installer une nouvelle version vous donne 30 jours de plus.",
       },
       {
         question: "Pro est-il un abonnement ?",
@@ -83,7 +83,7 @@ const pricing: Dictionary["pricing"] = {
       },
       {
         question: "Puis-je relancer la version d’essai ?",
-        answer: "La version d’essai est limitée à une fois par appareil. Installer une nouvelle version ne la prolonge pas, et reculer la date de l’appareil y met fin immédiatement.",
+        answer: "Pendant le bêta-test, installer une nouvelle version après les 30 jours relance une version d’essai de 30 jours. Reculer la date de l’appareil y met fin immédiatement.",
       },
       {
         question: "Un PC qui utilisait la bêta peut-il bénéficier de la version d’essai ?",

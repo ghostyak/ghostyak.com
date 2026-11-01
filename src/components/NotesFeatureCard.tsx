@@ -24,6 +24,7 @@ export function NotesFeatureCard({ copy, locale, viewAction }: {
         <div className="flex flex-col items-start justify-center p-6 sm:p-10 lg:p-12">
           <div className="flex flex-wrap gap-2">
             <Badge variant="outline" className="min-h-6 border-transparent bg-brand px-2.5 text-ink">{copy.featuredEyebrow}</Badge>
+            <Badge variant="outline" className="min-h-6 px-2.5">{copy.betaBadge}</Badge>
             <Badge variant="outline" className="min-h-6 px-2.5">{notes.platform}</Badge>
           </div>
           <h2 id="featured-notes" className="mt-5 text-3xl font-semibold tracking-[-0.035em] sm:text-4xl">{notes.fullName}</h2>

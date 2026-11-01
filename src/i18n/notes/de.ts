@@ -9,11 +9,12 @@ const notes: Dictionary["notes"] = {
   cardDescription: "Eine Notiz-App für Windows: Schreibe mit Stift und Tastatur auf PDFs und finde Gelesenes in all deinen Dokumenten.",
   description: "Schreibe mit Stift und Tastatur auf PDFs und finde Gelesenes sofort in all deinen Dokumenten.",
   featuredEyebrow: "Neu",
+  betaBadge: "Im Betatest",
   trialBadge: "30 Tage lang alle Funktionen",
   downloadAction: "Windows x64 herunterladen",
   featuresAction: "Funktionen ansehen",
   pricingAction: "Testversion und Pro vergleichen",
-  heroNote: "Dies ist eine 30-Tage-Testversion. Ab dem ersten Start kannst du 30 Tage lang alle Funktionen ohne Einschränkungen nutzen.",
+  heroNote: "Ghostyak Notes ist noch im Betatest, der Kauf ist daher noch nicht möglich. Ab dem ersten Start kannst du 30 Tage lang alle Funktionen nutzen; nach 30 Tagen bringt die Installation einer neuen Version weitere 30 Tage.",
   screenshots: {
     annotate: { alt: "Ghostyak Notes mit einem PDF-Lehrbuch, markiertem Text und handschriftlichen Notizen am Rand", caption: "Auf einem PDF schreiben · Koreanische Oberfläche" },
     pen: { alt: "Stifteinstellungen von Ghostyak Notes mit drei Farbplätzen, einer Farbpalette und drei Strichstärken", caption: "Stifteinstellungen · Farbe und Stärke" },
@@ -80,7 +81,7 @@ const notes: Dictionary["notes"] = {
     title: "Häufig gestellte Fragen",
     items: [
       { question: "Wie lange kann ich die Testversion nutzen?", answer: "Ab dem ersten Start der App kannst du 30 Tage lang alle Funktionen ohne Einschränkungen nutzen. Beim ersten Start zeigt dir die App das Enddatum an." },
-      { question: "Was passiert nach 30 Tagen?", answer: "Du kannst Dokumente weiterhin öffnen, lesen und in ihnen suchen, aber Schreiben und die Suche in allen Dokumenten sind nicht mehr verfügbar. Deine Dokumente und Notizen werden nicht gelöscht. Für die weitere Nutzung brauchst du Pro; der Kauf ist bald möglich." },
+      { question: "Was passiert nach 30 Tagen?", answer: "Du kannst Dokumente weiterhin öffnen, lesen und in ihnen suchen, aber Schreiben und die Suche in allen Dokumenten sind nicht mehr verfügbar. Deine Dokumente und Notizen werden nicht gelöscht. Während des Betatests bringt die Installation einer neuen Version weitere 30 Tage. Sobald der Kauf möglich ist, brauchst du für diese Funktionen Pro." },
       { question: "Wo werden meine Dokumente gespeichert?", answer: "Im Ordner „Ghostyak Notes“ in deinem Ordner „Dokumente“. Du kannst ihn über „문서 폴더 열기“ (Dokumentordner öffnen) unten links in der Bibliothek öffnen." },
       { question: "Werden auch gescannte PDFs durchsucht?", answer: "Ja. Bei gescannten PDFs ohne Textinformationen erkennt die App den Text (OCR), sodass du ihn durchsuchen kannst. Die Erkennung findet auf deinem eigenen PC statt, und die Suche in Handschrift wird noch nicht unterstützt." },
       { question: "Kann ich auch ohne Stift-Tablett mit der Maus auf PDFs schreiben?", answer: "Ja. Du kannst mit der Maus schreiben und mit der Tastatur in Textfelder tippen." },
@@ -90,7 +91,7 @@ const notes: Dictionary["notes"] = {
   },
   download: {
     title: "Lade die App herunter und\nimportiere dein erstes PDF.",
-    description: "Windows x64 · Testversion · 30 Tage lang alle Funktionen",
+    description: "Windows x64 · Im Betatest · 30 Tage lang alle Funktionen",
   },
 };
 

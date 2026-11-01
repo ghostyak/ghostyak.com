@@ -28,7 +28,7 @@ const pricing: Dictionary["pricing"] = {
       status: "Próximamente",
       priceUnit: "USD · Pago único",
       action: "Compra disponible pronto",
-      note: "La función de compra está en construcción. Mientras tanto, prueba todas las funciones con la versión de prueba.",
+      note: "Notes sigue en pruebas beta y la función de compra está en construcción. Mientras tanto, prueba todas las funciones con la versión de prueba.",
       points: [
         "Escritura y búsqueda en la biblioteca sin límite de tiempo",
         "Una clave activa hasta 3 dispositivos",
@@ -67,7 +67,7 @@ const pricing: Dictionary["pricing"] = {
     items: [
       {
         question: "¿Cuándo podré comprar Pro?",
-        answer: "La función de compra está en construcción y estará disponible pronto. Mientras tanto, puedes probar todas las funciones con la versión de prueba.",
+        answer: "Notes sigue en pruebas beta, así que la función de compra está en construcción y estará disponible pronto. Mientras tanto, puedes probar todas las funciones con la versión de prueba y, pasados los 30 días, instalar una versión nueva te da otros 30 días.",
       },
       {
         question: "¿Pro es una suscripción?",
@@ -83,7 +83,7 @@ const pricing: Dictionary["pricing"] = {
       },
       {
         question: "¿Puedo reiniciar la versión de prueba?",
-        answer: "La versión de prueba es una vez por dispositivo. Instalar una versión nueva no la amplía, y retrasar la fecha del dispositivo la termina de inmediato.",
+        answer: "Durante la beta, instalar una versión nueva pasados los 30 días inicia otra prueba de 30 días. Retrasar la fecha del dispositivo la termina de inmediato.",
       },
       {
         question: "¿Un PC que usaba la beta puede usar la versión de prueba?",

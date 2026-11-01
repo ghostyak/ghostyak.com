@@ -28,7 +28,7 @@ const pricing: Dictionary["pricing"] = {
       status: "Bald verfügbar",
       priceUnit: "USD · Einmalkauf",
       action: "Kauf bald möglich",
-      note: "Die Kauffunktion entsteht gerade. Probiere bis dahin alle Funktionen mit der Testversion aus.",
+      note: "Notes ist noch im Betatest, die Kauffunktion entsteht gerade. Probiere bis dahin alle Funktionen mit der Testversion aus.",
       points: [
         "Schreiben und Bibliothekssuche ohne zeitliche Begrenzung",
         "Ein Schlüssel aktiviert bis zu 3 Geräte",
@@ -67,7 +67,7 @@ const pricing: Dictionary["pricing"] = {
     items: [
       {
         question: "Wann kann ich Pro kaufen?",
-        answer: "Die Kauffunktion entsteht gerade und ist bald verfügbar. Bis dahin kannst du alle Funktionen mit der Testversion ausprobieren.",
+        answer: "Notes ist noch im Betatest, die Kauffunktion entsteht gerade und ist bald verfügbar. Bis dahin kannst du alle Funktionen mit der Testversion ausprobieren; nach 30 Tagen bringt die Installation einer neuen Version weitere 30 Tage.",
       },
       {
         question: "Ist Pro ein Abo?",
@@ -83,7 +83,7 @@ const pricing: Dictionary["pricing"] = {
       },
       {
         question: "Kann ich die Testversion neu starten?",
-        answer: "Die Testversion gibt es einmal pro Gerät. Eine neue Version verlängert sie nicht, und wenn du das Gerätedatum zurückstellst, endet sie sofort.",
+        answer: "Während des Betatests startet die Installation einer neuen Version nach Ablauf der 30 Tage eine weitere 30-Tage-Testversion. Wenn du das Gerätedatum zurückstellst, endet sie sofort.",
       },
       {
         question: "Kann ein PC, auf dem die Beta lief, die Testversion nutzen?",

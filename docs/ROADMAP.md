@@ -251,5 +251,7 @@ ghostyak.com은 GhostYak 소프트웨어를 소개하고 배포하는 공식 웹
 - [x] 주요 기능·내 PC 저장·가격 비교 H2와 FAQ 질문에 검색 표현 반영, 홈 Notes 카드의 앵커 텍스트 개선, sitemap `lastModified` 추가
 - [x] 한국어 원문 수정과 8개 언어 번역
 - [ ] 한국어 원문 사용자 검수
-- [ ] GitHub `ghostyak/notes` 저장소 About Website·README에 제품 페이지 링크 추가
+- [x] GitHub `ghostyak/notes` 저장소 About Website·README에 제품 페이지 링크 추가
+- [x] 구매 기능이 준비될 때까지 베타 테스트 중 표시(히어로·홈 카드 배지, 보조 문구, Pro 카드, FAQ)와 ‘30일이 지나면 새 버전을 다시 설치해 30일 더’ 안내(9개 언어)
+- [ ] 공개 저장소 README와 v1.0.0 출시 글의 ‘새 버전을 설치해도 늘어나지 않는다’ 문장을 베타 기간 안내에 맞출지 결정
 - [ ] Search Console·네이버 서치어드바이저에서 `/ko/product/notes`·`/en/product/notes`·`/ko/blog/notes-100-release` 색인(수집) 요청
