@@ -32,7 +32,7 @@ const notes: Dictionary["notes"] = {
       pen: {
         eyebrow: "Escritura",
         title: "Lápiz, resaltador y borrador.\nColores y grosor a tu gusto.",
-        description: "Define tres colores favoritos y tres grosores para el lápiz y para el resaltador, y cambia entre ellos al instante. Lo que escribes se guarda automáticamente sobre la marcha.",
+        description: "Define tres espacios con color y grosor para el lápiz y para el resaltador, y cambia entre ellos al instante. Lo que escribes se guarda automáticamente sobre la marcha.",
         points: ["Lápiz, resaltador, borrador y selección con lazo", "Líneas, flechas, rectángulos, elipses e imágenes", "Deshacer y rehacer"],
       },
       search: {
@@ -68,7 +68,7 @@ const notes: Dictionary["notes"] = {
       { title: "Cuadros de texto", description: "Escribe con el teclado directamente sobre la página. Elige entre fuentes sans serif, serif, manuscrita y monoespaciada." },
       { title: "Marcar texto", description: "Selecciona texto de un PDF para resaltarlo, subrayarlo o tacharlo, y cópialo." },
       { title: "Marcadores", description: "Marca las páginas importantes y ve a ellas desde la lista." },
-      { title: "Entrever", description: "Haz clic en una anotación o un cuadro de texto para volverlo translúcido un momento y ver el texto que hay debajo." },
+      { title: "Translúcido", description: "Haz clic en una anotación o un cuadro de texto para volverlo translúcido y ver el texto que hay debajo." },
       { title: "Guardado automático", description: "No hay botón de guardar. Lo que escribes se guarda en el archivo del documento sobre la marcha." },
       { title: "Atajos de teclado", description: "Elige herramientas, busca y cambia de página con atajos." },
     ],
@@ -83,10 +83,10 @@ const notes: Dictionary["notes"] = {
     items: [
       { question: "¿Cuánto tiempo puedo usar la versión de prueba?", answer: "Puedes usar todas las funciones sin límites durante 30 días desde el día en que abres la aplicación por primera vez. Al abrirla por primera vez te indica la fecha de finalización." },
       { question: "¿Qué pasa después de 30 días?", answer: "Puedes seguir escribiendo. El OCR, el modo automático, el modo de rendimiento, la búsqueda en todos los documentos, todos los marcadores, todo el texto marcado y el minimapa dejan de estar disponibles. Tus documentos, tus anotaciones y el texto ya reconocido se conservan. Cuando se abra la compra, podrás usar esas funciones con Pro." },
-      { question: "¿Dónde se guardan mis documentos?", answer: "En la carpeta «Ghostyak Notes», dentro de tu carpeta Documentos. Puedes abrirla con «문서 폴더 열기» (Abrir carpeta de documentos), abajo a la izquierda en la biblioteca." },
+      { question: "¿Dónde se guardan mis documentos?", answer: "En la carpeta «Ghostyak Notes», dentro de tu carpeta Documentos. Puedes abrirla con «Documents folder» (Abrir carpeta de documentos), abajo a la izquierda en la biblioteca." },
       { question: "¿También busca en PDF escaneados?", answer: "Sí. En los PDF escaneados sin información de texto, la aplicación reconoce el texto (OCR) para que puedas buscarlo. El reconocimiento se hace en tu propio PC, y la búsqueda en escritura a mano aún no es compatible." },
       { question: "¿Puedo escribir sobre PDF con el ratón, sin tableta con lápiz?", answer: "Sí. Puedes escribir con el ratón y teclear en cuadros de texto con el teclado." },
-      { question: "¿En qué idioma está la app?", answer: "Actualmente la interfaz de la app está disponible en coreano. Pronto habrá más idiomas." },
+      { question: "¿En qué idioma está la app?", answer: "La interfaz de la app está disponible en coreano e inglés. Se abre en el idioma de tu dispositivo, o en inglés si es otro, y puedes cambiarlo en los ajustes." },
       { question: "¿En qué Windows funciona?", answer: "Es para Windows de 64 bits (x64). Si falta Microsoft Edge WebView2 Runtime, el instalador lo descarga e instala." },
     ],
   },

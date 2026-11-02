@@ -32,7 +32,7 @@ const notes: Dictionary["notes"] = {
       pen: {
         eyebrow: "Écriture",
         title: "Stylo, surligneur, gomme.\nCouleurs et épaisseur à votre goût.",
-        description: "Définissez trois couleurs favorites et trois épaisseurs pour le stylo et pour le surligneur, puis passez de l’une à l’autre instantanément. Ce que vous écrivez est enregistré automatiquement au fur et à mesure.",
+        description: "Définissez trois emplacements de couleur et d’épaisseur pour le stylo et pour le surligneur, puis passez de l’un à l’autre instantanément. Ce que vous écrivez est enregistré automatiquement au fur et à mesure.",
         points: ["Stylo, surligneur, gomme et sélection au lasso", "Lignes, flèches, rectangles, ellipses et images", "Annuler et rétablir"],
       },
       search: {
@@ -68,7 +68,7 @@ const notes: Dictionary["notes"] = {
       { title: "Zones de texte", description: "Saisissez du texte au clavier directement sur la page. Choisissez entre des polices sans empattement, avec empattement, manuscrite et à chasse fixe." },
       { title: "Marquer le texte", description: "Sélectionnez du texte dans un PDF pour le surligner, le souligner ou le barrer, et copiez-le." },
       { title: "Signets", description: "Ajoutez des signets aux pages importantes et accédez-y depuis la liste." },
-      { title: "Coup d’œil", description: "Cliquez sur une annotation ou une zone de texte pour la rendre translucide un instant et voir le texte en dessous." },
+      { title: "Translucide", description: "Cliquez sur une annotation ou une zone de texte pour la rendre translucide et voir le texte en dessous." },
       { title: "Enregistrement automatique", description: "Il n’y a pas de bouton Enregistrer. Ce que vous écrivez est enregistré dans le fichier du document au fur et à mesure." },
       { title: "Raccourcis clavier", description: "Choisissez des outils, recherchez et changez de page avec des raccourcis." },
     ],
@@ -83,10 +83,10 @@ const notes: Dictionary["notes"] = {
     items: [
       { question: "Combien de temps puis-je utiliser la version d’essai ?", answer: "Vous pouvez utiliser toutes les fonctionnalités sans restriction pendant 30 jours à compter du premier lancement de l’application. La date de fin vous est indiquée au premier lancement." },
       { question: "Que se passe-t-il après 30 jours ?", answer: "Vous pouvez continuer à écrire. L’OCR, le mode automatique, le mode performance, la recherche dans tous les documents, tous les signets, tout le texte marqué et la mini-carte ne sont plus disponibles. Vos documents, vos annotations et le texte déjà reconnu sont conservés. Une fois l’achat ouvert, vous pourrez utiliser ces fonctionnalités avec Pro." },
-      { question: "Où mes documents sont-ils enregistrés ?", answer: "Dans le dossier « Ghostyak Notes » de votre dossier Documents. Vous pouvez l’ouvrir avec « 문서 폴더 열기 » (Ouvrir le dossier des documents), en bas à gauche de la bibliothèque." },
+      { question: "Où mes documents sont-ils enregistrés ?", answer: "Dans le dossier « Ghostyak Notes » de votre dossier Documents. Vous pouvez l’ouvrir avec « Documents folder » (Ouvrir le dossier des documents), en bas à gauche de la bibliothèque." },
       { question: "La recherche fonctionne-t-elle sur les PDF numérisés ?", answer: "Oui. Pour les PDF numérisés sans informations de texte, l’application reconnaît le texte (OCR) afin que vous puissiez y faire des recherches. La reconnaissance s’effectue sur votre propre PC, et la recherche dans l’écriture manuscrite n’est pas encore prise en charge." },
       { question: "Puis-je écrire sur mes PDF à la souris, sans tablette à stylet ?", answer: "Oui. Vous pouvez écrire à la souris et saisir du texte au clavier dans des zones de texte." },
-      { question: "Dans quelle langue l’application est-elle proposée ?", answer: "L’interface de l’application est actuellement disponible en coréen. D’autres langues seront bientôt prises en charge." },
+      { question: "Dans quelle langue l’application est-elle proposée ?", answer: "L’interface de l’application est disponible en coréen et en anglais. Elle s’ouvre dans la langue de votre appareil, ou en anglais pour toute autre langue, et vous pouvez la changer dans les réglages." },
       { question: "Sur quel Windows fonctionne-t-elle ?", answer: "L’application est destinée à Windows 64 bits (x64). Si Microsoft Edge WebView2 Runtime est absent, le programme d’installation le télécharge et l’installe." },
     ],
   },

@@ -3,7 +3,7 @@ title: "Ghostyak Notes v1.0.0 ist veröffentlicht"
 description: "Die Beta ist vorbei, v1.0.0 ist da. Es ist jetzt eine 30-Tage-Testversion mit neuem Startbildschirm, Zusammenführen von Dokumenten, OCR für Bilder sowie besserer Minimap und besseren Schreibwerkzeugen."
 publishedAt: "2026-11-01"
 translationKey: "notes-100-release"
-sourceRevision: 1
+sourceRevision: 2
 ---
 
 **Ghostyak Notes v1.0.0 ist veröffentlicht.** Danke an alle, die die Beta im Oktober genutzt haben. Diese Version enthält alle Änderungen, die sich von Beta v0.1.5 bis v0.1.13 angesammelt haben.
@@ -53,7 +53,7 @@ Der Startbildschirm der Bibliothek wurde überarbeitet. Die Markenfarbe ist jetz
 - Links im ursprünglichen PDF werden verfolgt, und mit den Vor- und Zurück-Tasten der Maus wechselst du zwischen den Stellen.
 - Die Symbolleiste bekommt ein Seitenfeld und eine Schaltfläche zum Drehen der Seite, und die Zoomstufen enthalten die Stufe „an Seite anpassen“.
 - Die Größe der Vorschaubilder in der Seitenübersicht und der Seitenleiste änderst du mit Strg+Mausrad. Bei vielen Tabs werden sie auf gleiche Breite verkleinert.
-- Die Tastenkürzel wurden neu geordnet: F4 oder Strg+B für die linke Seitenleiste, F9 für die Seitenübersicht und Alt+1 bis 8 für die Tabs der Seitenleiste.
+- Die Tastenkürzel wurden neu geordnet: F4 oder Strg+B für die linke Seitenleiste, F5 für die Seitenübersicht und Alt+1 bis 8 für die Tabs der Seitenleiste.
 
 ## Außerdem
 

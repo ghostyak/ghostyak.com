@@ -32,7 +32,7 @@ const notes: Dictionary["notes"] = {
       pen: {
         eyebrow: "Scrittura",
         title: "Penna, evidenziatore, gomma.\nColori e spessore come vuoi tu.",
-        description: "Imposta tre colori preferiti e tre spessori per la penna e per l’evidenziatore e passa dall’uno all’altro all’istante. Ciò che scrivi viene salvato automaticamente mentre scrivi.",
+        description: "Imposta tre slot di colore e spessore per la penna e per l’evidenziatore e passa dall’uno all’altro all’istante. Ciò che scrivi viene salvato automaticamente mentre scrivi.",
         points: ["Penna, evidenziatore, gomma e selezione con lazo", "Linee, frecce, rettangoli, ellissi e immagini", "Annulla e ripeti"],
       },
       search: {
@@ -68,7 +68,7 @@ const notes: Dictionary["notes"] = {
       { title: "Caselle di testo", description: "Scrivi con la tastiera direttamente sulla pagina. Scegli tra caratteri senza grazie, con grazie, calligrafici e a spaziatura fissa." },
       { title: "Contrassegna il testo", description: "Seleziona il testo di un PDF per evidenziarlo, sottolinearlo o barrarlo, e copialo." },
       { title: "Segnalibri", description: "Aggiungi un segnalibro alle pagine importanti e raggiungile dall’elenco." },
-      { title: "Sbircia", description: "Fai clic su un appunto o su una casella di testo per renderli traslucidi per un momento e vedere il testo sottostante." },
+      { title: "Traslucido", description: "Fai clic su un appunto o su una casella di testo per renderli traslucidi e vedere il testo sottostante." },
       { title: "Salvataggio automatico", description: "Non c’è un pulsante Salva. Ciò che scrivi viene salvato nel file del documento mentre scrivi." },
       { title: "Scorciatoie da tastiera", description: "Scegli gli strumenti, cerca e cambia pagina con le scorciatoie." },
     ],
@@ -83,10 +83,10 @@ const notes: Dictionary["notes"] = {
     items: [
       { question: "Per quanto tempo posso usare la versione di prova?", answer: "Puoi usare tutte le funzioni senza limiti per 30 giorni dal giorno del primo avvio dell’app. Al primo avvio l’app ti indica la data di scadenza." },
       { question: "Che cosa succede dopo 30 giorni?", answer: "Puoi continuare a scrivere. L’OCR, la modalità automatica, la modalità prestazioni, la ricerca in tutti i documenti, tutti i segnalibri, tutto il testo marcato e la minimappa non sono più disponibili. I tuoi documenti, gli appunti e il testo già riconosciuto restano. Quando l’acquisto sarà aperto, potrai usare queste funzioni con Pro." },
-      { question: "Dove vengono salvati i miei documenti?", answer: "Nella cartella «Ghostyak Notes», all’interno della tua cartella Documenti. Puoi aprirla con «문서 폴더 열기» (Apri la cartella dei documenti), in basso a sinistra nella libreria." },
+      { question: "Dove vengono salvati i miei documenti?", answer: "Nella cartella «Ghostyak Notes», all’interno della tua cartella Documenti. Puoi aprirla con «Documents folder» (Apri la cartella dei documenti), in basso a sinistra nella libreria." },
       { question: "La ricerca funziona anche sui PDF scansionati?", answer: "Sì. Nei PDF scansionati senza informazioni di testo, l’app riconosce il testo (OCR) così puoi cercarlo. Il riconoscimento avviene sul tuo PC, e la ricerca nella scrittura a mano non è ancora supportata." },
       { question: "Posso scrivere sui PDF con il mouse, senza una tavoletta con penna?", answer: "Sì. Puoi scrivere con il mouse e digitare nelle caselle di testo con la tastiera." },
-      { question: "In che lingua è disponibile l’app?", answer: "Al momento l’interfaccia dell’app è disponibile in coreano. Altre lingue saranno disponibili a breve." },
+      { question: "In che lingua è disponibile l’app?", answer: "L’interfaccia dell’app è disponibile in coreano e inglese. Si apre nella lingua del dispositivo, o in inglese se è un’altra, e puoi cambiarla nelle impostazioni." },
       { question: "Su quale Windows funziona?", answer: "È per Windows a 64 bit (x64). Se Microsoft Edge WebView2 Runtime non è presente, il programma di installazione lo scarica e lo installa." },
     ],
   },

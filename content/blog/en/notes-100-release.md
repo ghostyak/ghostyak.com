@@ -3,7 +3,7 @@ title: "Ghostyak Notes v1.0.0 is released"
 description: "The beta is over and v1.0.0 is here. It is now a 30-day trial, with a new home screen, document merging, OCR for images, and a better minimap and writing tools."
 publishedAt: "2026-11-01"
 translationKey: "notes-100-release"
-sourceRevision: 1
+sourceRevision: 2
 ---
 
 **Ghostyak Notes v1.0.0 is released.** Thank you to everyone who used the beta through October. This release includes everything that landed between beta v0.1.5 and v0.1.13.
@@ -53,7 +53,7 @@ The library home has been redesigned. The brand color is now navy, and the app i
 - Links inside the original PDF are followed, and the mouse back and forward buttons move between places.
 - The toolbar gains a page field and a rotate page button, and the zoom steps include the fit-to-page level.
 - Change thumbnail size in the page overview and the sidebar with Ctrl+wheel. When there are many tabs, they shrink to an equal width.
-- Shortcuts have been reorganized: F4 or Ctrl+B for the left sidebar, F9 for the page overview, and Alt+1 to 8 for the sidebar tabs.
+- Shortcuts have been reorganized: F4 or Ctrl+B for the left sidebar, F5 for the page overview, and Alt+1 to 8 for the sidebar tabs.
 
 ## Also
 

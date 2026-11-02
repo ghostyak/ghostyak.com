@@ -3,7 +3,7 @@ title: "Ghostyak Notes v1.0.0 è disponibile"
 description: "La beta è finita ed è arrivata la v1.0.0. Ora è una versione di prova di 30 giorni, con una nuova schermata iniziale, l’unione dei documenti, l’OCR delle immagini e una minimappa e strumenti di scrittura migliorati."
 publishedAt: "2026-11-01"
 translationKey: "notes-100-release"
-sourceRevision: 1
+sourceRevision: 2
 ---
 
 **Ghostyak Notes v1.0.0 è disponibile.** Grazie a tutti coloro che hanno usato la beta durante ottobre. Questa versione include tutte le modifiche accumulate dalla beta v0.1.5 alla v0.1.13.
@@ -53,7 +53,7 @@ La schermata iniziale della libreria è stata ridisegnata. Il colore del marchio
 - I link all’interno del PDF originale vengono seguiti e i pulsanti Indietro e Avanti del mouse permettono di andare e tornare.
 - La barra degli strumenti guadagna un campo pagina e un pulsante per ruotare la pagina, e i passi dello zoom includono il livello di adattamento alla pagina.
 - Cambia la dimensione delle miniature nella panoramica delle pagine e nella barra laterale con Ctrl+rotellina. Quando le schede sono molte, si restringono a una larghezza uguale.
-- Le scorciatoie sono state riorganizzate: F4 o Ctrl+B per la barra laterale sinistra, F9 per la panoramica delle pagine e Alt+1–8 per le schede della barra laterale.
+- Le scorciatoie sono state riorganizzate: F4 o Ctrl+B per la barra laterale sinistra, F5 per la panoramica delle pagine e Alt+1–8 per le schede della barra laterale.
 
 ## Inoltre
 

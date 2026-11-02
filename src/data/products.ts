@@ -34,7 +34,7 @@ export const notes = {
   fullName: "Ghostyak Notes",
   pagePath: "/product/notes",
   // Date of the last change to the product page content, published as the sitemap lastmod.
-  updatedAt: "2026-11-02",
+  updatedAt: "2026-11-03",
   // YouTube intro video shown in the hero; the poster is its first frame. The poster, duration and date are published as VideoObject JSON-LD.
   video: { id: "3k37JHCe5Q0", duration: "PT1M29S", uploadDate: "2026-11-01T18:50:07-08:00", poster: { src: "/images/notes/intro-video-poster.png", width: 1920, height: 1080 } },
   // Decided one-time price, shown in the page's #pricing section. Purchase is not open yet.

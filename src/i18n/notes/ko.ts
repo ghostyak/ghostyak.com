@@ -3,6 +3,7 @@
 // The search-oriented hero title, metadata description, section titles and FAQ questions of 2026-11-01 await the owner's review.
 // The hero video copy of 2026-11-02 awaits the owner's review.
 // The trial terms of 2026-11-02 (hero note and FAQ) await the owner's review.
+// The app language FAQ, translucent tool and pen slot copy of 2026-11-03 were corrected from the Notes app source at the owner's request.
 const notes = {
   metadataTitle: "Ghostyak Notes | PDF에 필기하고 바로 찾는 Windows 노트 앱",
   metadataDescription: "PDF 위에 펜과 키보드로 필기하고, 읽은 내용은 모든 문서에서 바로 찾는 Windows 노트 앱입니다. 30일 동안 모든 기능을 써 볼 수 있습니다.",
@@ -34,7 +35,7 @@ const notes = {
       pen: {
         eyebrow: "필기",
         title: "펜, 형광펜, 지우개.\n색과 굵기는 내 손에 맞게.",
-        description: "펜과 형광펜마다 자주 쓰는 색 세 가지와 굵기 세 가지를 정해 두고 바로 바꿔 쓰세요. 필기는 긋는 대로 자동 저장됩니다.",
+        description: "펜과 형광펜마다 자주 쓰는 색과 굵기를 세 칸에 정해 두고 바로 바꿔 쓰세요. 필기는 긋는 대로 자동 저장됩니다.",
         points: ["펜·형광펜·지우개와 올가미 선택", "선·화살표·사각형·타원 도형과 이미지 넣기", "실행 취소와 다시 실행"],
       },
       search: {
@@ -70,7 +71,7 @@ const notes = {
       { title: "텍스트 상자", description: "키보드로 쪽 위에 글을 씁니다. 고딕·명조·손글씨·고정폭 글꼴을 고를 수 있습니다." },
       { title: "글에 표시하기", description: "PDF의 글을 선택해 형광·밑줄·취소선으로 표시하고 복사합니다." },
       { title: "북마크", description: "중요한 쪽에 북마크를 달아 두고 목록에서 바로 이동합니다." },
-      { title: "엿보기", description: "필기나 텍스트 상자를 눌러 잠깐 비치게 하고, 그 아래의 본문을 확인합니다." },
+      { title: "반투명", description: "필기나 텍스트 상자를 눌러 반투명하게 만들고, 그 아래의 본문을 확인합니다." },
       { title: "자동 저장", description: "저장 버튼이 없습니다. 필기는 긋는 대로 문서 파일에 저장됩니다." },
       { title: "키보드 단축키", description: "도구 선택, 검색과 쪽 이동을 단축키로 실행합니다." },
     ],
@@ -88,7 +89,7 @@ const notes = {
       { question: "문서는 어디에 저장되나요?", answer: "내 PC의 문서 폴더 안 ‘Ghostyak Notes’ 폴더에 저장됩니다. 라이브러리 왼쪽 아래의 ‘문서 폴더 열기’로 바로 열 수 있습니다." },
       { question: "스캔한 PDF도 검색되나요?", answer: "네. 글자 정보가 없는 스캔 PDF는 앱이 글자를 인식(OCR)해 찾을 수 있게 합니다. 인식은 내 PC 안에서 이루어지며, 손글씨 검색은 아직 지원하지 않습니다." },
       { question: "펜 태블릿 없이 마우스로도 PDF에 필기할 수 있나요?", answer: "네. 마우스로 필기하고 키보드로 텍스트 상자에 글을 쓸 수 있습니다." },
-      { question: "앱은 어떤 언어로 제공되나요?", answer: "현재 앱 화면은 한국어로 제공됩니다. 다른 언어도 곧 지원할 예정입니다." },
+      { question: "앱은 어떤 언어로 제공되나요?", answer: "앱 화면은 한국어와 영어로 제공됩니다. 처음에는 기기의 언어를 따르고 그 밖의 언어에서는 영어로 열리며, 설정에서 바꿀 수 있습니다." },
       { question: "어떤 Windows에서 쓸 수 있나요?", answer: "Windows 64비트(x64)용입니다. Microsoft Edge WebView2 Runtime이 없으면 설치 프로그램이 내려받아 설치합니다." },
     ],
   },

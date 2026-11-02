@@ -32,7 +32,7 @@ const notes: Dictionary["notes"] = {
       pen: {
         eyebrow: "Escrita",
         title: "Caneta, marca-texto e borracha.\nCores e espessura do seu jeito.",
-        description: "Defina três cores favoritas e três espessuras para a caneta e para o marca-texto e alterne entre elas na hora. O que você escreve é salvo automaticamente enquanto escreve.",
+        description: "Defina três espaços com cor e espessura para a caneta e para o marca-texto e alterne entre eles na hora. O que você escreve é salvo automaticamente enquanto escreve.",
         points: ["Caneta, marca-texto, borracha e seleção com laço", "Linhas, setas, retângulos, elipses e imagens", "Desfazer e refazer"],
       },
       search: {
@@ -68,7 +68,7 @@ const notes: Dictionary["notes"] = {
       { title: "Caixas de texto", description: "Digite diretamente na página. Escolha entre fontes sem serifa, com serifa, manuscrita e monoespaçada." },
       { title: "Marcar texto", description: "Selecione o texto de um PDF para destacar, sublinhar ou tachar, e copie-o." },
       { title: "Marcadores", description: "Marque páginas importantes e vá até elas pela lista." },
-      { title: "Espiar", description: "Clique em uma anotação ou caixa de texto para deixá-la translúcida por um instante e ver o texto que está embaixo." },
+      { title: "Translúcido", description: "Clique em uma anotação ou caixa de texto para deixá-la translúcida e ver o texto que está embaixo." },
       { title: "Salvamento automático", description: "Não há botão de salvar. O que você escreve é salvo no arquivo do documento enquanto escreve." },
       { title: "Atalhos de teclado", description: "Escolha ferramentas, busque e mude de página com atalhos." },
     ],
@@ -83,10 +83,10 @@ const notes: Dictionary["notes"] = {
     items: [
       { question: "Por quanto tempo posso usar a versão de teste?", answer: "Você pode usar todos os recursos sem restrições por 30 dias a partir do dia em que abrir o app pela primeira vez. Na primeira abertura, o app informa a data de término." },
       { question: "O que acontece depois de 30 dias?", answer: "Você pode continuar escrevendo. O OCR, o modo automático, o modo de desempenho, a busca em todos os documentos, todos os marcadores, todo o texto marcado e o minimapa deixam de estar disponíveis. Seus documentos, suas anotações e o texto já reconhecido são mantidos. Quando a compra abrir, você poderá usar esses recursos com o Pro." },
-      { question: "Onde meus documentos ficam salvos?", answer: "Na pasta “Ghostyak Notes”, dentro da sua pasta Documentos. Você pode abri-la com “문서 폴더 열기” (Abrir pasta de documentos), no canto inferior esquerdo da biblioteca." },
+      { question: "Onde meus documentos ficam salvos?", answer: "Na pasta “Ghostyak Notes”, dentro da sua pasta Documentos. Você pode abri-la com “Documents folder” (Abrir pasta de documentos), no canto inferior esquerdo da biblioteca." },
       { question: "A busca funciona em PDFs digitalizados?", answer: "Sim. Em PDFs digitalizados sem informações de texto, o aplicativo reconhece o texto (OCR) para que você possa buscá-lo. O reconhecimento acontece no seu próprio PC, e a busca em escrita à mão ainda não é compatível." },
       { question: "Posso escrever em PDFs com o mouse, sem mesa digitalizadora?", answer: "Sim. Você pode escrever com o mouse e digitar em caixas de texto com o teclado." },
-      { question: "Em que idioma o app está disponível?", answer: "No momento, a interface do app está disponível em coreano. Outros idiomas serão oferecidos em breve." },
+      { question: "Em que idioma o app está disponível?", answer: "A interface do app está disponível em coreano e inglês. Ela abre no idioma do dispositivo, ou em inglês se for outro, e você pode mudar isso nas configurações." },
       { question: "Em qual Windows ele funciona?", answer: "O app é para Windows de 64 bits (x64). Se o Microsoft Edge WebView2 Runtime não estiver presente, o instalador faz o download e a instalação." },
     ],
   },

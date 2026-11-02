@@ -32,7 +32,7 @@ const notes: Dictionary["notes"] = {
       pen: {
         eyebrow: "Writing",
         title: "Pen, highlighter, eraser.\nColors and thickness your way.",
-        description: "Set three favorite colors and three thicknesses for the pen and for the highlighter, then switch between them instantly. Your writing is saved automatically as you go.",
+        description: "Save three slots of color and thickness for the pen and for the highlighter, then switch between them instantly. Your writing is saved automatically as you go.",
         points: ["Pen, highlighter, eraser, and lasso selection", "Lines, arrows, rectangles, ellipses, and images", "Undo and redo"],
       },
       search: {
@@ -68,7 +68,7 @@ const notes: Dictionary["notes"] = {
       { title: "Text boxes", description: "Type directly on the page. Choose from sans-serif, serif, handwriting, and monospace fonts." },
       { title: "Mark up text", description: "Select text in a PDF to highlight, underline, or strike it through, and copy it." },
       { title: "Bookmarks", description: "Bookmark important pages and jump to them from the list." },
-      { title: "Peek", description: "Click handwriting or a text box to make it see-through for a moment and check the text underneath." },
+      { title: "Translucent", description: "Click handwriting or a text box to make it translucent and check the text underneath." },
       { title: "Autosave", description: "There is no save button. Your writing is saved to the document file as you go." },
       { title: "Keyboard shortcuts", description: "Pick tools, search, and move between pages with shortcuts." },
     ],
@@ -83,10 +83,10 @@ const notes: Dictionary["notes"] = {
     items: [
       { question: "How long can I use the trial?", answer: "You can use every feature without limits for 30 days from the day you first launch the app. The app tells you the end date on first launch." },
       { question: "What happens after 30 days?", answer: "You can keep writing. OCR, Auto Mode, Performance Mode, searching all documents, all bookmarks, all marked text and the minimap are no longer available. Your documents, handwriting and already recognized text stay. Once purchasing opens, Pro brings those features back." },
-      { question: "Where are my documents stored?", answer: "In the ‘Ghostyak Notes’ folder inside your Documents folder. You can open it with ‘문서 폴더 열기’ (Open documents folder) at the bottom left of the library." },
+      { question: "Where are my documents stored?", answer: "In the ‘Ghostyak Notes’ folder inside your Documents folder. You can open it with ‘Documents folder’ at the bottom left of the library." },
       { question: "Can it search scanned PDFs?", answer: "Yes. For scanned PDFs with no text information, the app recognizes the text (OCR) so you can search it. Recognition happens on your own PC, and searching handwriting is not supported yet." },
       { question: "Can I write on PDFs with a mouse, without a pen tablet?", answer: "Yes. You can write with a mouse and type into text boxes with a keyboard." },
-      { question: "What language is the app in?", answer: "The app interface is currently available in Korean. Other languages are coming soon." },
+      { question: "What language is the app in?", answer: "The app interface is available in Korean and English. It starts in your device language, or in English for any other language, and you can change it in Settings." },
       { question: "What Windows do I need to run it?", answer: "It is for 64-bit (x64) Windows. If Microsoft Edge WebView2 Runtime is missing, the installer downloads and installs it." },
     ],
   },

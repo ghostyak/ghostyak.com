@@ -32,7 +32,7 @@ const notes: Dictionary["notes"] = {
       pen: {
         eyebrow: "Schreiben",
         title: "Stift, Textmarker, Radierer.\nFarbe und Stärke nach deinem Geschmack.",
-        description: "Lege für Stift und Textmarker jeweils drei Lieblingsfarben und drei Strichstärken fest und wechsle sofort zwischen ihnen. Was du schreibst, wird dabei automatisch gespeichert.",
+        description: "Lege für Stift und Textmarker jeweils drei Plätze mit Farbe und Strichstärke fest und wechsle sofort zwischen ihnen. Was du schreibst, wird dabei automatisch gespeichert.",
         points: ["Stift, Textmarker, Radierer und Lasso-Auswahl", "Linien, Pfeile, Rechtecke, Ellipsen und Bilder", "Rückgängig und Wiederholen"],
       },
       search: {
@@ -68,7 +68,7 @@ const notes: Dictionary["notes"] = {
       { title: "Textfelder", description: "Tippe direkt auf der Seite. Wähle zwischen serifenloser Schrift, Serifenschrift, Handschrift und Festbreitenschrift." },
       { title: "Text markieren", description: "Wähle Text in einem PDF aus, um ihn hervorzuheben, zu unterstreichen oder durchzustreichen, und kopiere ihn." },
       { title: "Lesezeichen", description: "Setze Lesezeichen auf wichtige Seiten und springe über die Liste direkt dorthin." },
-      { title: "Durchblick", description: "Klicke auf Handschrift oder ein Textfeld, um es kurz durchscheinend zu machen und den Text darunter zu sehen." },
+      { title: "Durchscheinend", description: "Klicke auf Handschrift oder ein Textfeld, um es durchscheinend zu machen und den Text darunter zu sehen." },
       { title: "Automatisches Speichern", description: "Es gibt keine Schaltfläche zum Speichern. Was du schreibst, wird laufend in der Dokumentdatei gespeichert." },
       { title: "Tastenkürzel", description: "Wähle Werkzeuge, suche und wechsle Seiten per Tastenkürzel." },
     ],
@@ -83,10 +83,10 @@ const notes: Dictionary["notes"] = {
     items: [
       { question: "Wie lange kann ich die Testversion nutzen?", answer: "Ab dem ersten Start der App kannst du 30 Tage lang alle Funktionen ohne Einschränkungen nutzen. Beim ersten Start zeigt dir die App das Enddatum an." },
       { question: "Was passiert nach 30 Tagen?", answer: "Du kannst weiter schreiben. OCR, der Automodus, der Leistungsmodus, die Suche in allen Dokumenten, alle Lesezeichen, alle markierten Texte und die Minimap sind nicht mehr verfügbar. Deine Dokumente, Notizen und bereits erkannter Text bleiben erhalten. Sobald der Kauf möglich ist, kannst du diese Funktionen mit Pro nutzen." },
-      { question: "Wo werden meine Dokumente gespeichert?", answer: "Im Ordner „Ghostyak Notes“ in deinem Ordner „Dokumente“. Du kannst ihn über „문서 폴더 열기“ (Dokumentordner öffnen) unten links in der Bibliothek öffnen." },
+      { question: "Wo werden meine Dokumente gespeichert?", answer: "Im Ordner „Ghostyak Notes“ in deinem Ordner „Dokumente“. Du kannst ihn über „Documents folder“ (Dokumentordner öffnen) unten links in der Bibliothek öffnen." },
       { question: "Werden auch gescannte PDFs durchsucht?", answer: "Ja. Bei gescannten PDFs ohne Textinformationen erkennt die App den Text (OCR), sodass du ihn durchsuchen kannst. Die Erkennung findet auf deinem eigenen PC statt, und die Suche in Handschrift wird noch nicht unterstützt." },
       { question: "Kann ich auch ohne Stift-Tablett mit der Maus auf PDFs schreiben?", answer: "Ja. Du kannst mit der Maus schreiben und mit der Tastatur in Textfelder tippen." },
-      { question: "In welcher Sprache ist die App verfügbar?", answer: "Die Oberfläche der App ist derzeit auf Koreanisch verfügbar. Weitere Sprachen folgen in Kürze." },
+      { question: "In welcher Sprache ist die App verfügbar?", answer: "Die Oberfläche der App ist auf Koreanisch und Englisch verfügbar. Sie startet in der Sprache deines Geräts, bei anderen Sprachen auf Englisch, und du kannst sie in den Einstellungen ändern." },
       { question: "Auf welchem Windows läuft die App?", answer: "Die App ist für 64-Bit-Windows (x64). Wenn Microsoft Edge WebView2 Runtime fehlt, lädt das Installationsprogramm sie herunter und installiert sie." },
     ],
   },
