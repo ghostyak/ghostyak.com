@@ -16,13 +16,14 @@ const notes: Dictionary["notes"] = {
   pricingAction: "Confronta la versione di prova e Pro",
   heroNote: "Ghostyak Notes è ancora in beta test, quindi l’acquisto non è ancora disponibile. Puoi usare tutte le funzioni per 30 giorni dal primo avvio e, dopo 30 giorni, installare una nuova versione ti dà altri 30 giorni.",
   screenshots: {
-    annotate: { alt: "Ghostyak Notes con un manuale in PDF, testo evidenziato e appunti scritti a mano a margine", caption: "Scrivere su un PDF · Interfaccia in coreano" },
+    annotate: { alt: "Ghostyak Notes con un manuale in PDF, testo evidenziato e appunti scritti a mano a margine" },
     pen: { alt: "Impostazioni della penna di Ghostyak Notes con tre slot colore, una tavolozza e tre livelli di spessore", caption: "Impostazioni della penna · Colore e spessore" },
     search: { alt: "Ricerca nella libreria di Ghostyak Notes per una parola coreana, con le pagine trovate in due documenti e le relative anteprime", caption: "Cerca in tutti i documenti" },
     library: { alt: "Libreria di Ghostyak Notes con dieci documenti in una griglia di copertine e cartelle e preferiti a sinistra", caption: "Libreria · Cartelle e griglia di copertine" },
     pages: { alt: "Panoramica delle pagine di Ghostyak Notes con tutte le pagine di un documento di 24 pagine in griglia e i pulsanti per spostare, duplicare e ruotare", caption: "Panoramica delle pagine" },
     spread: { alt: "Vista a due pagine di Ghostyak Notes con le pagine 4 e 5 annotate affiancate", caption: "Vista a due pagine" },
   },
+  video: { playAction: "Guarda il video di presentazione", title: "Video di presentazione di Ghostyak Notes", posterAlt: "Schermata iniziale del video di presentazione: icona e nome di Ghostyak Notes su sfondo blu, con la frase «Scrivi sui PDF, trova qualsiasi cosa»", caption: "1 min 29 s · Interfaccia in coreano", watchOnYouTube: "Guarda su YouTube" },
   showcase: {
     eyebrow: "Funzioni principali",
     title: "Leggi, scrivi e cerca nei PDF,\ntutto in un’unica app.",

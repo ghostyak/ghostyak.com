@@ -1,6 +1,7 @@
 // Approved Korean source, 2026-10-09. Written from the Ghostyak Notes product and trial documents.
 // The trial and Pro terms of 2026-10-31 await the owner's review.
 // The search-oriented hero title, metadata description, section titles and FAQ questions of 2026-11-01 await the owner's review.
+// The hero video copy of 2026-11-02 awaits the owner's review.
 const notes = {
   metadataTitle: "Ghostyak Notes | PDF에 필기하고 바로 찾는 Windows 노트 앱",
   metadataDescription: "PDF 위에 펜과 키보드로 필기하고, 읽은 내용은 모든 문서에서 바로 찾는 Windows 노트 앱입니다. 30일 동안 모든 기능을 써 볼 수 있습니다.",
@@ -16,13 +17,14 @@ const notes = {
   pricingAction: "체험판과 Pro 비교하기",
   heroNote: "아직 베타 테스트 중이라 구매 기능은 준비 중입니다. 처음 실행한 날부터 30일 동안 모든 기능을 쓸 수 있고, 30일이 지나면 새 버전을 다시 설치해 30일 더 쓸 수 있습니다.",
   screenshots: {
-    annotate: { alt: "Ghostyak Notes에서 PDF 교재에 형광 표시를 하고 여백에 손글씨로 필기한 화면", caption: "PDF 위에 필기 · 한국어 UI" },
+    annotate: { alt: "Ghostyak Notes에서 PDF 교재에 형광 표시를 하고 여백에 손글씨로 필기한 화면" },
     pen: { alt: "색 세 칸과 색 팔레트, 굵기 세 단계를 고르는 Ghostyak Notes 펜 설정 창", caption: "펜 설정 · 색과 굵기" },
     search: { alt: "‘권리’를 입력해 두 문서에서 찾은 쪽을 미리보기와 함께 보여 주는 Ghostyak Notes 전체 검색 창", caption: "모든 문서에서 찾기" },
     library: { alt: "문서 열 개를 표지 격자로 보여 주고 왼쪽에 폴더와 즐겨찾기를 둔 Ghostyak Notes 라이브러리", caption: "라이브러리 · 폴더와 표지 격자" },
     pages: { alt: "24쪽 문서의 모든 쪽을 격자로 펼치고 옮기기·복제·돌리기 단추를 둔 Ghostyak Notes 쪽 모아보기", caption: "쪽 모아보기" },
     spread: { alt: "필기한 4쪽과 5쪽을 나란히 펼친 Ghostyak Notes 두 쪽 보기", caption: "두 쪽 보기" },
   },
+  video: { playAction: "소개 영상 보기", title: "Ghostyak Notes 소개 영상", posterAlt: "파란 바탕에 Ghostyak Notes 앱 아이콘과 이름, ‘PDF 위에 쓰고, 무엇이든 찾는 노트’ 문구를 둔 소개 영상 첫 화면", caption: "1분 29초 · 한국어 UI", watchOnYouTube: "YouTube에서 보기" },
   showcase: {
     eyebrow: "주요 기능",
     title: "PDF 읽기, 필기, 검색을\n한 앱에서.",

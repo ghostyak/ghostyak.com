@@ -28,9 +28,9 @@ export function SectionHeading({ id, eyebrow, title, description }: { id: string
   return <div><p className="mb-4 text-xs font-semibold tracking-wide text-brand-foreground">{eyebrow}</p><h2 id={id} className="whitespace-pre-line text-3xl font-semibold leading-[1.25] tracking-[-0.035em] text-balance sm:text-4xl">{title}</h2>{description && <p className="mt-5 max-w-xl text-base leading-8 text-muted-foreground">{description}</p>}</div>;
 }
 
-export function Frame({ screenshot, sizes, preload = false }: { screenshot: Omit<Screenshot, "caption">; sizes: string; preload?: boolean }) {
+export function Frame({ screenshot, sizes, preload = false, quality }: { screenshot: Omit<Screenshot, "caption">; sizes: string; preload?: boolean; quality?: number }) {
   return <div className="overflow-hidden rounded-2xl bg-ink p-1.5 shadow-xl shadow-ink/15 sm:p-2">
-    <Image src={screenshot.src} width={screenshot.width} height={screenshot.height} alt={screenshot.alt} sizes={sizes} preload={preload} className="h-auto w-full rounded-xl" />
+    <Image src={screenshot.src} width={screenshot.width} height={screenshot.height} alt={screenshot.alt} sizes={sizes} preload={preload} quality={quality} className="h-auto w-full rounded-xl" />
   </div>;
 }
 

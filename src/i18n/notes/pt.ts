@@ -16,13 +16,14 @@ const notes: Dictionary["notes"] = {
   pricingAction: "Comparar a versão de teste e o Pro",
   heroNote: "O Ghostyak Notes ainda está em teste beta, por isso a compra ainda não está pronta. Você pode usar todos os recursos por 30 dias a partir da primeira abertura e, depois dos 30 dias, instalar uma nova versão dá mais 30 dias.",
   screenshots: {
-    annotate: { alt: "Ghostyak Notes mostrando um livro didático em PDF com texto destacado e anotações à mão na margem", caption: "Escrevendo em um PDF · Interface em coreano" },
+    annotate: { alt: "Ghostyak Notes mostrando um livro didático em PDF com texto destacado e anotações à mão na margem" },
     pen: { alt: "Configurações da caneta do Ghostyak Notes com três espaços de cor, uma paleta de cores e três níveis de espessura", caption: "Configurações da caneta · Cor e espessura" },
     search: { alt: "Busca na biblioteca do Ghostyak Notes por uma palavra em coreano, com as páginas encontradas em dois documentos e suas prévias", caption: "Buscar em todos os documentos" },
     library: { alt: "Biblioteca do Ghostyak Notes mostrando dez documentos em uma grade de capas, com pastas e favoritos à esquerda", caption: "Biblioteca · Pastas e grade de capas" },
     pages: { alt: "Visão geral de páginas do Ghostyak Notes mostrando todas as páginas de um documento de 24 páginas em grade, com botões para mover, duplicar e girar", caption: "Visão geral de páginas" },
     spread: { alt: "Visualização em duas páginas do Ghostyak Notes com as páginas 4 e 5 anotadas lado a lado", caption: "Visualização em duas páginas" },
   },
+  video: { playAction: "Assista ao vídeo de apresentação", title: "Vídeo de apresentação do Ghostyak Notes", posterAlt: "Tela inicial do vídeo de apresentação: o ícone e o nome do Ghostyak Notes sobre fundo azul, com a frase “Escreva em PDFs, encontre qualquer coisa”", caption: "1 min 29 s · Interface em coreano", watchOnYouTube: "Assista no YouTube" },
   showcase: {
     eyebrow: "Principais recursos",
     title: "Leia, escreva e pesquise em PDFs,\ntudo em um só app.",

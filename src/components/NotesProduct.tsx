@@ -5,6 +5,7 @@ import { PageHero, heroActionClassName } from "@/components/PageHero";
 import { DownloadLabel, Frame, ProductDownload, ProductFaq, ProductHighlight, SectionHeading, textLink } from "@/components/ProductLanding";
 import { NotesPricing } from "@/components/NotesPricing";
 import { ShareLinks } from "@/components/ShareLinks";
+import { YouTubeFacade } from "@/components/YouTubeFacade";
 import { notes } from "@/data/products";
 import { getDictionary } from "@/i18n/get-dictionary";
 import type { PublishedLocale } from "@/i18n/locales";
@@ -12,12 +13,12 @@ import { localizedPath } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 import { getNotesJsonLd, siteUrl } from "@/seo";
 
-// Order of the feature rows; the annotate screenshot is the hero.
+// Order of the feature rows.
 const showcaseOrder = ["pen", "search", "library", "pages", "spread"] as const;
 // Same order as copy.more.items.
 const moreIcons = [Type, Highlighter, Bookmark, Eye, Save, Keyboard];
 
-// Flagship landing: hero, one screenshot per feature row, extra feature cards,
+// Flagship landing: hero with the intro video, one screenshot per feature row, extra feature cards,
 // local storage highlight, pricing (trial and Pro), FAQ and a download band.
 // The H1 carries the search phrase and the product name; the badges above it
 // carry the beta status, the trial and the platform.
@@ -25,10 +26,10 @@ export async function NotesProduct({ locale }: { locale: PublishedLocale }) {
   const dictionary = await getDictionary(locale);
   const copy = dictionary.notes;
   const viewScreenshot = dictionary.landing.actions.viewScreenshot;
-  const hero = { ...notes.screenshots.annotate, ...copy.screenshots.annotate };
+  const poster = { ...notes.video.poster, alt: copy.video.posterAlt };
   const downloadLink = <a className={cn(buttonVariants({ variant: "architectureDownload", size: "lg", className: heroActionClassName }))} href={notes.downloadUrl} aria-label={copy.downloadAction}><Download className="size-4" aria-hidden="true" /><DownloadLabel label={copy.downloadAction} architecture="x64" /></a>;
 
-  const jsonLd = getNotesJsonLd({ locale, description: copy.cardDescription, featureNames: [...showcaseOrder.map((key) => copy.showcase.items[key].eyebrow), ...copy.more.items.map((item) => item.title)] });
+  const jsonLd = getNotesJsonLd({ locale, description: copy.cardDescription, videoName: copy.video.title, featureNames: [...showcaseOrder.map((key) => copy.showcase.items[key].eyebrow), ...copy.more.items.map((item) => item.title)] });
 
   return <main id="main-content" className="wrap-anywhere">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
@@ -50,10 +51,12 @@ export async function NotesProduct({ locale }: { locale: PublishedLocale }) {
         />
         <figure className="relative mx-auto max-w-6xl">
           <div className="absolute inset-x-[10%] -bottom-6 top-1/3 rounded-full bg-brand/25 blur-3xl" aria-hidden="true" />
-          <a className="relative block rounded-3xl" href={hero.src} target="_blank" rel="noreferrer" aria-label={`${viewScreenshot}: ${hero.caption}`}>
-            <Frame screenshot={hero} preload sizes="(min-width: 1216px) 1152px, (min-width: 640px) calc(100vw - 64px), calc(100vw - 32px)" />
-          </a>
-          <figcaption className="relative mt-4 flex flex-wrap items-center justify-between gap-x-5 text-xs leading-6 text-muted-foreground"><span>{hero.caption}</span><a href={hero.src} target="_blank" rel="noreferrer" className={textLink}>{viewScreenshot}<ArrowUpRight className="size-3.5" aria-hidden="true" /></a></figcaption>
+          <div className="relative">
+            <YouTubeFacade videoId={notes.video.id} title={copy.video.title} playLabel={copy.video.playAction}>
+              <Frame screenshot={poster} preload quality={95} sizes="(min-width: 1216px) 1152px, (min-width: 640px) calc(100vw - 64px), calc(100vw - 32px)" />
+            </YouTubeFacade>
+          </div>
+          <figcaption className="relative mt-4 flex flex-wrap items-center justify-between gap-x-5 text-xs leading-6 text-muted-foreground"><span>{copy.video.caption}</span><a href={`https://www.youtube.com/watch?v=${notes.video.id}`} target="_blank" rel="noreferrer" className={textLink}>{copy.video.watchOnYouTube}<ArrowUpRight className="size-3.5" aria-hidden="true" /></a></figcaption>
         </figure>
       </div>
     </section>

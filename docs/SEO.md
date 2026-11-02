@@ -113,6 +113,7 @@ Vercel 환경 변수를 변경한 뒤에는 새 배포가 필요하다. 값이 �
 - 주요 기능·내 PC 저장 구역의 H2, 가격 비교 H2(`pricing.compare.title`)와 FAQ 질문 두 개에 PDF·필기·Windows·체험판 같은 검색 표현을 넣었다. 답은 바꾸지 않았다.
 - 홈의 Notes 카드는 제목을 `Ghostyak Notes`로, 버튼 앵커 텍스트를 `notes.featuredAction`(한국어 “PDF 필기 노트 앱 둘러보기”)으로 바꿔 제품 페이지로 가는 내부 링크가 설명을 담도록 했다.
 - sitemap의 Notes 제품 페이지에 `lastModified`를 넣는다. 값은 `src/data/products.ts`의 `notes.updatedAt`이며 페이지 내용을 바꿀 때 함께 올린다.
+- 2026-11-02 첫 화면에 소개 영상을 넣으면서 `SoftwareApplication`의 `subjectOf`에 `VideoObject`(이름·설명·사이트의 포스터 이미지·게시일·길이·`embedUrl`)를 추가했다. 영상은 누를 때만 불러오므로 첫 화면 이미지(LCP)는 그대로다. 영상 정보는 `src/data/products.ts`의 `notes.video`에서 관리한다.
 - `SoftwareApplication`의 `offers`는 여전히 넣지 않는다. 구글 소프트웨어 앱 리치 결과는 `offers.price`와 평점(`aggregateRating` 또는 `review`)을 모두 요구하므로 평점이 없는 지금은 추가해도 표시되지 않는다.
 
 저장소 밖에서 해야 할 일은 다음과 같다. GitHub `ghostyak/notes` 저장소의 About Website와 README에 제품 페이지 링크를 넣는다(현재 ghostyak.com 링크가 없다). Google Search Console에서 `/ko/product/notes`·`/en/product/notes`·`/ko/blog/notes-100-release`의 URL 검사와 색인 요청을, 네이버 서치어드바이저에서 같은 URL의 수집 요청을 한다.

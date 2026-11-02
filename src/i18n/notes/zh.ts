@@ -16,13 +16,14 @@ const notes: Dictionary["notes"] = {
   pricingAction: "比较试用版与 Pro",
   heroNote: "Ghostyak Notes 仍在 Beta 测试中，购买功能尚未就绪。自首次启动之日起 30 天内可使用全部功能；30 天后重新安装新版本，即可再使用 30 天。",
   screenshots: {
-    annotate: { alt: "在 Ghostyak Notes 中为 PDF 教材添加荧光标记并在页边手写笔记的界面", caption: "在 PDF 上书写 · 韩语界面" },
+    annotate: { alt: "在 Ghostyak Notes 中为 PDF 教材添加荧光标记并在页边手写笔记的界面" },
     pen: { alt: "Ghostyak Notes 的笔设置窗口，可选择三个颜色槽、调色板和三档粗细", caption: "笔设置 · 颜色与粗细" },
     search: { alt: "Ghostyak Notes 的全库搜索窗口，输入一个韩语词后列出两个文档中的匹配页面及预览", caption: "在所有文档中查找" },
     library: { alt: "Ghostyak Notes 的资料库，以封面网格显示十个文档，左侧为文件夹和收藏", caption: "资料库 · 文件夹与封面网格" },
     pages: { alt: "Ghostyak Notes 的页面总览，以网格展开 24 页文档的所有页面，并提供移动、复制、旋转按钮", caption: "页面总览" },
     spread: { alt: "Ghostyak Notes 的双页视图，并排显示带笔记的第 4 页和第 5 页", caption: "双页视图" },
   },
+  video: { playAction: "观看介绍视频", title: "Ghostyak Notes 介绍视频", posterAlt: "介绍视频的开场画面：蓝色背景上有 Ghostyak Notes 应用图标和名称，以及“在 PDF 上书写，什么都能找到的笔记”字样", caption: "1 分 29 秒 · 韩语界面", watchOnYouTube: "在 YouTube 上观看" },
   showcase: {
     eyebrow: "主要功能",
     title: "阅读、书写、搜索 PDF，\n一个应用就够了。",

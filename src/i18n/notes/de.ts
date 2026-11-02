@@ -16,13 +16,14 @@ const notes: Dictionary["notes"] = {
   pricingAction: "Testversion und Pro vergleichen",
   heroNote: "Ghostyak Notes ist noch im Betatest, der Kauf ist daher noch nicht möglich. Ab dem ersten Start kannst du 30 Tage lang alle Funktionen nutzen; nach 30 Tagen bringt die Installation einer neuen Version weitere 30 Tage.",
   screenshots: {
-    annotate: { alt: "Ghostyak Notes mit einem PDF-Lehrbuch, markiertem Text und handschriftlichen Notizen am Rand", caption: "Auf einem PDF schreiben · Koreanische Oberfläche" },
+    annotate: { alt: "Ghostyak Notes mit einem PDF-Lehrbuch, markiertem Text und handschriftlichen Notizen am Rand" },
     pen: { alt: "Stifteinstellungen von Ghostyak Notes mit drei Farbplätzen, einer Farbpalette und drei Strichstärken", caption: "Stifteinstellungen · Farbe und Stärke" },
     search: { alt: "Bibliothekssuche von Ghostyak Notes nach einem koreanischen Wort mit den gefundenen Seiten aus zwei Dokumenten samt Vorschau", caption: "In allen Dokumenten suchen" },
     library: { alt: "Bibliothek von Ghostyak Notes mit zehn Dokumenten als Cover-Raster sowie Ordnern und Favoriten auf der linken Seite", caption: "Bibliothek · Ordner und Cover-Raster" },
     pages: { alt: "Seitenübersicht von Ghostyak Notes mit allen Seiten eines 24-seitigen Dokuments im Raster und Schaltflächen zum Verschieben, Duplizieren und Drehen", caption: "Seitenübersicht" },
     spread: { alt: "Zweiseitenansicht von Ghostyak Notes mit den beschriebenen Seiten 4 und 5 nebeneinander", caption: "Zweiseitenansicht" },
   },
+  video: { playAction: "Vorstellungsvideo ansehen", title: "Vorstellungsvideo zu Ghostyak Notes", posterAlt: "Startbild des Vorstellungsvideos: App-Symbol und Name von Ghostyak Notes auf blauem Hintergrund mit dem Satz „Auf PDFs schreiben, alles wiederfinden“", caption: "1 Min. 29 Sek. · Koreanische Oberfläche", watchOnYouTube: "Auf YouTube ansehen" },
   showcase: {
     eyebrow: "Wichtige Funktionen",
     title: "PDFs lesen, beschreiben und durchsuchen –\nalles in einer App.",

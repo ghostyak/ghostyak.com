@@ -16,13 +16,14 @@ const notes: Dictionary["notes"] = {
   pricingAction: "Comparar la versión de prueba y Pro",
   heroNote: "Ghostyak Notes sigue en pruebas beta, así que la compra aún no está lista. Puedes usar todas las funciones durante 30 días desde el primer inicio y, pasados los 30 días, instalar una versión nueva te da otros 30 días.",
   screenshots: {
-    annotate: { alt: "Ghostyak Notes con un libro de texto en PDF, texto resaltado y notas manuscritas en el margen", caption: "Escribir sobre un PDF · Interfaz en coreano" },
+    annotate: { alt: "Ghostyak Notes con un libro de texto en PDF, texto resaltado y notas manuscritas en el margen" },
     pen: { alt: "Ajustes del lápiz de Ghostyak Notes con tres espacios de color, una paleta de colores y tres niveles de grosor", caption: "Ajustes del lápiz · Color y grosor" },
     search: { alt: "Búsqueda en la biblioteca de Ghostyak Notes para una palabra en coreano, con las páginas encontradas en dos documentos y sus vistas previas", caption: "Buscar en todos los documentos" },
     library: { alt: "Biblioteca de Ghostyak Notes con diez documentos en una cuadrícula de portadas y carpetas y favoritos a la izquierda", caption: "Biblioteca · Carpetas y cuadrícula de portadas" },
     pages: { alt: "Vista general de páginas de Ghostyak Notes con todas las páginas de un documento de 24 páginas en cuadrícula y botones para mover, duplicar y girar", caption: "Vista general de páginas" },
     spread: { alt: "Vista de dos páginas de Ghostyak Notes con las páginas 4 y 5 anotadas una junto a la otra", caption: "Vista de dos páginas" },
   },
+  video: { playAction: "Ver el vídeo de presentación", title: "Vídeo de presentación de Ghostyak Notes", posterAlt: "Pantalla inicial del vídeo de presentación: el icono y el nombre de Ghostyak Notes sobre fondo azul, con la frase «Escribe sobre PDF y encuentra lo que sea»", caption: "1 min 29 s · Interfaz en coreano", watchOnYouTube: "Ver en YouTube" },
   showcase: {
     eyebrow: "Funciones principales",
     title: "Lee, escribe y busca en tus PDF,\ntodo en una sola app.",

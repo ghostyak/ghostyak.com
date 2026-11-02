@@ -16,13 +16,14 @@ const notes: Dictionary["notes"] = {
   pricingAction: "体験版とProを比較する",
   heroNote: "まだベータテスト中のため、購入機能は準備中です。初めて起動した日から30日間すべての機能を使え、30日を過ぎても新しいバージョンをインストールし直せばさらに30日使えます。",
   screenshots: {
-    annotate: { alt: "Ghostyak NotesでPDFの教材に蛍光マーカーを引き、余白に手書きでメモした画面", caption: "PDFに書き込み · 韓国語UI" },
+    annotate: { alt: "Ghostyak NotesでPDFの教材に蛍光マーカーを引き、余白に手書きでメモした画面" },
     pen: { alt: "3つの色スロット、カラーパレット、3段階の太さを選ぶGhostyak Notesのペン設定", caption: "ペン設定 · 色と太さ" },
     search: { alt: "韓国語の単語を入力し、2つの文書で見つかったページをプレビュー付きで表示するGhostyak Notesの全体検索", caption: "すべての文書から検索" },
     library: { alt: "10個の文書を表紙のグリッドで表示し、左にフォルダーとお気に入りを置いたGhostyak Notesのライブラリ", caption: "ライブラリ · フォルダーと表紙グリッド" },
     pages: { alt: "24ページの文書の全ページをグリッドに並べ、移動・複製・回転ボタンを備えたGhostyak Notesのページ一覧", caption: "ページ一覧" },
     spread: { alt: "書き込みのある4ページと5ページを並べて表示したGhostyak Notesの見開き表示", caption: "見開き表示" },
   },
+  video: { playAction: "紹介動画を見る", title: "Ghostyak Notes 紹介動画", posterAlt: "青い背景にGhostyak Notesのアプリアイコンと名前、「PDFに書いて、何でも探せるノート」という文を置いた紹介動画の最初の画面", caption: "1分29秒 · 韓国語UI", watchOnYouTube: "YouTubeで見る" },
   showcase: {
     eyebrow: "主な機能",
     title: "PDFを読む、書く、探すを\nひとつのアプリで。",

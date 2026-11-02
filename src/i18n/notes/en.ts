@@ -16,13 +16,14 @@ const notes: Dictionary["notes"] = {
   pricingAction: "Compare Trial and Pro",
   heroNote: "Ghostyak Notes is still in beta testing, so purchasing isn’t ready yet. You can use every feature for 30 days from first launch, and after 30 days, installing a new version gives you another 30 days.",
   screenshots: {
-    annotate: { alt: "Ghostyak Notes showing a PDF textbook with highlighted text and handwritten notes in the margin", caption: "Writing on a PDF · Korean UI" },
+    annotate: { alt: "Ghostyak Notes showing a PDF textbook with highlighted text and handwritten notes in the margin" },
     pen: { alt: "Ghostyak Notes pen settings with three color slots, a color palette, and three thickness levels", caption: "Pen settings · Color and thickness" },
     search: { alt: "Ghostyak Notes library search for a Korean word, listing matching pages from two documents with previews", caption: "Find in all documents" },
     library: { alt: "Ghostyak Notes library showing ten documents as a cover grid, with folders and favorites on the left", caption: "Library · Folders and cover grid" },
     pages: { alt: "Ghostyak Notes page overview showing all pages of a 24-page document in a grid, with buttons to move, duplicate, and rotate", caption: "Page overview" },
     spread: { alt: "Ghostyak Notes two-page view with annotated pages 4 and 5 side by side", caption: "Two-page view" },
   },
+  video: { playAction: "Watch the intro video", title: "Ghostyak Notes intro video", posterAlt: "Opening screen of the intro video: the Ghostyak Notes app icon and name on a blue background, with the line “Write on PDFs, find anything”", caption: "1 min 29 sec · Korean UI", watchOnYouTube: "Watch on YouTube" },
   showcase: {
     eyebrow: "Key features",
     title: "Read, write on, and search PDFs,\nall in one app.",

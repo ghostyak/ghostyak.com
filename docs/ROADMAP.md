@@ -253,5 +253,7 @@ ghostyak.com은 GhostYak 소프트웨어를 소개하고 배포하는 공식 웹
 - [ ] 한국어 원문 사용자 검수
 - [x] GitHub `ghostyak/notes` 저장소 About Website·README에 제품 페이지 링크 추가
 - [x] 구매 기능이 준비될 때까지 베타 테스트 중 표시(히어로·홈 카드 배지, 보조 문구, Pro 카드, FAQ)와 ‘30일이 지나면 새 버전을 다시 설치해 30일 더’ 안내(9개 언어)
+- [x] Notes 제품 페이지 첫 화면에 YouTube 소개 영상 배치(재생할 때만 로드, `VideoObject` JSON-LD, 개인정보처리방침 제8조 안내, 9개 언어)
+- [ ] 소개 영상 문구(`notes.video`) 한국어 원문 사용자 검수
 - [ ] 공개 저장소 README와 v1.0.0 출시 글의 ‘새 버전을 설치해도 늘어나지 않는다’ 문장을 베타 기간 안내에 맞출지 결정
 - [ ] Search Console·네이버 서치어드바이저에서 `/ko/product/notes`·`/en/product/notes`·`/ko/blog/notes-100-release` 색인(수집) 요청

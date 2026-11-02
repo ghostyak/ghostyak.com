@@ -69,7 +69,7 @@ export function getSoftwareApplicationJsonLd({
 }
 
 // Pro cannot be bought yet, so Notes declares no offer until purchase opens.
-export function getNotesJsonLd({ locale, description, featureNames }: { locale: PublishedLocale; description: string; featureNames: readonly string[] }) {
+export function getNotesJsonLd({ locale, description, videoName, featureNames }: { locale: PublishedLocale; description: string; videoName: string; featureNames: readonly string[] }) {
   const screenshots = Object.values(notes.screenshots).map((screenshot) => `${siteUrl}${screenshot.src}`);
   return {
     "@context": "https://schema.org",
@@ -85,6 +85,16 @@ export function getNotesJsonLd({ locale, description, featureNames }: { locale: 
     applicationCategory: "UtilitiesApplication",
     inLanguage: localeConfig[locale].htmlLanguage,
     featureList: featureNames,
+    subjectOf: {
+      "@type": "VideoObject",
+      name: videoName,
+      description,
+      thumbnailUrl: `${siteUrl}${notes.video.poster.src}`,
+      uploadDate: notes.video.uploadDate,
+      duration: notes.video.duration,
+      embedUrl: `https://www.youtube-nocookie.com/embed/${notes.video.id}`,
+      inLanguage: "ko",
+    },
     publisher: {
       "@type": "Organization",
       name: "GhostYak",

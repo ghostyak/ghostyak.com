@@ -16,13 +16,14 @@ const notes: Dictionary["notes"] = {
   pricingAction: "Comparer la version d’essai et Pro",
   heroNote: "Ghostyak Notes est encore en bêta-test : l’achat n’est pas encore disponible. Vous pouvez utiliser toutes les fonctionnalités pendant 30 jours à compter du premier lancement, et après 30 jours, installer une nouvelle version vous donne 30 jours de plus.",
   screenshots: {
-    annotate: { alt: "Ghostyak Notes affichant un manuel PDF avec du texte surligné et des notes manuscrites dans la marge", caption: "Écrire sur un PDF · Interface en coréen" },
+    annotate: { alt: "Ghostyak Notes affichant un manuel PDF avec du texte surligné et des notes manuscrites dans la marge" },
     pen: { alt: "Réglages du stylo de Ghostyak Notes avec trois emplacements de couleur, une palette et trois épaisseurs", caption: "Réglages du stylo · Couleur et épaisseur" },
     search: { alt: "Recherche dans la bibliothèque de Ghostyak Notes pour un mot coréen, avec les pages trouvées dans deux documents et leurs aperçus", caption: "Rechercher dans tous les documents" },
     library: { alt: "Bibliothèque de Ghostyak Notes affichant dix documents en grille de couvertures, avec dossiers et favoris à gauche", caption: "Bibliothèque · Dossiers et grille de couvertures" },
     pages: { alt: "Vue d’ensemble des pages de Ghostyak Notes affichant toutes les pages d’un document de 24 pages en grille, avec des boutons pour déplacer, dupliquer et faire pivoter", caption: "Vue d’ensemble des pages" },
     spread: { alt: "Affichage sur deux pages de Ghostyak Notes avec les pages 4 et 5 annotées côte à côte", caption: "Affichage sur deux pages" },
   },
+  video: { playAction: "Regarder la vidéo de présentation", title: "Vidéo de présentation de Ghostyak Notes", posterAlt: "Écran d’ouverture de la vidéo de présentation : l’icône et le nom de Ghostyak Notes sur fond bleu, avec la phrase « Écrivez sur vos PDF, retrouvez tout »", caption: "1 min 29 s · Interface en coréen", watchOnYouTube: "Regarder sur YouTube" },
   showcase: {
     eyebrow: "Fonctionnalités principales",
     title: "Lire, annoter et rechercher dans vos PDF,\ndans une seule application.",
