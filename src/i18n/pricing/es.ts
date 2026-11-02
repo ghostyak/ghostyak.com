@@ -1,10 +1,10 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 
-// Translation of the Korean source of 2026-11-01.
+// Translation of the Korean source of 2026-11-02.
 const pricing: Dictionary["pricing"] = {
   eyebrow: "Precios",
   title: "Pruébalo 30 días\ny sigue con Pro.",
-  description: "Durante 30 días la versión de prueba es idéntica a Pro. Para seguir escribiendo y buscando en tu biblioteca después, solo necesitas Pro.",
+  description: "Durante 30 días la versión de prueba es idéntica a Pro. Después puedes seguir escribiendo; el OCR y la búsqueda en la biblioteca quedan en Pro.",
   plans: {
     label: "Versión de prueba y Pro",
     includes: "Todo lo de la versión de prueba, y además:",
@@ -19,7 +19,7 @@ const pricing: Dictionary["pricing"] = {
         "Edita páginas, crea índices, combina documentos",
         "Reconocimiento de texto en páginas escaneadas (OCR)",
         "Exporta a PDF con la escritura e imprime",
-        "Solo lectura al terminar; documentos y anotaciones se conservan",
+        "Al terminar, sigues pudiendo escribir",
       ],
     },
     pro: {
@@ -30,48 +30,57 @@ const pricing: Dictionary["pricing"] = {
       action: "Compra disponible pronto",
       note: "Notes sigue en pruebas beta y la función de compra está en construcción. Mientras tanto, prueba todas las funciones con la versión de prueba.",
       points: [
-        "Escritura y búsqueda en la biblioteca sin límite de tiempo",
+        "OCR, modo automático, modo de rendimiento",
+        "Buscar en todos los documentos",
+        "Todos los marcadores, todo el texto marcado, minimapa",
         "Una clave activa hasta 3 dispositivos",
         "Funciona sin internet tras la activación",
-        "Conservas la versión comprada",
+        "Actualizaciones incluidas",
       ],
     },
   },
-  footnote: "*Cuando termina la versión de prueba, solo puedes abrir y leer documentos. Tus documentos y anotaciones no se borran y puedes exportarlos a PDF con la escritura.",
+  footnote: "*Cuando termina la prueba, solo dejan de estar disponibles el OCR, el modo automático, el modo de rendimiento, la búsqueda en la biblioteca, todos los marcadores, todo el texto marcado y el minimapa. Tus documentos, tus anotaciones y el texto ya reconocido se conservan.",
   compare: {
     eyebrow: "Comparación de funciones",
     title: "Prueba de 30 días y Pro: ¿qué cambia?",
-    description: "Durante 30 días es igual que Pro. Al terminar pasa a solo lectura y tus documentos y anotaciones se conservan.",
+    description: "Durante 30 días puedes usar todas las funciones de Pro. Al terminar se desactivan el OCR y la búsqueda en la biblioteca, y puedes seguir escribiendo.",
     feature: "Función",
     during: "30 días",
     after: "Después",
     available: "Disponible",
     unavailable: "No disponible",
     readGroup: "Leer · Buscar · Exportar",
-    writeGroup: "Escribir · Organizar · Búsqueda en la biblioteca",
+    writeGroup: "Escribir · Organizar",
+    proGroup: "Reconocimiento de texto · Búsqueda en la biblioteca",
     readFeatures: [
       "Leer documentos, ver anotaciones existentes, seleccionar y copiar texto",
       "Buscar en un documento, acceso rápido, ir a marcadores e índice",
       "Importar PDF, organizar documentos",
       "Exportar a PDF (con la escritura), imprimir",
-      "Reconocimiento de texto en páginas escaneadas (OCR)",
+      "Buscar y copiar texto ya reconocido",
       "Consultar el diccionario",
     ],
     writeFeatures: [
-      "Escribir, marcar texto, añadir marcadores, editar páginas, deshacer",
+      "Escribir, marcar texto, añadir marcadores, editar páginas",
       "Nueva nota, combinar documentos",
-      "Buscar en todos los documentos",
+    ],
+    proFeatures: [
+      "OCR: esta página, varias páginas, documento completo",
+      "Modo automático del reconocimiento de texto (OCR), modo de rendimiento",
+      "Buscar en todos los documentos a la vez",
+      "Todos los marcadores, todo el texto marcado",
+      "Minimapa",
     ],
   },
   faq: {
     items: [
       {
         question: "¿Cuándo podré comprar Pro?",
-        answer: "Notes sigue en pruebas beta, así que la función de compra está en construcción y estará disponible pronto. Mientras tanto, puedes probar todas las funciones con la versión de prueba y, pasados los 30 días, instalar una versión nueva te da otros 30 días.",
+        answer: "Notes sigue en pruebas beta, así que la función de compra está en construcción y estará disponible pronto. Mientras tanto, puedes probar todas las funciones con la versión de prueba.",
       },
       {
         question: "¿Pro es una suscripción?",
-        answer: "No. Es un pago único. Puedes seguir usando la versión comprada, y actualizar a una versión mayor nueva es de pago.",
+        answer: "No. Es un pago único, y las actualizaciones posteriores a la compra están incluidas.",
       },
       {
         question: "¿En cuántos PC puedo usar Pro?",
@@ -79,11 +88,11 @@ const pricing: Dictionary["pricing"] = {
       },
       {
         question: "¿Qué pasa con mis documentos cuando termina la prueba?",
-        answer: "Tus documentos y anotaciones no se borran. Puedes seguir abriéndolos, leyéndolos y exportándolos a PDF con la escritura.",
+        answer: "Tus documentos y anotaciones no se borran. Puedes seguir abriéndolos, leyéndolos, escribiendo en ellos y exportándolos a PDF con la escritura.",
       },
       {
         question: "¿Puedo reiniciar la versión de prueba?",
-        answer: "Durante la beta, instalar una versión nueva pasados los 30 días inicia otra prueba de 30 días. Retrasar la fecha del dispositivo la termina de inmediato.",
+        answer: "No. La versión de prueba es una vez por dispositivo e instalar una versión nueva no la amplía. Atrasar la fecha del dispositivo termina la prueba de inmediato.",
       },
       {
         question: "¿Un PC que usaba la beta puede usar la versión de prueba?",

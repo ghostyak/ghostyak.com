@@ -43,7 +43,7 @@ function Availability({ available, label }: { available: boolean; label: string 
   return <td className="px-1 py-4 text-center sm:px-4">
     {available
       ? <Check className="mx-auto size-4 stroke-[2.5] text-brand-foreground" aria-hidden="true" />
-      : <Minus className="mx-auto size-4 text-muted-foreground/60" aria-hidden="true" />}
+      : <Minus className="mx-auto size-4 stroke-[2.5] text-muted-foreground" aria-hidden="true" />}
     <span className="sr-only">{label}</span>
   </td>;
 }
@@ -53,9 +53,11 @@ export function NotesPricing({ copy, downloadAction, locale }: { copy: Dictionar
   const { trial, pro } = copy.plans;
   const { compare } = copy;
   const proPrice = new Intl.NumberFormat(localeConfig[locale].htmlLanguage, { style: "currency", currency: notes.proPrice.currency, currencyDisplay: "narrowSymbol", maximumFractionDigits: 0 }).format(notes.proPrice.amount);
+  // The Pro group leads because it holds the only rows where the columns differ.
   const groups = [
+    { label: compare.proGroup, rows: compare.proFeatures.map(name => ({ name, afterTrial: false })) },
     { label: compare.readGroup, rows: compare.readFeatures.map(name => ({ name, afterTrial: true })) },
-    { label: compare.writeGroup, rows: compare.writeFeatures.map(name => ({ name, afterTrial: false })) },
+    { label: compare.writeGroup, rows: compare.writeFeatures.map(name => ({ name, afterTrial: true })) },
   ];
 
   return <section id="pricing" className="scroll-mt-24 border-t px-4 py-16 sm:px-8 sm:py-24" aria-labelledby="notes-pricing">

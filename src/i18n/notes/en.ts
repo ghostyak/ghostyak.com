@@ -1,6 +1,6 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 
-// Translation of the Korean source, including the trial and Pro terms of 2026-10-31.
+// Translation of the Korean source, including the trial and Pro terms of 2026-11-02.
 const notes: Dictionary["notes"] = {
   metadataTitle: "Ghostyak Notes | PDF note-taking app for Windows",
   metadataDescription: "A Windows note app for writing on PDFs with pen and keyboard and finding what you read across all your documents. Try every feature for 30 days.",
@@ -14,7 +14,7 @@ const notes: Dictionary["notes"] = {
   downloadAction: "Download for Windows x64",
   featuresAction: "See features",
   pricingAction: "Compare Trial and Pro",
-  heroNote: "Ghostyak Notes is still in beta testing, so purchasing isn’t ready yet. You can use every feature for 30 days from first launch, and after 30 days, installing a new version gives you another 30 days.",
+  heroNote: "Ghostyak Notes is still in beta testing, so purchasing isn’t ready yet. You can use every feature for 30 days from first launch, and you can keep writing after that.",
   screenshots: {
     annotate: { alt: "Ghostyak Notes showing a PDF textbook with highlighted text and handwritten notes in the margin" },
     pen: { alt: "Ghostyak Notes pen settings with three color slots, a color palette, and three thickness levels", caption: "Pen settings · Color and thickness" },
@@ -82,7 +82,7 @@ const notes: Dictionary["notes"] = {
     title: "Frequently asked questions",
     items: [
       { question: "How long can I use the trial?", answer: "You can use every feature without limits for 30 days from the day you first launch the app. The app tells you the end date on first launch." },
-      { question: "What happens after 30 days?", answer: "You can still open and read documents and search within them, but writing and searching all documents are no longer available. Your documents and handwriting are not deleted. During beta testing, installing a new version gives you another 30 days. Once purchasing opens, you’ll need Pro to keep using those features." },
+      { question: "What happens after 30 days?", answer: "You can keep writing. OCR, Auto Mode, Performance Mode, searching all documents, all bookmarks, all marked text and the minimap are no longer available. Your documents, handwriting and already recognized text stay. Once purchasing opens, Pro brings those features back." },
       { question: "Where are my documents stored?", answer: "In the ‘Ghostyak Notes’ folder inside your Documents folder. You can open it with ‘문서 폴더 열기’ (Open documents folder) at the bottom left of the library." },
       { question: "Can it search scanned PDFs?", answer: "Yes. For scanned PDFs with no text information, the app recognizes the text (OCR) so you can search it. Recognition happens on your own PC, and searching handwriting is not supported yet." },
       { question: "Can I write on PDFs with a mouse, without a pen tablet?", answer: "Yes. You can write with a mouse and type into text boxes with a keyboard." },

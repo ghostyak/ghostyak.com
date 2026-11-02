@@ -1,6 +1,6 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 
-// Translation of the Korean source, including the trial and Pro terms of 2026-10-31.
+// Translation of the Korean source, including the trial and Pro terms of 2026-11-02.
 const notes: Dictionary["notes"] = {
   metadataTitle: "Ghostyak Notes | 在 PDF 上做笔记并快速查找的 Windows 笔记应用",
   metadataDescription: "一款 Windows 笔记应用：用笔和键盘在 PDF 上书写，并在所有文档中快速找到读过的内容。30 天内可试用全部功能。",
@@ -14,7 +14,7 @@ const notes: Dictionary["notes"] = {
   downloadAction: "下载 Windows x64 版",
   featuresAction: "查看功能",
   pricingAction: "比较试用版与 Pro",
-  heroNote: "Ghostyak Notes 仍在 Beta 测试中，购买功能尚未就绪。自首次启动之日起 30 天内可使用全部功能；30 天后重新安装新版本，即可再使用 30 天。",
+  heroNote: "Ghostyak Notes 仍在 Beta 测试中，购买功能尚未就绪。自首次启动之日起 30 天内可使用全部功能，到期后仍可继续书写。",
   screenshots: {
     annotate: { alt: "在 Ghostyak Notes 中为 PDF 教材添加荧光标记并在页边手写笔记的界面" },
     pen: { alt: "Ghostyak Notes 的笔设置窗口，可选择三个颜色槽、调色板和三档粗细", caption: "笔设置 · 颜色与粗细" },
@@ -82,7 +82,7 @@ const notes: Dictionary["notes"] = {
     title: "常见问题",
     items: [
       { question: "试用版可以用多久？", answer: "自首次启动应用之日起 30 天内，可以不受限制地使用全部功能。首次启动时会告知使用期限的结束日期。" },
-      { question: "30 天后会怎样？", answer: "仍可打开和阅读文档，并在文档内搜索，但无法书写，也无法在所有文档中搜索。您创建的文档和笔迹不会被删除。Beta 测试期间，重新安装新版本即可再使用 30 天。购买功能就绪后，继续使用这些功能需要 Pro。" },
+      { question: "30 天后会怎样？", answer: "仍可继续书写。文字识别、自动模式、性能模式、在所有文档中搜索、所有书签、所有标记的文字和小地图将无法使用。您创建的文档、笔迹和已识别的文字都会保留。购买功能就绪后，可通过 Pro 使用这些功能。" },
       { question: "文档保存在哪里？", answer: "保存在电脑“文档”文件夹内的“Ghostyak Notes”文件夹中。可以通过资料库左下角的“문서 폴더 열기”（打开文档文件夹）直接打开。" },
       { question: "扫描的 PDF 也能搜索吗？", answer: "可以。对于没有文字信息的扫描版 PDF，应用会识别其中的文字（OCR），让你能够搜索。识别在你自己的电脑上完成，目前尚不支持搜索手写内容。" },
       { question: "没有手写板，用鼠标也能在 PDF 上书写吗？", answer: "可以。你可以用鼠标书写，并用键盘在文本框中输入文字。" },

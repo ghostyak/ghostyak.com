@@ -1,6 +1,6 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 
-// Translation of the Korean source, including the trial and Pro terms of 2026-10-31.
+// Translation of the Korean source, including the trial and Pro terms of 2026-11-02.
 const notes: Dictionary["notes"] = {
   metadataTitle: "Ghostyak Notes | PDFに書き込んで、すぐに探せるWindowsノートアプリ",
   metadataDescription: "PDFの上にペンとキーボードで書き込み、読んだ内容をすべての文書からすぐに探せるWindowsノートアプリです。30日間すべての機能を試せます。",
@@ -14,7 +14,7 @@ const notes: Dictionary["notes"] = {
   downloadAction: "Windows x64版をダウンロード",
   featuresAction: "機能を見る",
   pricingAction: "体験版とProを比較する",
-  heroNote: "まだベータテスト中のため、購入機能は準備中です。初めて起動した日から30日間すべての機能を使え、30日を過ぎても新しいバージョンをインストールし直せばさらに30日使えます。",
+  heroNote: "まだベータテスト中のため、購入機能は準備中です。初めて起動した日から30日間すべての機能を使え、期間が終わっても手書きは使い続けられます。",
   screenshots: {
     annotate: { alt: "Ghostyak NotesでPDFの教材に蛍光マーカーを引き、余白に手書きでメモした画面" },
     pen: { alt: "3つの色スロット、カラーパレット、3段階の太さを選ぶGhostyak Notesのペン設定", caption: "ペン設定 · 色と太さ" },
@@ -82,7 +82,7 @@ const notes: Dictionary["notes"] = {
     title: "よくある質問",
     items: [
       { question: "体験版はどのくらい使えますか？", answer: "アプリを初めて起動した日から30日間、すべての機能を制限なく使えます。初回起動時に利用期間の終了日をお知らせします。" },
-      { question: "30日を過ぎるとどうなりますか？", answer: "文書を開いて読み、文書内を検索することはできますが、手書きとすべての文書からの検索は使えません。作成した文書と書き込みは削除されません。ベータテスト中は、新しいバージョンをインストールし直せばさらに30日使えます。購入機能が整ったら、使い続けるにはProが必要です。" },
+      { question: "30日を過ぎるとどうなりますか？", answer: "手書きは使い続けられます。文字認識、自動モード、パフォーマンスモード、すべての文書からの検索、すべてのブックマーク、すべてのマークしたテキスト、ミニマップは使えなくなります。作成した文書、手書き、認識済みのテキストはそのまま残ります。購入機能が整ったら、これらの機能はProで使えます。" },
       { question: "文書はどこに保存されますか？", answer: "PCの「ドキュメント」フォルダー内の「Ghostyak Notes」フォルダーに保存されます。ライブラリ左下の「문서 폴더 열기」（文書フォルダーを開く）ですぐに開けます。" },
       { question: "スキャンしたPDFも検索できますか？", answer: "はい。文字情報のないスキャンPDFは、アプリが文字を認識（OCR）して検索できるようにします。認識はお使いのPCの中で行われ、手書き文字の検索にはまだ対応していません。" },
       { question: "ペンタブレットがなくても、マウスでPDFに書き込めますか？", answer: "はい。マウスで手書きし、キーボードでテキストボックスに文字を入力できます。" },
