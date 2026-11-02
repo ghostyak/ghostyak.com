@@ -65,8 +65,7 @@ const pricing: Dictionary["pricing"] = {
       "Nouvelle note, fusion de documents",
     ],
     proFeatures: [
-      "OCR : cette page, plusieurs pages, document entier",
-      "Mode automatique de la reconnaissance de texte (OCR), mode performance",
+      "OCR : cette page, plusieurs pages, document entier, mode automatique, mode performance",
       "Rechercher dans tous les documents à la fois",
       "Tous les signets, tout le texte marqué",
       "Mini-carte",

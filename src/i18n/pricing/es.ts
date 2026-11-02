@@ -65,8 +65,7 @@ const pricing: Dictionary["pricing"] = {
       "Nueva nota, combinar documentos",
     ],
     proFeatures: [
-      "OCR: esta página, varias páginas, documento completo",
-      "Modo automático del reconocimiento de texto (OCR), modo de rendimiento",
+      "OCR: esta página, varias páginas, documento completo, modo automático, modo de rendimiento",
       "Buscar en todos los documentos a la vez",
       "Todos los marcadores, todo el texto marcado",
       "Minimapa",

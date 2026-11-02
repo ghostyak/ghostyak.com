@@ -65,8 +65,7 @@ const pricing: Dictionary["pricing"] = {
       "Neue Notiz, Dokumente zusammenführen",
     ],
     proFeatures: [
-      "OCR: diese Seite, mehrere Seiten, ganzes Dokument",
-      "Automodus der Texterkennung (OCR), Leistungsmodus",
+      "OCR: diese Seite, mehrere Seiten, ganzes Dokument, Automodus, Leistungsmodus",
       "Alle Dokumente auf einmal durchsuchen",
       "Alle Lesezeichen, alle markierten Texte",
       "Minimap",
