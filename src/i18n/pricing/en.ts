@@ -1,6 +1,6 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 
-// Translation of the Korean source of 2026-11-02.
+// Translation of the Korean source of 2026-11-02, with the plan card points of 2026-11-06.
 const pricing: Dictionary["pricing"] = {
   eyebrow: "Pricing",
   title: "Try it for 30 days,\nthen keep going with Pro.",
@@ -13,13 +13,13 @@ const pricing: Dictionary["pricing"] = {
       tagline: "Try it first",
       price: "30 days",
       priceUnit: "From your first launch",
+      lead: "Still free after 30 days:",
       points: [
         "Write on PDFs with pen, highlighter and text boxes",
-        "Search every document at once",
-        "Edit pages, build outlines, merge documents",
-        "Text recognition for scanned pages (OCR)",
+        "Edit pages, create notes, build outlines, merge documents",
+        "Find in a document, and find and copy recognized text",
         "Export to PDF with handwriting, and print",
-        "Writing keeps working after it ends",
+        "Every Pro feature for the first 30 days",
       ],
     },
     pro: {
@@ -29,10 +29,10 @@ const pricing: Dictionary["pricing"] = {
       action: "Buy Pro",
       note: "After purchase, we email you a license key. Paste it into Settings → License in the app.",
       points: [
-        "OCR, Auto Mode, Performance Mode",
-        "Search all documents",
+        "Text recognition (OCR): this page, whole document, Auto Mode, Performance Mode",
+        "Search every document at once",
         "All bookmarks, all marked text, minimap",
-        "One key activates up to 3 devices",
+        "Activate up to 3 Windows PCs with one key",
         "Works offline after activation",
         "Updates included",
       ],

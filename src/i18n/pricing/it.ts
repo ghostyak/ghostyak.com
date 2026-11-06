@@ -1,6 +1,6 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 
-// Translation of the Korean source of 2026-11-02.
+// Translation of the Korean source of 2026-11-02, with the plan card points of 2026-11-06.
 const pricing: Dictionary["pricing"] = {
   eyebrow: "Prezzi",
   title: "Provalo 30 giorni,\npoi continua con Pro.",
@@ -13,13 +13,13 @@ const pricing: Dictionary["pricing"] = {
       tagline: "Prima provalo",
       price: "30 giorni",
       priceUnit: "Dal giorno del primo avvio",
+      lead: "Gratis anche dopo 30 giorni:",
       points: [
         "Scrivi sui PDF con penna, evidenziatore e caselle di testo",
-        "Cerca in tutti i documenti in una volta",
-        "Modifica le pagine, crea indici, unisci documenti",
-        "Riconoscimento del testo nelle pagine scansionate (OCR)",
+        "Modifica le pagine, crea note e indici, unisci documenti",
+        "Cerca in un documento, trova e copia il testo già riconosciuto",
         "Esporta in PDF con la scrittura e stampa",
-        "Alla scadenza resta la scrittura",
+        "Tutte le funzioni Pro per i primi 30 giorni",
       ],
     },
     pro: {
@@ -29,10 +29,10 @@ const pricing: Dictionary["pricing"] = {
       action: "Acquista Pro",
       note: "Dopo l’acquisto ti inviamo una chiave di licenza via e-mail. Incollala in Settings → License nell’app.",
       points: [
-        "OCR, modalità automatica, modalità prestazioni",
-        "Cercare in tutti i documenti",
+        "Riconoscimento del testo (OCR): questa pagina, tutto il documento, modalità automatica, modalità prestazioni",
+        "Cerca in tutti i documenti in una volta",
         "Tutti i segnalibri, tutto il testo marcato, minimappa",
-        "Una chiave attiva fino a 3 dispositivi",
+        "Attiva fino a 3 PC Windows con una chiave",
         "Funziona senza Internet dopo l’attivazione",
         "Aggiornamenti inclusi",
       ],

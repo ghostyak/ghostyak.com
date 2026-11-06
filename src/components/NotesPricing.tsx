@@ -66,7 +66,7 @@ export function NotesPricing({ copy, downloadAction, locale }: { copy: Dictionar
       <ul className="mt-12 grid gap-5 md:grid-cols-2 md:gap-6" aria-label={copy.plans.label}>
         <Plan name={trial.name} tagline={trial.tagline} price={trial.price} priceUnit={trial.priceUnit}
           action={<a className={cn(buttonVariants({ variant: "architectureDownload", size: "lg", className: "h-auto min-h-12 w-full whitespace-normal rounded-full px-6 py-3" }))} href={notes.downloadUrl} aria-label={downloadAction}><Download className="size-4" aria-hidden="true" /><DownloadLabel label={downloadAction} architecture="x64" /></a>}>
-          <PointList points={trial.points} />
+          <PointList points={trial.points} lead={trial.lead} />
         </Plan>
         <Plan inverted name={pro.name} tagline={pro.tagline} price={proPrice} priceUnit={pro.priceUnit}
           action={<a className={cn(buttonVariants({ size: "lg", className: "h-auto min-h-12 w-full whitespace-normal rounded-full px-6 py-3" }))} href={notes.checkoutUrl}>{pro.action}</a>}>

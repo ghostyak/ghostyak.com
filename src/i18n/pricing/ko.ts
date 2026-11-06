@@ -1,4 +1,4 @@
-// Korean source of 2026-11-01, with the trial terms of 2026-11-02, awaiting the owner's review. Written from the Notes licensing and trial documents.
+// Korean source of 2026-11-01, with the trial terms of 2026-11-02. The plan card points were rewritten and approved by the owner on 2026-11-06. Written from the Notes licensing and trial documents.
 const pricing = {
   eyebrow: "가격",
   title: "30일 써 보고,\nPro로 계속 쓰세요.",
@@ -11,13 +11,13 @@ const pricing = {
       tagline: "먼저 써 보기",
       price: "30일",
       priceUnit: "처음 실행한 날부터",
+      lead: "30일이 지나도 계속 무료:",
       points: [
         "펜·형광펜·텍스트 상자로 PDF에 필기",
-        "모든 문서에서 한 번에 찾기",
-        "쪽 편집, 목차 만들기, 문서 합치기",
-        "스캔한 쪽의 문자인식(OCR)",
+        "쪽 편집, 새 노트, 목차 만들기, 문서 합치기",
+        "문서 안에서 찾기, 이미 인식한 글 찾기와 복사",
         "필기를 포함해 PDF로 내보내기와 인쇄",
-        "기간이 끝나도 필기는 계속 사용",
+        "처음 30일은 Pro 기능도 모두 사용",
       ],
     },
     pro: {
@@ -26,7 +26,7 @@ const pricing = {
       priceUnit: "USD · 일회 구매",
       action: "Pro 구매",
       note: "구매하면 메일로 라이선스 키를 보내 드립니다. 앱의 설정 → 라이선스에 키를 붙여 넣으면 됩니다.",
-      points: ["문자인식(OCR), 자동모드, 성능모드", "모든 문서에서 찾기", "모든 북마크, 모든 표시한 글, 미니맵", "키 하나로 기기 3대까지 활성화", "활성화한 뒤에는 인터넷 없이 사용", "구매 뒤 업데이트 포함"],
+      points: ["문자인식(OCR): 이 쪽, 문서 전체, 자동모드, 성능모드", "모든 문서에서 한 번에 찾기", "모든 북마크, 모든 표시한 글, 미니맵", "키 하나로 Windows PC 3대까지 활성화", "활성화한 뒤에는 인터넷 없이 사용", "구매 뒤 업데이트 포함"],
     },
   },
   footnote: "*체험 기간이 끝나면 문자인식, 자동모드, 성능모드, 전체 검색, 모든 북마크, 모든 표시한 글, 미니맵만 쓸 수 없습니다. 문서와 필기, 이미 인식한 글은 그대로 남습니다.",
