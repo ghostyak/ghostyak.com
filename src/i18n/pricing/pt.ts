@@ -1,6 +1,6 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 
-// Translation of the Korean source of 2026-11-02.
+// Translation of the Korean source of 2026-11-02, with the plan card points of 2026-11-06.
 const pricing: Dictionary["pricing"] = {
   eyebrow: "Preços",
   title: "Teste por 30 dias\ne continue com o Pro.",
@@ -13,27 +13,26 @@ const pricing: Dictionary["pricing"] = {
       tagline: "Experimente primeiro",
       price: "30 dias",
       priceUnit: "A partir da primeira abertura",
+      lead: "Grátis mesmo depois de 30 dias:",
       points: [
         "Escreva em PDFs com caneta, marca-texto e caixas de texto",
-        "Pesquise em todos os documentos de uma vez",
-        "Edite páginas, crie sumários, combine documentos",
-        "Reconhecimento de texto em páginas digitalizadas (OCR)",
+        "Edite páginas, crie notas e sumários, combine documentos",
+        "Pesquise dentro de um documento e encontre e copie o texto já reconhecido",
         "Exporte para PDF com a escrita e imprima",
-        "Ao terminar, a escrita continua disponível",
+        "Todos os recursos Pro nos primeiros 30 dias",
       ],
     },
     pro: {
       name: "Pro",
       tagline: "Sem limite de tempo",
-      status: "Em breve",
       priceUnit: "USD · Compra única",
-      action: "Compra disponível em breve",
-      note: "O Notes ainda está em teste beta e o recurso de compra está em construção. Enquanto isso, teste todos os recursos com a versão de teste.",
+      action: "Comprar Pro",
+      note: "Após a compra, enviamos uma chave de licença por e-mail. Cole-a em Settings → License no aplicativo.",
       points: [
-        "OCR, modo automático, modo de desempenho",
-        "Pesquisar em todos os documentos",
+        "Reconhecimento de texto (OCR): esta página, documento inteiro, modo automático, modo de desempenho",
+        "Pesquise em todos os documentos de uma vez",
         "Todos os marcadores, todo o texto marcado, minimapa",
-        "Uma chave ativa até 3 dispositivos",
+        "Ative até 3 PCs com Windows com uma chave",
         "Funciona sem internet após a ativação",
         "Atualizações incluídas",
       ],
@@ -74,8 +73,8 @@ const pricing: Dictionary["pricing"] = {
   faq: {
     items: [
       {
-        question: "Quando poderei comprar o Pro?",
-        answer: "O Notes ainda está em teste beta, por isso o recurso de compra está em construção e estará disponível em breve. Até lá, você pode testar todos os recursos com a versão de teste.",
+        question: "Como compro o Pro?",
+        answer: "Pague pelo botão Comprar Pro nesta página e enviaremos por e-mail uma chave de licença e um link de download.",
       },
       {
         question: "O Pro é uma assinatura?",

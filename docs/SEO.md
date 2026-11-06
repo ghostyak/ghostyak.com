@@ -66,7 +66,7 @@ Vercel 환경 변수를 변경한 뒤에는 새 배포가 필요하다. 값이 �
 
 ## canonical URL 정책 (2026-09-24)
 
-대표 origin은 `https://www.ghostyak.com`이며 콘텐츠 URL에는 끝 슬래시와 tracking query를 넣지 않는다. 모든 9개 언어에 접두사를 사용한다. canonical, OpenGraph URL, JSON-LD의 페이지/게시자 URL, sitemap과 내부 링크는 같은 정책을 사용한다. SoftwareApplication의 `@id`는 언어별 페이지 주소가 아닌 기존 제품 식별자로 유지한다. Ghostyak Notes 페이지도 2026-10-11부터 SoftwareApplication JSON-LD(`getNotesJsonLd`, `@id`는 `/#ghostyak-notes`)를 내보낸다. Pro를 아직 구매할 수 없으므로 구매가 열릴 때까지 `offers`와 무료 여부는 넣지 않으며 버전도 적지 않는다. Notes 페이지의 `<title>`은 사이트 공통 틀(`Notes | GhostYak`) 대신 승인된 `notes.metadataTitle`을 그대로 쓴다. Twitter에는 별도 페이지 URL 필드가 없다. WebSite·WebPage·BreadcrumbList JSON-LD는 현재 구현되어 있지 않다.
+대표 origin은 `https://www.ghostyak.com`이며 콘텐츠 URL에는 끝 슬래시와 tracking query를 넣지 않는다. 모든 9개 언어에 접두사를 사용한다. canonical, OpenGraph URL, JSON-LD의 페이지/게시자 URL, sitemap과 내부 링크는 같은 정책을 사용한다. SoftwareApplication의 `@id`는 언어별 페이지 주소가 아닌 기존 제품 식별자로 유지한다. Ghostyak Notes 페이지도 2026-10-11부터 SoftwareApplication JSON-LD(`getNotesJsonLd`, `@id`는 `/#ghostyak-notes`)를 내보낸다. 2026-11-06에 구매를 열어 `offers`(Pro의 일회 구매 가격 `notes.proPrice`, 페이지 주소와 같은 `url`)를 넣는다. 무료 여부와 버전은 적지 않는다. Notes 페이지의 `<title>`은 사이트 공통 틀(`Notes | GhostYak`) 대신 승인된 `notes.metadataTitle`을 그대로 쓴다. Twitter에는 별도 페이지 URL 필드가 없다. WebSite·WebPage·BreadcrumbList JSON-LD는 현재 구현되어 있지 않다.
 
 | 요청 경로 | 상태 | 목적지/역할 |
 | --- | --- | --- |
@@ -114,7 +114,7 @@ Vercel 환경 변수를 변경한 뒤에는 새 배포가 필요하다. 값이 �
 - 홈의 Notes 카드는 제목을 `Ghostyak Notes`로, 버튼 앵커 텍스트를 `notes.featuredAction`(한국어 “PDF 필기 노트 앱 둘러보기”)으로 바꿔 제품 페이지로 가는 내부 링크가 설명을 담도록 했다.
 - sitemap의 Notes 제품 페이지에 `lastModified`를 넣는다. 값은 `src/data/products.ts`의 `notes.updatedAt`이며 페이지 내용을 바꿀 때 함께 올린다.
 - 2026-11-02 첫 화면에 소개 영상을 넣으면서 `SoftwareApplication`의 `subjectOf`에 `VideoObject`(이름·설명·사이트의 포스터 이미지·게시일·길이·`embedUrl`)를 추가했다. 영상은 누를 때만 불러오므로 첫 화면 이미지(LCP)는 그대로다. 영상 정보는 `src/data/products.ts`의 `notes.video`에서 관리한다.
-- `SoftwareApplication`의 `offers`는 여전히 넣지 않는다. 구글 소프트웨어 앱 리치 결과는 `offers.price`와 평점(`aggregateRating` 또는 `review`)을 모두 요구하므로 평점이 없는 지금은 추가해도 표시되지 않는다.
+- 2026-11-06 구매를 열면서 `SoftwareApplication`에 `offers`를 넣었다. 구글 소프트웨어 앱 리치 결과는 `offers.price`와 평점(`aggregateRating` 또는 `review`)을 모두 요구하므로 평점이 없는 지금은 리치 결과로 표시되지 않는다.
 
 저장소 밖에서 해야 할 일은 다음과 같다. GitHub `ghostyak/notes` 저장소의 About Website와 README에 제품 페이지 링크를 넣는다(현재 ghostyak.com 링크가 없다). Google Search Console에서 `/ko/product/notes`·`/en/product/notes`·`/ko/blog/notes-100-release`의 URL 검사와 색인 요청을, 네이버 서치어드바이저에서 같은 URL의 수집 요청을 한다.
 

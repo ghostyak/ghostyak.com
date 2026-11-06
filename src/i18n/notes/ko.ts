@@ -12,12 +12,12 @@ const notes = {
   cardDescription: "PDF 위에 펜과 키보드로 쓰고, 읽은 내용은 모든 문서에서 바로 찾는 Windows 노트 앱입니다.",
   description: "PDF 위에 펜과 키보드로 쓰고, 읽은 내용은 모든 문서에서 바로 찾으세요.",
   featuredEyebrow: "새 제품",
-  betaBadge: "베타 테스트 중",
+  betaBadge: "30일 체험판",
   trialBadge: "30일 동안 모든 기능 사용",
   downloadAction: "Windows x64 다운로드",
   featuresAction: "기능 보기",
   pricingAction: "체험판과 Pro 비교하기",
-  heroNote: "아직 베타 테스트 중이라 구매 기능은 준비 중입니다. 처음 실행한 날부터 30일 동안 모든 기능을 쓸 수 있고, 기간이 끝나도 필기는 계속 쓸 수 있습니다.",
+  heroNote: "처음 실행한 날부터 30일 동안 모든 기능을 쓸 수 있고, 기간이 끝나도 필기는 계속 쓸 수 있습니다.",
   screenshots: {
     annotate: { alt: "Ghostyak Notes에서 PDF 교재에 형광 표시를 하고 여백에 손글씨로 필기한 화면" },
     pen: { alt: "색 세 칸과 색 팔레트, 굵기 세 단계를 고르는 Ghostyak Notes 펜 설정 창", caption: "펜 설정 · 색과 굵기" },
@@ -85,7 +85,7 @@ const notes = {
     title: "자주 묻는 질문",
     items: [
       { question: "체험판은 얼마나 쓸 수 있나요?", answer: "앱을 처음 실행한 날부터 30일 동안 모든 기능을 제한 없이 쓸 수 있습니다. 처음 실행할 때 사용 기간이 끝나는 날짜를 알려 줍니다." },
-      { question: "30일이 지나면 어떻게 되나요?", answer: "필기는 계속 쓸 수 있습니다. 문자인식, 자동모드, 성능모드, 모든 문서에서 찾기, 모든 북마크, 모든 표시한 글, 미니맵은 쓸 수 없습니다. 만든 문서와 필기, 이미 인식한 글은 그대로 남습니다. 구매 기능이 준비되면 Pro로 이 기능들을 쓸 수 있습니다." },
+      { question: "30일이 지나면 어떻게 되나요?", answer: "필기는 계속 쓸 수 있습니다. 문자인식, 자동모드, 성능모드, 모든 문서에서 찾기, 모든 북마크, 모든 표시한 글, 미니맵은 쓸 수 없습니다. 만든 문서와 필기, 이미 인식한 글은 그대로 남습니다. 이 기능들을 쓰려면 Pro가 필요합니다." },
       { question: "문서는 어디에 저장되나요?", answer: "내 PC의 문서 폴더 안 ‘Ghostyak Notes’ 폴더에 저장됩니다. 라이브러리 왼쪽 아래의 ‘문서 폴더 열기’로 바로 열 수 있습니다." },
       { question: "스캔한 PDF도 검색되나요?", answer: "네. 글자 정보가 없는 스캔 PDF는 앱이 글자를 인식(OCR)해 찾을 수 있게 합니다. 인식은 내 PC 안에서 이루어지며, 손글씨 검색은 아직 지원하지 않습니다." },
       { question: "펜 태블릿 없이 마우스로도 PDF에 필기할 수 있나요?", answer: "네. 마우스로 필기하고 키보드로 텍스트 상자에 글을 쓸 수 있습니다." },
@@ -95,7 +95,7 @@ const notes = {
   },
   download: {
     title: "다운로드하고,\n첫 PDF를 가져와 보세요.",
-    description: "Windows x64 · 베타 테스트 중 · 30일 동안 모든 기능 사용",
+    description: "Windows x64 · 30일 동안 모든 기능 사용 · Pro $10 일회 구매",
   },
 } as const;
 

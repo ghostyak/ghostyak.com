@@ -1,6 +1,6 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 
-// Translation of the Korean source of 2026-11-02.
+// Translation of the Korean source of 2026-11-02, with the plan card points of 2026-11-06.
 const pricing: Dictionary["pricing"] = {
   eyebrow: "价格",
   title: "试用 30 天，\n再用 Pro 继续。",
@@ -13,16 +13,16 @@ const pricing: Dictionary["pricing"] = {
       tagline: "先试一试",
       price: "30 天",
       priceUnit: "自首次启动之日起",
-      points: ["用笔、荧光笔和文本框在 PDF 上书写", "一次搜索所有文档", "编辑页面、创建目录、合并文档", "扫描页文字识别（OCR）", "连同笔迹导出为 PDF 并打印", "到期后仍可书写"],
+      lead: "30 天后仍可免费使用：",
+      points: ["用笔、荧光笔和文本框在 PDF 上书写", "编辑页面、新建笔记、创建目录、合并文档", "在文档内搜索，搜索和复制已识别的文字", "连同笔迹导出为 PDF 并打印", "前 30 天可使用全部 Pro 功能"],
     },
     pro: {
       name: "Pro",
       tagline: "不受时间限制",
-      status: "即将推出",
       priceUnit: "USD · 一次性购买",
-      action: "即将开放购买",
-      note: "目前仍在 Beta 测试中，购买功能正在开发。在此期间，请通过试用版体验全部功能。",
-      points: ["文字识别（OCR）、自动模式、性能模式", "在所有文档中搜索", "所有书签、所有标记的文字、小地图", "一个密钥最多激活 3 台设备", "激活后无需联网即可使用", "包含更新"],
+      action: "购买 Pro",
+      note: "购买后，我们会通过邮件发送许可证密钥。请将其粘贴到应用的 Settings → License 中。",
+      points: ["文字识别（OCR）：本页、整个文档、自动模式、性能模式", "一次搜索所有文档", "所有书签、所有标记的文字、小地图", "一个密钥最多激活 3 台 Windows 电脑", "激活后无需联网即可使用", "包含更新"],
     },
   },
   footnote: "*试用期结束后，只有文字识别、自动模式、性能模式、全库搜索、所有书签、所有标记的文字和小地图无法使用。文档、笔迹和已识别的文字都会保留。",
@@ -45,8 +45,8 @@ const pricing: Dictionary["pricing"] = {
   faq: {
     items: [
       {
-        question: "什么时候可以购买 Pro？",
-        answer: "目前仍在 Beta 测试中，购买功能正在开发，即将推出。在此之前，您可以通过试用版体验全部功能。",
+        question: "如何购买 Pro？",
+        answer: "通过本页的“购买 Pro”按钮付款后，我们会通过邮件发送许可证密钥和下载链接。",
       },
       {
         question: "Pro 是订阅制吗？",

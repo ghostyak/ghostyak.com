@@ -9,12 +9,12 @@ const notes: Dictionary["notes"] = {
   cardDescription: "Une application de notes pour Windows pour écrire sur vos PDF au stylet et au clavier, et retrouver ce que vous avez lu dans tous vos documents.",
   description: "Écrivez sur vos PDF au stylet et au clavier, et retrouvez ce que vous avez lu dans tous vos documents.",
   featuredEyebrow: "Nouveau",
-  betaBadge: "En bêta-test",
+  betaBadge: "Essai de 30 jours",
   trialBadge: "Toutes les fonctionnalités pendant 30 jours",
   downloadAction: "Télécharger pour Windows x64",
   featuresAction: "Voir les fonctionnalités",
   pricingAction: "Comparer la version d’essai et Pro",
-  heroNote: "Ghostyak Notes est encore en bêta-test : l’achat n’est pas encore disponible. Vous pouvez utiliser toutes les fonctionnalités pendant 30 jours à compter du premier lancement, puis continuer à écrire.",
+  heroNote: "Vous pouvez utiliser toutes les fonctionnalités pendant 30 jours à compter du premier lancement, puis continuer à écrire.",
   screenshots: {
     annotate: { alt: "Ghostyak Notes affichant un manuel PDF avec du texte surligné et des notes manuscrites dans la marge" },
     pen: { alt: "Réglages du stylo de Ghostyak Notes avec trois emplacements de couleur, une palette et trois épaisseurs", caption: "Réglages du stylo · Couleur et épaisseur" },
@@ -82,7 +82,7 @@ const notes: Dictionary["notes"] = {
     title: "Questions fréquentes",
     items: [
       { question: "Combien de temps puis-je utiliser la version d’essai ?", answer: "Vous pouvez utiliser toutes les fonctionnalités sans restriction pendant 30 jours à compter du premier lancement de l’application. La date de fin vous est indiquée au premier lancement." },
-      { question: "Que se passe-t-il après 30 jours ?", answer: "Vous pouvez continuer à écrire. L’OCR, le mode automatique, le mode performance, la recherche dans tous les documents, tous les signets, tout le texte marqué et la mini-carte ne sont plus disponibles. Vos documents, vos annotations et le texte déjà reconnu sont conservés. Une fois l’achat ouvert, vous pourrez utiliser ces fonctionnalités avec Pro." },
+      { question: "Que se passe-t-il après 30 jours ?", answer: "Vous pouvez continuer à écrire. L’OCR, le mode automatique, le mode performance, la recherche dans tous les documents, tous les signets, tout le texte marqué et la mini-carte ne sont plus disponibles. Vos documents, vos annotations et le texte déjà reconnu sont conservés. Pro est nécessaire pour ces fonctionnalités." },
       { question: "Où mes documents sont-ils enregistrés ?", answer: "Dans le dossier « Ghostyak Notes » de votre dossier Documents. Vous pouvez l’ouvrir avec « Documents folder » (Ouvrir le dossier des documents), en bas à gauche de la bibliothèque." },
       { question: "La recherche fonctionne-t-elle sur les PDF numérisés ?", answer: "Oui. Pour les PDF numérisés sans informations de texte, l’application reconnaît le texte (OCR) afin que vous puissiez y faire des recherches. La reconnaissance s’effectue sur votre propre PC, et la recherche dans l’écriture manuscrite n’est pas encore prise en charge." },
       { question: "Puis-je écrire sur mes PDF à la souris, sans tablette à stylet ?", answer: "Oui. Vous pouvez écrire à la souris et saisir du texte au clavier dans des zones de texte." },
@@ -92,7 +92,7 @@ const notes: Dictionary["notes"] = {
   },
   download: {
     title: "Téléchargez l’application et\nimportez votre premier PDF.",
-    description: "Windows x64 · En bêta-test · Toutes les fonctionnalités pendant 30 jours",
+    description: "Windows x64 · Toutes les fonctionnalités pendant 30 jours · Pro $10 en achat unique",
   },
 };
 

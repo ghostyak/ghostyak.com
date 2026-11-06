@@ -1,6 +1,6 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 
-// Translation of the Korean source of 2026-11-02.
+// Translation of the Korean source of 2026-11-02, with the plan card points of 2026-11-06.
 const pricing: Dictionary["pricing"] = {
   eyebrow: "Tarifs",
   title: "Essayez 30 jours,\npuis continuez avec Pro.",
@@ -13,27 +13,26 @@ const pricing: Dictionary["pricing"] = {
       tagline: "Essayer d’abord",
       price: "30 jours",
       priceUnit: "À compter du premier lancement",
+      lead: "Toujours gratuit après 30 jours :",
       points: [
         "Écrire sur les PDF au stylo, au surligneur et en zones de texte",
-        "Rechercher dans tous les documents à la fois",
-        "Modifier les pages, créer des tables des matières, fusionner des documents",
-        "Reconnaissance de texte des pages numérisées (OCR)",
+        "Modifier les pages, créer des notes et des tables des matières, fusionner des documents",
+        "Rechercher dans un document, retrouver et copier le texte déjà reconnu",
         "Exporter en PDF avec l’écriture manuscrite et imprimer",
-        "Ensuite, l’écriture reste disponible",
+        "Toutes les fonctionnalités Pro pendant les 30 premiers jours",
       ],
     },
     pro: {
       name: "Pro",
       tagline: "Sans limite de durée",
-      status: "Bientôt disponible",
       priceUnit: "USD · Achat unique",
-      action: "Achat bientôt disponible",
-      note: "Notes est encore en bêta-test et la fonction d’achat est en construction. En attendant, essayez toutes les fonctionnalités avec la version d’essai.",
+      action: "Acheter Pro",
+      note: "Après l’achat, nous vous envoyons une clé de licence par e-mail. Collez-la dans Settings → License dans l’application.",
       points: [
-        "OCR, mode automatique, mode performance",
-        "Rechercher dans tous les documents",
+        "Reconnaissance de texte (OCR) : cette page, tout le document, mode automatique, mode performance",
+        "Rechercher dans tous les documents à la fois",
         "Tous les signets, tout le texte marqué, mini-carte",
-        "Une clé active jusqu’à 3 appareils",
+        "Activer jusqu’à 3 PC Windows avec une seule clé",
         "Fonctionne sans Internet après l’activation",
         "Mises à jour incluses",
       ],
@@ -74,8 +73,8 @@ const pricing: Dictionary["pricing"] = {
   faq: {
     items: [
       {
-        question: "Quand pourrai-je acheter Pro ?",
-        answer: "Notes est encore en bêta-test : la fonction d’achat est en construction et sera bientôt disponible. En attendant, vous pouvez essayer toutes les fonctionnalités avec la version d’essai.",
+        question: "Comment acheter Pro ?",
+        answer: "Payez avec le bouton Acheter Pro de cette page : nous vous enverrons par e-mail une clé de licence et un lien de téléchargement.",
       },
       {
         question: "Pro est-il un abonnement ?",

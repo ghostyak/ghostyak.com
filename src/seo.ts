@@ -68,7 +68,6 @@ export function getSoftwareApplicationJsonLd({
   };
 }
 
-// Pro cannot be bought yet, so Notes declares no offer until purchase opens.
 export function getNotesJsonLd({ locale, description, videoName, featureNames }: { locale: PublishedLocale; description: string; videoName: string; featureNames: readonly string[] }) {
   const screenshots = Object.values(notes.screenshots).map((screenshot) => `${siteUrl}${screenshot.src}`);
   return {
@@ -85,6 +84,14 @@ export function getNotesJsonLd({ locale, description, videoName, featureNames }:
     applicationCategory: "UtilitiesApplication",
     inLanguage: localeConfig[locale].htmlLanguage,
     featureList: featureNames,
+    offers: {
+      "@type": "Offer",
+      price: String(notes.proPrice.amount),
+      priceCurrency: notes.proPrice.currency,
+      availability: "https://schema.org/InStock",
+      // Same as the page URL: content URLs carry no fragment (docs/SEO.md, scripts/check-seo.mjs).
+      url: `${siteUrl}${localizedPath(locale, notes.pagePath)}`,
+    },
     subjectOf: {
       "@type": "VideoObject",
       name: videoName,

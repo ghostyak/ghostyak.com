@@ -1,6 +1,6 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 
-// Translation of the Korean source of 2026-11-02.
+// Translation of the Korean source of 2026-11-02, with the plan card points of 2026-11-06.
 const pricing: Dictionary["pricing"] = {
   eyebrow: "Preise",
   title: "30 Tage testen,\nmit Pro weitermachen.",
@@ -13,27 +13,26 @@ const pricing: Dictionary["pricing"] = {
       tagline: "Erst ausprobieren",
       price: "30 Tage",
       priceUnit: "Ab dem ersten Start",
+      lead: "Auch nach 30 Tagen kostenlos:",
       points: [
         "Mit Stift, Textmarker und Textfeldern auf PDFs schreiben",
-        "Alle Dokumente auf einmal durchsuchen",
-        "Seiten bearbeiten, Gliederungen erstellen, Dokumente zusammenführen",
-        "Texterkennung für gescannte Seiten (OCR)",
+        "Seiten bearbeiten, neue Notizen, Gliederungen erstellen, Dokumente zusammenführen",
+        "Im Dokument suchen, erkannten Text finden und kopieren",
         "Als PDF mit Handschrift exportieren und drucken",
-        "Danach bleibt das Schreiben nutzbar",
+        "In den ersten 30 Tagen alle Pro-Funktionen",
       ],
     },
     pro: {
       name: "Pro",
       tagline: "Ohne zeitliche Begrenzung",
-      status: "Bald verfügbar",
       priceUnit: "USD · Einmalkauf",
-      action: "Kauf bald möglich",
-      note: "Notes ist noch im Betatest, die Kauffunktion entsteht gerade. Probiere bis dahin alle Funktionen mit der Testversion aus.",
+      action: "Pro kaufen",
+      note: "Nach dem Kauf erhältst du per E-Mail einen Lizenzschlüssel. Füge ihn in der App unter Settings → License ein.",
       points: [
-        "OCR, Automodus, Leistungsmodus",
-        "In allen Dokumenten suchen",
+        "Texterkennung (OCR): diese Seite, ganzes Dokument, Automodus, Leistungsmodus",
+        "Alle Dokumente auf einmal durchsuchen",
         "Alle Lesezeichen, alle markierten Texte, Minimap",
-        "Ein Schlüssel aktiviert bis zu 3 Geräte",
+        "Bis zu 3 Windows-PCs mit einem Schlüssel aktivieren",
         "Nach der Aktivierung ohne Internet nutzbar",
         "Updates inklusive",
       ],
@@ -74,8 +73,8 @@ const pricing: Dictionary["pricing"] = {
   faq: {
     items: [
       {
-        question: "Wann kann ich Pro kaufen?",
-        answer: "Notes ist noch im Betatest, die Kauffunktion entsteht gerade und ist bald verfügbar. Bis dahin kannst du alle Funktionen mit der Testversion ausprobieren.",
+        question: "Wie kaufe ich Pro?",
+        answer: "Bezahle über die Schaltfläche „Pro kaufen“ auf dieser Seite. Du erhältst dann per E-Mail einen Lizenzschlüssel und einen Download-Link.",
       },
       {
         question: "Ist Pro ein Abo?",
