@@ -6,6 +6,8 @@
 
 **2026-11-02 체험판 정책 변경.** 기간이 끝나도 필기는 계속 쓰고 전체 문자인식·전체 검색만 잠그는 것으로 바뀌어, `heroNote`·`afterTrial`을 새 정책으로 다시 썼다(한국어 검수 대기). `restartAnswer`는 사이트에 먼저 넣었다. 파일의 줄 번호가 밀렸으므로 아래 표의 줄 번호가 아니라 키로 찾는다.
 
+**2026-11-06 가격 변경.** 사용자가 Pro의 가격을 $29에서 $10으로 내렸다. `metaDescription`의 금액만 바꿨다(9개 언어).
+
 앱의 화면은 한국어와 영어뿐이라, 한국어가 아닌 언어의 안내에는 앱에 보이는 영어 메뉴 이름 `Settings → License`를 적는다.
 
 ## 키와 자리
@@ -38,7 +40,7 @@
 - `betaBadge`: 30일 체험판
 - `heroNote`: 처음 실행한 날부터 30일 동안 모든 기능을 쓸 수 있고, 기간이 끝나도 필기는 계속 쓸 수 있습니다.
 - `afterTrial`: 필기는 계속 쓸 수 있습니다. 문자인식, 자동모드, 성능모드, 모든 문서에서 찾기, 모든 북마크, 모든 표시한 글, 미니맵은 쓸 수 없습니다. 만든 문서와 필기, 이미 인식한 글은 그대로 남습니다. 이 기능들을 쓰려면 Pro가 필요합니다.
-- `metaDescription`: Windows x64 · 30일 동안 모든 기능 사용 · Pro $29 일회 구매
+- `metaDescription`: Windows x64 · 30일 동안 모든 기능 사용 · Pro $10 일회 구매
 
 ## en
 
@@ -50,7 +52,7 @@
 - `betaBadge`: 30-day trial
 - `heroNote`: You can use every feature for 30 days from first launch, and you can keep writing after that.
 - `afterTrial`: You can keep writing. OCR, Auto Mode, Performance Mode, searching all documents, all bookmarks, all marked text and the minimap are no longer available. Your documents, handwriting and already recognized text stay. Pro is required for those features.
-- `metaDescription`: Windows x64 · All features for 30 days · Pro $29 one-time purchase
+- `metaDescription`: Windows x64 · All features for 30 days · Pro $10 one-time purchase
 
 ## ja
 
@@ -62,7 +64,7 @@
 - `betaBadge`: 30日間体験版
 - `heroNote`: 初めて起動した日から30日間すべての機能を使え、期間が終わっても手書きは使い続けられます。
 - `afterTrial`: 手書きは使い続けられます。文字認識、自動モード、パフォーマンスモード、すべての文書からの検索、すべてのブックマーク、すべてのマークしたテキスト、ミニマップは使えなくなります。作成した文書、手書き、認識済みのテキストはそのまま残ります。これらの機能を使うにはProが必要です。
-- `metaDescription`: Windows x64 · 30日間すべての機能を利用可能 · Pro $29 買い切り
+- `metaDescription`: Windows x64 · 30日間すべての機能を利用可能 · Pro $10 買い切り
 
 ## zh
 
@@ -74,7 +76,7 @@
 - `betaBadge`: 30 天试用版
 - `heroNote`: 自首次启动之日起 30 天内可使用全部功能，到期后仍可继续书写。
 - `afterTrial`: 仍可继续书写。文字识别、自动模式、性能模式、在所有文档中搜索、所有书签、所有标记的文字和小地图将无法使用。您创建的文档、笔迹和已识别的文字都会保留。使用这些功能需要 Pro。
-- `metaDescription`: Windows x64 · 30 天内可用全部功能 · Pro $29 一次性购买
+- `metaDescription`: Windows x64 · 30 天内可用全部功能 · Pro $10 一次性购买
 
 ## es
 
@@ -86,7 +88,7 @@
 - `betaBadge`: Prueba de 30 días
 - `heroNote`: Puedes usar todas las funciones durante 30 días desde el primer inicio y, después, seguir escribiendo.
 - `afterTrial`: Puedes seguir escribiendo. El OCR, el modo automático, el modo de rendimiento, la búsqueda en todos los documentos, todos los marcadores, todo el texto marcado y el minimapa dejan de estar disponibles. Tus documentos, tus anotaciones y el texto ya reconocido se conservan. Para usar esas funciones necesitas Pro.
-- `metaDescription`: Windows x64 · Todas las funciones durante 30 días · Pro $29 en un solo pago
+- `metaDescription`: Windows x64 · Todas las funciones durante 30 días · Pro $10 en un solo pago
 
 ## de
 
@@ -98,7 +100,7 @@
 - `betaBadge`: 30-Tage-Testversion
 - `heroNote`: Ab dem ersten Start kannst du 30 Tage lang alle Funktionen nutzen, und danach kannst du weiter schreiben.
 - `afterTrial`: Du kannst weiter schreiben. OCR, der Automodus, der Leistungsmodus, die Suche in allen Dokumenten, alle Lesezeichen, alle markierten Texte und die Minimap sind nicht mehr verfügbar. Deine Dokumente, Notizen und bereits erkannter Text bleiben erhalten. Für diese Funktionen brauchst du Pro.
-- `metaDescription`: Windows x64 · 30 Tage alle Funktionen · Pro $29 als Einmalkauf
+- `metaDescription`: Windows x64 · 30 Tage alle Funktionen · Pro $10 als Einmalkauf
 
 ## fr
 
@@ -110,7 +112,7 @@
 - `betaBadge`: Essai de 30 jours
 - `heroNote`: Vous pouvez utiliser toutes les fonctionnalités pendant 30 jours à compter du premier lancement, puis continuer à écrire.
 - `afterTrial`: Vous pouvez continuer à écrire. L’OCR, le mode automatique, le mode performance, la recherche dans tous les documents, tous les signets, tout le texte marqué et la mini-carte ne sont plus disponibles. Vos documents, vos annotations et le texte déjà reconnu sont conservés. Pro est nécessaire pour ces fonctionnalités.
-- `metaDescription`: Windows x64 · Toutes les fonctionnalités pendant 30 jours · Pro $29 en achat unique
+- `metaDescription`: Windows x64 · Toutes les fonctionnalités pendant 30 jours · Pro $10 en achat unique
 
 ## pt
 
@@ -122,7 +124,7 @@
 - `betaBadge`: Teste de 30 dias
 - `heroNote`: Você pode usar todos os recursos por 30 dias a partir da primeira abertura e, depois disso, continuar escrevendo.
 - `afterTrial`: Você pode continuar escrevendo. O OCR, o modo automático, o modo de desempenho, a busca em todos os documentos, todos os marcadores, todo o texto marcado e o minimapa deixam de estar disponíveis. Seus documentos, suas anotações e o texto já reconhecido são mantidos. Para usar esses recursos, é preciso ter o Pro.
-- `metaDescription`: Windows x64 · Todos os recursos por 30 dias · Pro $29 em compra única
+- `metaDescription`: Windows x64 · Todos os recursos por 30 dias · Pro $10 em compra única
 
 ## it
 
@@ -134,4 +136,4 @@
 - `betaBadge`: Prova di 30 giorni
 - `heroNote`: Puoi usare tutte le funzioni per 30 giorni dal primo avvio e, dopo, continuare a scrivere.
 - `afterTrial`: Puoi continuare a scrivere. L’OCR, la modalità automatica, la modalità prestazioni, la ricerca in tutti i documenti, tutti i segnalibri, tutto il testo marcato e la minimappa non sono più disponibili. I tuoi documenti, gli appunti e il testo già riconosciuto restano. Per queste funzioni serve Pro.
-- `metaDescription`: Windows x64 · Tutte le funzioni per 30 giorni · Pro $29 con acquisto una tantum
+- `metaDescription`: Windows x64 · Tutte le funzioni per 30 giorni · Pro $10 con acquisto una tantum

@@ -92,7 +92,7 @@ const notes: Dictionary["notes"] = {
   },
   download: {
     title: "下载后，\n导入你的第一个 PDF。",
-    description: "Windows x64 · 30 天内可用全部功能 · Pro $29 一次性购买",
+    description: "Windows x64 · 30 天内可用全部功能 · Pro $10 一次性购买",
   },
 };
 

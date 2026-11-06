@@ -92,7 +92,7 @@ const notes: Dictionary["notes"] = {
   },
   download: {
     title: "ダウンロードして、\n最初のPDFを取り込みましょう。",
-    description: "Windows x64 · 30日間すべての機能を利用可能 · Pro $29 買い切り",
+    description: "Windows x64 · 30日間すべての機能を利用可能 · Pro $10 買い切り",
   },
 };
 

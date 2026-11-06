@@ -95,7 +95,7 @@ const notes = {
   },
   download: {
     title: "다운로드하고,\n첫 PDF를 가져와 보세요.",
-    description: "Windows x64 · 30일 동안 모든 기능 사용 · Pro $29 일회 구매",
+    description: "Windows x64 · 30일 동안 모든 기능 사용 · Pro $10 일회 구매",
   },
 } as const;
 

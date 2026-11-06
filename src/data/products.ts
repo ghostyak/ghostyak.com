@@ -37,8 +37,8 @@ export const notes = {
   updatedAt: "2026-11-06",
   // YouTube intro video shown in the hero; the poster is its first frame. The poster, duration and date are published as VideoObject JSON-LD.
   video: { id: "3k37JHCe5Q0", duration: "PT1M29S", uploadDate: "2026-11-01T18:50:07-08:00", poster: { src: "/images/notes/intro-video-poster.png", width: 1920, height: 1080 } },
-  // Decided one-time price, shown in the page's #pricing section.
-  proPrice: { amount: 29, currency: "USD" },
+  // Decided one-time price, shown in the page's #pricing section. Lowered from $29 to $10 on 2026-11-06 (owner's decision, Dodo Payments product price).
+  proPrice: { amount: 10, currency: "USD" },
   // Checkout for the Pro plan (Dodo Payments, live mode), linked from the Pro card.
   checkoutUrl: "https://checkout.dodopayments.com/buy/pdt_0NrMLaR6b9vqiJnfehYdX?quantity=1",
   platform: "Windows · x64",

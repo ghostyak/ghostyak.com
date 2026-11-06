@@ -92,7 +92,7 @@ const notes: Dictionary["notes"] = {
   },
   download: {
     title: "Téléchargez l’application et\nimportez votre premier PDF.",
-    description: "Windows x64 · Toutes les fonctionnalités pendant 30 jours · Pro $29 en achat unique",
+    description: "Windows x64 · Toutes les fonctionnalités pendant 30 jours · Pro $10 en achat unique",
   },
 };
 
