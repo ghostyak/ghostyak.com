@@ -18,10 +18,9 @@ const pricing: Dictionary["pricing"] = {
     pro: {
       name: "Pro",
       tagline: "不受时间限制",
-      status: "即将推出",
       priceUnit: "USD · 一次性购买",
-      action: "即将开放购买",
-      note: "目前仍在 Beta 测试中，购买功能正在开发。在此期间，请通过试用版体验全部功能。",
+      action: "购买 Pro",
+      note: "购买后，我们会通过邮件发送许可证密钥。请将其粘贴到应用的 Settings → License 中。",
       points: ["文字识别（OCR）、自动模式、性能模式", "在所有文档中搜索", "所有书签、所有标记的文字、小地图", "一个密钥最多激活 3 台设备", "激活后无需联网即可使用", "包含更新"],
     },
   },
@@ -45,8 +44,8 @@ const pricing: Dictionary["pricing"] = {
   faq: {
     items: [
       {
-        question: "什么时候可以购买 Pro？",
-        answer: "目前仍在 Beta 测试中，购买功能正在开发，即将推出。在此之前，您可以通过试用版体验全部功能。",
+        question: "如何购买 Pro？",
+        answer: "通过本页的“购买 Pro”按钮付款后，我们会通过邮件发送许可证密钥和下载链接。",
       },
       {
         question: "Pro 是订阅制吗？",

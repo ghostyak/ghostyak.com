@@ -25,10 +25,9 @@ const pricing: Dictionary["pricing"] = {
     pro: {
       name: "Pro",
       tagline: "Ohne zeitliche Begrenzung",
-      status: "Bald verfügbar",
       priceUnit: "USD · Einmalkauf",
-      action: "Kauf bald möglich",
-      note: "Notes ist noch im Betatest, die Kauffunktion entsteht gerade. Probiere bis dahin alle Funktionen mit der Testversion aus.",
+      action: "Pro kaufen",
+      note: "Nach dem Kauf erhältst du per E-Mail einen Lizenzschlüssel. Füge ihn in der App unter Settings → License ein.",
       points: [
         "OCR, Automodus, Leistungsmodus",
         "In allen Dokumenten suchen",
@@ -74,8 +73,8 @@ const pricing: Dictionary["pricing"] = {
   faq: {
     items: [
       {
-        question: "Wann kann ich Pro kaufen?",
-        answer: "Notes ist noch im Betatest, die Kauffunktion entsteht gerade und ist bald verfügbar. Bis dahin kannst du alle Funktionen mit der Testversion ausprobieren.",
+        question: "Wie kaufe ich Pro?",
+        answer: "Bezahle über die Schaltfläche „Pro kaufen“ auf dieser Seite. Du erhältst dann per E-Mail einen Lizenzschlüssel und einen Download-Link.",
       },
       {
         question: "Ist Pro ein Abo?",

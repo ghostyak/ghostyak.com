@@ -25,10 +25,9 @@ const pricing: Dictionary["pricing"] = {
     pro: {
       name: "Pro",
       tagline: "No time limit",
-      status: "Coming soon",
       priceUnit: "USD · One-time purchase",
-      action: "Purchase coming soon",
-      note: "Notes is still in beta testing and purchasing is being built. Until then, try every feature with the trial.",
+      action: "Buy Pro",
+      note: "After purchase, we email you a license key. Paste it into Settings → License in the app.",
       points: [
         "OCR, Auto Mode, Performance Mode",
         "Search all documents",
@@ -74,8 +73,8 @@ const pricing: Dictionary["pricing"] = {
   faq: {
     items: [
       {
-        question: "When can I buy Pro?",
-        answer: "Notes is still in beta testing, so purchasing is being built and will be available soon. Until then, you can try every feature with the trial.",
+        question: "How do I buy Pro?",
+        answer: "Pay with the Buy Pro button on this page, and we’ll email you a license key and a download link.",
       },
       {
         question: "Is Pro a subscription?",

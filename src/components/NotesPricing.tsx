@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { Check, Download, Minus, NotebookPen } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { DownloadLabel, SectionHeading } from "@/components/ProductLanding";
 import { notes } from "@/data/products";
 import type { Dictionary } from "@/i18n/get-dictionary";
@@ -68,8 +68,8 @@ export function NotesPricing({ copy, downloadAction, locale }: { copy: Dictionar
           action={<a className={cn(buttonVariants({ variant: "architectureDownload", size: "lg", className: "h-auto min-h-12 w-full whitespace-normal rounded-full px-6 py-3" }))} href={notes.downloadUrl} aria-label={downloadAction}><Download className="size-4" aria-hidden="true" /><DownloadLabel label={downloadAction} architecture="x64" /></a>}>
           <PointList points={trial.points} />
         </Plan>
-        <Plan inverted name={pro.name} tagline={pro.tagline} badge={pro.status} price={proPrice} priceUnit={pro.priceUnit}
-          action={<Button disabled size="lg" className="h-auto min-h-12 w-full whitespace-normal rounded-full px-6 py-3 disabled:opacity-100 disabled:bg-brand/15 disabled:text-foreground/70 disabled:ring-1 disabled:ring-brand/30">{pro.action}</Button>}>
+        <Plan inverted name={pro.name} tagline={pro.tagline} price={proPrice} priceUnit={pro.priceUnit}
+          action={<a className={cn(buttonVariants({ size: "lg", className: "h-auto min-h-12 w-full whitespace-normal rounded-full px-6 py-3" }))} href={notes.checkoutUrl}>{pro.action}</a>}>
           <PointList inverted points={pro.points} lead={copy.plans.includes} />
           <p className="mt-6 text-xs leading-5 text-muted-foreground">{pro.note}</p>
         </Plan>
